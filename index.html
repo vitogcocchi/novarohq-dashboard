@@ -777,11 +777,11 @@ async function loadLiveData(){
     }
     // Also load social data + task status
     try {
-        const sRes = await fetch('https://gist.githubusercontent.com/vitogcocchi/77c4a17c2aa7bab8f3de0ed5f8153acb/raw/social-data.json?t='+Date.now());
+        const sRes = await fetch('https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/social-data.json?t='+Date.now());
         if(sRes.ok){ const sd = await sRes.json(); populateSocial(sd); }
     } catch(e){ console.warn('Social data load failed:', e.message); }
     try {
-        const tRes = await fetch('https://gist.githubusercontent.com/vitogcocchi/77c4a17c2aa7bab8f3de0ed5f8153acb/raw/task-status.json?t='+Date.now());
+        const tRes = await fetch('https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/task-status.json?t='+Date.now());
         if(tRes.ok){ const ts = await tRes.json(); populateTasks(ts); }
     } catch(e){ console.warn('Task status load failed:', e.message); }
 }
