@@ -1,0 +1,37 @@
+{
+  "facebook-scrape": {
+    "lastRun": "2026-03-30T05:39:01.000Z",
+    "status": "partial",
+    "summary": "Scraped Facebook (1:39 AM ET Mar 30). No new engagement since midnight run. Activity log shows last post activity at 9:14 PM Mar 29. Messenger shows 0 unread DMs. Notifications confirm no new comments on group posts since midnight. Pro Window Cleaning post verified at 9 comments (unchanged). Totals unchanged: 106 comments, 35 positive, 1 DM, 10 interest signals, 16 groups, 12 posts live. social-data.json updated (lastUpdated timestamp refreshed). Dashboard redeploy FAILED — Netlify Forbidden error (account credits still blocked).",
+    "schedule": "Hourly at :06",
+    "type": "Chrome scraper"
+  },
+  "linkedin-scrape": {
+    "lastRun": "2026-03-30T10:36:00.000Z",
+    "status": "partial",
+    "summary": "Scraped LinkedIn (6:36 AM ET Mar 30): No changes since last run. 1,039 total connections (unchanged), 125 pending sent requests (all sent Mar 26), 5 acceptances this week (Mar 23), 5 messages sent this week (all Mar 25 — Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele), 0 replies, 0 interest signals. 19 received invitations pending (1 connection request + 3 newsletter invites + others). social-data.json updated. Dashboard redeploy FAILED — Netlify Forbidden error (account credits still blocked).",
+    "schedule": "Hourly at :36",
+    "type": "Chrome scraper"
+  },
+  "novaro-dashboard-refresh": {
+    "lastRun": null,
+    "status": "pending",
+    "summary": "Awaiting first run",
+    "schedule": "Daily at 8:05 AM ET",
+    "type": "Data sync + deploy"
+  },
+  "instantly-live": {
+    "lastRun": null,
+    "status": "active",
+    "summary": "Real-time via API on page load",
+    "schedule": "Every page load",
+    "type": "API proxy"
+  },
+  "twilio-live": {
+    "lastRun": null,
+    "status": "active",
+    "summary": "Real-time via API on page load",
+    "schedule": "Every page load",
+    "type": "API proxy"
+  }
+}

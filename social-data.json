@@ -1,0 +1,40 @@
+{
+  "facebook": {
+    "lastUpdated": "2026-03-30T05:39:01.000Z",
+    "groups": 16,
+    "postsLive": 12,
+    "comments": 106,
+    "positiveComments": 35,
+    "dmsReceived": 1,
+    "interestSignals": 10,
+    "daily": [
+      {"date": "2026-03-23", "groups": 0, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
+      {"date": "2026-03-24", "groups": 0, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
+      {"date": "2026-03-25", "groups": 0, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
+      {"date": "2026-03-26", "groups": 0, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
+      {"date": "2026-03-27", "groups": 0, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
+      {"date": "2026-03-28", "groups": 16, "posts": 12, "comments": 3, "positive": 1, "dms": 0, "interest": 1},
+      {"date": "2026-03-29", "groups": 16, "posts": 0, "comments": 87, "positive": 31, "dms": 1, "interest": 6},
+      {"date": "2026-03-30", "groups": 16, "posts": 0, "comments": 3, "positive": 2, "dms": 0, "interest": 3}
+    ]
+  },
+  "linkedin": {
+    "lastUpdated": "2026-03-30T10:36:00.000Z",
+    "requestsSent": 125,
+    "requestsAccepted": 5,
+    "totalConnections": 1039,
+    "messagesSent": 5,
+    "replies": 0,
+    "interestSignals": 0,
+    "daily": [
+      {"date": "2026-03-23", "requests": 0, "accepted": 5, "messages": 0, "replies": 0, "interest": 0},
+      {"date": "2026-03-24", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
+      {"date": "2026-03-25", "requests": 125, "accepted": 0, "messages": 5, "replies": 0, "interest": 0},
+      {"date": "2026-03-26", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
+      {"date": "2026-03-27", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
+      {"date": "2026-03-28", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
+      {"date": "2026-03-29", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
+      {"date": "2026-03-30", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0}
+    ]
+  }
+}

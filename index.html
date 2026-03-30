@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novaro HQ - Operations Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#0a0e17;--bg2:#0d1321;--card:rgba(13,25,50,0.7);
+            --cyan:#00d4ff;--cyan-d:rgba(0,212,255,0.15);--cyan-g:rgba(0,212,255,0.4);
+            --blue:#1e90ff;--blue-d:rgba(30,144,255,0.15);
+            --t1:#e0f0ff;--t2:#7a9bb5;--t3:#4a6a80;
+            --bdr:rgba(0,212,255,0.12);--bdr-a:rgba(0,212,255,0.4);
+            --ok:#00ff88;--warn:#ffaa00;--err:#ff4466;--sw:260px;
+        }
+        body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;overflow-x:hidden}
+        body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(0,212,255,.03)0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(30,144,255,.03)0%,transparent 50%);pointer-events:none;z-index:0}
+        body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.03)1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+
+        /* SIDEBAR */
+        .sb{position:fixed;left:0;top:0;width:var(--sw);height:100vh;background:linear-gradient(180deg,rgba(10,14,23,.98),rgba(13,19,33,.98));border-right:1px solid var(--bdr);display:flex;flex-direction:column;z-index:100;backdrop-filter:blur(20px)}
+        .sb-hd{padding:24px 20px;border-bottom:1px solid var(--bdr)}
+        .logo{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:700;color:var(--cyan);letter-spacing:3px;display:flex;align-items:center;gap:10px}
+        .logo-i{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--cyan-d),var(--blue-d));border:1px solid var(--bdr-a);display:flex;align-items:center;justify-content:center;font-size:18px}
+        .logo-s{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:2px;margin-top:4px}
+        .sb-nav{flex:1;padding:16px 12px;display:flex;flex-direction:column;gap:4px;overflow-y:auto}
+        .nav-sec{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:2px;text-transform:uppercase;padding:16px 12px 8px}
+        .nav-i{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;cursor:pointer;transition:all .3s;position:relative;border:1px solid transparent;color:var(--t2);text-decoration:none}
+        .nav-i:hover{background:var(--cyan-d);color:var(--t1);border-color:var(--bdr)}
+        .nav-i.on{background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(30,144,255,.08));color:var(--cyan);border-color:var(--bdr-a);box-shadow:0 0 20px rgba(0,212,255,.05),inset 0 0 20px rgba(0,212,255,.03)}
+        .nav-i.on::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:60%;background:var(--cyan);border-radius:0 3px 3px 0;box-shadow:0 0 10px var(--cyan-g)}
+        .nav-ic{font-size:18px;width:24px;text-align:center}
+        .nav-l{font-size:14px;font-weight:500;letter-spacing:.5px}
+        .nav-b{margin-left:auto;font-family:'Share Tech Mono',monospace;font-size:10px;padding:2px 8px;border-radius:6px;background:var(--cyan-d);color:var(--cyan);border:1px solid var(--bdr)}
+        .sb-ft{padding:16px 20px;border-top:1px solid var(--bdr)}
+        .st-ind{display:flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)}
+        .st-dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px rgba(0,255,136,.5);animation:pls 2s ease-in-out infinite}
+        @keyframes pls{0%,100%{opacity:1}50%{opacity:.4}}
+
+        /* MAIN */
+        .mc{margin-left:var(--sw);padding:24px 32px;position:relative;z-index:1;min-height:100vh}
+        .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--bdr)}
+        .pt{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:600;letter-spacing:2px}
+        .ps{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--t3);margin-top:4px}
+        .ht{font-family:'Share Tech Mono',monospace;font-size:13px;color:var(--t3);text-align:right}
+        .ht .tv{font-size:18px;color:var(--cyan);display:block}
+
+        /* STAT BUBBLES */
+        .sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:28px}
+        .sb-c{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:20px;position:relative;overflow:hidden;transition:all .3s;backdrop-filter:blur(10px)}
+        .sb-c:hover{border-color:var(--bdr-a);box-shadow:0 0 30px rgba(0,212,255,.08),0 8px 32px rgba(0,0,0,.3);transform:translateY(-2px)}
+        .sb-c::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:opacity .3s}
+        .sb-c:hover::before{opacity:1}
+        .sl{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+        .sv{font-family:'Orbitron',sans-serif;font-size:28px;font-weight:700;line-height:1}
+        .sv.cy{color:var(--cyan)}.sv.ok{color:var(--ok)}.sv.wn{color:var(--warn)}.sv.bl{color:var(--blue)}
+        .sc{font-family:'Share Tech Mono',monospace;font-size:11px;margin-top:8px;color:var(--t3)}
+
+        /* DATA SECTION */
+        .ds{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:24px;margin-bottom:24px;backdrop-filter:blur(10px)}
+        .dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+        .dt{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:500;letter-spacing:1.5px;display:flex;align-items:center;gap:10px}
+        .dt .ic{color:var(--cyan)}
+        .db{font-family:'Share Tech Mono',monospace;font-size:10px;padding:4px 12px;border-radius:8px;background:var(--cyan-d);color:var(--cyan);border:1px solid var(--bdr)}
+
+        /* TABLE */
+        table{width:100%;border-collapse:separate;border-spacing:0 4px}
+        th{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;text-align:left;padding:8px 16px;border-bottom:1px solid var(--bdr)}
+        td{font-size:14px;padding:12px 16px;color:var(--t2);border-bottom:1px solid rgba(0,212,255,.04)}
+        tr.clickable{cursor:pointer;transition:all .2s}
+        tr.clickable:hover td{color:var(--t1);background:rgba(0,212,255,.05)}
+        td:first-child{border-radius:8px 0 0 8px}td:last-child{border-radius:0 8px 8px 0}
+        .td-h{color:var(--cyan);font-weight:600}
+        .pill{display:inline-block;padding:3px 10px;border-radius:6px;font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:.5px}
+        .pill.active{background:rgba(0,255,136,.1);color:var(--ok);border:1px solid rgba(0,255,136,.2)}
+        .pill.paused{background:rgba(255,170,0,.1);color:var(--warn);border:1px solid rgba(255,170,0,.2)}
+        .pill.hot{background:rgba(255,68,102,.1);color:var(--err);border:1px solid rgba(255,68,102,.2)}
+        .pill.new{background:rgba(0,212,255,.1);color:var(--cyan);border:1px solid rgba(0,212,255,.2)}
+
+        /* PAGE SECTIONS */
+        .pg{display:none}.pg.on{display:block;animation:fi .4s ease}
+        @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+        /* OVERVIEW CARDS */
+        .og{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:28px}
+        .oc{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:24px;cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);overflow:hidden}
+        .oc:hover{border-color:var(--bdr-a);box-shadow:0 0 40px rgba(0,212,255,.1),0 8px 32px rgba(0,0,0,.3);transform:translateY(-3px)}
+        .oc .ci{font-size:32px;margin-bottom:16px}
+        .oc .ct{font-family:'Orbitron',sans-serif;font-size:16px;font-weight:600;margin-bottom:6px;letter-spacing:1px}
+        .oc .cd{font-size:13px;color:var(--t3);line-height:1.5}
+        .oc .cs{margin-top:20px;padding-top:16px;border-top:1px solid var(--bdr);display:flex;justify-content:space-between}
+        .oc .csv{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:600;color:var(--cyan)}
+        .oc .csl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:1px;margin-top:2px}
+
+        /* DETAIL PANEL (slide-in) */
+        .dp-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s}
+        .dp-overlay.open{opacity:1;pointer-events:all}
+        .dp{position:fixed;right:-520px;top:0;width:500px;height:100vh;background:linear-gradient(180deg,#0d1321,#0a0e17);border-left:1px solid var(--bdr-a);z-index:201;transition:right .4s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:32px}
+        .dp.open{right:0}
+        .dp-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:8px;background:rgba(255,68,102,.1);border:1px solid rgba(255,68,102,.2);color:var(--err);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+        .dp-close:hover{background:rgba(255,68,102,.2)}
+        .dp-title{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:600;margin-bottom:4px;padding-right:50px}
+        .dp-sub{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3);margin-bottom:24px;letter-spacing:1px}
+        .dp-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--bdr)}
+        .dp-label{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:1px;text-transform:uppercase}
+        .dp-val{font-size:14px;font-weight:500;color:var(--t1);text-align:right;max-width:60%}
+        .dp-section{font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:1.5px;margin-top:24px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr-a)}
+        .dp-notes{font-size:14px;color:var(--t2);line-height:1.7;margin-top:8px;padding:16px;background:rgba(0,212,255,.03);border-radius:10px;border:1px solid var(--bdr)}
+        .dp-btn{display:inline-block;margin-top:20px;padding:10px 24px;border-radius:10px;background:linear-gradient(135deg,var(--cyan-d),var(--blue-d));border:1px solid var(--bdr-a);color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;transition:all .2s;text-decoration:none}
+        .dp-btn:hover{background:rgba(0,212,255,.2);box-shadow:0 0 20px rgba(0,212,255,.15)}
+
+        /* MORNING DEBRIEF */
+        .brief-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:24px;margin-bottom:16px;backdrop-filter:blur(10px);transition:all .3s}
+        .brief-card:hover{border-color:var(--bdr-a)}
+        .brief-icon{font-size:20px;margin-bottom:8px}
+        .brief-title{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:500;color:var(--cyan);letter-spacing:1px;margin-bottom:12px}
+        .brief-content{font-size:14px;color:var(--t2);line-height:1.8}
+        .brief-content strong{color:var(--t1);font-weight:600}
+        .brief-content ol{padding-left:20px;margin-top:8px}
+        .brief-content ol li{margin-bottom:10px}
+        .brief-content blockquote{border-left:3px solid var(--cyan);padding:12px 16px;margin:12px 0;background:rgba(0,212,255,.03);border-radius:0 8px 8px 0;font-style:italic;color:var(--t1)}
+        .brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+        .brief-urgent{background:rgba(255,68,102,.05);border-color:rgba(255,68,102,.2)}
+        .brief-urgent .brief-title{color:var(--err)}
+        .urgent-item{padding:10px 0;border-bottom:1px solid rgba(255,68,102,.1);font-size:13px;color:var(--t2);line-height:1.6}
+        .urgent-item:last-child{border-bottom:none}
+        .urgent-tag{display:inline-block;padding:2px 8px;border-radius:4px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.5px;margin-right:6px}
+        .urgent-tag.block{background:rgba(255,68,102,.15);color:var(--err)}
+        .urgent-tag.follow{background:rgba(255,170,0,.15);color:var(--warn)}
+        .urgent-tag.offline{background:rgba(255,170,0,.15);color:var(--warn)}
+
+        /* CAMPAIGN TABLE in debrief */
+        .camp-table{width:100%;margin-top:12px}
+        .camp-table td,.camp-table th{padding:8px 12px;font-size:13px}
+
+        /* EMPTY */
+        .empty{text-align:center;padding:60px 20px;color:var(--t3)}
+        .empty .ei{font-size:48px;margin-bottom:16px;opacity:.3}
+        .empty .et{font-family:'Share Tech Mono',monospace;font-size:13px;letter-spacing:1px}
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}
+        ::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:var(--bdr-a)}
+
+        /* TWILIO NOTICE BANNER */
+        .twilio-notice{display:flex;align-items:center;gap:14px;background:rgba(255,170,0,.07);border:1px solid rgba(255,170,0,.25);border-radius:12px;padding:14px 20px;margin-bottom:24px;position:relative}
+        .twilio-notice .tn-icon{font-size:20px;flex-shrink:0}
+        .twilio-notice .tn-body{flex:1}
+        .twilio-notice .tn-title{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:600;color:var(--warn);letter-spacing:1px;margin-bottom:4px}
+        .twilio-notice .tn-text{font-family:'Share Tech Mono',monospace;font-size:12px;color:#c8a060;line-height:1.6}
+        .twilio-notice .tn-badge{font-family:'Share Tech Mono',monospace;font-size:10px;padding:3px 10px;border-radius:6px;background:rgba(255,170,0,.12);color:var(--warn);border:1px solid rgba(255,170,0,.25);white-space:nowrap}
+
+        /* SMS STATS */
+        .sms-seq{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
+        .sms-seq-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px;text-align:center;backdrop-filter:blur(10px)}
+        .sms-seq-num{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--t3);letter-spacing:1.5px;margin-bottom:6px}
+        .sms-seq-title{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;color:var(--cyan);margin-bottom:8px}
+        .sms-seq-body{font-size:12px;color:var(--t2);line-height:1.6;font-style:italic}
+        .sms-seq-day{margin-top:10px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px}
+
+        @media(max-width:1024px){.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.sms-seq{grid-template-columns:1fr}}
+        @media(max-width:768px){
+            .sb{width:60px}.sb .nav-l,.sb .nav-b,.sb .logo span,.sb .logo-s,.sb .nav-sec,.sb .st-ind span{display:none}
+            .sb .nav-i{justify-content:center;padding:12px}.mc{margin-left:60px;padding:16px}
+            .dp{width:100%}
+        }
+
+        /* INTRO VIDEO MODAL */
+        #intro-modal{position:fixed;inset:0;z-index:99998;background:#000;display:none;align-items:center;justify-content:center}
+        #intro-modal.show{display:flex}
+        #intro-video{width:100%;height:100%;object-fit:cover}
+        #intro-skip{position:fixed;bottom:24px;right:24px;z-index:99999;padding:7px 16px;background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.2);border-radius:6px;color:rgba(255,255,255,0.6);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px;cursor:pointer;transition:all .2s;backdrop-filter:blur(6px)}
+        #intro-skip:hover{background:rgba(0,0,0,0.7);color:#fff;border-color:rgba(255,255,255,0.4)}
+    </style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="auth-gate" style="position:fixed;inset:0;z-index:99999;background:#0a0e17;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+    <div style="background:rgba(13,25,50,0.85);border:1px solid rgba(0,212,255,0.25);border-radius:16px;padding:48px 40px;text-align:center;max-width:400px;width:90%;backdrop-filter:blur(20px);box-shadow:0 0 60px rgba(0,212,255,0.08);">
+        <div style="font-family:'Orbitron',sans-serif;font-size:22px;font-weight:700;color:#00d4ff;letter-spacing:3px;margin-bottom:8px;">NOVARO HQ</div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#4a6a80;letter-spacing:2px;margin-bottom:32px;">AUTHORIZATION REQUIRED</div>
+        <input id="auth-pw" type="password" placeholder="Enter access code" autofocus
+            style="width:100%;padding:14px 18px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.2);border-radius:8px;color:#e0f0ff;font-family:'Rajdhani',sans-serif;font-size:16px;outline:none;transition:border .3s;"
+            onfocus="this.style.borderColor='rgba(0,212,255,0.5)'" onblur="this.style.borderColor='rgba(0,212,255,0.2)'"
+            onkeydown="if(event.key==='Enter')authCheck()">
+        <button onclick="authCheck()"
+            style="width:100%;margin-top:16px;padding:14px;background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(30,144,255,0.15));border:1px solid rgba(0,212,255,0.3);border-radius:8px;color:#00d4ff;font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;cursor:pointer;transition:all .3s;"
+            onmouseover="this.style.background='linear-gradient(135deg,rgba(0,212,255,0.25),rgba(30,144,255,0.25))';this.style.borderColor='rgba(0,212,255,0.5)'"
+            onmouseout="this.style.background='linear-gradient(135deg,rgba(0,212,255,0.15),rgba(30,144,255,0.15))';this.style.borderColor='rgba(0,212,255,0.3)'">
+            AUTHENTICATE
+        </button>
+        <div id="auth-err" style="color:#ff4466;font-family:'Rajdhani',sans-serif;font-size:14px;margin-top:16px;display:none;">Access denied. Invalid credentials.</div>
+    </div>
+</div>
+<script>
+// Check if already authenticated this session
+if(sessionStorage.getItem('novaro_auth')==='1'){
+    document.getElementById('auth-gate').style.display='none';
+}
+async function authCheck(){
+    const pw=document.getElementById('auth-pw').value;
+    const enc=new TextEncoder();
+    const hash=await crypto.subtle.digest('SHA-256',enc.encode(pw));
+    const hex=Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    if(hex==='de72749cf0e0a644e639424d93068c6e6eda51bcbf3d2f9f11cb50ae5002fade'){
+        document.getElementById('auth-gate').style.display='none';
+        sessionStorage.setItem('novaro_auth','1');
+        const modal=document.getElementById('intro-modal');
+        modal.classList.add('show');
+        document.getElementById('intro-video').play();
+    }else{
+        const e=document.getElementById('auth-err');e.style.display='block';
+        document.getElementById('auth-pw').value='';
+        document.getElementById('auth-pw').focus();
+        setTimeout(()=>e.style.display='none',3000);
+    }
+}
+function closeIntro(){
+    const modal=document.getElementById('intro-modal');
+    const vid=document.getElementById('intro-video');
+    vid.pause();
+    modal.style.opacity='0';
+    modal.style.transition='opacity .5s';
+    setTimeout(()=>{modal.classList.remove('show');modal.style.opacity='';modal.style.transition=''},500);
+}
+</script>
+
+<!-- INTRO VIDEO MODAL -->
+<div id="intro-modal">
+    <video id="intro-video" autoplay playsinline onended="closeIntro()">
+        <source src="intro.mp4" type="video/mp4">
+    </video>
+    <button id="intro-skip" onclick="closeIntro()">SKIP ›</button>
+</div>
+
+<!-- DETAIL PANEL OVERLAY -->
+<div class="dp-overlay" id="dp-overlay" onclick="closeDetail()"></div>
+<div class="dp" id="dp">
+    <button class="dp-close" onclick="closeDetail()">&times;</button>
+    <div id="dp-content"></div>
+</div>
+
+<!-- SIDEBAR -->
+<nav class="sb">
+    <div class="sb-hd">
+        <div class="logo">
+            <div class="logo-i">N</div>
+            <div><span>NOVARO</span><div class="logo-s">OPERATIONS HQ</div></div>
+        </div>
+    </div>
+    <div class="sb-nav">
+        <div class="nav-sec">Dashboard</div>
+        <a class="nav-i on" data-page="overview" onclick="showPage('overview')">
+            <span class="nav-ic">&#9673;</span><span class="nav-l">Overview</span>
+        </a>
+        <a class="nav-i" data-page="debrief" onclick="showPage('debrief')">
+            <span class="nav-ic">&#9788;</span><span class="nav-l">Morning Debrief</span>
+            <span class="nav-b">DAILY</span>
+        </a>
+        <div class="nav-sec">Channels</div>
+        <a class="nav-i" data-page="instantly" onclick="showPage('instantly')">
+            <span class="nav-ic">&#9993;</span><span class="nav-l">Instantly</span>
+            <span class="nav-b">EMAIL</span>
+        </a>
+        <a class="nav-i" data-page="facebook" onclick="showPage('facebook')">
+            <span class="nav-ic">&#128218;</span><span class="nav-l">Facebook</span>
+            <span class="nav-b">SOCIAL</span>
+        </a>
+        <a class="nav-i" data-page="linkedin" onclick="showPage('linkedin')">
+            <span class="nav-ic">&#128188;</span><span class="nav-l">LinkedIn</span>
+            <span class="nav-b">B2B</span>
+        </a>
+        <a class="nav-i" data-page="sms" onclick="showPage('sms')">
+            <span class="nav-ic">&#128241;</span><span class="nav-l">SMS Outreach</span>
+            <span class="nav-b">SMS</span>
+        </a>
+        <div class="nav-sec">System</div>
+        <a class="nav-i" data-page="pipeline" onclick="showPage('pipeline')">
+            <span class="nav-ic">&#128200;</span><span class="nav-l">Lead Pipeline</span>
+        </a>
+        <a class="nav-i" data-page="progress" onclick="showPage('progress')">
+            <span class="nav-ic">&#9881;</span><span class="nav-l">Progress</span>
+            <span class="nav-b">LIVE</span>
+        </a>
+    </div>
+    <div class="sb-ft">
+        <div class="st-ind"><div class="st-dot"></div><span>SYSTEMS ONLINE</span></div>
+    </div>
+</nav>
+
+<!-- MAIN -->
+<main class="mc">
+
+<!-- OVERVIEW -->
+<section class="pg on" id="page-overview">
+    <div class="ph">
+        <div><div class="pt">COMMAND CENTER</div><div class="ps">NOVARO AI // OUTREACH OPERATIONS</div></div>
+        <div class="ht"><span class="tv" id="clock-1"></span><span id="date-1"></span></div>
+    </div>
+    <div class="og">
+        <div class="oc" onclick="showPage('instantly')">
+            <div class="ci">&#9993;</div>
+            <div class="ct">INSTANTLY</div>
+            <div class="cd">Cold email campaigns, replies, and engagement</div>
+            <div class="cs">
+                <div style="text-align:center"><div class="csv" id="ov-sent">--</div><div class="csl">SENT</div></div>
+                <div style="text-align:center"><div class="csv" id="ov-rep">--</div><div class="csl">REPLIES</div></div>
+                <div style="text-align:center"><div class="csv" id="ov-mtg">--</div><div class="csl">MEETINGS</div></div>
+            </div>
+        </div>
+        <div class="oc" onclick="showPage('facebook')">
+            <div class="ci">&#128218;</div>
+            <div class="ct">FACEBOOK</div>
+            <div class="cd">Group outreach, comments, and interest signals</div>
+            <div class="cs">
+                <div style="text-align:center"><div class="csv" id="ov-grp">--</div><div class="csl">GROUPS</div></div>
+                <div style="text-align:center"><div class="csv" id="ov-cmt">--</div><div class="csl">COMMENTS</div></div>
+                <div style="text-align:center"><div class="csv" id="ov-fbi">--</div><div class="csl">INTEREST</div></div>
+            </div>
+        </div>
+        <div class="oc" onclick="showPage('linkedin')">
+            <div class="ci">&#128188;</div>
+            <div class="ct">LINKEDIN</div>
+            <div class="cd">Connection requests, messages, and responses</div>
+            <div class="cs">
+                <div style="text-align:center"><div class="csv" id="ov-req">--</div><div class="csl">REQUESTS</div></div>
+                <div style="text-align:center"><div class="csv" id="ov-acc">--</div><div class="csl">ACCEPTED</div></div>
+                <div style="text-align:center"><div class="csv" id="ov-lii">--</div><div class="csl">INTEREST</div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Quick pipeline preview -->
+    <div class="ds">
+        <div class="dh">
+            <div class="dt"><span class="ic">&#128200;</span> LEAD PIPELINE</div>
+            <span class="db" style="cursor:pointer" onclick="showPage('pipeline')">VIEW ALL</span>
+        </div>
+        <table>
+            <thead><tr><th>Company</th><th>Contact</th><th>Source</th><th>Status</th><th>Industry</th><th>State</th></tr></thead>
+            <tbody id="pipeline-preview">
+                <tr><td colspan="6" class="empty" style="padding:30px"><div class="et">PIPELINE DATA POPULATES AS LEADS FLOW IN</div></td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- MORNING DEBRIEF -->
+<section class="pg" id="page-debrief">
+    <div class="ph">
+        <div><div class="pt">MORNING DEBRIEF</div><div class="ps">DAILY OPERATIONS BRIEFING // REFRESHED EVERY MORNING</div></div>
+        <div class="ht"><span class="tv" id="clock-2"></span><span id="date-2"></span></div>
+    </div>
+
+    <div class="brief-grid" style="margin-bottom:16px">
+        <div class="brief-card">
+            <div class="brief-icon">&#127780;</div>
+            <div class="brief-title">WEATHER</div>
+            <div class="brief-content" id="brief-weather">Partly sunny, high of 43&#176;F with light south winds picking up to 10 mph. Tonight drops to 28&#176;F under mostly cloudy skies. Layer up if you're heading out.</div>
+        </div>
+        <div class="brief-card">
+            <div class="brief-icon">&#128172;</div>
+            <div class="brief-title">QUOTE OF THE DAY</div>
+            <div class="brief-content" id="brief-quote"><blockquote>"The way to get started is to quit talking and begin doing."<br><span style="color:var(--t3)">-- Walt Disney</span></blockquote></div>
+        </div>
+    </div>
+
+    <div class="brief-card brief-urgent">
+        <div class="brief-icon">&#128680;</div>
+        <div class="brief-title">URGENT INBOX -- UNRESOLVED ITEMS</div>
+        <div id="brief-urgent">
+            <div class="urgent-item"><span class="urgent-tag block">BLOCKED</span><strong>Zoho: vito@localcallpros.com</strong> -- Emails stopped sending. Flagged March 25.</div>
+            <div class="urgent-item"><span class="urgent-tag block">BLOCKED</span><strong>Zoho: vito@localleadsgroup.com</strong> -- Emails stopped sending. Flagged March 25.</div>
+            <div class="urgent-item"><span class="urgent-tag block">BLOCKED</span><strong>Zoho: vito@tradeadspro.com</strong> -- Emails stopped sending. Flagged March 25.</div>
+            <div class="urgent-item"><span class="urgent-tag follow">FOLLOW-UP</span><strong>LinkedIn: 6 Accepted Connections</strong> -- March 25. Need follow-up messages.</div>
+            <div class="urgent-item"><span class="urgent-tag offline">OFFLINE</span><strong>Instantly Manager: Chrome bridge was offline</strong> -- Flagged March 27. May have impacted scheduled tasks.</div>
+        </div>
+    </div>
+
+    <div class="brief-card" style="margin-top:16px">
+        <div class="brief-icon">&#9993;</div>
+        <div class="brief-title">INSTANTLY CAMPAIGN STATUS</div>
+        <table class="camp-table">
+            <thead><tr><th>Campaign</th><th>Status</th><th>Notes</th></tr></thead>
+            <tbody>
+                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro LSA - Cleaning & Power Washing (V2)',status:'Active',notes:'Running normally'})">
+                    <td class="td-h">Novaro LSA - Cleaning & Power Washing (V2)</td><td><span class="pill active">ACTIVE</span></td><td>Running</td>
+                </tr>
+                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro LSA - Car Detailing (V2)',status:'Active',notes:'Running normally'})">
+                    <td class="td-h">Novaro LSA - Car Detailing (V2)</td><td><span class="pill active">ACTIVE</span></td><td>Running</td>
+                </tr>
+                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro LSA - Lead Gen Proof (V2)',status:'Active',notes:'Running normally'})">
+                    <td class="td-h">Novaro LSA - Lead Gen Proof (V2)</td><td><span class="pill active">ACTIVE</span></td><td>Running</td>
+                </tr>
+                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro - Full Growth Engine (Hormozi)',status:'Paused',notes:'100% complete'})">
+                    <td>Novaro - Full Growth Engine (Hormozi)</td><td><span class="pill paused">PAUSED</span></td><td>100% complete</td>
+                </tr>
+                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro - AI Back Office (Hormozi Rewrite)',status:'Paused',notes:'100% complete, 420 sent, 0.2% click rate'})">
+                    <td>Novaro - AI Back Office (Hormozi Rewrite)</td><td><span class="pill paused">PAUSED</span></td><td>420 sent, 0.2% click rate</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="brief-card" style="margin-top:16px">
+        <div class="brief-icon">&#9889;</div>
+        <div class="brief-title">TODAY'S FOCUS</div>
+        <div class="brief-content" id="brief-focus">
+            <ol>
+                <li><strong>Audit your Instantly open rates.</strong> Pull campaign analytics. Any sequence under 40% open rate needs a new subject line today.</li>
+                <li><strong>Send manual follow-ups to your top 10 warmest leads.</strong> Filter for contacts who opened 2+ emails but never replied. Write short, personal follow-ups referencing their trade and market.</li>
+                <li><strong>Build one new LinkedIn connection sequence.</strong> Search for plumbing and HVAC owners in MA/CT. Send 10 connection requests with a personalized note.</li>
+                <li><strong>Tighten your case study one-pager.</strong> Turn the $86k-from-$4k-spend case study into a single visual asset with 3 bullet points and clear CTA.</li>
+                <li><strong>Practice your close.</strong> Write responses to top 3 objections: "I already have a marketing guy," "LSAs don't work for me," and "I need to think about it."</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="brief-card" style="margin-top:16px">
+        <div class="brief-icon">&#128204;</div>
+        <div class="brief-title">DAILY REMINDERS</div>
+        <div class="brief-content">
+            <strong>Close your first LSA client.</strong> Every day without one is revenue left on the table.<br><br>
+            <strong>Follow up beats outreach.</strong> If someone opened your email, they're thinking about it.<br><br>
+            <strong>You're not in the AI business -- you're in the results business.</strong> Lead with numbers.
+        </div>
+    </div>
+</section>
+
+<!-- INSTANTLY -->
+<section class="pg" id="page-instantly">
+    <div class="ph">
+        <div><div class="pt">INSTANTLY // COLD EMAIL</div><div class="ps">CAMPAIGN PERFORMANCE METRICS</div></div>
+        <div class="ht"><span class="tv" id="clock-3"></span><span id="date-3"></span></div>
+    </div>
+    <div class="sg">
+        <div class="sb-c"><div class="sl">EMAILS SENT</div><div class="sv cy">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">OPENS</div><div class="sv bl">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">REPLIES</div><div class="sv">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">POSITIVE REPLIES</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">BOUNCES</div><div class="sv wn">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">MEETINGS BOOKED</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
+    </div>
+    <div class="ds">
+        <div class="dh"><div class="dt"><span class="ic">&#9993;</span> DAILY CAMPAIGN LOG</div><span class="db">INSTANTLY</span></div>
+        <table>
+            <thead><tr><th>Date</th><th>Campaign</th><th>Sent</th><th>Opens</th><th>Replies</th><th>Positive</th><th>Bounces</th><th>Meetings</th></tr></thead>
+            <tbody id="ins-tbody"><tr><td colspan="8" style="text-align:center;color:var(--t3);padding:40px">Awaiting data from Instantly automations...</td></tr></tbody>
+        </table>
+    </div>
+</section>
+
+<!-- FACEBOOK -->
+<section class="pg" id="page-facebook">
+    <div class="ph">
+        <div><div class="pt">FACEBOOK // GROUP OUTREACH</div><div class="ps">POST ENGAGEMENT & LEAD SIGNALS</div></div>
+        <div class="ht"><span class="tv" id="clock-4"></span><span id="date-4"></span></div>
+    </div>
+    <div class="sg">
+        <div class="sb-c"><div class="sl">GROUPS POSTED IN</div><div class="sv cy">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">POSTS LIVE</div><div class="sv bl">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">COMMENTS</div><div class="sv">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">POSITIVE COMMENTS</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">DMs RECEIVED</div><div class="sv cy">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">INTEREST SIGNALS</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
+    </div>
+    <div class="ds">
+        <div class="dh"><div class="dt"><span class="ic">&#128218;</span> DAILY OUTREACH LOG</div><span class="db">FACEBOOK</span></div>
+        <table>
+            <thead><tr><th>Date</th><th>Groups</th><th>Pending</th><th>Posts Live</th><th>Comments</th><th>Positive</th><th>DMs</th><th>Interest</th></tr></thead>
+            <tbody id="fb-tbody"><tr><td colspan="8" style="text-align:center;color:var(--t3);padding:40px">Awaiting data from Facebook automations...</td></tr></tbody>
+        </table>
+    </div>
+</section>
+
+<!-- LINKEDIN -->
+<section class="pg" id="page-linkedin">
+    <div class="ph">
+        <div><div class="pt">LINKEDIN // B2B OUTREACH</div><div class="ps">CONNECTION & MESSAGING METRICS</div></div>
+        <div class="ht"><span class="tv" id="clock-5"></span><span id="date-5"></span></div>
+    </div>
+    <div class="sg">
+        <div class="sb-c"><div class="sl">REQUESTS SENT</div><div class="sv cy">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">ACCEPTED</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">MESSAGES SENT</div><div class="sv bl">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">RESPONSES</div><div class="sv">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">POSITIVE RESPONSES</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
+        <div class="sb-c"><div class="sl">INTEREST SIGNALS</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
+    </div>
+    <div class="ds">
+        <div class="dh"><div class="dt"><span class="ic">&#128188;</span> DAILY OUTREACH LOG</div><span class="db">LINKEDIN</span></div>
+        <table>
+            <thead><tr><th>Date</th><th>Requests</th><th>Accepted</th><th>Rate</th><th>Messages</th><th>Responses</th><th>Positive</th><th>Interest</th></tr></thead>
+            <tbody id="li-tbody"><tr><td colspan="8" style="text-align:center;color:var(--t3);padding:40px">Awaiting data from LinkedIn automations...</td></tr></tbody>
+        </table>
+    </div>
+</section>
+
+<!-- SMS OUTREACH -->
+<section class="pg" id="page-sms">
+    <div class="ph">
+        <div><div class="pt">SMS OUTREACH</div><div class="ps">TWILIO A2P // COLD SMS CAMPAIGN</div></div>
+        <div class="ht"><span class="tv" id="clock-sms"></span><span id="date-sms"></span></div>
+    </div>
+
+    <!-- REGISTRATION NOTICE BANNER -->
+    <div class="twilio-notice" id="twilio-reg-banner">
+        <div class="tn-icon">⚠️</div>
+        <div class="tn-body">
+            <div class="tn-title">TOLL-FREE REGISTRATION PENDING</div>
+            <div class="tn-text">
+                <strong>+1 (833) 912-5998</strong> — Toll-free verification submitted to Twilio, currently under review.<br>
+                Active sending number <strong>+1 (413) 610-3724</strong> is live and A2P registered. Keep sends ≤ 100/day until A2P campaign status moves to Approved.<br>
+                Morning brief checks Twilio status daily and will auto-clear this once both numbers are fully registered.
+            </div>
+        </div>
+        <div class="tn-badge">⏳ PENDING</div>
+    </div>
+
+    <!-- STAT BUBBLES -->
+    <div class="sg">
+        <div class="sb-c"><div class="sl">TOTAL LEADS</div><div class="sv cy">472</div><div class="sc">Home service biz owners</div></div>
+        <div class="sb-c"><div class="sl">MESSAGES SENT</div><div class="sv bl" id="sms-sent">100</div><div class="sc">Across all 3 messages</div></div>
+        <div class="sb-c"><div class="sl">MSG 2 ELIGIBLE</div><div class="sv wn" id="sms-msg2">0</div><div class="sc">3+ days since msg 1</div></div>
+        <div class="sb-c"><div class="sl">MSG 3 ELIGIBLE</div><div class="sv ok" id="sms-msg3">0</div><div class="sc">7+ days since msg 1</div></div>
+        <div class="sb-c"><div class="sl">REPLIES</div><div class="sv ok" id="sms-replies">4</div><div class="sc">Inbound responses</div></div>
+        <div class="sb-c"><div class="sl">OPT-OUTS</div><div class="sv" id="sms-stops">0</div><div class="sc">Replied STOP</div></div>
+        <div class="sb-c"><div class="sl">DAILY LIMIT</div><div class="sv cy">100</div><div class="sc">Until A2P approved</div></div>
+    </div>
+
+    <!-- ACTIVE NUMBER STATUS -->
+    <div class="ds" style="margin-bottom:24px">
+        <div class="dh"><div class="dt"><span class="ic">&#128241;</span> TWILIO NUMBER STATUS</div><span class="db">A2P REGISTERED</span></div>
+        <table>
+            <thead><tr><th>Number</th><th>Type</th><th>A2P Status</th><th>Messaging Service</th><th>Role</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td class="td-h">+1 (413) 610-3724</td>
+                    <td>Local 10DLC</td>
+                    <td><span class="pill active">LIVE</span></td>
+                    <td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">Low Volume Mixed A2P</td>
+                    <td>Active sending — 100/day cap</td>
+                </tr>
+                <tr>
+                    <td>+1 (833) 912-5998</td>
+                    <td>Toll-Free</td>
+                    <td><span class="pill paused">PENDING</span></td>
+                    <td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">Toll-Free Verification</td>
+                    <td>Awaiting approval</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 3-MESSAGE SEQUENCE -->
+    <div class="ds" style="margin-bottom:24px">
+        <div class="dh"><div class="dt"><span class="ic">&#128172;</span> 3-MESSAGE SEQUENCE</div><span class="db">ACTIVE</span></div>
+        <div class="sms-seq">
+            <div class="sms-seq-card">
+                <div class="sms-seq-num">MESSAGE 1</div>
+                <div class="sms-seq-title">QUESTION HOOK</div>
+                <div class="sms-seq-body">"Hey {first_name}. Quick question. Happy with how many jobs Google is sending you right now or is that something you want to change?"</div>
+                <div class="sms-seq-day">DAY 1 — NO PITCH</div>
+            </div>
+            <div class="sms-seq-card">
+                <div class="sms-seq-num">MESSAGE 2</div>
+                <div class="sms-seq-title">SOCIAL PROOF</div>
+                <div class="sms-seq-body">"Hey {first_name}. Client spent $4,713 on Google LSAs last year. Made $86,995. 18.4x return. Want that for {org}?"</div>
+                <div class="sms-seq-day">DAY 3+ — SOFT CTA</div>
+            </div>
+            <div class="sms-seq-card">
+                <div class="sms-seq-num">MESSAGE 3</div>
+                <div class="sms-seq-title">CONSEQUENCE CLOSE</div>
+                <div class="sms-seq-body">"Hey {first_name}. Last message. Nothing changes unless you change something. If your lead flow isn't where you want it, just reply."</div>
+                <div class="sms-seq-day">DAY 7+ — EASY OUT</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEND LOG -->
+    <div class="ds">
+        <div class="dh"><div class="dt"><span class="ic">&#128203;</span> DAILY SEND LOG</div><span class="db">SMS</span></div>
+        <table>
+            <thead><tr><th>Date</th><th>Sent</th><th>Failed</th><th>Msg 1</th><th>Msg 2</th><th>Msg 3</th><th>Notes</th></tr></thead>
+            <tbody id="sms-tbody"><tr><td>2026-03-29</td><td>100</td><td>0</td><td>100</td><td>0</td><td>0</td><td>—</td></tr></tbody>
+        </table>
+    </div>
+
+    <!-- INBOUND REPLIES -->
+    <div class="ds" style="margin-top:24px">
+        <div class="dh"><div class="dt"><span class="ic">&#128172;</span> INBOUND REPLIES</div><span class="db">LIVE</span></div>
+        <table>
+            <thead><tr><th>Time</th><th>From</th><th>Message</th><th>Status</th></tr></thead>
+            <tbody id="sms-replies-tbody"><tr><td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">03/29 01:09 PM</td><td class="td-h">***-***-0667</td><td>Viessmann - US Sales After Hours Message: You've reached us outside of business hours. Our hours are 8:30 am-5:00pm Mon-</td><td>replied</td></tr><tr><td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">03/21 10:28 PM</td><td class="td-h">***-***-5998</td><td>Thanks for the message. Configure your number's SMS URL to change this message.Reply HELP for help.Reply STOP to unsubsc</td><td>replied</td></tr><tr><td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">03/21 10:28 PM</td><td class="td-h">***-***-5998</td><td>Thanks for the message. Configure your number's SMS URL to change this message.Reply HELP for help.Reply STOP to unsubsc</td><td>replied</td></tr><tr><td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">03/21 10:27 PM</td><td class="td-h">***-***-3724</td><td>Test message from Novaro AI A2P campaign setup. If you receive this, SMS is working.</td><td>replied</td></tr></tbody>
+        </table>
+    </div>
+</section>
+
+<!-- PIPELINE -->
+<section class="pg" id="page-pipeline">
+    <div class="ph">
+        <div><div class="pt">LEAD PIPELINE</div><div class="ps">ALL CHANNELS // CONSOLIDATED VIEW</div></div>
+        <div class="ht"><span class="tv" id="clock-6"></span><span id="date-6"></span></div>
+    </div>
+    <div class="sg">
+        <div class="sb-c"><div class="sl">TOTAL LEADS</div><div class="sv cy">--</div></div>
+        <div class="sb-c"><div class="sl">CONTACTED</div><div class="sv bl">--</div></div>
+        <div class="sb-c"><div class="sl">INTERESTED</div><div class="sv ok">--</div></div>
+        <div class="sb-c"><div class="sl">DISCOVERY CALLS</div><div class="sv wn">--</div></div>
+        <div class="sb-c"><div class="sl">PROPOSALS SENT</div><div class="sv bl">--</div></div>
+        <div class="sb-c"><div class="sl">CLOSED WON</div><div class="sv ok">--</div></div>
+    </div>
+    <div class="ds">
+        <div class="dh"><div class="dt"><span class="ic">&#128200;</span> ALL LEADS</div><span class="db">PIPELINE</span></div>
+        <table>
+            <thead><tr><th>Company</th><th>Contact</th><th>Source</th><th>Status</th><th>Industry</th><th>State</th><th>Revenue Pot.</th></tr></thead>
+            <tbody id="pipe-tbody"><tr><td colspan="7" style="text-align:center;color:var(--t3);padding:40px">Pipeline populates as leads flow in from all channels</td></tr></tbody>
+        </table>
+    </div>
+</section>
+
+<!-- PROGRESS -->
+<section class="pg" id="page-progress">
+    <div class="ph">
+        <div><div class="pt">PROGRESS // TASK MONITOR</div><div class="ps">ELLIOTT AI // ACTIVE OPERATIONS</div></div>
+        <div class="ht"><span class="tv" id="clock-7"></span><span id="date-7"></span></div>
+    </div>
+
+    <div class="ds" style="margin-bottom:24px">
+        <div class="dh"><div class="dt"><span class="ic">&#9881;</span> ACTIVE TASKS</div><span class="db" style="background:rgba(0,255,136,.12);color:var(--ok);border-color:rgba(0,255,136,.25)">MONITORING</span></div>
+        <table>
+            <thead><tr><th>Task</th><th>Type</th><th>Schedule</th><th>Status</th><th>Last Run</th><th>Summary</th></tr></thead>
+            <tbody id="tasks-tbody">
+                <tr><td colspan="6" style="text-align:center;color:var(--t3);padding:40px">Loading task status...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="ds" style="margin-bottom:24px">
+        <div class="dh"><div class="dt"><span class="ic">&#128260;</span> DATA PIPELINES</div><span class="db">SOURCES</span></div>
+        <div class="sg" style="margin-bottom:0">
+            <div class="sb-c"><div class="sl">INSTANTLY</div><div class="sv ok" id="pipe-instantly">LIVE</div><div class="sc">Real-time API</div></div>
+            <div class="sb-c"><div class="sl">TWILIO</div><div class="sv ok" id="pipe-twilio">LIVE</div><div class="sc">Real-time API</div></div>
+            <div class="sb-c"><div class="sl">FACEBOOK</div><div class="sv wn" id="pipe-facebook">HOURLY</div><div class="sc" id="pipe-fb-last">Awaiting first scrape</div></div>
+            <div class="sb-c"><div class="sl">LINKEDIN</div><div class="sv wn" id="pipe-linkedin">HOURLY</div><div class="sc" id="pipe-li-last">Awaiting first scrape</div></div>
+        </div>
+    </div>
+
+    <div class="ds">
+        <div class="dh"><div class="dt"><span class="ic">&#128221;</span> SYSTEM LOG</div><span class="db">RECENT</span></div>
+        <div id="system-log" style="padding:20px;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--t2);line-height:2">
+            <div style="color:var(--t3)">[Waiting for task data...]</div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<script>
+// Navigation
+function showPage(p){
+    document.querySelectorAll('.pg').forEach(e=>e.classList.remove('on'));
+    document.querySelectorAll('.nav-i').forEach(e=>e.classList.remove('on'));
+    document.getElementById('page-'+p).classList.add('on');
+    const n=document.querySelector('[data-page="'+p+'"]');
+    if(n)n.classList.add('on');
+}
+
+// Detail panel
+function openDetail(data){
+    const dp=document.getElementById('dp');
+    const ov=document.getElementById('dp-overlay');
+    const ct=document.getElementById('dp-content');
+    let html='';
+
+    if(data.type==='campaign'){
+        html=`
+            <div class="dp-title">${data.name}</div>
+            <div class="dp-sub">INSTANTLY CAMPAIGN</div>
+            <div class="dp-section">STATUS</div>
+            <div class="dp-row"><div class="dp-label">Current Status</div><div class="dp-val"><span class="pill ${data.status==='Active'?'active':'paused'}">${data.status.toUpperCase()}</span></div></div>
+            <div class="dp-row"><div class="dp-label">Notes</div><div class="dp-val">${data.notes}</div></div>
+            <div class="dp-section">ACTIONS</div>
+            <a class="dp-btn" href="https://app.instantly.ai" target="_blank">OPEN IN INSTANTLY &rarr;</a>
+        `;
+    } else if(data.type==='lead'){
+        html=`
+            <div class="dp-title">${data.company||'Unknown Company'}</div>
+            <div class="dp-sub">LEAD #${data.id||'--'} // ${data.source||'--'}</div>
+            <div class="dp-section">CONTACT INFO</div>
+            <div class="dp-row"><div class="dp-label">Contact Name</div><div class="dp-val">${data.contact||'--'}</div></div>
+            <div class="dp-row"><div class="dp-label">Email</div><div class="dp-val">${data.email||'--'}</div></div>
+            <div class="dp-row"><div class="dp-label">Phone</div><div class="dp-val">${data.phone||'--'}</div></div>
+            <div class="dp-section">DETAILS</div>
+            <div class="dp-row"><div class="dp-label">Industry</div><div class="dp-val">${data.industry||'--'}</div></div>
+            <div class="dp-row"><div class="dp-label">State</div><div class="dp-val">${data.state||'--'}</div></div>
+            <div class="dp-row"><div class="dp-label">Source</div><div class="dp-val">${data.source||'--'}</div></div>
+            <div class="dp-row"><div class="dp-label">Status</div><div class="dp-val"><span class="pill ${getStatusClass(data.status)}">${(data.status||'--').toUpperCase()}</span></div></div>
+            <div class="dp-row"><div class="dp-label">Revenue Potential</div><div class="dp-val" style="color:var(--ok)">${data.revenue?'$'+Number(data.revenue).toLocaleString():'--'}</div></div>
+            <div class="dp-row"><div class="dp-label">First Contact</div><div class="dp-val">${data.firstContact||'--'}</div></div>
+            <div class="dp-row"><div class="dp-label">Last Activity</div><div class="dp-val">${data.lastActivity||'--'}</div></div>
+            ${data.notes?`<div class="dp-section">NOTES</div><div class="dp-notes">${data.notes}</div>`:''}
+            <div class="dp-section">ACTIONS</div>
+            ${data.notionUrl?`<a class="dp-btn" href="${data.notionUrl}" target="_blank">OPEN IN NOTION &rarr;</a>`:''}
+        `;
+    } else if(data.type==='metric'){
+        html=`
+            <div class="dp-title">${data.date||'--'}</div>
+            <div class="dp-sub">${(data.channel||'METRIC').toUpperCase()} // DAILY REPORT</div>
+            <div class="dp-section">METRICS</div>
+        `;
+        if(data.fields){
+            data.fields.forEach(f=>{
+                html+=`<div class="dp-row"><div class="dp-label">${f.label}</div><div class="dp-val">${f.value}</div></div>`;
+            });
+        }
+        if(data.notes){
+            html+=`<div class="dp-section">NOTES</div><div class="dp-notes">${data.notes}</div>`;
+        }
+    }
+
+    ct.innerHTML=html;
+    dp.classList.add('open');
+    ov.classList.add('open');
+}
+
+function closeDetail(){
+    document.getElementById('dp').classList.remove('open');
+    document.getElementById('dp-overlay').classList.remove('open');
+}
+
+function getStatusClass(s){
+    if(!s)return'new';
+    s=s.toLowerCase();
+    if(s.includes('interested')||s.includes('discovery')||s.includes('won'))return'active';
+    if(s.includes('replied')||s.includes('contacted'))return'paused';
+    if(s.includes('lost')||s.includes('not interested'))return'hot';
+    return'new';
+}
+
+// Keyboard shortcut to close panel
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail()});
+
+// Live clock
+function tick(){
+    const now=new Date();
+    const estParts=new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true,timeZone:'America/New_York'}).formatToParts(now);
+    const ep=Object.fromEntries(estParts.map(p=>[p.type,p.value]));
+    const t=(ep.hour||'12')+':'+(ep.minute||'00')+':'+(ep.second||'00')+' '+(ep.dayperiod||ep.dayPeriod||'AM');
+    const d=now.toLocaleDateString('en-US',{weekday:'short',year:'numeric',month:'short',day:'numeric',timeZone:'America/New_York'})+' ET';
+    for(let i=1;i<=7;i++){
+        const ce=document.getElementById('clock-'+i);
+        const de=document.getElementById('date-'+i);
+        if(ce)ce.textContent=t;
+        if(de)de.textContent=d;
+    }
+    const cs=document.getElementById('clock-sms');
+    const ds=document.getElementById('date-sms');
+    if(cs)cs.textContent=t;
+    if(ds)ds.textContent=d;
+}
+tick();setInterval(tick,1000);
+
+// ===== LIVE DATA FETCH =====
+async function loadLiveData(){
+    try {
+        const res = await fetch('/.netlify/functions/api');
+        if(!res.ok) throw new Error('API returned '+res.status);
+        const data = await res.json();
+        if(data.instantly) populateInstantly(data.instantly);
+        if(data.twilio) populateTwilio(data.twilio);
+        console.log('Dashboard data loaded at', data.timestamp);
+    } catch(err) {
+        console.warn('Live data fetch failed:', err.message);
+    }
+    // Also load social data + task status
+    try {
+        const sRes = await fetch('https://gist.githubusercontent.com/vitogcocchi/77c4a17c2aa7bab8f3de0ed5f8153acb/raw/social-data.json?t='+Date.now());
+        if(sRes.ok){ const sd = await sRes.json(); populateSocial(sd); }
+    } catch(e){ console.warn('Social data load failed:', e.message); }
+    try {
+        const tRes = await fetch('https://gist.githubusercontent.com/vitogcocchi/77c4a17c2aa7bab8f3de0ed5f8153acb/raw/task-status.json?t='+Date.now());
+        if(tRes.ok){ const ts = await tRes.json(); populateTasks(ts); }
+    } catch(e){ console.warn('Task status load failed:', e.message); }
+}
+
+function populateInstantly(d){
+    const ov = d.overview || {};
+    const sent = ov.emails_sent_count || 0;
+    const opens = ov.open_count_unique || 0;
+    const replies = ov.reply_count_unique || 0;
+    const posReplies = (ov.total_interested || 0);
+    const bounces = ov.bounced_count || 0;
+    const meetings = ov.total_meeting_booked || 0;
+    const contacted = ov.contacted_count || 0;
+    const openRate = sent > 0 ? ((opens/sent)*100).toFixed(1)+'%' : '--';
+    const replyRate = sent > 0 ? ((replies/sent)*100).toFixed(1)+'%' : '--';
+    const bounceRate = sent > 0 ? ((bounces/sent)*100).toFixed(1)+'%' : '--';
+
+    // Overview cards
+    const oSent = document.getElementById('ov-sent');
+    const oRep = document.getElementById('ov-rep');
+    const oMtg = document.getElementById('ov-mtg');
+    if(oSent) oSent.textContent = sent.toLocaleString();
+    if(oRep) oRep.textContent = replies;
+    if(oMtg) oMtg.textContent = meetings;
+
+    // Instantly page stat bubbles
+    const statBubbles = document.querySelectorAll('#page-instantly .sb-c');
+    if(statBubbles.length >= 6){
+        setBubble(statBubbles[0], sent.toLocaleString(), contacted+' contacted');
+        setBubble(statBubbles[1], opens, openRate+' open rate');
+        setBubble(statBubbles[2], replies, replyRate+' reply rate');
+        setBubble(statBubbles[3], posReplies, 'Interested leads');
+        setBubble(statBubbles[4], bounces, bounceRate+' bounce rate');
+        setBubble(statBubbles[5], meetings, 'From all campaigns');
+    }
+
+    // Daily table
+    const tbody = document.getElementById('ins-tbody');
+    if(tbody && d.daily && d.daily.length > 0){
+        tbody.innerHTML = d.daily.map(row => {
+            const rRate = row.sent > 0 ? ((row.unique_replies/row.sent)*100).toFixed(1)+'%' : '0%';
+            return `<tr class="clickable" onclick="openDetail({type:'metric',date:'${row.date}',channel:'Instantly',fields:[
+                {label:'Emails Sent',value:'${row.sent}'},{label:'Contacted',value:'${row.contacted}'},
+                {label:'Unique Opens',value:'${row.unique_opened}'},{label:'Replies',value:'${row.unique_replies}'},
+                {label:'Clicks',value:'${row.unique_clicks}'},{label:'Opportunities',value:'${row.unique_opportunities}'}
+            ]})">
+                <td class="td-h">${row.date}</td><td>--</td><td>${row.sent}</td><td>${row.unique_opened}</td>
+                <td>${row.unique_replies}</td><td>${row.opportunities || 0}</td><td>${row.sent - row.contacted}</td><td>${row.unique_opportunities || 0}</td>
+            </tr>`;
+        }).join('');
+    }
+
+    // Campaign table in morning debrief
+    if(d.campaigns && d.campaigns.length > 0){
+        const campTbody = document.querySelector('#page-debrief .camp-table tbody');
+        if(campTbody){
+            campTbody.innerHTML = d.campaigns.map(c => {
+                const statusClass = c.status === 'Active' ? 'active' : c.status === 'Paused' ? 'paused' : 'new';
+                return `<tr class="clickable" onclick="openDetail({type:'campaign',name:'${c.name.replace(/'/g,"\\'")}',status:'${c.status}',notes:'Live from Instantly API'})">
+                    <td class="${c.status === 'Active' ? 'td-h' : ''}">${c.name}</td>
+                    <td><span class="pill ${statusClass}">${c.status.toUpperCase()}</span></td>
+                    <td>Live</td>
+                </tr>`;
+            }).join('');
+        }
+    }
+}
+
+function populateTwilio(d){
+    if(d.error) return;
+    const ov = d.overview || {};
+    const sentEl = document.getElementById('sms-sent');
+    const stopsEl = document.getElementById('sms-stops');
+    if(sentEl) sentEl.textContent = (ov.sent || 0).toLocaleString();
+    if(stopsEl) stopsEl.textContent = ov.optouts || 0;
+
+    // SMS daily log
+    const tbody = document.getElementById('sms-tbody');
+    if(tbody && d.daily && d.daily.length > 0){
+        tbody.innerHTML = d.daily.map(row =>
+            `<tr><td class="td-h">${row.date}</td><td>${row.sent}</td><td>${row.failed}</td><td>--</td><td>--</td><td>--</td><td>${row.delivered} delivered</td></tr>`
+        ).join('');
+    }
+}
+
+function populateSocial(sd){
+    // Facebook
+    if(sd.facebook && sd.facebook.lastUpdated){
+        const fb = sd.facebook;
+        const oGrp = document.getElementById('ov-grp');
+        const oCmt = document.getElementById('ov-cmt');
+        const oFbi = document.getElementById('ov-fbi');
+        if(oGrp) oGrp.textContent = fb.groups || 0;
+        if(oCmt) oCmt.textContent = fb.comments || 0;
+        if(oFbi) oFbi.textContent = fb.interestSignals || 0;
+
+        // Facebook page stat bubbles
+        const fbBubbles = document.querySelectorAll('#page-facebook .sb-c');
+        if(fbBubbles.length >= 6){
+            setBubble(fbBubbles[0], fb.groups || 0, 'Active groups');
+            setBubble(fbBubbles[1], fb.postsLive || 0, 'In last 7 days');
+            setBubble(fbBubbles[2], fb.comments || 0, 'Total engagement');
+            setBubble(fbBubbles[3], fb.positiveComments || 0, 'Positive signals');
+            setBubble(fbBubbles[4], fb.dmsReceived || 0, 'Direct messages');
+            setBubble(fbBubbles[5], fb.interestSignals || 0, 'Warm leads');
+        }
+
+        // Facebook daily table
+        const fbTbody = document.getElementById('fb-tbody');
+        if(fbTbody && fb.daily && fb.daily.length > 0){
+            fbTbody.innerHTML = fb.daily.map(row =>
+                `<tr><td class="td-h">${row.date}</td><td>${row.groups||0}</td><td>--</td><td>${row.posts||0}</td><td>${row.comments||0}</td><td>${row.positive||0}</td><td>${row.dms||0}</td><td>${row.interest||0}</td></tr>`
+            ).join('');
+        }
+
+        // Progress page
+        const pipeFbLast = document.getElementById('pipe-fb-last');
+        if(pipeFbLast) pipeFbLast.textContent = 'Last: ' + new Date(fb.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
+    }
+
+    // LinkedIn
+    if(sd.linkedin && sd.linkedin.lastUpdated){
+        const li = sd.linkedin;
+        const oReq = document.getElementById('ov-req');
+        const oAcc = document.getElementById('ov-acc');
+        const oLii = document.getElementById('ov-lii');
+        if(oReq) oReq.textContent = li.requestsSent || 0;
+        if(oAcc) oAcc.textContent = li.requestsAccepted || 0;
+        if(oLii) oLii.textContent = li.interestSignals || 0;
+
+        // LinkedIn page stat bubbles
+        const liBubbles = document.querySelectorAll('#page-linkedin .sb-c');
+        if(liBubbles.length >= 6){
+            setBubble(liBubbles[0], li.requestsSent || 0, 'Outbound requests');
+            setBubble(liBubbles[1], li.requestsAccepted || 0, 'Accepted');
+            setBubble(liBubbles[2], li.totalConnections || 0, 'Network size');
+            setBubble(liBubbles[3], li.messagesSent || 0, 'In last 7 days');
+            setBubble(liBubbles[4], li.replies || 0, 'Conversations');
+            setBubble(liBubbles[5], li.interestSignals || 0, 'Warm leads');
+        }
+
+        // LinkedIn daily table
+        const liTbody = document.getElementById('li-tbody');
+        if(liTbody && li.daily && li.daily.length > 0){
+            liTbody.innerHTML = li.daily.map(row =>
+                `<tr><td class="td-h">${row.date}</td><td>${row.requests||0}</td><td>${row.accepted||0}</td><td>${row.messages||0}</td><td>${row.replies||0}</td><td>${row.interest||0}</td></tr>`
+            ).join('');
+        }
+
+        // Progress page
+        const pipeLiLast = document.getElementById('pipe-li-last');
+        if(pipeLiLast) pipeLiLast.textContent = 'Last: ' + new Date(li.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
+    }
+}
+
+function populateTasks(ts){
+    const tbody = document.getElementById('tasks-tbody');
+    if(!tbody) return;
+    const rows = Object.entries(ts).map(([name, t]) => {
+        const statusColor = t.status === 'active' ? 'ok' : t.status === 'success' ? 'ok' : t.status === 'error' ? 'err' : 'wn';
+        const statusLabel = (t.status || 'pending').toUpperCase();
+        const lastRun = t.lastRun ? new Date(t.lastRun).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : 'Never';
+        return `<tr>
+            <td class="td-h">${name}</td>
+            <td>${t.type || '--'}</td>
+            <td>${t.schedule || '--'}</td>
+            <td><span class="pill ${statusColor === 'ok' ? 'active' : statusColor === 'err' ? 'hot' : 'new'}">${statusLabel}</span></td>
+            <td>${lastRun}</td>
+            <td>${t.summary || '--'}</td>
+        </tr>`;
+    });
+    tbody.innerHTML = rows.join('');
+
+    // System log
+    const log = document.getElementById('system-log');
+    if(log){
+        const entries = Object.entries(ts).filter(([,t]) => t.lastRun).sort((a,b) => (b[1].lastRun||'').localeCompare(a[1].lastRun||''));
+        if(entries.length > 0){
+            log.innerHTML = entries.map(([name, t]) => {
+                const color = t.status === 'success' || t.status === 'active' ? 'var(--ok)' : t.status === 'error' ? 'var(--err)' : 'var(--warn)';
+                const time = new Date(t.lastRun).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',second:'2-digit',month:'short',day:'numeric'});
+                return `<div><span style="color:var(--t3)">[${time}]</span> <span style="color:${color}">${name}</span> - ${t.summary||'No details'}</div>`;
+            }).join('');
+        } else {
+            log.innerHTML = '<div style="color:var(--ok)">[System initialized] All tasks registered. Awaiting first scheduled runs.</div>' +
+                '<div style="color:var(--t3)">[Info] Facebook scrape: hourly at :06 past</div>' +
+                '<div style="color:var(--t3)">[Info] LinkedIn scrape: hourly at :36 past</div>' +
+                '<div style="color:var(--ok)">[Info] Instantly + Twilio: real-time on every page load</div>';
+        }
+    }
+}
+
+function setBubble(el, value, sub){
+    const sv = el.querySelector('.sv');
+    const sc = el.querySelector('.sc');
+    if(sv) sv.textContent = value;
+    if(sc) sc.textContent = sub;
+}
+
+// Load data on page ready
+if(sessionStorage.getItem('novaro_auth')==='1'){
+    loadLiveData();
+} else {
+    // Load after auth succeeds
+    const origAuth = window.authCheck;
+}
+// Patch authCheck to load data after login
+const _origAuthCheck = authCheck;
+authCheck = async function(){
+    await _origAuthCheck();
+    if(sessionStorage.getItem('novaro_auth')==='1'){
+        loadLiveData();
+    }
+};
+</script>
+</body>
+</html>
