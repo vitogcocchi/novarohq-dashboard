@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T06:11:00.000Z",
+    "lastRun": "2026-03-31T07:12:42.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (2:11 AM ET Mar 31). Totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. New since last run (~1 hr ago): 0 new comments, 0 new DMs, 0 new interest signals. Notification count still 16. Ann Giroux DM still unread (E2EE, unreadable). 4 posts from last night (Window Cleaning Newbies, Pro Window Cleaning, Pressure Washing Business Owners, USA Car Detailing Services) confirmed live — Window Cleaning Newbies post has 2 reactions (Like + Love), 0 comments. Group admin welcome-post tags (Roofing Contractors, Painters Near Me, Plumbers Talk, Commercial Cleaning Support, COMMERCIAL CLEANERS, HVAC) are not direct responses to Novaro AI posts. Junk Removal Winners post still no View link (pending moderation).",
+    "summary": "Scraped Facebook (3:12 AM ET Mar 31). Totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. 16 unread notifications — all admin welcome tags, friend accepts (Cheryl Provost, Ann Giroux), and unrelated group activity. No new Novaro AI post comments or DMs since last run. Post reactions confirmed: Window Cleaning Newbies (1 Like + 1 Love, 0 comments), Pressure Washing Business Owners (1 Like + 1 Love, 0 comments), USA Car Detailing (1 Love, 0 comments), Pro Window Cleaning (0 reactions, 0 comments). Ann Giroux DM still unread (E2EE). Junk Removal Winners still pending moderation (no View link). DM inbox: Brady Fellows, Byron Peabody, Anthony Cocchi (older), Ann Giroux (unread E2EE) — no new threads.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
