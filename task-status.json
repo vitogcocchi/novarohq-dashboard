@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T09:08:00.000Z",
+    "lastRun": "2026-03-31T10:12:51.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (5:08 AM ET Mar 31). No new activity in 52 mins since last run. Totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. Notifications still at 16 unread (none new). DM inbox unchanged: Brady Fellows, Byron Peabody, Anthony Cocchi (3d ago), Ann Giroux (unread E2EE) — no new threads. Pressure Washing Business Owners and Window Cleaning Newbies posts confirmed live with no new comments. Junk Removal Winners still pending admin approval. All March 30 late-night posts (USA Car Detailing, Pressure Washing, Pro Window Cleaning, Window Cleaning Newbies) remain live. New friend accepts: Cheryl Provost (1d ago), Ann Giroux (21h ago).",
+    "summary": "Scraped Facebook (6:12 AM ET Mar 31). No new activity in ~1hr since last run. Notifications at 17 (up 1 from admin group description update on Homeowners looking for Contractors — not a lead). Checked USA Car Detailing Services, Pressure Washing Business Owners, and Window Cleaning Newbies posts directly — 0 new comments on all three. Messenger inbox unchanged: Brady Fellows, Byron Peabody, Anthony Cocchi (3d ago), Ann Giroux (unread E2EE, same as before) — no new DM threads. All March 30 late-night posts (Junk Removal Winners, USA Car Detailing, Pressure Washing, Pro Window Cleaning, Window Cleaning Newbies) confirmed live. Totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. March 31 daily: 2 comments, 1 positive, 1 DM, 1 interest signal.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
