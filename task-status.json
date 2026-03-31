@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T19:21:13.000Z",
+    "lastRun": "2026-03-31T20:41:36.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (3:21 PM ET Mar 31). 12 unread notifications: welcome-post mentions in Cleaners Connect (2:56 PM ET) and HVAC Business Owners (9:04 AM ET), plus group activity in Junk Removal Owners, friend confirms, and tagged-in-photo events across 6 industry groups — no new direct engagement on Novaro AI outreach posts. Activity log confirms 5 posts live from March 30 (Junk Removal Winners, USA Car Detailing, Pressure Washing Business Owners, Pro Window Cleaning, Window Cleaning Newbies). Messenger shows no new unread DMs. Groups active updated 16→18 based on expanded group activity log (Commercial Cleaning, PLUMBERS TALK, Roofing Contractors, HVAC, Painting, etc.). Cumulative totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 18 posts live.",
+    "summary": "Scraped Facebook (4:41 PM ET Mar 31). No new activity since prior run at 3:21 PM ET. 11 unread notifications (accumulated before last run): friend request acceptances (Cheryl Provost, Ann Giroux), 6 tagged-in-photo events across industry groups (Roofing Contractors, PLUMBERS TALK, Commercial Cleaning, COMMERCIAL CLEANERS, Power Washing, Cleaners Connect), group activity, friend suggestion — none are direct responses to Novaro AI posts. Checked USA Car Detailing Services and Pressure Washing Business Owners posts from March 30 directly: both show 0 likes, 0 comments. Junk Removal Winners post still pending admin approval. Messenger inbox: no new outreach DMs (only 3-day-old personal conversations). Activity log shows no new posts on March 31. Cumulative totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 18 posts live.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
