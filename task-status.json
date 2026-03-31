@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-31T19:37:24Z",
+    "lastRun": "2026-03-31T20:48:07Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (3:37 PM ET Mar 31): 1,040 total connections. 181 pending sent requests — most recent visible batch (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen) sent ~6 hours ago (~9:37 AM ET). Connection accepted this cycle: Stefano Cardillo (Owner/Lawn Care Specialist at SC Landscaping). Messaging inbox shows 7 unread items — no new prospect replies or positive buying intent; 1 inbound outreach from Vincent Handugan (VA pitch, Mar 20, not a lead). 0 interest signals. Metrics unchanged from prior run; lastUpdated timestamp refreshed.",
+    "summary": "Scraped LinkedIn (4:48 PM ET Mar 31): 1,040 total connections. 181 pending sent requests — most recent batch (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen) sent ~7 hours ago (~9:48 AM ET). Connection accepted this cycle: Stefano Cardillo (SC Landscaping) — Vito followed up with a personalized message at 10:23 AM. Messaging inbox shows 8 unread; no new prospect replies or buying intent signals. Inbound only: Vincent Handugan (VA pitch, Mar 20, not a lead). 0 interest signals. Metrics unchanged from prior run; lastUpdated timestamp refreshed.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
