@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T17:24:38.000Z",
+    "lastRun": "2026-03-31T18:32:46.000Z",
     "status": "partial",
-    "summary": "Scraped Facebook (1:24 PM ET Mar 31). Notifications: still 14 — no new count change. Activity log: no new Novaro posts on Mar 31; last posts still March 30, 11:05–11:41 PM. New 'tagged in photo' notifications (Paul Smith in PLUMBERS TALK, Superior Commercial Cleaning in Commercial Cleaning Support, Berry Little in COMMERCIAL CLEANERS, Paul Henry Aguirre in Roofing Contractors, Eric Tower in Power Washing group) — all welcome-new-member group admin tags, not Novaro engagement. Ron Musgraves comment in Pressure Washing Friends was on a welcome post, not a Novaro post. Messenger: 1 unread (Brady Fellows E2EE, 3 days old, PIN-locked). No new message requests. Ann Giroux (friend request accepted) now has a chat thread but no prospect DM. All totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. March 31 daily unchanged: 4 posts, 2 comments, 1 positive, 1 DM, 1 interest signal.",
+    "summary": "Scraped Facebook (2:32 PM ET Mar 31). Notifications: still 14 — no new count change. Activity log Mar 31: only welcome-member tag at 9:04 AM in HVAC Business Owners (pre-dates last run). No new Novaro posts today. Checked Pressure Washing Business Owners post — no reactions or comments visible. Messenger: Brady Fellows (E2EE, PIN-locked), Byron Peabody (E2EE, 3 days old), Anthony Cocchi (family, E2EE) — no new prospect DMs. All totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. March 31 daily unchanged: 4 posts, 2 comments, 1 positive, 1 DM, 1 interest signal.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
