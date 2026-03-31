@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T16:22:40.000Z",
+    "lastRun": "2026-03-31T17:24:38.000Z",
     "status": "partial",
-    "summary": "Scraped Facebook (12:22 PM ET Mar 31). Notifications: 14 (was 13) — 1 new: Eric Tower tagged Vito in welcome-new-members post in Power Washing, Soft Washing & Window Cleaning Worldwide (not Novaro-related). Activity log: no new Novaro posts — last posts still March 30, 11:05–11:41 PM. Window Cleaning Newbies post (windowcleaners group) gained 2 new love reactions, now 4 total (3 loves + 1 like), 0 comments — strong positive signal. Pressure Washing Business Owners LSA post: no reactions or comments visible. USA Car Detailing post: no visible engagement. Messenger: 1 unread E2EE chat from Byron Peabody (known contact, not confirmed prospect); no new message requests. Requests tab: empty. All totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. March 31 daily unchanged: 4 posts, 2 comments, 1 positive, 1 DM, 1 interest signal.",
+    "summary": "Scraped Facebook (1:24 PM ET Mar 31). Notifications: still 14 — no new count change. Activity log: no new Novaro posts on Mar 31; last posts still March 30, 11:05–11:41 PM. New 'tagged in photo' notifications (Paul Smith in PLUMBERS TALK, Superior Commercial Cleaning in Commercial Cleaning Support, Berry Little in COMMERCIAL CLEANERS, Paul Henry Aguirre in Roofing Contractors, Eric Tower in Power Washing group) — all welcome-new-member group admin tags, not Novaro engagement. Ron Musgraves comment in Pressure Washing Friends was on a welcome post, not a Novaro post. Messenger: 1 unread (Brady Fellows E2EE, 3 days old, PIN-locked). No new message requests. Ann Giroux (friend request accepted) now has a chat thread but no prospect DM. All totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. March 31 daily unchanged: 4 posts, 2 comments, 1 positive, 1 DM, 1 interest signal.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
