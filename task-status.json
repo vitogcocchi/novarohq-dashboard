@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-31T04:21:59Z",
+    "lastRun": "2026-03-31T04:37:19Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (12:21 AM ET Mar 31): 1,039 total connections (unchanged), 153 pending sent requests (28 new sent today ~1 hr ago targeting landscaping/electrical business owners), 0 new acceptances, 0 messages sent today, 0 new replies, 0 interest signals. 2 unread messages in inbox (1 counter-pitch from Vincent Handugan Mar 20, 1 sponsored from Keri Ribardiere Mar 26 — neither is buying intent).",
+    "summary": "Scraped LinkedIn (12:37 AM ET Mar 31): 1,039 total connections (unchanged), 153 pending sent requests (28 sent today targeting landscaping/electrical business owners), 0 new acceptances, 8 outreach messages sent (to landscapers/contractors — Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele, Michael Rose, Rich Iandoli, Adam Quenneville), 0 replies from prospects, 0 interest signals. 2 unread messages: counter-pitch from Vincent Handugan (VA services, Mar 20) and sponsored message from Keri Ribardiere (Mar 26) — neither is buying intent from a prospect.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
