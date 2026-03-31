@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T11:15:36.000Z",
+    "lastRun": "2026-03-31T13:12:08.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (7:15 AM ET Mar 31). No new activity since last run (10:12 AM UTC). Notifications at 18 (up 1 from someone else posting in Car Detailing Business Owners group 20 min ago — not a lead). Checked USA Car Detailing Services post directly — 0 comments. Pressure Washing Business Owners post confirmed live. Activity log reviewed: no March 31 posts by Novaro yet. Messenger inbox unchanged: Brady Fellows, Byron Peabody, Anthony Cocchi (3d ago), Ann Giroux (unread E2EE, same as before) — no new DM threads. Note: Cheryl Provost (1d ago) and Ann Giroux (23h ago) accepted friend requests — tracked in prior runs. All totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. March 31 daily unchanged: 4 posts, 2 comments, 1 positive, 1 DM, 1 interest signal.",
+    "summary": "Scraped Facebook (9:12 AM ET Mar 31). No new activity since last run (11:15 AM UTC). Notifications still at 18 — only new item is HVAC Business Owners welcome mention at 9:04 AM ET (auto-welcome post, not a Novaro post or lead). Checked USA Car Detailing Services post directly — 0 comments. Activity log: 5 posts from Mar 30 at 11 PM ET confirmed in log (Junk Removal Winners, USA Car Detailing, Pressure Washing Business Owners, Pro Window Cleaning, Window Cleaning Newbies). No new Novaro posts today. Messenger inbox unchanged: Brady Fellows, Byron Peabody, Anthony Cocchi (3d ago), Ann Giroux (unread E2EE, same as before) — no new DM threads. Spam tags noted from Paul Henry Aguirre (Roofing group), Bil Gates (Painters Near Me), Paul Smith (Plumbers Talk), Superior Commercial Cleaning LLC, Berry Little — none are leads. All totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. March 31 daily unchanged: 4 posts, 2 comments, 1 positive, 1 DM, 1 interest signal.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
