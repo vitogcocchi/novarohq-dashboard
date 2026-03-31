@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T20:41:36.000Z",
+    "lastRun": "2026-03-31T21:23:47.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (4:41 PM ET Mar 31). No new activity since prior run at 3:21 PM ET. 11 unread notifications (accumulated before last run): friend request acceptances (Cheryl Provost, Ann Giroux), 6 tagged-in-photo events across industry groups (Roofing Contractors, PLUMBERS TALK, Commercial Cleaning, COMMERCIAL CLEANERS, Power Washing, Cleaners Connect), group activity, friend suggestion — none are direct responses to Novaro AI posts. Checked USA Car Detailing Services and Pressure Washing Business Owners posts from March 30 directly: both show 0 likes, 0 comments. Junk Removal Winners post still pending admin approval. Messenger inbox: no new outreach DMs (only 3-day-old personal conversations). Activity log shows no new posts on March 31. Cumulative totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 18 posts live.",
+    "summary": "Scraped Facebook (5:23 PM ET Mar 31). 1 new DM since prior run at 4:41 PM: Ann Giroux (real estate broker, Hollywood FL — accepted friend request, sent unread E2E message; not a Novaro AI ICP, 0 interest signals). Notification count unchanged at 11 unread. Activity log shows no new posts on Mar 31 beyond 'welcome new member' group mentions (Cleaners Connect at 2:56 PM, HVAC Business Owners at 9:04 AM — not responses to Novaro AI posts). Eric Tower tagged Vito in Power Washing group ~5 hours ago (welcome post, not a lead). Pressure Washing LSA post (Mar 30) still shows 0 comments. Cumulative totals updated: 113 comments, 38 positive, 3 DMs (+1), 12 interest signals, 18 posts live.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
