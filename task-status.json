@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-30T10:36:00.000Z",
-    "status": "partial",
-    "summary": "Scraped LinkedIn (6:36 AM ET Mar 30): 1,039 total connections, 125 pending sent requests, 5 acceptances this week, 5 messages sent, 0 replies. NOTE: Dashboard migrated from Netlify to GitHub Pages — data now pushed via push_to_github.py.",
+    "lastRun": "2026-03-31T04:21:59Z",
+    "status": "active",
+    "summary": "Scraped LinkedIn (12:21 AM ET Mar 31): 1,039 total connections (unchanged), 153 pending sent requests (28 new sent today ~1 hr ago targeting landscaping/electrical business owners), 0 new acceptances, 0 messages sent today, 0 new replies, 0 interest signals. 2 unread messages in inbox (1 counter-pitch from Vincent Handugan Mar 20, 1 sponsored from Keri Ribardiere Mar 26 — neither is buying intent).",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
