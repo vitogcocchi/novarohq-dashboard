@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-31T08:38:12Z",
+    "lastRun": "2026-03-31T09:37:20Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (4:38 AM ET Mar 31): 1,039 total connections (unchanged), 153 pending sent requests (most recent batch sent ~5 hours ago targeting landscaping/electrical owners — Jacob Senoski, William Gonzalez, Bryan Kersey, Ricardo Gomez, Antwain Flowers, Garrett Lorenzen, Jeff Wingren, Jeremy Dickey, Tim Lee, Blair Anson), 0 new acceptances since last run (most recent accepted connections still from March 23: Leaett Lipker, Keith Sr. Jernigan, Ryan Clark, Jason Wang, Sean Krause-Huckleberry et al.), 8 outreach messages sent (unchanged — Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele on Mar 25; Michael Rose, Rich Iandoli, Adam Quenneville earlier), 0 prospect replies, 0 interest signals. Unread filter shows 0 unread (Vincent Handugan VA pitch Mar 20 and Keri Ribardiere sponsored Mar 26 — neither is buying intent). No new buying signals.",
+    "summary": "Scraped LinkedIn (5:37 AM ET Mar 31): 1,039 total connections (unchanged), 153 pending sent requests (most recent batch sent ~6 hours ago — same landscaping/electrical owner batch: Jacob Senoski, William Gonzalez, Bryan Kersey, Ricardo Gomez, Antwain Flowers, Garrett Lorenzen, Jeff Wingren, Jeremy Dickey, Tim Lee, Blair Anson), 0 new acceptances, 8 outreach messages sent (unchanged — Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele on Mar 25; Michael Rose, Rich Iandoli, Adam Quenneville earlier), 0 prospect replies, 0 interest signals. Messaging inbox shows (2) unread: Vincent Handugan VA vendor pitch (Mar 20) and Keri Ribardiere sponsored message (Mar 26) — neither is buying intent. All metrics unchanged from prior run.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
