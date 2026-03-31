@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-31T15:37:27Z",
+    "lastRun": "2026-03-31T16:38:15Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (11:37 AM ET Mar 31): all metrics unchanged from prior run. 1,040 total connections. 181 pending sent requests — same 10-person batch sent ~2 hours ago (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen). 9 outreach messages sent total. Messaging badge (4) unchanged. Only visible inbound is Vincent Handugan (Mar 20) pitching VA services — not a buying signal. 0 prospect replies, 0 interest signals. 21 incoming invitations on Grow page. Timestamp refreshed.",
+    "summary": "Scraped LinkedIn (12:38 PM ET Mar 31): 1,040 total connections. 181 pending sent requests — most recent batch still shows Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen (~3 hours ago). Stefano Cardillo (SC Landscaping) accepted and received a follow-up message from Vito at 10:23 AM ET — already counted in prior run. Messaging badge now (5) unread vs (4) last run — likely Vito's own sent message to Stefano triggering the thread. Only inbound reply visible: Vincent Handugan (Mar 20) pitching VA services — not a buying signal. 0 prospect replies, 0 interest signals. Metrics unchanged; timestamp refreshed.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
