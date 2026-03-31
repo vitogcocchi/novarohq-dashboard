@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T22:21:16.000Z",
+    "lastRun": "2026-03-31T23:48:11.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (6:21 PM ET Mar 31). Notification count: 11 → 12 (+1). New notification: Usman Aulakh tagged Vito in welcome photo in Junk Removal Owners ◆ at ~6:17 PM — group admin welcome post, not a Novaro AI lead. No new DMs (inbox unchanged; Ann Giroux still unread E2E). Activity log shows no new Novaro AI posts on Mar 31 after 4:13 PM search. Three welcome-member mentions today (6:17 PM, 2:56 PM, 9:04 AM) — all group admin posts, not responses. Cumulative totals unchanged: 18 groups, 18 posts live, 113 comments, 38 positive, 3 DMs, 12 interest signals.",
+    "summary": "Scraped Facebook (7:48 PM ET Mar 31). No new activity since prior run at 6:21 PM ET. Notification count: 8 unread (Vito cleared some since last run). No new comments on Novaro AI posts. No new DMs — Ann Giroux E2E message still unread, inbox unchanged (Brady Fellows, Byron Peabody, Anthony Cocchi, Ann Giroux). Activity log confirms last Mar 31 post was welcome mention at 6:17 PM (Junk Removal Owners admin welcome, not a Novaro AI response). Tagged-in-photo notifications (Superior Commercial Cleaning, Berry Little, Paul Smith, Paul Henry Aguirre, Eric Tower) are all group admin welcome posts. Cumulative totals unchanged: 18 groups, 18 posts live, 113 comments, 38 positive, 3 DMs, 12 interest signals.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
