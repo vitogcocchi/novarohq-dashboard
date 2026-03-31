@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-31T13:38:28Z",
+    "lastRun": "2026-03-31T14:32:53Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (9:38 AM ET Mar 31): 1,039 total connections (unchanged), 182 pending sent requests (unchanged — most recent batch sent 34-43 min before scrape: Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen targeting window cleaning and auto detailing owners), 0 new acceptances, 8 outreach messages sent (unchanged), 0 prospect replies, 0 interest signals. Unread filter confirms 'No unread messages' — (2) badge is LinkedIn system/sponsored messages only. 21 incoming invitations on Grow page unchanged. Today's total requests remain 57.",
+    "summary": "Scraped LinkedIn (10:32 AM ET Mar 31): 1,040 total connections (+1 from last run). 181 pending sent requests (down from 182 — Stefano Cardillo accepted and received follow-up message). Same 10-person batch from ~9 AM still listed as most recent sends (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen). 9 total outreach messages sent (+1: follow-up to Stefano Cardillo at 10:23 AM). Messaging badge now (4) vs (2) last run — 2 new unread; visible inbound reply is Vincent Handugan (Mar 20) pitching VA services, not a buying signal. 0 prospect replies, 0 interest signals. 21 incoming invitations unchanged on Grow page.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
