@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T18:32:46.000Z",
-    "status": "partial",
-    "summary": "Scraped Facebook (2:32 PM ET Mar 31). Notifications: still 14 — no new count change. Activity log Mar 31: only welcome-member tag at 9:04 AM in HVAC Business Owners (pre-dates last run). No new Novaro posts today. Checked Pressure Washing Business Owners post — no reactions or comments visible. Messenger: Brady Fellows (E2EE, PIN-locked), Byron Peabody (E2EE, 3 days old), Anthony Cocchi (family, E2EE) — no new prospect DMs. All totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. March 31 daily unchanged: 4 posts, 2 comments, 1 positive, 1 DM, 1 interest signal.",
+    "lastRun": "2026-03-31T19:21:13.000Z",
+    "status": "success",
+    "summary": "Scraped Facebook (3:21 PM ET Mar 31). 12 unread notifications: welcome-post mentions in Cleaners Connect (2:56 PM ET) and HVAC Business Owners (9:04 AM ET), plus group activity in Junk Removal Owners, friend confirms, and tagged-in-photo events across 6 industry groups — no new direct engagement on Novaro AI outreach posts. Activity log confirms 5 posts live from March 30 (Junk Removal Winners, USA Car Detailing, Pressure Washing Business Owners, Pro Window Cleaning, Window Cleaning Newbies). Messenger shows no new unread DMs. Groups active updated 16→18 based on expanded group activity log (Commercial Cleaning, PLUMBERS TALK, Roofing Contractors, HVAC, Painting, etc.). Cumulative totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 18 posts live.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
