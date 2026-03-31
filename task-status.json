@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-30T05:39:01.000Z",
-    "status": "partial",
-    "summary": "Scraped Facebook (1:39 AM ET Mar 30). Totals: 106 comments, 35 positive, 1 DM, 10 interest signals, 16 groups, 12 posts live. NOTE: Netlify deploy replaced with GitHub push — scrapers now run push_to_github.py after each update.",
+    "lastRun": "2026-03-30T15:11:00.000Z",
+    "status": "success",
+    "summary": "Scraped Facebook (11:11 AM ET Mar 30). Totals: 111 comments, 37 positive, 1 DM, 11 interest signals, 16 groups, 14 posts live. New today: 2 posts approved (WCBO + Pressure Washing Friends), 5 new comments (Kc Marlow +4 in Roofing Sales), 0 DMs. Nova Enterprises page: 81 shares, 279 views on outreach video.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
