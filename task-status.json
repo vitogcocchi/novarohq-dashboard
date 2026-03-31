@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-31T14:32:53Z",
+    "lastRun": "2026-03-31T15:37:27Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (10:32 AM ET Mar 31): 1,040 total connections (+1 from last run). 181 pending sent requests (down from 182 — Stefano Cardillo accepted and received follow-up message). Same 10-person batch from ~9 AM still listed as most recent sends (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen). 9 total outreach messages sent (+1: follow-up to Stefano Cardillo at 10:23 AM). Messaging badge now (4) vs (2) last run — 2 new unread; visible inbound reply is Vincent Handugan (Mar 20) pitching VA services, not a buying signal. 0 prospect replies, 0 interest signals. 21 incoming invitations unchanged on Grow page.",
+    "summary": "Scraped LinkedIn (11:37 AM ET Mar 31): all metrics unchanged from prior run. 1,040 total connections. 181 pending sent requests — same 10-person batch sent ~2 hours ago (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen). 9 outreach messages sent total. Messaging badge (4) unchanged. Only visible inbound is Vincent Handugan (Mar 20) pitching VA services — not a buying signal. 0 prospect replies, 0 interest signals. 21 incoming invitations on Grow page. Timestamp refreshed.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
