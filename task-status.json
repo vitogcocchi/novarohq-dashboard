@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T05:12:26.000Z",
+    "lastRun": "2026-03-31T06:11:00.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (1:12 AM ET Mar 31). Totals: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. New since last run (56 min ago): 0 new comments (all prior activity from before last run). 1 new DM: Ann Giroux (unread, E2EE — content not readable; she accepted friend request 17h ago, DM arrived after last scrape). Junk Removal Winners post still pending moderation (no View link in Activity Log, not visible in group feed). No new posts today. 16 notifications unread total.",
+    "summary": "Scraped Facebook (2:11 AM ET Mar 31). Totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. New since last run (~1 hr ago): 0 new comments, 0 new DMs, 0 new interest signals. Notification count still 16. Ann Giroux DM still unread (E2EE, unreadable). 4 posts from last night (Window Cleaning Newbies, Pro Window Cleaning, Pressure Washing Business Owners, USA Car Detailing Services) confirmed live — Window Cleaning Newbies post has 2 reactions (Like + Love), 0 comments. Group admin welcome-post tags (Roofing Contractors, Painters Near Me, Plumbers Talk, Commercial Cleaning Support, COMMERCIAL CLEANERS, HVAC) are not direct responses to Novaro AI posts. Junk Removal Winners post still no View link (pending moderation).",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
