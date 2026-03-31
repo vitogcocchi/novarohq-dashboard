@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-30T15:11:00.000Z",
+    "lastRun": "2026-03-31T04:16:00.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (11:11 AM ET Mar 30). Totals: 111 comments, 37 positive, 1 DM, 11 interest signals, 16 groups, 14 posts live. New today: 2 posts approved (WCBO + Pressure Washing Friends), 5 new comments (Kc Marlow +4 in Roofing Sales), 0 DMs. Nova Enterprises page: 81 shares, 279 views on outreach video.",
+    "summary": "Scraped Facebook (12:16 AM ET Mar 31). Totals: 113 comments, 38 positive, 1 DM, 11 interest signals, 16 groups, 18 posts live. New since last run: 4 confirmed new posts (Window Cleaning Newbies, Pro Window Cleaning, Pressure Washing Business Owners, USA Car Detailing) posted ~11 PM ET Mar 30. 1 Junk Removal Winners post possibly pending moderation. 2 new comment engagements: Paul Smith in PLUMBERS TALK, Curt's carpet cleaning in Commercial Cleaning Support Group. Multiple group welcome tags (not Novaro AI engagement). 0 new DMs.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
