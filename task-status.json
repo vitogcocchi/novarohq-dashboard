@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T21:23:47.000Z",
+    "lastRun": "2026-03-31T22:21:16.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (5:23 PM ET Mar 31). 1 new DM since prior run at 4:41 PM: Ann Giroux (real estate broker, Hollywood FL — accepted friend request, sent unread E2E message; not a Novaro AI ICP, 0 interest signals). Notification count unchanged at 11 unread. Activity log shows no new posts on Mar 31 beyond 'welcome new member' group mentions (Cleaners Connect at 2:56 PM, HVAC Business Owners at 9:04 AM — not responses to Novaro AI posts). Eric Tower tagged Vito in Power Washing group ~5 hours ago (welcome post, not a lead). Pressure Washing LSA post (Mar 30) still shows 0 comments. Cumulative totals updated: 113 comments, 38 positive, 3 DMs (+1), 12 interest signals, 18 posts live.",
+    "summary": "Scraped Facebook (6:21 PM ET Mar 31). Notification count: 11 → 12 (+1). New notification: Usman Aulakh tagged Vito in welcome photo in Junk Removal Owners ◆ at ~6:17 PM — group admin welcome post, not a Novaro AI lead. No new DMs (inbox unchanged; Ann Giroux still unread E2E). Activity log shows no new Novaro AI posts on Mar 31 after 4:13 PM search. Three welcome-member mentions today (6:17 PM, 2:56 PM, 9:04 AM) — all group admin posts, not responses. Cumulative totals unchanged: 18 groups, 18 posts live, 113 comments, 38 positive, 3 DMs, 12 interest signals.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
