@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-31T20:48:07Z",
+    "lastRun": "2026-03-31T21:37:21Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (4:48 PM ET Mar 31): 1,040 total connections. 181 pending sent requests — most recent batch (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen) sent ~7 hours ago (~9:48 AM ET). Connection accepted this cycle: Stefano Cardillo (SC Landscaping) — Vito followed up with a personalized message at 10:23 AM. Messaging inbox shows 8 unread; no new prospect replies or buying intent signals. Inbound only: Vincent Handugan (VA pitch, Mar 20, not a lead). 0 interest signals. Metrics unchanged from prior run; lastUpdated timestamp refreshed.",
+    "summary": "Scraped LinkedIn (5:37 PM ET Mar 31): 1,040 total connections (unchanged). 181 pending sent requests — most recent batch (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen) sent ~8 hours ago. No new connections accepted since prior run. Messaging inbox at 8 unread — no new prospect replies, no buying intent. Outbound threads visible to Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele, Michael Rose, Rich Iandoli, Stefano Cardillo (follow-up sent 10:23 AM). Only inbound: Vincent Handugan (VA pitch, Mar 20, not a lead). 2 pending inbound connection requests (Irfan Haider, Karamjit Singh). 0 interest signals. All metrics unchanged; lastUpdated timestamp refreshed.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
