@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-31T10:37:23Z",
+    "lastRun": "2026-03-31T11:36:51Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (6:37 AM ET Mar 31): 1,039 total connections (unchanged), 153 pending sent requests (most recent batch sent ~7 hours ago — same landscaping/electrical owner batch: Jacob Senoski, William Gonzalez, Bryan Kersey, Ricardo Gomez, Antwain Flowers, Garrett Lorenzen, Jeff Wingren, Jeremy Dickey, Tim Lee, Blair Anson), 0 new acceptances, 8 outreach messages sent (unchanged — Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele on Mar 25; Michael Rose, Rich Iandoli, Adam Quenneville earlier), 0 prospect replies, 0 interest signals. Unread filter shows 'No unread messages' — the (3) badge in tab title is LinkedIn system/sponsored messages only (Keri Ribardiere sponsored ad Mar 26, Vincent Handugan VA vendor pitch Mar 20). All metrics unchanged from prior run.",
+    "summary": "Scraped LinkedIn (7:36 AM ET Mar 31): 1,039 total connections (unchanged), 153 pending sent requests (most recent batch now 8 hours old — same landscaping/electrical owner batch: Jacob Senoski, William Gonzalez, Bryan Kersey, Ricardo Gomez, Antwain Flowers, Garrett Lorenzen, Jeff Wingren, Jeremy Dickey, Tim Lee, Blair Anson), 0 new acceptances, 8 outreach messages sent (unchanged), 0 prospect replies, 0 interest signals. Unread filter confirms 'No unread messages' — (3) badge is LinkedIn system/sponsored messages only. 21 incoming invitations visible on Grow page (not outreach targets). All metrics unchanged from prior run.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
