@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-03-31T08:16:36.000Z",
-    "status": "partial",
-    "summary": "Scraped Facebook (4:16 AM ET Mar 31). Totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. 16 unread notifications: welcome tags in Roofing Contractors, Painters Near Me, Plumbers Talk, Commercial Cleaning Support Group, COMMERCIAL CLEANERS; Cheryl Provost liked a photo; Ann Giroux accepted friend request (unread E2EE DM still). New reactions on last-night's posts: Window Cleaning Newbies (1L+1Love), Pro Window Cleaning (1Love), Pressure Washing LSA post (1Love), USA Car Detailing (1L+1Love) — 0 new comments on any Novaro AI posts. Michael James Johnson @everyone mention in HVAC Business Owners is unrelated (his own mastermind post). Junk Removal Winners still pending moderation (no View link). DM inbox: Brady Fellows, Byron Peabody, Anthony Cocchi (3d), Ann Giroux (unread E2EE) — no new threads.",
+    "lastRun": "2026-03-31T09:08:00.000Z",
+    "status": "success",
+    "summary": "Scraped Facebook (5:08 AM ET Mar 31). No new activity in 52 mins since last run. Totals unchanged: 113 comments, 38 positive, 2 DMs, 12 interest signals, 16 groups, 18 posts live. Notifications still at 16 unread (none new). DM inbox unchanged: Brady Fellows, Byron Peabody, Anthony Cocchi (3d ago), Ann Giroux (unread E2EE) — no new threads. Pressure Washing Business Owners and Window Cleaning Newbies posts confirmed live with no new comments. Junk Removal Winners still pending admin approval. All March 30 late-night posts (USA Car Detailing, Pressure Washing, Pro Window Cleaning, Window Cleaning Newbies) remain live. New friend accepts: Cheryl Provost (1d ago), Ann Giroux (21h ago).",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
