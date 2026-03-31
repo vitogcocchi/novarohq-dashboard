@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-03-31T13:19:43Z",
+    "lastRun": "2026-03-31T13:38:28Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (9:19 AM ET Mar 31): 1,039 total connections (unchanged), 182 pending sent requests (+29 since last run — new batch targeting window cleaning and auto detailing owners: Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen + more, sent ~16-26 min before scrape), 0 new acceptances, 8 outreach messages sent (unchanged), 0 prospect replies, 0 interest signals. Unread filter confirms 'No unread messages' — (1) badge is LinkedIn system/sponsored message only. 21 incoming invitations on Grow page unchanged. Today's total requests: 57 (28 earlier batch + 29 this batch).",
+    "summary": "Scraped LinkedIn (9:38 AM ET Mar 31): 1,039 total connections (unchanged), 182 pending sent requests (unchanged — most recent batch sent 34-43 min before scrape: Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen targeting window cleaning and auto detailing owners), 0 new acceptances, 8 outreach messages sent (unchanged), 0 prospect replies, 0 interest signals. Unread filter confirms 'No unread messages' — (2) badge is LinkedIn system/sponsored messages only. 21 incoming invitations on Grow page unchanged. Today's total requests remain 57.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
