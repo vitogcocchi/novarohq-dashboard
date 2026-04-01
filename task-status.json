@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-01T09:09:22.000Z",
+    "lastRun": "2026-04-01T10:08:32.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (5:09 AM ET Apr 1). No new activity since prior run (08:07 UTC). Notifications: same 2 unreads — 'Window Cleaning Business Owners has a new post' (now 5h) and 'Homeowners looking for Contractors and Remodelers' description change (a day ago). Additional notification: Car Detailing Business Owners group activity (22h, unrelated to Vito's posts). Photo tag notifications (Usman Aulakh 10h, Crystal Mc 14h, Eric Tower 17h) are welcome auto-tags predating last run. Messenger: Ann Giroux sole unread thread — same DM already counted. Checked Pressure Washing Business Owners post directly — 0 new comments. Activity log: most recent Vito action still Mar 31 at 6:17 PM (admin welcome mention in Junk Removal Owners), nothing new Apr 1. Cumulative totals unchanged: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}.",
+    "summary": "Scraped Facebook (6:08 AM ET Apr 1). No new activity since prior run (09:09 UTC). Notifications: same 2 unreads — 'Window Cleaning Business Owners has a new post' (now 6h, was 5h) and 'Homeowners looking for Contractors and Remodelers' description change (1d). Photo tag notifications (Usman Aulakh 11h, Crystal Mc 15h, Eric Tower 18h) — auto-welcome tags, already counted. Car Detailing Business Owners post (23h, unrelated). Messenger: Unread tab shows 'No unread chats' — Ann Giroux thread already counted. Activity log: most recent Vito action still Mar 31 at 6:17 PM (admin welcome mention in Junk Removal Owners), nothing new Apr 1. Cumulative totals unchanged: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
