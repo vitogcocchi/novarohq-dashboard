@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-01T14:13:11.000Z",
+    "lastRun": "2026-04-01T15:12:21.000Z",
     "status": "partial",
-    "summary": "Run at 10:13 AM ET Apr 1 (14:13 UTC). Facebook CAPTCHA checkpoint block persists — 'Confirm you're human' challenge appeared immediately on load. Human verification required; cannot bypass bot detection. Data unchanged from last successful scrape. Cumulative totals held at: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}. Manual login on your device required to clear checkpoint.",
+    "summary": "Run at 11:12 AM ET Apr 1 (15:12 UTC). Facebook CAPTCHA checkpoint block persists — 'Confirm you're human' challenge appeared immediately on load. Human verification required; cannot bypass bot detection. Data unchanged from last successful scrape. Cumulative totals held at: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}. Manual login on your device required to clear checkpoint.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
