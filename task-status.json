@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-01T12:53:48Z",
+    "lastRun": "2026-04-01T13:38:41Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:53 AM ET Apr 1): 217 pending sent requests (up from 181) — 37 new requests sent since last run, most recent batch sent ~5-6 min ago (Francisco Garcia, Brendan McGeer, Jennifer Porcello, Colin Hoffman, Kyle O'Connor, John Barron, Ryan Dzierzgowski, Heyssel Montenegro, Steve Wiater, Joshua Hoffmann + more). Total connections: 1,041 (up from 1,040). Carlos Amaya and 1 other accepted invitations today (cumulative accepted: 4). 4 unread messages. Vito sent 1 new message to Stefano Cardillo today at 8:16 AM ET (follow-up on LSA pitch). No new prospect replies with positive buying intent. Vincent Handugan inbound (VA counter-pitch, not a signal). messagesSent cumulative: 10.",
+    "summary": "Scraped LinkedIn (9:38 AM ET Apr 1): 216 pending sent requests (down 1 from 217 last run — 1 accepted). Total connections: 1,042 (up from 1,041, +1 this hour). Jennifer Porcello and 2 others accepted invitations today (cumulative accepted: 5). 0 unread messages (unread filter returned empty). No new prospect replies with positive buying intent. Vincent Handugan inbound from Mar 20 (VA sales pitch to Vito, not a buying signal). messagesSent cumulative: 10 (unchanged). interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
