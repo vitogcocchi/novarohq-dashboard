@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-01T04:37:36Z",
+    "lastRun": "2026-04-01T05:43:38Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (12:37 AM ET Apr 1): 1,041 total connections (+1 from last run). Stefano Cardillo (Owner/Lawn Care Specialist at SC Landscaping, Cranston RI) accepted the connection invite — confirmed on mynetwork/grow page. 181 pending sent requests unchanged — most recent batch of 10 still from ~15 hours ago (window cleaning + auto detailing: Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen). No new requests sent today. Messaging inbox still at 9 unread — no new replies from prospects. Outbound threads active with no responses: Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele, Michael Rose, Rich Iandoli, Stefano Cardillo. Only inbound: Vincent Handugan VA counter-pitch (Mar 20, not a buying signal). No new interest signals.",
+    "summary": "Scraped LinkedIn (1:43 AM ET Apr 1): 1,040 total connections (down 1 from prior run — likely a disconnect or display variance). 181 pending sent requests unchanged — most recent batch of 10 sent ~16 hours ago targeting window cleaning + auto detailing business owners (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen). No new requests sent today. Messaging inbox at 9 unread — no new replies from prospects since last run. Active outbound threads with no responses: Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele, Michael Rose, Rich Iandoli, Stefano Cardillo. Only inbound reply: Vincent Handugan VA counter-pitch (Mar 20, not a buying signal). No new interest signals.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
