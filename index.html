@@ -208,6 +208,7 @@ async function authCheck(){
     if(hex==='de72749cf0e0a644e639424d93068c6e6eda51bcbf3d2f9f11cb50ae5002fade'){
         document.getElementById('auth-gate').style.display='none';
         sessionStorage.setItem('novaro_auth','1');
+        loadLiveData();
         const modal=document.getElementById('intro-modal');
         modal.classList.add('show');
         document.getElementById('intro-video').play();
