@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-01T07:37:37Z",
+    "lastRun": "2026-04-01T08:37:45Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (3:37 AM ET Apr 1): No changes since last run (06:38 UTC). 1,040 connections, 181 pending sent requests — most recent batch sent ~19 hours ago (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen). Cumulative requestsAccepted still 3 (no new acceptances). Messaging inbox now shows 10 unread (up from 9) — new thread is Stefano Cardillo (outbound message sent Mar 31, no reply yet). No new inbound prospect replies. Active outbound threads with no responses: Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele, Michael Rose, Rich Iandoli. Only inbound: Vincent Handugan VA counter-pitch (Mar 20, not a buying signal). No new interest signals.",
+    "summary": "Scraped LinkedIn (4:37 AM ET Apr 1): Metrics unchanged from prior run (07:37 UTC). 1,040 total connections. 181 pending sent requests — most recent batch still 19 hours ago (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen + more). Grow page shows Stefano Cardillo accepted invitation (notification visible, connections count stable at 1,040 — likely already counted). requestsAccepted cumulative: 3. 10 unread messages — all outbound threads with no new prospect replies. Only inbound: Vincent Handugan VA counter-pitch (Mar 20, not a buying signal). No positive buying intent signals. Timestamp updated only.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
