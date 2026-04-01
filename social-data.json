@@ -1,12 +1,12 @@
 {
   "facebook": {
-    "lastUpdated": "2026-04-01T03:58:39.000Z",
+    "lastUpdated": "2026-04-01T04:17:05.000Z",
     "groups": 18,
     "postsLive": 18,
-    "comments": 113,
-    "positiveComments": 38,
-    "dmsReceived": 3,
-    "interestSignals": 12,
+    "comments": 116,
+    "positiveComments": 39,
+    "dmsReceived": 4,
+    "interestSignals": 13,
     "daily": [
       {"date": "2026-03-23", "groups": 0, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
       {"date": "2026-03-24", "groups": 0, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
@@ -16,7 +16,8 @@
       {"date": "2026-03-28", "groups": 16, "posts": 12, "comments": 3, "positive": 1, "dms": 0, "interest": 1},
       {"date": "2026-03-29", "groups": 16, "posts": 0, "comments": 87, "positive": 31, "dms": 1, "interest": 6},
       {"date": "2026-03-30", "groups": 16, "posts": 2, "comments": 8, "positive": 4, "dms": 0, "interest": 4},
-      {"date": "2026-03-31", "groups": 18, "posts": 4, "comments": 2, "positive": 1, "dms": 2, "interest": 1}
+      {"date": "2026-03-31", "groups": 18, "posts": 4, "comments": 2, "positive": 1, "dms": 2, "interest": 1},
+      {"date": "2026-04-01", "groups": 18, "posts": 0, "comments": 3, "positive": 1, "dms": 1, "interest": 1}
     ]
   },
   "linkedin": {
