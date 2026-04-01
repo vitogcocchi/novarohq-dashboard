@@ -764,25 +764,28 @@ function tick(){
 tick();setInterval(tick,1000);
 
 // ===== LIVE DATA FETCH =====
+const GH_RAW = 'https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/';
 async function loadLiveData(){
+    const t = Date.now();
+    // Instantly
     try {
-        const res = await fetch('/.netlify/functions/api');
-        if(!res.ok) throw new Error('API returned '+res.status);
-        const data = await res.json();
-        if(data.instantly) populateInstantly(data.instantly);
-        if(data.twilio) populateTwilio(data.twilio);
-        console.log('Dashboard data loaded at', data.timestamp);
-    } catch(err) {
-        console.warn('Live data fetch failed:', err.message);
-    }
-    // Also load social data + task status
+        const res = await fetch(GH_RAW+'instantly-data.json?t='+t);
+        if(res.ok){ const d = await res.json(); populateInstantly(d); }
+    } catch(e){ console.warn('Instantly data load failed:', e.message); }
+    // Twilio
     try {
-        const sRes = await fetch('https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/social-data.json?t='+Date.now());
-        if(sRes.ok){ const sd = await sRes.json(); populateSocial(sd); }
+        const res = await fetch(GH_RAW+'twilio-data.json?t='+t);
+        if(res.ok){ const d = await res.json(); if(!d.error) populateTwilio(d); }
+    } catch(e){ console.warn('Twilio data load failed:', e.message); }
+    // Social (Facebook + LinkedIn)
+    try {
+        const res = await fetch(GH_RAW+'social-data.json?t='+t);
+        if(res.ok){ const d = await res.json(); populateSocial(d); }
     } catch(e){ console.warn('Social data load failed:', e.message); }
+    // Task status
     try {
-        const tRes = await fetch('https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/task-status.json?t='+Date.now());
-        if(tRes.ok){ const ts = await tRes.json(); populateTasks(ts); }
+        const res = await fetch(GH_RAW+'task-status.json?t='+t);
+        if(res.ok){ const d = await res.json(); populateTasks(d); }
     } catch(e){ console.warn('Task status load failed:', e.message); }
 }
 
