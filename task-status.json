@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-01T13:38:41Z",
+    "lastRun": "2026-04-01T14:37:54Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (9:38 AM ET Apr 1): 216 pending sent requests (down 1 from 217 last run — 1 accepted). Total connections: 1,042 (up from 1,041, +1 this hour). Jennifer Porcello and 2 others accepted invitations today (cumulative accepted: 5). 0 unread messages (unread filter returned empty). No new prospect replies with positive buying intent. Vincent Handugan inbound from Mar 20 (VA sales pitch to Vito, not a buying signal). messagesSent cumulative: 10 (unchanged). interestSignals: 0.",
+    "summary": "Scraped LinkedIn (10:37 AM ET Apr 1): 214 pending sent requests (down 2 from 216 last run — 1 accepted, 1 declined/expired). Total connections: 1,043 (up from 1,042, +1 this run). Kyle O'Connor and 4 others accepted invitations today (cumulative accepted: 6). Most recent invite batch sent 1 hour ago. 5 unread messages in inbox. No new prospect replies with positive buying intent. Outreach to Stefano Cardillo (SC Landscaping) active today — 2 messages sent, no reply yet. Vincent Handugan inbound from Mar 20 (VA sales pitch to Vito, not a buying signal). messagesSent cumulative: 10 (unchanged). interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
