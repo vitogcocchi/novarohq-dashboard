@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-01T10:08:56.000Z",
-    "status": "success",
-    "summary": "Scraped Facebook (6:08 AM ET Apr 1). No new activity since prior run (09:09 UTC). Notifications: same 2 unreads — 'Window Cleaning Business Owners has a new post' (now 6h, was 5h) and 'Homeowners looking for Contractors and Remodelers' description change (1d). Photo tag notifications (Usman Aulakh 11h, Crystal Mc 15h, Eric Tower 18h) — auto-welcome tags, already counted. Car Detailing Business Owners post (23h, unrelated). Messenger: Unread tab shows 'No unread chats' — Ann Giroux thread already counted. Activity log: most recent Vito action still Mar 31 at 6:17 PM (admin welcome mention in Junk Removal Owners), nothing new Apr 1. Cumulative totals unchanged: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}.",
+    "lastRun": "2026-04-01T11:12:37.000Z",
+    "status": "partial",
+    "summary": "Run at 7:12 AM ET Apr 1 (11:12 UTC). Facebook blocked by human verification checkpoint — CAPTCHA/bot detection triggered on login, could not load feed, notifications, or Messenger. Data unchanged from last successful run (10:08 UTC). Cumulative totals held at: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}. Manual login may be required to clear the checkpoint before next automated run.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
