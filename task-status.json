@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-01T12:51:45.000Z",
+    "lastRun": "2026-04-01T13:10:37.000Z",
     "status": "partial",
-    "summary": "Run at 8:51 AM ET Apr 1 (12:51 UTC). Facebook blocked by human verification checkpoint — CAPTCHA/bot detection triggered again (same as 11:12 UTC run). Cannot access feed, notifications, or Messenger without manual login. Data unchanged. Cumulative totals held at: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}. Manual login required to clear checkpoint.",
+    "summary": "Run at 9:10 AM ET Apr 1 (13:10 UTC). Facebook checkpoint block persists — human verification required (same issue as all prior runs today). Cannot access feed, notifications, or Messenger without manual clearance. Data unchanged. Cumulative totals held at: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}. Manual login on your device required to clear checkpoint.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
