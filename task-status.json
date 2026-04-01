@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-01T06:08:00.000Z",
+    "lastRun": "2026-04-01T07:10:41.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (2:08 AM ET Apr 1). No new activity since prior run (05:08 UTC). Checked notifications — unread include friend_confirmed (Cheryl Provost, Ann Giroux — both already counted), feedback_reaction_generic (Cheryl liked photo), group_activity (others' posts in Window Cleaning Business Owners, Junk Removal Owners), group_description_change, group_post_mention (admin welcome tags only), friend_suggestion. Zero comment notifications on Vito's Novaro AI posts. Messenger: only Ann Giroux unread (same DM, already counted). Activity log shows nothing new on Apr 1 — most recent Vito action is Mar 31 admin tag. Spot-checked USA Car Detailing Services post — no new comments. Cumulative totals unchanged: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}.",
+    "summary": "Scraped Facebook (3:10 AM ET Apr 1). No new activity since prior run (06:08 UTC). Notifications: only new unread is 'Window Cleaning Business Owners has a new post' (3h, someone else's post) and group description change for 'Homeowners looking for Contractors and Remodelers' — zero comment notifications on Vito's Novaro AI posts. All other unreads (admin welcome tags, Cheryl likes photo, Ann/Cheryl friend confirmations, Sean Baker acceptance) predate last run. Messenger: Ann Giroux is sole unread thread — same DM already counted. Activity log: most recent Vito action is Mar 31 at 6:17 PM (admin welcome mention), nothing on Apr 1. Cumulative totals unchanged: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
