@@ -21,15 +21,14 @@
     ]
   },
   "linkedin": {
-    "lastUpdated": "2026-04-01T11:37:32Z",
-    "requestsSent": 181,
-    "requestsAccepted": 3,
-    "totalConnections": 1040,
-    "messagesSent": 9,
+    "lastUpdated": "2026-04-01T12:53:48Z",
+    "requestsSent": 217,
+    "requestsAccepted": 4,
+    "totalConnections": 1041,
+    "messagesSent": 10,
     "replies": 1,
     "interestSignals": 0,
     "daily": [
-      {"date": "2026-03-23", "requests": 0, "accepted": 5, "messages": 0, "replies": 0, "interest": 0},
       {"date": "2026-03-24", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
       {"date": "2026-03-25", "requests": 125, "accepted": 0, "messages": 5, "replies": 0, "interest": 0},
       {"date": "2026-03-26", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
@@ -38,7 +37,7 @@
       {"date": "2026-03-29", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
       {"date": "2026-03-30", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
       {"date": "2026-03-31", "requests": 57, "accepted": 1, "messages": 9, "replies": 1, "interest": 0},
-      {"date": "2026-04-01", "requests": 0, "accepted": 2, "messages": 0, "replies": 0, "interest": 0}
+      {"date": "2026-04-01", "requests": 37, "accepted": 3, "messages": 1, "replies": 0, "interest": 0}
     ]
   }
 }
