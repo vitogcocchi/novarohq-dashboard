@@ -333,6 +333,46 @@ function closeIntro(){
             </div>
         </div>
     </div>
+    <!-- Daily Activity Log -->
+    <div class="ds" style="margin-bottom:24px">
+        <div class="dh">
+            <div class="dt"><span class="ic">&#128197;</span> DAILY ACTIVITY LOG</div>
+            <span class="db">ALL CHANNELS // LAST 10 DAYS</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+            <div>
+                <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#128218; FACEBOOK GROUPS</div>
+                <table>
+                    <thead><tr><th>Date</th><th>Posts</th><th>Comments</th><th>Positive</th><th>DMs</th><th>Signals</th></tr></thead>
+                    <tbody id="ov-fb-daily"><tr><td colspan="6" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
+                </table>
+            </div>
+            <div>
+                <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#128188; LINKEDIN</div>
+                <table>
+                    <thead><tr><th>Date</th><th>Requests</th><th>Accepted</th><th>Messages</th><th>Replies</th></tr></thead>
+                    <tbody id="ov-li-daily"><tr><td colspan="5" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
+                </table>
+            </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+            <div>
+                <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#128241; SMS CAMPAIGN</div>
+                <table>
+                    <thead><tr><th>Date</th><th>Sent</th><th>Replies</th><th>Msg 2</th><th>Msg 3</th><th>Stops</th></tr></thead>
+                    <tbody id="ov-sms-daily"><tr><td colspan="6" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
+                </table>
+            </div>
+            <div>
+                <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#9993; INSTANTLY EMAIL</div>
+                <table>
+                    <thead><tr><th>Date</th><th>Sent</th><th>Opens</th><th>Replies</th><th>Positive</th></tr></thead>
+                    <tbody id="ov-ins-daily"><tr><td colspan="5" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <!-- Quick pipeline preview -->
     <div class="ds">
         <div class="dh">
@@ -790,6 +830,11 @@ async function loadLiveData(){
     } catch(e){ console.warn('Task status load failed:', e.message); }
 }
 
+function fmtDate(dateStr){
+    const d = new Date(dateStr + 'T12:00:00');
+    return d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+}
+
 function populateInstantly(d){
     const ov = d.overview || {};
     const sent = ov.emails_sent_count || 0;
@@ -838,6 +883,22 @@ function populateInstantly(d){
         }).join('');
     }
 
+    // Homepage daily breakdown - Instantly
+    const ovIns = document.getElementById('ov-ins-daily');
+    if(ovIns && d.daily && d.daily.length > 0){
+        const rows = [...d.daily].reverse().slice(0,10);
+        ovIns.innerHTML = rows.map(r => {
+            const active = r.sent>0||r.unique_replies>0;
+            return `<tr${active?' style="color:var(--t1)"':''}>
+                <td class="td-h">${fmtDate(r.date)}</td>
+                <td>${r.sent||0}</td>
+                <td>${r.unique_opened||0}</td>
+                <td${r.unique_replies>0?' style="color:var(--cyan);font-weight:600"':''}>${r.unique_replies||0}</td>
+                <td>${r.unique_opportunities||0}</td>
+            </tr>`;
+        }).join('');
+    }
+
     // Campaign table in morning debrief
     if(d.campaigns && d.campaigns.length > 0){
         const campTbody = document.querySelector('#page-debrief .camp-table tbody');
@@ -868,6 +929,31 @@ function populateTwilio(d){
         tbody.innerHTML = d.daily.map(row =>
             `<tr><td class="td-h">${row.date}</td><td>${row.sent}</td><td>${row.failed}</td><td>--</td><td>--</td><td>--</td><td>${row.delivered} delivered</td></tr>`
         ).join('');
+    }
+
+    // Homepage daily breakdown - SMS
+    const ovSms = document.getElementById('ov-sms-daily');
+    if(ovSms && d.daily && d.daily.length > 0){
+        const rows = [...d.daily].reverse().slice(0,10);
+        ovSms.innerHTML = rows.map(r => {
+            const active = r.sent>0;
+            return `<tr${active?' style="color:var(--t1)"':''}>
+                <td class="td-h">${fmtDate(r.date)}</td>
+                <td>${r.sent||0}</td>
+                <td${r.replies>0?' style="color:var(--cyan);font-weight:600"':''}>${r.replies||0}</td>
+                <td>${r.msg2||0}</td>
+                <td>${r.msg3||0}</td>
+                <td>${r.stops||0}</td>
+            </tr>`;
+        }).join('');
+    } else if(ovSms && d.overview && d.overview.sent){
+        // Fallback: show single summary row if no daily breakdown
+        ovSms.innerHTML = `<tr style="color:var(--t1)">
+            <td class="td-h">Total</td>
+            <td>${d.overview.sent||0}</td>
+            <td>${d.overview.replies||0}</td>
+            <td>--</td><td>--</td><td>${d.overview.optouts||0}</td>
+        </tr>`;
     }
 }
 
@@ -938,6 +1024,39 @@ function populateSocial(sd){
         // Progress page
         const pipeLiLast = document.getElementById('pipe-li-last');
         if(pipeLiLast) pipeLiLast.textContent = 'Last: ' + new Date(li.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
+    }
+
+    // ── Homepage Daily Breakdown ──────────────────────────────
+    // Facebook
+    const ovFb = document.getElementById('ov-fb-daily');
+    if(ovFb && sd.facebook && sd.facebook.daily){
+        const rows = [...sd.facebook.daily].reverse().slice(0,10);
+        ovFb.innerHTML = rows.map(r => {
+            const active = r.posts>0||r.comments>0||r.dms>0||r.interest>0;
+            return `<tr${active?' style="color:var(--t1)"':''}>
+                <td class="td-h">${fmtDate(r.date)}</td>
+                <td>${r.posts||0}</td>
+                <td>${r.comments||0}</td>
+                <td>${r.positive||0}</td>
+                <td>${r.dms||0}</td>
+                <td${r.interest>0?' style="color:var(--cyan);font-weight:600"':''}>${r.interest||0}</td>
+            </tr>`;
+        }).join('');
+    }
+    // LinkedIn
+    const ovLi = document.getElementById('ov-li-daily');
+    if(ovLi && sd.linkedin && sd.linkedin.daily){
+        const rows = [...sd.linkedin.daily].reverse().slice(0,10);
+        ovLi.innerHTML = rows.map(r => {
+            const active = r.requests>0||r.accepted>0||r.messages>0||r.replies>0;
+            return `<tr${active?' style="color:var(--t1)"':''}>
+                <td class="td-h">${fmtDate(r.date)}</td>
+                <td>${r.requests||0}</td>
+                <td>${r.accepted||0}</td>
+                <td>${r.messages||0}</td>
+                <td${r.replies>0?' style="color:var(--cyan);font-weight:600"':''}>${r.replies||0}</td>
+            </tr>`;
+        }).join('');
     }
 }
 
