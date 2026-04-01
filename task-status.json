@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-01T03:58:39.000Z",
+    "lastRun": "2026-04-01T04:17:05.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (11:58 PM ET Mar 31). No new activity since prior run at 7:48 PM ET. Notification count: 9 unread — only new one is 'Window Cleaning Business Owners has a new post' (36m ago, unrelated group activity). No new comments on Novaro AI posts. Messenger inbox unchanged — Brady Fellows, Byron Peabody, Anthony Cocchi, Ann Giroux (still 1 unread E2E message from Ann Giroux). Activity log shows last Mar 31 posts were group admin welcome mentions only (Junk Removal Owners admin welcome at 6:17 PM). Today-section notifications: Eric Tower, Usman Aulakh, Crystal Mc tags are all admin welcome posts. Cumulative totals unchanged: 18 groups, 18 posts live, 113 comments, 38 positive, 3 DMs, 12 interest signals.",
+    "summary": "Scraped Facebook (12:17 AM ET Apr 1). No new posts by Vito today — last posts were Mar 30 in 5 groups. Activity log shows Mar 31 had 3 admin welcome-mention posts (not Novaro AI outreach). Notifications: 9 unread, 3 new group_activity on Novaro AI posts (window cleaning business owners, group 835977752480912, group 1308245187242069). 4 group_post_mention notifications are admin welcome tags (not outreach responses). Messenger: 1 new unread DM from Ann Giroux (E2E encrypted, confirmed new interest signal). Counted +3 comments, +1 positive, +1 DM, +1 interest signal. Updated daily entry for Apr 1: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}. Cumulative totals: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
