@@ -1,0 +1,24 @@
+{
+  "lastUpdated": "2026-04-01T03:49:52Z",
+  "overview": {
+    "sent": 187,
+    "delivered": 30,
+    "failed": 157,
+    "optouts": 0,
+    "inbound": 7
+  },
+  "daily": [
+    {
+      "date": "Tue, 31 Ma",
+      "sent": 100,
+      "delivered": 13,
+      "failed": 87
+    },
+    {
+      "date": "Sun, 29 Ma",
+      "sent": 87,
+      "delivered": 17,
+      "failed": 70
+    }
+  ]
+}
