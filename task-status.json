@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-01T05:08:00.000Z",
+    "lastRun": "2026-04-01T06:08:00.000Z",
     "status": "success",
-    "summary": "Scraped Facebook (1:08 AM ET Apr 1). No new activity since previous run (04:17 UTC). Checked notifications — all unread are friend_confirmed, group_activity (others' posts in Vito's groups), group_post_mention (admin welcome tags), and feedback_reaction_generic. Zero comment notifications on Novaro AI posts. Messenger shows 1 unread (Ann Giroux, same DM from previous run, already counted). Verified Vito's post in USA Car Detailing Services is live and intact. No new posts by Vito today. Cumulative totals unchanged: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}.",
+    "summary": "Scraped Facebook (2:08 AM ET Apr 1). No new activity since prior run (05:08 UTC). Checked notifications — unread include friend_confirmed (Cheryl Provost, Ann Giroux — both already counted), feedback_reaction_generic (Cheryl liked photo), group_activity (others' posts in Window Cleaning Business Owners, Junk Removal Owners), group_description_change, group_post_mention (admin welcome tags only), friend_suggestion. Zero comment notifications on Vito's Novaro AI posts. Messenger: only Ann Giroux unread (same DM, already counted). Activity log shows nothing new on Apr 1 — most recent Vito action is Mar 31 admin tag. Spot-checked USA Car Detailing Services post — no new comments. Cumulative totals unchanged: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 1 entry unchanged: {groups:18, posts:0, comments:3, positive:1, dms:1, interest:1}.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
