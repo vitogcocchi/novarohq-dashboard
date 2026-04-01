@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-01T10:37:44Z",
+    "lastRun": "2026-04-01T11:37:32Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (6:37 AM ET Apr 1): Metrics unchanged from prior run (09:37 UTC). 1,040 total connections. 181 pending sent requests — most recent batch now 21 hours ago (Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen + more — window cleaning and auto detailing prospects). No new acceptances this run — requestsAccepted cumulative holds at 3. 10 unread messages in inbox — all outbound threads with no new prospect replies (Stefano Cardillo Mar 31, Colin Crump/Tyler Grodsky/David Kozak/Jason Stahlberg/William DeMichele Mar 25, Michael Rose Mar 19, Rich Iandoli Mar 18). Only inbound: Vincent Handugan VA counter-pitch (Mar 20, not a buying signal). No positive buying intent signals. Timestamp updated only.",
+    "summary": "Scraped LinkedIn (7:37 AM ET Apr 1): Metrics unchanged from prior run (10:37 UTC). 1,040 total connections. 181 pending sent requests — most recent batch sent 22 hours ago (window cleaning and auto detailing prospects: Jim Black, David Sconza, Justin Walsh, Patrick Winterstein, Aidan Westphalen, Gavin Bilby, Karter Howard, Eli Nash, Jackson Manning, Rex Owen + more). requestsAccepted cumulative: 3. 10 unread messages — all outbound with no new prospect replies visible (Stefano Cardillo Mar 31, Colin Crump/Tyler Grodsky/David Kozak/Jason Stahlberg/William DeMichele Mar 25, Michael Rose Mar 19, Rich Iandoli Mar 18). Only inbound: Vincent Handugan VA counter-pitch Mar 20 (not a buying signal). No positive buying intent signals. Timestamp updated only.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
