@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-01T15:37:59Z",
+    "lastRun": "2026-04-02T04:15:26Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (11:37 AM ET Apr 1): 214 pending sent requests (unchanged). Total connections: 1,043 (unchanged). Kyle O'Connor and 4 others accepted invitations today (cumulative accepted: 6, unchanged). Most recent invite batch still sent 2 hours ago. 5 unread messages in inbox. No new prospect replies with positive buying intent. Outreach to Stefano Cardillo (SC Landscaping) active today — follow-up sent at 8:16 AM, no reply yet. Vincent Handugan inbound (VA sales pitch, not a buying signal). messagesSent cumulative: 10 (unchanged). interestSignals: 0.",
+    "summary": "Scraped LinkedIn (12:15 AM ET Apr 2): 210 pending sent requests (down from 214 — 4 accepted/withdrew). Total connections: 1,046 (up 3 from 1,043). David Sloan and 8 others recently accepted invitations; cumulative accepted updated to 9. Most recent invite batch sent ~15 hours ago (approx 1 PM UTC Apr 1, 10 names visible). 8 unread messages in inbox. No new prospect replies with positive buying intent — outreach threads to Stefano Cardillo, Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele all awaiting reply. Vincent Handugan inbound still a VA sales pitch, not a buying signal. messagesSent cumulative: 10 (unchanged). interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
