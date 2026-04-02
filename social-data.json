@@ -20,10 +20,10 @@
     ]
   },
   "linkedin": {
-    "lastUpdated": "2026-04-02T19:39:31Z",
-    "requestsSent": 230,
+    "lastUpdated": "2026-04-02T23:39:08Z",
+    "requestsSent": 229,
     "requestsAccepted": 14,
-    "totalConnections": 1050,
+    "totalConnections": 1051,
     "messagesSent": 11,
     "replies": 1,
     "interestSignals": 0,
@@ -34,7 +34,7 @@
       {"date": "2026-03-30", "requests": 0, "accepted": 0, "messages": 0, "replies": 0, "interest": 0},
       {"date": "2026-03-31", "requests": 57, "accepted": 1, "messages": 9, "replies": 1, "interest": 0},
       {"date": "2026-04-01", "requests": 37, "accepted": 8, "messages": 1, "replies": 0, "interest": 0},
-      {"date": "2026-04-02", "requests": 23, "accepted": 4, "messages": 0, "replies": 0, "interest": 0}
+      {"date": "2026-04-02", "requests": 23, "accepted": 5, "messages": 0, "replies": 0, "interest": 0}
     ]
   }
 }
