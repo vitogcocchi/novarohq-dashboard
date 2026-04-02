@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-02T10:06:00.000Z",
-    "status": "partial",
-    "summary": "Run at 6:06 AM ET Apr 2 (10:06 UTC). Facebook checkpoint block persists — 'Confirm your identity' video selfie challenge appeared on load. Human verification required; cannot bypass. Data unchanged from last successful scrape. Cumulative totals held at: 18 groups, 18 posts live, 116 comments, 39 positive, 4 DMs, 13 interest signals. Daily Apr 2 entry added with zero activity. No Notion leads logged this run. Manual login on your device required to clear checkpoint.",
+    "lastRun": "2026-04-02T15:06:00.000Z",
+    "status": "blocked",
+    "summary": "Run at 11:06 AM ET Apr 2 (15:06 UTC). Facebook account SUSPENDED — appeal submitted April 2, 2026. Screen reads: 'Your account is not visible to people on Facebook, and you can't use it.' Account is under review by Facebook. No data collection possible. All cumulative totals unchanged: 18 groups, 116 comments, 39 positive, 4 DMs, 13 interest signals. No Notion leads logged. Action required: Vito must resolve the Facebook account appeal before scraper can resume.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
