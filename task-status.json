@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-02T14:39:57Z",
+    "lastRun": "2026-04-02T15:38:34Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (10:39 AM ET Apr 2): 230 pending sent requests (down 1 from last run — 1 additional acceptance since 9:39 AM run). Most recent outreach batch targeted landscaping businesses with Google LSA optimization pitch (Ricky S./Sandlin's Landscaping, Shawn Sazama/American Landscapes, EV Landscape Services, Sean Crosby/In the Weeds Landscaping, Green Apple Landscaping). Total connections: 1,050 (unchanged). New connections April 2: Daniel Szender (Sure Lock & Key LLC), Aaron McCollum (Construction Executive), Pat Picaud (Multi-family/commercial construction director), Mitchell Kilkenny (Golf Course Superintendent/Clubs of Cordillera Ranch). No unread messages in personal inbox. 0 genuine prospect replies, 0 interest signals. Only inbound message was Vincent Handugan pitching a VA service (not buying intent). requestsSent: 230, requestsAccepted: 14, totalConnections: 1050, messagesSent: 11, replies: 1, interestSignals: 0.",
+    "summary": "Scraped LinkedIn (11:38 AM ET Apr 2): Metrics unchanged from previous run. 230 pending sent requests — most recent batch sent ~2 hours ago (targeting landscaping businesses: Ricky S./Sandlin's Landscaping, Shawn Sazama/American Landscapes, EV Landscape Services, Sean Crosby/In the Weeds, Green Apple Landscaping). Total connections: 1,050 (stable). New connections this week (Apr 1-2): 12 total — Apr 2: Daniel Szender (Sure Lock & Key), Aaron McCollum (Construction Executive), Pat Picaud (Multi-family/commercial construction), Mitchell Kilkenny (Golf Course Superintendent); Apr 1: David Sloan (Sloan Mechanical), John Barron (The Fearn Group), Michael Welch (FreedomForm Concrete), Abraham Palacios (Moss & Associates), Kyle O'Connor (student/construction), Kelly Kenter (Sitelines Inc.), Jennifer Porcello (Ops Manager), Carlos Amaya (Varsity Plumbing & Heating). No unread messages. 0 replies, 0 interest signals. requestsSent: 230, requestsAccepted: 14, totalConnections: 1050, messagesSent: 11, replies: 1, interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
