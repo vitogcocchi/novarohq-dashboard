@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-02T12:39:02Z",
+    "lastRun": "2026-04-02T13:39:59Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:39 AM ET Apr 2): 221 pending sent requests (up 13 from last run — new outreach batch sent today targeting electrician business owners: Paul Santellana, Cody Landry sr, Sergey Tsvirov, James McClain, Gregg Baldus and others). Total connections: 1,048 (unchanged). New connection since last run: Mitchell Kilkenny (Assistant Golf Course Superintendent, Connected April 2). No unread messages, 0 new prospect replies, 0 interest signals. requestsSent: 221, requestsAccepted: 11, totalConnections: 1048, messagesSent: 11, replies: 1, interestSignals: 0.",
+    "summary": "Scraped LinkedIn (9:39 AM ET Apr 2): 231 pending sent requests (up 10 from last run — new outreach batch sent ~50 min ago targeting landscaping businesses: Ricky S./Sandlin's Landscaping, Shawn Sazama/American Landscapes, EV Landscape Services, Sean Crosby/In the Weeds Landscaping, Green Apple Landscaping and others). Total connections: 1,050 (up 2 since last run). New connections today: Daniel Szender (Sure Lock & Key LLC), Aaron McCollum (Construction Executive), Pat Picaud (Multi-family/commercial construction director) — all April 2. No unread messages in main inbox (3 unread are page inboxes: LinkedUp, Clear View, Cocchi Media). 0 genuine prospect replies, 0 interest signals. requestsSent: 231, requestsAccepted: 13, totalConnections: 1050, messagesSent: 11, replies: 1, interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
