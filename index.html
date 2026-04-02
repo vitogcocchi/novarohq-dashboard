@@ -661,16 +661,16 @@ function closeIntro(){
 
     <!-- REGISTRATION NOTICE BANNER -->
     <div class="twilio-notice" id="twilio-reg-banner">
-        <div class="tn-icon">⚠️</div>
+        <div class="tn-icon" id="twilio-banner-icon">⚠️</div>
         <div class="tn-body">
-            <div class="tn-title">TOLL-FREE REGISTRATION PENDING</div>
-            <div class="tn-text">
-                <strong>+1 (833) 912-5998</strong> — Toll-free verification submitted to Twilio, currently under review.<br>
-                Active sending number <strong>+1 (413) 610-3724</strong> is live and A2P registered. Keep sends ≤ 100/day until A2P campaign status moves to Approved.<br>
-                Morning brief checks Twilio status daily and will auto-clear this once both numbers are fully registered.
+            <div class="tn-title" id="twilio-banner-title">TWILIO REGISTRATION PENDING</div>
+            <div class="tn-text" id="twilio-banner-text">
+                <strong>+1 (833) 912-5998</strong> — Toll-free verification submitted, currently under review.<br>
+                <strong>+1 (413) 610-3724</strong> — A2P 10DLC campaign submitted, currently under review.<br>
+                Both numbers blocked until approved. Dashboard checks status on every refresh.
             </div>
         </div>
-        <div class="tn-badge">⏳ PENDING</div>
+        <div class="tn-badge" id="twilio-banner-badge">⏳ PENDING</div>
     </div>
 
     <!-- STAT BUBBLES -->
@@ -693,16 +693,16 @@ function closeIntro(){
                 <tr>
                     <td class="td-h">+1 (413) 610-3724</td>
                     <td>Local 10DLC</td>
-                    <td><span class="pill active">LIVE</span></td>
+                    <td id="a2p-status-cell"><span class="pill paused">PENDING REVIEW</span></td>
                     <td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">Low Volume Mixed A2P</td>
-                    <td>Active sending — 100/day cap</td>
+                    <td id="a2p-role-cell">Awaiting TCR approval (1–3 days)</td>
                 </tr>
                 <tr>
                     <td>+1 (833) 912-5998</td>
                     <td>Toll-Free</td>
-                    <td><span class="pill paused">PENDING</span></td>
+                    <td id="tf-status-cell"><span class="pill paused">PENDING REVIEW</span></td>
                     <td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">Toll-Free Verification</td>
-                    <td>Awaiting approval</td>
+                    <td id="tf-role-cell">Awaiting Twilio review (3–7 days)</td>
                 </tr>
             </tbody>
         </table>
