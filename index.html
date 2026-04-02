@@ -152,6 +152,17 @@
         .twilio-notice .tn-text{font-family:'Share Tech Mono',monospace;font-size:12px;color:#c8a060;line-height:1.6}
         .twilio-notice .tn-badge{font-family:'Share Tech Mono',monospace;font-size:10px;padding:3px 10px;border-radius:6px;background:rgba(255,170,0,.12);color:var(--warn);border:1px solid rgba(255,170,0,.25);white-space:nowrap}
 
+        /* CONVERSION FUNNEL */
+        .fn-num{font-family:'Orbitron',sans-serif;font-size:26px;font-weight:700;color:var(--cyan);line-height:1}
+        .fn-label{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--t3);margin-top:4px}
+        .fn-rate{font-family:'Share Tech Mono',monospace;font-size:10px;margin-top:6px}
+        .fn-ch{background:rgba(0,212,255,0.03);border:1px solid var(--bdr);border-radius:12px;padding:16px}
+        .fn-ch-title{font-family:'Orbitron',sans-serif;font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)}
+        .fn-ch-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;color:var(--t2)}
+        .fn-ch-row span:last-child{font-family:'Share Tech Mono',monospace;color:var(--t1)}
+        .fn-ch-win span:last-child{color:var(--ok);font-weight:600}
+        .fn-ch-row:last-child{border-bottom:none}
+
         /* SMS STATS */
         .sms-seq{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
         .sms-seq-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px;text-align:center;backdrop-filter:blur(10px)}
@@ -369,6 +380,86 @@ function closeIntro(){
                     <thead><tr><th>Date</th><th>Sent</th><th>Opens</th><th>Replies</th><th>Positive</th></tr></thead>
                     <tbody id="ov-ins-daily"><tr><td colspan="5" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conversion Funnel -->
+    <div class="ds" style="margin-bottom:24px">
+        <div class="dh">
+            <div class="dt"><span class="ic">&#127875;</span> CONVERSION FUNNEL</div>
+            <span class="db" id="funnel-updated">ALL CHANNELS</span>
+        </div>
+        <!-- Funnel stages -->
+        <div style="display:flex;align-items:stretch;gap:0;margin-bottom:24px;overflow:hidden;border-radius:12px;border:1px solid var(--bdr)">
+            <div class="fn-stage" id="fn-new" style="flex:1;text-align:center;padding:20px 12px;background:rgba(0,212,255,0.07);border-right:1px solid var(--bdr)">
+                <div style="font-size:22px;margin-bottom:4px">&#128278;</div>
+                <div class="fn-num" id="fn-num-new">0</div>
+                <div class="fn-label">NEW LEADS</div>
+                <div class="fn-rate" id="fn-rate-new" style="color:var(--t3)">—</div>
+            </div>
+            <div style="display:flex;align-items:center;padding:0 4px;color:var(--t3);font-size:18px">&#8250;</div>
+            <div class="fn-stage" style="flex:1;text-align:center;padding:20px 12px;background:rgba(255,170,0,0.05);border-right:1px solid var(--bdr)">
+                <div style="font-size:22px;margin-bottom:4px">&#128172;</div>
+                <div class="fn-num" id="fn-num-dm">0</div>
+                <div class="fn-label">DM SENT</div>
+                <div class="fn-rate" id="fn-rate-dm" style="color:var(--t3)">—</div>
+            </div>
+            <div style="display:flex;align-items:center;padding:0 4px;color:var(--t3);font-size:18px">&#8250;</div>
+            <div class="fn-stage" style="flex:1;text-align:center;padding:20px 12px;background:rgba(255,170,0,0.07);border-right:1px solid var(--bdr)">
+                <div style="font-size:22px;margin-bottom:4px">&#128226;</div>
+                <div class="fn-num" id="fn-num-replied">0</div>
+                <div class="fn-label">REPLIED</div>
+                <div class="fn-rate" id="fn-rate-replied" style="color:var(--t3)">—</div>
+            </div>
+            <div style="display:flex;align-items:center;padding:0 4px;color:var(--t3);font-size:18px">&#8250;</div>
+            <div class="fn-stage" style="flex:1;text-align:center;padding:20px 12px;background:rgba(147,51,234,0.07);border-right:1px solid var(--bdr)">
+                <div style="font-size:22px;margin-bottom:4px">&#128222;</div>
+                <div class="fn-num" id="fn-num-booked">0</div>
+                <div class="fn-label">CALL BOOKED</div>
+                <div class="fn-rate" id="fn-rate-booked" style="color:var(--t3)">—</div>
+            </div>
+            <div style="display:flex;align-items:center;padding:0 4px;color:var(--t3);font-size:18px">&#8250;</div>
+            <div class="fn-stage" style="flex:1;text-align:center;padding:20px 12px;background:rgba(0,255,136,0.06)">
+                <div style="font-size:22px;margin-bottom:4px">&#127942;</div>
+                <div class="fn-num" id="fn-num-closed" style="color:var(--ok)">0</div>
+                <div class="fn-label">CLOSED</div>
+                <div class="fn-rate" id="fn-rate-closed" style="color:var(--t3)">—</div>
+            </div>
+        </div>
+        <!-- Per-channel breakdown -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+            <div class="fn-ch" id="fn-ch-facebook">
+                <div class="fn-ch-title">&#128218; FACEBOOK</div>
+                <div class="fn-ch-row"><span>New</span><span id="fn-fb-new">0</span></div>
+                <div class="fn-ch-row"><span>DM Sent</span><span id="fn-fb-dm">0</span></div>
+                <div class="fn-ch-row"><span>Replied</span><span id="fn-fb-replied">0</span></div>
+                <div class="fn-ch-row"><span>Booked</span><span id="fn-fb-booked">0</span></div>
+                <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-fb-closed">0</span></div>
+            </div>
+            <div class="fn-ch" id="fn-ch-linkedin">
+                <div class="fn-ch-title">&#128188; LINKEDIN</div>
+                <div class="fn-ch-row"><span>New</span><span id="fn-li-new">0</span></div>
+                <div class="fn-ch-row"><span>DM Sent</span><span id="fn-li-dm">0</span></div>
+                <div class="fn-ch-row"><span>Replied</span><span id="fn-li-replied">0</span></div>
+                <div class="fn-ch-row"><span>Booked</span><span id="fn-li-booked">0</span></div>
+                <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-li-closed">0</span></div>
+            </div>
+            <div class="fn-ch" id="fn-ch-sms">
+                <div class="fn-ch-title">&#128241; SMS</div>
+                <div class="fn-ch-row"><span>New</span><span id="fn-sms-new">0</span></div>
+                <div class="fn-ch-row"><span>DM Sent</span><span id="fn-sms-dm">0</span></div>
+                <div class="fn-ch-row"><span>Replied</span><span id="fn-sms-replied">0</span></div>
+                <div class="fn-ch-row"><span>Booked</span><span id="fn-sms-booked">0</span></div>
+                <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-sms-closed">0</span></div>
+            </div>
+            <div class="fn-ch" id="fn-ch-instantly">
+                <div class="fn-ch-title">&#9993; INSTANTLY</div>
+                <div class="fn-ch-row"><span>New</span><span id="fn-ins-new">0</span></div>
+                <div class="fn-ch-row"><span>DM Sent</span><span id="fn-ins-dm">0</span></div>
+                <div class="fn-ch-row"><span>Replied</span><span id="fn-ins-replied">0</span></div>
+                <div class="fn-ch-row"><span>Booked</span><span id="fn-ins-booked">0</span></div>
+                <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-ins-closed">0</span></div>
             </div>
         </div>
     </div>
@@ -828,6 +919,11 @@ async function loadLiveData(){
         const res = await fetch(GH_RAW+'task-status.json?t='+t);
         if(res.ok){ const d = await res.json(); populateTasks(d); }
     } catch(e){ console.warn('Task status load failed:', e.message); }
+    // Funnel data
+    try {
+        const res = await fetch(GH_RAW+'funnel-data.json?t='+t);
+        if(res.ok){ const d = await res.json(); populateFunnel(d); }
+    } catch(e){ console.warn('Funnel data load failed:', e.message); }
 }
 
 function fmtDate(dateStr){
@@ -1057,6 +1153,50 @@ function populateSocial(sd){
                 <td${r.replies>0?' style="color:var(--cyan);font-weight:600"':''}>${r.replies||0}</td>
             </tr>`;
         }).join('');
+    }
+}
+
+function populateFunnel(d){
+    if(!d) return;
+    const c = d.combined || {};
+    const set = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = val; };
+    const pct = (num, den) => den > 0 ? (num/den*100).toFixed(0)+'%' : '—';
+
+    // Top funnel bar
+    set('fn-num-new',    c.newLead    || 0);
+    set('fn-num-dm',     c.dmSent     || 0);
+    set('fn-num-replied',c.replied    || 0);
+    set('fn-num-booked', c.callBooked || 0);
+    set('fn-num-closed', c.closed     || 0);
+
+    // Conversion rates between stages
+    const nl = c.newLead || 0;
+    const dm = c.dmSent  || 0;
+    const rp = c.replied || 0;
+    const bk = c.callBooked || 0;
+    const cl = c.closed  || 0;
+    set('fn-rate-new',    nl > 0 ? nl + ' total' : '—');
+    set('fn-rate-dm',     pct(dm, nl) + ' of leads');
+    set('fn-rate-replied',pct(rp, dm) + ' of contacted');
+    set('fn-rate-booked', pct(bk, rp) + ' of replies');
+    set('fn-rate-closed', pct(cl, bk) + ' of booked');
+
+    // Per-channel breakdown
+    const channels = {fb: d.facebook||{}, li: d.linkedin||{}, sms: d.sms||{}, ins: d.instantly||{}};
+    const map = {fb:'fb', li:'li', sms:'sms', ins:'ins'};
+    for(const [key, data] of Object.entries(channels)){
+        const p = map[key];
+        set(`fn-${p}-new`,    data.newLead    || 0);
+        set(`fn-${p}-dm`,     data.dmSent     || 0);
+        set(`fn-${p}-replied`,data.replied    || 0);
+        set(`fn-${p}-booked`, data.callBooked || 0);
+        set(`fn-${p}-closed`, data.closed     || 0);
+    }
+
+    // Update timestamp badge
+    if(d.lastUpdated){
+        const el = document.getElementById('funnel-updated');
+        if(el) el.textContent = 'UPDATED ' + new Date(d.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
     }
 }
 
