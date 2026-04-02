@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-02T13:39:59Z",
+    "lastRun": "2026-04-02T14:39:57Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (9:39 AM ET Apr 2): 231 pending sent requests (up 10 from last run — new outreach batch sent ~50 min ago targeting landscaping businesses: Ricky S./Sandlin's Landscaping, Shawn Sazama/American Landscapes, EV Landscape Services, Sean Crosby/In the Weeds Landscaping, Green Apple Landscaping and others). Total connections: 1,050 (up 2 since last run). New connections today: Daniel Szender (Sure Lock & Key LLC), Aaron McCollum (Construction Executive), Pat Picaud (Multi-family/commercial construction director) — all April 2. No unread messages in main inbox (3 unread are page inboxes: LinkedUp, Clear View, Cocchi Media). 0 genuine prospect replies, 0 interest signals. requestsSent: 231, requestsAccepted: 13, totalConnections: 1050, messagesSent: 11, replies: 1, interestSignals: 0.",
+    "summary": "Scraped LinkedIn (10:39 AM ET Apr 2): 230 pending sent requests (down 1 from last run — 1 additional acceptance since 9:39 AM run). Most recent outreach batch targeted landscaping businesses with Google LSA optimization pitch (Ricky S./Sandlin's Landscaping, Shawn Sazama/American Landscapes, EV Landscape Services, Sean Crosby/In the Weeds Landscaping, Green Apple Landscaping). Total connections: 1,050 (unchanged). New connections April 2: Daniel Szender (Sure Lock & Key LLC), Aaron McCollum (Construction Executive), Pat Picaud (Multi-family/commercial construction director), Mitchell Kilkenny (Golf Course Superintendent/Clubs of Cordillera Ranch). No unread messages in personal inbox. 0 genuine prospect replies, 0 interest signals. Only inbound message was Vincent Handugan pitching a VA service (not buying intent). requestsSent: 230, requestsAccepted: 14, totalConnections: 1050, messagesSent: 11, replies: 1, interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
