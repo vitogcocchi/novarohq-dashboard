@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-02T04:15:26Z",
+    "lastRun": "2026-04-02T04:37:59Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (12:15 AM ET Apr 2): 210 pending sent requests (down from 214 — 4 accepted/withdrew). Total connections: 1,046 (up 3 from 1,043). David Sloan and 8 others recently accepted invitations; cumulative accepted updated to 9. Most recent invite batch sent ~15 hours ago (approx 1 PM UTC Apr 1, 10 names visible). 8 unread messages in inbox. No new prospect replies with positive buying intent — outreach threads to Stefano Cardillo, Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele all awaiting reply. Vincent Handugan inbound still a VA sales pitch, not a buying signal. messagesSent cumulative: 10 (unchanged). interestSignals: 0.",
+    "summary": "Scraped LinkedIn (12:37 AM ET Apr 2): Metrics unchanged from prior run. 210 pending sent requests (most recent batch sent ~15 hours ago — Francisco Garcia, Brendan McGeer, Colin Hoffman + 7 others). Total connections: 1,046. David Sloan and 8 others (9 total) recently accepted. 8 unread messages in inbox — outreach threads to Stefano Cardillo, Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele all awaiting reply. No new positive buying intent signals. Vincent Handugan (Mar 20) inbound remains a VA pitch, not a prospect signal. messagesSent: 10, interestSignals: 0. lastUpdated timestamp refreshed.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
