@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-02T04:37:59Z",
+    "lastRun": "2026-04-02T05:40:18Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (12:37 AM ET Apr 2): Metrics unchanged from prior run. 210 pending sent requests (most recent batch sent ~15 hours ago — Francisco Garcia, Brendan McGeer, Colin Hoffman + 7 others). Total connections: 1,046. David Sloan and 8 others (9 total) recently accepted. 8 unread messages in inbox — outreach threads to Stefano Cardillo, Colin Crump, Tyler Grodsky, David Kozak, Jason Stahlberg, William DeMichele all awaiting reply. No new positive buying intent signals. Vincent Handugan (Mar 20) inbound remains a VA pitch, not a prospect signal. messagesSent: 10, interestSignals: 0. lastUpdated timestamp refreshed.",
+    "summary": "Scraped LinkedIn (1:40 AM ET Apr 2): Metrics unchanged from prior run. 210 pending sent requests, most recent batch sent ~16 hours ago (Francisco Garcia, Brendan McGeer, Colin Hoffman + others). Total connections: 1,046. 8 new connections accepted April 1 — David Sloan (CEO, Sloan Mechanical), John Barron (PM, Fearn Group), Michael Welch (FreedomForm Concrete), Abraham Palacios (Moss & Associates), Kyle O'Connor, Kelly Kenter (CEO, Sitelines), Jennifer Porcello, Carlos Amaya (Varsity Plumbing). No unread messages. 0 interest signals — Vincent Handugan (Mar 20) remains an inbound VA pitch, not a buyer. messagesSent: 10, interestSignals: 0. Timestamp refreshed.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
