@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-02T05:40:18Z",
+    "lastRun": "2026-04-02T08:39:41Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (1:40 AM ET Apr 2): Metrics unchanged from prior run. 210 pending sent requests, most recent batch sent ~16 hours ago (Francisco Garcia, Brendan McGeer, Colin Hoffman + others). Total connections: 1,046. 8 new connections accepted April 1 — David Sloan (CEO, Sloan Mechanical), John Barron (PM, Fearn Group), Michael Welch (FreedomForm Concrete), Abraham Palacios (Moss & Associates), Kyle O'Connor, Kelly Kenter (CEO, Sitelines), Jennifer Porcello, Carlos Amaya (Varsity Plumbing). No unread messages. 0 interest signals — Vincent Handugan (Mar 20) remains an inbound VA pitch, not a buyer. messagesSent: 10, interestSignals: 0. Timestamp refreshed.",
+    "summary": "Scraped LinkedIn (4:39 AM ET Apr 2): Metrics stable. 210 pending sent requests, most recent batch sent ~19 hours ago (Francisco Garcia, Brendan McGeer, Colin Hoffman + others on Apr 1). Total connections: 1,046. This week: 9 new connections — 8 on Apr 1 (David Sloan, John Barron, Michael Welch, Abraham Palacios, Kyle O'Connor, Kelly Kenter, Jennifer Porcello, Carlos Amaya) + 1 on Mar 31 (Stefano Cardillo). No unread messages. 0 interest signals — only inbound is Vincent Handugan (VA pitch, not a buyer). requestsSent: 210, totalConnections: 1046, replies: 1, interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
