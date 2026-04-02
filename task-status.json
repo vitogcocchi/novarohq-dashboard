@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-02T10:38:48Z",
+    "lastRun": "2026-04-02T11:40:04Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (6:38 AM ET Apr 2): 209 pending sent requests (down 1 — Mitchell Kilkenny accepted), most recent batch sent ~21 hours ago. Total connections: 1,047 (+1). New connection today: Mitchell Kilkenny (Asst Golf Course Superintendent, Cordillera Ranch). 1 new outreach message sent this run (Stefano Cardillo follow-up, Wed 8:16 AM). No unread messages, 0 new replies, 0 interest signals. requestsSent: 209, requestsAccepted: 10, totalConnections: 1047, messagesSent: 11, replies: 1, interestSignals: 0.",
+    "summary": "Scraped LinkedIn (7:40 AM ET Apr 2): 208 pending sent requests (down 1 from last run — Pat Picaud accepted). Most recent batch sent ~22 hours ago (April 1). Total connections: 1,048 (+1 since last run). New connection since last run: Pat Picaud (Multi family/commercial construction director). No unread messages, 0 new prospect replies, 0 interest signals. requestsSent: 208, requestsAccepted: 11, totalConnections: 1048, messagesSent: 11, replies: 1, interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
