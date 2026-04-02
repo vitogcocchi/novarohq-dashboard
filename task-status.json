@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-02T11:40:04Z",
+    "lastRun": "2026-04-02T12:39:02Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (7:40 AM ET Apr 2): 208 pending sent requests (down 1 from last run — Pat Picaud accepted). Most recent batch sent ~22 hours ago (April 1). Total connections: 1,048 (+1 since last run). New connection since last run: Pat Picaud (Multi family/commercial construction director). No unread messages, 0 new prospect replies, 0 interest signals. requestsSent: 208, requestsAccepted: 11, totalConnections: 1048, messagesSent: 11, replies: 1, interestSignals: 0.",
+    "summary": "Scraped LinkedIn (8:39 AM ET Apr 2): 221 pending sent requests (up 13 from last run — new outreach batch sent today targeting electrician business owners: Paul Santellana, Cody Landry sr, Sergey Tsvirov, James McClain, Gregg Baldus and others). Total connections: 1,048 (unchanged). New connection since last run: Mitchell Kilkenny (Assistant Golf Course Superintendent, Connected April 2). No unread messages, 0 new prospect replies, 0 interest signals. requestsSent: 221, requestsAccepted: 11, totalConnections: 1048, messagesSent: 11, replies: 1, interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
