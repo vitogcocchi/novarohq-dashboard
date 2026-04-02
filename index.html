@@ -171,7 +171,25 @@
         .sms-seq-body{font-size:12px;color:var(--t2);line-height:1.6;font-style:italic}
         .sms-seq-day{margin-top:10px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px}
 
-        @media(max-width:1024px){.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.sms-seq{grid-template-columns:1fr}}
+        /* AGENTS PAGE */
+        .ag-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+        .ag-live-card{background:linear-gradient(135deg,rgba(0,255,136,.05),rgba(0,212,255,.05));border:1px solid rgba(0,255,136,.25);border-radius:16px;padding:24px;margin-bottom:16px;position:relative;overflow:hidden;cursor:pointer;transition:all .3s}
+        .ag-live-card:hover{border-color:rgba(0,255,136,.5);box-shadow:0 0 30px rgba(0,255,136,.08);transform:translateY(-2px)}
+        .ag-live-pulse{position:absolute;top:20px;right:20px;width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px rgba(0,255,136,.6);animation:pls 1.5s ease-in-out infinite}
+        .ag-live-badge{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--ok);letter-spacing:2px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+        .ag-live-dot{width:6px;height:6px;border-radius:50%;background:var(--ok);animation:pls 1.5s ease-in-out infinite}
+        .ag-live-title{font-family:'Orbitron',sans-serif;font-size:15px;font-weight:600;color:var(--t1);margin-bottom:4px}
+        .ag-live-type{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:1px;margin-bottom:12px}
+        .ag-live-summary{font-size:13px;color:var(--t2);line-height:1.7}
+        .ag-task-row{cursor:pointer;transition:all .2s}
+        .ag-task-row:hover td{background:rgba(0,212,255,.04);color:var(--t1)}
+        .ag-task-row td.ag-task-name{color:var(--cyan);font-weight:600}
+        .ag-empty{text-align:center;padding:40px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px}
+        .pill.running{background:rgba(0,255,136,.1);color:var(--ok);border:1px solid rgba(0,255,136,.3)}
+        .pill.completed-ok{background:rgba(0,255,136,.08);color:var(--ok);border:1px solid rgba(0,255,136,.15)}
+        .pill.sched{background:rgba(30,144,255,.1);color:var(--blue);border:1px solid rgba(30,144,255,.2)}
+
+        @media(max-width:1024px){.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.sms-seq{grid-template-columns:1fr}.ag-stat-grid{grid-template-columns:1fr}}
         @media(max-width:768px){
             .sb{width:60px}.sb .nav-l,.sb .nav-b,.sb .logo span,.sb .logo-s,.sb .nav-sec,.sb .st-ind span{display:none}
             .sb .nav-i{justify-content:center;padding:12px}.mc{margin-left:60px;padding:16px}
@@ -295,6 +313,10 @@ function closeIntro(){
         </a>
         <a class="nav-i" data-page="progress" onclick="showPage('progress')">
             <span class="nav-ic">&#9881;</span><span class="nav-l">Progress</span>
+            <span class="nav-b">LIVE</span>
+        </a>
+        <a class="nav-i" data-page="agents" onclick="showPage('agents')">
+            <span class="nav-ic">&#129302;</span><span class="nav-l">Agents</span>
             <span class="nav-b">LIVE</span>
         </a>
     </div>
@@ -788,6 +810,60 @@ function closeIntro(){
     </div>
 </section>
 
+<!-- AGENTS -->
+<section class="pg" id="page-agents">
+    <div class="ph">
+        <div><div class="pt">AGENT OPS CENTER</div><div class="ps">ELLIOTT AI // LIVE TASK INTELLIGENCE</div></div>
+        <div class="ht"><span class="tv" id="clock-8"></span><span id="date-8"></span></div>
+    </div>
+
+    <!-- STATS BAR -->
+    <div class="ag-stat-grid">
+        <div class="sb-c"><div class="sl">COMPLETED TODAY</div><div class="sv ok" id="ag-stat-completed">--</div><div class="sc">Session tasks done</div></div>
+        <div class="sb-c"><div class="sl">IN PROGRESS</div><div class="sv cy" id="ag-stat-running">0</div><div class="sc">Active right now</div></div>
+        <div class="sb-c"><div class="sl">AUTOMATIONS ACTIVE</div><div class="sv bl" id="ag-stat-scheduled">--</div><div class="sc">Running today</div></div>
+    </div>
+
+    <!-- LIVE NOW -->
+    <div id="ag-live-section" style="display:none">
+        <div class="ds" style="margin-bottom:24px">
+            <div class="dh">
+                <div class="dt"><span class="ic">&#9679;</span> LIVE NOW</div>
+                <span class="db" style="background:rgba(0,255,136,.12);color:var(--ok);border-color:rgba(0,255,136,.25);animation:pls 2s ease-in-out infinite">ACTIVE</span>
+            </div>
+            <div id="ag-live-cards"></div>
+        </div>
+    </div>
+
+    <!-- COMPLETED TODAY -->
+    <div class="ds" style="margin-bottom:24px">
+        <div class="dh">
+            <div class="dt"><span class="ic">&#10003;</span> COMPLETED TODAY</div>
+            <span class="db">SESSION TASKS</span>
+        </div>
+        <table>
+            <thead><tr><th>Task</th><th>Type</th><th>Triggered By</th><th>Started (ET)</th><th>Duration</th><th>Outcome</th></tr></thead>
+            <tbody id="ag-completed-tbody">
+                <tr><td colspan="6" class="ag-empty">No completed tasks yet — session tasks appear here as they finish</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SCHEDULED AUTOMATIONS -->
+    <div class="ds">
+        <div class="dh">
+            <div class="dt"><span class="ic">&#128336;</span> SCHEDULED AUTOMATIONS</div>
+            <span class="db">REST OF DAY</span>
+        </div>
+        <table>
+            <thead><tr><th>Task</th><th>Type</th><th>Schedule</th><th>Last Run (ET)</th><th>Status</th><th>Next Run (ET)</th></tr></thead>
+            <tbody id="ag-scheduled-tbody">
+                <tr><td colspan="6" class="ag-empty">Loading automation schedule...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
 </main>
 
 <script>
@@ -882,7 +958,7 @@ function tick(){
     const ep=Object.fromEntries(estParts.map(p=>[p.type,p.value]));
     const t=(ep.hour||'12')+':'+(ep.minute||'00')+':'+(ep.second||'00')+' '+(ep.dayperiod||ep.dayPeriod||'AM');
     const d=now.toLocaleDateString('en-US',{weekday:'short',year:'numeric',month:'short',day:'numeric',timeZone:'America/New_York'})+' ET';
-    for(let i=1;i<=7;i++){
+    for(let i=1;i<=8;i++){
         const ce=document.getElementById('clock-'+i);
         const de=document.getElementById('date-'+i);
         if(ce)ce.textContent=t;
@@ -917,8 +993,13 @@ async function loadLiveData(){
     // Task status
     try {
         const res = await fetch(GH_RAW+'task-status.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateTasks(d); }
+        if(res.ok){ const d = await res.json(); window._taskStatus = d; populateTasks(d); populateAgents(window._agentsData, d); }
     } catch(e){ console.warn('Task status load failed:', e.message); }
+    // Agents log
+    try {
+        const res = await fetch(GH_RAW+'agents-log.json?t='+t);
+        if(res.ok){ const d = await res.json(); window._agentsData = d; populateAgents(d, window._taskStatus); }
+    } catch(e){ console.warn('Agents data load failed:', e.message); }
     // Funnel data
     try {
         const res = await fetch(GH_RAW+'funnel-data.json?t='+t);
@@ -1242,6 +1323,150 @@ function setBubble(el, value, sub){
     const sc = el.querySelector('.sc');
     if(sv) sv.textContent = value;
     if(sc) sc.textContent = sub;
+}
+
+// ===== AGENTS PAGE =====
+window._agentTasks = {};
+window._taskStatus = null;
+window._agentsData = null;
+
+function populateAgents(agData, taskStatus) {
+    window._agentTasks = {};
+    const tasks = (agData && agData.sessionTasks) ? agData.sessionTasks : [];
+
+    // Register all tasks by id for detail panel
+    tasks.forEach(t => { window._agentTasks[t.id] = t; });
+    if(taskStatus) {
+        Object.entries(taskStatus).forEach(([name, t]) => {
+            const key = 'auto-'+name;
+            window._agentTasks[key] = Object.assign({}, t, {id: key, title: name, isAuto: true});
+        });
+    }
+
+    const setEl = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
+    const completed = tasks.filter(t => t.status === 'completed').length;
+    const running = tasks.filter(t => t.status === 'running').length;
+    const automations = taskStatus ? Object.keys(taskStatus).length : 0;
+    setEl('ag-stat-completed', completed);
+    setEl('ag-stat-running', running);
+    setEl('ag-stat-scheduled', automations);
+
+    // Live now
+    const liveTasks = tasks.filter(t => t.status === 'running');
+    const liveSection = document.getElementById('ag-live-section');
+    const liveCards = document.getElementById('ag-live-cards');
+    if(liveSection) liveSection.style.display = liveTasks.length > 0 ? 'block' : 'none';
+    if(liveCards && liveTasks.length > 0) {
+        liveCards.innerHTML = liveTasks.map(t => {
+            const sStr = t.startedAt ? new Date(t.startedAt).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : '--';
+            return `<div class="ag-live-card" onclick="openAgentDetail('${t.id}')">
+                <div class="ag-live-pulse"></div>
+                <div class="ag-live-badge"><span class="ag-live-dot"></span> RUNNING NOW</div>
+                <div class="ag-live-title">${t.title}</div>
+                <div class="ag-live-type">${t.type||'--'} // TRIGGERED BY ${(t.triggeredBy||'--').toUpperCase()}</div>
+                <div class="ag-live-summary">${t.summary||''}</div>
+                <div style="margin-top:12px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3)">Started ${sStr} &mdash; Click for full details</div>
+            </div>`;
+        }).join('');
+    }
+
+    // Completed today
+    const tbody = document.getElementById('ag-completed-tbody');
+    if(tbody) {
+        const done = tasks.filter(t => t.status === 'completed');
+        if(done.length > 0) {
+            tbody.innerHTML = done.map(t => {
+                const s = t.startedAt ? new Date(t.startedAt) : null;
+                const c = t.completedAt ? new Date(t.completedAt) : null;
+                const dur = (s && c) ? Math.round((c - s)/60000) + ' min' : '--';
+                const sStr = s ? s.toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : '--';
+                const oClass = t.outcome === 'success' ? 'completed-ok' : t.outcome === 'failed' ? 'hot' : 'new';
+                const oLabel = (t.outcome||'done').toUpperCase();
+                return `<tr class="ag-task-row" onclick="openAgentDetail('${t.id}')">
+                    <td class="ag-task-name">${t.title}</td>
+                    <td>${t.type||'--'}</td>
+                    <td>${t.triggeredBy||'--'}</td>
+                    <td>${sStr}</td>
+                    <td>${dur}</td>
+                    <td><span class="pill ${oClass}">${oLabel}</span></td>
+                </tr>`;
+            }).join('');
+        } else {
+            tbody.innerHTML = '<tr><td colspan="6" class="ag-empty">No completed tasks yet</td></tr>';
+        }
+    }
+
+    // Scheduled automations
+    const stbody = document.getElementById('ag-scheduled-tbody');
+    if(stbody && taskStatus) {
+        stbody.innerHTML = Object.entries(taskStatus).map(([name, t]) => {
+            const key = 'auto-'+name;
+            const lastRun = t.lastRun ? new Date(t.lastRun).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : 'Never';
+            const nextRun = computeNextRun(t.schedule);
+            const sClass = t.status === 'active' ? 'active' : t.status === 'partial' ? 'paused' : t.status === 'error' ? 'hot' : 'sched';
+            return `<tr class="ag-task-row" onclick="openAgentDetail('${key}')">
+                <td class="ag-task-name">${name}</td>
+                <td>${t.type||'--'}</td>
+                <td style="font-family:'Share Tech Mono',monospace;font-size:11px">${t.schedule||'--'}</td>
+                <td style="font-family:'Share Tech Mono',monospace;font-size:11px">${lastRun}</td>
+                <td><span class="pill ${sClass}">${(t.status||'--').toUpperCase()}</span></td>
+                <td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--cyan)">${nextRun}</td>
+            </tr>`;
+        }).join('');
+    }
+}
+
+function computeNextRun(schedule) {
+    if(!schedule) return '--';
+    if(schedule.includes('Hourly at :')) {
+        const min = parseInt(schedule.replace('Hourly at :', '').trim());
+        const now = new Date();
+        const etStr = now.toLocaleString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',hour12:false});
+        const parts = etStr.split(':');
+        const h = parseInt(parts[0]), m = parseInt(parts[1]);
+        let nextH = h;
+        if(m >= min) nextH = h + 1;
+        if(nextH >= 24) return 'Tomorrow';
+        const ampm = nextH >= 12 ? 'PM' : 'AM';
+        const h12 = nextH > 12 ? nextH-12 : (nextH === 0 ? 12 : nextH);
+        return h12+':'+String(min).padStart(2,'0')+' '+ampm+' ET';
+    }
+    if(schedule === 'Every page load') return 'On next load';
+    if(schedule === 'On scraper run') return 'On next scrape';
+    return schedule;
+}
+
+function openAgentDetail(id) {
+    const task = window._agentTasks[id];
+    if(!task) return;
+    const dp = document.getElementById('dp');
+    const ov = document.getElementById('dp-overlay');
+    const ct = document.getElementById('dp-content');
+    const sClass = task.status === 'completed' ? 'completed-ok' : task.status === 'running' ? 'running' : task.status === 'partial' ? 'paused' : task.status === 'active' ? 'active' : 'new';
+    const fmtTime = iso => iso ? new Date(iso).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : '--';
+    const sStr = fmtTime(task.startedAt);
+    const cStr = task.completedAt ? fmtTime(task.completedAt) : (task.status==='running' ? '— In progress...' : '--');
+    const lrStr = fmtTime(task.lastRun);
+
+    let html = `
+        <div class="dp-title">${task.title||'Agent Task'}</div>
+        <div class="dp-sub">${(task.type||'AGENT TASK').toUpperCase()} // NOVARO AI</div>
+        <div class="dp-section">STATUS</div>
+        <div class="dp-row"><div class="dp-label">Status</div><div class="dp-val"><span class="pill ${sClass}">${(task.status||'--').toUpperCase()}</span></div></div>
+        ${task.triggeredBy ? `<div class="dp-row"><div class="dp-label">Triggered By</div><div class="dp-val">${task.triggeredBy}</div></div>` : ''}
+        ${task.schedule ? `<div class="dp-row"><div class="dp-label">Schedule</div><div class="dp-val">${task.schedule}</div></div>` : ''}
+        ${task.startedAt ? `<div class="dp-row"><div class="dp-label">Started</div><div class="dp-val">${sStr}</div></div>` : ''}
+        ${(task.completedAt||task.status==='running') ? `<div class="dp-row"><div class="dp-label">Completed</div><div class="dp-val">${cStr}</div></div>` : ''}
+        ${task.lastRun ? `<div class="dp-row"><div class="dp-label">Last Run</div><div class="dp-val">${lrStr}</div></div>` : ''}
+        ${task.outcome ? `<div class="dp-row"><div class="dp-label">Outcome</div><div class="dp-val" style="color:${task.outcome==='success'?'var(--ok)':task.outcome==='failed'?'var(--err)':'var(--warn)'}">${task.outcome.toUpperCase()}</div></div>` : ''}
+        <div class="dp-section">SUMMARY</div>
+        <div class="dp-notes">${task.summary||'No summary available'}</div>
+        ${task.details ? `<div class="dp-section">FULL DETAILS</div><div class="dp-notes" style="max-height:280px;overflow-y:auto;font-size:13px;line-height:1.8">${task.details}</div>` : ''}
+        ${task.linkedPage ? `<div class="dp-section">ACTIONS</div><a class="dp-btn" onclick="closeDetail();showPage('${task.linkedPage}')">VIEW RELATED PAGE &rarr;</a>` : ''}
+    `;
+    ct.innerHTML = html;
+    dp.classList.add('open');
+    ov.classList.add('open');
 }
 
 // Load data on page ready
