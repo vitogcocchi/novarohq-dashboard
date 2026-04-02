@@ -14,9 +14,9 @@
     "type": "Chrome scraper"
   },
   "novaro-dashboard-refresh": {
-    "lastRun": "2026-03-30T07:40:30.000Z",
+    "lastRun": "2026-04-02T12:08:09.000Z",
     "status": "active",
-    "summary": "GitHub Pages live at novarohq.com — dashboard migrated from Netlify. Data fetched from raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/. Scrapers updated to use push_to_github.py.",
+    "summary": "Daily Notion refresh ran at 8:08 AM ET Apr 2. Queried Outreach Leads Pipeline (ebac6164). Notion MCP returned schema only — no rows queryable via current MCP tools. Pipeline data written as all zeros per fallback. Database schema confirmed: Status options (New Lead, DM Sent, Replied, Call Booked, Closed, Not Interested), Sources (Facebook, LinkedIn, SMS, Instantly). Funnel-data.json updated and pushed to GitHub.",
     "schedule": "On scraper run",
     "type": "GitHub API push"
   },
