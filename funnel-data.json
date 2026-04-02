@@ -1,0 +1,45 @@
+{
+  "lastUpdated": "2026-04-01T00:00:00.000Z",
+  "facebook": {
+    "newLead": 0,
+    "dmSent": 0,
+    "replied": 0,
+    "callBooked": 0,
+    "closed": 0,
+    "notInterested": 0
+  },
+  "linkedin": {
+    "newLead": 0,
+    "dmSent": 0,
+    "replied": 0,
+    "callBooked": 0,
+    "closed": 0,
+    "notInterested": 0
+  },
+  "sms": {
+    "newLead": 0,
+    "dmSent": 0,
+    "replied": 0,
+    "callBooked": 0,
+    "closed": 0,
+    "notInterested": 0
+  },
+  "instantly": {
+    "newLead": 0,
+    "dmSent": 0,
+    "replied": 0,
+    "callBooked": 0,
+    "closed": 0,
+    "notInterested": 0
+  },
+  "combined": {
+    "newLead": 0,
+    "dmSent": 0,
+    "replied": 0,
+    "callBooked": 0,
+    "closed": 0,
+    "notInterested": 0
+  },
+  "notionDatabaseId": "ebac6164d46d48b8a8b96f6f092d9ea7",
+  "notionDataSourceId": "2b4d9001-3d19-4251-b389-3a4c90165682"
+}
