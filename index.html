@@ -504,7 +504,7 @@ function closeIntro(){
 <!-- MORNING DEBRIEF -->
 <section class="pg" id="page-debrief">
     <div class="ph">
-        <div><div class="pt">MORNING DEBRIEF</div><div class="ps">DAILY OPERATIONS BRIEFING // REFRESHED EVERY MORNING</div></div>
+        <div><div class="pt">MORNING DEBRIEF</div><div class="ps">DAILY OPERATIONS BRIEFING // <span id="brief-date">LOADING...</span></div></div>
         <div class="ht"><span class="tv" id="clock-2"></span><span id="date-2"></span></div>
     </div>
 
@@ -512,25 +512,19 @@ function closeIntro(){
         <div class="brief-card">
             <div class="brief-icon">&#127780;</div>
             <div class="brief-title">WEATHER</div>
-            <div class="brief-content" id="brief-weather">Partly sunny, high of 43&#176;F with light south winds picking up to 10 mph. Tonight drops to 28&#176;F under mostly cloudy skies. Layer up if you're heading out.</div>
+            <div class="brief-content" id="brief-weather"><span style="color:var(--t3)">Loading...</span></div>
         </div>
         <div class="brief-card">
             <div class="brief-icon">&#128172;</div>
             <div class="brief-title">QUOTE OF THE DAY</div>
-            <div class="brief-content" id="brief-quote"><blockquote>"The way to get started is to quit talking and begin doing."<br><span style="color:var(--t3)">-- Walt Disney</span></blockquote></div>
+            <div class="brief-content" id="brief-quote"><span style="color:var(--t3)">Loading...</span></div>
         </div>
     </div>
 
     <div class="brief-card brief-urgent">
         <div class="brief-icon">&#128680;</div>
         <div class="brief-title">URGENT INBOX -- UNRESOLVED ITEMS</div>
-        <div id="brief-urgent">
-            <div class="urgent-item"><span class="urgent-tag block">BLOCKED</span><strong>Zoho: vito@localcallpros.com</strong> -- Emails stopped sending. Flagged March 25.</div>
-            <div class="urgent-item"><span class="urgent-tag block">BLOCKED</span><strong>Zoho: vito@localleadsgroup.com</strong> -- Emails stopped sending. Flagged March 25.</div>
-            <div class="urgent-item"><span class="urgent-tag block">BLOCKED</span><strong>Zoho: vito@tradeadspro.com</strong> -- Emails stopped sending. Flagged March 25.</div>
-            <div class="urgent-item"><span class="urgent-tag follow">FOLLOW-UP</span><strong>LinkedIn: 6 Accepted Connections</strong> -- March 25. Need follow-up messages.</div>
-            <div class="urgent-item"><span class="urgent-tag offline">OFFLINE</span><strong>Instantly Manager: Chrome bridge was offline</strong> -- Flagged March 27. May have impacted scheduled tasks.</div>
-        </div>
+        <div id="brief-urgent"><span style="color:var(--t3)">Loading...</span></div>
     </div>
 
     <div class="brief-card" style="margin-top:16px">
@@ -538,48 +532,20 @@ function closeIntro(){
         <div class="brief-title">INSTANTLY CAMPAIGN STATUS</div>
         <table class="camp-table">
             <thead><tr><th>Campaign</th><th>Status</th><th>Notes</th></tr></thead>
-            <tbody>
-                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro LSA - Cleaning & Power Washing (V2)',status:'Active',notes:'Running normally'})">
-                    <td class="td-h">Novaro LSA - Cleaning & Power Washing (V2)</td><td><span class="pill active">ACTIVE</span></td><td>Running</td>
-                </tr>
-                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro LSA - Car Detailing (V2)',status:'Active',notes:'Running normally'})">
-                    <td class="td-h">Novaro LSA - Car Detailing (V2)</td><td><span class="pill active">ACTIVE</span></td><td>Running</td>
-                </tr>
-                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro LSA - Lead Gen Proof (V2)',status:'Active',notes:'Running normally'})">
-                    <td class="td-h">Novaro LSA - Lead Gen Proof (V2)</td><td><span class="pill active">ACTIVE</span></td><td>Running</td>
-                </tr>
-                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro - Full Growth Engine (Hormozi)',status:'Paused',notes:'100% complete'})">
-                    <td>Novaro - Full Growth Engine (Hormozi)</td><td><span class="pill paused">PAUSED</span></td><td>100% complete</td>
-                </tr>
-                <tr class="clickable" onclick="openDetail({type:'campaign',name:'Novaro - AI Back Office (Hormozi Rewrite)',status:'Paused',notes:'100% complete, 420 sent, 0.2% click rate'})">
-                    <td>Novaro - AI Back Office (Hormozi Rewrite)</td><td><span class="pill paused">PAUSED</span></td><td>420 sent, 0.2% click rate</td>
-                </tr>
-            </tbody>
+            <tbody id="debrief-camp-tbody"><tr><td colspan="3" style="color:var(--t3);text-align:center;padding:20px">Loading...</td></tr></tbody>
         </table>
     </div>
 
     <div class="brief-card" style="margin-top:16px">
         <div class="brief-icon">&#9889;</div>
         <div class="brief-title">TODAY'S FOCUS</div>
-        <div class="brief-content" id="brief-focus">
-            <ol>
-                <li><strong>Audit your Instantly open rates.</strong> Pull campaign analytics. Any sequence under 40% open rate needs a new subject line today.</li>
-                <li><strong>Send manual follow-ups to your top 10 warmest leads.</strong> Filter for contacts who opened 2+ emails but never replied. Write short, personal follow-ups referencing their trade and market.</li>
-                <li><strong>Build one new LinkedIn connection sequence.</strong> Search for plumbing and HVAC owners in MA/CT. Send 10 connection requests with a personalized note.</li>
-                <li><strong>Tighten your case study one-pager.</strong> Turn the $86k-from-$4k-spend case study into a single visual asset with 3 bullet points and clear CTA.</li>
-                <li><strong>Practice your close.</strong> Write responses to top 3 objections: "I already have a marketing guy," "LSAs don't work for me," and "I need to think about it."</li>
-            </ol>
-        </div>
+        <div class="brief-content" id="brief-focus"><span style="color:var(--t3)">Loading...</span></div>
     </div>
 
     <div class="brief-card" style="margin-top:16px">
         <div class="brief-icon">&#128204;</div>
         <div class="brief-title">DAILY REMINDERS</div>
-        <div class="brief-content">
-            <strong>Close your first LSA client.</strong> Every day without one is revenue left on the table.<br><br>
-            <strong>Follow up beats outreach.</strong> If someone opened your email, they're thinking about it.<br><br>
-            <strong>You're not in the AI business -- you're in the results business.</strong> Lead with numbers.
-        </div>
+        <div class="brief-content" id="brief-reminders"><span style="color:var(--t3)">Loading...</span></div>
     </div>
 </section>
 
@@ -1005,6 +971,11 @@ async function loadLiveData(){
         const res = await fetch(GH_RAW+'funnel-data.json?t='+t);
         if(res.ok){ const d = await res.json(); populateFunnel(d); }
     } catch(e){ console.warn('Funnel data load failed:', e.message); }
+    // Morning Debrief
+    try {
+        const res = await fetch(GH_RAW+'morning-debrief-data.json?t='+t);
+        if(res.ok){ const d = await res.json(); populateBrief(d); }
+    } catch(e){ console.warn('Morning debrief data load failed:', e.message); }
 }
 
 function fmtDate(dateStr){
@@ -1278,6 +1249,53 @@ function populateFunnel(d){
     if(d.lastUpdated){
         const el = document.getElementById('funnel-updated');
         if(el) el.textContent = 'UPDATED ' + new Date(d.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
+    }
+}
+
+function populateBrief(d){
+    // Weather
+    const wEl = document.getElementById('brief-weather');
+    if(wEl && d.weather) wEl.textContent = d.weather;
+
+    // Quote
+    const qEl = document.getElementById('brief-quote');
+    if(qEl && d.quote){
+        qEl.innerHTML = `<blockquote>\u201c${d.quote.text}\u201d<br><span style="color:var(--t3)">-- ${d.quote.author}</span></blockquote>`;
+    }
+
+    // Urgent inbox (pulled from Notion Urgent Inbox via task)
+    const uEl = document.getElementById('brief-urgent');
+    if(uEl){
+        if(d.urgent && d.urgent.length > 0){
+            uEl.innerHTML = d.urgent.map(item => {
+                const tagClass = item.tag === 'BLOCKED' ? 'block' : item.tag === 'OFFLINE' ? 'offline' : 'follow';
+                return `<div class="urgent-item"><span class="urgent-tag ${tagClass}">${item.tag}</span><strong>${item.title}</strong> -- ${item.note}</div>`;
+            }).join('');
+        } else {
+            uEl.innerHTML = '<span style="color:var(--ok)">&#10003; No unresolved items</span>';
+        }
+    }
+
+    // Focus items
+    const fEl = document.getElementById('brief-focus');
+    if(fEl && d.focus && d.focus.length > 0){
+        fEl.innerHTML = '<ol>' + d.focus.map(item => `<li>${item}</li>`).join('') + '</ol>';
+    }
+
+    // Reminders
+    const rEl = document.getElementById('brief-reminders');
+    if(rEl && d.reminders && d.reminders.length > 0){
+        rEl.innerHTML = d.reminders.map(r => `<strong>${r}</strong>`).join('<br><br>');
+    }
+
+    // Date label
+    const dateEl = document.getElementById('brief-date');
+    if(dateEl && d.date) dateEl.textContent = d.date;
+
+    // Last updated badge
+    if(d.lastUpdated){
+        const luEl = document.getElementById('brief-updated');
+        if(luEl) luEl.textContent = 'UPDATED ' + new Date(d.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
     }
 }
 
