@@ -322,6 +322,7 @@ function closeIntro(){
     </div>
     <div class="sb-ft">
         <div class="st-ind"><div class="st-dot"></div><span>SYSTEMS ONLINE</span></div>
+        <div id="global-last-updated" style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;padding:6px 12px 0;opacity:0.7;">DATA: --</div>
     </div>
 </nav>
 
@@ -941,20 +942,24 @@ tick();setInterval(tick,1000);
 const GH_RAW = 'https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/';
 async function loadLiveData(){
     const t = Date.now();
+    const timestamps = [];
     // Instantly
     try {
         const res = await fetch(GH_RAW+'instantly-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateInstantly(d); }
+        if(res.ok){ const d = await res.json(); populateInstantly(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
     } catch(e){ console.warn('Instantly data load failed:', e.message); }
     // Twilio
     try {
         const res = await fetch(GH_RAW+'twilio-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); if(!d.error) populateTwilio(d); }
+        if(res.ok){ const d = await res.json(); if(!d.error){ populateTwilio(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); } }
     } catch(e){ console.warn('Twilio data load failed:', e.message); }
     // Social (Facebook + LinkedIn)
     try {
         const res = await fetch(GH_RAW+'social-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateSocial(d); }
+        if(res.ok){ const d = await res.json(); populateSocial(d);
+            if(d.facebook && d.facebook.lastUpdated) timestamps.push(new Date(d.facebook.lastUpdated));
+            if(d.linkedin && d.linkedin.lastUpdated) timestamps.push(new Date(d.linkedin.lastUpdated));
+        }
     } catch(e){ console.warn('Social data load failed:', e.message); }
     // Task status
     try {
@@ -969,13 +974,19 @@ async function loadLiveData(){
     // Funnel data
     try {
         const res = await fetch(GH_RAW+'funnel-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateFunnel(d); }
+        if(res.ok){ const d = await res.json(); populateFunnel(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
     } catch(e){ console.warn('Funnel data load failed:', e.message); }
     // Morning Debrief
     try {
         const res = await fetch(GH_RAW+'morning-debrief-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateBrief(d); }
+        if(res.ok){ const d = await res.json(); populateBrief(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
     } catch(e){ console.warn('Morning debrief data load failed:', e.message); }
+    // Update global last updated badge
+    if(timestamps.length > 0){
+        const latest = new Date(Math.max(...timestamps));
+        const el = document.getElementById('global-last-updated');
+        if(el) el.textContent = 'DATA: ' + latest.toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}) + ' ET';
+    }
 }
 
 function fmtDate(dateStr){
