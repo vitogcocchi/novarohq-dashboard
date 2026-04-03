@@ -12,6 +12,7 @@ Token is loaded from .novaro_credentials or GITHUB_TOKEN env var.
 import json
 import base64
 import os
+import sys
 import urllib.request
 import urllib.error
 from pathlib import Path
@@ -37,8 +38,10 @@ REPO_OWNER   = "vitogcocchi"
 REPO_NAME    = "novarohq-dashboard"
 BRANCH       = "main"
 
-SOCIAL_FILE  = DASHBOARD_DIR / "social-data.json"
-TASKS_FILE   = DASHBOARD_DIR / "task-status.json"
+SOCIAL_FILE   = DASHBOARD_DIR / "social-data.json"
+TASKS_FILE    = DASHBOARD_DIR / "task-status.json"
+FUNNEL_FILE   = DASHBOARD_DIR / "funnel-data.json"
+DEBRIEF_FILE  = DASHBOARD_DIR / "morning-debrief-data.json"
 API_BASE     = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents"
 
 
@@ -97,15 +100,20 @@ def push_file(filename, content_str, sha=None):
 
 
 # ─── MAIN ─────────────────────────────────────────────────────────────────────
-def push_all():
+def push_all(include_html=False):
     if not GITHUB_TOKEN:
         print("[error] No GITHUB_TOKEN found in .novaro_credentials or environment")
         return False
 
     files = [
-        (SOCIAL_FILE, "social-data.json"),
-        (TASKS_FILE,  "task-status.json"),
+        (SOCIAL_FILE,   "social-data.json"),
+        (TASKS_FILE,    "task-status.json"),
+        (FUNNEL_FILE,   "funnel-data.json"),
+        (DEBRIEF_FILE,  "morning-debrief-data.json"),
     ]
+    if include_html:
+        html_file = DASHBOARD_DIR / "index.html"
+        files.append((html_file, "index.html"))
     success_count = 0
     for local_path, repo_filename in files:
         if not local_path.exists():
@@ -120,8 +128,9 @@ def push_all():
 
 
 if __name__ == "__main__":
+    include_html = "--include-html" in sys.argv
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[{ts}] Pushing dashboard data to GitHub...")
-    success = push_all()
+    print(f"[{ts}] Pushing dashboard data to GitHub{'  (+ index.html)' if include_html else ''}...")
+    success = push_all(include_html=include_html)
     print("[ok] Done" if success else "[warn] Push had errors")
     exit(0 if success else 1)
