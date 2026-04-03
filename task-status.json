@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-03T00:37:37Z",
+    "lastRun": "2026-04-03T01:38:57Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:37 PM ET Apr 2 / 00:37 UTC Apr 3): No changes from previous run. 229 pending sent requests — unchanged, most recent batch still ~11 hours old targeting landscaping businesses (Google LSA pitch). Total connections: 1,051 — no new acceptances since last scrape. No unread messages in focused inbox. Stefano Cardillo (SC Landscaping, Cranston RI) still has not replied to Apr 1 follow-up. Zero new interest signals. All metrics flat: requestsSent: 229, requestsAccepted: 14, totalConnections: 1051, messagesSent: 11, replies: 1, interestSignals: 0.",
+    "summary": "Scraped LinkedIn (9:38 PM ET Apr 2 / 01:38 UTC Apr 3): Metrics unchanged from previous run. 229 pending sent requests — most recent batch sent ~12 hours ago targeting landscaping business owners (Google LSA pitch). Total connections: 1,051 — 14 accepted this week (5 on Apr 2, 8 on Apr 1, 1 on Mar 31). No unread messages in focused inbox. Focused inbox reviewed: Stefano Cardillo (SC Landscaping, Cranston RI) has not replied to Apr 1 follow-up question. Vincent Handugan (Mar 20) sent an inbound pitch offering VA services — not a prospect buying signal. Zero interest signals from prospects. All metrics flat: requestsSent: 229, requestsAccepted: 14, totalConnections: 1051, messagesSent: 11, replies: 1, interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
