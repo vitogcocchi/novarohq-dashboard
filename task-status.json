@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-02T23:39:08Z",
+    "lastRun": "2026-04-03T00:37:37Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (7:39 PM ET Apr 2 / 23:39 UTC): 229 pending sent requests (down 1 from last run — 1 accepted). Most recent batch sent ~10 hours ago targeting landscaping/outdoor service businesses with Google LSA optimization pitch. Total connections: 1,051 (up 1 — Colin Hoffman accepted today). This week's accepted connections (14 total): Apr 2 — Colin Hoffman (Franklin Pierce University), Daniel Szender (Sure Lock & Key LLC), Aaron McCollum (Construction Executive), Pat Picaud (Multi-family/commercial construction director), Mitchell Kilkenny (Golf Course Superintendent, Cordillera Ranch); Apr 1 — David Sloan (Sloan Mechanical Services CEO), John Barron (The Fearn Group), Michael Welch (FreedomForm Concrete), Abraham Palacios (Moss & Associates, Electrical Superintendent), Kyle O'Connor, Kelly Kenter (Sitelines Inc. CEO), Jennifer Porcello (Ops Manager), Carlos Amaya (Varsity Plumbing & Heating); Mar 31 — Stefano Cardillo (SC Landscaping). No unread messages in focused inbox. Active qualifying thread: Stefano Cardillo (Owner, SC Landscaping, Cranston RI) — Vito sent follow-up Wed Apr 1 asking if Google is sending enough jobs; no reply yet. Notable flag: Rich Iandoli thread shows a '[First Name]' placeholder error in a follow-up sequence — template merge likely failed. 0 positive buying-intent signals this run. requestsSent: 229, requestsAccepted: 14, totalConnections: 1051, messagesSent: 11, replies: 1, interestSignals: 0.",
+    "summary": "Scraped LinkedIn (8:37 PM ET Apr 2 / 00:37 UTC Apr 3): No changes from previous run. 229 pending sent requests — unchanged, most recent batch still ~11 hours old targeting landscaping businesses (Google LSA pitch). Total connections: 1,051 — no new acceptances since last scrape. No unread messages in focused inbox. Stefano Cardillo (SC Landscaping, Cranston RI) still has not replied to Apr 1 follow-up. Zero new interest signals. All metrics flat: requestsSent: 229, requestsAccepted: 14, totalConnections: 1051, messagesSent: 11, replies: 1, interestSignals: 0.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
