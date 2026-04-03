@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-03T12:09:38Z",
+    "lastRun": "2026-04-03T18:09:20Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:09 AM ET Apr 3 / 12:09 UTC): 227 pending sent requests — most recent batch sent ~23 hours ago targeting landscaping business owners (Google LSA pitch: 'I work with landscaping businesses on Google LSA optimization'). Total connections: 1,053 — up 2 since last run (Jason Sanchez - Mechanical Foreman, Christopher Tichy - Owner CJs Seasonal Landscaping, both connected Apr 3). Running total accepted: 16 this tracking period. Unread filter shows 0 unread messages. Focused inbox reviewed: Stefano Cardillo (SC Landscaping, Cranston RI) still no reply to Apr 1 follow-up. Vincent Handugan (Mar 20) sent inbound VA services pitch — not a prospect. Diana Boskma (Mar 13) sent generic LinkedIn congratulations on new role at Novaro AI — not a prospect. Zero buying intent signals. Delta vs last run: requestsSent -2 (accepted), totalConnections +2, requestsAccepted +2.",
+    "summary": "Scraped LinkedIn (2:09 PM ET Apr 3 / 18:09 UTC): 252 pending sent requests — most recent batch sent ~5 hours ago (~9 AM ET) targeting electrical and home services business owners (Google LSA pitch: 'Hey [Name] — I work with electrical businesses on Google LSA optimization. Thought connecting made sense.'). Visible prospects in batch include Aurrie Keone Canianes (Owner/President), George Boukouvalas (President T&G Electrical), Bryan Wilbanks (IBEW Electrician), Juan Jimenez (J and K Electrical Services), Frank Wdowiak. Total connections: 1,054 — up 1 since last run (Harry Davis, Energy Optimisation / Eden Energy Partners, connected Apr 3). Running total accepted: 17 this tracking period. New connections this week: Harry Davis (Apr 3), Jason Sanchez (Apr 3), Christopher Tichy / CJs Seasonal Landscaping (Apr 3), Colin Hoffman (Apr 2), Daniel Szender / Sure Lock & Key (Apr 2), Aaron McCollum (Apr 2), Pat Picaud (Apr 2), Mitchell Kilkenny (Apr 2). Messaging: 0 unread messages in focused inbox. Vito sent 2 follow-up messages today to Christopher Tichy and Jason Sanchez (Google jobs discovery question). No replies from prospects. Zero buying intent signals detected.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
