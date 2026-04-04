@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-04T00:10:39Z",
+    "lastRun": "2026-04-04T12:08:37Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:10 PM ET Apr 3 / 00:10 UTC Apr 4): 252 pending sent requests — most recent batch sent ~11 hours ago targeting electrical and home services business owners (Google LSA pitch). Visible prospects in batch include Aurrie Keone Canianes (Owner/President), George Boukouvalas (President T&G Electrical), Bryan Wilbanks (IBEW Electrician), Juan Jimenez (J and K Electrical Services), Frank Wdowiak. Total connections: 1,054 — unchanged from prior run. 17 new connections this week (Mar 31–Apr 3): Harry Davis, Jason Sanchez, Christopher Tichy (Apr 3), Colin Hoffman, Daniel Szender, Aaron McCollum, Pat Picaud, Mitchell Kilkenny (Apr 2), David Sloan, John Barron, Michael Welch, Abraham Palacios, Kyle O'Connor, Kelly Kenter, Jennifer Porcello, Carlos Amaya (Apr 1), Stefano Cardillo (Mar 31). Messaging: 0 unread messages in focused inbox. No new replies or buying intent signals since prior run. All metrics unchanged — timestamp refreshed.",
+    "summary": "Scraped LinkedIn (8:08 AM ET Apr 4 / 12:08 UTC): 252 pending sent requests — most recent batch sent 23 hours ago targeting electrical business owners (Google LSA pitch). Visible batch: Aurrie Keone Canianes (Owner/President), George Boukouvalas (President T&G Electrical), Bryan Wilbanks (IBEW Electrician), Juan Jimenez (J and K Electrical Services), Frank Wdowiak. Total connections: 1,054 — unchanged. 17 new connections this week (Mar 31–Apr 3) — same list as prior run, no new acceptances on Apr 4 yet. Messaging: 0 unread messages in focused inbox (Unread filter confirmed empty). No new replies or buying intent signals. All metrics unchanged from last run — timestamp refreshed and Apr 4 daily row added.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
