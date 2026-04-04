@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-04T12:08:37Z",
+    "lastRun": "2026-04-04T18:18:03Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:08 AM ET Apr 4 / 12:08 UTC): 252 pending sent requests — most recent batch sent 23 hours ago targeting electrical business owners (Google LSA pitch). Visible batch: Aurrie Keone Canianes (Owner/President), George Boukouvalas (President T&G Electrical), Bryan Wilbanks (IBEW Electrician), Juan Jimenez (J and K Electrical Services), Frank Wdowiak. Total connections: 1,054 — unchanged. 17 new connections this week (Mar 31–Apr 3) — same list as prior run, no new acceptances on Apr 4 yet. Messaging: 0 unread messages in focused inbox (Unread filter confirmed empty). No new replies or buying intent signals. All metrics unchanged from last run — timestamp refreshed and Apr 4 daily row added.",
+    "summary": "Scraped LinkedIn (2:18 PM ET Apr 4 / 18:18 UTC): 252 pending sent requests — most recent batch sent yesterday (Apr 3) targeting electrical business owners (Google LSA pitch). Visible batch: Aurrie Keone Canianes (Owner/President), George Boukouvalas (President T&G Electrical), Bryan Wilbanks (IBEW Electrician), Juan Jimenez (J and K Electrical Services), Frank Wdowiak. Total connections: 1,054 — unchanged. Received invitations: 22 pending. Messaging focused inbox: 0 unread messages (Unread filter confirmed empty). Scrolled full focused inbox — only non-buying reply found was Vincent Handugan (Mar 20) pitching a VA service, not a prospect interest signal. No new replies or buying intent signals since last run. All metrics unchanged — timestamp refreshed.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
