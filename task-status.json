@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-05T21:12:57.000Z",
-    "status": "active",
-    "summary": "Run at ~5:12 PM ET Apr 5 (21:12 UTC). Notifications (All tab, Today): 3 new — Window Cleaning Business Owners group activity (6h, Blaine Trarop post about biz card discount, comment by Zachary Tucker, no AI relevance, SKIP); John Tornabene @everyone mention in Power Washing Worldwide (7h, promoting Rob Huffman's exterior maintenance academy, generic mass mention, SKIP); Patrick Gleavey tagged @everyone in Landscaping Entrepreneurs Network (8h, Happy Easter video, SKIP). Earlier: Car Detailing Business Owners new member welcome (16h, SKIP); Tony Facente accepted friend request (22h). Activity Log (Comments & Reactions): most recent comment activity is March 29, 2026 — no new comment activity Apr 1-5. Messenger inbox: Isaac James Fernandez outbound DM (5h, 11:55 AM send, still no reply); Ryan Bailey outbound DM (Fri 9:02 PM, still no reply); Liam Nowak/Rico Cocchi/Brady Fellows/Byron Peabody/Anthony Cocchi/Ann Giroux — all E2E init only, no messages. Message Requests: 0. Spam: Room Full of Love 4813 adult spam group (same as prior run, SKIP). Delta this run: 0 hot leads, 0 qualified leads, 0 new inbound DMs. No new Notion entries. Cumulative: 18 groups, 116 comments, 39 positive, 4 DMs, 14 interest signals.",
+    "lastRun": "2026-04-05T22:06:00.000Z",
+    "status": "error",
+    "summary": "BLOCKED — Run at ~6:06 PM ET Apr 5 (22:06 UTC). Facebook account locked by Facebook security on April 5, 2026. Checkpoint page shown: 'We locked your account because it may have been hacked.' Requires Vito to manually confirm account identity and review login details before access is restored. No notifications, activity log, or Messenger could be accessed this run. Delta: 0 hot leads, 0 qualified leads, 0 DMs. ACTION REQUIRED: Vito must go to facebook.com and complete the account recovery checkpoint to re-enable automated scanning.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
