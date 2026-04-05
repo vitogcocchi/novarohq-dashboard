@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-05T12:16:26Z",
+    "lastRun": "2026-04-05T18:14:11Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:16 AM ET Apr 5 / 12:16 UTC): 250 pending sent requests \u2014 most recent batch sent Apr 4 targeting electrical businesses (Google LSA pitch). Total connections: 1,056 (up 1 from last run). New connection: Ray Ammons (accepted Apr 5). Unread messages: 0 (confirmed via Unread filter). No new replies or interest signals this run. requestsAccepted +1 to 19 cumulative.",
+    "summary": "Scraped LinkedIn (2:14 PM ET Apr 5 / 18:14 UTC): 250 pending sent requests — most recent batch sent 2 days ago (Apr 3) targeting electrical businesses (Google LSA pitch). Total connections: 1,056 (unchanged). No new connections since last run — Ray Ammons (Apr 5) was already captured. Unread messages: 0 (confirmed via Unread filter). No new replies or interest signals this run. All metrics unchanged from prior run; timestamp updated.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
