@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-04T18:18:03Z",
+    "lastRun": "2026-04-05T00:19:24Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (2:18 PM ET Apr 4 / 18:18 UTC): 252 pending sent requests — most recent batch sent yesterday (Apr 3) targeting electrical business owners (Google LSA pitch). Visible batch: Aurrie Keone Canianes (Owner/President), George Boukouvalas (President T&G Electrical), Bryan Wilbanks (IBEW Electrician), Juan Jimenez (J and K Electrical Services), Frank Wdowiak. Total connections: 1,054 — unchanged. Received invitations: 22 pending. Messaging focused inbox: 0 unread messages (Unread filter confirmed empty). Scrolled full focused inbox — only non-buying reply found was Vincent Handugan (Mar 20) pitching a VA service, not a prospect interest signal. No new replies or buying intent signals since last run. All metrics unchanged — timestamp refreshed.",
+    "summary": "Scraped LinkedIn (8:19 PM ET Apr 4 / 00:19 UTC Apr 5): 251 pending sent requests — most recent batch sent Apr 3 targeting electrical/plumbing/trades business owners (Google LSA pitch). Total connections: 1,055 (up 1 from last run). New connection today: Ramón Cruz (Owner, Vic & Ray Plumbing Inc, connected Apr 4). New connections Apr 2-3: Harry Davis (Energy Optimisation), Jason Sanchez (Mechanical Foreman), Christopher Tichy (Owner, CJs Seasonal Landscaping), Colin Hoffman (Student), Daniel Szender (Owner, Sure Lock & Key LLC), Aaron McCollum (Business Executive), Pat Picaud (Commercial Construction Director). Unread messages: 0 (Unread filter confirmed empty). 1 new reply from Ramón Cruz: 'Thank you Vito. Keep you posted. Nice connecting with you.' — polite, no buying intent. 0 interest signals this run. requestsAccepted +1 to 18 cumulative.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
