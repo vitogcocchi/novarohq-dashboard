@@ -1,22 +1,22 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-05T14:19:55.000Z",
+    "lastRun": "2026-04-05T15:10:47.000Z",
     "status": "active",
-    "summary": "Run at ~10:20 AM ET Apr 5 (14:19 UTC). Notifications (3 new): John Tornabene @everyone mention in Power Washing, Soft Washing & Window Cleaning Worldwide (51m) — praising Rob Huffman's Academy launch, SKIP; Patrick Gleavey @everyone Happy Easter video in Landscaping Entrepreneurs Network (1h) — seasonal group post, SKIP; Car Detailing Business Owners Worldwide new members welcome post (9h) — generic group activity, SKIP. Activity Log: No new comments since March 29 — all outbound prospecting threads (Ryan Bailey, Isaac James Fernandez, Miranda McCabe, Jesse Reed x2, Kyle Redden x2) still awaiting replies. Messenger inbox: Ryan Bailey DM still unanswered (sent Fri 9:02 PM); all other chats (Tony Facente, Liam Nowak, Rico Cocchi, Brady Fellows, Byron Peabody, Anthony Cocchi, Ann Giroux) remain empty/secure. Message requests: 0. Spam: Room Full of Love 4813 (Ambeno Russell: 'Wow', 2h) — recurring spam group, SKIP. Delta this run: 0 hot leads, 0 qualified leads, 0 new inbound DMs. No new Notion entries. Cumulative: 18 groups, 116 comments, 39 positive, 4 DMs, 14 interest signals.",
+    "summary": "Run at ~11:10 AM ET Apr 5 (15:10 UTC). Notifications reviewed: 1 new unread since last run \u2014 Window Cleaning Business Owners (28m): Blaine Trarop/Good Olde Fashioned Window Cleaning posting about business cards and pricing strategy, generic group post, SKIP. Earlier items also checked: Al Mamun @everyone tag in Junk Removal Community (18h) \u2014 Facebook Ads self-promotion spam pitch, SKIP; Tony Facente accepted friend request (16h) \u2014 connection only, no message. Carried from prior run (John Tornabene @everyone Power Washing 1h, Patrick Gleavey tag Landscaping 2h, Car Detailing new members 10h) \u2014 all SKIP. Activity Log: No new comments since March 29 \u2014 all outbound prospecting threads (Ryan Bailey, Isaac James Fernandez, Miranda McCabe, Jesse Reed x2, Kyle Redden x2) still awaiting replies. Messenger inbox: Tony Facente added as new contact (empty E2E chat, no messages); Ryan Bailey DM still unanswered (sent Fri ~9 PM); Ann Giroux blue dot was E2E thread initialization only, no messages; all other chats (Liam Nowak, Rico Cocchi, Brady Fellows, Byron Peabody, Anthony Cocchi) remain empty/secure. Message requests: 0. Spam: Room Full of Love 4813 (Ambeno Russell: 'Wow', 3h) \u2014 recurring spam, SKIP. Delta this run: 0 hot leads, 0 qualified leads, 0 new inbound DMs. No new Notion entries. Cumulative: 18 groups, 116 comments, 39 positive, 4 DMs, 14 interest signals.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
     "lastRun": "2026-04-05T12:16:26Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:16 AM ET Apr 5 / 12:16 UTC): 250 pending sent requests — most recent batch sent Apr 4 targeting electrical businesses (Google LSA pitch). Total connections: 1,056 (up 1 from last run). New connection: Ray Ammons (accepted Apr 5). Unread messages: 0 (confirmed via Unread filter). No new replies or interest signals this run. requestsAccepted +1 to 19 cumulative.",
+    "summary": "Scraped LinkedIn (8:16 AM ET Apr 5 / 12:16 UTC): 250 pending sent requests \u2014 most recent batch sent Apr 4 targeting electrical businesses (Google LSA pitch). Total connections: 1,056 (up 1 from last run). New connection: Ray Ammons (accepted Apr 5). Unread messages: 0 (confirmed via Unread filter). No new replies or interest signals this run. requestsAccepted +1 to 19 cumulative.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
   "novaro-dashboard-refresh": {
     "lastRun": "2026-04-02T12:08:09.000Z",
     "status": "active",
-    "summary": "Daily Notion refresh ran at 8:08 AM ET Apr 2. Queried Outreach Leads Pipeline (ebac6164). Notion MCP returned schema only — no rows queryable via current MCP tools. Pipeline data written as all zeros per fallback. Database schema confirmed: Status options (New Lead, DM Sent, Replied, Call Booked, Closed, Not Interested), Sources (Facebook, LinkedIn, SMS, Instantly). Funnel-data.json updated and pushed to GitHub.",
+    "summary": "Daily Notion refresh ran at 8:08 AM ET Apr 2. Queried Outreach Leads Pipeline (ebac6164). Notion MCP returned schema only \u2014 no rows queryable via current MCP tools. Pipeline data written as all zeros per fallback. Database schema confirmed: Status options (New Lead, DM Sent, Replied, Call Booked, Closed, Not Interested), Sources (Facebook, LinkedIn, SMS, Instantly). Funnel-data.json updated and pushed to GitHub.",
     "schedule": "On scraper run",
     "type": "GitHub API push"
   },
