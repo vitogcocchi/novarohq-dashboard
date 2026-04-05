@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-05T00:19:24Z",
+    "lastRun": "2026-04-05T12:16:26Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:19 PM ET Apr 4 / 00:19 UTC Apr 5): 251 pending sent requests — most recent batch sent Apr 3 targeting electrical/plumbing/trades business owners (Google LSA pitch). Total connections: 1,055 (up 1 from last run). New connection today: Ramón Cruz (Owner, Vic & Ray Plumbing Inc, connected Apr 4). New connections Apr 2-3: Harry Davis (Energy Optimisation), Jason Sanchez (Mechanical Foreman), Christopher Tichy (Owner, CJs Seasonal Landscaping), Colin Hoffman (Student), Daniel Szender (Owner, Sure Lock & Key LLC), Aaron McCollum (Business Executive), Pat Picaud (Commercial Construction Director). Unread messages: 0 (Unread filter confirmed empty). 1 new reply from Ramón Cruz: 'Thank you Vito. Keep you posted. Nice connecting with you.' — polite, no buying intent. 0 interest signals this run. requestsAccepted +1 to 18 cumulative.",
+    "summary": "Scraped LinkedIn (8:16 AM ET Apr 5 / 12:16 UTC): 250 pending sent requests — most recent batch sent Apr 4 targeting electrical businesses (Google LSA pitch). Total connections: 1,056 (up 1 from last run). New connection: Ray Ammons (accepted Apr 5). Unread messages: 0 (confirmed via Unread filter). No new replies or interest signals this run. requestsAccepted +1 to 19 cumulative.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
