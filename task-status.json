@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-07T19:23:00.000Z",
+    "lastRun": "2026-04-07T21:10:31.000Z",
     "status": "active",
-    "summary": "Run at ~3:23 PM ET Apr 7 (19:23 UTC). Reviewed all notifications — 3 unread (4h: Car Detailing 'glad to join the group' @everyone; 4h: Junk Removal 5 new posts; 17h: admin updated HVAC Contractors & Business Owners Support). Additional notifications reviewed: Willie Ward @everyone podcast promo in HVAC IS LIFE (5h, confirmed @everyone tag); Max Arnold @everyone intro post in Cleaning Business Owners Coaching (1d, page unavailable); Window Cleaning 'FREE CRM' promo post (3h, page unavailable/deleted); John Tornabene @everyone academy launch in Power Washing group (2d, page unavailable). All generic — no comments on Novaro AI posts, no personal AI/automation inquiries. Messenger inbox: all outbound threads still unanswered (Isaac James Fernandez, Ryan Bailey). 1 new connection opened: Ann Giroux — empty thread, no messages exchanged. Message requests: 0. Spam: 1 (Room Full of Love 4813 link blast, discarded — same as last run). Delta: 0 hot leads, 0 qualified leads, 0 new inbound DMs.",
+    "summary": "Run at ~5:10 PM ET Apr 7 (21:10 UTC). Notifications: 3 unread — same carryovers from prior run (Car Detailing @everyone intro 6h; Junk Removal 5 new posts 6h; HVAC Contractors admin description update 19h). No new notifications since last run. Also visible: Patrick Gleavey @everyone video tag in Landscaping Entrepreneurs Network (2d), Window Cleaning FREE CRM promo (5h, older), Willie Ward @everyone mention in HVAC IS LIFE (7h). All generic — no comments on Novaro AI posts, no AI/automation inquiries. Messenger inbox: Tony Facente new empty thread (2d, no messages); Ryan Bailey outbound still unanswered (3d); Liam Nowak empty thread (4d); Rico Cocchi empty thread (6d); Ann Giroux empty thread (previously unread dot, no messages). Message requests: 0. Spam: Room Full of Love 4813 — Holmes Renee sent a link (6h, recurring link blast, discarded). Delta: 0 hot leads, 0 qualified leads, 0 new inbound DMs.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
