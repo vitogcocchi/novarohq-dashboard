@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-07T21:10:31.000Z",
+    "lastRun": "2026-04-07T22:09:19.000Z",
     "status": "active",
-    "summary": "Run at ~5:10 PM ET Apr 7 (21:10 UTC). Notifications: 3 unread — same carryovers from prior run (Car Detailing @everyone intro 6h; Junk Removal 5 new posts 6h; HVAC Contractors admin description update 19h). No new notifications since last run. Also visible: Patrick Gleavey @everyone video tag in Landscaping Entrepreneurs Network (2d), Window Cleaning FREE CRM promo (5h, older), Willie Ward @everyone mention in HVAC IS LIFE (7h). All generic — no comments on Novaro AI posts, no AI/automation inquiries. Messenger inbox: Tony Facente new empty thread (2d, no messages); Ryan Bailey outbound still unanswered (3d); Liam Nowak empty thread (4d); Rico Cocchi empty thread (6d); Ann Giroux empty thread (previously unread dot, no messages). Message requests: 0. Spam: Room Full of Love 4813 — Holmes Renee sent a link (6h, recurring link blast, discarded). Delta: 0 hot leads, 0 qualified leads, 0 new inbound DMs.",
+    "summary": "Run at ~6:09 PM ET Apr 7 (22:09 UTC). Notifications: 3 unread — 2 carryovers (Junk Removal 5 new posts 7h; HVAC Contractors admin description 20h) + 1 new: Car Detailing Business Owners 'What's up everyone, glad to join the group' 51m (generic intro, skipped). Also visible: Window Cleaning FREE CRM promo (6h, carryover), Willie Ward @everyone mention HVAC IS LIFE (8h, carryover). No comments on Novaro AI posts, no AI/automation inquiries. Messenger inbox: Isaac James Fernandez NEW outbound thread — Vito's pitch sent Sun 11:55 AM about pressure washing automation, unanswered (2d); Tony Facente empty thread (2d); Ryan Bailey outbound unanswered (3d); Liam Nowak empty thread (4d); Rico Cocchi empty thread (6d); Brady Fellows empty (1w); Byron Peabody empty (1w); Anthony Cocchi empty (1w); Ann Giroux false unread dot resolved to empty thread. Message requests: 0. Spam: Room Full of Love 4813 — Holmes Renee link blast (7h, recurring, discarded). Delta: 0 hot leads, 0 qualified leads, 0 new inbound DMs.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
