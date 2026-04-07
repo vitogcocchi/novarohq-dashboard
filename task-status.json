@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-07T22:06:00.000Z",
+    "lastRun": "2026-04-07T19:23:00.000Z",
     "status": "active",
-    "summary": "Run at ~6:06 PM ET Apr 7 (22:06 UTC). Account RECOVERED — previously locked since April 5, now fully accessible. Reviewed 10 notifications (6 unread): all @everyone tags or generic group activity across HVAC IS LIFE, Cleaning Business Owners Coaching, Window Cleaning Business Owners, Car Detailing Business Owners, Junk Removal Success for Beginners, HVAC Contractors & Business Owners Support. No comments on Novaro AI posts. Messenger inbox: no new inbound DMs (all recent threads are Vito's outbound outreach with no replies — Isaac James Fernandez, Ryan Bailey still pending). Message requests: 0. Spam: 1 (Room Full of Love 4813 link blast, discarded). Delta: 0 hot leads, 0 qualified leads, 0 DMs. Account lock resolved.",
+    "summary": "Run at ~3:23 PM ET Apr 7 (19:23 UTC). Reviewed all notifications — 3 unread (4h: Car Detailing 'glad to join the group' @everyone; 4h: Junk Removal 5 new posts; 17h: admin updated HVAC Contractors & Business Owners Support). Additional notifications reviewed: Willie Ward @everyone podcast promo in HVAC IS LIFE (5h, confirmed @everyone tag); Max Arnold @everyone intro post in Cleaning Business Owners Coaching (1d, page unavailable); Window Cleaning 'FREE CRM' promo post (3h, page unavailable/deleted); John Tornabene @everyone academy launch in Power Washing group (2d, page unavailable). All generic — no comments on Novaro AI posts, no personal AI/automation inquiries. Messenger inbox: all outbound threads still unanswered (Isaac James Fernandez, Ryan Bailey). 1 new connection opened: Ann Giroux — empty thread, no messages exchanged. Message requests: 0. Spam: 1 (Room Full of Love 4813 link blast, discarded — same as last run). Delta: 0 hot leads, 0 qualified leads, 0 new inbound DMs.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
