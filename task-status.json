@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-05T18:14:11Z",
+    "lastRun": "2026-04-07T17:31:46Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (2:14 PM ET Apr 5 / 18:14 UTC): 250 pending sent requests — most recent batch sent 2 days ago (Apr 3) targeting electrical businesses (Google LSA pitch). Total connections: 1,056 (unchanged). No new connections since last run — Ray Ammons (Apr 5) was already captured. Unread messages: 0 (confirmed via Unread filter). No new replies or interest signals this run. All metrics unchanged from prior run; timestamp updated.",
+    "summary": "Scraped LinkedIn (1:31 PM ET Apr 7 / 17:31 UTC): 249 pending sent requests (down 1 from 250 — 3 accepted). Most recent sends today targeting plumbing businesses (Kody Gummere, Stephen Joiner — Google LSA pitch). Total connections: 1,059 (up 3 from 1,056 — Steve Wiater + 2 others accepted this week). Unread: 2 messages (both inbound sales to Vito — Vincent Handugan offering VA trial, Josef Volpin InMail selling booking system). 1 new reply from outreach: Ramón Cruz replied positively ('Thank you Vito. Keep you posted.') — soft signal, no strong buying intent. Vito sent a follow-up qualifying question to Ramón today. No interest signals this run.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
