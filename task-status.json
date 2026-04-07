@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-05T22:06:00.000Z",
+    "lastRun": "2026-04-07T09:00:00.000Z",
     "status": "error",
-    "summary": "BLOCKED — Run at ~6:06 PM ET Apr 5 (22:06 UTC). Facebook account locked by Facebook security on April 5, 2026. Checkpoint page shown: 'We locked your account because it may have been hacked.' Requires Vito to manually confirm account identity and review login details before access is restored. No notifications, activity log, or Messenger could be accessed this run. Delta: 0 hot leads, 0 qualified leads, 0 DMs. ACTION REQUIRED: Vito must go to facebook.com and complete the account recovery checkpoint to re-enable automated scanning.",
+    "summary": "BLOCKED — Run at ~9:00 AM ET Apr 7 (09:00 UTC). Facebook account remains locked since April 5, 2026. Checkpoint page shown: 'We locked your account because it may have been hacked.' Requires Vito to manually confirm account identity and review login details before access is restored. No notifications, activity log, or Messenger could be accessed this run. Delta: 0 hot leads, 0 qualified leads, 0 DMs. ACTION REQUIRED: Vito must go to facebook.com and complete the account recovery checkpoint to re-enable automated scanning.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
