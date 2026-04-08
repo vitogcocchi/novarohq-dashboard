@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-08T16:16:11.000Z",
+    "lastRun": "2026-04-08T17:18:00.000Z",
     "status": "active",
-    "summary": "Run at ~12:16 PM ET Apr 8 (16:16 UTC). Notifications reviewed: security login alert (52m, Claude automation flag); Liam Nowak friend accept (4d); Rico Cocchi friend accept (1w); Cheryl Provost like (1w); Ann Giroux, Cheryl Provost accepts (1w); Berry Little tagged in COMMERCIAL CLEANERS (1w, generic); Ron Babich tagged in Plumbing for Business Owners (1w, generic) — 0 AI/automation signals. Activity log (Comments & Reactions): most recent comment activity March 29, 2026 — no new post comments or mentions since prior run. Messenger main inbox: Isaac James Fernandez outbound pitch unanswered (3d); Ryan Bailey outbound unanswered (4d); Tony Facente, Liam Nowak, Rico Cocchi, Brady Fellows, Byron Peabody, Anthony Cocchi, Ann Giroux — all new connections with 0 inbound messages. Message requests (You may know): 0. Spam: Room Full of Love 4813 — Holmes Renee link blast (1d, discarded). Delta: 0 hot leads, 0 qualified leads, 0 new inbound DMs. No Notion entries logged.",
+    "summary": "Run at ~1:18 PM ET Apr 8 (17:18 UTC). Notifications reviewed: security alert 'Someone tried to log in, but we stopped them' (1h); security alert 'new login from device or location you don't usually use' (2h, Claude automation flag); Tony Facente friend accept (3d, already logged); Carly Baker friend accept (4d, new connection, no lead signal) — 0 AI/automation signals. Messenger main inbox: Isaac James Fernandez outbound pitch still unanswered (3d); Ryan Bailey outbound still unanswered (4d); Tony Facente, Liam Nowak, Rico Cocchi, Brady Fellows, Byron Peabody, Anthony Cocchi — no inbound messages; Ann Giroux — blue dot resolved, no actual messages (new connection only). Message requests (You may know): 0. Spam: Room Full of Love 4813 — Holmes Renee link blast (1d, same as prior run, discarded). Delta since last run: 0 hot leads, 0 qualified leads, 0 new inbound DMs. No Notion entries logged.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
