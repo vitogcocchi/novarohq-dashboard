@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-07T18:08:59Z",
+    "lastRun": "2026-04-08T00:11:26Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (2:08 PM ET Apr 7 / 18:08 UTC): 253 pending sent requests (up 4 from 249 — new batch sent ~33-36 min ago targeting plumbing businesses: Steven Dobos/Arcade Plumbing, Ron Griesemer, John Andress/Andress Plumbing, Ray Rodnite/Commercial Plumbing Services — all Google LSA pitch). Total connections: 1,059 (unchanged). No unread messages. No new replies from outreach. 1 inbound sales pitch: Syed Farhan followed up on accounting/bookkeeping services — not a buying signal for Novaro AI. Ramón Cruz thread still awaiting reply to Vito's qualifying question (sent 1:19 PM today). No interest signals this run.",
+    "summary": "Scraped LinkedIn (8:11 PM ET Apr 7 / 00:11 UTC Apr 8): 252 pending sent requests (down 1 from 253 — Joshua Hoffmann accepted). Total connections: 1,060 (up from 1,059). New connection: Joshua Hoffmann accepted today. 3 unread badge — all old: Edward Fletcher (Feb 27) replied 'Thanks for reaching out, but I'm not interested' (InMail declined, VP at Presidential Pools & Spas); Jesusa Michaela Sales (Jan 2) InMail 'Thoughts?' (old outbound); others from late 2025. No new replies from prospects since last run. Ramón Cruz (Owner at Vic & Ray Plumbing) still hasn't replied to qualifying question sent 1:19 PM today. No interest signals this run.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
