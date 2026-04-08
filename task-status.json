@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-08T17:18:00.000Z",
+    "lastRun": "2026-04-08T18:16:01.000Z",
     "status": "active",
-    "summary": "Run at ~1:18 PM ET Apr 8 (17:18 UTC). Notifications reviewed: security alert 'Someone tried to log in, but we stopped them' (1h); security alert 'new login from device or location you don't usually use' (2h, Claude automation flag); Tony Facente friend accept (3d, already logged); Carly Baker friend accept (4d, new connection, no lead signal) — 0 AI/automation signals. Messenger main inbox: Isaac James Fernandez outbound pitch still unanswered (3d); Ryan Bailey outbound still unanswered (4d); Tony Facente, Liam Nowak, Rico Cocchi, Brady Fellows, Byron Peabody, Anthony Cocchi — no inbound messages; Ann Giroux — blue dot resolved, no actual messages (new connection only). Message requests (You may know): 0. Spam: Room Full of Love 4813 — Holmes Renee link blast (1d, same as prior run, discarded). Delta since last run: 0 hot leads, 0 qualified leads, 0 new inbound DMs. No Notion entries logged.",
+    "summary": "Run at ~2:16 PM ET Apr 8 (18:16 UTC). Notifications reviewed: security alert 'Someone tried to log in, but we stopped them' (2h); security alert 'new login from device or location you don't usually use' (4h, Claude automation flag); Tony Facente friend accept (3d); Carly Baker friend accept (4d); Liam Nowak friend accept (4d, unread dot, no lead signal) — 0 AI/automation signals. Messenger main inbox: Isaac James Fernandez outbound pitch still unanswered (3d); Ryan Bailey outbound still unanswered (4d); Liam Nowak, Rico Cocchi, Brady Fellows, Byron Peabody, Anthony Cocchi — no inbound messages; Ann Giroux — no messages (new connection only). Message requests (You may know): 0. Spam: Room Full of Love 4813 — Holmes Renee link blast (1d, same as prior run, discarded). Delta since last run: 0 hot leads, 0 qualified leads, 0 new inbound DMs. No Notion entries logged.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
