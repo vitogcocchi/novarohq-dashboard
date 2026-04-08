@@ -1,12 +1,12 @@
 {
   "facebook": {
-    "lastUpdated": "2026-04-08T21:30:00.000Z",
+    "lastUpdated": "2026-04-08T22:10:21.000Z",
     "groups": 18,
     "postsLive": 18,
-    "comments": 116,
-    "positiveComments": 39,
+    "comments": 117,
+    "positiveComments": 40,
     "dmsReceived": 4,
-    "interestSignals": 14,
+    "interestSignals": 16,
     "daily": [
       {"date": "2026-03-26", "groups": 0, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
       {"date": "2026-03-27", "groups": 0, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
@@ -21,7 +21,7 @@
       {"date": "2026-04-05", "groups": 18, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
       {"date": "2026-04-06", "groups": 18, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
       {"date": "2026-04-07", "groups": 18, "posts": 0, "comments": 10, "positive": 0, "dms": 0, "interest": 0},
-      {"date": "2026-04-08", "groups": 18, "posts": 0, "comments": 2, "positive": 0, "dms": 0, "interest": 2}
+      {"date": "2026-04-08", "groups": 18, "posts": 0, "comments": 3, "positive": 1, "dms": 0, "interest": 4}
     ]
   },
   "linkedin": {
