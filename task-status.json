@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-08T12:10:32Z",
+    "lastRun": "2026-04-08T18:24:22Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:10 AM ET Apr 8 / 12:10 UTC): 252 pending sent requests (unchanged), most recent batch sent ~18h ago (~2 PM ET Apr 7). Total connections: 1,060 (no change since last run). New connections this week: Joshua Hoffmann (Apr 7, JJ's Electrical), Steve Wiater (Apr 7, Mobile Boilers & Generator Services), Brendan McGeer (Apr 6, Westfield State), Ryan Dzierzgowski (Apr 6, SNHU). Focused inbox — 3 unread badge: Ramón Cruz (Apr 7) still awaiting reply to qualifying question ('are you happy with how many jobs Google is sending you?'); Syed Farhan (Apr 7) sent inbound vendor follow-up re: accounting/bookkeeping (not a prospect); Christopher Tichy and Jason Sanchez have not replied to Friday outreach. No new prospect replies or interest signals this run.",
+    "summary": "Scraped LinkedIn (2:24 PM ET Apr 8 / 18:24 UTC): 272 pending sent requests (+20 since morning run), most recent batch sent ~5h ago (~9 AM ET today) targeting electrical/roofing contractors. Total connections: 1,061 (+1 Jason Donovan, Owner/Specialized Roofing and Sheet Metal, accepted today). New connections this week (Apr 2–8): Jason Donovan (Apr 8), Joshua Hoffmann (Apr 7, JJ's Electrical), Steve Wiater (Apr 7, Mobile Boilers & Generators), Brendan McGeer (Apr 6), Ryan Dzierzgowski (Apr 6), Ray Ammons (Apr 5, Ammons & Sons), Ramón Cruz (Apr 4, Vic & Ray Plumbing), Harry Davis (Apr 3, Eden Energy Partners), Jason Sanchez (Apr 3, Mechanical Foreman), Christopher Tichy (Apr 3, CJs Landscaping), Colin Hoffman (Apr 3) — 11 total. Outbound follow-up messages sent today: Jason Donovan, Steve Wiater, Joshua Hoffmann, Ray Ammons (~4 messages). Interest signal confirmed: Ramón Cruz (Owner, Vic & Ray Plumbing Inc) replied 'Thank you Vito. Keep you posted. Nice connecting with you.' — Vito has followed up with qualifying question re: Google job volume. Syed Farhan (Apr 7) is an inbound vendor pitch re: accounting/bookkeeping — not a prospect. No new inbound buying signals beyond Ramón Cruz.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
