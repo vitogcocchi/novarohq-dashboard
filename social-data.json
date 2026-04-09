@@ -1,7 +1,7 @@
 {
   "facebook": {
-    "lastUpdated": "2026-04-09T15:16:54.000Z",
-    "groups": 21,
+    "lastUpdated": "2026-04-09T16:11:49.000Z",
+    "groups": 32,
     "postsLive": 18,
     "comments": 120,
     "positiveComments": 41,
@@ -22,7 +22,7 @@
       {"date": "2026-04-06", "groups": 18, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0},
       {"date": "2026-04-07", "groups": 18, "posts": 0, "comments": 10, "positive": 0, "dms": 0, "interest": 0},
       {"date": "2026-04-08", "groups": 18, "posts": 0, "comments": 6, "positive": 2, "dms": 0, "interest": 6},
-      {"date": "2026-04-09", "groups": 21, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0}
+      {"date": "2026-04-09", "groups": 32, "posts": 0, "comments": 0, "positive": 0, "dms": 0, "interest": 0}
     ]
   },
   "linkedin": {
