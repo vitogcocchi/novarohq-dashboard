@@ -144,14 +144,6 @@
         ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}
         ::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:var(--bdr-a)}
 
-        /* TWILIO NOTICE BANNER */
-        .twilio-notice{display:flex;align-items:center;gap:14px;background:rgba(255,170,0,.07);border:1px solid rgba(255,170,0,.25);border-radius:12px;padding:14px 20px;margin-bottom:24px;position:relative}
-        .twilio-notice .tn-icon{font-size:20px;flex-shrink:0}
-        .twilio-notice .tn-body{flex:1}
-        .twilio-notice .tn-title{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:600;color:var(--warn);letter-spacing:1px;margin-bottom:4px}
-        .twilio-notice .tn-text{font-family:'Share Tech Mono',monospace;font-size:12px;color:#c8a060;line-height:1.6}
-        .twilio-notice .tn-badge{font-family:'Share Tech Mono',monospace;font-size:10px;padding:3px 10px;border-radius:6px;background:rgba(255,170,0,.12);color:var(--warn);border:1px solid rgba(255,170,0,.25);white-space:nowrap}
-
         /* CONVERSION FUNNEL */
         .fn-num{font-family:'Orbitron',sans-serif;font-size:26px;font-weight:700;color:var(--cyan);line-height:1}
         .fn-label{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--t3);margin-top:4px}
@@ -162,14 +154,6 @@
         .fn-ch-row span:last-child{font-family:'Share Tech Mono',monospace;color:var(--t1)}
         .fn-ch-win span:last-child{color:var(--ok);font-weight:600}
         .fn-ch-row:last-child{border-bottom:none}
-
-        /* SMS STATS */
-        .sms-seq{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px}
-        .sms-seq-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px;text-align:center;backdrop-filter:blur(10px)}
-        .sms-seq-num{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--t3);letter-spacing:1.5px;margin-bottom:6px}
-        .sms-seq-title{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;color:var(--cyan);margin-bottom:8px}
-        .sms-seq-body{font-size:12px;color:var(--t2);line-height:1.6;font-style:italic}
-        .sms-seq-day{margin-top:10px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px}
 
         /* AGENTS PAGE */
         .ag-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
@@ -189,7 +173,7 @@
         .pill.completed-ok{background:rgba(0,255,136,.08);color:var(--ok);border:1px solid rgba(0,255,136,.15)}
         .pill.sched{background:rgba(30,144,255,.1);color:var(--blue);border:1px solid rgba(30,144,255,.2)}
 
-        @media(max-width:1024px){.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.sms-seq{grid-template-columns:1fr}.ag-stat-grid{grid-template-columns:1fr}}
+        @media(max-width:1024px){.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.ag-stat-grid{grid-template-columns:1fr}}
         @media(max-width:768px){
             .sb{width:60px}.sb .nav-l,.sb .nav-b,.sb .logo span,.sb .logo-s,.sb .nav-sec,.sb .st-ind span{display:none}
             .sb .nav-i{justify-content:center;padding:12px}.mc{margin-left:60px;padding:16px}
@@ -303,10 +287,6 @@ function closeIntro(){
             <span class="nav-ic">&#128188;</span><span class="nav-l">LinkedIn</span>
             <span class="nav-b">B2B</span>
         </a>
-        <a class="nav-i" data-page="sms" onclick="showPage('sms')">
-            <span class="nav-ic">&#128241;</span><span class="nav-l">SMS Outreach</span>
-            <span class="nav-b">SMS</span>
-        </a>
         <div class="nav-sec">System</div>
         <a class="nav-i" data-page="pipeline" onclick="showPage('pipeline')">
             <span class="nav-ic">&#128200;</span><span class="nav-l">Lead Pipeline</span>
@@ -389,21 +369,12 @@ function closeIntro(){
                 </table>
             </div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-            <div>
-                <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#128241; SMS CAMPAIGN</div>
-                <table>
-                    <thead><tr><th>Date</th><th>Sent</th><th>Replies</th><th>Msg 2</th><th>Msg 3</th><th>Stops</th></tr></thead>
-                    <tbody id="ov-sms-daily"><tr><td colspan="6" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
-                </table>
-            </div>
-            <div>
-                <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#9993; INSTANTLY EMAIL</div>
-                <table>
-                    <thead><tr><th>Date</th><th>Sent</th><th>Opens</th><th>Replies</th><th>Positive</th></tr></thead>
-                    <tbody id="ov-ins-daily"><tr><td colspan="5" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
-                </table>
-            </div>
+        <div>
+            <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#9993; INSTANTLY EMAIL</div>
+            <table>
+                <thead><tr><th>Date</th><th>Sent</th><th>Opens</th><th>Replies</th><th>Positive</th></tr></thead>
+                <tbody id="ov-ins-daily"><tr><td colspan="5" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
+            </table>
         </div>
     </div>
 
@@ -451,7 +422,7 @@ function closeIntro(){
             </div>
         </div>
         <!-- Per-channel breakdown -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
             <div class="fn-ch" id="fn-ch-facebook">
                 <div class="fn-ch-title">&#128218; FACEBOOK</div>
                 <div class="fn-ch-row"><span>New</span><span id="fn-fb-new">0</span></div>
@@ -467,14 +438,6 @@ function closeIntro(){
                 <div class="fn-ch-row"><span>Replied</span><span id="fn-li-replied">0</span></div>
                 <div class="fn-ch-row"><span>Booked</span><span id="fn-li-booked">0</span></div>
                 <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-li-closed">0</span></div>
-            </div>
-            <div class="fn-ch" id="fn-ch-sms">
-                <div class="fn-ch-title">&#128241; SMS</div>
-                <div class="fn-ch-row"><span>New</span><span id="fn-sms-new">0</span></div>
-                <div class="fn-ch-row"><span>DM Sent</span><span id="fn-sms-dm">0</span></div>
-                <div class="fn-ch-row"><span>Replied</span><span id="fn-sms-replied">0</span></div>
-                <div class="fn-ch-row"><span>Booked</span><span id="fn-sms-booked">0</span></div>
-                <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-sms-closed">0</span></div>
             </div>
             <div class="fn-ch" id="fn-ch-instantly">
                 <div class="fn-ch-title">&#9993; INSTANTLY</div>
@@ -619,106 +582,6 @@ function closeIntro(){
     </div>
 </section>
 
-<!-- SMS OUTREACH -->
-<section class="pg" id="page-sms">
-    <div class="ph">
-        <div><div class="pt">SMS OUTREACH</div><div class="ps">TWILIO A2P // COLD SMS CAMPAIGN</div></div>
-        <div class="ht"><span class="tv" id="clock-sms"></span><span id="date-sms"></span></div>
-    </div>
-
-    <!-- REGISTRATION NOTICE BANNER -->
-    <div class="twilio-notice" id="twilio-reg-banner">
-        <div class="tn-icon" id="twilio-banner-icon">⚠️</div>
-        <div class="tn-body">
-            <div class="tn-title" id="twilio-banner-title">TWILIO REGISTRATION PENDING</div>
-            <div class="tn-text" id="twilio-banner-text">
-                <strong>+1 (833) 912-5998</strong> — Toll-free verification submitted, currently under review.<br>
-                <strong>+1 (413) 610-3724</strong> — A2P 10DLC campaign submitted, currently under review.<br>
-                Both numbers blocked until approved. Dashboard checks status on every refresh.
-            </div>
-        </div>
-        <div class="tn-badge" id="twilio-banner-badge">⏳ PENDING</div>
-    </div>
-
-    <!-- STAT BUBBLES -->
-    <div class="sg">
-        <div class="sb-c"><div class="sl">TOTAL LEADS</div><div class="sv cy">472</div><div class="sc">Home service biz owners</div></div>
-        <div class="sb-c"><div class="sl">MESSAGES SENT</div><div class="sv bl" id="sms-sent">399</div><div class="sc">Across all 3 messages</div></div>
-        <div class="sb-c"><div class="sl">MSG 2 ELIGIBLE</div><div class="sv wn" id="sms-msg2">0</div><div class="sc">3+ days since msg 1</div></div>
-        <div class="sb-c"><div class="sl">MSG 3 ELIGIBLE</div><div class="sv ok" id="sms-msg3">0</div><div class="sc">7+ days since msg 1</div></div>
-        <div class="sb-c"><div class="sl">REPLIES</div><div class="sv ok" id="sms-replies">5</div><div class="sc">Inbound responses</div></div>
-        <div class="sb-c"><div class="sl">OPT-OUTS</div><div class="sv" id="sms-stops">0</div><div class="sc">Replied STOP</div></div>
-        <div class="sb-c"><div class="sl">DAILY LIMIT</div><div class="sv cy">100</div><div class="sc">Until A2P approved</div></div>
-    </div>
-
-    <!-- ACTIVE NUMBER STATUS -->
-    <div class="ds" style="margin-bottom:24px">
-        <div class="dh"><div class="dt"><span class="ic">&#128241;</span> TWILIO NUMBER STATUS</div><span class="db">A2P REGISTERED</span></div>
-        <table>
-            <thead><tr><th>Number</th><th>Type</th><th>A2P Status</th><th>Messaging Service</th><th>Role</th></tr></thead>
-            <tbody>
-                <tr>
-                    <td class="td-h">+1 (413) 610-3724</td>
-                    <td>Local 10DLC</td>
-                    <td id="a2p-status-cell"><span class="pill paused">PENDING REVIEW</span></td>
-                    <td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">Low Volume Mixed A2P</td>
-                    <td id="a2p-role-cell">Awaiting TCR approval (1–3 days)</td>
-                </tr>
-                <tr>
-                    <td>+1 (833) 912-5998</td>
-                    <td>Toll-Free</td>
-                    <td id="tf-status-cell"><span class="pill paused">PENDING REVIEW</span></td>
-                    <td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">Toll-Free Verification</td>
-                    <td id="tf-role-cell">Awaiting Twilio review (3–7 days)</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- 3-MESSAGE SEQUENCE -->
-    <div class="ds" style="margin-bottom:24px">
-        <div class="dh"><div class="dt"><span class="ic">&#128172;</span> 3-MESSAGE SEQUENCE</div><span class="db">ACTIVE</span></div>
-        <div class="sms-seq">
-            <div class="sms-seq-card">
-                <div class="sms-seq-num">MESSAGE 1</div>
-                <div class="sms-seq-title">QUESTION HOOK</div>
-                <div class="sms-seq-body">"Hey {first_name}. Quick question. Happy with how many jobs Google is sending you right now or is that something you want to change?"</div>
-                <div class="sms-seq-day">DAY 1 — NO PITCH</div>
-            </div>
-            <div class="sms-seq-card">
-                <div class="sms-seq-num">MESSAGE 2</div>
-                <div class="sms-seq-title">SOCIAL PROOF</div>
-                <div class="sms-seq-body">"Hey {first_name}. Client spent $4,713 on Google LSAs last year. Made $86,995. 18.4x return. Want that for {org}?"</div>
-                <div class="sms-seq-day">DAY 3+ — SOFT CTA</div>
-            </div>
-            <div class="sms-seq-card">
-                <div class="sms-seq-num">MESSAGE 3</div>
-                <div class="sms-seq-title">CONSEQUENCE CLOSE</div>
-                <div class="sms-seq-body">"Hey {first_name}. Last message. Nothing changes unless you change something. If your lead flow isn't where you want it, just reply."</div>
-                <div class="sms-seq-day">DAY 7+ — EASY OUT</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SEND LOG -->
-    <div class="ds">
-        <div class="dh"><div class="dt"><span class="ic">&#128203;</span> DAILY SEND LOG</div><span class="db">SMS</span></div>
-        <table>
-            <thead><tr><th>Date</th><th>Sent</th><th>Failed</th><th>Msg 1</th><th>Msg 2</th><th>Msg 3</th><th>Notes</th></tr></thead>
-            <tbody id="sms-tbody"><tr><td>2026-04-02</td><td>100</td><td>0</td><td>0</td><td>100</td><td>0</td><td>—</td></tr><tr><td>2026-04-01</td><td>99</td><td>1</td><td>99</td><td>0</td><td>0</td><td>—</td></tr><tr><td>2026-03-31</td><td>100</td><td>0</td><td>100</td><td>0</td><td>0</td><td>—</td></tr><tr><td>2026-03-29</td><td>100</td><td>0</td><td>100</td><td>0</td><td>0</td><td>—</td></tr></tbody>
-        </table>
-    </div>
-
-    <!-- INBOUND REPLIES -->
-    <div class="ds" style="margin-top:24px">
-        <div class="dh"><div class="dt"><span class="ic">&#128172;</span> INBOUND REPLIES</div><span class="db">LIVE</span></div>
-        <table>
-            <thead><tr><th>Time</th><th>From</th><th>Message</th><th>Status</th></tr></thead>
-            <tbody id="sms-replies-tbody"><tr><td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">04/02 01:09 PM</td><td class="td-h">***-***-0667</td><td>Your message has been received by Viessmann - US Sales.</td><td>replied</td></tr><tr><td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">03/29 01:09 PM</td><td class="td-h">***-***-0667</td><td>Viessmann - US Sales After Hours Message: You've reached us outside of business hours. Our hours are 8:30 am-5:00pm Mon-</td><td>replied</td></tr><tr><td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">03/21 10:28 PM</td><td class="td-h">***-***-5998</td><td>Thanks for the message. Configure your number's SMS URL to change this message.Reply HELP for help.Reply STOP to unsubsc</td><td>replied</td></tr><tr><td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">03/21 10:28 PM</td><td class="td-h">***-***-5998</td><td>Thanks for the message. Configure your number's SMS URL to change this message.Reply HELP for help.Reply STOP to unsubsc</td><td>replied</td></tr><tr><td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)">03/21 10:27 PM</td><td class="td-h">***-***-3724</td><td>Test message from Novaro AI A2P campaign setup. If you receive this, SMS is working.</td><td>replied</td></tr></tbody>
-        </table>
-    </div>
-</section>
-
 <!-- PIPELINE -->
 <section class="pg" id="page-pipeline">
     <div class="ph">
@@ -763,7 +626,6 @@ function closeIntro(){
         <div class="dh"><div class="dt"><span class="ic">&#128260;</span> DATA PIPELINES</div><span class="db">SOURCES</span></div>
         <div class="sg" style="margin-bottom:0">
             <div class="sb-c"><div class="sl">INSTANTLY</div><div class="sv ok" id="pipe-instantly">LIVE</div><div class="sc">Real-time API</div></div>
-            <div class="sb-c"><div class="sl">TWILIO</div><div class="sv ok" id="pipe-twilio">LIVE</div><div class="sc">Real-time API</div></div>
             <div class="sb-c"><div class="sl">FACEBOOK</div><div class="sv wn" id="pipe-facebook">HOURLY</div><div class="sc" id="pipe-fb-last">Awaiting first scrape</div></div>
             <div class="sb-c"><div class="sl">LINKEDIN</div><div class="sv wn" id="pipe-linkedin">HOURLY</div><div class="sc" id="pipe-li-last">Awaiting first scrape</div></div>
         </div>
@@ -931,10 +793,6 @@ function tick(){
         if(ce)ce.textContent=t;
         if(de)de.textContent=d;
     }
-    const cs=document.getElementById('clock-sms');
-    const ds=document.getElementById('date-sms');
-    if(cs)cs.textContent=t;
-    if(ds)ds.textContent=d;
 }
 tick();setInterval(tick,1000);
 
@@ -948,11 +806,6 @@ async function loadLiveData(){
         const res = await fetch(GH_RAW+'instantly-data.json?t='+t);
         if(res.ok){ const d = await res.json(); populateInstantly(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
     } catch(e){ console.warn('Instantly data load failed:', e.message); }
-    // Twilio
-    try {
-        const res = await fetch(GH_RAW+'twilio-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); if(!d.error){ populateTwilio(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); } }
-    } catch(e){ console.warn('Twilio data load failed:', e.message); }
     // Social (Facebook + LinkedIn)
     try {
         const res = await fetch(GH_RAW+'social-data.json?t='+t);
@@ -1071,48 +924,6 @@ function populateInstantly(d){
                 </tr>`;
             }).join('');
         }
-    }
-}
-
-function populateTwilio(d){
-    if(d.error) return;
-    const ov = d.overview || {};
-    const sentEl = document.getElementById('sms-sent');
-    const stopsEl = document.getElementById('sms-stops');
-    if(sentEl) sentEl.textContent = (ov.sent || 0).toLocaleString();
-    if(stopsEl) stopsEl.textContent = ov.optouts || 0;
-
-    // SMS daily log
-    const tbody = document.getElementById('sms-tbody');
-    if(tbody && d.daily && d.daily.length > 0){
-        tbody.innerHTML = d.daily.map(row =>
-            `<tr><td class="td-h">${row.date}</td><td>${row.sent}</td><td>${row.failed}</td><td>--</td><td>--</td><td>--</td><td>${row.delivered} delivered</td></tr>`
-        ).join('');
-    }
-
-    // Homepage daily breakdown - SMS
-    const ovSms = document.getElementById('ov-sms-daily');
-    if(ovSms && d.daily && d.daily.length > 0){
-        const rows = [...d.daily].reverse().slice(0,10);
-        ovSms.innerHTML = rows.map(r => {
-            const active = r.sent>0;
-            return `<tr${active?' style="color:var(--t1)"':''}>
-                <td class="td-h">${fmtDate(r.date)}</td>
-                <td>${r.sent||0}</td>
-                <td${r.replies>0?' style="color:var(--cyan);font-weight:600"':''}>${r.replies||0}</td>
-                <td>${r.msg2||0}</td>
-                <td>${r.msg3||0}</td>
-                <td>${r.stops||0}</td>
-            </tr>`;
-        }).join('');
-    } else if(ovSms && d.overview && d.overview.sent){
-        // Fallback: show single summary row if no daily breakdown
-        ovSms.innerHTML = `<tr style="color:var(--t1)">
-            <td class="td-h">Total</td>
-            <td>${d.overview.sent||0}</td>
-            <td>${d.overview.replies||0}</td>
-            <td>--</td><td>--</td><td>${d.overview.optouts||0}</td>
-        </tr>`;
     }
 }
 
@@ -1245,8 +1056,8 @@ function populateFunnel(d){
     set('fn-rate-closed', pct(cl, bk) + ' of booked');
 
     // Per-channel breakdown
-    const channels = {fb: d.facebook||{}, li: d.linkedin||{}, sms: d.sms||{}, ins: d.instantly||{}};
-    const map = {fb:'fb', li:'li', sms:'sms', ins:'ins'};
+    const channels = {fb: d.facebook||{}, li: d.linkedin||{}, ins: d.instantly||{}};
+    const map = {fb:'fb', li:'li', ins:'ins'};
     for(const [key, data] of Object.entries(channels)){
         const p = map[key];
         set(`fn-${p}-new`,    data.newLead    || 0);
@@ -1342,7 +1153,7 @@ function populateTasks(ts){
             log.innerHTML = '<div style="color:var(--ok)">[System initialized] All tasks registered. Awaiting first scheduled runs.</div>' +
                 '<div style="color:var(--t3)">[Info] Facebook scrape: hourly at :06 past</div>' +
                 '<div style="color:var(--t3)">[Info] LinkedIn scrape: hourly at :36 past</div>' +
-                '<div style="color:var(--ok)">[Info] Instantly + Twilio: real-time on every page load</div>';
+                '<div style="color:var(--ok)">[Info] Instantly: real-time on every page load</div>';
         }
     }
 }
