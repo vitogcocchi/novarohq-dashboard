@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-10T18:11:14.000Z",
+    "lastRun": "2026-04-10T19:11:58.000Z",
     "status": "active",
-    "summary": "Run at ~2:11 PM ET Apr 10 / 18:11 UTC — automated run 31. Notifications reviewed: 14 items. New since last run (17:13 UTC): 6 'Spring clean up' posts still showing as 1h old (Clear View exterior cleaning, not Novaro AI — no lead potential). Junk Removal Owners admin approval (21h old, pre-dates this run). Multiple group_r2j_approved post notifications. Zero Novaro AI interactions or comments. Groups: 49 (no change). Messenger inbox: 0 new DMs — prior outbound threads unchanged (Isaac James Fernandez 5d, Tony Facente 5d, Ryan Bailey 6d, Liam Nowak 6d). Ann Giroux appeared as unread — opened thread, empty conversation (no messages exchanged). Message Requests: 0. Spam: Room Full of Love 4813 (15h, recurring junk, skipped). Leads this run: 0 Hot, 0 Qualified. Delta: 0 new DMs, 0 new comments, 0 new interest signals. postsLive: 7 today. interestSignals total: 22.",
+    "summary": "Run at ~3:11 PM ET Apr 10 / 19:11 UTC — automated run 32. Notifications reviewed: 7 unread items new since last run (18:11 UTC). All 6 'Spring clean up' posts (2h old) are Clear View exterior cleaning, not Novaro AI — no lead potential. 'Welcome to Power Washing Bros' group join approval (7h old, pre-dates last run). Junk Removal Owners admin approval (22h old, pre-dates last run). Zero Novaro AI interactions or comments. Groups: 49 (no change). Messenger inbox: 0 new DMs — prior outbound threads unchanged (Isaac James Fernandez 5d, Tony Facente 5d, Ryan Bailey 6d, Liam Nowak 6d). Ann Giroux still appears as unread — empty conversation (persistent phantom). Marketplace DM from 'Shaun (Weights + Weigh...)' asking 'is this still available?' — Marketplace buyer, not a Novaro AI lead, skipped. Message Requests: 0. Spam: Room Full of Love 4813 (16h, recurring junk, skipped). Leads this run: 0 Hot, 0 Qualified. Delta: 0 new DMs, 0 new comments, 0 new interest signals. postsLive: 7 today. interestSignals total: 22.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
