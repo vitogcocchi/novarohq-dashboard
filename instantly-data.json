@@ -1,42 +1,12 @@
 {
-  "lastUpdated": "2026-04-10T20:26:44Z",
-  "overview": {
-    "emails_sent_count": 246,
-    "open_count": 0,
-    "open_rate": 0,
-    "reply_count": 4,
-    "reply_rate": 1.63,
-    "bounced_count": 0,
-    "clicked_count": 0,
-    "click_rate": 0,
-    "opportunities": 0
-  },
-  "daily": [
-    {
-      "date": "2026-04-10",
-      "emails_sent": 246,
-      "opens": 0,
-      "replies": 4,
-      "bounced": 0
-    }
-  ],
+  "lastUpdated": "2026-04-10T20:27:50Z",
+  "overview": {},
+  "daily": [],
   "campaigns": [
     {
       "id": "e24260e9-fbb0-4ccb-a6cb-8ec73782495b",
       "name": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "status": "Active",
-      "sent": 246,
-      "opened": 0,
-      "open_rate": 0,
-      "replied": 4,
-      "reply_rate": 1.63,
-      "clicked": 0,
-      "click_rate": 0,
-      "opportunities": 0,
-      "variants": [
-        {"name": "A", "sent": 123, "replied": 2, "reply_rate": 1.63},
-        {"name": "B", "sent": 123, "replied": 2, "reply_rate": 1.63}
-      ]
+      "status": "Active"
     }
   ]
 }
