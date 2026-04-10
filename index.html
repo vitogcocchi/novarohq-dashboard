@@ -173,7 +173,45 @@
         .pill.completed-ok{background:rgba(0,255,136,.08);color:var(--ok);border:1px solid rgba(0,255,136,.15)}
         .pill.sched{background:rgba(30,144,255,.1);color:var(--blue);border:1px solid rgba(30,144,255,.2)}
 
-        @media(max-width:1024px){.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.ag-stat-grid{grid-template-columns:1fr}}
+        /* Replies & Leads */
+        .rep-summary{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:28px}
+        .rep-sum-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:20px;text-align:center;backdrop-filter:blur(10px)}
+        .rep-sum-num{font-family:'Orbitron',sans-serif;font-size:28px;font-weight:700;margin-bottom:4px}
+        .rep-sum-lbl{font-size:10px;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase}
+        .rep-sum-num.pos{color:var(--ok)}
+        .rep-sum-num.neg{color:var(--err)}
+        .rep-sum-num.auto{color:var(--t3)}
+        .rep-sum-num.pend{color:var(--warn)}
+        .rep-filters{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+        .rep-filter{background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:6px 14px;font-size:10px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;cursor:pointer;transition:all .2s;color:var(--t2)}
+        .rep-filter.on,.rep-filter:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,.05)}
+        .rep-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px;margin-bottom:12px;display:flex;align-items:flex-start;gap:18px;transition:all .3s;backdrop-filter:blur(10px)}
+        .rep-card:hover{border-color:var(--bdr-a);transform:translateX(4px)}
+        .rep-card.positive{border-left:3px solid var(--ok)}
+        .rep-card.negative{border-left:3px solid var(--err)}
+        .rep-card.auto{border-left:3px solid var(--t3)}
+        .rep-card.pending{border-left:3px solid var(--warn)}
+        .rep-ch-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+        .rep-ch-icon.Email{background:rgba(0,212,255,.1)}
+        .rep-ch-icon.LinkedIn{background:rgba(30,144,255,.1)}
+        .rep-ch-icon.Facebook{background:rgba(24,119,242,.1)}
+        .rep-body{flex:1;min-width:0}
+        .rep-meta{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+        .rep-date{font-size:11px;color:var(--t3);font-family:'Share Tech Mono',monospace}
+        .rep-ch-tag{font-size:9px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;padding:2px 8px;border-radius:4px;background:rgba(0,212,255,.08);color:var(--cyan);border:1px solid rgba(0,212,255,.2)}
+        .rep-badge{font-size:9px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;padding:2px 8px;border-radius:4px;font-weight:700;border:1px solid}
+        .rep-badge.positive{background:rgba(0,255,136,.1);color:var(--ok);border-color:rgba(0,255,136,.3)}
+        .rep-badge.negative{background:rgba(255,68,102,.1);color:var(--err);border-color:rgba(255,68,102,.3)}
+        .rep-badge.auto{background:rgba(120,120,120,.1);color:var(--t3);border-color:rgba(120,120,120,.2)}
+        .rep-badge.pending{background:rgba(255,170,0,.1);color:var(--warn);border-color:rgba(255,170,0,.3)}
+        .rep-preview{font-size:13px;color:var(--t1);margin-bottom:6px;line-height:1.5}
+        .rep-campaign{font-size:11px;color:var(--t3);font-family:'Share Tech Mono',monospace}
+        .rep-action{flex-shrink:0;align-self:center}
+        .rep-btn{font-size:9px;font-family:'Orbitron',sans-serif;letter-spacing:1px;padding:6px 12px;border-radius:6px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);color:var(--cyan);text-decoration:none;display:block;transition:all .2s}
+        .rep-btn:hover{background:rgba(0,212,255,.2);border-color:var(--cyan)}
+        .rep-empty{text-align:center;padding:60px 20px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px}
+
+        @media(max-width:1024px){.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.ag-stat-grid{grid-template-columns:1fr}.rep-summary{grid-template-columns:repeat(3,1fr)}}
         @media(max-width:768px){
             .sb{width:60px}.sb .nav-l,.sb .nav-b,.sb .logo span,.sb .logo-s,.sb .nav-sec,.sb .st-ind span{display:none}
             .sb .nav-i{justify-content:center;padding:12px}.mc{margin-left:60px;padding:16px}
@@ -286,6 +324,10 @@ function closeIntro(){
         <a class="nav-i" data-page="linkedin" onclick="showPage('linkedin')">
             <span class="nav-ic">&#128188;</span><span class="nav-l">LinkedIn</span>
             <span class="nav-b">B2B</span>
+        </a>
+        <a class="nav-i" data-page="replies" onclick="showPage('replies')">
+            <span class="nav-ic">&#128172;</span><span class="nav-l">Replies &amp; Leads</span>
+            <span class="nav-b" id="nav-replies-badge" style="background:rgba(0,255,136,.2);color:#00ff88;border-radius:4px;padding:2px 6px;font-size:9px;font-weight:700">0</span>
         </a>
         <div class="nav-sec">System</div>
         <a class="nav-i" data-page="pipeline" onclick="showPage('pipeline')">
@@ -605,6 +647,38 @@ function closeIntro(){
     </div>
 </section>
 
+<!-- REPLIES & LEADS -->
+<section class="pg" id="page-replies">
+    <div class="ph">
+        <div><div class="pt">REPLIES &amp; LEADS // INBOX TRACKER</div><div class="ps">ALL CHANNELS // CLASSIFIED BY QUALITY</div></div>
+        <div class="ht"><span class="tv" id="clock-replies"></span><span id="date-replies"></span></div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="rep-summary">
+        <div class="rep-sum-card"><div class="rep-sum-num" id="rep-total" style="color:var(--cyan)">0</div><div class="rep-sum-lbl">Total Replies</div></div>
+        <div class="rep-sum-card"><div class="rep-sum-num pos" id="rep-positive">0</div><div class="rep-sum-lbl">&#x2705; Interested</div></div>
+        <div class="rep-sum-card"><div class="rep-sum-num neg" id="rep-negative">0</div><div class="rep-sum-lbl">&#x274C; Not Interested</div></div>
+        <div class="rep-sum-card"><div class="rep-sum-num pend" id="rep-pending">0</div><div class="rep-sum-lbl">&#x23F3; Needs Review</div></div>
+        <div class="rep-sum-card"><div class="rep-sum-num auto" id="rep-auto">0</div><div class="rep-sum-lbl">&#x2699;&#xFE0F; Auto Reply</div></div>
+    </div>
+
+    <!-- Filters -->
+    <div class="rep-filters">
+        <div class="rep-filter on" onclick="filterReplies('all', this)">ALL</div>
+        <div class="rep-filter" onclick="filterReplies('positive', this)">&#x2705; INTERESTED</div>
+        <div class="rep-filter" onclick="filterReplies('pending', this)">&#x23F3; NEEDS REVIEW</div>
+        <div class="rep-filter" onclick="filterReplies('negative', this)">&#x274C; NOT INTERESTED</div>
+        <div class="rep-filter" onclick="filterReplies('auto', this)">&#x2699;&#xFE0F; AUTO</div>
+        <div class="rep-filter" onclick="filterReplies('Email', this)">EMAIL</div>
+        <div class="rep-filter" onclick="filterReplies('LinkedIn', this)">LINKEDIN</div>
+        <div class="rep-filter" onclick="filterReplies('Facebook', this)">FACEBOOK</div>
+    </div>
+
+    <!-- Reply List -->
+    <div id="rep-list"><div class="rep-empty">Loading replies...</div></div>
+</section>
+
 <!-- PROGRESS -->
 <section class="pg" id="page-progress">
     <div class="ph">
@@ -834,6 +908,11 @@ async function loadLiveData(){
         const res = await fetch(GH_RAW+'morning-debrief-data.json?t='+t);
         if(res.ok){ const d = await res.json(); populateBrief(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
     } catch(e){ console.warn('Morning debrief data load failed:', e.message); }
+    // Replies & Leads
+    try {
+        const res = await fetch(GH_RAW+'replies-data.json?t='+t);
+        if(res.ok){ const d = await res.json(); window._repliesData = d; populateReplies(d, 'all'); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
+    } catch(e){ console.warn('Replies data load failed:', e.message); }
     // Update global last updated badge
     if(timestamps.length > 0){
         const latest = new Date(Math.max(...timestamps));
@@ -1307,6 +1386,67 @@ function openAgentDetail(id) {
     ct.innerHTML = html;
     dp.classList.add('open');
     ov.classList.add('open');
+}
+
+// ===== REPLIES & LEADS =====
+const CH_ICONS = { Email: '✉️', LinkedIn: '💼', Facebook: '📘' };
+let _activeRepFilter = 'all';
+
+function populateReplies(d, filter){
+    if(!d || !d.replies) return;
+    _activeRepFilter = filter || 'all';
+    const s = d.summary || {};
+    const set = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
+    set('rep-total',    s.total    || 0);
+    set('rep-positive', s.positive || 0);
+    set('rep-negative', s.negative || 0);
+    set('rep-pending',  s.pending  || 0);
+    set('rep-auto',     s.auto     || 0);
+
+    // Update nav badge with pending count
+    const navBadge = document.getElementById('nav-replies-badge');
+    if(navBadge) navBadge.textContent = (s.pending || 0) + (s.positive || 0);
+
+    let items = d.replies;
+    if(filter !== 'all'){
+        items = items.filter(r =>
+            r.type === filter || r.channel === filter
+        );
+    }
+
+    const list = document.getElementById('rep-list');
+    if(!list) return;
+    if(items.length === 0){
+        list.innerHTML = '<div class="rep-empty">No replies match this filter</div>';
+        return;
+    }
+
+    list.innerHTML = items.map(r => {
+        const icon = CH_ICONS[r.channel] || '💬';
+        const statusLabel = r.status || r.label || 'Unknown';
+        const openLink = r.actionUrl ? `<a class="rep-btn" href="${r.actionUrl}" target="_blank">OPEN ${r.channel.toUpperCase()} →</a>` : '';
+        return `
+        <div class="rep-card ${r.type}">
+            <div class="rep-ch-icon ${r.channel}">${icon}</div>
+            <div class="rep-body">
+                <div class="rep-meta">
+                    <span class="rep-date">${r.date}</span>
+                    <span class="rep-ch-tag">${r.channel.toUpperCase()}</span>
+                    <span class="rep-badge ${r.type}">${r.label}</span>
+                    ${r.contact ? `<span style="font-size:11px;color:var(--t2)">${r.contact}${r.company ? ' · ' + r.company : ''}</span>` : ''}
+                </div>
+                <div class="rep-preview">${r.preview}</div>
+                <div class="rep-campaign">${r.campaign}</div>
+            </div>
+            <div class="rep-action">${openLink}</div>
+        </div>`;
+    }).join('');
+}
+
+function filterReplies(filter, el){
+    document.querySelectorAll('.rep-filter').forEach(f => f.classList.remove('on'));
+    if(el) el.classList.add('on');
+    if(window._repliesData) populateReplies(window._repliesData, filter);
 }
 
 // Load data on page ready
