@@ -1,13 +1,26 @@
 {
-  "lastUpdated": "2026-04-09T22:55:00Z",
+  "lastUpdated": "2026-04-10T16:15:38Z",
   "summary": {
     "total": 11,
     "positive": 1,
     "negative": 2,
-    "auto": 3,
-    "pending": 5
+    "auto": 4,
+    "pending": 4
   },
   "replies": [
+    {
+      "id": "li-syed-farhan",
+      "date": "April 7, 2026",
+      "channel": "LinkedIn",
+      "type": "auto",
+      "label": "Not a Lead",
+      "contact": "Syed Farhan",
+      "company": "",
+      "preview": "Syed is cold outreaching Vito for accounting/bookkeeping services. Not a prospect \u2014 ignore.",
+      "status": "Closed",
+      "campaign": "Inbound (not a prospect)",
+      "actionUrl": "https://www.linkedin.com/messaging/"
+    },
     {
       "id": "li-apr7-ramon-cruz",
       "date": "April 7, 2026",
@@ -22,58 +35,6 @@
       "actionUrl": "https://www.linkedin.com/messaging/thread/2-YzNkZjM2NjQtOWJmOS00ZWJhLWExNjUtNjZkMWIzMzVhNTVlXzEwMA==/"
     },
     {
-      "id": "em-apr9-david-bear",
-      "date": "April 9, 2026",
-      "channel": "Email",
-      "type": "negative",
-      "label": "Not Interested",
-      "contact": "David",
-      "company": "Bear Home Service",
-      "preview": "Not interested \u2014 replied to remove. Sequence responded with courtesy close.",
-      "status": "Closed",
-      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "actionUrl": "https://app.instantly.ai"
-    },
-    {
-      "id": "em-apr9-virginia-levelcraft",
-      "date": "April 9, 2026",
-      "channel": "Email",
-      "type": "auto",
-      "label": "Auto Reply",
-      "contact": "Virginia",
-      "company": "Level Craft Atlanta",
-      "preview": "Out of office auto-reply. Subject: \"found something for Level Craft Construction.\" Re-engage when they return.",
-      "status": "Revisit Later",
-      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "actionUrl": "https://app.instantly.ai"
-    },
-    {
-      "id": "em-apr8-nick-usjetting",
-      "date": "April 8, 2026",
-      "channel": "Email",
-      "type": "negative",
-      "label": "Not Interested",
-      "contact": "Nick Woodhead",
-      "company": "US Jetting",
-      "preview": "Not interested \u2014 tagged in Instantly. Sequence responded with courtesy close.",
-      "status": "Closed",
-      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "actionUrl": "https://app.instantly.ai"
-    },
-    {
-      "id": "em-apr8-matt-lanier",
-      "date": "April 8, 2026",
-      "channel": "Email",
-      "type": "auto",
-      "label": "Auto Reply",
-      "contact": "Matt",
-      "company": "Lanier HVAC",
-      "preview": "Out of office auto-reply \u2014 subject: \"who's getting your jobs, Matt?\" Re-engage when back.",
-      "status": "Revisit Later",
-      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "actionUrl": "https://app.instantly.ai"
-    },
-    {
       "id": "li-apr4-unknown",
       "date": "April 4, 2026",
       "channel": "LinkedIn",
@@ -85,32 +46,6 @@
       "status": "Needs Review",
       "campaign": "Connection + Message Sequence",
       "actionUrl": "https://www.linkedin.com/messaging/"
-    },
-    {
-      "id": "em-mar19-auto",
-      "date": "March 19, 2026",
-      "channel": "Email",
-      "type": "auto",
-      "label": "Auto Reply",
-      "contact": "",
-      "company": "",
-      "preview": "Automatic reply detected by Instantly (OOO or bounce). No action needed.",
-      "status": "Closed",
-      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "actionUrl": "https://app.instantly.ai"
-    },
-    {
-      "id": "fb-apr1-dm",
-      "date": "April 1, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "DM Received",
-      "contact": "",
-      "company": "",
-      "preview": "1 DM received in Facebook Messenger from group post. Check and respond.",
-      "status": "Needs Review",
-      "campaign": "Facebook Group Posts",
-      "actionUrl": "https://www.facebook.com/messages"
     },
     {
       "id": "fb-mar31-dms",
@@ -139,17 +74,82 @@
       "actionUrl": "https://www.facebook.com/messages"
     },
     {
-      "id": "li-syed-farhan",
-      "date": "April 7, 2026",
-      "channel": "LinkedIn",
-      "type": "auto",
-      "label": "Not a Lead",
-      "contact": "Syed Farhan",
+      "id": "fb-apr1-dm",
+      "date": "April 1, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "DM Received",
+      "contact": "",
       "company": "",
-      "preview": "Syed is cold outreaching Vito for accounting/bookkeeping services. Not a prospect \u2014 ignore.",
+      "preview": "1 DM received in Facebook Messenger from group post. Check and respond.",
+      "status": "Needs Review",
+      "campaign": "Facebook Group Posts",
+      "actionUrl": "https://www.facebook.com/messages"
+    },
+    {
+      "id": "em-mar19-auto",
+      "date": "March 19, 2026",
+      "channel": "Email",
+      "type": "auto",
+      "label": "Auto Reply",
+      "contact": "",
+      "company": "",
+      "preview": "Automatic reply detected by Instantly (OOO or bounce). No action needed.",
       "status": "Closed",
-      "campaign": "Inbound (not a prospect)",
-      "actionUrl": "https://www.linkedin.com/messaging/"
+      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "actionUrl": "https://app.instantly.ai"
+    },
+    {
+      "id": "em-apr9-virginia-levelcraft",
+      "date": "April 9, 2026",
+      "channel": "Email",
+      "type": "auto",
+      "label": "Auto Reply",
+      "contact": "Virginia",
+      "company": "Level Craft Atlanta",
+      "preview": "Out of office auto-reply. Subject: \"found something for Level Craft Construction.\" Re-engage when they return.",
+      "status": "Revisit Later",
+      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "actionUrl": "https://app.instantly.ai"
+    },
+    {
+      "id": "em-apr9-david-bear",
+      "date": "April 9, 2026",
+      "channel": "Email",
+      "type": "negative",
+      "label": "Not Interested",
+      "contact": "David",
+      "company": "Bear Home Service",
+      "preview": "Not interested \u2014 replied to remove. Sequence responded with courtesy close.",
+      "status": "Closed",
+      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "actionUrl": "https://app.instantly.ai"
+    },
+    {
+      "id": "em-apr8-nick-usjetting",
+      "date": "April 8, 2026",
+      "channel": "Email",
+      "type": "negative",
+      "label": "Not Interested",
+      "contact": "Nick Woodhead",
+      "company": "US Jetting",
+      "preview": "Not interested \u2014 tagged in Instantly. Sequence responded with courtesy close.",
+      "status": "Closed",
+      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "actionUrl": "https://app.instantly.ai"
+    },
+    {
+      "id": "em-apr8-matt-lanier",
+      "date": "April 8, 2026",
+      "channel": "Email",
+      "type": "auto",
+      "label": "Auto Reply",
+      "contact": "Matt",
+      "company": "Lanier HVAC",
+      "preview": "Out of office auto-reply \u2014 subject: \"who's getting your jobs, Matt?\" Re-engage when back.",
+      "status": "Revisit Later",
+      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "actionUrl": "https://app.instantly.ai"
     }
   ]
 }
