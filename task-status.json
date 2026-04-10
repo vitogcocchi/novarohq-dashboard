@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-10T22:08:33.000Z",
+    "lastRun": "2026-04-10T23:24:27.000Z",
     "status": "active",
-    "summary": "Run at ~6:08 PM ET Apr 10 / 22:08 UTC — automated run 35. Notifications reviewed: 8 unread items. 1 Meta AI promo (system, 2h). 6 'Spring clean up' posts (5h old) across West Springfield Community Forum, Somers Ct. Neighborhood Forum, Hampden MA Open Forum, Agawam MA open forum, Longmeadow MA Open Forum, The OFFICIAL Longmeadow MA Open Forum — all Clear View exterior cleaning, not Novaro AI. 1 Power Washing Bros group join approval (admin approved request). Zero new Novaro AI interactions. Groups: 49 (no change). Messenger inbox: 0 new DMs — prior outbound threads unchanged (Isaac James Fernandez 5d, Tony Facente 5d, Ryan Bailey 6d, Liam Nowak 1w, Rico Cocchi ~1w, Brady Fellows 1w, Byron Peabody 1w, Anthony Cocchi 1w). Ann Giroux persistent phantom unread still present. Message Requests: 0. Spam: Room Full of Love 4813 (19h, same recurring junk, skipped). Leads this run: 0 Hot, 0 Qualified. Delta: 0 new DMs, 0 new comments, 0 new interest signals. postsLive: 7 today. interestSignals total: 22.",
+    "summary": "Run at ~7:24 PM ET Apr 10 / 23:24 UTC — automated run 36. Notifications reviewed: 12 items. 6 'Spring clean up' posts across West Springfield Community Forum, Somers Ct. Neighborhood Forum, Hampden MA Open Forum, Agawam MA open forum, Longmeadow MA Open Forum, The OFFICIAL Longmeadow MA Open Forum — all Clear View exterior cleaning, not Novaro AI. 1 Power Washing Bros group join approval (11h). 1 Jared Swan welcome tag in Pressure Washing & Soft Washing United (new member welcome post). 1 Meta AI system promo. 1 Todd Rumfola close friend reel. 1 Brett Hutton like on comment. Messenger inbox: Ann Giroux phantom unread (empty convo). Isaac James Fernandez outbound (5d, no response). Message Requests: 3 items — Room Full of Love junk group (4w), Abdul Sattar spam (1y), David James group acceptance (1y). Spam folder: 14 messages reviewed — 13 Clear View power washing inquiries (Sansharee Trimble, Mike Kneeland, Chelsea Colbath, Courtney Lee, Donna King, Sue Montmeny, Ellen Marie Eggenberger, Riley Schafer, Shelly San Chan, Lukasz Skawinski, Charles Monfett, Brian Shiveley, Yasmine Delrio). 1 QUALIFIED LEAD: Kyle Weaver (Mar 23, 2026) — 'Hey man, saw one of your posts. You fo LSAs?' — asking about Local Service Ads after seeing Vito's post, logged to Notion Outreach Pipeline. Leads this run: 0 Hot, 1 Qualified (Kyle Weaver). interestSignals total: 23.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
@@ -16,7 +16,7 @@
   "novaro-dashboard-refresh": {
     "lastRun": "2026-04-02T12:08:09.000Z",
     "status": "active",
-    "summary": "Daily Notion refresh ran at 8:08 AM ET Apr 2. Queried Outreach Leads Pipeline (ebac6164). Notion MCP returned schema only \u2014 no rows queryable via current MCP tools. Pipeline data written as all zeros per fallback. Database schema confirmed: Status options (New Lead, DM Sent, Replied, Call Booked, Closed, Not Interested), Sources (Facebook, LinkedIn, SMS, Instantly). Funnel-data.json updated and pushed to GitHub.",
+    "summary": "Daily Notion refresh ran at 8:08 AM ET Apr 2. Queried Outreach Leads Pipeline (ebac6164). Notion MCP returned schema only — no rows queryable via current MCP tools. Pipeline data written as all zeros per fallback. Database schema confirmed: Status options (New Lead, DM Sent, Replied, Call Booked, Closed, Not Interested), Sources (Facebook, LinkedIn, SMS, Instantly). Funnel-data.json updated and pushed to GitHub.",
     "schedule": "On scraper run",
     "type": "GitHub API push"
   },
