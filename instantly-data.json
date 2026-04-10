@@ -1,7 +1,33 @@
 {
   "lastUpdated": "2026-04-10T20:27:50Z",
-  "overview": {},
-  "daily": [],
+  "overview": {
+    "emails_sent_count": 719,
+    "contacted_count": 693,
+    "new_leads_contacted_count": 693,
+    "open_count": 44,
+    "open_count_unique": 44,
+    "open_count_unique_by_step": 44,
+    "reply_count": 5,
+    "reply_count_unique": 5,
+    "reply_count_unique_by_step": 5,
+    "reply_count_automatic": 2,
+    "reply_count_automatic_unique": 2,
+    "link_click_count": 0,
+    "link_click_count_unique": 0
+  },
+  "daily": [
+    {"date": "2026-03-15", "sent": 25, "contacted": 25, "new_leads_contacted": 25, "opened": 2, "unique_opened": 2, "replies": 0, "unique_replies": 0, "replies_automatic": 0, "unique_replies_automatic": 0, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-03-17", "sent": 30, "contacted": 30, "new_leads_contacted": 30, "opened": 1, "unique_opened": 1, "replies": 0, "unique_replies": 0, "replies_automatic": 0, "unique_replies_automatic": 0, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-03-19", "sent": 35, "contacted": 35, "new_leads_contacted": 35, "opened": 3, "unique_opened": 3, "replies": 0, "unique_replies": 0, "replies_automatic": 0, "unique_replies_automatic": 0, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-03-21", "sent": 40, "contacted": 38, "new_leads_contacted": 38, "opened": 4, "unique_opened": 4, "replies": 0, "unique_replies": 0, "replies_automatic": 0, "unique_replies_automatic": 0, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-03-24", "sent": 50, "contacted": 48, "new_leads_contacted": 48, "opened": 5, "unique_opened": 5, "replies": 0, "unique_replies": 0, "replies_automatic": 0, "unique_replies_automatic": 0, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-03-26", "sent": 55, "contacted": 52, "new_leads_contacted": 52, "opened": 4, "unique_opened": 4, "replies": 0, "unique_replies": 0, "replies_automatic": 0, "unique_replies_automatic": 0, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-03-28", "sent": 60, "contacted": 57, "new_leads_contacted": 57, "opened": 6, "unique_opened": 6, "replies": 0, "unique_replies": 0, "replies_automatic": 0, "unique_replies_automatic": 0, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-04-02", "sent": 80, "contacted": 78, "new_leads_contacted": 78, "opened": 7, "unique_opened": 7, "replies": 0, "unique_replies": 0, "replies_automatic": 0, "unique_replies_automatic": 0, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-04-07", "sent": 149, "contacted": 145, "new_leads_contacted": 145, "opened": 8, "unique_opened": 8, "replies": 2, "unique_replies": 2, "replies_automatic": 1, "unique_replies_automatic": 1, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-04-08", "sent": 100, "contacted": 98, "new_leads_contacted": 98, "opened": 8, "unique_opened": 8, "replies": 2, "unique_replies": 2, "replies_automatic": 1, "unique_replies_automatic": 1, "clicks": 0, "unique_clicks": 0},
+    {"date": "2026-04-09", "sent": 95, "contacted": 87, "new_leads_contacted": 87, "opened": 6, "unique_opened": 6, "replies": 1, "unique_replies": 1, "replies_automatic": 0, "unique_replies_automatic": 0, "clicks": 0, "unique_clicks": 0}
+  ],
   "campaigns": [
     {
       "id": "e24260e9-fbb0-4ccb-a6cb-8ec73782495b",
