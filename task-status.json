@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-11T20:19:34.000Z",
+    "lastRun": "2026-04-11T21:15:11.000Z",
     "status": "active",
-    "summary": "Run 46 — 4:19 PM ET Apr 11 / 20:19 UTC. Notifications: 5 (all group welcome messages: HVAC Techs Group, Junk Removal, Lawn Care, Painting, Professional Plumbers — same as run 45, unread). Activity log: only account setup entries from Apr 10 (profile pic, cover photo, phone, birthday) — no comments or reactions from others. Messenger: main inbox empty, message requests: 0, spam: 0. Leads: 0 Hot, 0 Qualified. No Notion entries created.",
+    "summary": "Run 47 — 5:15 PM ET Apr 11 / 21:15 UTC. Notifications: 6 (all group welcome messages: Roofing Contractors, HVAC Techs Group, Junk Removal, Lawn Care, Painting/DripJobs, Professional Plumbers). Activity log: 3 posts today — Painting Contractors by DripJobs (pending admin approval), HVAC Techs Group (live, 0 engagement), Professional Plumbers (live, 0 engagement). Messenger: main inbox 0 DMs, message requests: 0, spam: 0. Leads: 0 Hot, 0 Qualified. No Notion entries created. Groups total: 55.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
