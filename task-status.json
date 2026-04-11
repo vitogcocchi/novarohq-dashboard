@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-10T18:19:04Z",
+    "lastRun": "2026-04-11T00:15:29Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (2:19 PM ET Apr 10 / 18:19 UTC) — automated run. Pending sent requests: 288 (+9 since last run at 12:08 UTC). Most recent batch sent 5 hours ago targeting service business owners (Rob Panfili/Titanium Plumbing & Heating, Elizabeth Gonzalez/AZ Janitorial Services, Jenny Connolley/TC Roofing & Restorations). Total connections: 1,064 (+1). New connection today: Michael Civetta (Finance & Management Major, Sacred Heart University, Apr 10). New connections this week: Michael Civetta (Apr 10), Jason G. White (Apr 9), Mike Manchester & Jason Donovan (Apr 8), Joshua Hoffmann & Steve Wiater (Apr 7) — 6 total this week. Unread messages (9): Muhammad Ali (Mar 7) pitching LinkedIn outreach services to Vito — competitor, not a lead; remaining unreads are old InMail from 2025 (recruiters/vendors). No new replies from current outreach prospects. No positive buying signals this run. Delta: +9 requests sent, +1 accepted, +1 message sent, 0 new replies, 0 new interest signals.",
+    "summary": "Scraped LinkedIn (8:15 PM ET Apr 10 / 00:15 UTC Apr 11) — automated run. Pending sent requests: 288 (unchanged from last run). Most recent batch sent 11 hours ago (Rob Panfili/Titanium Plumbing & Heating, Elizabeth Gonzalez/AZ Janitorial Services, Jenny Connolley/TC Roofing & Restorations). Total connections: 1,064 (no change). No new connections since last run. Unread messages reviewed: Vincent Handugan (Mar 20) — VA/admin services pitch, not a lead. Josef Volpin (Mar 5) — InMail competitor pitch (AI booking system). Edward Fletcher (Feb 27) — negative reply to outreach. Jesusa Michaela Sales (Jan 2) and Ronald Lassiter (Sep 2025) — old stale threads. No new replies from current outreach prospects. No positive buying signals. Delta: 0 requests sent, 0 accepted, 0 messages, 0 new replies, 0 new interest signals.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
