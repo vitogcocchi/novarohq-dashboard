@@ -193,7 +193,7 @@
         .rep-card.pending{border-left:3px solid var(--warn)}
         .rep-ch-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
         .rep-ch-icon.Email{background:rgba(0,212,255,.1)}
-        .rep-ch-icon.LinkedIn{background:rgba(30,144,255,.1)}
+
         .rep-ch-icon.Facebook{background:rgba(24,119,242,.1)}
         .rep-body{flex:1;min-width:0}
         .rep-meta{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}
@@ -321,10 +321,6 @@ function closeIntro(){
             <span class="nav-ic">&#128218;</span><span class="nav-l">Facebook</span>
             <span class="nav-b">SOCIAL</span>
         </a>
-        <a class="nav-i" data-page="linkedin" onclick="showPage('linkedin')">
-            <span class="nav-ic">&#128188;</span><span class="nav-l">LinkedIn</span>
-            <span class="nav-b">B2B</span>
-        </a>
         <a class="nav-i" data-page="replies" onclick="showPage('replies')">
             <span class="nav-ic">&#128172;</span><span class="nav-l">Replies &amp; Leads</span>
             <span class="nav-b" id="nav-replies-badge" style="background:rgba(0,255,136,.2);color:#00ff88;border-radius:4px;padding:2px 6px;font-size:9px;font-weight:700">0</span>
@@ -378,16 +374,6 @@ function closeIntro(){
                 <div style="text-align:center"><div class="csv" id="ov-fbi">--</div><div class="csl">INTEREST</div></div>
             </div>
         </div>
-        <div class="oc" onclick="showPage('linkedin')">
-            <div class="ci">&#128188;</div>
-            <div class="ct">LINKEDIN</div>
-            <div class="cd">Connection requests, messages, and responses</div>
-            <div class="cs">
-                <div style="text-align:center"><div class="csv" id="ov-req">--</div><div class="csl">REQUESTS</div></div>
-                <div style="text-align:center"><div class="csv" id="ov-acc">--</div><div class="csl">ACCEPTED</div></div>
-                <div style="text-align:center"><div class="csv" id="ov-lii">--</div><div class="csl">INTEREST</div></div>
-            </div>
-        </div>
     </div>
     <!-- Daily Activity Log -->
     <div class="ds" style="margin-bottom:24px">
@@ -395,19 +381,12 @@ function closeIntro(){
             <div class="dt"><span class="ic">&#128197;</span> DAILY ACTIVITY LOG</div>
             <span class="db">ALL CHANNELS // LAST 10 DAYS</span>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <div style="margin-bottom:20px">
             <div>
                 <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#128218; FACEBOOK GROUPS</div>
                 <table>
                     <thead><tr><th>Date</th><th>Posts</th><th>Comments</th><th>Positive</th><th>DMs</th><th>Signals</th></tr></thead>
                     <tbody id="ov-fb-daily"><tr><td colspan="6" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
-                </table>
-            </div>
-            <div>
-                <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#128188; LINKEDIN</div>
-                <table>
-                    <thead><tr><th>Date</th><th>Requests</th><th>Accepted</th><th>Messages</th><th>Replies</th></tr></thead>
-                    <tbody id="ov-li-daily"><tr><td colspan="5" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
                 </table>
             </div>
         </div>
@@ -472,14 +451,6 @@ function closeIntro(){
                 <div class="fn-ch-row"><span>Replied</span><span id="fn-fb-replied">0</span></div>
                 <div class="fn-ch-row"><span>Booked</span><span id="fn-fb-booked">0</span></div>
                 <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-fb-closed">0</span></div>
-            </div>
-            <div class="fn-ch" id="fn-ch-linkedin">
-                <div class="fn-ch-title">&#128188; LINKEDIN</div>
-                <div class="fn-ch-row"><span>New</span><span id="fn-li-new">0</span></div>
-                <div class="fn-ch-row"><span>DM Sent</span><span id="fn-li-dm">0</span></div>
-                <div class="fn-ch-row"><span>Replied</span><span id="fn-li-replied">0</span></div>
-                <div class="fn-ch-row"><span>Booked</span><span id="fn-li-booked">0</span></div>
-                <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-li-closed">0</span></div>
             </div>
             <div class="fn-ch" id="fn-ch-instantly">
                 <div class="fn-ch-title">&#9993; INSTANTLY</div>
@@ -601,29 +572,6 @@ function closeIntro(){
     </div>
 </section>
 
-<!-- LINKEDIN -->
-<section class="pg" id="page-linkedin">
-    <div class="ph">
-        <div><div class="pt">LINKEDIN // B2B OUTREACH</div><div class="ps">CONNECTION & MESSAGING METRICS</div></div>
-        <div class="ht"><span class="tv" id="clock-5"></span><span id="date-5"></span></div>
-    </div>
-    <div class="sg">
-        <div class="sb-c"><div class="sl">REQUESTS SENT</div><div class="sv cy">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">ACCEPTED</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">MESSAGES SENT</div><div class="sv bl">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">RESPONSES</div><div class="sv">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">POSITIVE RESPONSES</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">INTEREST SIGNALS</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
-    </div>
-    <div class="ds">
-        <div class="dh"><div class="dt"><span class="ic">&#128188;</span> DAILY OUTREACH LOG</div><span class="db">LINKEDIN</span></div>
-        <table>
-            <thead><tr><th>Date</th><th>Requests</th><th>Accepted</th><th>Rate</th><th>Messages</th><th>Responses</th><th>Positive</th><th>Interest</th></tr></thead>
-            <tbody id="li-tbody"><tr><td colspan="8" style="text-align:center;color:var(--t3);padding:40px">Awaiting data from LinkedIn automations...</td></tr></tbody>
-        </table>
-    </div>
-</section>
-
 <!-- PIPELINE -->
 <section class="pg" id="page-pipeline">
     <div class="ph">
@@ -671,7 +619,6 @@ function closeIntro(){
         <div class="rep-filter" onclick="filterReplies('negative', this)">&#x274C; NOT INTERESTED</div>
         <div class="rep-filter" onclick="filterReplies('auto', this)">&#x2699;&#xFE0F; AUTO</div>
         <div class="rep-filter" onclick="filterReplies('Email', this)">EMAIL</div>
-        <div class="rep-filter" onclick="filterReplies('LinkedIn', this)">LINKEDIN</div>
         <div class="rep-filter" onclick="filterReplies('Facebook', this)">FACEBOOK</div>
     </div>
 
@@ -701,7 +648,6 @@ function closeIntro(){
         <div class="sg" style="margin-bottom:0">
             <div class="sb-c"><div class="sl">INSTANTLY</div><div class="sv ok" id="pipe-instantly">LIVE</div><div class="sc">Real-time API</div></div>
             <div class="sb-c"><div class="sl">FACEBOOK</div><div class="sv wn" id="pipe-facebook">HOURLY</div><div class="sc" id="pipe-fb-last">Awaiting first scrape</div></div>
-            <div class="sb-c"><div class="sl">LINKEDIN</div><div class="sv wn" id="pipe-linkedin">HOURLY</div><div class="sc" id="pipe-li-last">Awaiting first scrape</div></div>
         </div>
     </div>
 
@@ -880,12 +826,12 @@ async function loadLiveData(){
         const res = await fetch(GH_RAW+'instantly-data.json?t='+t);
         if(res.ok){ const d = await res.json(); populateInstantly(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
     } catch(e){ console.warn('Instantly data load failed:', e.message); }
-    // Social (Facebook + LinkedIn)
+    // Social (Facebook)
     try {
         const res = await fetch(GH_RAW+'social-data.json?t='+t);
         if(res.ok){ const d = await res.json(); populateSocial(d);
             if(d.facebook && d.facebook.lastUpdated) timestamps.push(new Date(d.facebook.lastUpdated));
-            if(d.linkedin && d.linkedin.lastUpdated) timestamps.push(new Date(d.linkedin.lastUpdated));
+
         }
     } catch(e){ console.warn('Social data load failed:', e.message); }
     // Task status
@@ -1041,40 +987,6 @@ function populateSocial(sd){
         if(pipeFbLast) pipeFbLast.textContent = 'Last: ' + new Date(fb.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
     }
 
-    // LinkedIn
-    if(sd.linkedin && sd.linkedin.lastUpdated){
-        const li = sd.linkedin;
-        const oReq = document.getElementById('ov-req');
-        const oAcc = document.getElementById('ov-acc');
-        const oLii = document.getElementById('ov-lii');
-        if(oReq) oReq.textContent = li.requestsSent || 0;
-        if(oAcc) oAcc.textContent = li.requestsAccepted || 0;
-        if(oLii) oLii.textContent = li.interestSignals || 0;
-
-        // LinkedIn page stat bubbles
-        const liBubbles = document.querySelectorAll('#page-linkedin .sb-c');
-        if(liBubbles.length >= 6){
-            setBubble(liBubbles[0], li.requestsSent || 0, 'Outbound requests');
-            setBubble(liBubbles[1], li.requestsAccepted || 0, 'Accepted');
-            setBubble(liBubbles[2], li.totalConnections || 0, 'Network size');
-            setBubble(liBubbles[3], li.messagesSent || 0, 'In last 7 days');
-            setBubble(liBubbles[4], li.replies || 0, 'Conversations');
-            setBubble(liBubbles[5], li.interestSignals || 0, 'Warm leads');
-        }
-
-        // LinkedIn daily table
-        const liTbody = document.getElementById('li-tbody');
-        if(liTbody && li.daily && li.daily.length > 0){
-            liTbody.innerHTML = li.daily.map(row =>
-                `<tr><td class="td-h">${row.date}</td><td>${row.requests||0}</td><td>${row.accepted||0}</td><td>${row.messages||0}</td><td>${row.replies||0}</td><td>${row.interest||0}</td></tr>`
-            ).join('');
-        }
-
-        // Progress page
-        const pipeLiLast = document.getElementById('pipe-li-last');
-        if(pipeLiLast) pipeLiLast.textContent = 'Last: ' + new Date(li.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
-    }
-
     // ── Homepage Daily Breakdown ──────────────────────────────
     // Facebook
     const ovFb = document.getElementById('ov-fb-daily');
@@ -1089,21 +1001,6 @@ function populateSocial(sd){
                 <td>${r.positive||0}</td>
                 <td>${r.dms||0}</td>
                 <td${r.interest>0?' style="color:var(--cyan);font-weight:600"':''}>${r.interest||0}</td>
-            </tr>`;
-        }).join('');
-    }
-    // LinkedIn
-    const ovLi = document.getElementById('ov-li-daily');
-    if(ovLi && sd.linkedin && sd.linkedin.daily){
-        const rows = [...sd.linkedin.daily].reverse().slice(0,10);
-        ovLi.innerHTML = rows.map(r => {
-            const active = r.requests>0||r.accepted>0||r.messages>0||r.replies>0;
-            return `<tr${active?' style="color:var(--t1)"':''}>
-                <td class="td-h">${fmtDate(r.date)}</td>
-                <td>${r.requests||0}</td>
-                <td>${r.accepted||0}</td>
-                <td>${r.messages||0}</td>
-                <td${r.replies>0?' style="color:var(--cyan);font-weight:600"':''}>${r.replies||0}</td>
             </tr>`;
         }).join('');
     }
@@ -1135,8 +1032,8 @@ function populateFunnel(d){
     set('fn-rate-closed', pct(cl, bk) + ' of booked');
 
     // Per-channel breakdown
-    const channels = {fb: d.facebook||{}, li: d.linkedin||{}, ins: d.instantly||{}};
-    const map = {fb:'fb', li:'li', ins:'ins'};
+    const channels = {fb: d.facebook||{}, ins: d.instantly||{}};
+    const map = {fb:'fb', ins:'ins'};
     for(const [key, data] of Object.entries(channels)){
         const p = map[key];
         set(`fn-${p}-new`,    data.newLead    || 0);
@@ -1231,7 +1128,7 @@ function populateTasks(ts){
         } else {
             log.innerHTML = '<div style="color:var(--ok)">[System initialized] All tasks registered. Awaiting first scheduled runs.</div>' +
                 '<div style="color:var(--t3)">[Info] Facebook scrape: hourly at :06 past</div>' +
-                '<div style="color:var(--t3)">[Info] LinkedIn scrape: hourly at :36 past</div>' +
+
                 '<div style="color:var(--ok)">[Info] Instantly: real-time on every page load</div>';
         }
     }
@@ -1389,7 +1286,7 @@ function openAgentDetail(id) {
 }
 
 // ===== REPLIES & LEADS =====
-const CH_ICONS = { Email: '✉️', LinkedIn: '💼', Facebook: '📘' };
+const CH_ICONS = { Email: '✉️', Facebook: '📘' };
 let _activeRepFilter = 'all';
 
 function populateReplies(d, filter){
