@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-11T01:10:29Z",
+  "lastUpdated": "2026-04-11T01:16:57Z",
   "summary": {
     "total": 8,
     "positive": 2,
@@ -9,45 +9,6 @@
   },
   "replies": [
     {
-      "id": "li-apr7-ramon-cruz",
-      "date": "April 7, 2026",
-      "channel": "LinkedIn",
-      "type": "positive",
-      "label": "Warm Lead",
-      "contact": "Ram\u00f3n Cruz",
-      "company": "Plumbing Business",
-      "preview": "Active conversation: \"Thank you Vito. Keep you posted. Nice connecting with you.\" Follow-up question sent Apr 8 \u2014 awaiting his reply.",
-      "status": "Follow Up Sent",
-      "campaign": "LinkedIn Warm Lead",
-      "actionUrl": "https://www.linkedin.com/messaging/thread/2-YzNkZjM2NjQtOWJmOS00ZWJhLWExNjUtNjZkMWIzMzVhNTVlXzEwMA==/"
-    },
-    {
-      "id": "li-apr4-unknown-review",
-      "date": "April 4, 2026",
-      "channel": "LinkedIn",
-      "type": "pending",
-      "label": "Needs Review",
-      "contact": "Unknown",
-      "company": "",
-      "preview": "LinkedIn reply logged on Apr 4 \u2014 open messaging to identify sender and classify. Personal message channel, worth 2 minutes.",
-      "status": "Needs Review",
-      "campaign": "LinkedIn DM",
-      "actionUrl": "https://www.linkedin.com/messaging/"
-    },
-    {
-      "id": "fb-apr8-mitch-jenkins",
-      "date": "April 8, 2026",
-      "channel": "Facebook",
-      "type": "positive",
-      "label": "Hot Lead",
-      "contact": "Mitch Jenkins",
-      "company": "Junk Removal Owners",
-      "preview": "Explicit buying signal: \"it's worth at least having a conversation about it\" \u2014 after Vito's LSA dispute reply. Actively running LSAs. Ready to DM as soon as the new FB account is live.",
-      "status": "Ready to DM",
-      "campaign": "Facebook Hot Lead",
-      "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
-    },
-    {
       "id": "fb-apr10-kyle-weaver",
       "date": "April 10, 2026",
       "channel": "Facebook",
@@ -55,7 +16,7 @@
       "label": "DM Received",
       "contact": "Kyle Weaver",
       "company": "Personal DM",
-      "preview": "\"Hey man, saw one of your posts. You do LSAs?\" \u2014 Message found in spam folder (originally sent Mar 23). He reached out first and asked about the service by name. Priority reply target.",
+      "preview": "\"Hey man, saw one of your posts. You do LSAs?\" — Message found in spam folder (originally sent Mar 23). He reached out first and asked about the service by name. Priority reply target.",
       "status": "Awaiting Reply",
       "campaign": "Facebook DM",
       "actionUrl": "https://www.facebook.com/messages"
@@ -70,7 +31,7 @@
       "company": "Level Craft Atlanta",
       "preview": "Out of office auto-reply. Subject: \"found something for Level Craft Construction.\" Re-engage when they return.",
       "status": "Revisit Later",
-      "campaign": "Novaro LSA \u2014 A/B Test",
+      "campaign": "Novaro LSA — A/B Test",
       "actionUrl": "https://app.instantly.ai"
     },
     {
@@ -81,9 +42,22 @@
       "label": "Not Interested",
       "contact": "David",
       "company": "Bear Home Service",
-      "preview": "Not interested \u2014 replied to remove. Sequence closed with courtesy note. No further action needed.",
+      "preview": "Not interested — replied to remove. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
-      "campaign": "Novaro LSA \u2014 A/B Test"
+      "campaign": "Novaro LSA — A/B Test"
+    },
+    {
+      "id": "fb-apr8-mitch-jenkins",
+      "date": "April 8, 2026",
+      "channel": "Facebook",
+      "type": "positive",
+      "label": "Hot Lead",
+      "contact": "Mitch Jenkins",
+      "company": "Junk Removal Owners",
+      "preview": "Explicit buying signal: \"it's worth at least having a conversation about it\" — after Vito's LSA dispute reply. Actively running LSAs. Ready to DM as soon as the new FB account is live.",
+      "status": "Ready to DM",
+      "campaign": "Facebook Hot Lead",
+      "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
     },
     {
       "id": "em-apr8-nick-usjetting",
@@ -93,9 +67,9 @@
       "label": "Not Interested",
       "contact": "Nick Woodhead",
       "company": "US Jetting",
-      "preview": "Not interested \u2014 tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
+      "preview": "Not interested — tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
-      "campaign": "Novaro LSA \u2014 A/B Test"
+      "campaign": "Novaro LSA — A/B Test"
     },
     {
       "id": "em-apr8-matt-lanier",
@@ -105,10 +79,36 @@
       "label": "Out of Office",
       "contact": "Matt",
       "company": "Lanier HVAC",
-      "preview": "Out of office auto-reply \u2014 subject: \"who's getting your jobs, Matt?\" Re-engage when back.",
+      "preview": "Out of office auto-reply — subject: \"who's getting your jobs, Matt?\" Re-engage when back.",
       "status": "Revisit Later",
-      "campaign": "Novaro LSA \u2014 A/B Test",
+      "campaign": "Novaro LSA — A/B Test",
       "actionUrl": "https://app.instantly.ai"
+    },
+    {
+      "id": "li-apr7-ramon-cruz",
+      "date": "April 7, 2026",
+      "channel": "LinkedIn",
+      "type": "positive",
+      "label": "Warm Lead",
+      "contact": "Ramón Cruz",
+      "company": "Plumbing Business",
+      "preview": "Active conversation: \"Thank you Vito. Keep you posted. Nice connecting with you.\" Follow-up question sent Apr 8 — awaiting his reply.",
+      "status": "Follow Up Sent",
+      "campaign": "LinkedIn Warm Lead",
+      "actionUrl": "https://www.linkedin.com/messaging/thread/2-YzNkZjM2NjQtOWJmOS00ZWJhLWExNjUtNjZkMWIzMzVhNTVlXzEwMA==/"
+    },
+    {
+      "id": "li-apr4-unknown-review",
+      "date": "April 4, 2026",
+      "channel": "LinkedIn",
+      "type": "pending",
+      "label": "Needs Review",
+      "contact": "Unknown",
+      "company": "",
+      "preview": "LinkedIn reply logged on Apr 4 — open messaging to identify sender and classify. Personal message channel, worth 2 minutes.",
+      "status": "Needs Review",
+      "campaign": "LinkedIn DM",
+      "actionUrl": "https://www.linkedin.com/messaging/"
     }
   ]
 }
