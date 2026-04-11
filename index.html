@@ -1407,7 +1407,12 @@ function populateReplies(d, filter){
     const navBadge = document.getElementById('nav-replies-badge');
     if(navBadge) navBadge.textContent = (s.pending || 0) + (s.positive || 0);
 
-    let items = d.replies;
+    // Always sort by date descending (newest first), regardless of JSON order
+    let items = [...d.replies].sort((a, b) => {
+        const da = new Date(a.date).getTime() || 0;
+        const db = new Date(b.date).getTime() || 0;
+        return db - da;
+    });
     if(filter !== 'all'){
         items = items.filter(r =>
             r.type === filter || r.channel === filter
