@@ -7,9 +7,9 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-11T00:15:29Z",
+    "lastRun": "2026-04-11T12:09:56Z",
     "status": "active",
-    "summary": "Scraped LinkedIn (8:15 PM ET Apr 10 / 00:15 UTC Apr 11) — automated run. Pending sent requests: 288 (unchanged from last run). Most recent batch sent 11 hours ago (Rob Panfili/Titanium Plumbing & Heating, Elizabeth Gonzalez/AZ Janitorial Services, Jenny Connolley/TC Roofing & Restorations). Total connections: 1,064 (no change). No new connections since last run. Unread messages reviewed: Vincent Handugan (Mar 20) — VA/admin services pitch, not a lead. Josef Volpin (Mar 5) — InMail competitor pitch (AI booking system). Edward Fletcher (Feb 27) — negative reply to outreach. Jesusa Michaela Sales (Jan 2) and Ronald Lassiter (Sep 2025) — old stale threads. No new replies from current outreach prospects. No positive buying signals. Delta: 0 requests sent, 0 accepted, 0 messages, 0 new replies, 0 new interest signals.",
+    "summary": "Scraped LinkedIn (8:09 AM ET Apr 11 / 12:09 UTC) — automated run. Pending sent requests: 288 (unchanged). Most recent batch sent ~23 hours ago (Rob Panfili/Titanium Plumbing & Heating, Elizabeth Gonzalez/AZ Janitorial Services, Jenny Connolley/TC Roofing & Restorations, Eric Pariseau/Lake HVAC). Total connections: 1,064 (no change). New connections this week (Apr 5–11): 9 — Michael Civetta (Apr 10), Jason G. White (Apr 9), Mike Manchester (Apr 8), Jason Donovan (Apr 8), Joshua Hoffmann (Apr 7), Steve Wiater (Apr 7), Brendan McGeer (Apr 6), Ryan Dzierzgowski (Apr 6), Ray Ammons (Apr 5). Unread messages (3): Vincent Handugan — pitching free VA test (not a lead); Muhammad Ali — pitching LinkedIn outreach service (not a lead); Josef Volpin — InMail pitching 35-40 calls/month breakdown (not a lead). Focused inbox: Syed Farhan replied following up on accounting/bookkeeping pitch (not a lead). 1 new prospect reply: Ramón Cruz (Owner, Vic & Ray Plumbing) replied Friday 8:19 PM to Vito's Google question — said he doesn't use Google, has 700 apartments via Warranty Insurance. Not a buyer signal. No positive interest signals from prospects. Delta: 0 new requests, 0 accepted, 0 messages sent, 1 new reply, 0 interest signals.",
     "schedule": "Hourly at :36",
     "type": "Chrome scraper"
   },
