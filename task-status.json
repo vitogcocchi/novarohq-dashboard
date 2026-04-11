@@ -1,8 +1,8 @@
 {
   "facebook-scrape": {
-    "lastRun": "2026-04-11T01:08:28.000Z",
+    "lastRun": "2026-04-11T02:07:55.000Z",
     "status": "active",
-    "summary": "Run at ~9:08 PM ET Apr 10 / 01:08 UTC Apr 11 — automated run 38. Notifications: 0 — completely empty (both All and Unread tabs). Activity log: Comments & reactions — nothing to show. Posts — only birthday life event (born April 3, 1989) and profile updates (cover photo, phone number change). No group post or comment activity. Messenger inbox: same 5 conversations unchanged (Rico Cocchi 1w, Brady Fellows 2w, Byron Peabody 2w, Anthony Cocchi 2w, Ann Giroux phantom unread/empty). Isaac James Fernandez outbound pitch sent 5d ago — still no response. Message Requests — You may know: 0. Spam: 1 item — Room Full of Love 4813 (22h) — same adult spam from prior run, junk. Leads this run: 0 Hot, 0 Qualified. No new leads to log to Notion.",
+    "summary": "Run at ~10:07 PM ET Apr 10 / 02:07 UTC Apr 11 — automated run 39. Notifications: 0 — both All and Unread tabs empty. Activity log: Only account setup entries visible (cover photo update 9:00 PM, phone number change 8:59 PM, birthday life event 8:50 PM) — no comments or reactions from others on posts. Messenger: main inbox empty (no chats), message requests empty (You may know: 0), spam: 0. New account still building presence — no inbound lead activity yet. Leads this run: 0 Hot, 0 Qualified. No Notion entries created.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
