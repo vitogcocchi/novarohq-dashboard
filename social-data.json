@@ -27,7 +27,7 @@
     ]
   },
   "linkedin": {
-    "lastUpdated": "2026-04-10T18:19:04Z",
+    "lastUpdated": "2026-04-11T00:15:29Z",
     "requestsSent": 288,
     "requestsAccepted": 27,
     "totalConnections": 1064,
@@ -43,7 +43,7 @@
       {"date": "2026-04-07", "requests": 6, "accepted": 4, "messages": 1, "replies": 1, "interest": 1},
       {"date": "2026-04-08", "requests": 21, "accepted": 2, "messages": 5, "replies": 0, "interest": 0},
       {"date": "2026-04-09", "requests": 8, "accepted": 1, "messages": 1, "replies": 0, "interest": 0},
-      {"date": "2026-04-10", "requests": 9, "accepted": 1, "messages": 1, "replies": 0, "interest": 0, "lastUpdated": "2026-04-10T18:19:04Z"}
+      {"date": "2026-04-10", "requests": 9, "accepted": 1, "messages": 1, "replies": 0, "interest": 0, "lastUpdated": "2026-04-11T00:15:29Z"}
     ]
   }
 }
