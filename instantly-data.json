@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-12T14:30:00Z",
+  "lastUpdated": "2026-04-12T14:13:21Z",
   "overview": {
     "emails_sent_count": 388,
     "contacted_count": 388,
@@ -198,13 +198,27 @@
       "unique_replies_automatic": 0,
       "clicks": 0,
       "unique_clicks": 0
+    },
+    {
+      "date": "2026-04-12",
+      "sent": 0,
+      "contacted": 0,
+      "new_leads_contacted": 0,
+      "opened": 0,
+      "unique_opened": 0,
+      "replies": 0,
+      "unique_replies": 0,
+      "replies_automatic": 0,
+      "unique_replies_automatic": 0,
+      "clicks": 0,
+      "unique_clicks": 0
     }
   ],
   "campaigns": [
     {
       "id": "e24260e9-fbb0-4ccb-a6cb-8ec73782495b",
       "name": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "status": "Active"
+      "status": "Paused"
     }
   ]
 }
