@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-12T14:13:21Z",
+  "lastUpdated": "2026-04-12T14:15:44Z",
   "overview": {
     "emails_sent_count": 388,
     "contacted_count": 388,
@@ -218,7 +218,7 @@
     {
       "id": "e24260e9-fbb0-4ccb-a6cb-8ec73782495b",
       "name": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "status": "Paused"
+      "status": "Active"
     }
   ]
 }
