@@ -1194,7 +1194,7 @@ function populateTaskAlerts(taskStatus) {
         // Show global banner
         if (bar) bar.classList.add('show');
         const names = alerts.map(a => a.task).join(', ');
-        if (barText) barText.textContent = 'MISSED TASK' + (alerts.length > 1 ? 'S' : '') + ': ' + names.toUpperCase() + ' — SMS sent to Vito';
+        if (barText) barText.textContent = 'MISSED TASK' + (alerts.length > 1 ? 'S' : '') + ': ' + names.toUpperCase();
         if (barTime && lastCheck) barTime.textContent = 'Last check: ' + lastCheck.toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
 
         // Show agents page alert section
