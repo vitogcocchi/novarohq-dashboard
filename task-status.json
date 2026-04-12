@@ -1,18 +1,46 @@
 {
-  "last_health_check": "2026-04-12T14:14:24Z",
+  "last_health_check": "2026-04-12T18:07:59Z",
   "overall_status": "alert",
   "alerts": [
+    {
+      "task": "fb-comment-replies",
+      "last_run": "2026-04-12T15:09:01.625Z",
+      "expected_interval_minutes": 30,
+      "minutes_since_last_run": 178,
+      "status": "missed"
+    },
+    {
+      "task": "facebook-scrape",
+      "last_run": "2026-04-12T15:05:56.734Z",
+      "expected_interval_minutes": 60,
+      "minutes_since_last_run": 182,
+      "status": "missed"
+    },
+    {
+      "task": "instantly-dashboard-sync",
+      "last_run": "2026-04-12T14:12:18.268Z",
+      "expected_interval_minutes": 120,
+      "minutes_since_last_run": 235,
+      "status": "missed"
+    },
+    {
+      "task": "novaro-data-sync",
+      "last_run": "2026-04-12T14:15:18.438Z",
+      "expected_interval_minutes": 60,
+      "minutes_since_last_run": 232,
+      "status": "missed"
+    },
     {
       "task": "linkedin-scrape",
       "last_run": "2026-04-11T18:12:10.932Z",
       "expected_interval_minutes": 360,
-      "status": "disabled_unexpectedly",
+      "status": "disabled",
       "note": "Persistent — initial SMS sent at 12:10Z. Not re-sent on subsequent checks to avoid spam."
     }
   ],
   "tasks": {
     "instantly-manager": {
-      "last_run": "2026-04-12T14:08:06.149Z",
+      "last_run": "2026-04-12T18:06:49.321Z",
       "status": "healthy"
     },
     "linkedin-outreach": {
@@ -24,27 +52,27 @@
       "status": "healthy"
     },
     "fb-comment-replies": {
-      "last_run": "2026-04-12T14:09:01.193Z",
-      "status": "healthy"
+      "last_run": "2026-04-12T15:09:01.625Z",
+      "status": "missed"
     },
     "morning-debrief": {
       "last_run": "2026-04-12T11:08:59.216Z",
       "status": "healthy"
     },
     "facebook-scrape": {
-      "last_run": "2026-04-12T14:05:56.224Z",
-      "status": "healthy"
+      "last_run": "2026-04-12T15:05:56.734Z",
+      "status": "missed"
     },
     "linkedin-scrape": {
       "last_run": "2026-04-11T18:12:10.932Z",
-      "status": "disabled_unexpectedly"
+      "status": "disabled"
     },
     "instantly-dashboard-sync": {
       "last_run": "2026-04-12T14:12:18.268Z",
-      "status": "healthy"
+      "status": "missed"
     },
     "task-health-monitor": {
-      "last_run": "2026-04-12T14:14:18.303Z",
+      "last_run": "2026-04-12T18:07:59Z",
       "status": "healthy"
     },
     "novaro-daily-lead-pipeline": {
@@ -52,8 +80,8 @@
       "status": "healthy"
     },
     "novaro-data-sync": {
-      "last_run": "2026-04-12T13:08:32.900Z",
-      "status": "healthy"
+      "last_run": "2026-04-12T14:15:18.438Z",
+      "status": "missed"
     }
   }
 }
