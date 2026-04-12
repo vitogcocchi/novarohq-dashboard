@@ -1,40 +1,71 @@
 {
   "last_health_check": "2026-04-12T01:11:00.000Z",
-  "overall_status": "alert",
-  "alerts": [
-    { "task": "linkedin-scrape", "last_run": "2026-04-11T18:12:10.932Z", "expected_interval_minutes": 360, "status": "disabled" }
-  ],
+  "overall_status": "ok",
+  "alerts": [],
   "tasks": {
-    "instantly-manager": {"last_run": "2026-04-12T00:08:01.792Z", "status": "healthy"},
-    "linkedin-outreach": {"last_run": "2026-04-10T12:09:40.941Z", "status": "skipped-weekend"},
-    "daily-fb-posts": {"last_run": "2026-04-11T20:09:44.520Z", "status": "healthy"},
-    "fb-comment-replies": {"last_run": "2026-04-12T01:08:57.102Z", "status": "healthy"},
-    "morning-debrief": {"last_run": "2026-04-11T11:08:50.168Z", "status": "healthy"},
-    "facebook-scrape": {"last_run": "2026-04-12T01:05:52.093Z", "status": "healthy"},
-    "linkedin-scrape": {"last_run": "2026-04-11T18:12:10.932Z", "status": "disabled"},
-    "instantly-dashboard-sync": {"last_run": "2026-04-12T00:12:13.733Z", "status": "healthy"},
-    "task-health-monitor": {"last_run": "2026-04-12T01:10:11.017Z", "status": "healthy"},
-    "novaro-daily-lead-pipeline": {"last_run": "2026-04-11T11:02:29.449Z", "status": "healthy"},
-    "novaro-data-sync": {"last_run": "2026-04-12T01:10:14.086Z", "status": "healthy"}
+    "instantly-manager": {
+      "last_run": "2026-04-12T00:08:01.792Z",
+      "status": "healthy"
+    },
+    "linkedin-outreach": {
+      "last_run": "2026-04-10T12:09:40.941Z",
+      "status": "skipped-weekend"
+    },
+    "daily-fb-posts": {
+      "last_run": "2026-04-11T20:09:44.520Z",
+      "status": "healthy"
+    },
+    "fb-comment-replies": {
+      "last_run": "2026-04-12T01:08:57.102Z",
+      "status": "healthy"
+    },
+    "morning-debrief": {
+      "last_run": "2026-04-11T11:08:50.168Z",
+      "status": "healthy"
+    },
+    "facebook-scrape": {
+      "last_run": "2026-04-12T01:05:52.093Z",
+      "status": "healthy"
+    },
+    "linkedin-scrape": {
+      "last_run": "2026-04-11T18:12:10.932Z",
+      "status": "disabled"
+    },
+    "instantly-dashboard-sync": {
+      "last_run": "2026-04-12T00:12:13.733Z",
+      "status": "healthy"
+    },
+    "task-health-monitor": {
+      "last_run": "2026-04-12T01:10:11.017Z",
+      "status": "healthy"
+    },
+    "novaro-daily-lead-pipeline": {
+      "last_run": "2026-04-11T11:02:29.449Z",
+      "status": "healthy"
+    },
+    "novaro-data-sync": {
+      "last_run": "2026-04-12T01:10:14.086Z",
+      "status": "healthy"
+    }
   },
   "facebook-scrape": {
     "lastRun": "2026-04-11T23:09:10.000Z",
     "status": "active",
-    "summary": "Run 49 — 7:09 PM ET Apr 11 / 23:09 UTC. Notifications: 6 (all group welcome messages: Roofing Contractors, HVAC Techs Group, Junk Removal, Lawn Care, Painting/DripJobs, Professional Plumbers — no new since Run 48). Activity log: 4 posts today — Lawn Care & Landscaping (live, 0 engagement), Junk Removal Winners (no View button), Painting Contractors by DripJobs (pending admin approval), HVAC Techs Group (live, 0 engagement). Messenger: main inbox 0 DMs, message requests: 0, spam: 0. Leads: 0 Hot, 0 Qualified. No Notion entries created.",
+    "summary": "Run 49 \u2014 7:09 PM ET Apr 11 / 23:09 UTC. Notifications: 6 (all group welcome messages: Roofing Contractors, HVAC Techs Group, Junk Removal, Lawn Care, Painting/DripJobs, Professional Plumbers \u2014 no new since Run 48). Activity log: 4 posts today \u2014 Lawn Care & Landscaping (live, 0 engagement), Junk Removal Winners (no View button), Painting Contractors by DripJobs (pending admin approval), HVAC Techs Group (live, 0 engagement). Messenger: main inbox 0 DMs, message requests: 0, spam: 0. Leads: 0 Hot, 0 Qualified. No Notion entries created.",
     "schedule": "Hourly at :06",
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
     "lastRun": "2026-04-11T18:12:10.932Z",
     "status": "disabled",
-    "summary": "Task is disabled — missed expected 8pm ET run. Last ran at 2:12 PM ET Apr 11.",
+    "summary": "Task is disabled \u2014 missed expected 8pm ET run. Last ran at 2:12 PM ET Apr 11.",
     "schedule": "6 hours (8am, 2pm, 8pm ET)",
     "type": "Chrome scraper"
   },
   "novaro-dashboard-refresh": {
     "lastRun": "2026-04-02T12:08:09.000Z",
     "status": "active",
-    "summary": "Daily Notion refresh ran at 8:08 AM ET Apr 2. Queried Outreach Leads Pipeline (ebac6164). Notion MCP returned schema only — no rows queryable via current MCP tools. Pipeline data written as all zeros per fallback. Database schema confirmed: Status options (New Lead, DM Sent, Replied, Call Booked, Closed, Not Interested), Sources (Facebook, LinkedIn, SMS, Instantly). Funnel-data.json updated and pushed to GitHub.",
+    "summary": "Daily Notion refresh ran at 8:08 AM ET Apr 2. Queried Outreach Leads Pipeline (ebac6164). Notion MCP returned schema only \u2014 no rows queryable via current MCP tools. Pipeline data written as all zeros per fallback. Database schema confirmed: Status options (New Lead, DM Sent, Replied, Call Booked, Closed, Not Interested), Sources (Facebook, LinkedIn, SMS, Instantly). Funnel-data.json updated and pushed to GitHub.",
     "schedule": "On scraper run",
     "type": "GitHub API push"
   },
