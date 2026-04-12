@@ -1,18 +1,21 @@
 {
-  "last_health_check": "2026-04-11T21:10:14.381Z",
-  "overall_status": "healthy",
-  "alerts": [],
+  "last_health_check": "2026-04-12T01:11:00.000Z",
+  "overall_status": "alert",
+  "alerts": [
+    { "task": "linkedin-scrape", "last_run": "2026-04-11T18:12:10.932Z", "expected_interval_minutes": 360, "status": "disabled" }
+  ],
   "tasks": {
-    "instantly-manager": {"last_run": "2026-04-11T20:08:00.765Z", "status": "healthy"},
-    "linkedin-outreach": {"last_run": "2026-04-10T12:09:40.941Z", "status": "healthy"},
+    "instantly-manager": {"last_run": "2026-04-12T00:08:01.792Z", "status": "healthy"},
+    "linkedin-outreach": {"last_run": "2026-04-10T12:09:40.941Z", "status": "skipped-weekend"},
     "daily-fb-posts": {"last_run": "2026-04-11T20:09:44.520Z", "status": "healthy"},
-    "fb-comment-replies": {"last_run": "2026-04-11T21:08:57.026Z", "status": "healthy"},
+    "fb-comment-replies": {"last_run": "2026-04-12T01:08:57.102Z", "status": "healthy"},
     "morning-debrief": {"last_run": "2026-04-11T11:08:50.168Z", "status": "healthy"},
-    "facebook-scrape": {"last_run": "2026-04-11T21:05:51.275Z", "status": "healthy"},
-    "linkedin-scrape": {"last_run": "2026-04-11T18:12:10.932Z", "status": "healthy"},
-    "instantly-dashboard-sync": {"last_run": "2026-04-11T20:19:12.377Z", "status": "healthy"},
+    "facebook-scrape": {"last_run": "2026-04-12T01:05:52.093Z", "status": "healthy"},
+    "linkedin-scrape": {"last_run": "2026-04-11T18:12:10.932Z", "status": "disabled"},
+    "instantly-dashboard-sync": {"last_run": "2026-04-12T00:12:13.733Z", "status": "healthy"},
+    "task-health-monitor": {"last_run": "2026-04-12T01:10:11.017Z", "status": "healthy"},
     "novaro-daily-lead-pipeline": {"last_run": "2026-04-11T11:02:29.449Z", "status": "healthy"},
-    "novaro-data-sync": {"last_run": "2026-04-11T21:14:13.544Z", "status": "healthy"}
+    "novaro-data-sync": {"last_run": "2026-04-12T01:10:14.086Z", "status": "healthy"}
   },
   "facebook-scrape": {
     "lastRun": "2026-04-11T23:09:10.000Z",
@@ -22,10 +25,10 @@
     "type": "Chrome scraper"
   },
   "linkedin-scrape": {
-    "lastRun": "2026-04-11T18:15:25Z",
-    "status": "active",
-    "summary": "Scraped LinkedIn (2:15 PM ET Apr 11 / 18:15 UTC) — automated run. Pending sent requests: 288 (unchanged). Most recent batch sent yesterday Apr 10 (Rob Panfili/Titanium Plumbing & Heating, Elizabeth Gonzalez/AZ Janitorial Services, Jenny Connolley/TC Roofing & Restorations, Eric Pariseau/Lake HVAC). Total connections: 1,064 (no change). New connections this week (Apr 6–11): 8 — Michael Civetta (Apr 10), Jason G. White (Apr 9), Mike Manchester (Apr 8), Jason Donovan (Apr 8), Joshua Hoffmann (Apr 7), Steve Wiater (Apr 7), Brendan McGeer (Apr 6), Ryan Dzierzgowski (Apr 6). Unread messages (9 badge): reviewed all 3 focused-unread threads — Muhammad Ali (Mar 7) pitching LinkedIn outreach to Vito (vendor, not a lead); Edward Fletcher (Feb 27) replied 'not interested' to Vito's outreach (declined); Ronald Lassiter (Sep 2025) old 'Great' reply (stale). New since last run: Syed Farhan sent follow-up message pitching accounting/bookkeeping services (inbound vendor pitch, not a lead). Ramón Cruz reply already captured previous run. 0 positive buying-intent signals. Delta: 0 new requests, 0 accepted, 0 messages sent, +1 reply (Syed Farhan vendor follow-up), 0 interest signals.",
-    "schedule": "Hourly at :36",
+    "lastRun": "2026-04-11T18:12:10.932Z",
+    "status": "disabled",
+    "summary": "Task is disabled — missed expected 8pm ET run. Last ran at 2:12 PM ET Apr 11.",
+    "schedule": "6 hours (8am, 2pm, 8pm ET)",
     "type": "Chrome scraper"
   },
   "novaro-dashboard-refresh": {
