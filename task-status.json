@@ -1,7 +1,15 @@
 {
-  "last_health_check": "2026-04-12T03:10:18.000Z",
-  "overall_status": "healthy",
-  "alerts": [],
+  "last_health_check": "2026-04-12T04:10:20Z",
+  "overall_status": "alert",
+  "alerts": [
+    {
+      "task": "linkedin-scrape",
+      "last_run": "2026-04-11T18:12:10.932Z",
+      "expected_interval_minutes": 360,
+      "status": "missed",
+      "note": "Task is disabled — not listed as an expected exception. Expected to run at 8am/2pm/8pm ET."
+    }
+  ],
   "tasks": {
     "instantly-manager": {
       "last_run": "2026-04-12T02:08:02.239Z",
@@ -9,8 +17,8 @@
     },
     "linkedin-outreach": {
       "last_run": "2026-04-10T12:09:40.941Z",
-      "status": "disabled",
-      "note": "Weekday only — skipped on weekends"
+      "status": "healthy",
+      "note": "Skipped — Sunday (weekday-only task)"
     },
     "daily-fb-posts": {
       "last_run": "2026-04-11T20:09:44.520Z",
@@ -30,15 +38,15 @@
     },
     "linkedin-scrape": {
       "last_run": "2026-04-11T18:12:10.932Z",
-      "status": "disabled",
-      "note": "Disabled — 9h since last run, within 2x interval window (12h). Previously known state."
+      "status": "missed",
+      "note": "Disabled unexpectedly — no exception listed in monitoring rules"
     },
     "instantly-dashboard-sync": {
       "last_run": "2026-04-12T00:12:13.733Z",
       "status": "healthy"
     },
     "task-health-monitor": {
-      "last_run": "2026-04-12T03:10:11.913Z",
+      "last_run": "2026-04-12T04:10:12.191Z",
       "status": "healthy"
     },
     "novaro-daily-lead-pipeline": {
@@ -48,34 +56,11 @@
     "novaro-data-sync": {
       "last_run": "2026-04-12T02:13:14.477Z",
       "status": "healthy"
+    },
+    "fix-instantly-sync-now": {
+      "last_run": "2026-04-09T20:54:58.444Z",
+      "status": "healthy",
+      "note": "One-time disabled task — always ignored"
     }
-  },
-  "facebook-scrape": {
-    "lastRun": "2026-04-11T23:09:10.000Z",
-    "status": "active",
-    "summary": "Run 49 — 7:09 PM ET Apr 11 / 23:09 UTC. Notifications: 6 (all group welcome messages: Roofing Contractors, HVAC Techs Group, Junk Removal, Lawn Care, Painting/DripJobs, Professional Plumbers — no new since Run 48). Activity log: 4 posts today — Lawn Care & Landscaping (live, 0 engagement), Junk Removal Winners (no View button), Painting Contractors by DripJobs (pending admin approval), HVAC Techs Group (live, 0 engagement). Messenger: main inbox 0 DMs, message requests: 0, spam: 0. Leads: 0 Hot, 0 Qualified. No Notion entries created.",
-    "schedule": "Hourly at :06",
-    "type": "Chrome scraper"
-  },
-  "novaro-dashboard-refresh": {
-    "lastRun": "2026-04-02T12:08:09.000Z",
-    "status": "active",
-    "summary": "Daily Notion refresh ran at 8:08 AM ET Apr 2. Queried Outreach Leads Pipeline (ebac6164). Notion MCP returned schema only — no rows queryable via current MCP tools. Pipeline data written as all zeros per fallback. Database schema confirmed: Status options (New Lead, DM Sent, Replied, Call Booked, Closed, Not Interested), Sources (Facebook, LinkedIn, SMS, Instantly). Funnel-data.json updated and pushed to GitHub.",
-    "schedule": "On scraper run",
-    "type": "GitHub API push"
-  },
-  "instantly-live": {
-    "lastRun": null,
-    "status": "active",
-    "summary": "Real-time via API on page load",
-    "schedule": "Every page load",
-    "type": "API proxy"
-  },
-  "twilio-live": {
-    "lastRun": null,
-    "status": "active",
-    "summary": "Real-time via API on page load",
-    "schedule": "Every page load",
-    "type": "API proxy"
   }
 }
