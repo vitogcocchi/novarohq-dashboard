@@ -901,7 +901,7 @@ async function loadLiveData(){
 
 function fmtDate(dateStr){
     const d = new Date(dateStr + 'T12:00:00');
-    return d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+    return d.toLocaleDateString('en-US',{month:'long',day:'numeric'});
 }
 
 function populateInstantly(d){
@@ -939,14 +939,14 @@ function populateInstantly(d){
     // Daily table
     const tbody = document.getElementById('ins-tbody');
     if(tbody && d.daily && d.daily.length > 0){
-        tbody.innerHTML = d.daily.map(row => {
+        tbody.innerHTML = [...d.daily].reverse().map(row => {
             const rRate = row.sent > 0 ? ((row.unique_replies/row.sent)*100).toFixed(1)+'%' : '0%';
             return `<tr class="clickable" onclick="openDetail({type:'metric',date:'${row.date}',channel:'Instantly',fields:[
                 {label:'Emails Sent',value:'${row.sent}'},{label:'Contacted',value:'${row.contacted}'},
                 {label:'Unique Opens',value:'${row.unique_opened}'},{label:'Replies',value:'${row.unique_replies}'},
                 {label:'Clicks',value:'${row.unique_clicks}'},{label:'Opportunities',value:'${row.unique_opportunities}'}
             ]})">
-                <td class="td-h">${row.date}</td><td>--</td><td>${row.sent}</td><td>${row.unique_opened}</td>
+                <td class="td-h">${fmtDate(row.date)}</td><td>--</td><td>${row.sent}</td><td>${row.unique_opened}</td>
                 <td>${row.unique_replies}</td><td>${row.opportunities || 0}</td><td>${row.sent - row.contacted}</td><td>${row.unique_opportunities || 0}</td>
             </tr>`;
         }).join('');
@@ -1009,8 +1009,8 @@ function populateSocial(sd){
         // Facebook daily table
         const fbTbody = document.getElementById('fb-tbody');
         if(fbTbody && fb.daily && fb.daily.length > 0){
-            fbTbody.innerHTML = fb.daily.map(row =>
-                `<tr><td class="td-h">${row.date}</td><td>${row.groups||0}</td><td>--</td><td>${row.posts||0}</td><td>${row.comments||0}</td><td>${row.positive||0}</td><td>${row.dms||0}</td><td>${row.interest||0}</td></tr>`
+            fbTbody.innerHTML = [...fb.daily].reverse().map(row =>
+                `<tr><td class="td-h">${fmtDate(row.date)}</td><td>${row.groups||0}</td><td>--</td><td>${row.posts||0}</td><td>${row.comments||0}</td><td>${row.positive||0}</td><td>${row.dms||0}</td><td>${row.interest||0}</td></tr>`
             ).join('');
         }
 
