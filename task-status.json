@@ -1,5 +1,5 @@
 {
-  "last_health_check": "2026-04-12T02:10:20.000Z",
+  "last_health_check": "2026-04-12T03:10:18.000Z",
   "overall_status": "healthy",
   "alerts": [],
   "tasks": {
@@ -17,7 +17,7 @@
       "status": "healthy"
     },
     "fb-comment-replies": {
-      "last_run": "2026-04-12T02:08:57.310Z",
+      "last_run": "2026-04-12T02:38:57.648Z",
       "status": "healthy"
     },
     "morning-debrief": {
@@ -31,14 +31,14 @@
     "linkedin-scrape": {
       "last_run": "2026-04-11T18:12:10.932Z",
       "status": "disabled",
-      "note": "Disabled — within 2x interval window, previously known state"
+      "note": "Disabled — 9h since last run, within 2x interval window (12h). Previously known state."
     },
     "instantly-dashboard-sync": {
       "last_run": "2026-04-12T00:12:13.733Z",
       "status": "healthy"
     },
     "task-health-monitor": {
-      "last_run": "2026-04-12T02:10:14.305Z",
+      "last_run": "2026-04-12T03:10:11.913Z",
       "status": "healthy"
     },
     "novaro-daily-lead-pipeline": {
@@ -46,7 +46,7 @@
       "status": "healthy"
     },
     "novaro-data-sync": {
-      "last_run": "2026-04-12T01:10:14.086Z",
+      "last_run": "2026-04-12T02:13:14.477Z",
       "status": "healthy"
     }
   },
