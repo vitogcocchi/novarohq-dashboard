@@ -1,41 +1,21 @@
 {
-  "last_health_check": "2026-04-12T18:07:59Z",
+  "last_health_check": "2026-04-12T18:16:38Z",
   "overall_status": "alert",
   "alerts": [
-    {
-      "task": "fb-comment-replies",
-      "last_run": "2026-04-12T15:09:01.625Z",
-      "expected_interval_minutes": 30,
-      "minutes_since_last_run": 178,
-      "status": "missed"
-    },
-    {
-      "task": "facebook-scrape",
-      "last_run": "2026-04-12T15:05:56.734Z",
-      "expected_interval_minutes": 60,
-      "minutes_since_last_run": 182,
-      "status": "missed"
-    },
-    {
-      "task": "instantly-dashboard-sync",
-      "last_run": "2026-04-12T14:12:18.268Z",
-      "expected_interval_minutes": 120,
-      "minutes_since_last_run": 235,
-      "status": "missed"
-    },
     {
       "task": "novaro-data-sync",
       "last_run": "2026-04-12T14:15:18.438Z",
       "expected_interval_minutes": 60,
-      "minutes_since_last_run": 232,
+      "minutes_since_last_run": 241,
       "status": "missed"
     },
     {
-      "task": "linkedin-scrape",
-      "last_run": "2026-04-11T18:12:10.932Z",
-      "expected_interval_minutes": 360,
-      "status": "disabled",
-      "note": "Persistent — initial SMS sent at 12:10Z. Not re-sent on subsequent checks to avoid spam."
+      "task": "fb-group-growth-elliott",
+      "last_run": null,
+      "expected_interval_minutes": 1440,
+      "minutes_since_last_run": null,
+      "status": "missed",
+      "note": "No run history. Task was scheduled for today at ~10:03 UTC but shows no completed execution."
     }
   ],
   "tasks": {
@@ -45,42 +25,50 @@
     },
     "linkedin-outreach": {
       "last_run": "2026-04-10T12:09:40.941Z",
-      "status": "skipped_weekend"
+      "status": "disabled"
     },
     "daily-fb-posts": {
       "last_run": "2026-04-11T20:09:44.520Z",
-      "status": "healthy"
+      "status": "disabled"
     },
     "fb-comment-replies": {
-      "last_run": "2026-04-12T15:09:01.625Z",
-      "status": "missed"
+      "last_run": "2026-04-12T18:13:48.634Z",
+      "status": "healthy"
     },
     "morning-debrief": {
       "last_run": "2026-04-12T11:08:59.216Z",
       "status": "healthy"
     },
     "facebook-scrape": {
-      "last_run": "2026-04-12T15:05:56.734Z",
-      "status": "missed"
+      "last_run": "2026-04-12T18:11:48.385Z",
+      "status": "healthy"
     },
     "linkedin-scrape": {
       "last_run": "2026-04-11T18:12:10.932Z",
       "status": "disabled"
     },
     "instantly-dashboard-sync": {
-      "last_run": "2026-04-12T14:12:18.268Z",
-      "status": "missed"
+      "last_run": "2026-04-12T18:13:48.767Z",
+      "status": "healthy"
     },
     "task-health-monitor": {
-      "last_run": "2026-04-12T18:07:59Z",
+      "last_run": "2026-04-12T18:16:38Z",
       "status": "healthy"
     },
     "novaro-daily-lead-pipeline": {
       "last_run": "2026-04-12T11:02:38.439Z",
       "status": "healthy"
     },
+    "fix-instantly-sync-now": {
+      "last_run": "2026-04-09T20:54:58.444Z",
+      "status": "disabled"
+    },
     "novaro-data-sync": {
       "last_run": "2026-04-12T14:15:18.438Z",
+      "status": "missed"
+    },
+    "fb-group-growth-elliott": {
+      "last_run": null,
       "status": "missed"
     }
   }
