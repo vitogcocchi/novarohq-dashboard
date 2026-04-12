@@ -1,5 +1,5 @@
 {
-  "last_health_check": "2026-04-12T10:11:06Z",
+  "last_health_check": "2026-04-12T11:10:21Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -7,7 +7,7 @@
       "last_run": "2026-04-11T18:12:10.932Z",
       "expected_interval_minutes": 360,
       "status": "missed",
-      "note": "Task is disabled — not listed as an expected exception. Expected to run at 8am/2pm/8pm ET. Last run was ~16h ago. Alert first raised at 07:10 UTC, persisting."
+      "note": "Task is disabled with no nextRunAt. Last run was ~17h ago (expected every 6h, 2x threshold = 12h). Not listed as an exception. Alert first raised at 10:10 UTC Apr 12, persisting."
     }
   ],
   "tasks": {
@@ -19,11 +19,12 @@
     "linkedin-outreach": {
       "last_run": "2026-04-10T12:09:40.941Z",
       "status": "healthy",
-      "note": "Skipped — Sunday (weekday-only task)"
+      "note": "Skipped — Sunday (weekday-only task). Also currently disabled."
     },
     "daily-fb-posts": {
       "last_run": "2026-04-11T20:09:44.520Z",
-      "status": "healthy"
+      "status": "healthy",
+      "note": "Last ran 4:09 PM ET yesterday. Next run ~4:09 PM ET today."
     },
     "fb-comment-replies": {
       "last_run": "2026-04-12T02:38:57.648Z",
@@ -31,9 +32,9 @@
       "note": "Outside operating hours (9am-10pm ET). Next run: 9:08 AM ET."
     },
     "morning-debrief": {
-      "last_run": "2026-04-11T11:08:50.168Z",
+      "last_run": "2026-04-12T11:08:59.216Z",
       "status": "healthy",
-      "note": "Next run: 7:08 AM ET today (~57 min)"
+      "note": "Just ran at 7:08 AM ET today."
     },
     "facebook-scrape": {
       "last_run": "2026-04-12T02:05:52.242Z",
@@ -43,7 +44,7 @@
     "linkedin-scrape": {
       "last_run": "2026-04-11T18:12:10.932Z",
       "status": "missed",
-      "note": "Disabled unexpectedly — no exception listed in monitoring rules. Last run ~16h ago, expected every 6h (2x threshold = 12h). Persisting from previous checks."
+      "note": "Disabled unexpectedly — no exception listed in monitoring rules. Last run 2:12 PM ET Apr 11. Expected every 6h (8am/2pm/8pm ET). Alert active."
     },
     "instantly-dashboard-sync": {
       "last_run": "2026-04-12T00:12:13.733Z",
@@ -51,13 +52,14 @@
       "note": "Outside operating hours (8am-8pm ET). Next run: 8:09 AM ET."
     },
     "task-health-monitor": {
-      "last_run": "2026-04-12T10:10:14.145Z",
-      "status": "healthy"
+      "last_run": "2026-04-12T11:10:14.363Z",
+      "status": "healthy",
+      "note": "Running now. Last run: 7:10 AM ET."
     },
     "novaro-daily-lead-pipeline": {
-      "last_run": "2026-04-11T11:02:29.449Z",
+      "last_run": "2026-04-12T11:02:38.439Z",
       "status": "healthy",
-      "note": "Next run: 7:02 AM ET today (~51 min)"
+      "note": "Just ran at 7:02 AM ET today."
     },
     "novaro-data-sync": {
       "last_run": "2026-04-12T02:13:14.477Z",
@@ -67,7 +69,7 @@
     "fix-instantly-sync-now": {
       "last_run": "2026-04-09T20:54:58.444Z",
       "status": "healthy",
-      "note": "One-time disabled task — always ignored"
+      "note": "One-time disabled task — always ignored."
     }
   }
 }
