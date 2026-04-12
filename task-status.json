@@ -1,5 +1,5 @@
 {
-  "last_health_check": "2026-04-12T06:11:20Z",
+  "last_health_check": "2026-04-12T07:10:19Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -7,13 +7,14 @@
       "last_run": "2026-04-11T18:12:10.932Z",
       "expected_interval_minutes": 360,
       "status": "missed",
-      "note": "Task is disabled — not listed as an expected exception. Expected to run at 8am/2pm/8pm ET. Last run was ~12h ago."
+      "note": "Task is disabled — not listed as an expected exception. Expected to run at 8am/2pm/8pm ET. Last run was ~17h ago."
     }
   ],
   "tasks": {
     "instantly-manager": {
       "last_run": "2026-04-12T02:08:02.239Z",
-      "status": "healthy"
+      "status": "healthy",
+      "note": "Outside operating hours (8am-10pm ET)"
     },
     "linkedin-outreach": {
       "last_run": "2026-04-10T12:09:40.941Z",
@@ -26,7 +27,8 @@
     },
     "fb-comment-replies": {
       "last_run": "2026-04-12T02:38:57.648Z",
-      "status": "healthy"
+      "status": "healthy",
+      "note": "Outside operating hours (9am-10pm ET)"
     },
     "morning-debrief": {
       "last_run": "2026-04-11T11:08:50.168Z",
@@ -34,19 +36,21 @@
     },
     "facebook-scrape": {
       "last_run": "2026-04-12T02:05:52.242Z",
-      "status": "healthy"
+      "status": "healthy",
+      "note": "Outside operating hours (10am-10pm ET)"
     },
     "linkedin-scrape": {
       "last_run": "2026-04-11T18:12:10.932Z",
       "status": "missed",
-      "note": "Disabled unexpectedly — no exception listed in monitoring rules. Last run ~12h ago, expected every 6h."
+      "note": "Disabled unexpectedly — no exception listed in monitoring rules. Last run ~17h ago, expected every 6h."
     },
     "instantly-dashboard-sync": {
       "last_run": "2026-04-12T00:12:13.733Z",
-      "status": "healthy"
+      "status": "healthy",
+      "note": "Outside operating hours (8am-8pm ET)"
     },
     "task-health-monitor": {
-      "last_run": "2026-04-12T06:11:20Z",
+      "last_run": "2026-04-12T07:10:13.087Z",
       "status": "healthy"
     },
     "novaro-daily-lead-pipeline": {
@@ -55,7 +59,8 @@
     },
     "novaro-data-sync": {
       "last_run": "2026-04-12T02:13:14.477Z",
-      "status": "healthy"
+      "status": "healthy",
+      "note": "Outside operating hours (8am-10pm ET)"
     },
     "fix-instantly-sync-now": {
       "last_run": "2026-04-09T20:54:58.444Z",
