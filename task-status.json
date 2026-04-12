@@ -1,43 +1,43 @@
 {
   "overall_status": "alert",
-  "last_health_check": "2026-04-12T19:13:21Z",
+  "last_health_check": "2026-04-12T20:19:07Z",
   "alerts": [
     {
+      "taskId": "novaro-data-sync",
+      "reason": "20:00 UTC (4 PM ET) slot expected to fire at ~20:08 UTC (with jitter). lastRunAt is still 19:15 at check time 20:19 — 11 min overdue. nextRunAt already advanced to 21:08, confirming the slot was skipped.",
+      "lastRunAt": "2026-04-12T19:15:48Z",
+      "expectedRun": "2026-04-12T20:08:15Z",
+      "nextRunAt": "2026-04-12T21:08:15Z"
+    },
+    {
       "taskId": "fb-group-growth-elliott",
-      "reason": "No lastRunAt recorded. Today's expected run at ~14:03 UTC (10:03 AM ET) passed 5h ago. Task may be newly created or silently failing.",
+      "reason": "No lastRunAt recorded. Today's expected run at ~14:03 UTC (10:03 AM ET) passed 6h ago. Task may be newly created or silently failing.",
       "lastRunAt": null,
       "expectedRun": "2026-04-12T14:03:46Z",
       "nextRunAt": "2026-04-13T14:03:46Z"
     },
     {
       "taskId": "fb-friend-builder-elliott",
-      "reason": "No lastRunAt recorded. Today's expected run at ~18:02 UTC (2:02 PM ET) passed 71 min ago. Task may be newly created or silently failing.",
+      "reason": "No lastRunAt recorded. Today's expected run at ~18:02 UTC (2:02 PM ET) passed 2h ago. Task may be newly created or silently failing.",
       "lastRunAt": null,
       "expectedRun": "2026-04-12T18:02:20Z",
       "nextRunAt": "2026-04-13T18:02:20Z"
-    },
-    {
-      "taskId": "novaro-data-sync",
-      "reason": "19:00 UTC hourly slot expected to fire at ~19:08 UTC (with jitter). lastRunAt still shows 18:17 at check time 19:13 — 5 min overdue. nextRunAt already advanced to 20:08, suggesting slot may have been skipped or is still in-flight.",
-      "lastRunAt": "2026-04-12T18:17:48Z",
-      "expectedRun": "2026-04-12T19:08:15Z",
-      "nextRunAt": "2026-04-12T20:08:15Z"
     }
   ],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-12T18:06:49Z",
-      "nextRunAt": "2026-04-12T20:07:48Z",
-      "note": "Ran at 18:06 for the 18:00 UTC slot (within jitter). On schedule."
+      "lastRunAt": "2026-04-12T20:08:38Z",
+      "nextRunAt": "2026-04-12T22:07:48Z",
+      "note": "Ran at 20:08 for the 20:00 UTC slot (within jitter). On schedule."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-12T19:09:31Z",
-      "nextRunAt": "2026-04-12T19:38:43Z",
-      "note": "Ran at 19:09 for the 19:00 UTC slot (within jitter). Next run at 19:38. On schedule."
+      "lastRunAt": "2026-04-12T20:09:31Z",
+      "nextRunAt": "2026-04-12T20:38:43Z",
+      "note": "Ran at 20:09 for the 20:00 UTC slot (within jitter). Next run at 20:38. On schedule."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -49,23 +49,23 @@
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-12T19:06:26Z",
-      "nextRunAt": "2026-04-12T20:05:38Z",
-      "note": "Ran at 19:06 for the 19:00 UTC slot (within jitter). On schedule."
+      "lastRunAt": "2026-04-12T20:06:27Z",
+      "nextRunAt": "2026-04-12T21:05:38Z",
+      "note": "Ran at 20:06 for the 20:00 UTC slot (within jitter). On schedule."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-12T18:13:48Z",
-      "nextRunAt": "2026-04-12T20:09:37Z",
-      "note": "Ran at 18:13 for the 18:00 UTC slot. On schedule."
+      "lastRunAt": "2026-04-12T20:15:49Z",
+      "nextRunAt": "2026-04-12T22:09:37Z",
+      "note": "Ran at 20:15 for the 20:00 UTC (16:00 ET) slot. On schedule."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-12T19:10:45Z",
-      "nextRunAt": "2026-04-12T20:09:57Z",
-      "note": "Current run. Last run at 19:10 UTC. On schedule."
+      "lastRunAt": "2026-04-12T20:17:49Z",
+      "nextRunAt": "2026-04-12T21:09:57Z",
+      "note": "Current run. Last check at 20:17 UTC. On schedule."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
@@ -75,25 +75,25 @@
       "note": "Ran at 11:02 UTC (7:02 AM ET) as expected. Daily task — next run tomorrow."
     },
     "novaro-data-sync": {
-      "status": "late",
+      "status": "alert",
       "enabled": true,
-      "lastRunAt": "2026-04-12T18:17:48Z",
-      "nextRunAt": "2026-04-12T20:08:15Z",
-      "note": "19:00 UTC slot expected at ~19:08 with jitter. lastRunAt still 18:17 at check time 19:13. May be in-flight or skipped. Flagged as late."
+      "lastRunAt": "2026-04-12T19:15:48Z",
+      "nextRunAt": "2026-04-12T21:08:15Z",
+      "note": "20:00 UTC (4 PM ET) slot expected at ~20:08 with jitter. lastRunAt still 19:15 at check time 20:19. nextRunAt already advanced to 21:08, confirming the 20:00 slot was skipped."
     },
     "fb-group-growth-elliott": {
       "status": "alert",
       "enabled": true,
       "lastRunAt": null,
       "nextRunAt": "2026-04-13T14:03:46Z",
-      "note": "No run history. Today's slot at ~14:03 UTC passed. Possibly new task awaiting first run, or silently failing."
+      "note": "No run history. Today's slot at ~14:03 UTC (10:03 AM ET) passed 6+ hours ago. Possibly new task awaiting first run, or silently failing."
     },
     "fb-friend-builder-elliott": {
       "status": "alert",
       "enabled": true,
       "lastRunAt": null,
       "nextRunAt": "2026-04-13T18:02:20Z",
-      "note": "No run history. Today's slot at ~18:02 UTC passed 71 min ago. Possibly new task awaiting first run, or silently failing."
+      "note": "No run history. Today's slot at ~18:02 UTC (2:02 PM ET) passed 2+ hours ago. Possibly new task awaiting first run, or silently failing."
     },
     "linkedin-outreach": {
       "status": "disabled",
