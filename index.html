@@ -211,7 +211,21 @@
         .rep-btn:hover{background:rgba(0,212,255,.2);border-color:var(--cyan)}
         .rep-empty{text-align:center;padding:60px 20px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px}
 
-        @media(max-width:1024px){.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.ag-stat-grid{grid-template-columns:1fr}.rep-summary{grid-template-columns:repeat(3,1fr)}}
+        /* TASK ALERT BANNER */
+        #global-alert-bar{display:none;position:fixed;top:0;left:var(--sw);right:0;z-index:500;background:rgba(255,68,102,.13);border-bottom:2px solid rgba(255,68,102,.5);padding:11px 28px;align-items:center;gap:12px;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--err);letter-spacing:.5px;animation:alertPls 3s ease-in-out infinite;backdrop-filter:blur(10px)}
+        #global-alert-bar.show{display:flex}
+        @keyframes alertPls{0%,100%{background:rgba(255,68,102,.13)}50%{background:rgba(255,68,102,.2)}}
+        .alert-bar-icon{font-size:16px;flex-shrink:0}
+        .alert-bar-tasks{flex:1;font-size:11px;color:rgba(255,100,130,.9)}
+        .alert-bar-time{font-size:10px;color:rgba(255,68,102,.6);flex-shrink:0}
+        .ag-alert-card{background:rgba(255,68,102,.06);border:1px solid rgba(255,68,102,.2);border-radius:12px;padding:18px 20px;margin-bottom:10px;display:flex;align-items:center;gap:16px}
+        .ag-alert-icon{font-size:22px;flex-shrink:0}
+        .ag-alert-body{flex:1}
+        .ag-alert-name{font-family:'Orbitron',sans-serif;font-size:13px;color:var(--err);font-weight:600;margin-bottom:4px}
+        .ag-alert-detail{font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(255,100,130,.8);letter-spacing:.5px}
+        .ag-alert-badge{font-family:'Share Tech Mono',monospace;font-size:10px;padding:4px 12px;border-radius:6px;background:rgba(255,68,102,.12);color:var(--err);border:1px solid rgba(255,68,102,.25)}
+
+        @media(max-width:1024px){#global-alert-bar{left:60px}.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.ag-stat-grid{grid-template-columns:1fr}.rep-summary{grid-template-columns:repeat(3,1fr)}}
         @media(max-width:768px){
             .sb{width:60px}.sb .nav-l,.sb .nav-b,.sb .logo span,.sb .logo-s,.sb .nav-sec,.sb .st-ind span{display:none}
             .sb .nav-i{justify-content:center;padding:12px}.mc{margin-left:60px;padding:16px}
@@ -227,6 +241,13 @@
     </style>
 </head>
 <body>
+
+<!-- GLOBAL TASK ALERT BANNER (visible on all pages when tasks miss) -->
+<div id="global-alert-bar">
+    <span class="alert-bar-icon">🚨</span>
+    <div class="alert-bar-tasks" id="alert-bar-text">TASK ALERT — checking...</div>
+    <div class="alert-bar-time" id="alert-bar-time"></div>
+</div>
 
 <!-- PASSWORD GATE -->
 <div id="auth-gate" style="position:fixed;inset:0;z-index:99999;background:#0a0e17;display:flex;align-items:center;justify-content:center;flex-direction:column;">
@@ -666,6 +687,17 @@ function closeIntro(){
         <div class="ht"><span class="tv" id="clock-8"></span><span id="date-8"></span></div>
     </div>
 
+    <!-- TASK ALERTS (shown when any automation missed its window) -->
+    <div id="ag-alert-section" style="display:none;margin-bottom:24px">
+        <div class="ds" style="border-color:rgba(255,68,102,.3);background:rgba(255,68,102,.04)">
+            <div class="dh">
+                <div class="dt" style="color:var(--err)"><span>🚨</span>&nbsp; TASK ALERTS</div>
+                <span class="db" style="background:rgba(255,68,102,.1);color:var(--err);border-color:rgba(255,68,102,.25)">ACTION NEEDED</span>
+            </div>
+            <div id="ag-alert-cards"></div>
+        </div>
+    </div>
+
     <!-- STATS BAR -->
     <div class="ag-stat-grid">
         <div class="sb-c"><div class="sl">COMPLETED TODAY</div><div class="sv ok" id="ag-stat-completed">--</div><div class="sc">Session tasks done</div></div>
@@ -837,7 +869,7 @@ async function loadLiveData(){
     // Task status
     try {
         const res = await fetch(GH_RAW+'task-status.json?t='+t);
-        if(res.ok){ const d = await res.json(); window._taskStatus = d; populateTasks(d); populateAgents(window._agentsData, d); }
+        if(res.ok){ const d = await res.json(); window._taskStatus = d; populateTasks(d); populateAgents(window._agentsData, d); populateTaskAlerts(d); }
     } catch(e){ console.warn('Task status load failed:', e.message); }
     // Agents log
     try {
@@ -1145,6 +1177,47 @@ function setBubble(el, value, sub){
 window._agentTasks = {};
 window._taskStatus = null;
 window._agentsData = null;
+
+function populateTaskAlerts(taskStatus) {
+    if (!taskStatus) return;
+    const alerts = taskStatus.alerts || [];
+    const overallStatus = taskStatus.overall_status || 'healthy';
+    const lastCheck = taskStatus.last_health_check ? new Date(taskStatus.last_health_check) : null;
+
+    const bar = document.getElementById('global-alert-bar');
+    const barText = document.getElementById('alert-bar-text');
+    const barTime = document.getElementById('alert-bar-time');
+    const agSection = document.getElementById('ag-alert-section');
+    const agCards = document.getElementById('ag-alert-cards');
+
+    if (overallStatus === 'alert' && alerts.length > 0) {
+        // Show global banner
+        if (bar) bar.classList.add('show');
+        const names = alerts.map(a => a.task).join(', ');
+        if (barText) barText.textContent = 'MISSED TASK' + (alerts.length > 1 ? 'S' : '') + ': ' + names.toUpperCase() + ' — SMS sent to Vito';
+        if (barTime && lastCheck) barTime.textContent = 'Last check: ' + lastCheck.toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
+
+        // Show agents page alert section
+        if (agSection) agSection.style.display = 'block';
+        if (agCards) {
+            agCards.innerHTML = alerts.map(a => {
+                const lastRun = a.last_run ? new Date(a.last_run).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : 'Never';
+                const expected = a.expected_interval_minutes >= 1440 ? 'Daily' : a.expected_interval_minutes >= 60 ? 'Every ' + Math.round(a.expected_interval_minutes/60) + 'h' : 'Every ' + a.expected_interval_minutes + 'min';
+                return `<div class="ag-alert-card">
+                    <span class="ag-alert-icon">⚠️</span>
+                    <div class="ag-alert-body">
+                        <div class="ag-alert-name">${a.task.replace(/-/g,' ').toUpperCase()}</div>
+                        <div class="ag-alert-detail">Last run: ${lastRun} &nbsp;|&nbsp; Expected: ${expected} &nbsp;|&nbsp; Status: ${(a.status||'missed').toUpperCase()}</div>
+                    </div>
+                    <span class="ag-alert-badge">MISSED</span>
+                </div>`;
+            }).join('');
+        }
+    } else {
+        if (bar) bar.classList.remove('show');
+        if (agSection) agSection.style.display = 'none';
+    }
+}
 
 function populateAgents(agData, taskStatus) {
     window._agentTasks = {};
