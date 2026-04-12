@@ -1178,10 +1178,17 @@ window._agentTasks = {};
 window._taskStatus = null;
 window._agentsData = null;
 
+// Tasks permanently excluded from alerts (disabled channels)
+const ALERT_IGNORE = ['linkedin', 'sms', 'twilio'];
+
 function populateTaskAlerts(taskStatus) {
     if (!taskStatus) return;
-    const alerts = taskStatus.alerts || [];
-    const overallStatus = taskStatus.overall_status || 'healthy';
+    // Strip out any disabled or ignored-channel tasks before evaluating alerts
+    const alerts = (taskStatus.alerts || []).filter(a =>
+        a.status !== 'disabled' &&
+        !ALERT_IGNORE.some(x => (a.task || '').toLowerCase().includes(x))
+    );
+    const overallStatus = alerts.length > 0 ? 'alert' : 'ok';
     const lastCheck = taskStatus.last_health_check ? new Date(taskStatus.last_health_check) : null;
 
     const bar = document.getElementById('global-alert-bar');
