@@ -1,18 +1,13 @@
 {
-  "last_health_check": "2026-04-12T12:10:20Z",
+  "last_health_check": "2026-04-12T13:11:06Z",
   "overall_status": "alert",
   "alerts": [
     {
       "task": "linkedin-scrape",
       "last_run": "2026-04-11T18:12:10.932Z",
       "expected_interval_minutes": 360,
-      "status": "disabled_unexpectedly"
-    },
-    {
-      "task": "novaro-data-sync",
-      "last_run": "2026-04-12T02:13:14.477Z",
-      "expected_interval_minutes": 60,
-      "status": "missed"
+      "status": "disabled_unexpectedly",
+      "note": "Persistent — alert sent at 12:10Z. SMS not re-sent to avoid duplicate."
     }
   ],
   "tasks": {
@@ -29,7 +24,7 @@
       "status": "healthy"
     },
     "fb-comment-replies": {
-      "last_run": "2026-04-12T02:38:57.648Z",
+      "last_run": "2026-04-12T13:09:00.828Z",
       "status": "healthy"
     },
     "morning-debrief": {
@@ -49,7 +44,7 @@
       "status": "healthy"
     },
     "task-health-monitor": {
-      "last_run": "2026-04-12T12:10:14.444Z",
+      "last_run": "2026-04-12T13:10:15.009Z",
       "status": "healthy"
     },
     "novaro-daily-lead-pipeline": {
@@ -57,8 +52,8 @@
       "status": "healthy"
     },
     "novaro-data-sync": {
-      "last_run": "2026-04-12T02:13:14.477Z",
-      "status": "missed"
+      "last_run": "2026-04-12T13:08:32.900Z",
+      "status": "healthy"
     }
   }
 }
