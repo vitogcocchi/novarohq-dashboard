@@ -1184,10 +1184,12 @@ const ALERT_IGNORE = ['linkedin', 'sms', 'twilio'];
 function populateTaskAlerts(taskStatus) {
     if (!taskStatus) return;
     // Strip out any disabled or ignored-channel tasks before evaluating alerts
-    const alerts = (taskStatus.alerts || []).filter(a =>
-        a.status !== 'disabled' &&
-        !ALERT_IGNORE.some(x => (a.task || '').toLowerCase().includes(x))
-    );
+    const alerts = (taskStatus.alerts || []).filter(a => {
+        // Support both 'task' and 'taskId' keys (health monitor uses taskId)
+        const name = (a.taskId || a.task || '');
+        return a.status !== 'disabled' &&
+            !ALERT_IGNORE.some(x => name.toLowerCase().includes(x));
+    });
     const overallStatus = alerts.length > 0 ? 'alert' : 'ok';
     const lastCheck = taskStatus.last_health_check ? new Date(taskStatus.last_health_check) : null;
 
@@ -1200,7 +1202,7 @@ function populateTaskAlerts(taskStatus) {
     if (overallStatus === 'alert' && alerts.length > 0) {
         // Show global banner
         if (bar) bar.classList.add('show');
-        const names = alerts.map(a => a.task).join(', ');
+        const names = alerts.map(a => (a.taskId || a.task || 'unknown')).join(', ');
         if (barText) barText.textContent = 'MISSED TASK' + (alerts.length > 1 ? 'S' : '') + ': ' + names.toUpperCase();
         if (barTime && lastCheck) barTime.textContent = 'Last check: ' + lastCheck.toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
 
@@ -1208,13 +1210,14 @@ function populateTaskAlerts(taskStatus) {
         if (agSection) agSection.style.display = 'block';
         if (agCards) {
             agCards.innerHTML = alerts.map(a => {
-                const lastRun = a.last_run ? new Date(a.last_run).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : 'Never';
-                const expected = a.expected_interval_minutes >= 1440 ? 'Daily' : a.expected_interval_minutes >= 60 ? 'Every ' + Math.round(a.expected_interval_minutes/60) + 'h' : 'Every ' + a.expected_interval_minutes + 'min';
+                const name = (a.taskId || a.task || 'unknown');
+                const lastRun = (a.lastRunAt || a.last_run) ? new Date(a.lastRunAt || a.last_run).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : 'Never';
+                const detail = a.reason || ('Last run: ' + lastRun);
                 return `<div class="ag-alert-card">
                     <span class="ag-alert-icon">⚠️</span>
                     <div class="ag-alert-body">
-                        <div class="ag-alert-name">${a.task.replace(/-/g,' ').toUpperCase()}</div>
-                        <div class="ag-alert-detail">Last run: ${lastRun} &nbsp;|&nbsp; Expected: ${expected} &nbsp;|&nbsp; Status: ${(a.status||'missed').toUpperCase()}</div>
+                        <div class="ag-alert-name">${name.replace(/-/g,' ').toUpperCase()}</div>
+                        <div class="ag-alert-detail">${detail}</div>
                     </div>
                     <span class="ag-alert-badge">MISSED</span>
                 </div>`;
