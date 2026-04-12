@@ -1,4 +1,19 @@
 {
+  "last_health_check": "2026-04-11T21:10:14.381Z",
+  "overall_status": "healthy",
+  "alerts": [],
+  "tasks": {
+    "instantly-manager": {"last_run": "2026-04-11T20:08:00.765Z", "status": "healthy"},
+    "linkedin-outreach": {"last_run": "2026-04-10T12:09:40.941Z", "status": "healthy"},
+    "daily-fb-posts": {"last_run": "2026-04-11T20:09:44.520Z", "status": "healthy"},
+    "fb-comment-replies": {"last_run": "2026-04-11T21:08:57.026Z", "status": "healthy"},
+    "morning-debrief": {"last_run": "2026-04-11T11:08:50.168Z", "status": "healthy"},
+    "facebook-scrape": {"last_run": "2026-04-11T21:05:51.275Z", "status": "healthy"},
+    "linkedin-scrape": {"last_run": "2026-04-11T18:12:10.932Z", "status": "healthy"},
+    "instantly-dashboard-sync": {"last_run": "2026-04-11T20:19:12.377Z", "status": "healthy"},
+    "novaro-daily-lead-pipeline": {"last_run": "2026-04-11T11:02:29.449Z", "status": "healthy"},
+    "novaro-data-sync": {"last_run": "2026-04-11T21:14:13.544Z", "status": "healthy"}
+  },
   "facebook-scrape": {
     "lastRun": "2026-04-11T23:09:10.000Z",
     "status": "active",
