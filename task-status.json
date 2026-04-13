@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-13T03:11:29Z",
+  "last_checked": "2026-04-13T04:12:08Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -9,88 +9,88 @@
       "enabled": true,
       "lastRunAt": "2026-04-13T02:08:43Z",
       "nextRunAt": "2026-04-13T12:07:48Z",
-      "note": "Outside window (10pm ET cutoff). Last ran 10:08 PM EDT. Healthy."
+      "note": "Outside window (8am-10pm ET). Last ran 10:08 PM EDT. Healthy."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T02:39:39Z",
       "nextRunAt": "2026-04-13T13:08:43Z",
-      "note": "Outside window (10pm ET cutoff). Last ran 10:39 PM EDT. Healthy."
+      "note": "Outside window (9am-10pm ET). Last ran 10:39 PM EDT. Healthy."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-12T11:08:59Z",
       "nextRunAt": "2026-04-13T11:08:42Z",
-      "note": "Ran at 7:08 AM EDT today. ~16h ago. Within 26h threshold. On schedule."
+      "note": "Ran 7:08 AM EDT April 12. ~17h ago. Within 26h threshold. Next run 7am today."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T02:06:34Z",
       "nextRunAt": "2026-04-13T14:05:38Z",
-      "note": "Outside window (10pm ET cutoff). Last ran 10:06 PM EDT. Healthy."
+      "note": "Outside window (10am-10pm ET). Last ran 10:06 PM EDT. Healthy."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T02:20:55Z",
       "nextRunAt": "2026-04-13T12:08:15Z",
-      "note": "Outside window (10pm ET cutoff). Last ran 10:20 PM EDT. Healthy."
+      "note": "Outside window (8am-10pm ET). Last ran 10:20 PM EDT. Healthy."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T00:18:54Z",
       "nextRunAt": "2026-04-13T12:09:37Z",
-      "note": "Outside window (8pm ET cutoff). Last ran 8:18 PM EDT. Healthy."
+      "note": "Outside window (8am-8pm ET). Last ran 8:18 PM EDT. Healthy."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-12T11:02:38Z",
       "nextRunAt": "2026-04-13T11:02:21Z",
-      "note": "Ran at 7:02 AM EDT today. ~16h ago. Within 26h threshold. On schedule."
+      "note": "Ran 7:02 AM EDT April 12. ~17h ago. Within 26h threshold. Next run 7am today."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-13T03:11:29Z",
-      "nextRunAt": "2026-04-13T04:09:57Z",
-      "note": "Current run at 03:11 UTC (11:11 PM EDT)."
+      "lastRunAt": "2026-04-13T04:12:08Z",
+      "nextRunAt": "2026-04-13T05:09:57Z",
+      "note": "Current run at 04:12 UTC (12:12 AM EDT). Healthy."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-12T23:00:04Z",
       "nextRunAt": "2026-04-13T14:03:46Z",
-      "note": "Daily 10am ET task. Last ran 7:00 PM EDT. Outside window. Healthy."
+      "note": "Daily 10am ET task. Last ran 7:00 PM EDT April 12 (~5h ago). Next run 10am today. Healthy."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-12T23:00:01Z",
       "nextRunAt": "2026-04-13T18:02:20Z",
-      "note": "Daily 2pm ET task. Last ran 7:00 PM EDT. Outside window. Healthy."
+      "note": "Daily 2pm ET task. Last ran 7:00 PM EDT April 12 (~5h ago). Next run 2pm today. Healthy."
     },
     "linkedin-outreach": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-10T12:09:40Z",
-      "note": "Disabled. Last ran ~63h ago — exceeds 48h threshold. Likely intentional."
+      "note": "Disabled. Last ran April 10, 8:09 AM EDT. ~64h disabled — exceeds 48h threshold. Likely intentional."
     },
     "daily-fb-posts": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T20:09:44Z",
-      "note": "Replaced by fb-group-growth-elliott. Disabled ~31h ago. Under 48h threshold."
+      "note": "Replaced by fb-group-growth-elliott. Disabled ~32h ago. Under 48h threshold."
     },
     "linkedin-scrape": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T18:12:10Z",
-      "note": "Disabled ~33h ago. Approaching 48h threshold."
+      "note": "Disabled ~34h ago. Under 48h threshold."
     },
     "fix-instantly-sync-now": {
       "status": "disabled",
