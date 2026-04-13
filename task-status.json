@@ -1,11 +1,11 @@
 {
   "overall_status": "alert",
-  "last_checked": "2026-04-13T20:13:12Z",
+  "last_checked": "2026-04-13T21:10:19Z",
   "alerts": [
     {
       "taskId": "fb-comment-replies",
       "severity": "HIGH",
-      "reason": "Last run was 10:38 AM EDT. Now 4:13 PM EDT (5h 34min ago). Expected every 30 min during 9am-10pm ET window. Has missed ~11 scheduled runs. ONGOING — first detected at 17:10Z, persisted through 18:15Z, 19:11Z, and now 20:13Z.",
+      "reason": "Last run was 10:38 AM EDT. Now 5:10 PM EDT (6h 32min ago). Expected every 30 min during 9am-10pm ET window. Has missed ~13 scheduled runs. ONGOING — first detected at 17:10Z, persisted through 18:15Z, 19:11Z, 20:13Z, and now 21:10Z.",
       "lastRunAt": "2026-04-13T14:38:46Z"
     }
   ],
@@ -16,14 +16,14 @@
       "enabled": true,
       "lastRunAt": "2026-04-13T20:07:53Z",
       "nextRunAt": "2026-04-13T22:07:48Z",
-      "note": "Ran 4:07 PM EDT (~6 min ago). In window (8am-10pm ET). Under 3h alert threshold."
+      "note": "Ran 4:07 PM EDT (~1h 3min ago). In window (8am-10pm ET). Under 3h alert threshold."
     },
     "fb-comment-replies": {
       "status": "alert",
       "enabled": true,
       "lastRunAt": "2026-04-13T14:38:46Z",
-      "nextRunAt": "2026-04-13T20:38:43Z",
-      "note": "ALERT HIGH — Last ran 10:38 AM EDT. Now 4:13 PM EDT (5h 34min ago). Exceeds 1h threshold. In window (9am-10pm ET). Missed ~11 scheduled runs. Ongoing since first detected at 17:10Z."
+      "nextRunAt": "2026-04-13T21:38:43Z",
+      "note": "ALERT HIGH — Last ran 10:38 AM EDT. Now 5:10 PM EDT (6h 32min ago). Exceeds 1h threshold. In window (9am-10pm ET). Missed ~13 scheduled runs. Ongoing since first detected at 17:10Z."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -35,23 +35,23 @@
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-13T20:05:43Z",
-      "nextRunAt": "2026-04-13T21:05:38Z",
-      "note": "Ran 4:05 PM EDT (~7 min ago). In window (10am-10pm ET). Under 2h alert threshold."
+      "lastRunAt": "2026-04-13T21:05:43Z",
+      "nextRunAt": "2026-04-13T22:05:38Z",
+      "note": "Ran 5:05 PM EDT (~5min ago). In window (10am-10pm ET). Under 2h alert threshold."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T20:13:06Z",
-      "nextRunAt": "2026-04-13T21:08:15Z",
-      "note": "Ran 4:13 PM EDT (just now). In window (8am-10pm ET). Under 2h alert threshold."
+      "nextRunAt": "2026-04-13T22:08:15Z",
+      "note": "Ran 4:13 PM EDT (~57min ago). In window (8am-10pm ET). Under 2h alert threshold."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T20:11:05Z",
       "nextRunAt": "2026-04-13T22:09:37Z",
-      "note": "Ran 4:11 PM EDT (~2 min ago). In window (8am-8pm ET). Under 3h alert threshold."
+      "note": "Ran 4:11 PM EDT (~59min ago). In window (8am-8pm ET). Under 3h alert threshold."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
@@ -63,9 +63,9 @@
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-13T20:13:12Z",
-      "nextRunAt": "2026-04-13T21:09:57Z",
-      "note": "Current run at 20:13Z (4:13 PM EDT)."
+      "lastRunAt": "2026-04-13T21:10:19Z",
+      "nextRunAt": "2026-04-13T22:09:57Z",
+      "note": "Current run at 21:10Z (5:10 PM EDT)."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -85,19 +85,19 @@
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-10T12:09:40Z",
-      "note": "Disabled ~8 days. Weekday-only task, likely intentional."
+      "note": "Disabled ~3 days (>48h). Weekday-only task, likely intentional."
     },
     "daily-fb-posts": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T20:09:44Z",
-      "note": "Permanently replaced by fb-group-growth-elliott. Disabled ~2 days. Intentional."
+      "note": "Permanently replaced by fb-group-growth-elliott. Disabled ~49h. Intentional."
     },
     "linkedin-scrape": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T18:12:10Z",
-      "note": "Disabled ~2 days. Exceeds 48h threshold. Likely intentional."
+      "note": "Disabled ~51h (>48h threshold). Likely intentional."
     },
     "fix-instantly-sync-now": {
       "status": "disabled",
