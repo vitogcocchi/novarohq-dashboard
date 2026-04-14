@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-14T18:18:28Z",
+  "last_checked": "2026-04-14T19:10:37Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -9,56 +9,56 @@
       "enabled": true,
       "lastRunAt": "2026-04-14T18:08:00Z",
       "nextRunAt": "2026-04-14T20:07:48Z",
-      "note": "Ran 2:08 PM EDT (~10 min ago). Runs every 2h (8-22 UTC). Within 3h threshold."
+      "note": "Ran 2:08 PM EDT (~62 min ago). Runs every 2h (8am-10pm ET). Well within 3h threshold."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T18:08:55Z",
-      "nextRunAt": "2026-04-14T18:38:43Z",
-      "note": "Ran 2:08 PM EDT (~10 min ago). Every 30 min (9am-10pm UTC). Well within 1h threshold."
+      "lastRunAt": "2026-04-14T19:09:04Z",
+      "nextRunAt": "2026-04-14T19:38:43Z",
+      "note": "Ran 3:09 PM EDT (~1 min ago). Every 30 min (9am-10pm ET). Well within 1h threshold."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T11:08:51Z",
       "nextRunAt": "2026-04-15T11:08:42Z",
-      "note": "Ran 7:08 AM EDT today (~7h ago). Daily task. Well within 26h threshold."
+      "note": "Ran 7:08 AM EDT today (~8h ago). Daily task. Well within 26h threshold."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T18:05:50Z",
-      "nextRunAt": "2026-04-14T19:05:38Z",
-      "note": "Ran 2:05 PM EDT (~13 min ago). Every hour (10am-10pm UTC). Well within 2h threshold."
+      "lastRunAt": "2026-04-14T19:05:51Z",
+      "nextRunAt": "2026-04-14T20:05:38Z",
+      "note": "Ran 3:05 PM EDT (~5 min ago). Every hour (10am-10pm ET). Well within 2h threshold."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T17:11:11Z",
-      "nextRunAt": "2026-04-14T19:08:15Z",
-      "note": "Ran 1:11 PM EDT (~67 min ago). 18:xx UTC slot appears skipped by scheduler again (same pattern as last check); 19:xx next. Within 2h threshold — monitoring."
+      "lastRunAt": "2026-04-14T18:18:12Z",
+      "nextRunAt": "2026-04-14T20:08:15Z",
+      "note": "Ran 2:18 PM EDT (~52 min ago). Every hour (8am-10pm ET). Within 2h threshold."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T18:17:13Z",
       "nextRunAt": "2026-04-14T20:09:37Z",
-      "note": "Ran 2:17 PM EDT (~1 min ago). Every 2h (8am-8pm UTC). Well within 3h threshold."
+      "note": "Ran 2:17 PM EDT (~53 min ago). Every 2h (8am-8pm ET). Well within 3h threshold."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T11:02:30Z",
       "nextRunAt": "2026-04-15T11:02:21Z",
-      "note": "Ran 7:02 AM EDT today (~7h ago). Daily task. Well within 26h threshold."
+      "note": "Ran 7:02 AM EDT today (~8h ago). Daily task. Well within 26h threshold."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T18:18:28Z",
-      "nextRunAt": "2026-04-14T19:09:57Z",
-      "note": "Current run at 2:18 PM EDT. Healthy by definition."
+      "lastRunAt": "2026-04-14T19:10:37Z",
+      "nextRunAt": "2026-04-14T20:09:57Z",
+      "note": "Current run at 3:10 PM EDT. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -70,9 +70,9 @@
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-13T18:16:04Z",
-      "nextRunAt": "2026-04-14T18:02:20Z",
-      "note": "Daily 2pm EDT. nextRunAt just passed (2:02 PM EDT) — likely running now. Last ran yesterday 2:16 PM EDT. Within daily cadence."
+      "lastRunAt": "2026-04-14T18:19:12Z",
+      "nextRunAt": "2026-04-15T18:02:20Z",
+      "note": "Ran 2:19 PM EDT today. Daily 2pm EDT. On schedule."
     },
     "linkedin-outreach": {
       "status": "disabled",
