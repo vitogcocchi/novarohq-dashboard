@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-14T02:12:06Z",
+  "last_checked": "2026-04-14T03:10:09Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -9,56 +9,56 @@
       "enabled": true,
       "lastRunAt": "2026-04-14T02:07:54Z",
       "nextRunAt": "2026-04-14T12:07:48Z",
-      "note": "Ran 10:07 PM EDT (~4min ago). End of operating window (8am-10pm ET). Under 3h alert threshold."
+      "note": "Last ran 10:07 PM EDT. Outside 8am-10pm ET window — healthy by definition."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T02:08:49Z",
-      "nextRunAt": "2026-04-14T02:38:43Z",
-      "note": "Ran 10:08 PM EDT (~3min ago). End of window (9am-10pm ET). Under 1h threshold."
+      "lastRunAt": "2026-04-14T02:38:49Z",
+      "nextRunAt": "2026-04-14T13:08:43Z",
+      "note": "Last ran 10:38 PM EDT. Outside 9am-10pm ET window — healthy by definition."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T11:09:41Z",
       "nextRunAt": "2026-04-14T11:08:42Z",
-      "note": "Ran 7:09 AM EDT today (~15h ago). Within 26h threshold."
+      "note": "Ran 7:09 AM EDT today (~16h ago). Within 26h threshold."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T02:05:44Z",
       "nextRunAt": "2026-04-14T14:05:38Z",
-      "note": "Ran 10:05 PM EDT (~7min ago). End of window (10am-10pm ET). Under 2h alert threshold."
+      "note": "Last ran 10:05 PM EDT. Outside 10am-10pm ET window — healthy by definition."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T01:11:06Z",
+      "lastRunAt": "2026-04-14T02:15:06Z",
       "nextRunAt": "2026-04-14T12:08:15Z",
-      "note": "Ran 9:11 PM EDT (~61min ago). 10pm slot may still be in queue (jitter ~8min). Under 2h alert threshold."
+      "note": "Last ran 10:15 PM EDT. Outside 8am-10pm ET window — healthy by definition."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T00:13:07Z",
       "nextRunAt": "2026-04-14T12:09:37Z",
-      "note": "Ran 8:13 PM EDT. Outside 8am-8pm ET operating window — healthy by definition."
+      "note": "Last ran 8:13 PM EDT. Outside 8am-8pm ET window — healthy by definition."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T11:03:22Z",
       "nextRunAt": "2026-04-14T11:02:21Z",
-      "note": "Ran 7:03 AM EDT today (~15h ago). Within 26h threshold."
+      "note": "Ran 7:03 AM EDT today (~16h ago). Within 26h threshold."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T02:12:06Z",
-      "nextRunAt": "2026-04-14T03:09:57Z",
-      "note": "Current run at 02:12Z (10:12 PM EDT)."
+      "lastRunAt": "2026-04-14T03:10:09Z",
+      "nextRunAt": "2026-04-14T04:09:57Z",
+      "note": "Current run at 03:10Z (11:10 PM EDT)."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -78,19 +78,19 @@
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-10T12:09:40Z",
-      "note": "Disabled ~86h (>48h threshold). Weekday-only task, likely intentional."
+      "note": "Disabled ~87h (>48h). Weekday-only task — likely intentional."
     },
     "daily-fb-posts": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T20:09:44Z",
-      "note": "Permanently replaced by fb-group-growth-elliott. ~30h disabled. Intentional."
+      "note": "Permanently replaced by fb-group-growth-elliott. ~55h disabled. Intentional."
     },
     "linkedin-scrape": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T18:12:10Z",
-      "note": "Disabled ~32h. Approaching 48h threshold."
+      "note": "Disabled ~57h (>48h threshold exceeded). No alert raised — no active monitoring expected."
     },
     "fix-instantly-sync-now": {
       "status": "disabled",
