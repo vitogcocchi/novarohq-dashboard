@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-14T09:10:11Z",
+  "last_checked": "2026-04-14T10:10:55Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -23,7 +23,7 @@
       "enabled": true,
       "lastRunAt": "2026-04-13T11:09:41Z",
       "nextRunAt": "2026-04-14T11:08:42Z",
-      "note": "Ran 7:09 AM EDT April 13 (~22h ago). Within 26h threshold. Runs ~7am EDT."
+      "note": "Ran 7:09 AM EDT April 13 (~23h ago). Within 26h threshold. Runs ~7am EDT."
     },
     "facebook-scrape": {
       "status": "healthy",
@@ -51,14 +51,14 @@
       "enabled": true,
       "lastRunAt": "2026-04-13T11:03:22Z",
       "nextRunAt": "2026-04-14T11:02:21Z",
-      "note": "Ran 7:03 AM EDT April 13 (~22h ago). Within 26h threshold. Runs ~7am EDT."
+      "note": "Ran 7:03 AM EDT April 13 (~23h ago). Within 26h threshold. Runs ~7am EDT."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T09:10:11Z",
-      "nextRunAt": "2026-04-14T10:09:57Z",
-      "note": "Current run at 09:10Z (5:10 AM EDT)."
+      "lastRunAt": "2026-04-14T10:10:06Z",
+      "nextRunAt": "2026-04-14T11:09:57Z",
+      "note": "Current run at 10:10Z (6:10 AM EDT)."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -72,25 +72,25 @@
       "enabled": true,
       "lastRunAt": "2026-04-13T18:16:04Z",
       "nextRunAt": "2026-04-14T18:02:20Z",
-      "note": "Daily 2pm ET. Ran 2:16 PM EDT April 13 (~15h ago). Next run 2pm EDT today."
+      "note": "Daily 2pm ET. Ran 2:16 PM EDT April 13 (~16h ago). Next run 2pm EDT today."
     },
     "linkedin-outreach": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-10T12:09:40Z",
-      "note": "Disabled ~116h (>48h). Weekday-only task — likely intentional."
+      "note": "Disabled ~120h (>48h). Weekday-only task — likely intentional."
     },
     "daily-fb-posts": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T20:09:44Z",
-      "note": "Permanently replaced by fb-group-growth-elliott. ~60h disabled. Intentional."
+      "note": "Permanently replaced by fb-group-growth-elliott. ~62h disabled. Intentional."
     },
     "linkedin-scrape": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T18:12:10Z",
-      "note": "Disabled ~63h (>48h threshold). No active monitoring expected."
+      "note": "Disabled ~64h (>48h threshold). No active monitoring expected."
     },
     "fix-instantly-sync-now": {
       "status": "disabled",
