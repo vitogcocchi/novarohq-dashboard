@@ -1,70 +1,64 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-14T00:17:47Z",
+  "last_checked": "2026-04-14T01:10:09Z",
   "alerts": [],
-  "resolved_since_last_check": [
-    {
-      "taskId": "fb-comment-replies",
-      "resolvedAt": "2026-04-14T00:17:47Z",
-      "note": "Was HIGH alert since 10:38 AM EDT (8.5h gap). Resumed normal operation — ran at 8:16 PM EDT (2026-04-14T00:16:05Z)."
-    }
-  ],
+  "resolved_since_last_check": [],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T00:07:57Z",
       "nextRunAt": "2026-04-14T02:07:48Z",
-      "note": "Ran 8:07 PM EDT (~10min ago). In window (8am-10pm ET). Under 3h alert threshold."
+      "note": "Ran 8:07 PM EDT (~1h 2min ago). In window (8am-10pm ET). Under 3h alert threshold."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T00:16:05Z",
-      "nextRunAt": "2026-04-14T00:38:43Z",
-      "note": "RESOLVED — was HIGH alert all day. Ran 8:16 PM EDT (~1min ago). In window (9am-10pm ET). Under 1h threshold."
+      "lastRunAt": "2026-04-14T01:08:49Z",
+      "nextRunAt": "2026-04-14T01:38:43Z",
+      "note": "Ran 9:08 PM EDT (~2min ago). In window (9am-10pm ET). Under 1h threshold."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T11:09:41Z",
       "nextRunAt": "2026-04-14T11:08:42Z",
-      "note": "Ran 7:09 AM EDT today. Within 26h threshold (~13h ago)."
+      "note": "Ran 7:09 AM EDT today (~14h ago). Within 26h threshold."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T00:05:45Z",
-      "nextRunAt": "2026-04-14T01:05:38Z",
-      "note": "Ran 8:05 PM EDT (~12min ago). In window (10am-10pm ET). Under 2h alert threshold."
+      "lastRunAt": "2026-04-14T01:05:44Z",
+      "nextRunAt": "2026-04-14T02:05:38Z",
+      "note": "Ran 9:05 PM EDT (~5min ago). In window (10am-10pm ET). Under 2h alert threshold."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-13T23:12:08Z",
-      "nextRunAt": "2026-04-14T01:08:15Z",
-      "note": "Ran 7:12 PM EDT (~65min ago). In window (8am-10pm ET). Under 2h alert threshold."
+      "lastRunAt": "2026-04-14T00:19:06Z",
+      "nextRunAt": "2026-04-14T02:08:15Z",
+      "note": "Ran 8:19 PM EDT (~51min ago). In window (8am-10pm ET). Under 2h alert threshold."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T00:13:07Z",
       "nextRunAt": "2026-04-14T12:09:37Z",
-      "note": "Ran 8:13 PM EDT. Current time (8:17 PM) is past 8pm ET operating window — outside window = healthy by definition."
+      "note": "Ran 8:13 PM EDT. Current time (9:10 PM) is past 8pm ET operating window — outside window = healthy by definition."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T11:03:22Z",
       "nextRunAt": "2026-04-14T11:02:21Z",
-      "note": "Ran 7:03 AM EDT today. Within 26h threshold (~13h ago)."
+      "note": "Ran 7:03 AM EDT today (~14h ago). Within 26h threshold."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T00:17:47Z",
-      "nextRunAt": "2026-04-14T01:09:57Z",
-      "note": "Current run at 00:17Z (8:17 PM EDT)."
+      "lastRunAt": "2026-04-14T01:10:09Z",
+      "nextRunAt": "2026-04-14T02:09:57Z",
+      "note": "Current run at 01:10Z (9:10 PM EDT)."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -84,7 +78,7 @@
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-10T12:09:40Z",
-      "note": "Disabled ~84h (>48h). Weekday-only task, likely intentional."
+      "note": "Disabled ~85h (>48h). Weekday-only task, likely intentional."
     },
     "daily-fb-posts": {
       "status": "disabled",
@@ -96,7 +90,7 @@
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T18:12:10Z",
-      "note": "Disabled >48h. Likely intentional."
+      "note": "Disabled ~55h (>48h). Likely intentional."
     },
     "fix-instantly-sync-now": {
       "status": "disabled",
