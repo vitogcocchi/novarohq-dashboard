@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-14T08:10:47Z",
+  "last_checked": "2026-04-14T09:10:11Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -23,7 +23,7 @@
       "enabled": true,
       "lastRunAt": "2026-04-13T11:09:41Z",
       "nextRunAt": "2026-04-14T11:08:42Z",
-      "note": "Ran 7:09 AM EDT April 13 (~21h ago). Within 26h threshold."
+      "note": "Ran 7:09 AM EDT April 13 (~22h ago). Within 26h threshold. Runs ~7am EDT."
     },
     "facebook-scrape": {
       "status": "healthy",
@@ -51,28 +51,28 @@
       "enabled": true,
       "lastRunAt": "2026-04-13T11:03:22Z",
       "nextRunAt": "2026-04-14T11:02:21Z",
-      "note": "Ran 7:03 AM EDT April 13 (~21h ago). Within 26h threshold."
+      "note": "Ran 7:03 AM EDT April 13 (~22h ago). Within 26h threshold. Runs ~7am EDT."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T08:10:47Z",
-      "nextRunAt": "2026-04-14T09:09:57Z",
-      "note": "Current run at 08:10Z (4:10 AM EDT)."
+      "lastRunAt": "2026-04-14T09:10:11Z",
+      "nextRunAt": "2026-04-14T10:09:57Z",
+      "note": "Current run at 09:10Z (5:10 AM EDT)."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T14:27:03Z",
       "nextRunAt": "2026-04-14T14:03:46Z",
-      "note": "Daily 10am ET. Ran 10:27 AM EDT April 13 (~21h ago). Next run 10am EDT today."
+      "note": "Daily 10am ET. Ran 10:27 AM EDT April 13 (~19h ago). Next run 10am EDT today."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-13T18:16:04Z",
       "nextRunAt": "2026-04-14T18:02:20Z",
-      "note": "Daily 2pm ET. Ran 2:16 PM EDT April 13 (~14h ago). Next run 2pm EDT today."
+      "note": "Daily 2pm ET. Ran 2:16 PM EDT April 13 (~15h ago). Next run 2pm EDT today."
     },
     "linkedin-outreach": {
       "status": "disabled",
@@ -90,7 +90,7 @@
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T18:12:10Z",
-      "note": "Disabled ~62h (>48h threshold). No active monitoring expected."
+      "note": "Disabled ~63h (>48h threshold). No active monitoring expected."
     },
     "fix-instantly-sync-now": {
       "status": "disabled",
