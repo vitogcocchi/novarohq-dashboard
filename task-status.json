@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-15T08:11:22Z",
+  "last_checked": "2026-04-15T09:11:00Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -9,77 +9,77 @@
       "enabled": true,
       "lastRunAt": "2026-04-15T02:08:07Z",
       "nextRunAt": "2026-04-15T12:07:48Z",
-      "note": "Ran 10:08 PM EDT (end of window). Every 2h (8am-10pm ET). Window closed — healthy by definition."
+      "note": "Outside window (5am ET). Last run 10:08 PM EDT — 7.1h ago. Window opens 8am ET."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T02:39:11Z",
       "nextRunAt": "2026-04-15T13:08:43Z",
-      "note": "Ran 10:39 PM EDT (last slot in window). Every 30 min (9am-10:59pm ET). Outside window — healthy by definition."
+      "note": "Outside window (5am ET). Last run 10:39 PM EDT — 6.5h ago. Window opens 9am ET."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T11:08:51Z",
       "nextRunAt": "2026-04-15T11:08:42Z",
-      "note": "Ran 7:08 AM EDT Apr 14 (~21h ago). Daily 7am task. Well within 26h threshold."
+      "note": "Last run 7:08 AM EDT Apr 14 — 22.0h ago. Well within 26h threshold. Next run in ~2h."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T02:05:57Z",
       "nextRunAt": "2026-04-15T14:05:38Z",
-      "note": "Ran 10:05 PM EDT (end of window). Every 1h (10am-10pm ET). Outside window — healthy by definition."
+      "note": "Outside window (5am ET). Last run 10:05 PM EDT — 7.1h ago. Window opens 10am ET."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T02:19:22Z",
       "nextRunAt": "2026-04-15T12:08:15Z",
-      "note": "Ran 10:19 PM EDT (inside window). Window ended 10pm ET — outside window now, healthy by definition."
+      "note": "Outside window (5am ET). Last run 10:19 PM EDT — 6.9h ago. Window opens 8am ET."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T00:15:27Z",
       "nextRunAt": "2026-04-15T12:09:37Z",
-      "note": "Ran 8:15 PM EDT. Window closed at 8pm ET — outside window now, healthy by definition."
+      "note": "Outside window (5am ET). Last run 8:15 PM EDT — 8.9h ago. Window opens 8am ET."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T11:02:30Z",
       "nextRunAt": "2026-04-15T11:02:21Z",
-      "note": "Ran 7:02 AM EDT Apr 14 (~21h ago). Daily 7am task. Well within 26h threshold."
+      "note": "Last run 7:02 AM EDT Apr 14 — 22.1h ago. Well within 26h threshold. Next run in ~2h."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T08:10:25Z",
-      "nextRunAt": "2026-04-15T09:09:57Z",
-      "note": "Current run at 4:11 AM EDT. Healthy by definition."
+      "lastRunAt": "2026-04-15T09:11:00Z",
+      "nextRunAt": "2026-04-15T10:09:57Z",
+      "note": "Current run at 5:11 AM EDT. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T14:14:10Z",
       "nextRunAt": "2026-04-15T14:03:46Z",
-      "note": "Ran 10:14 AM EDT Apr 14. Daily 10am task. On schedule."
+      "note": "Daily 10am ET task. Last run 10:14 AM EDT Apr 14 — 19.0h ago. On schedule, next run at 10am today."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T18:19:12Z",
       "nextRunAt": "2026-04-15T18:02:20Z",
-      "note": "Ran 2:19 PM EDT Apr 14. Daily 2pm task. On schedule."
+      "note": "Daily 2pm ET task. Last run 2:19 PM EDT Apr 14 — 14.9h ago. On schedule, next run at 2pm today."
     },
     "instantly-account-monitor": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": null,
       "nextRunAt": "2026-04-15T12:07:07Z",
-      "note": "New task — no prior run recorded. Window: 8am-10pm ET. Outside window now — healthy by definition. First run expected 8:07 AM EDT."
+      "note": "New task — no prior run. Outside window (5am ET). First run expected 8:07 AM EDT."
     },
     "linkedin-outreach": {
       "status": "disabled",
