@@ -1,50 +1,50 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-15T15:11:02Z",
+  "last_checked": "2026-04-15T16:11:34Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T14:08:16Z",
-      "nextRunAt": "2026-04-15T16:07:48Z",
-      "note": "Ran at 10:08 AM EDT — 63 min ago. In window (8am-10pm ET). On schedule."
+      "lastRunAt": "2026-04-15T16:08:17Z",
+      "nextRunAt": "2026-04-15T18:07:48Z",
+      "note": "Ran at 12:08 PM EDT — 3 min ago. In window (8am-10pm ET). On schedule."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T15:09:12Z",
-      "nextRunAt": "2026-04-15T15:38:43Z",
-      "note": "Ran at 11:09 AM EDT — 2 min ago. In window (9am-10pm ET). On schedule."
+      "lastRunAt": "2026-04-15T16:09:12Z",
+      "nextRunAt": "2026-04-15T16:38:43Z",
+      "note": "Ran at 12:09 PM EDT — 2 min ago. In window (9am-10pm ET). On schedule."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T11:09:10Z",
       "nextRunAt": "2026-04-16T11:08:42Z",
-      "note": "Ran today at 7:09 AM EDT — 4h2m ago. On schedule. Next run tomorrow 7am ET."
+      "note": "Ran today at 7:09 AM EDT — 5h ago. On schedule. Next run tomorrow 7am ET."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T15:06:07Z",
-      "nextRunAt": "2026-04-15T16:05:38Z",
-      "note": "Ran at 11:06 AM EDT — 5 min ago. In window (10am-10pm ET). On schedule."
+      "lastRunAt": "2026-04-15T16:06:07Z",
+      "nextRunAt": "2026-04-15T17:05:38Z",
+      "note": "Ran at 12:06 PM EDT — 5 min ago. In window (10am-10pm ET). On schedule."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T14:18:29Z",
-      "nextRunAt": "2026-04-15T16:08:15Z",
-      "note": "Ran at 10:18 AM EDT — 52 min ago. Under 2h alert threshold. On schedule."
+      "lastRunAt": "2026-04-15T15:12:30Z",
+      "nextRunAt": "2026-04-15T17:08:15Z",
+      "note": "Ran at 11:12 AM EDT — 59 min ago. Under 2h alert threshold. On schedule."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T14:12:28Z",
-      "nextRunAt": "2026-04-15T16:09:37Z",
-      "note": "Ran at 10:12 AM EDT — 58 min ago. In window (8am-8pm ET). Under 3h alert threshold."
+      "lastRunAt": "2026-04-15T16:10:29Z",
+      "nextRunAt": "2026-04-15T18:09:37Z",
+      "note": "Ran at 12:10 PM EDT — 1 min ago. In window (8am-8pm ET). On schedule."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
@@ -56,9 +56,9 @@
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T15:11:02Z",
-      "nextRunAt": "2026-04-15T16:09:57Z",
-      "note": "Current run at 11:11 AM EDT. Healthy by definition."
+      "lastRunAt": "2026-04-15T16:11:34Z",
+      "nextRunAt": "2026-04-15T17:09:57Z",
+      "note": "Current run at 12:11 PM EDT. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -78,8 +78,8 @@
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T14:19:28Z",
-      "nextRunAt": "2026-04-15T16:07:07Z",
-      "note": "Ran at 10:19 AM EDT — 51 min ago. In window (8am-10pm ET). On schedule."
+      "nextRunAt": "2026-04-15T18:07:07Z",
+      "note": "Ran at 10:19 AM EDT — 1h 52min ago. Not in formal threshold table. Note: 12pm run may have been skipped (nextRunAt shows 2pm ET), but no alert threshold defined for this task."
     },
     "linkedin-outreach": {
       "status": "disabled",
