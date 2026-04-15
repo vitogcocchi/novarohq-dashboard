@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-15T00:16:56Z",
+  "last_checked": "2026-04-15T01:11:18Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -9,35 +9,35 @@
       "enabled": true,
       "lastRunAt": "2026-04-15T00:08:07Z",
       "nextRunAt": "2026-04-15T02:07:48Z",
-      "note": "Ran 8:08 PM EDT (~8 min ago). Every 2h (8am-10pm ET). Well within 3h threshold."
+      "note": "Ran 8:08 PM EDT (~63 min ago). Every 2h (8am-10pm ET). Within 3h threshold."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T00:09:18Z",
-      "nextRunAt": "2026-04-15T00:38:43Z",
-      "note": "Ran 8:09 PM EDT (~7 min ago). Every 30 min (9am-10pm ET). Well within 1h threshold."
+      "lastRunAt": "2026-04-15T01:09:04Z",
+      "nextRunAt": "2026-04-15T01:38:43Z",
+      "note": "Ran 9:09 PM EDT (~2 min ago). Every 30 min (9am-10pm ET). Well within 1h threshold."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T11:08:51Z",
       "nextRunAt": "2026-04-15T11:08:42Z",
-      "note": "Ran 7:08 AM EDT today (~13h ago). Daily 7am task. Well within 26h threshold."
+      "note": "Ran 7:08 AM EDT today (~14h ago). Daily 7am task. Well within 26h threshold."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T00:05:55Z",
-      "nextRunAt": "2026-04-15T01:05:38Z",
-      "note": "Ran 8:05 PM EDT (~11 min ago). Every 1h (10am-10pm ET). Well within 2h threshold."
+      "lastRunAt": "2026-04-15T01:05:56Z",
+      "nextRunAt": "2026-04-15T02:05:38Z",
+      "note": "Ran 9:05 PM EDT (~6 min ago). Every 1h (10am-10pm ET). Well within 2h threshold."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T00:16:19Z",
-      "nextRunAt": "2026-04-15T01:08:15Z",
-      "note": "Ran 8:16 PM EDT (just now). Every 1h (8am-10pm ET). Well within 2h threshold."
+      "nextRunAt": "2026-04-15T02:08:15Z",
+      "note": "Ran 8:16 PM EDT (~55 min ago). Every 1h (8am-10pm ET). Within 2h threshold."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
@@ -51,14 +51,14 @@
       "enabled": true,
       "lastRunAt": "2026-04-14T11:02:30Z",
       "nextRunAt": "2026-04-15T11:02:21Z",
-      "note": "Ran 7:02 AM EDT today (~13h ago). Daily 7am task. Well within 26h threshold."
+      "note": "Ran 7:02 AM EDT today (~14h ago). Daily 7am task. Well within 26h threshold."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T00:16:56Z",
-      "nextRunAt": "2026-04-15T01:09:57Z",
-      "note": "Current run at 8:16 PM EDT. Healthy by definition."
+      "lastRunAt": "2026-04-15T01:11:18Z",
+      "nextRunAt": "2026-04-15T02:09:57Z",
+      "note": "Current run at 9:11 PM EDT. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -78,19 +78,19 @@
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-10T12:09:40Z",
-      "note": "Disabled ~4.5 days (>48h). Weekday-only task — likely intentional pause."
+      "note": "Disabled ~4.9 days (>48h). Weekday-only task — likely intentional pause."
     },
     "daily-fb-posts": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T20:09:44Z",
-      "note": "Permanently replaced by fb-group-growth-elliott. ~3.3 days disabled. Intentional."
+      "note": "Permanently replaced by fb-group-growth-elliott. ~3.2 days disabled. Intentional."
     },
     "linkedin-scrape": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T18:12:10Z",
-      "note": "Disabled ~3.5 days (>48h). No active monitoring expected."
+      "note": "Disabled ~3.3 days (>48h). No active monitoring expected."
     },
     "fix-instantly-sync-now": {
       "status": "disabled",
