@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-15T06:11:39Z",
+  "last_checked": "2026-04-15T07:10:47Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -23,7 +23,7 @@
       "enabled": true,
       "lastRunAt": "2026-04-14T11:08:51Z",
       "nextRunAt": "2026-04-15T11:08:42Z",
-      "note": "Ran 7:08 AM EDT Apr 14 (~19h ago). Daily 7am task. Well within 26h threshold."
+      "note": "Ran 7:08 AM EDT Apr 14 (~20h ago). Daily 7am task. Well within 26h threshold."
     },
     "facebook-scrape": {
       "status": "healthy",
@@ -51,14 +51,14 @@
       "enabled": true,
       "lastRunAt": "2026-04-14T11:02:30Z",
       "nextRunAt": "2026-04-15T11:02:21Z",
-      "note": "Ran 7:02 AM EDT Apr 14 (~19h ago). Daily 7am task. Well within 26h threshold."
+      "note": "Ran 7:02 AM EDT Apr 14 (~20h ago). Daily 7am task. Well within 26h threshold."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T06:11:39Z",
-      "nextRunAt": "2026-04-15T07:09:57Z",
-      "note": "Current run at 2:11 AM EDT. Healthy by definition."
+      "lastRunAt": "2026-04-15T07:10:47Z",
+      "nextRunAt": "2026-04-15T08:09:57Z",
+      "note": "Current run at 3:10 AM EDT. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
