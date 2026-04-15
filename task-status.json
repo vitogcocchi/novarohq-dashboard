@@ -1,50 +1,69 @@
 {
-  "overall_status": "healthy",
-  "last_checked": "2026-04-15T17:11:06Z",
-  "alerts": [],
+  "overall_status": "alert",
+  "last_checked": "2026-04-15T18:12:28Z",
+  "alerts": [
+    {
+      "taskId": "fb-friend-builder-elliott",
+      "severity": "MEDIUM",
+      "reason": "Missed today's daily 2pm ET run. Last run Apr 14 at 2:19 PM EDT. Next run moved to tomorrow Apr 16 — today's slot skipped entirely.",
+      "lastRunAt": "2026-04-14T18:19:12Z"
+    },
+    {
+      "taskId": "instantly-account-monitor",
+      "severity": "MEDIUM",
+      "reason": "Missed 2pm ET slot in bi-hourly task. Last run 12:14 PM EDT, next run 4:07 PM EDT — ~4 hour gap in Instantly account health monitoring.",
+      "lastRunAt": "2026-04-15T16:14:29Z"
+    },
+    {
+      "taskId": "novaro-data-sync",
+      "severity": "MEDIUM",
+      "reason": "Missed 2pm ET hourly slot. Last run 1:09 PM EDT, next run 3:08 PM EDT — ~2 hour gap approaching alert threshold.",
+      "lastRunAt": "2026-04-15T17:09:29Z"
+    }
+  ],
   "resolved_since_last_check": [],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T16:08:17Z",
-      "nextRunAt": "2026-04-15T18:07:48Z",
-      "note": "Ran at 12:08 PM EDT — 1h 3m ago. In window (8am-10pm ET). On schedule."
+      "lastRunAt": "2026-04-15T18:08:17Z",
+      "nextRunAt": "2026-04-15T20:07:48Z",
+      "note": "Ran at 2:08 PM EDT — 4 min ago. In window (8am-10pm ET). On schedule."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T17:09:12Z",
-      "nextRunAt": "2026-04-15T17:38:43Z",
-      "note": "Ran at 1:09 PM EDT — 2 min ago. In window (9am-10pm ET). On schedule."
+      "lastRunAt": "2026-04-15T18:09:12Z",
+      "nextRunAt": "2026-04-15T18:38:43Z",
+      "note": "Ran at 2:09 PM EDT — 3 min ago. In window (9am-10pm ET). On schedule."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T11:09:10Z",
       "nextRunAt": "2026-04-16T11:08:42Z",
-      "note": "Ran today at 7:09 AM EDT — 6h ago. On schedule. Next run tomorrow 7am ET."
+      "note": "Ran today at 7:09 AM EDT — 7h ago. On schedule. Next run tomorrow 7am ET."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T17:06:07Z",
-      "nextRunAt": "2026-04-15T18:05:38Z",
-      "note": "Ran at 1:06 PM EDT — 5 min ago. In window (10am-10pm ET). On schedule."
+      "lastRunAt": "2026-04-15T18:06:07Z",
+      "nextRunAt": "2026-04-15T19:05:38Z",
+      "note": "Ran at 2:06 PM EDT — 6 min ago. In window (10am-10pm ET). On schedule."
     },
     "novaro-data-sync": {
-      "status": "healthy",
+      "status": "alert",
       "enabled": true,
       "lastRunAt": "2026-04-15T17:09:29Z",
-      "nextRunAt": "2026-04-15T18:08:15Z",
-      "note": "Ran at 1:09 PM EDT — 2 min ago. Under 2h alert threshold. On schedule."
+      "nextRunAt": "2026-04-15T19:08:15Z",
+      "note": "ALERT: Missed 2pm ET hourly slot. Last run 1:09 PM EDT. Next run 3:08 PM EDT — ~2 hour gap approaching threshold."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T16:10:29Z",
-      "nextRunAt": "2026-04-15T18:09:37Z",
-      "note": "Ran at 12:10 PM EDT — 1h 1m ago. In window (8am-8pm ET). On schedule."
+      "lastRunAt": "2026-04-15T18:10:29Z",
+      "nextRunAt": "2026-04-15T20:09:37Z",
+      "note": "Ran at 2:10 PM EDT — 2 min ago. In window (8am-8pm ET). On schedule."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
@@ -56,9 +75,9 @@
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T17:11:06Z",
-      "nextRunAt": "2026-04-15T18:09:57Z",
-      "note": "Current run at 1:11 PM EDT. Healthy by definition."
+      "lastRunAt": "2026-04-15T18:12:28Z",
+      "nextRunAt": "2026-04-15T19:09:57Z",
+      "note": "Current run at 2:12 PM EDT. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -68,18 +87,18 @@
       "note": "Ran today at 10:18 AM EDT. Daily 10am task confirmed on schedule."
     },
     "fb-friend-builder-elliott": {
-      "status": "healthy",
+      "status": "alert",
       "enabled": true,
       "lastRunAt": "2026-04-14T18:19:12Z",
-      "nextRunAt": "2026-04-15T18:02:20Z",
-      "note": "Daily 2pm ET task. Last run Apr 14 at 2:19 PM EDT. Scheduled for ~2:02 PM today — not yet due."
+      "nextRunAt": "2026-04-16T18:02:20Z",
+      "note": "ALERT: Daily 2pm ET task missed today entirely. Last run Apr 14 2:19 PM EDT. Next scheduled Apr 16 — 48h gap."
     },
     "instantly-account-monitor": {
-      "status": "healthy",
+      "status": "alert",
       "enabled": true,
       "lastRunAt": "2026-04-15T16:14:29Z",
-      "nextRunAt": "2026-04-15T18:07:07Z",
-      "note": "Ran at 12:14 PM EDT — 57m ago. On schedule."
+      "nextRunAt": "2026-04-15T20:07:07Z",
+      "note": "ALERT: Missed 2pm ET slot. Last run 12:14 PM EDT, next 4:07 PM EDT — ~4h gap in bi-hourly Instantly account monitoring."
     },
     "linkedin-outreach": {
       "status": "disabled",
