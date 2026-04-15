@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-15T03:10:48Z",
+  "last_checked": "2026-04-15T04:11:11Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -23,7 +23,7 @@
       "enabled": true,
       "lastRunAt": "2026-04-14T11:08:51Z",
       "nextRunAt": "2026-04-15T11:08:42Z",
-      "note": "Ran 7:08 AM EDT today (~16h ago). Daily 7am task. Well within 26h threshold."
+      "note": "Ran 7:08 AM EDT Apr 14 (~17h ago). Daily 7am task. Well within 26h threshold."
     },
     "facebook-scrape": {
       "status": "healthy",
@@ -51,28 +51,35 @@
       "enabled": true,
       "lastRunAt": "2026-04-14T11:02:30Z",
       "nextRunAt": "2026-04-15T11:02:21Z",
-      "note": "Ran 7:02 AM EDT today (~16h ago). Daily 7am task. Well within 26h threshold."
+      "note": "Ran 7:02 AM EDT Apr 14 (~17h ago). Daily 7am task. Well within 26h threshold."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T03:10:48Z",
-      "nextRunAt": "2026-04-15T04:09:57Z",
-      "note": "Current run at 11:10 PM EDT. Healthy by definition."
+      "lastRunAt": "2026-04-15T04:11:11Z",
+      "nextRunAt": "2026-04-15T05:09:57Z",
+      "note": "Current run at 12:11 AM EDT. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T14:14:10Z",
       "nextRunAt": "2026-04-15T14:03:46Z",
-      "note": "Ran 10:14 AM EDT today. Daily 10am task. On schedule."
+      "note": "Ran 10:14 AM EDT Apr 14. Daily 10am task. On schedule."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T18:19:12Z",
       "nextRunAt": "2026-04-15T18:02:20Z",
-      "note": "Ran 2:19 PM EDT today. Daily 2pm task. On schedule."
+      "note": "Ran 2:19 PM EDT Apr 14. Daily 2pm task. On schedule."
+    },
+    "instantly-account-monitor": {
+      "status": "healthy",
+      "enabled": true,
+      "lastRunAt": null,
+      "nextRunAt": "2026-04-15T12:07:07Z",
+      "note": "New task — no prior run recorded. Window: 8am-10pm ET. Outside window now — healthy by definition. First run expected 8:07 AM EDT."
     },
     "linkedin-outreach": {
       "status": "disabled",
