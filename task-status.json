@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-15T14:20:00Z",
+  "last_checked": "2026-04-15T15:11:02Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -9,42 +9,42 @@
       "enabled": true,
       "lastRunAt": "2026-04-15T14:08:16Z",
       "nextRunAt": "2026-04-15T16:07:48Z",
-      "note": "Ran at 10:08 AM EDT — 12 min ago. In window (8am-10pm ET). On schedule."
+      "note": "Ran at 10:08 AM EDT — 63 min ago. In window (8am-10pm ET). On schedule."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T14:09:11Z",
-      "nextRunAt": "2026-04-15T14:38:43Z",
-      "note": "Ran at 10:09 AM EDT — 11 min ago. In window (9am-10pm ET). On schedule."
+      "lastRunAt": "2026-04-15T15:09:12Z",
+      "nextRunAt": "2026-04-15T15:38:43Z",
+      "note": "Ran at 11:09 AM EDT — 2 min ago. In window (9am-10pm ET). On schedule."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T11:09:10Z",
       "nextRunAt": "2026-04-16T11:08:42Z",
-      "note": "Ran today at 7:09 AM EDT. On schedule. Next run tomorrow 7am ET."
+      "note": "Ran today at 7:09 AM EDT — 4h2m ago. On schedule. Next run tomorrow 7am ET."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T14:06:06Z",
-      "nextRunAt": "2026-04-15T15:05:38Z",
-      "note": "Ran at 10:06 AM EDT — 14 min ago. Window just opened (10am ET). On schedule."
+      "lastRunAt": "2026-04-15T15:06:07Z",
+      "nextRunAt": "2026-04-15T16:05:38Z",
+      "note": "Ran at 11:06 AM EDT — 5 min ago. In window (10am-10pm ET). On schedule."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T13:08:43Z",
-      "nextRunAt": "2026-04-15T15:08:15Z",
-      "note": "Ran at 9:08 AM EDT — ~72 min ago. Next slot 11:08 AM ET. Under 2h alert threshold. On schedule."
+      "lastRunAt": "2026-04-15T14:18:29Z",
+      "nextRunAt": "2026-04-15T16:08:15Z",
+      "note": "Ran at 10:18 AM EDT — 52 min ago. Under 2h alert threshold. On schedule."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T14:12:28Z",
       "nextRunAt": "2026-04-15T16:09:37Z",
-      "note": "Ran at 10:12 AM EDT — 8 min ago. In window (8am-8pm ET). On schedule."
+      "note": "Ran at 10:12 AM EDT — 58 min ago. In window (8am-8pm ET). Under 3h alert threshold."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
@@ -56,30 +56,30 @@
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T14:20:00Z",
-      "nextRunAt": "2026-04-15T15:09:57Z",
-      "note": "Current run at 10:20 AM EDT. Healthy by definition."
+      "lastRunAt": "2026-04-15T15:11:02Z",
+      "nextRunAt": "2026-04-15T16:09:57Z",
+      "note": "Current run at 11:11 AM EDT. Healthy by definition."
     },
     "fb-group-growth-elliott": {
-      "status": "note",
+      "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-14T14:14:10Z",
+      "lastRunAt": "2026-04-15T14:18:29Z",
       "nextRunAt": "2026-04-16T14:03:46Z",
-      "note": "NOTICE: Task is ENABLED (not disabled as expected). Ran Apr 14 at 10:14 AM EDT. nextRunAt shows Apr 16 — appears to have skipped Apr 15. Not in primary health table; no alert threshold defined."
+      "note": "Ran today at 10:18 AM EDT. Daily 10am task confirmed on schedule."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-14T18:19:12Z",
       "nextRunAt": "2026-04-15T18:02:20Z",
-      "note": "Daily 2pm ET task. Last run Apr 14 at 2:19 PM EDT. On schedule — next run 2pm today."
+      "note": "Daily 2pm ET task. Last run Apr 14 at 2:19 PM EDT. Scheduled for 2:02 PM today — not yet due."
     },
     "instantly-account-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T12:13:28Z",
+      "lastRunAt": "2026-04-15T14:19:28Z",
       "nextRunAt": "2026-04-15T16:07:07Z",
-      "note": "Ran at 8:13 AM EDT. nextRunAt 12:07 PM ET — may have skipped 10am slot but not in primary health table. Under 2h+ observation window."
+      "note": "Ran at 10:19 AM EDT — 51 min ago. In window (8am-10pm ET). On schedule."
     },
     "linkedin-outreach": {
       "status": "disabled",
