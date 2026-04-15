@@ -815,6 +815,16 @@ function showPage(p){
     document.getElementById('page-'+p).classList.add('on');
     const n=document.querySelector('[data-page="'+p+'"]');
     if(n)n.classList.add('on');
+    // Clear the replies badge when the user visits the replies page
+    if(p === 'replies'){
+        const badge = document.getElementById('nav-replies-badge');
+        if(badge){
+            badge.textContent = '0';
+            // Store how many we've seen so new ones still show up
+            const currentCount = parseInt(badge.getAttribute('data-total') || badge.textContent) || 0;
+            try { localStorage.setItem('novaro_replies_seen', currentCount.toString()); } catch(e){}
+        }
+    }
 }
 
 // Detail panel
@@ -1430,9 +1440,17 @@ function populateReplies(d, filter){
     set('rep-pending',  s.pending  || 0);
     set('rep-auto',     s.auto     || 0);
 
-    // Update nav badge with pending count
+    // Update nav badge — shows new leads since last visit, clears to 0 once seen
     const navBadge = document.getElementById('nav-replies-badge');
-    if(navBadge) navBadge.textContent = (s.pending || 0) + (s.positive || 0);
+    if(navBadge){
+        const totalActionable = (s.pending || 0) + (s.positive || 0);
+        navBadge.setAttribute('data-total', totalActionable);
+        let seen = 0;
+        try { seen = parseInt(localStorage.getItem('novaro_replies_seen') || '0'); } catch(e){}
+        const unseen = Math.max(0, totalActionable - seen);
+        navBadge.textContent = unseen;
+        navBadge.style.display = unseen > 0 ? '' : 'none';
+    }
 
     // Always sort by date descending (newest first), regardless of JSON order
     let items = [...d.replies].sort((a, b) => {
