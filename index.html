@@ -563,25 +563,11 @@ function closeIntro(){
     </div>
 
     <div class="brief-card" style="margin-top:16px">
-        <div class="brief-icon">&#9993;</div>
-        <div class="brief-title">INSTANTLY CAMPAIGN STATUS</div>
-        <table class="camp-table">
-            <thead><tr><th>Campaign</th><th>Status</th><th>Notes</th></tr></thead>
-            <tbody id="debrief-camp-tbody"><tr><td colspan="3" style="color:var(--t3);text-align:center;padding:20px">Loading...</td></tr></tbody>
-        </table>
-    </div>
-
-    <div class="brief-card" style="margin-top:16px">
         <div class="brief-icon">&#9889;</div>
         <div class="brief-title">TODAY'S FOCUS</div>
         <div class="brief-content" id="brief-focus"><span style="color:var(--t3)">Loading...</span></div>
     </div>
 
-    <div class="brief-card" style="margin-top:16px">
-        <div class="brief-icon">&#128204;</div>
-        <div class="brief-title">DAILY REMINDERS</div>
-        <div class="brief-content" id="brief-reminders"><span style="color:var(--t3)">Loading...</span></div>
-    </div>
 </section>
 
 <!-- INSTANTLY -->
@@ -1051,20 +1037,6 @@ function populateInstantly(d){
         }).join('');
     }
 
-    // Campaign table in morning debrief
-    if(d.campaigns && d.campaigns.length > 0){
-        const campTbody = document.querySelector('#page-debrief .camp-table tbody');
-        if(campTbody){
-            campTbody.innerHTML = d.campaigns.map(c => {
-                const statusClass = c.status === 'Active' ? 'active' : c.status === 'Paused' ? 'paused' : 'new';
-                return `<tr class="clickable" onclick="openDetail({type:'campaign',name:'${c.name.replace(/'/g,"\\'")}',status:'${c.status}',notes:'Live from Instantly API'})">
-                    <td class="${c.status === 'Active' ? 'td-h' : ''}">${c.name}</td>
-                    <td><span class="pill ${statusClass}">${c.status.toUpperCase()}</span></td>
-                    <td>Live</td>
-                </tr>`;
-            }).join('');
-        }
-    }
 }
 
 function populateSocial(sd){
@@ -1166,15 +1138,7 @@ function populateFunnel(d){
 }
 
 function populateBrief(d){
-    // Weather
-    const wEl = document.getElementById('brief-weather');
-    if(wEl && d.weather) wEl.textContent = d.weather;
-
-    // Quote
-    const qEl = document.getElementById('brief-quote');
-    if(qEl && d.quote){
-        qEl.innerHTML = `<blockquote>\u201c${d.quote.text}\u201d<br><span style="color:var(--t3)">-- ${d.quote.author}</span></blockquote>`;
-    }
+    // Weather and Quote are now handled by live APIs — skip stale JSON values
 
     // Urgent inbox (pulled from Notion Urgent Inbox via task)
     const uEl = document.getElementById('brief-urgent');
@@ -1618,12 +1582,125 @@ if(sessionStorage.getItem('novaro_auth')==='1'){
     // Load after auth succeeds
     const origAuth = window.authCheck;
 }
+// ─── LIVE WEATHER (Open-Meteo, no API key) ───────────────────────────────────
+async function loadLiveWeather(){
+    const wEl = document.getElementById('brief-weather');
+    if(!wEl) return;
+    try {
+        // Longmeadow, MA: 42.05°N, -72.52°W
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude=42.05&longitude=-72.52&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,precipitation_probability&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York';
+        const res = await fetch(url);
+        if(!res.ok) throw new Error('weather fetch failed');
+        const data = await res.json();
+        const c = data.current;
+        const temp = Math.round(c.temperature_2m);
+        const feels = Math.round(c.apparent_temperature);
+        const wind = Math.round(c.wind_speed_10m);
+        const precip = c.precipitation_probability;
+        const wCode = c.weather_code;
+
+        // Map WMO weather codes to descriptions
+        const wxMap = {
+            0:'Clear sky', 1:'Mainly clear', 2:'Partly cloudy', 3:'Overcast',
+            45:'Foggy', 48:'Icy fog', 51:'Light drizzle', 53:'Drizzle', 55:'Heavy drizzle',
+            61:'Light rain', 63:'Rain', 65:'Heavy rain', 71:'Light snow', 73:'Snow', 75:'Heavy snow',
+            80:'Rain showers', 81:'Rain showers', 82:'Violent showers',
+            95:'Thunderstorm', 96:'Thunderstorm w/ hail', 99:'Thunderstorm w/ hail'
+        };
+        const desc = wxMap[wCode] || 'Variable conditions';
+        const now = new Date().toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',hour12:true});
+        wEl.textContent = `${desc} in Longmeadow — ${temp}°F (feels ${feels}°F), wind ${wind} mph, ${precip}% chance of precip. As of ${now} ET.`;
+    } catch(e){
+        // Silently fall back to whatever populateBrief wrote (stale is better than broken)
+        console.warn('Live weather failed:', e.message);
+    }
+}
+
+// ─── DAILY QUOTE (date-seeded, no API dependency) ────────────────────────────
+function loadDailyQuote(){
+    const qEl = document.getElementById('brief-quote');
+    if(!qEl) return;
+    const quotes = [
+        {text:"Real artists ship.", author:"Steve Jobs"},
+        {text:"If you're not embarrassed by the first version of your product, you've launched too late.", author:"Reid Hoffman"},
+        {text:"The way to get started is to quit talking and begin doing.", author:"Walt Disney"},
+        {text:"It does not matter how slowly you go as long as you do not stop.", author:"Confucius"},
+        {text:"Chase the vision, not the money. The money will end up following you.", author:"Tony Hsieh"},
+        {text:"An entrepreneur is someone who jumps off a cliff and builds a plane on the way down.", author:"Reid Hoffman"},
+        {text:"The best time to plant a tree was 20 years ago. The second best time is now.", author:"Chinese Proverb"},
+        {text:"I never dreamed about success. I worked for it.", author:"Estée Lauder"},
+        {text:"Don't find customers for your products, find products for your customers.", author:"Seth Godin"},
+        {text:"Success is not final; failure is not fatal: it is the courage to continue that counts.", author:"Winston Churchill"},
+        {text:"Opportunities don't happen. You create them.", author:"Chris Grosser"},
+        {text:"It's not about ideas. It's about making ideas happen.", author:"Scott Belsky"},
+        {text:"The secret of getting ahead is getting started.", author:"Mark Twain"},
+        {text:"Your most unhappy customers are your greatest source of learning.", author:"Bill Gates"},
+        {text:"The harder I work, the luckier I get.", author:"Samuel Goldwyn"},
+        {text:"Don't be afraid to give up the good to go for the great.", author:"John D. Rockefeller"},
+        {text:"When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.", author:"Henry Ford"},
+        {text:"The only way to do great work is to love what you do.", author:"Steve Jobs"},
+        {text:"Success usually comes to those who are too busy to be looking for it.", author:"Henry David Thoreau"},
+        {text:"If you are not willing to risk the usual, you will have to settle for the ordinary.", author:"Jim Rohn"},
+        {text:"The first rule of any technology used in a business is that automation applied to an efficient operation will magnify the efficiency.", author:"Bill Gates"},
+        {text:"Your time is limited, so don't waste it living someone else's life.", author:"Steve Jobs"},
+        {text:"Price is what you pay. Value is what you get.", author:"Warren Buffett"},
+        {text:"If you can't explain it simply, you don't understand it well enough.", author:"Albert Einstein"},
+        {text:"Done is better than perfect.", author:"Sheryl Sandberg"},
+        {text:"A brand is no longer what we tell the consumer it is — it is what consumers tell each other it is.", author:"Scott Cook"},
+        {text:"Move fast and break things. Unless you are breaking stuff, you are not moving fast enough.", author:"Mark Zuckerberg"},
+        {text:"The best marketing doesn't feel like marketing.", author:"Tom Fishburne"},
+        {text:"Content is fire, social media is gasoline.", author:"Jay Baer"},
+        {text:"The biggest risk is not taking any risk.", author:"Mark Zuckerberg"},
+        {text:"Make every detail perfect and limit the number of details to perfect.", author:"Jack Dorsey"},
+        {text:"You miss 100% of the shots you don't take.", author:"Wayne Gretzky"},
+        {text:"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.", author:"Thomas Edison"},
+        {text:"Timing, perseverance, and ten years of trying will eventually make you look like an overnight success.", author:"Biz Stone"},
+        {text:"Without continual growth and progress, such words as improvement, achievement, and success have no meaning.", author:"Benjamin Franklin"},
+        {text:"The entrepreneur always searches for change, responds to it, and exploits it as an opportunity.", author:"Peter Drucker"},
+        {text:"Stop chasing the money and start chasing the passion.", author:"Tony Hsieh"},
+        {text:"Vision without execution is just hallucination.", author:"Henry Ford"},
+        {text:"Build something 100 people love, not something 1 million people kind of like.", author:"Brian Chesky"},
+        {text:"Ideas are easy. Implementation is hard.", author:"Guy Kawasaki"},
+        {text:"In the middle of every difficulty lies opportunity.", author:"Albert Einstein"},
+        {text:"If you really want to do something, you'll find a way. If you don't, you'll find an excuse.", author:"Jim Rohn"},
+        {text:"The best investment you can make is in yourself.", author:"Warren Buffett"},
+        {text:"You don't learn to walk by following rules. You learn by doing and by falling over.", author:"Richard Branson"},
+        {text:"Be undeniably good. No marketing effort or social media buzzword can be a substitute for that.", author:"Anthony Volodkin"},
+        {text:"Solve a real problem. Build a real product. Everything else is noise.", author:"Eric Ries"},
+        {text:"Sales cure all.", author:"Mark Cuban"},
+        {text:"Business has only two functions — marketing and innovation.", author:"Milan Kundera"},
+        {text:"People don't buy what you do; they buy why you do it.", author:"Simon Sinek"},
+        {text:"The goal of a startup is to figure out the right thing to build — the thing customers want.", author:"Eric Ries"},
+        {text:"Execution eats strategy for breakfast.", author:"Gary Vaynerchuk"},
+        {text:"Work like there is someone working 24 hours a day to take it all away from you.", author:"Mark Cuban"},
+        {text:"Revenue solves all known problems.", author:"Mark Cuban"},
+        {text:"Customers don't care about your solution. They care about their problems.", author:"Dave McClure"},
+        {text:"In God we trust. All others must bring data.", author:"W. Edwards Deming"},
+        {text:"What gets measured gets managed.", author:"Peter Drucker"},
+        {text:"Speed is the ultimate competitive advantage.", author:"Marc Andreessen"},
+        {text:"The riskiest thing you can do is play it safe.", author:"Seth Godin"},
+        {text:"You can't build a reputation on what you are going to do.", author:"Henry Ford"},
+        {text:"Entrepreneurship is living a few years of your life like most people won't, so that you can spend the rest of your life like most people can't.", author:"Unknown"},
+        {text:"An investment in knowledge pays the best interest.", author:"Benjamin Franklin"},
+        {text:"Whether you think you can or think you can't, you're right.", author:"Henry Ford"},
+        {text:"Champions keep playing until they get it right.", author:"Billie Jean King"},
+    ];
+    // Seed by today's date so it's consistent all day, changes each morning
+    const today = new Date();
+    const seed = today.getFullYear() * 10000 + (today.getMonth()+1) * 100 + today.getDate();
+    const idx = seed % quotes.length;
+    const q = quotes[idx];
+    qEl.innerHTML = `<blockquote>\u201c${q.text}\u201d<br><span style="color:var(--t3)">— ${q.author}</span></blockquote>`;
+}
+
 // Patch authCheck to load data after login
 const _origAuthCheck = authCheck;
 authCheck = async function(){
     await _origAuthCheck();
     if(sessionStorage.getItem('novaro_auth')==='1'){
         loadLiveData();
+        loadLiveWeather();
+        loadDailyQuote();
     }
 };
 </script>
