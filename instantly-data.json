@@ -1,23 +1,29 @@
 {
-  "lastUpdated": "2026-04-15T16:15:50Z",
+  "lastUpdated": "2026-04-15T16:17:44Z",
   "overview": {
-    "emails_sent_count": 711,
-    "contacted_count": 421,
-    "new_leads_contacted_count": 419,
     "open_count": 0,
     "open_count_unique": 0,
     "open_count_unique_by_step": 0,
+    "link_click_count": 0,
+    "link_click_count_unique": 0,
+    "link_click_count_unique_by_step": 0,
     "reply_count": 6,
     "reply_count_unique": 5,
     "reply_count_unique_by_step": 5,
     "reply_count_automatic": 4,
     "reply_count_automatic_unique": 3,
-    "link_click_count": 0,
-    "link_click_count_unique": 0,
-    "open_tracking_disabled": true,
+    "reply_count_automatic_unique_by_step": 4,
     "bounced_count": 7,
+    "unsubscribed_count": 0,
+    "emails_sent_count": 711,
+    "contacted_count": 421,
+    "new_leads_contacted_count": 419,
+    "total_opportunities": 2,
+    "total_opportunity_value": 2000,
     "total_interested": 2,
-    "total_opportunities": 2
+    "total_meeting_booked": 0,
+    "total_meeting_completed": 0,
+    "total_closed": 0
   },
   "daily": [
     {
