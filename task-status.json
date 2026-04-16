@@ -1,11 +1,11 @@
 {
   "overall_status": "alert",
-  "last_checked": "2026-04-16T22:14:27Z",
+  "last_checked": "2026-04-16T23:10:46Z",
   "alerts": [
     {
       "taskId": "fb-comment-replies",
       "severity": "HIGH",
-      "reason": "Last ran 18:39 UTC (2:39 PM ET). Current time 22:14 UTC (6:14 PM ET). Gap: ~3h35min — far exceeds 1-hour threshold during 9am–10pm ET window. ~7 expected 30-min runs missed since last run. ONGOING ISSUE — first flagged at 20:14 UTC check.",
+      "reason": "Last ran 14:39 ET (18:39 UTC). Current time 19:10 ET (23:10 UTC). Gap: ~4h31min — far exceeds 1-hour threshold during 9am–10pm ET window. ~9 expected 30-min runs missed since last run. ONGOING ISSUE — first flagged at 20:14 UTC check.",
       "lastRunAt": "2026-04-16T18:39:14Z"
     }
   ],
@@ -16,35 +16,35 @@
       "enabled": true,
       "lastRunAt": "2026-04-16T22:08:22Z",
       "nextRunAt": "2026-04-17T00:07:48Z",
-      "note": "Ran 18:08 ET today (~6min ago). 2hr cadence on track. Next 20:07 ET."
+      "note": "Ran 18:08 ET today (~62min ago). 2hr cadence on track. Next 20:07 ET."
     },
     "fb-comment-replies": {
       "status": "alert",
       "enabled": true,
       "lastRunAt": "2026-04-16T18:39:14Z",
-      "nextRunAt": "2026-04-16T22:38:43Z",
-      "note": "HIGH ALERT — last ran 14:39 ET. Gap now ~3h35min (threshold: 60 min). ~7 expected 30-min runs missed. Ongoing issue since 16:14 ET check."
+      "nextRunAt": "2026-04-16T23:38:43Z",
+      "note": "HIGH ALERT — last ran 14:39 ET. Gap now ~4h31min (threshold: 60 min). ~9 expected 30-min runs missed. Ongoing issue since 16:14 ET check. No new Notion entry logged (duplicate prevention)."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T22:06:10Z",
-      "nextRunAt": "2026-04-16T23:05:38Z",
-      "note": "Ran 18:06 ET today (~8min ago). Hourly cadence on track. Next 19:05 ET."
+      "lastRunAt": "2026-04-16T23:06:10Z",
+      "nextRunAt": "2026-04-17T00:05:38Z",
+      "note": "Ran 19:06 ET today (~4min ago). Hourly cadence on track. Next 20:05 ET."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T21:09:31Z",
-      "nextRunAt": "2026-04-16T23:08:15Z",
-      "note": "Ran 17:09 ET today (~1h5min ago). Under 2hr threshold. Next 19:08 ET."
+      "lastRunAt": "2026-04-16T22:17:31Z",
+      "nextRunAt": "2026-04-17T00:08:15Z",
+      "note": "Ran 18:17 ET today (~53min ago). Under 2hr threshold. Next 20:08 ET."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T22:13:32Z",
       "nextRunAt": "2026-04-17T00:09:37Z",
-      "note": "Ran 18:13 ET today (~1min ago). 2hr cadence on track. Next 20:09 ET."
+      "note": "Ran 18:13 ET today (~57min ago). 2hr cadence on track. Still within 8pm window. Next 20:09 ET."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -63,16 +63,16 @@
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T22:14:27Z",
-      "nextRunAt": "2026-04-16T23:09:57Z",
-      "note": "Current run at 18:14 ET. Healthy by definition. Next 19:09 ET."
+      "lastRunAt": "2026-04-16T23:10:29Z",
+      "nextRunAt": "2026-04-17T00:09:57Z",
+      "note": "Current run at 19:10 ET. Healthy by definition. Next 20:09 ET."
     },
     "instantly-account-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T20:16:31Z",
+      "lastRunAt": "2026-04-16T22:18:31Z",
       "nextRunAt": "2026-04-17T00:07:07Z",
-      "note": "Ran 16:16 ET today. Next scheduled 20:07 ET. Not in formal health table — monitoring informally."
+      "note": "Ran 18:18 ET today (~52min ago). 2hr cadence. Under threshold. Next 20:07 ET."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -98,9 +98,9 @@
     "replies-leads-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T19:13:31Z",
+      "lastRunAt": "2026-04-16T22:20:32Z",
       "nextRunAt": "2026-04-17T01:08:29Z",
-      "note": "Ran 15:13 ET today (~3h1min ago). Every 3 hours. On track. Next 21:08 ET."
+      "note": "Ran 18:20 ET today (~50min ago). Every 3 hours. On track. Next 21:08 ET."
     },
     "linkedin-outreach": {
       "status": "disabled",
