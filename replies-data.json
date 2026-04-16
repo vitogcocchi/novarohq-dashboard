@@ -1,13 +1,65 @@
 {
-  "lastUpdated": "2026-04-15T22:35:00Z",
+  "lastUpdated": "2026-04-16T00:15:58Z",
   "summary": {
     "total": 13,
-    "positive": 5,
+    "positive": 4,
     "negative": 2,
-    "auto": 2,
-    "pending": 4
+    "auto": 1,
+    "pending": 6
   },
   "replies": [
+    {
+      "id": "li-apr7-ramon-cruz",
+      "date": "April 7, 2026",
+      "channel": "LinkedIn",
+      "type": "positive",
+      "label": "Warm Lead",
+      "contact": "Ram\u00f3n Cruz",
+      "company": "Plumbing Business",
+      "preview": "Active thread: \"Thank you Vito. Keep you posted. Nice connecting with you.\" Follow-up question sent Apr 8. Has been 7+ days \u2014 send a soft check-in today.",
+      "status": "Follow Up Overdue",
+      "campaign": "LinkedIn Warm Lead",
+      "actionUrl": "https://www.linkedin.com/messaging/thread/2-YzNkZjM2NjQtOWJmOS00ZWJhLWExNjUtNjZkMWIzMzVhNTVlXzEwMA==/"
+    },
+    {
+      "id": "li-apr4-unknown-review",
+      "date": "April 4, 2026",
+      "channel": "LinkedIn",
+      "type": "pending",
+      "label": "Needs Review",
+      "contact": "Unknown",
+      "company": "",
+      "preview": "LinkedIn reply logged Apr 4 \u2014 open messaging to identify sender and classify. Personal message channel, worth 2 minutes.",
+      "status": "Needs Review",
+      "campaign": "LinkedIn DM",
+      "actionUrl": "https://www.linkedin.com/messaging/"
+    },
+    {
+      "id": "fb-apr9-pinkpenguin",
+      "date": "April 9, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Needs DM",
+      "contact": "PinkPenguin4672",
+      "company": "Facebook Group",
+      "preview": "Challenged Vito's post publicly. Vito replied on-thread. Follow up privately to turn a skeptic into a conversation \u2014 these often convert well.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1649519676322407/"
+    },
+    {
+      "id": "fb-apr9-brett-hutton",
+      "date": "April 9, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Needs DM",
+      "contact": "Brett Hutton",
+      "company": "Facebook Group",
+      "preview": "Word-of-mouth skeptic who replied publicly to a post. Vito responded publicly already. Follow up via DM to take the conversation private.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/569835660957486/search/?q=Vito%20Cocchi"
+    },
     {
       "id": "fb-apr8-mitch-jenkins",
       "date": "April 8, 2026",
@@ -16,49 +68,10 @@
       "label": "Hot Lead",
       "contact": "Mitch Jenkins",
       "company": "Junk Removal Owners",
-      "preview": "Explicit buying signal: \"it's worth at least having a conversation about it\" — after Vito's LSA dispute reply. Actively running LSAs. DM him now via the new FB account once it has messaging access.",
+      "preview": "Explicit buying signal: \"it's worth at least having a conversation about it\" \u2014 after Vito's LSA dispute reply. Actively running LSAs. DM him now via the new FB account once it has messaging access.",
       "status": "DM Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
-    },
-    {
-      "id": "fb-apr10-kyle-weaver",
-      "date": "April 10, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "Inbound DM",
-      "contact": "Kyle Weaver",
-      "company": "Personal DM",
-      "preview": "\"Hey man, saw one of your posts. You do LSAs?\" — He messaged YOU first, found in spam (originally sent Mar 23). Top priority — he asked by name. Check Facebook spam to reply.",
-      "status": "Awaiting Reply",
-      "campaign": "Facebook DM",
-      "actionUrl": "https://www.facebook.com/messages"
-    },
-    {
-      "id": "fb-apr10-jason-geiman",
-      "date": "April 10, 2026",
-      "channel": "Facebook",
-      "type": "positive",
-      "label": "Warm Lead",
-      "contact": "Jason Geiman",
-      "company": "Pressure Wash Community",
-      "preview": "Posted about slow missed call response — exact pain point Novaro AI solves. Commented publicly in Pressure Wash Community. Reply or DM with the AI receptionist angle.",
-      "status": "DM Needed",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
-    },
-    {
-      "id": "fb-apr10-evan-garcia",
-      "date": "April 10, 2026",
-      "channel": "Facebook",
-      "type": "positive",
-      "label": "Warm Lead",
-      "contact": "Evan Garcia",
-      "company": "Pressure Wash Community",
-      "preview": "Admitted 1-2hr call delays on same thread as Jason Geiman. Classic warm signal — acknowledged the problem out loud. DM directly or reply on thread.",
-      "status": "DM Needed",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
     },
     {
       "id": "fb-apr10-michael-wesson",
@@ -81,62 +94,49 @@
       "label": "Warm Contact",
       "contact": "Louis Montanari",
       "company": "Facebook Group",
-      "preview": "Personal connection who knows Vito's power washing work. Good trust baseline. DM with Novaro AI intro — low friction opener.",
+      "preview": "Personal connection who knows Vito's power washing work. Good trust baseline. DM with Novaro AI intro \u2014 low friction opener.",
       "status": "DM Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/2065648803685934/posts/4289472661303526"
     },
     {
-      "id": "fb-apr9-brett-hutton",
-      "date": "April 9, 2026",
+      "id": "fb-apr10-kyle-weaver",
+      "date": "April 10, 2026",
       "channel": "Facebook",
       "type": "pending",
-      "label": "Needs DM",
-      "contact": "Brett Hutton",
-      "company": "Facebook Group",
-      "preview": "Word-of-mouth skeptic who replied publicly to a post. Vito responded publicly already. Follow up via DM to take the conversation private.",
-      "status": "DM Needed",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/569835660957486/search/?q=Vito%20Cocchi"
+      "label": "Inbound DM",
+      "contact": "Kyle Weaver",
+      "company": "Personal DM",
+      "preview": "\"Hey man, saw one of your posts. You do LSAs?\" \u2014 He messaged YOU first, found in spam (originally sent Mar 23). Top priority \u2014 he asked by name. Check Facebook spam to reply.",
+      "status": "Awaiting Reply",
+      "campaign": "Facebook DM",
+      "actionUrl": "https://www.facebook.com/messages"
     },
     {
-      "id": "fb-apr9-pinkpenguin",
-      "date": "April 9, 2026",
+      "id": "fb-apr10-jason-geiman",
+      "date": "April 10, 2026",
       "channel": "Facebook",
-      "type": "pending",
-      "label": "Needs DM",
-      "contact": "PinkPenguin4672",
-      "company": "Facebook Group",
-      "preview": "Challenged Vito's post publicly. Vito replied on-thread. Follow up privately to turn a skeptic into a conversation — these often convert well.",
-      "status": "DM Needed",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1649519676322407/"
-    },
-    {
-      "id": "li-apr7-ramon-cruz",
-      "date": "April 7, 2026",
-      "channel": "LinkedIn",
       "type": "positive",
       "label": "Warm Lead",
-      "contact": "Ramón Cruz",
-      "company": "Plumbing Business",
-      "preview": "Active thread: \"Thank you Vito. Keep you posted. Nice connecting with you.\" Follow-up question sent Apr 8. Has been 7+ days — send a soft check-in today.",
-      "status": "Follow Up Overdue",
-      "campaign": "LinkedIn Warm Lead",
-      "actionUrl": "https://www.linkedin.com/messaging/thread/2-YzNkZjM2NjQtOWJmOS00ZWJhLWExNjUtNjZkMWIzMzVhNTVlXzEwMA==/"
+      "contact": "Jason Geiman",
+      "company": "Pressure Wash Community",
+      "preview": "Posted about slow missed call response \u2014 exact pain point Novaro AI solves. Commented publicly in Pressure Wash Community. Reply or DM with the AI receptionist angle.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
     },
     {
-      "id": "li-apr4-unknown-review",
-      "date": "April 4, 2026",
-      "channel": "LinkedIn",
-      "type": "pending",
-      "label": "Needs Review",
-      "contact": "Unknown",
-      "company": "",
-      "preview": "LinkedIn reply logged Apr 4 — open messaging to identify sender and classify. Personal message channel, worth 2 minutes.",
-      "status": "Needs Review",
-      "campaign": "LinkedIn DM",
-      "actionUrl": "https://www.linkedin.com/messaging/"
+      "id": "fb-apr10-evan-garcia",
+      "date": "April 10, 2026",
+      "channel": "Facebook",
+      "type": "positive",
+      "label": "Warm Lead",
+      "contact": "Evan Garcia",
+      "company": "Pressure Wash Community",
+      "preview": "Admitted 1-2hr call delays on same thread as Jason Geiman. Classic warm signal \u2014 acknowledged the problem out loud. DM directly or reply on thread.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
     },
     {
       "id": "em-apr9-virginia-levelcraft",
@@ -146,9 +146,9 @@
       "label": "Out of Office",
       "contact": "Virginia",
       "company": "Level Craft Atlanta",
-      "preview": "Out of office auto-reply. Re-engage when they return — put a reminder in calendar for +2 weeks.",
+      "preview": "Out of office auto-reply. Re-engage when they return \u2014 put a reminder in calendar for +2 weeks.",
       "status": "Revisit Later",
-      "campaign": "Novaro LSA — A/B Test",
+      "campaign": "Novaro LSA \u2014 A/B Test",
       "actionUrl": "https://app.instantly.ai"
     },
     {
@@ -159,9 +159,9 @@
       "label": "Not Interested",
       "contact": "David",
       "company": "Bear Home Service",
-      "preview": "Not interested — replied to remove. Sequence closed with courtesy note. No further action needed.",
+      "preview": "Not interested \u2014 replied to remove. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
-      "campaign": "Novaro LSA — A/B Test"
+      "campaign": "Novaro LSA \u2014 A/B Test"
     },
     {
       "id": "em-apr8-nick-usjetting",
@@ -171,9 +171,9 @@
       "label": "Not Interested",
       "contact": "Nick Woodhead",
       "company": "US Jetting",
-      "preview": "Not interested — tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
+      "preview": "Not interested \u2014 tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
-      "campaign": "Novaro LSA — A/B Test"
+      "campaign": "Novaro LSA \u2014 A/B Test"
     }
   ]
 }
