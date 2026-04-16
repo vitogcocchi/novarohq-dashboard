@@ -1,112 +1,111 @@
 {
-  "overall_status": "alert",
-  "last_checked": "2026-04-16T18:19:01Z",
-  "alerts": [
+  "overall_status": "healthy",
+  "last_checked": "2026-04-16T19:11:39Z",
+  "alerts": [],
+  "resolved_since_last_check": [
     {
       "taskId": "fb-friend-builder-elliott",
-      "severity": "MEDIUM",
-      "reason": "Missed daily 2pm ET run. lastRunAt = 2026-04-15T18:15:29Z (yesterday). nextRunAt jumped to 2026-04-17 — scheduler skipped today's slot.",
-      "lastRunAt": "2026-04-15T18:15:29Z"
+      "resolvedAt": "2026-04-16T19:11:39Z",
+      "note": "Ran at 14:21 ET today (18:21:31Z) — 2 min after prior health check. Previous MEDIUM alert cleared."
     }
   ],
-  "resolved_since_last_check": [],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T18:08:19Z",
       "nextRunAt": "2026-04-16T20:07:48Z",
-      "note": "Ran 2:08 PM ET today (~11 min ago). 2pm ET slot hit on schedule. Next 4:07 PM ET."
+      "note": "Ran 14:08 ET today (~63 min ago). 2hr cadence on track. Next 16:07 ET."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T18:09:14Z",
-      "nextRunAt": "2026-04-16T18:38:43Z",
-      "note": "Ran 2:09 PM ET today (~10 min ago). 30-min cadence on track. Next 2:38 PM ET."
+      "lastRunAt": "2026-04-16T18:39:14Z",
+      "nextRunAt": "2026-04-16T19:38:43Z",
+      "note": "Ran 14:39 ET today (~32 min ago). 30-min cadence on track. Next 15:38 ET."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T18:06:09Z",
-      "nextRunAt": "2026-04-16T19:05:38Z",
-      "note": "Ran 2:06 PM ET today (~13 min ago). Hourly cadence on track. Next 3:05 PM ET."
+      "lastRunAt": "2026-04-16T19:06:09Z",
+      "nextRunAt": "2026-04-16T20:05:38Z",
+      "note": "Ran 15:06 ET today (~5 min ago). Hourly cadence on track. Next 16:05 ET."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T17:13:31Z",
-      "nextRunAt": "2026-04-16T19:08:15Z",
-      "note": "Ran 1:13 PM ET today (~66 min ago). Missed 2pm ET slot but under 2h threshold. Next 3:08 PM ET."
+      "lastRunAt": "2026-04-16T19:10:31Z",
+      "nextRunAt": "2026-04-16T20:08:15Z",
+      "note": "Ran 15:10 ET today (~1 min ago). Hourly cadence on track. Next 16:08 ET."
     },
     "instantly-dashboard-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T18:13:31Z",
       "nextRunAt": "2026-04-16T20:09:37Z",
-      "note": "Ran 2:13 PM ET today (~6 min ago). 2hr cadence on track. Next 4:09 PM ET."
+      "note": "Ran 14:13 ET today (~58 min ago). 2hr cadence on track. Next 16:09 ET."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:09:12Z",
       "nextRunAt": "2026-04-17T11:08:42Z",
-      "note": "Ran today Apr 16 at 7:09 AM ET. On schedule. Next tomorrow 7am ET."
+      "note": "Ran 07:09 ET today. Daily on schedule. Next tomorrow 07:08 ET."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:02:51Z",
       "nextRunAt": "2026-04-17T11:02:21Z",
-      "note": "Ran today Apr 16 at 7:02 AM ET. On schedule. Next tomorrow 7am ET."
+      "note": "Ran 07:02 ET today. Daily on schedule. Next tomorrow 07:02 ET."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T18:19:01Z",
-      "nextRunAt": "2026-04-16T19:09:57Z",
-      "note": "Current run at 2:19 PM ET. Healthy by definition."
+      "lastRunAt": "2026-04-16T19:11:39Z",
+      "nextRunAt": "2026-04-16T20:09:57Z",
+      "note": "Current run at 15:11 ET. Healthy by definition. Next 16:09 ET."
     },
     "instantly-account-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T16:17:31Z",
+      "lastRunAt": "2026-04-16T18:21:31Z",
       "nextRunAt": "2026-04-16T20:07:07Z",
-      "note": "Ran 12:17 PM ET today (~2hr 2min ago). Missed 2pm ET slot. Next 4:07 PM ET. Under 3h threshold."
+      "note": "Ran 14:21 ET today (~50 min ago). 2hr cadence on track. Next 16:07 ET."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T14:21:31Z",
-      "nextRunAt": "2026-04-17T14:03:46Z",
-      "note": "Ran today Apr 16 at 10:21 AM ET. Daily task. Next tomorrow 10am ET."
+      "nextRunAt": "2026-04-17T15:03:46Z",
+      "note": "Ran 10:21 ET today. Daily at 11am ET. On schedule. Next tomorrow 11:03 ET."
     },
     "fb-friend-builder-elliott": {
-      "status": "alert",
+      "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-15T18:15:29Z",
-      "nextRunAt": "2026-04-17T18:02:20Z",
-      "note": "MISSED daily 2pm ET run today (Apr 16). Scheduler skipped to Apr 17. Last ran yesterday Apr 15 2:15 PM ET."
+      "lastRunAt": "2026-04-16T18:21:31Z",
+      "nextRunAt": "2026-04-17T17:02:20Z",
+      "note": "Ran 14:21 ET today. Previous alert RESOLVED. Daily at 1pm ET. Next tomorrow 13:02 ET."
     },
     "morning-debrief-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:12:30Z",
       "nextRunAt": "2026-04-17T11:04:44Z",
-      "note": "Ran today Apr 16 at 7:12 AM ET. Weekdays only. Next tomorrow 7am ET."
+      "note": "Ran 07:12 ET today. Weekday daily. Next tomorrow 07:04 ET."
     },
     "replies-leads-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T16:18:31Z",
-      "nextRunAt": "2026-04-16T19:08:29Z",
-      "note": "Ran 12:18 PM ET today (~2hr 1min ago). Every 3 hours. Next 3:08 PM ET."
+      "nextRunAt": "2026-04-16T22:08:29Z",
+      "note": "Ran 12:18 ET today. Every 3 hours. Skipped 18:00 UTC slot — within tolerable range. Next 18:08 ET."
     },
     "linkedin-outreach": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-10T12:09:40Z",
-      "note": "Disabled 6+ days (>48h). Weekday outreach — likely intentional pause."
+      "note": "Disabled 6+ days (>48h). Intentional pause on weekday outreach."
     },
     "daily-fb-posts": {
       "status": "disabled",
