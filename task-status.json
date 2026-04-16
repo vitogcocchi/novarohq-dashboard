@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-16T07:11:09Z",
+  "last_checked": "2026-04-16T08:10:44Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -44,21 +44,21 @@
       "enabled": true,
       "lastRunAt": "2026-04-15T11:09:10Z",
       "nextRunAt": "2026-04-16T11:08:42Z",
-      "note": "Ran Apr 15 at 7:09 AM ET — ~20h ago, within 26h threshold. Next run today at 7am ET."
+      "note": "Ran Apr 15 at 7:09 AM ET — ~21h ago, within 26h threshold. Next run today at 7am ET."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T11:02:49Z",
       "nextRunAt": "2026-04-16T11:02:21Z",
-      "note": "Ran Apr 15 at 7:02 AM ET — ~20h ago, within 26h threshold. Next run today at 7am ET."
+      "note": "Ran Apr 15 at 7:02 AM ET — ~21h ago, within 26h threshold. Next run today at 7am ET."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T07:11:09Z",
-      "nextRunAt": "2026-04-16T08:09:57Z",
-      "note": "Current run at 3:11 AM ET. Healthy by definition."
+      "lastRunAt": "2026-04-16T08:10:44Z",
+      "nextRunAt": "2026-04-16T09:09:57Z",
+      "note": "Current run at 4:10 AM ET. Healthy by definition."
     },
     "instantly-account-monitor": {
       "status": "healthy",
@@ -82,11 +82,11 @@
       "note": "Ran Apr 15 at 2:15 PM ET. Daily 2pm task on schedule. Next run today at 2pm ET."
     },
     "morning-debrief-sync": {
-      "status": "new",
+      "status": "healthy",
       "enabled": true,
       "lastRunAt": null,
       "nextRunAt": "2026-04-16T11:04:44Z",
-      "note": "New task — no lastRunAt yet. Weekday 7am ET. First run scheduled today (Thu Apr 16) at 7:04 AM ET."
+      "note": "New task — no lastRunAt yet. Weekday 7am ET. First run scheduled today (Thu Apr 16) at 7:04 AM ET. It is currently 4:10 AM ET, so no miss."
     },
     "linkedin-outreach": {
       "status": "disabled",
