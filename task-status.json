@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-16T03:11:25Z",
+  "last_checked": "2026-04-16T04:11:16Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -44,21 +44,21 @@
       "enabled": true,
       "lastRunAt": "2026-04-15T11:09:10Z",
       "nextRunAt": "2026-04-16T11:08:42Z",
-      "note": "Ran today at 7:09 AM ET — ~16h ago, within 26h threshold. Next run tomorrow 7am ET."
+      "note": "Ran Apr 15 at 7:09 AM ET — ~17h ago, within 26h threshold. Next run today at 7am ET."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T11:02:49Z",
       "nextRunAt": "2026-04-16T11:02:21Z",
-      "note": "Ran today at 7:02 AM ET — ~16h ago, within 26h threshold. Next run tomorrow 7am ET."
+      "note": "Ran Apr 15 at 7:02 AM ET — ~17h ago, within 26h threshold. Next run today at 7am ET."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T03:10:27Z",
-      "nextRunAt": "2026-04-16T04:09:57Z",
-      "note": "Current run at 11:10 PM ET. Healthy by definition."
+      "lastRunAt": "2026-04-16T04:10:27Z",
+      "nextRunAt": "2026-04-16T05:09:57Z",
+      "note": "Current run at 12:10 AM ET. Healthy by definition."
     },
     "instantly-account-monitor": {
       "status": "healthy",
@@ -72,21 +72,21 @@
       "enabled": true,
       "lastRunAt": "2026-04-15T14:18:29Z",
       "nextRunAt": "2026-04-16T14:03:46Z",
-      "note": "Ran today at 10:18 AM ET. Daily 10am task on schedule. Next run tomorrow 10am ET."
+      "note": "Ran Apr 15 at 10:18 AM ET. Daily 10am task on schedule. Next run today at 10am ET."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-15T18:15:29Z",
       "nextRunAt": "2026-04-16T18:02:20Z",
-      "note": "Ran today at 2:15 PM ET. Daily 2pm task on schedule. Next run tomorrow 2pm ET."
+      "note": "Ran Apr 15 at 2:15 PM ET. Daily 2pm task on schedule. Next run today at 2pm ET."
     },
     "morning-debrief-sync": {
       "status": "new",
       "enabled": true,
       "lastRunAt": null,
       "nextRunAt": "2026-04-16T11:04:44Z",
-      "note": "New task — no lastRunAt yet. Weekday 7am ET. First scheduled run tomorrow (Thu Apr 16) at 7:04 AM ET."
+      "note": "New task — no lastRunAt yet. Weekday 7am ET. First run scheduled today (Thu Apr 16) at 7:04 AM ET."
     },
     "linkedin-outreach": {
       "status": "disabled",
