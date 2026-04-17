@@ -1,49 +1,48 @@
 {
-  "overall_status": "alert",
-  "last_checked": "2026-04-17T11:13:22Z",
-  "alerts": [
+  "overall_status": "healthy",
+  "last_checked": "2026-04-17T12:12:10Z",
+  "alerts": [],
+  "resolved_since_last_check": [
     {
       "taskId": "morning-debrief-sync",
-      "severity": "MEDIUM",
-      "reason": "Missed scheduled run at 07:04 ET (11:04 UTC) on Friday Apr 17. lastRunAt still shows Apr 16. nextRunAt jumped to Mon Apr 20, suggesting the run was skipped or failed silently. Dashboard 'Today's Focus' may be stale.",
-      "lastRunAt": "2026-04-16T11:12:30Z"
+      "resolvedAt": "2026-04-17T12:12:10Z",
+      "note": "Previously missed 07:04 ET run on Apr 17. Now shows lastRunAt 2026-04-17T11:12:34Z (07:12 ET). Resolved."
     }
   ],
-  "resolved_since_last_check": [],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T02:08:21Z",
-      "nextRunAt": "2026-04-17T12:07:48Z",
-      "note": "Ran 22:08 ET (last run of yesterday's window). Before 8am-10pm ET window at check time (07:13 ET). Next 08:07 ET."
+      "lastRunAt": "2026-04-17T12:08:22Z",
+      "nextRunAt": "2026-04-17T14:07:48Z",
+      "note": "Ran 08:08 ET today. 4 min ago. Next 10:07 ET. Within 8am-10pm ET window."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T03:25:33Z",
       "nextRunAt": "2026-04-17T13:08:43Z",
-      "note": "Ran 23:25 ET yesterday. Outside 9am-10pm ET window at check time (07:13 ET). Next 09:08 ET."
+      "note": "Ran 23:25 ET yesterday. Outside 9am-10pm ET window at check time (08:12 ET). Next 09:08 ET."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T02:06:10Z",
       "nextRunAt": "2026-04-17T14:05:38Z",
-      "note": "Ran 22:06 ET yesterday. Outside 10am-10pm ET window at check time (07:13 ET). Next 10:05 ET."
+      "note": "Ran 22:06 ET yesterday. Outside 10am-10pm ET window at check time (08:12 ET). Next 10:05 ET."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T02:19:32Z",
       "nextRunAt": "2026-04-17T13:08:15Z",
-      "note": "Ran 22:19 ET yesterday. Before 8am-10pm ET window at check time (07:13 ET). First in-window fire at 09:08 ET."
+      "note": "Ran 22:19 ET yesterday. Before 9am ET first run (08:12 ET check). Next 09:08 ET."
     },
     "instantly-dashboard-sync": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-17T00:11:32Z",
-      "note": "Disabled. Last ran 20:11 ET Apr 16. Likely intentional pause."
+      "note": "Disabled. Last ran 20:11 ET Apr 16 (<24h ago). Recently disabled, <48 hours."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -62,37 +61,37 @@
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T11:13:22Z",
-      "nextRunAt": "2026-04-17T12:09:57Z",
-      "note": "Current run at 07:13 ET. Healthy by definition. Next 08:09 ET."
+      "lastRunAt": "2026-04-17T12:12:10Z",
+      "nextRunAt": "2026-04-17T13:09:57Z",
+      "note": "Current run at 08:12 ET. Healthy by definition. Next 09:09 ET."
     },
     "instantly-account-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T02:19:32Z",
-      "nextRunAt": "2026-04-17T12:07:07Z",
-      "note": "Ran 22:19 ET. Runs at 8am, 2pm, 8pm ET. Before window at 07:13 ET. Next 08:07 ET today."
+      "lastRunAt": "2026-04-17T12:07:41Z",
+      "nextRunAt": "2026-04-17T18:07:07Z",
+      "note": "Ran 08:07 ET today. Next 14:07 ET. Schedule 8am, 2pm, 8pm ET."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T19:11:31Z",
       "nextRunAt": "2026-04-17T15:03:46Z",
-      "note": "Ran 15:11 ET yesterday. Daily at 11am ET. On schedule. Next 11:03 ET today."
+      "note": "Ran 15:11 ET yesterday. Daily at 11am ET. ~17 hours ago. Next 11:03 ET today."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T18:21:31Z",
       "nextRunAt": "2026-04-17T17:02:20Z",
-      "note": "Ran 14:21 ET yesterday. Daily at 1pm ET. On schedule. Next 13:02 ET today."
+      "note": "Ran 14:21 ET yesterday. Daily at 1pm ET. ~18 hours ago. Next 13:02 ET today."
     },
     "morning-debrief-sync": {
-      "status": "alert",
+      "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T11:12:30Z",
+      "lastRunAt": "2026-04-17T11:12:34Z",
       "nextRunAt": "2026-04-20T11:04:44Z",
-      "note": "MISSED: Should have run 07:04 ET today (Fri Apr 17). lastRunAt unchanged from Apr 16. nextRunAt jumped to Mon Apr 20. Dashboard Today's Focus likely stale."
+      "note": "RESOLVED: Ran 07:12 ET today (Mon-Fri 7am). nextRunAt Mon Apr 20 is correct (skips weekend). Within 26hr threshold."
     },
     "replies-leads-sync": {
       "status": "disabled",
