@@ -1,14 +1,8 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-17T04:11:32Z",
+  "last_checked": "2026-04-17T05:10:50Z",
   "alerts": [],
-  "resolved_since_last_check": [
-    {
-      "taskId": "fb-comment-replies",
-      "resolution": "Previous HIGH alert resolved. Task ran at 03:25 UTC (23:25 ET) — late in the window cycle. Operating window now closed. No missed runs in current window.",
-      "resolvedAt": "2026-04-17T04:11:32Z"
-    }
-  ],
+  "resolved_since_last_check": [],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
@@ -22,7 +16,7 @@
       "enabled": true,
       "lastRunAt": "2026-04-17T03:25:33Z",
       "nextRunAt": "2026-04-17T13:08:43Z",
-      "note": "Ran 23:25 ET — late run after window, but task did execute. Previous HIGH alert resolved. Window closed. Next 09:08 ET today."
+      "note": "Ran 23:25 ET — outside window but task executed. Window closed. Next 09:08 ET today."
     },
     "facebook-scrape": {
       "status": "healthy",
@@ -42,28 +36,28 @@
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-17T00:11:32Z",
-      "note": "NEWLY DISABLED since last check (was enabled). Last ran 20:11 ET Apr 16. No error — likely intentional pause."
+      "note": "Disabled. Last ran 20:11 ET Apr 16. Likely intentional pause."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:09:12Z",
       "nextRunAt": "2026-04-17T11:08:42Z",
-      "note": "Ran 07:09 ET yesterday (~17h ago). Within 26hr threshold. Next 07:08 ET today."
+      "note": "Ran 07:09 ET yesterday (~18h ago). Within 26hr threshold. Next 07:08 ET today."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:02:51Z",
       "nextRunAt": "2026-04-17T11:02:21Z",
-      "note": "Ran 07:02 ET yesterday (~17h ago). Within 26hr threshold. Next 07:02 ET today."
+      "note": "Ran 07:02 ET yesterday (~18h ago). Within 26hr threshold. Next 07:02 ET today."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T04:11:32Z",
-      "nextRunAt": "2026-04-17T05:09:57Z",
-      "note": "Current run at 00:11 ET. Healthy by definition. Next 01:09 ET."
+      "lastRunAt": "2026-04-17T05:10:50Z",
+      "nextRunAt": "2026-04-17T06:09:57Z",
+      "note": "Current run at 01:10 ET. Healthy by definition. Next 02:09 ET."
     },
     "instantly-account-monitor": {
       "status": "healthy",
@@ -97,7 +91,7 @@
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-17T01:14:32Z",
-      "note": "NEWLY DISABLED since last check (was enabled). Last ran 21:14 ET Apr 16. No error — likely intentional."
+      "note": "Disabled. Last ran 21:14 ET Apr 16. Likely intentional consolidation into novaro-data-sync."
     },
     "linkedin-outreach": {
       "status": "disabled",
@@ -109,13 +103,13 @@
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T20:09:44Z",
-      "note": "Permanently replaced by fb-group-growth-elliott. ~5 days disabled. Intentional."
+      "note": "Permanently replaced by fb-group-growth-elliott. ~6 days disabled. Intentional."
     },
     "linkedin-scrape": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-11T18:12:10Z",
-      "note": "Disabled 5+ days (>48h). No active monitoring expected."
+      "note": "Disabled 6+ days (>48h). No active monitoring expected."
     },
     "fix-instantly-sync-now": {
       "status": "disabled",
