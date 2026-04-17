@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-04-17T01:15:21Z",
+  "lastUpdated": "2026-04-17T12:00:00Z",
   "summary": {
-    "total": 13,
+    "total": 15,
     "positive": 4,
     "negative": 2,
     "auto": 1,
-    "pending": 6
+    "pending": 8
   },
   "replies": [
     {
@@ -68,8 +68,8 @@
       "label": "Hot Lead",
       "contact": "Mitch Jenkins",
       "company": "Junk Removal Owners",
-      "preview": "Explicit buying signal: \"it's worth at least having a conversation about it\" \u2014 after Vito's LSA dispute reply. Actively running LSAs. DM him now via the new FB account once it has messaging access.",
-      "status": "DM Needed",
+      "preview": "Replied publicly: 'it\u2019s worth at least having a conversation about it' \u2014 explicit buying signal. Auto-reply posted walking through LSA account health. Awaiting his response to that thread. DM still not sent. Hot lead, follow up now.",
+      "status": "Replied - Follow Up Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
     },
@@ -174,6 +174,32 @@
       "preview": "Not interested \u2014 tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
       "campaign": "Novaro LSA \u2014 A/B Test"
+    },
+    {
+      "id": "fb-apr9-steve-alkayyali",
+      "date": "April 9, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Warm Lead",
+      "contact": "Steve Al-kayyali",
+      "company": "Pressure Washing Business Owners",
+      "preview": "Commented on Vito\u2019s LSA intro post \u2014 mentioned being Massachusetts-based. Vito replied publicly about remote LSA setup. No DM sent yet. Qualified signal, follow up with a DM.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/569835660957486/search/?q=Vito%20Cocchi"
+    },
+    {
+      "id": "fb-apr9-john-bustamante",
+      "date": "April 9, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Interest Signal",
+      "contact": "John Bustamante",
+      "company": "Junk Removal Owners",
+      "preview": "Liked Vito\u2019s post asking if junk removal owners are running Google LSAs. Engagement signal \u2014 awareness of LSA pain. No DM sent. Worth a short outreach to qualify.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/743797497428418/"
     }
   ]
 }
