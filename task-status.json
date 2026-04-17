@@ -1,47 +1,40 @@
 {
-  "last_checked": "2026-04-17T19:12:12Z",
-  "overall_status": "alert",
-  "alerts": [
-    {
-      "taskId": "novaro-data-sync",
-      "severity": "MEDIUM",
-      "reason": "Missed the 19:00 UTC (3pm ET) scheduled run. Last ran at 17:13 UTC (2h ago). nextRunAt jumped to 21:08 UTC — scheduler skipped the 19:00 slot. By the time it fires at 21:08, gap will be ~3h55m, exceeding the 2h alert threshold.",
-      "lastRunAt": "2026-04-17T17:13:34.503Z"
-    }
-  ],
+  "last_checked": "2026-04-17T20:14:38Z",
+  "overall_status": "healthy",
+  "alerts": [],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
-      "last_run": "2026-04-17T18:08:41.408Z",
-      "minutes_since_run": 63,
+      "last_run": "2026-04-17T20:08:41.906Z",
+      "minutes_since_run": 6,
       "threshold_minutes": 180,
-      "note": "Last ran 2:08 PM ET. Next at 4pm ET. Well within 3h threshold."
+      "note": "Last ran 4:08 PM ET. Next at 6pm ET. Well within 3h threshold."
     },
     "fb-comment-replies": {
       "status": "healthy",
-      "last_run": "2026-04-17T19:09:36.534Z",
-      "minutes_since_run": 3,
+      "last_run": "2026-04-17T20:09:36.680Z",
+      "minutes_since_run": 5,
       "threshold_minutes": 60,
-      "note": "Last ran 3:09 PM ET. Well within 1h threshold."
+      "note": "Last ran 4:09 PM ET. Well within 1h threshold."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-17T19:06:31.631Z",
-      "minutes_since_run": 6,
+      "last_run": "2026-04-17T20:06:31.672Z",
+      "minutes_since_run": 8,
       "threshold_minutes": 120,
-      "note": "Last ran 3:06 PM ET. Well within 2h threshold."
+      "note": "Last ran 4:06 PM ET. Well within 2h threshold."
     },
     "novaro-data-sync": {
-      "status": "alert",
-      "last_run": "2026-04-17T17:13:34.503Z",
-      "minutes_since_run": 119,
+      "status": "healthy",
+      "last_run": "2026-04-17T19:12:53.655Z",
+      "minutes_since_run": 62,
       "threshold_minutes": 120,
-      "note": "ALERT: Missed 3pm ET run. nextRunAt jumped to 5pm ET (21:08 UTC) — 19:00 slot was skipped. Gap will be ~3h55m by next fire, exceeding 2h threshold."
+      "note": "Ran at 3:12 PM ET (previously flagged 3pm slot — now confirmed resolved). Next at 5pm ET. Healthy."
     },
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "Disabled ~19 hours ago. Under 48h threshold."
+      "note": "Disabled ~20 hours ago. Under 48h threshold."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -55,7 +48,7 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-17T19:12:12Z",
+      "last_run": "2026-04-17T20:14:38Z",
       "note": "Current run. Healthy by definition."
     },
     "morning-debrief-sync": {
@@ -70,8 +63,8 @@
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
-      "last_run": "2026-04-17T17:14:34.511Z",
-      "note": "Ran today at 1:14 PM ET. Healthy."
+      "last_run": "2026-04-17T19:14:53.616Z",
+      "note": "Ran today at 3:14 PM ET. Healthy."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -81,7 +74,7 @@
     "instantly-account-monitor": {
       "status": "healthy",
       "last_run": "2026-04-17T18:16:53.419Z",
-      "note": "Ran today at 2:16 PM ET. Next at 4pm ET. Healthy."
+      "note": "Ran today at 2:16 PM ET. Next at 8pm ET. Healthy."
     },
     "novaro-campaign-filler": {
       "status": "new",
@@ -106,7 +99,7 @@
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "Disabled ~18 hours ago. Under 48h threshold."
+      "note": "Disabled ~19 hours ago. Under 48h threshold."
     }
   }
 }
