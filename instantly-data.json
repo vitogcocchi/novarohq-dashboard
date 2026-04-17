@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-17T21:19:47Z",
+  "lastUpdated": "2026-04-17T23:13:34Z",
   "overview": {
     "open_count": 0,
     "open_count_unique": 0,
@@ -7,10 +7,10 @@
     "link_click_count": 0,
     "link_click_count_unique": 0,
     "link_click_count_unique_by_step": 0,
-    "reply_count": 9,
-    "reply_count_unique": 7,
-    "reply_count_unique_by_step": 7,
-    "reply_count_automatic": 5,
+    "reply_count": 7,
+    "reply_count_unique": 5,
+    "reply_count_unique_by_step": 5,
+    "reply_count_automatic": 6,
     "reply_count_automatic_unique": 4,
     "reply_count_automatic_unique_by_step": 5,
     "bounced_count": 8,
@@ -243,10 +243,10 @@
       "new_leads_contacted": 61,
       "opened": 0,
       "unique_opened": 0,
-      "replies": 2,
-      "unique_replies": 2,
-      "replies_automatic": 0,
-      "unique_replies_automatic": 0,
+      "replies": 0,
+      "unique_replies": 0,
+      "replies_automatic": 1,
+      "unique_replies_automatic": 1,
       "clicks": 0,
       "unique_clicks": 0
     }
