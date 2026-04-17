@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-04-17T15:15:00Z",
+  "lastUpdated": "2026-04-17T17:15:30Z",
   "summary": {
-    "total": 15,
+    "total": 18,
     "positive": 4,
     "negative": 2,
     "auto": 1,
-    "pending": 8
+    "pending": 11
   },
   "replies": [
     {
@@ -94,7 +94,7 @@
       "label": "Hot Lead",
       "contact": "Mitch Jenkins",
       "company": "Junk Removal Owners",
-      "preview": "DM sent Apr 17 (~midnight ET): \"Hey Mitch — saw your comment...\" Awaiting reply. Original signal: replied publicly 'it\u2019s worth at least having a conversation about it' \u2014 explicit buying signal.",
+      "preview": "DM sent Apr 17 (~midnight ET): \"Hey Mitch \u2014 saw your comment...\" Awaiting reply. Original signal: replied publicly 'it\u2019s worth at least having a conversation about it' \u2014 explicit buying signal.",
       "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
@@ -133,7 +133,7 @@
       "label": "Inbound DM",
       "contact": "Kyle Weaver",
       "company": "Personal DM",
-      "preview": "DM sent Apr 17: \"Hey Kyle — yes we do LSAs...\" Awaiting reply. Original inbound: \"Hey man, saw one of your posts. You do LSAs?\" — he messaged first (found in spam, originally sent Mar 23).",
+      "preview": "DM sent Apr 17: \"Hey Kyle \u2014 yes we do LSAs...\" Awaiting reply. Original inbound: \"Hey man, saw one of your posts. You do LSAs?\" \u2014 he messaged first (found in spam, originally sent Mar 23).",
       "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook DM",
       "actionUrl": "https://www.facebook.com/messages"
@@ -159,10 +159,49 @@
       "label": "Warm Lead",
       "contact": "Evan Garcia",
       "company": "Pressure Wash Community",
-      "preview": "DM sent Apr 17: \"Hey Evan — saw your comment in pressure wash group about 1-2hr call delays...\" Awaiting reply. Original signal: admitted 1-2hr call delays \u2014 exact pain point.",
+      "preview": "DM sent Apr 17: \"Hey Evan \u2014 saw your comment in pressure wash group about 1-2hr call delays...\" Awaiting reply. Original signal: admitted 1-2hr call delays \u2014 exact pain point.",
       "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
+    },
+    {
+      "id": "fb-apr8-kevin-gillespie",
+      "date": "April 8, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Qualified Lead",
+      "contact": "Kevin Gillespie",
+      "company": "Junk Removal Owners",
+      "preview": "Replied publicly confirming the 7-min LSA dispute window. Runs LSAs for businesses — strong candidate. Vito replied inviting to connect and compare notes. No DM sent yet.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
+    },
+    {
+      "id": "fb-apr5-isaac-james-fernandez",
+      "date": "April 5, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "DM Sent",
+      "contact": "Isaac James Fernandez",
+      "company": "Pressure Washing Business Owners",
+      "preview": "DM sent Apr 5 after multiple failed attempts due to message limit. Signal: speed of quoting is key to closing. Awaiting reply.",
+      "status": "DM Sent - Awaiting Reply",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1653918065882568/"
+    },
+    {
+      "id": "fb-apr3-ryan-bailey",
+      "date": "April 3, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "DM Sent",
+      "contact": "Ryan Bailey",
+      "company": "Pressure Washing Business Owners",
+      "preview": "DM sent Apr 3. Signal: responds to leads in under 5 min via smartwatch — active LSA operator with fast follow-up habits. Qualified for Novaro AI pitch. Awaiting reply.",
+      "status": "DM Sent - Awaiting Reply",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1653918065882568/"
     },
     {
       "id": "em-apr9-virginia-levelcraft",
