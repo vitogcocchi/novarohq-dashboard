@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-17T21:20:50Z",
+  "lastUpdated": "2026-04-17T23:13:34Z",
   "summary": {
     "total": 22,
     "positive": 4,
@@ -87,6 +87,20 @@
       "actionUrl": "https://www.facebook.com/groups/569835660957486/search/?q=Vito%20Cocchi"
     },
     {
+      "id": "fb-apr8-ucr-interior-painting",
+      "date": "April 8, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Interest Signal",
+      "contact": "UCR Interior Painting",
+      "company": "Longmeadow MA Open Forum",
+      "preview": "Commented 'Interested' on Clear View Exterior Cleaning spring promo post. Home services contractor \u2014 strong Novaro AI prospect. DM blocked in automated runs (computer use unavailable). Needs manual DM.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/4231435036867882/posts/26696844846566914/",
+      "notionId": "LEAD-5"
+    },
+    {
       "id": "fb-apr8-mitch-jenkins",
       "date": "April 8, 2026",
       "channel": "Facebook",
@@ -98,6 +112,73 @@
       "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
+    },
+    {
+      "id": "fb-apr8-m-muzamil",
+      "date": "April 8, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Interest Signal",
+      "contact": "M Muzamil",
+      "company": "Junk Removal Owners",
+      "preview": "Liked Novaro AI LSA management post in Junk Removal Owners group. Low signal but junk removal business owner in target group. No DM sent yet.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/",
+      "notionId": "LEAD-8"
+    },
+    {
+      "id": "fb-apr8-kevin-gillespie",
+      "date": "April 8, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Qualified Lead",
+      "contact": "Kevin Gillespie",
+      "company": "Junk Removal Owners",
+      "preview": "Replied publicly confirming the 7-min LSA dispute window. Runs LSAs for businesses \u2014 strong candidate. Vito replied inviting to connect and compare notes. No DM sent yet.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
+    },
+    {
+      "id": "fb-apr5-isaac-james-fernandez",
+      "date": "April 5, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "DM Sent",
+      "contact": "Isaac James Fernandez",
+      "company": "Pressure Washing Business Owners",
+      "preview": "DM sent Apr 5 after multiple failed attempts due to message limit. Signal: speed of quoting is key to closing. Awaiting reply.",
+      "status": "DM Sent - Awaiting Reply",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1653918065882568/"
+    },
+    {
+      "id": "fb-apr4-simon-palmer",
+      "date": "April 4, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Interest Signal",
+      "contact": "Simon Palmer",
+      "company": "Window Cleaning Business Owners",
+      "preview": "Commented 'Auto' on booking automation post \u2014 strong signal he's actively looking for automation tools. DM blocked: non-friend messaging disabled. Vito must send a friend request at facebook.com/profile.php?id=100089708145209 to unblock.",
+      "status": "Blocked \u2014 Friend Request Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/windowcleaningbusinessowners/permalink/961880616530171/",
+      "notionId": "LEAD-4"
+    },
+    {
+      "id": "fb-apr3-ryan-bailey",
+      "date": "April 3, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "DM Sent",
+      "contact": "Ryan Bailey",
+      "company": "Pressure Washing Business Owners",
+      "preview": "DM sent Apr 3. Signal: responds to leads in under 5 min via smartwatch \u2014 active LSA operator with fast follow-up habits. Qualified for Novaro AI pitch. Awaiting reply.",
+      "status": "DM Sent - Awaiting Reply",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1653918065882568/"
     },
     {
       "id": "fb-apr10-michael-wesson",
@@ -165,43 +246,18 @@
       "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
     },
     {
-      "id": "fb-apr8-kevin-gillespie",
-      "date": "April 8, 2026",
+      "id": "fb-apr1-superior-commercial-cleaning",
+      "date": "April 1, 2026",
       "channel": "Facebook",
       "type": "pending",
-      "label": "Qualified Lead",
-      "contact": "Kevin Gillespie",
-      "company": "Junk Removal Owners",
-      "preview": "Replied publicly confirming the 7-min LSA dispute window. Runs LSAs for businesses \u2014 strong candidate. Vito replied inviting to connect and compare notes. No DM sent yet.",
-      "status": "DM Needed",
+      "label": "Interest Signal",
+      "contact": "Superior Commercial Cleaning LLC",
+      "company": "Commercial Cleaning Support Group",
+      "preview": "Tagged Vito in a photo in Commercial Cleaning Support Group. No Post URL on file \u2014 permanently blocked until Vito manually finds and adds the correct post URL to Notion.",
+      "status": "Blocked \u2014 Needs Post URL",
       "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
-    },
-    {
-      "id": "fb-apr5-isaac-james-fernandez",
-      "date": "April 5, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "DM Sent",
-      "contact": "Isaac James Fernandez",
-      "company": "Pressure Washing Business Owners",
-      "preview": "DM sent Apr 5 after multiple failed attempts due to message limit. Signal: speed of quoting is key to closing. Awaiting reply.",
-      "status": "DM Sent - Awaiting Reply",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1653918065882568/"
-    },
-    {
-      "id": "fb-apr3-ryan-bailey",
-      "date": "April 3, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "DM Sent",
-      "contact": "Ryan Bailey",
-      "company": "Pressure Washing Business Owners",
-      "preview": "DM sent Apr 3. Signal: responds to leads in under 5 min via smartwatch \u2014 active LSA operator with fast follow-up habits. Qualified for Novaro AI pitch. Awaiting reply.",
-      "status": "DM Sent - Awaiting Reply",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1653918065882568/"
+      "actionUrl": "",
+      "notionId": "LEAD-3"
     },
     {
       "id": "em-apr9-virginia-levelcraft",
@@ -239,62 +295,6 @@
       "preview": "Not interested \u2014 tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
       "campaign": "Novaro LSA \u2014 A/B Test"
-    },
-    {
-      "id": "fb-apr8-m-muzamil",
-      "date": "April 8, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "Interest Signal",
-      "contact": "M Muzamil",
-      "company": "Junk Removal Owners",
-      "preview": "Liked Novaro AI LSA management post in Junk Removal Owners group. Low signal but junk removal business owner in target group. No DM sent yet.",
-      "status": "DM Needed",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/",
-      "notionId": "LEAD-8"
-    },
-    {
-      "id": "fb-apr8-ucr-interior-painting",
-      "date": "April 8, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "Interest Signal",
-      "contact": "UCR Interior Painting",
-      "company": "Longmeadow MA Open Forum",
-      "preview": "Commented 'Interested' on Clear View Exterior Cleaning spring promo post. Home services contractor \u2014 strong Novaro AI prospect. DM blocked in automated runs (computer use unavailable). Needs manual DM.",
-      "status": "DM Needed",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/4231435036867882/posts/26696844846566914/",
-      "notionId": "LEAD-5"
-    },
-    {
-      "id": "fb-apr1-superior-commercial-cleaning",
-      "date": "April 1, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "Interest Signal",
-      "contact": "Superior Commercial Cleaning LLC",
-      "company": "Commercial Cleaning Support Group",
-      "preview": "Tagged Vito in a photo in Commercial Cleaning Support Group. No Post URL on file \u2014 permanently blocked until Vito manually finds and adds the correct post URL to Notion.",
-      "status": "Blocked \u2014 Needs Post URL",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "",
-      "notionId": "LEAD-3"
-    },
-    {
-      "id": "fb-apr4-simon-palmer",
-      "date": "April 4, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "Interest Signal",
-      "contact": "Simon Palmer",
-      "company": "Window Cleaning Business Owners",
-      "preview": "Commented 'Auto' on booking automation post \u2014 strong signal he's actively looking for automation tools. DM blocked: non-friend messaging disabled. Vito must send a friend request at facebook.com/profile.php?id=100089708145209 to unblock.",
-      "status": "Blocked \u2014 Friend Request Needed",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/windowcleaningbusinessowners/permalink/961880616530171/",
-      "notionId": "LEAD-4"
     }
   ]
 }
