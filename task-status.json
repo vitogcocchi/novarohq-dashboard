@@ -1,116 +1,113 @@
 {
-  "overall_status": "alert",
-  "last_checked": "2026-04-17T15:12:04Z",
-  "alerts": [
+  "overall_status": "healthy",
+  "last_checked": "2026-04-17T16:16:28Z",
+  "alerts": [],
+  "resolved_since_last_check": [
     {
       "taskId": "fb-group-growth-elliott",
-      "severity": "HIGH",
-      "reason": "Missed daily 11am ET run (due at 15:03 UTC). lastRunAt was yesterday Apr 16 at 15:11 UTC. nextRunAt has jumped to TOMORROW Apr 18 — skipped today entirely.",
-      "lastRunAt": "2026-04-16T19:11:31Z"
+      "resolvedAt": "2026-04-17T16:16:28Z",
+      "note": "Previous alert cleared — task ran at 11:11 AM ET today (15:11 UTC)."
     },
     {
       "taskId": "instantly-account-monitor",
-      "severity": "HIGH",
-      "reason": "Missed 10am ET run (due at 14:07 UTC). It is now 15:12 UTC — over 1hr overdue. nextRunAt jumped to 18:07 UTC (2pm ET), skipping the 14:00 slot.",
-      "lastRunAt": "2026-04-17T12:07:41Z"
+      "resolvedAt": "2026-04-17T16:16:28Z",
+      "note": "Previous alert cleared — 8am ET run confirmed at 12:07 UTC. Next run 2pm ET (18:07 UTC) not yet due."
     },
     {
       "taskId": "novaro-data-sync",
-      "severity": "MEDIUM",
-      "reason": "Missed 11am ET run (due at 15:08 UTC). It is now 15:12 UTC. nextRunAt jumped from 15:08 to 17:08 UTC — skipped the 15:00 slot. 2h03m since last run, exceeds 2hr threshold.",
-      "lastRunAt": "2026-04-17T13:08:49Z"
+      "resolvedAt": "2026-04-17T16:16:28Z",
+      "note": "Previous alert cleared — task ran at 11:11 AM ET today (15:11 UTC). Within 2hr threshold."
     }
   ],
-  "resolved_since_last_check": [],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T14:08:22Z",
-      "nextRunAt": "2026-04-17T16:07:48Z",
-      "note": "Ran 10:08 ET today. ~1h04m ago. Every 2hrs (8am-10pm ET). Within 3hr threshold. Next 12:07 ET."
+      "lastRunAt": "2026-04-17T16:08:22Z",
+      "nextRunAt": "2026-04-17T18:07:48Z",
+      "note": "Ran 12:08 PM ET today (~8 min ago). Every 2hrs (8am-10pm ET). Well within 3hr threshold. Next 2:07 PM ET."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T15:09:17Z",
-      "nextRunAt": "2026-04-17T15:38:43Z",
-      "note": "Ran 11:09 ET today. 3 min ago. Window active (9am-10pm ET). Next ~11:38 ET."
+      "lastRunAt": "2026-04-17T16:09:17Z",
+      "nextRunAt": "2026-04-17T16:38:43Z",
+      "note": "Ran 12:09 PM ET (~7 min ago). Every 30 min (9am-10pm ET). Well within 1hr threshold. Next 12:38 PM ET."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T15:06:12Z",
-      "nextRunAt": "2026-04-17T16:05:38Z",
-      "note": "Ran 11:06 ET today. 6 min ago. Window active (10am-10pm ET). Next 12:05 ET."
+      "lastRunAt": "2026-04-17T16:06:12Z",
+      "nextRunAt": "2026-04-17T17:05:38Z",
+      "note": "Ran 12:06 PM ET (~10 min ago). Hourly (10am-10pm ET). Well within 2hr threshold. Next 1:05 PM ET."
     },
     "novaro-data-sync": {
-      "status": "alert",
+      "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T13:08:49Z",
+      "lastRunAt": "2026-04-17T15:11:34Z",
       "nextRunAt": "2026-04-17T17:08:15Z",
-      "note": "ALERT: Missed 11am ET run (15:00 UTC slot). 2h03m since last run — exceeds 2hr threshold. nextRunAt jumped from 15:08 to 17:08 UTC. Next expected 1:08 ET."
+      "note": "Ran 11:11 AM ET today (~1h05m ago). Odd-hour schedule (9,11,13,15,17,19,21 UTC). Within 2hr threshold. Next 1:08 PM ET."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T11:09:16Z",
       "nextRunAt": "2026-04-18T11:08:42Z",
-      "note": "Ran 07:09 ET today. ~4hrs ago. Within 26hr threshold. Next 07:08 ET tomorrow."
+      "note": "Ran 7:09 AM ET today. ~5h07m ago. Well within 26hr threshold. Next 7:08 AM ET tomorrow."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T11:02:54Z",
       "nextRunAt": "2026-04-18T11:02:21Z",
-      "note": "Ran 07:02 ET today. ~4hrs ago. Within 26hr threshold. Next 07:02 ET tomorrow."
+      "note": "Ran 7:02 AM ET today. ~5h14m ago. Well within 26hr threshold. Next 7:02 AM ET tomorrow."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T15:12:04Z",
-      "nextRunAt": "2026-04-17T16:09:57Z",
-      "note": "Current run at 11:12 ET. Healthy by definition. Next 12:09 ET."
-    },
-    "instantly-account-monitor": {
-      "status": "alert",
-      "enabled": true,
-      "lastRunAt": "2026-04-17T12:07:41Z",
-      "nextRunAt": "2026-04-17T18:07:07Z",
-      "note": "ALERT: Missed 10am ET run (14:00 UTC slot). nextRunAt jumped to 18:07 UTC (2pm ET). Over 1hr overdue. Runs at 8am, 2pm, 8pm ET."
-    },
-    "morning-debrief-sync": {
-      "status": "healthy",
-      "enabled": true,
-      "lastRunAt": "2026-04-17T11:12:34Z",
-      "nextRunAt": "2026-04-20T11:04:44Z",
-      "note": "Ran 07:12 ET today (Mon-Fri 7am). nextRunAt Mon Apr 20 correct (weekend skip)."
+      "lastRunAt": "2026-04-17T16:16:28Z",
+      "nextRunAt": "2026-04-17T17:09:57Z",
+      "note": "Current run at 12:16 PM ET. Healthy by definition. Next ~1:09 PM ET."
     },
     "fb-group-growth-elliott": {
-      "status": "alert",
+      "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T19:11:31Z",
+      "lastRunAt": "2026-04-17T15:11:34Z",
       "nextRunAt": "2026-04-18T15:03:46Z",
-      "note": "ALERT: Missed daily 11am ET run today. lastRunAt was yesterday Apr 16 at 3:11pm ET. nextRunAt is TOMORROW Apr 18 — skipped today entirely. Daily cron at 11am ET (15:00 UTC)."
+      "note": "Ran 11:11 AM ET today. Daily 11am ET cron confirmed. RESOLVED from previous alert. Next run tomorrow."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T18:21:31Z",
       "nextRunAt": "2026-04-17T17:02:20Z",
-      "note": "Ran 14:21 ET yesterday. Daily at 1pm ET. Next 13:02 ET today. Not yet due."
+      "note": "Last ran 2:21 PM ET yesterday. Daily at 1pm ET (17:02 UTC). Not yet due today (current 12:16 PM ET). Next 1:02 PM ET today."
+    },
+    "instantly-account-monitor": {
+      "status": "healthy",
+      "enabled": true,
+      "lastRunAt": "2026-04-17T12:07:41Z",
+      "nextRunAt": "2026-04-17T18:07:07Z",
+      "note": "Ran 8:07 AM ET today. Runs at 8am, 2pm, 8pm ET (every 6hrs). Next run 2pm ET not yet due. RESOLVED from previous alert."
+    },
+    "morning-debrief-sync": {
+      "status": "healthy",
+      "enabled": true,
+      "lastRunAt": "2026-04-17T11:12:34Z",
+      "nextRunAt": "2026-04-20T11:04:44Z",
+      "note": "Ran 7:12 AM ET today (Mon-Fri 7am). nextRunAt Mon Apr 20 correct — weekend skip."
     },
     "instantly-dashboard-sync": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-17T00:11:32Z",
-      "note": "Disabled. Last ran 20:11 ET Apr 16 (~19h ago). Still under 48h disabled threshold."
+      "note": "Disabled. Last ran 8:11 PM ET Apr 16 (~16h ago). Under 48h disabled threshold."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-17T01:14:32Z",
-      "note": "Disabled. Last ran 21:14 ET Apr 16. Intentional consolidation into novaro-data-sync."
+      "note": "Disabled. Last ran 9:14 PM ET Apr 16 (~15h ago). Consolidated into novaro-data-sync."
     },
     "linkedin-outreach": {
       "status": "disabled",
