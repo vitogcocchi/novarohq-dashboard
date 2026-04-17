@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-17T12:00:00Z",
+  "lastUpdated": "2026-04-17T15:15:00Z",
   "summary": {
     "total": 15,
     "positive": 4,
@@ -35,6 +35,19 @@
       "actionUrl": "https://www.linkedin.com/messaging/"
     },
     {
+      "id": "fb-apr9-steve-alkayyali",
+      "date": "April 9, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Warm Lead",
+      "contact": "Steve Al-kayyali",
+      "company": "Pressure Washing Business Owners",
+      "preview": "Commented on Vito\u2019s LSA intro post \u2014 mentioned being Massachusetts-based. Vito replied publicly about remote LSA setup. No DM sent yet. Qualified signal, follow up with a DM.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/569835660957486/search/?q=Vito%20Cocchi"
+    },
+    {
       "id": "fb-apr9-pinkpenguin",
       "date": "April 9, 2026",
       "channel": "Facebook",
@@ -46,6 +59,19 @@
       "status": "DM Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1649519676322407/"
+    },
+    {
+      "id": "fb-apr9-john-bustamante",
+      "date": "April 9, 2026",
+      "channel": "Facebook",
+      "type": "pending",
+      "label": "Interest Signal",
+      "contact": "John Bustamante",
+      "company": "Junk Removal Owners",
+      "preview": "Liked Vito\u2019s post asking if junk removal owners are running Google LSAs. Engagement signal \u2014 awareness of LSA pain. No DM sent. Worth a short outreach to qualify.",
+      "status": "DM Needed",
+      "campaign": "Facebook Group Post",
+      "actionUrl": "https://www.facebook.com/groups/743797497428418/"
     },
     {
       "id": "fb-apr9-brett-hutton",
@@ -68,8 +94,8 @@
       "label": "Hot Lead",
       "contact": "Mitch Jenkins",
       "company": "Junk Removal Owners",
-      "preview": "Replied publicly: 'it\u2019s worth at least having a conversation about it' \u2014 explicit buying signal. Auto-reply posted walking through LSA account health. Awaiting his response to that thread. DM still not sent. Hot lead, follow up now.",
-      "status": "Replied - Follow Up Needed",
+      "preview": "DM sent Apr 17 (~midnight ET): \"Hey Mitch — saw your comment...\" Awaiting reply. Original signal: replied publicly 'it\u2019s worth at least having a conversation about it' \u2014 explicit buying signal.",
+      "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
     },
@@ -107,8 +133,8 @@
       "label": "Inbound DM",
       "contact": "Kyle Weaver",
       "company": "Personal DM",
-      "preview": "\"Hey man, saw one of your posts. You do LSAs?\" \u2014 He messaged YOU first, found in spam (originally sent Mar 23). Top priority \u2014 he asked by name. Check Facebook spam to reply.",
-      "status": "Awaiting Reply",
+      "preview": "DM sent Apr 17: \"Hey Kyle — yes we do LSAs...\" Awaiting reply. Original inbound: \"Hey man, saw one of your posts. You do LSAs?\" — he messaged first (found in spam, originally sent Mar 23).",
+      "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook DM",
       "actionUrl": "https://www.facebook.com/messages"
     },
@@ -120,8 +146,8 @@
       "label": "Warm Lead",
       "contact": "Jason Geiman",
       "company": "Pressure Wash Community",
-      "preview": "Posted about slow missed call response \u2014 exact pain point Novaro AI solves. Commented publicly in Pressure Wash Community. Reply or DM with the AI receptionist angle.",
-      "status": "DM Needed",
+      "preview": "DM sent Apr 17: \"Worth a 15-min call to walk through how it works?\" Awaiting reply. Original signal: posted about slow missed call response \u2014 exact pain point Novaro AI solves.",
+      "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
     },
@@ -133,8 +159,8 @@
       "label": "Warm Lead",
       "contact": "Evan Garcia",
       "company": "Pressure Wash Community",
-      "preview": "Admitted 1-2hr call delays on same thread as Jason Geiman. Classic warm signal \u2014 acknowledged the problem out loud. DM directly or reply on thread.",
-      "status": "DM Needed",
+      "preview": "DM sent Apr 17: \"Hey Evan — saw your comment in pressure wash group about 1-2hr call delays...\" Awaiting reply. Original signal: admitted 1-2hr call delays \u2014 exact pain point.",
+      "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
     },
@@ -174,32 +200,6 @@
       "preview": "Not interested \u2014 tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
       "campaign": "Novaro LSA \u2014 A/B Test"
-    },
-    {
-      "id": "fb-apr9-steve-alkayyali",
-      "date": "April 9, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "Warm Lead",
-      "contact": "Steve Al-kayyali",
-      "company": "Pressure Washing Business Owners",
-      "preview": "Commented on Vito\u2019s LSA intro post \u2014 mentioned being Massachusetts-based. Vito replied publicly about remote LSA setup. No DM sent yet. Qualified signal, follow up with a DM.",
-      "status": "DM Needed",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/569835660957486/search/?q=Vito%20Cocchi"
-    },
-    {
-      "id": "fb-apr9-john-bustamante",
-      "date": "April 9, 2026",
-      "channel": "Facebook",
-      "type": "pending",
-      "label": "Interest Signal",
-      "contact": "John Bustamante",
-      "company": "Junk Removal Owners",
-      "preview": "Liked Vito\u2019s post asking if junk removal owners are running Google LSAs. Engagement signal \u2014 awareness of LSA pain. No DM sent. Worth a short outreach to qualify.",
-      "status": "DM Needed",
-      "campaign": "Facebook Group Post",
-      "actionUrl": "https://www.facebook.com/groups/743797497428418/"
     }
   ]
 }
