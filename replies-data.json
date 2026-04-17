@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-17T19:16:19Z",
+  "lastUpdated": "2026-04-17T21:20:50Z",
   "summary": {
     "total": 22,
     "positive": 4,
@@ -14,9 +14,9 @@
       "channel": "LinkedIn",
       "type": "positive",
       "label": "Warm Lead",
-      "contact": "Ramón Cruz",
+      "contact": "Ram\u00f3n Cruz",
       "company": "Plumbing Business",
-      "preview": "Follow-up sent Apr 17 — pivoted to AI receptionist angle (700 apartments). Awaiting reply.",
+      "preview": "Follow-up sent Apr 17 \u2014 pivoted to AI receptionist angle (700 apartments). Awaiting reply.",
       "status": "Follow Up Sent - Awaiting Reply",
       "campaign": "LinkedIn Warm Lead",
       "actionUrl": "https://www.linkedin.com/messaging/thread/2-YzNkZjM2NjQtOWJmOS00ZWJhLWExNjUtNjZkMWIzMzVhNTVlXzEwMA==/"
@@ -29,7 +29,7 @@
       "label": "Needs Review",
       "contact": "Unknown",
       "company": "",
-      "preview": "Investigated Apr 17 — no unidentified lead found in LinkedIn inbox. Likely was Ramón Cruz Apr 4 reply, already handled.",
+      "preview": "Investigated Apr 17 \u2014 no unidentified lead found in LinkedIn inbox. Likely was Ram\u00f3n Cruz Apr 4 reply, already handled.",
       "status": "Reviewed - No Action Needed",
       "campaign": "LinkedIn DM",
       "actionUrl": "https://www.linkedin.com/messaging/"
@@ -42,7 +42,7 @@
       "label": "Warm Lead",
       "contact": "Steve Al-kayyali",
       "company": "Pressure Washing Business Owners",
-      "preview": "Commented on Vito’s LSA intro post — mentioned being Massachusetts-based. Vito replied publicly about remote LSA setup. No DM sent yet. Qualified signal, follow up with a DM.",
+      "preview": "Commented on Vito\u2019s LSA intro post \u2014 mentioned being Massachusetts-based. Vito replied publicly about remote LSA setup. No DM sent yet. Qualified signal, follow up with a DM.",
       "status": "DM Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/569835660957486/search/?q=Vito%20Cocchi"
@@ -55,7 +55,7 @@
       "label": "Needs DM",
       "contact": "PinkPenguin4672",
       "company": "Facebook Group",
-      "preview": "Challenged Vito's post publicly. Vito replied on-thread. Follow up privately to turn a skeptic into a conversation — these often convert well.",
+      "preview": "Challenged Vito's post publicly. Vito replied on-thread. Follow up privately to turn a skeptic into a conversation \u2014 these often convert well.",
       "status": "DM Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1649519676322407/"
@@ -68,7 +68,7 @@
       "label": "Interest Signal",
       "contact": "John Bustamante",
       "company": "Junk Removal Owners",
-      "preview": "Liked Vito’s post asking if junk removal owners are running Google LSAs. Engagement signal — awareness of LSA pain. No DM sent. Worth a short outreach to qualify.",
+      "preview": "Liked Vito\u2019s post asking if junk removal owners are running Google LSAs. Engagement signal \u2014 awareness of LSA pain. No DM sent. Worth a short outreach to qualify.",
       "status": "DM Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/743797497428418/"
@@ -94,7 +94,7 @@
       "label": "Hot Lead",
       "contact": "Mitch Jenkins",
       "company": "Junk Removal Owners",
-      "preview": "DM sent Apr 17 (~midnight ET): \"Hey Mitch — saw your comment...\" Awaiting reply. Original signal: replied publicly 'it’s worth at least having a conversation about it' — explicit buying signal.",
+      "preview": "DM sent Apr 17 (~midnight ET): \"Hey Mitch \u2014 saw your comment...\" Awaiting reply. Original signal: replied publicly 'it\u2019s worth at least having a conversation about it' \u2014 explicit buying signal.",
       "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
@@ -120,7 +120,7 @@
       "label": "Warm Contact",
       "contact": "Louis Montanari",
       "company": "Facebook Group",
-      "preview": "Personal friend of Vito — do NOT send automated DM. Vito will reach out personally when the time is right.",
+      "preview": "Personal friend of Vito \u2014 do NOT send automated DM. Vito will reach out personally when the time is right.",
       "status": "Skip - Friend of Vito",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/2065648803685934/posts/4289472661303526"
@@ -133,7 +133,7 @@
       "label": "Inbound DM",
       "contact": "Kyle Weaver",
       "company": "Personal DM",
-      "preview": "DM sent Apr 17: \"Hey Kyle — yes we do LSAs...\" Awaiting reply. Original inbound: \"Hey man, saw one of your posts. You do LSAs?\" — he messaged first (found in spam, originally sent Mar 23).",
+      "preview": "DM sent Apr 17: \"Hey Kyle \u2014 yes we do LSAs...\" Awaiting reply. Original inbound: \"Hey man, saw one of your posts. You do LSAs?\" \u2014 he messaged first (found in spam, originally sent Mar 23).",
       "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook DM",
       "actionUrl": "https://www.facebook.com/messages"
@@ -146,7 +146,7 @@
       "label": "Warm Lead",
       "contact": "Jason Geiman",
       "company": "Pressure Wash Community",
-      "preview": "DM sent Apr 17: \"Worth a 15-min call to walk through how it works?\" Awaiting reply. Original signal: posted about slow missed call response — exact pain point Novaro AI solves.",
+      "preview": "DM sent Apr 17: \"Worth a 15-min call to walk through how it works?\" Awaiting reply. Original signal: posted about slow missed call response \u2014 exact pain point Novaro AI solves.",
       "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
@@ -159,7 +159,7 @@
       "label": "Warm Lead",
       "contact": "Evan Garcia",
       "company": "Pressure Wash Community",
-      "preview": "DM sent Apr 17: \"Hey Evan — saw your comment in pressure wash group about 1-2hr call delays...\" Awaiting reply. Original signal: admitted 1-2hr call delays — exact pain point.",
+      "preview": "DM sent Apr 17: \"Hey Evan \u2014 saw your comment in pressure wash group about 1-2hr call delays...\" Awaiting reply. Original signal: admitted 1-2hr call delays \u2014 exact pain point.",
       "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/pressurewashcommunity/posts/2033158700891908"
@@ -172,7 +172,7 @@
       "label": "Qualified Lead",
       "contact": "Kevin Gillespie",
       "company": "Junk Removal Owners",
-      "preview": "Replied publicly confirming the 7-min LSA dispute window. Runs LSAs for businesses — strong candidate. Vito replied inviting to connect and compare notes. No DM sent yet.",
+      "preview": "Replied publicly confirming the 7-min LSA dispute window. Runs LSAs for businesses \u2014 strong candidate. Vito replied inviting to connect and compare notes. No DM sent yet.",
       "status": "DM Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/743797497428418/posts/1426946132446881/"
@@ -198,7 +198,7 @@
       "label": "DM Sent",
       "contact": "Ryan Bailey",
       "company": "Pressure Washing Business Owners",
-      "preview": "DM sent Apr 3. Signal: responds to leads in under 5 min via smartwatch — active LSA operator with fast follow-up habits. Qualified for Novaro AI pitch. Awaiting reply.",
+      "preview": "DM sent Apr 3. Signal: responds to leads in under 5 min via smartwatch \u2014 active LSA operator with fast follow-up habits. Qualified for Novaro AI pitch. Awaiting reply.",
       "status": "DM Sent - Awaiting Reply",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/569835660957486/posts/1653918065882568/"
@@ -211,9 +211,9 @@
       "label": "Out of Office",
       "contact": "Virginia",
       "company": "Level Craft Atlanta",
-      "preview": "Out of office auto-reply. Re-engage when they return — put a reminder in calendar for +2 weeks.",
+      "preview": "Out of office auto-reply. Re-engage when they return \u2014 put a reminder in calendar for +2 weeks.",
       "status": "Revisit Later",
-      "campaign": "Novaro LSA — A/B Test",
+      "campaign": "Novaro LSA \u2014 A/B Test",
       "actionUrl": "https://app.instantly.ai"
     },
     {
@@ -224,9 +224,9 @@
       "label": "Not Interested",
       "contact": "David",
       "company": "Bear Home Service",
-      "preview": "Not interested — replied to remove. Sequence closed with courtesy note. No further action needed.",
+      "preview": "Not interested \u2014 replied to remove. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
-      "campaign": "Novaro LSA — A/B Test"
+      "campaign": "Novaro LSA \u2014 A/B Test"
     },
     {
       "id": "em-apr8-nick-usjetting",
@@ -236,9 +236,9 @@
       "label": "Not Interested",
       "contact": "Nick Woodhead",
       "company": "US Jetting",
-      "preview": "Not interested — tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
+      "preview": "Not interested \u2014 tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
-      "campaign": "Novaro LSA — A/B Test"
+      "campaign": "Novaro LSA \u2014 A/B Test"
     },
     {
       "id": "fb-apr8-m-muzamil",
@@ -262,7 +262,7 @@
       "label": "Interest Signal",
       "contact": "UCR Interior Painting",
       "company": "Longmeadow MA Open Forum",
-      "preview": "Commented 'Interested' on Clear View Exterior Cleaning spring promo post. Home services contractor — strong Novaro AI prospect. DM blocked in automated runs (computer use unavailable). Needs manual DM.",
+      "preview": "Commented 'Interested' on Clear View Exterior Cleaning spring promo post. Home services contractor \u2014 strong Novaro AI prospect. DM blocked in automated runs (computer use unavailable). Needs manual DM.",
       "status": "DM Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/4231435036867882/posts/26696844846566914/",
@@ -276,8 +276,8 @@
       "label": "Interest Signal",
       "contact": "Superior Commercial Cleaning LLC",
       "company": "Commercial Cleaning Support Group",
-      "preview": "Tagged Vito in a photo in Commercial Cleaning Support Group. No Post URL on file — permanently blocked until Vito manually finds and adds the correct post URL to Notion.",
-      "status": "Blocked — Needs Post URL",
+      "preview": "Tagged Vito in a photo in Commercial Cleaning Support Group. No Post URL on file \u2014 permanently blocked until Vito manually finds and adds the correct post URL to Notion.",
+      "status": "Blocked \u2014 Needs Post URL",
       "campaign": "Facebook Group Post",
       "actionUrl": "",
       "notionId": "LEAD-3"
@@ -290,8 +290,8 @@
       "label": "Interest Signal",
       "contact": "Simon Palmer",
       "company": "Window Cleaning Business Owners",
-      "preview": "Commented 'Auto' on booking automation post — strong signal he's actively looking for automation tools. DM blocked: non-friend messaging disabled. Vito must send a friend request at facebook.com/profile.php?id=100089708145209 to unblock.",
-      "status": "Blocked — Friend Request Needed",
+      "preview": "Commented 'Auto' on booking automation post \u2014 strong signal he's actively looking for automation tools. DM blocked: non-friend messaging disabled. Vito must send a friend request at facebook.com/profile.php?id=100089708145209 to unblock.",
+      "status": "Blocked \u2014 Friend Request Needed",
       "campaign": "Facebook Group Post",
       "actionUrl": "https://www.facebook.com/groups/windowcleaningbusinessowners/permalink/961880616530171/",
       "notionId": "LEAD-4"
