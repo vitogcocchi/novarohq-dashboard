@@ -1,106 +1,103 @@
 {
-  "overall_status": "alert",
-  "last_checked": "2026-04-17T03:10:37Z",
-  "alerts": [
+  "overall_status": "healthy",
+  "last_checked": "2026-04-17T04:11:32Z",
+  "alerts": [],
+  "resolved_since_last_check": [
     {
       "taskId": "fb-comment-replies",
-      "severity": "HIGH",
-      "reason": "Last ran 14:39 ET (18:39 UTC). Current time 23:10 ET (03:10 UTC Apr 17). Gap: ~8h31min — far exceeds 1-hour threshold during 9am–10pm ET window. Window now closed. ~15+ expected 30-min runs missed. ONGOING — first flagged ~16:14 ET, Notion entry already logged.",
-      "lastRunAt": "2026-04-16T18:39:14Z"
+      "resolution": "Previous HIGH alert resolved. Task ran at 03:25 UTC (23:25 ET) — late in the window cycle. Operating window now closed. No missed runs in current window.",
+      "resolvedAt": "2026-04-17T04:11:32Z"
     }
   ],
-  "resolved_since_last_check": [],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T02:08:21Z",
       "nextRunAt": "2026-04-17T12:07:48Z",
-      "note": "Ran 22:08 ET today. Last scheduled run of window (22:00 ET). On track. Next 08:07 ET tomorrow."
+      "note": "Ran 22:08 ET (last run of 8am-10pm window). Window closed. Next 08:07 ET today."
     },
     "fb-comment-replies": {
-      "status": "alert",
+      "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-16T18:39:14Z",
+      "lastRunAt": "2026-04-17T03:25:33Z",
       "nextRunAt": "2026-04-17T13:08:43Z",
-      "note": "HIGH ALERT ONGOING — last ran 14:39 ET. Gap ~8h31min (threshold: 60 min). Window closed at 22:00 ET with ~15 missed 30-min runs. Notion entry already logged at first detection ~16:14 ET. No duplicate created."
+      "note": "Ran 23:25 ET — late run after window, but task did execute. Previous HIGH alert resolved. Window closed. Next 09:08 ET today."
     },
     "facebook-scrape": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T02:06:10Z",
       "nextRunAt": "2026-04-17T14:05:38Z",
-      "note": "Ran 22:06 ET today. Last scheduled run of window (22:00 ET). On track. Next 10:05 ET tomorrow."
+      "note": "Ran 22:06 ET (last run of 10am-10pm window). Window closed. Next 10:05 ET today."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T02:19:32Z",
-      "nextRunAt": "2026-04-17T12:08:15Z",
-      "note": "Ran 22:19 ET today. Outside 8am–10pm window now — healthy by definition. Next 08:08 ET tomorrow."
+      "nextRunAt": "2026-04-17T13:08:15Z",
+      "note": "Ran 22:19 ET (last run of 8am-10pm window). Window closed. Next 09:08 ET today."
     },
     "instantly-dashboard-sync": {
-      "status": "healthy",
-      "enabled": true,
+      "status": "disabled",
+      "enabled": false,
       "lastRunAt": "2026-04-17T00:11:32Z",
-      "nextRunAt": "2026-04-17T12:09:37Z",
-      "note": "Ran 20:11 ET at end of 8pm window. Outside 8am–8pm window now — healthy by definition. Next 08:09 ET tomorrow."
+      "note": "NEWLY DISABLED since last check (was enabled). Last ran 20:11 ET Apr 16. No error — likely intentional pause."
     },
     "morning-debrief": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:09:12Z",
       "nextRunAt": "2026-04-17T11:08:42Z",
-      "note": "Ran 07:09 ET today (~16h1min ago). Within 26hr threshold. Next tomorrow 07:08 ET."
+      "note": "Ran 07:09 ET yesterday (~17h ago). Within 26hr threshold. Next 07:08 ET today."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:02:51Z",
       "nextRunAt": "2026-04-17T11:02:21Z",
-      "note": "Ran 07:02 ET today (~16h8min ago). Within 26hr threshold. Next tomorrow 07:02 ET."
+      "note": "Ran 07:02 ET yesterday (~17h ago). Within 26hr threshold. Next 07:02 ET today."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T03:10:37Z",
-      "nextRunAt": "2026-04-17T04:09:57Z",
-      "note": "Current run at 23:10 ET. Healthy by definition. Next 00:09 ET."
+      "lastRunAt": "2026-04-17T04:11:32Z",
+      "nextRunAt": "2026-04-17T05:09:57Z",
+      "note": "Current run at 00:11 ET. Healthy by definition. Next 01:09 ET."
     },
     "instantly-account-monitor": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T02:19:32Z",
       "nextRunAt": "2026-04-17T12:07:07Z",
-      "note": "Ran 22:19 ET today. Outside window now. On 2hr cadence. Next 08:07 ET tomorrow."
+      "note": "Ran 22:19 ET. Runs at 8am, 2pm, 8pm ET. Outside window. Next 08:07 ET today."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T19:11:31Z",
       "nextRunAt": "2026-04-17T15:03:46Z",
-      "note": "Ran 15:11 ET today. Daily task. On schedule. Next tomorrow 11:03 ET."
+      "note": "Ran 15:11 ET yesterday. Daily task. On schedule. Next 11:03 ET today."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T18:21:31Z",
       "nextRunAt": "2026-04-17T17:02:20Z",
-      "note": "Ran 14:21 ET today. Daily task. On schedule. Next tomorrow 13:02 ET."
+      "note": "Ran 14:21 ET yesterday. Daily task. On schedule. Next 13:02 ET today."
     },
     "morning-debrief-sync": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:12:30Z",
       "nextRunAt": "2026-04-17T11:04:44Z",
-      "note": "Ran 07:12 ET today. Weekday daily. On schedule. Next tomorrow 07:04 ET."
+      "note": "Ran 07:12 ET yesterday. Weekday daily. On schedule. Next 07:04 ET today."
     },
     "replies-leads-sync": {
-      "status": "healthy",
-      "enabled": true,
+      "status": "disabled",
+      "enabled": false,
       "lastRunAt": "2026-04-17T01:14:32Z",
-      "nextRunAt": "2026-04-17T04:08:29Z",
-      "note": "Ran 21:14 ET today. Every 3 hours. Next 00:08 ET."
+      "note": "NEWLY DISABLED since last check (was enabled). Last ran 21:14 ET Apr 16. No error — likely intentional."
     },
     "linkedin-outreach": {
       "status": "disabled",
