@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-17T06:11:35Z",
+  "last_checked": "2026-04-17T07:11:41Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -55,9 +55,9 @@
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T06:11:35Z",
-      "nextRunAt": "2026-04-17T07:09:57Z",
-      "note": "Current run at 02:11 ET. Healthy by definition. Next 03:09 ET."
+      "lastRunAt": "2026-04-17T07:11:41Z",
+      "nextRunAt": "2026-04-17T08:09:57Z",
+      "note": "Current run at 03:11 ET. Healthy by definition. Next 04:09 ET."
     },
     "instantly-account-monitor": {
       "status": "healthy",
