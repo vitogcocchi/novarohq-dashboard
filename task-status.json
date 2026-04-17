@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-17T08:10:46Z",
+  "last_checked": "2026-04-17T09:10:52Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -43,21 +43,21 @@
       "enabled": true,
       "lastRunAt": "2026-04-16T11:09:12Z",
       "nextRunAt": "2026-04-17T11:08:42Z",
-      "note": "Ran 07:09 ET yesterday (~21h ago). Within 26hr threshold. Next 07:08 ET today (not yet due)."
+      "note": "Ran 07:09 ET yesterday (~22h ago). Within 26hr threshold. Next 07:08 ET today (not yet due)."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:02:51Z",
       "nextRunAt": "2026-04-17T11:02:21Z",
-      "note": "Ran 07:02 ET yesterday (~21h ago). Within 26hr threshold. Next 07:02 ET today (not yet due)."
+      "note": "Ran 07:02 ET yesterday (~22h ago). Within 26hr threshold. Next 07:02 ET today (not yet due)."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T08:10:46Z",
-      "nextRunAt": "2026-04-17T09:09:57Z",
-      "note": "Current run at 04:10 ET. Healthy by definition. Next 05:09 ET."
+      "lastRunAt": "2026-04-17T09:10:52Z",
+      "nextRunAt": "2026-04-17T10:09:57Z",
+      "note": "Current run at 05:10 ET. Healthy by definition. Next 06:09 ET."
     },
     "instantly-account-monitor": {
       "status": "healthy",
