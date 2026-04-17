@@ -1,6 +1,6 @@
 {
   "overall_status": "healthy",
-  "last_checked": "2026-04-17T09:10:52Z",
+  "last_checked": "2026-04-17T10:11:05Z",
   "alerts": [],
   "resolved_since_last_check": [],
   "tasks": {
@@ -16,7 +16,7 @@
       "enabled": true,
       "lastRunAt": "2026-04-17T03:25:33Z",
       "nextRunAt": "2026-04-17T13:08:43Z",
-      "note": "Ran 23:25 ET — outside window but task executed. Window closed. Next 09:08 ET today."
+      "note": "Ran 23:25 ET — outside window. Window closed. Next 09:08 ET today."
     },
     "facebook-scrape": {
       "status": "healthy",
@@ -43,28 +43,28 @@
       "enabled": true,
       "lastRunAt": "2026-04-16T11:09:12Z",
       "nextRunAt": "2026-04-17T11:08:42Z",
-      "note": "Ran 07:09 ET yesterday (~22h ago). Within 26hr threshold. Next 07:08 ET today (not yet due)."
+      "note": "Ran 07:09 ET yesterday (~23h ago). Within 26hr threshold. Next 07:08 ET today (not yet due at 06:11 ET)."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-16T11:02:51Z",
       "nextRunAt": "2026-04-17T11:02:21Z",
-      "note": "Ran 07:02 ET yesterday (~22h ago). Within 26hr threshold. Next 07:02 ET today (not yet due)."
+      "note": "Ran 07:02 ET yesterday (~23h ago). Within 26hr threshold. Next 07:02 ET today (not yet due at 06:11 ET)."
     },
     "task-health-monitor": {
       "status": "healthy",
       "enabled": true,
-      "lastRunAt": "2026-04-17T09:10:52Z",
-      "nextRunAt": "2026-04-17T10:09:57Z",
-      "note": "Current run at 05:10 ET. Healthy by definition. Next 06:09 ET."
+      "lastRunAt": "2026-04-17T10:11:05Z",
+      "nextRunAt": "2026-04-17T11:09:57Z",
+      "note": "Current run at 06:11 ET. Healthy by definition. Next 07:09 ET."
     },
     "instantly-account-monitor": {
       "status": "healthy",
       "enabled": true,
       "lastRunAt": "2026-04-17T02:19:32Z",
       "nextRunAt": "2026-04-17T12:07:07Z",
-      "note": "Ran 22:19 ET. Runs at 8am, 2pm, 8pm ET. Outside window. Next 08:07 ET today."
+      "note": "Ran 22:19 ET. Runs at 8am, 2pm, 8pm ET. Outside window at 06:11 ET. Next 08:07 ET today."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -85,13 +85,13 @@
       "enabled": true,
       "lastRunAt": "2026-04-16T11:12:30Z",
       "nextRunAt": "2026-04-17T11:04:44Z",
-      "note": "Ran 07:12 ET yesterday. Weekday daily. On schedule. Next 07:04 ET today (not yet due)."
+      "note": "Ran 07:12 ET yesterday. Weekday daily. On schedule. Next 07:04 ET today (not yet due at 06:11 ET)."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "enabled": false,
       "lastRunAt": "2026-04-17T01:14:32Z",
-      "note": "Disabled. Last ran 21:14 ET Apr 16. Likely intentional consolidation into novaro-data-sync."
+      "note": "Disabled. Last ran 21:14 ET Apr 16. Intentional consolidation into novaro-data-sync."
     },
     "linkedin-outreach": {
       "status": "disabled",
