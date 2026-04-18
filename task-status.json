@@ -1,62 +1,68 @@
 {
-  "last_checked": "2026-04-17T23:12:46Z",
+  "last_checked": "2026-04-18T00:13:43Z",
   "overall_status": "alert",
   "alerts": [
     {
-      "taskId": "novaro-data-sync",
+      "taskId": "instantly-account-monitor",
       "severity": "MEDIUM",
-      "reason": "7pm ET slot (23:08 UTC) missed — scheduler jumped nextRunAt to 9pm ET. 118 min since last run (5pm ET slot at 21:14 UTC). Just under 120-min threshold but slot clearly skipped.",
-      "lastRunAt": "2026-04-17T21:14:53.898Z"
+      "reason": "8pm ET slot (00:00 UTC) appears missed. lastRunAt still at 2:16 PM ET (18:16 UTC). nextRunAt jumped to 8am ET tomorrow (12:07 UTC Apr 18), indicating scheduler moved past the 8pm slot. 5h 57m since last run across a 3-slot-per-day task.",
+      "lastRunAt": "2026-04-17T18:16:53.419Z"
+    }
+  ],
+  "resolved_since_last_run": [
+    {
+      "taskId": "novaro-data-sync",
+      "note": "Previously alerted for missed 7pm ET slot. Confirmed ran at 7:12 PM ET (23:12 UTC). Resolved."
     }
   ],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
-      "last_run": "2026-04-17T22:08:42.102Z",
-      "minutes_since_run": 64,
+      "last_run": "2026-04-18T00:08:42.699Z",
+      "minutes_since_run": 5,
       "threshold_minutes": 180,
-      "note": "Last ran 6:08 PM ET. Currently 7:12 PM ET. Next at 8pm ET. Well within 3h threshold."
+      "note": "Last ran 8:08 PM ET. 5 min ago. Well within 3h threshold."
     },
     "fb-comment-replies": {
       "status": "healthy",
-      "last_run": "2026-04-17T23:09:37.384Z",
-      "minutes_since_run": 3,
+      "last_run": "2026-04-18T00:09:37.728Z",
+      "minutes_since_run": 4,
       "threshold_minutes": 60,
-      "note": "Last ran 7:09 PM ET. Next at 7:38 PM ET. Well within 1h threshold."
+      "note": "Last ran 8:09 PM ET. 4 min ago. Well within 1h threshold."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-17T23:06:32.505Z",
-      "minutes_since_run": 6,
+      "last_run": "2026-04-18T00:06:32.753Z",
+      "minutes_since_run": 7,
       "threshold_minutes": 120,
-      "note": "Last ran 7:06 PM ET. Next at 8:05 PM ET. Well within 2h threshold."
+      "note": "Last ran 8:06 PM ET. 7 min ago. Well within 2h threshold."
     },
     "novaro-data-sync": {
-      "status": "alert",
-      "last_run": "2026-04-17T21:14:53.898Z",
-      "minutes_since_run": 118,
+      "status": "healthy",
+      "last_run": "2026-04-17T23:12:54.600Z",
+      "minutes_since_run": 61,
       "threshold_minutes": 120,
-      "note": "ALERT: 7pm ET slot (23:08 UTC) appears missed. nextRunAt jumped to 9pm ET (01:08 UTC). 118 min since 5pm ET run. Scheduler skipped the slot."
+      "note": "Last ran 7:12 PM ET. 61 min ago. Next at 9pm ET. RESOLVED from previous alert."
     },
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "Disabled ~23 hours. Under 48h threshold."
+      "note": "Disabled ~24 hours. Under 48h threshold."
     },
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-17T11:09:16.101Z",
-      "note": "Ran today at 7:09 AM ET. 12 hours ago. Within 26h window."
+      "note": "Ran today at 7:09 AM ET. 13 hours ago. Within 26h window."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-17T11:02:54.987Z",
-      "note": "Ran today at 7:02 AM ET. 12 hours ago. Within 26h window."
+      "note": "Ran today at 7:02 AM ET. 13 hours ago. Within 26h window."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-17T23:12:46Z",
-      "note": "Current run at 7:12 PM ET. Healthy by definition."
+      "last_run": "2026-04-18T00:13:43Z",
+      "note": "Current run at 8:13 PM ET. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
@@ -79,9 +85,10 @@
       "note": "Ran today at 1:55 PM ET. Healthy."
     },
     "instantly-account-monitor": {
-      "status": "healthy",
+      "status": "alert",
       "last_run": "2026-04-17T18:16:53.419Z",
-      "note": "Ran today at 2:16 PM ET. Next at 8pm ET (00:07 UTC). Healthy."
+      "minutes_since_run": 357,
+      "note": "ALERT: 8pm ET slot (00:00-00:07 UTC) appears missed. nextRunAt jumped to 8am ET Apr 18. Last confirmed run: 2:16 PM ET."
     },
     "novaro-campaign-filler": {
       "status": "new",
@@ -106,7 +113,7 @@
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "Disabled ~22 hours. Under 48h threshold."
+      "note": "Disabled ~23 hours. Under 48h threshold."
     }
   }
 }
