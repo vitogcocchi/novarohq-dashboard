@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-18T06:11:13Z",
+  "last_checked": "2026-04-18T07:11:43Z",
   "overall_status": "healthy",
   "alerts": [],
   "tasks": {
@@ -26,27 +26,27 @@
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-17T11:09:16.101Z",
-      "note": "Ran Apr 17 at 7:09 AM ET. ~19 hours ago. Within 26h window. Next run ~7am ET today."
+      "note": "Ran Apr 17 at 7:09 AM ET. ~20 hours ago. Within 26h window. Next run ~7am ET today."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-17T11:02:54.987Z",
-      "note": "Ran Apr 17 at 7:02 AM ET. ~19 hours ago. Within 26h window. Next run ~7am ET today."
+      "note": "Ran Apr 17 at 7:02 AM ET. ~20 hours ago. Within 26h window. Next run ~7am ET today."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-18T06:11:13Z",
-      "note": "Current run at 2:11 AM ET. Healthy by definition."
+      "last_run": "2026-04-18T07:11:43Z",
+      "note": "Current run at 3:11 AM ET. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "last_run": "2026-04-17T15:11:34.548Z",
-      "note": "Ran Apr 17 at 11:11 AM ET (daily 11am). ~15 hours ago. Next run today 11am. Healthy."
+      "note": "Ran Apr 17 at 11:11 AM ET (daily 11am). ~16 hours ago. Next run today 11am. Healthy."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "last_run": "2026-04-17T19:14:53.616Z",
-      "note": "Ran Apr 17 at 3:14 PM ET (daily 3pm). ~11 hours ago. Next run today 3pm. Healthy."
+      "note": "Ran Apr 17 at 3:14 PM ET (daily 3pm). ~12 hours ago. Next run today 3pm. Healthy."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -71,12 +71,12 @@
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "Disabled ~30 hours. Under 48h threshold."
+      "note": "Disabled ~31 hours. Approaching 48h threshold."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "Disabled ~29 hours. Under 48h threshold."
+      "note": "Disabled ~30 hours. Approaching 48h threshold."
     },
     "linkedin-outreach": {
       "status": "disabled",
