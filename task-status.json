@@ -1,40 +1,34 @@
 {
-  "last_checked": "2026-04-18T19:12:31Z",
+  "last_checked": "2026-04-18T20:16:13Z",
   "overall_status": "alert",
   "alerts": [
     {
-      "taskId": "fb-friend-builder-elliott",
+      "taskId": "fb-comment-replies",
       "severity": "MEDIUM",
-      "reason": "Daily 3pm ET run missed. lastRunAt is April 17 at 3:14 PM ET — yesterday. Run was due today at ~3:02 PM ET (with jitter). Current time 3:12 PM ET, nextRunAt already shows tomorrow April 19, meaning scheduler skipped today's slot without a successful run.",
-      "lastRunAt": "2026-04-17T19:14:53.616Z"
-    },
-    {
-      "taskId": "novaro-data-sync",
-      "severity": "MEDIUM",
-      "reason": "3pm ET run slot appears skipped. lastRunAt is 1:19 PM ET (1h53m ago). Cron fires at 9,11,13,15,17,19,21 ET — 3pm run due at ~3:08 PM ET. nextRunAt already shows 5pm ET slot, meaning 3pm was not executed. Gap not yet past 2h threshold but slot was missed.",
-      "lastRunAt": "2026-04-18T17:19:00.057Z"
+      "reason": "Missed expected 3:38 PM and 4:08 PM ET runs. lastRunAt is 3:09 PM ET — now 1hr 7min ago with no new run. Threshold is >1hr during 9am–10pm window. nextRunAt shows 4:38 PM ET but 2 consecutive slots appear to have been skipped.",
+      "lastRunAt": "2026-04-18T19:09:43.128Z"
     }
   ],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
-      "last_run": "2026-04-18T18:08:48.132Z",
-      "note": "Ran at 2:08 PM ET. Next at 4pm ET. Gap ~1h04m — well within 3h threshold."
+      "last_run": "2026-04-18T20:08:47.608Z",
+      "note": "Ran at 4:08 PM ET. Next at 6pm ET (22:07 UTC). Gap ~8min — well within 3h threshold."
     },
     "fb-comment-replies": {
-      "status": "healthy",
+      "status": "alert",
       "last_run": "2026-04-18T19:09:43.128Z",
-      "note": "Ran at 3:09 PM ET (~3min ago). Next at 3:38 PM ET. Within 1h threshold."
+      "note": "ALERT — Last run 3:09 PM ET, now 4:16 PM ET = 1hr 7min gap. Missed expected 3:38 PM and 4:08 PM runs. nextRunAt shows 4:38 PM ET. 2 consecutive misses."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-18T19:06:37.573Z",
-      "note": "Ran at 3:06 PM ET (~6min ago). Next at 4pm ET. Within 2h threshold."
+      "last_run": "2026-04-18T20:06:37.755Z",
+      "note": "Ran at 4:06 PM ET (~10min ago). Next at 5:05 PM ET. Within 2h threshold."
     },
     "novaro-data-sync": {
-      "status": "alert",
-      "last_run": "2026-04-18T17:19:00.057Z",
-      "note": "3pm ET slot skipped. lastRunAt 1:19 PM ET (1h53m ago). nextRunAt shows 5pm ET. Gap approaching 2h threshold — flag MEDIUM."
+      "status": "healthy",
+      "last_run": "2026-04-18T19:15:00.371Z",
+      "note": "Ran at 3:15 PM ET. Next at 5pm ET (21:08 UTC). Odd-hours schedule — 2h gap is by design. Within 2h threshold."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -48,8 +42,8 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-18T19:12:31Z",
-      "note": "Current run at 3:12 PM ET. Healthy by definition."
+      "last_run": "2026-04-18T20:16:13Z",
+      "note": "Current run at 4:16 PM ET. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -57,9 +51,9 @@
       "note": "Ran today at 11:15 AM ET. Daily task complete."
     },
     "fb-friend-builder-elliott": {
-      "status": "alert",
-      "last_run": "2026-04-17T19:14:53.616Z",
-      "note": "MISSED — Daily 3pm ET run not executed. lastRunAt is yesterday April 17 at 3:14 PM ET. nextRunAt shows tomorrow April 19. Scheduler skipped today's slot."
+      "status": "healthy",
+      "last_run": "2026-04-18T19:15:00.521Z",
+      "note": "RESOLVED — Ran today at 3:15 PM ET. Previous alert (missed yesterday) is cleared."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -84,12 +78,12 @@
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "Disabled ~19h. Will cross 48h threshold at approx 2026-04-19T00:11Z."
+      "note": "Disabled ~20h. Will cross 48h threshold at approx 2026-04-19T00:11Z."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "Disabled ~18h. Will cross 48h threshold at approx 2026-04-19T01:14Z."
+      "note": "Disabled ~19h. Will cross 48h threshold at approx 2026-04-19T01:14Z."
     },
     "linkedin-outreach": {
       "status": "disabled",
