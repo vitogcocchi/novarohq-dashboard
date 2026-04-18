@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-18T19:18:38Z",
+  "lastUpdated": "2026-04-18T23:11:47Z",
   "summary": {
     "total": 22,
     "positive": 4,
@@ -296,6 +296,5 @@
       "status": "Closed",
       "campaign": "Novaro LSA \u2014 A/B Test"
     }
-  ],
-  "notionSyncedAt": "2026-04-18T23:45:00Z"
+  ]
 }
