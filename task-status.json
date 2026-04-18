@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-18T08:11:19Z",
+  "last_checked": "2026-04-18T09:12:22Z",
   "overall_status": "healthy",
   "alerts": [],
   "tasks": {
@@ -21,32 +21,32 @@
     "novaro-data-sync": {
       "status": "healthy",
       "last_run": "2026-04-18T01:13:55.734Z",
-      "note": "Last ran 9:13 PM ET. Outside operating window (9am-10pm odd hours). Healthy."
+      "note": "Last ran 9:13 PM ET. Outside operating window. Healthy."
     },
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-17T11:09:16.101Z",
-      "note": "Ran Apr 17 at 7:09 AM ET. ~21 hours ago. Within 26h window. Next run ~7am ET today."
+      "note": "Ran Apr 17 at 7:09 AM ET. ~22 hours ago. Within 26h threshold. Next run ~7am ET today."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-17T11:02:54.987Z",
-      "note": "Ran Apr 17 at 7:02 AM ET. ~21 hours ago. Within 26h window. Next run ~7am ET today."
+      "note": "Ran Apr 17 at 7:02 AM ET. ~22 hours ago. Within 26h threshold. Next run ~7am ET today."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-18T08:11:19Z",
-      "note": "Current run at 4:11 AM ET. Healthy by definition."
+      "last_run": "2026-04-18T09:12:22Z",
+      "note": "Current run at 5:12 AM ET. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "last_run": "2026-04-17T15:11:34.548Z",
-      "note": "Ran Apr 17 at 11:11 AM ET (daily 11am). ~17 hours ago. Next run today 11am. Healthy."
+      "note": "Ran Apr 17 at 11:11 AM ET (daily 11am). Next run today 11am ET. Healthy."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "last_run": "2026-04-17T19:14:53.616Z",
-      "note": "Ran Apr 17 at 3:14 PM ET (daily 3pm). ~13 hours ago. Next run today 3pm. Healthy."
+      "note": "Ran Apr 17 at 3:14 PM ET (daily 3pm). Next run today 3pm ET. Healthy."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -56,12 +56,12 @@
     "instantly-account-monitor": {
       "status": "healthy",
       "last_run": "2026-04-18T00:13:54.946Z",
-      "note": "Ran at 8:13 PM ET (scheduled 8am/2pm/8pm). Next run 8am today. Healthy."
+      "note": "Ran at 8:13 PM ET yesterday. Next run 8am ET today. Healthy."
     },
     "morning-debrief-sync": {
       "status": "healthy",
       "last_run": "2026-04-17T11:12:34.092Z",
-      "note": "Ran Apr 17 at 7:12 AM ET (M-F 7am schedule). Next: Mon Apr 20. Healthy."
+      "note": "Ran Apr 17 at 7:12 AM ET (M-F 7am). Next run Mon Apr 20. Healthy."
     },
     "novaro-campaign-filler": {
       "status": "new",
@@ -71,12 +71,12 @@
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "Disabled ~32 hours. Approaching 48h threshold."
+      "note": "Disabled ~33 hours. Approaching 48h threshold."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "Disabled ~31 hours. Approaching 48h threshold."
+      "note": "Disabled ~32 hours. Approaching 48h threshold."
     },
     "linkedin-outreach": {
       "status": "disabled",
