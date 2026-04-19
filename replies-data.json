@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-19T21:12:17Z",
+  "lastUpdated": "2026-04-19T23:14:50Z",
   "summary": {
     "total": 26,
     "positive": 5,
@@ -8,58 +8,6 @@
     "pending": 17
   },
   "replies": [
-    {
-      "id": "em-2026-04-16-mchomegroup",
-      "date": "April 16, 2026",
-      "channel": "Email",
-      "type": "pending",
-      "label": "Needs Review",
-      "contact": "Kelli",
-      "company": "MC Home Group",
-      "preview": "New email address notification \u2014 replied to $652 in, $12,595 out email",
-      "status": "Needs Review",
-      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "actionUrl": "https://app.instantly.ai/app/unibox"
-    },
-    {
-      "id": "em-2026-04-17-headsplumbing",
-      "date": "April 17, 2026",
-      "channel": "Email",
-      "type": "auto",
-      "label": "Auto Reply",
-      "contact": "Odari Head",
-      "company": "Heads Plumbing",
-      "preview": "BoxTrapper email verification \u2014 anti-spam auto-reply",
-      "status": "Closed",
-      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "actionUrl": "https://app.instantly.ai/app/unibox"
-    },
-    {
-      "id": "em-2026-04-19-christian",
-      "date": "April 19, 2026",
-      "channel": "Email",
-      "type": "positive",
-      "label": "Interested",
-      "contact": "Christian",
-      "company": "Roof With HTX",
-      "preview": "Dense market actually makes the bid strategy and dispute pro... \u2014 engaged with $652/$12,595 ROAS email",
-      "status": "Follow Up",
-      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "actionUrl": "https://app.instantly.ai/app/unibox"
-    },
-    {
-      "id": "em-2026-04-19-sslosson",
-      "date": "April 19, 2026",
-      "channel": "Email",
-      "type": "pending",
-      "label": "Needs Review",
-      "contact": "S. Slosson",
-      "company": "Circle-E Contracting",
-      "preview": "Thank you \u2014 replied to 18.4x ROAS campaign email",
-      "status": "Needs Review",
-      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "actionUrl": "https://app.instantly.ai/app/unibox"
-    },
     {
       "id": "li-apr7-ramon-cruz",
       "date": "April 7, 2026",
@@ -347,6 +295,58 @@
       "preview": "Not interested \u2014 tagged in Instantly. Sequence closed with courtesy note. No further action needed.",
       "status": "Closed",
       "campaign": "Novaro LSA \u2014 A/B Test"
+    },
+    {
+      "id": "em-2026-04-19-sslosson",
+      "date": "April 19, 2026",
+      "channel": "Email",
+      "type": "pending",
+      "label": "Needs Review",
+      "contact": "S. Slosson",
+      "company": "Circle-E Contracting",
+      "preview": "Thank you \u2014 replied to 18.4x ROAS campaign email",
+      "status": "Needs Review",
+      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "actionUrl": "https://app.instantly.ai/app/unibox"
+    },
+    {
+      "id": "em-2026-04-19-christian",
+      "date": "April 19, 2026",
+      "channel": "Email",
+      "type": "positive",
+      "label": "Interested",
+      "contact": "Christian",
+      "company": "Roof With HTX",
+      "preview": "Dense market actually makes the bid strategy and dispute pro... \u2014 engaged with $652/$12,595 ROAS email",
+      "status": "Follow Up",
+      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "actionUrl": "https://app.instantly.ai/app/unibox"
+    },
+    {
+      "id": "em-2026-04-17-headsplumbing",
+      "date": "April 17, 2026",
+      "channel": "Email",
+      "type": "auto",
+      "label": "Auto Reply",
+      "contact": "Odari Head",
+      "company": "Heads Plumbing",
+      "preview": "BoxTrapper email verification \u2014 anti-spam auto-reply",
+      "status": "Closed",
+      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "actionUrl": "https://app.instantly.ai/app/unibox"
+    },
+    {
+      "id": "em-2026-04-16-mchomegroup",
+      "date": "April 16, 2026",
+      "channel": "Email",
+      "type": "pending",
+      "label": "Needs Review",
+      "contact": "Kelli",
+      "company": "MC Home Group",
+      "preview": "New email address notification \u2014 replied to $652 in, $12,595 out email",
+      "status": "Needs Review",
+      "campaign": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "actionUrl": "https://app.instantly.ai/app/unibox"
     }
   ]
 }
