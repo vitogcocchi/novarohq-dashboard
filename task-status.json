@@ -1,17 +1,17 @@
 {
-  "last_checked": "2026-04-19T05:11:59Z",
+  "last_checked": "2026-04-19T06:11:53Z",
   "overall_status": "alert",
   "alerts": [
     {
       "taskId": "instantly-dashboard-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~57h. Last ran 2026-04-17T00:11:32Z (Apr 16 8:11 PM ET). Review if intentional.",
+      "reason": "ONGOING: Disabled ~58h. Last ran 2026-04-17T00:11:32Z (Apr 16 8:11 PM ET). Review if intentional.",
       "lastRunAt": "2026-04-17T00:11:32.198Z"
     },
     {
       "taskId": "replies-leads-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~56h. Last ran 2026-04-17T01:14:32Z (Apr 16 9:14 PM ET). Review if intentional.",
+      "reason": "ONGOING: Disabled ~57h. Last ran 2026-04-17T01:14:32Z (Apr 16 9:14 PM ET). Review if intentional.",
       "lastRunAt": "2026-04-17T01:14:32.528Z"
     }
   ],
@@ -19,37 +19,37 @@
     "instantly-manager": {
       "status": "healthy",
       "last_run": "2026-04-19T02:08:48.175Z",
-      "note": "Ran at 10:08 PM ET. Outside window (1am). Healthy."
+      "note": "Ran at 10:08 PM ET. Outside window (2am ET). Healthy."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "last_run": "2026-04-18T19:09:43.128Z",
-      "note": "Outside window (1am). Last ran 3:09 PM ET Apr 18. NOTE: Missed ~7h of 4/18 window (3pm-10pm). Monitor closely when window opens 9am ET today."
+      "note": "Outside window (2am ET). Last ran 3:09 PM ET Apr 18. NOTE: Missed ~7h of 4/18 window (3pm-10pm). Monitor when window opens 9am ET today."
     },
     "facebook-scrape": {
       "status": "healthy",
       "last_run": "2026-04-19T02:06:38.206Z",
-      "note": "Ran at 10:06 PM ET. Outside window (1am). Healthy."
+      "note": "Ran at 10:06 PM ET. Outside window (2am ET). Healthy."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "last_run": "2026-04-19T01:11:00.052Z",
-      "note": "Ran at 9:11 PM ET. Outside window (1am). Healthy."
+      "note": "Ran at 9:11 PM ET. Outside window (2am ET). Healthy."
     },
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-18T11:09:38.680Z",
-      "note": "Ran Apr 18 at 7:09 AM ET (~18h ago). Within 26h threshold. Next run: 7am today."
+      "note": "Ran Apr 18 at 7:09 AM ET (~19h ago). Within 26h threshold. Next run: 7am today."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-18T11:03:18.017Z",
-      "note": "Ran Apr 18 at 7:03 AM ET (~18h ago). Within 26h threshold. Next run: 7am today."
+      "note": "Ran Apr 18 at 7:03 AM ET (~19h ago). Within 26h threshold. Next run: 7am today."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-19T05:11:59Z",
-      "note": "Current run at 1:11 AM ET. Healthy by definition."
+      "last_run": "2026-04-19T06:11:53Z",
+      "note": "Current run at 2:11 AM ET. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -84,12 +84,12 @@
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~57h. Last ran Apr 16 8:11 PM ET. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~58h. Last ran Apr 16 8:11 PM ET. Review if intentional."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~56h. Last ran Apr 16 9:14 PM ET. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~57h. Last ran Apr 16 9:14 PM ET. Review if intentional."
     },
     "linkedin-outreach": {
       "status": "disabled",
