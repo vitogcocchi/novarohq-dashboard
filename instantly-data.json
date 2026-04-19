@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-19T17:09:52Z",
+  "lastUpdated": "2026-04-19T21:30:00Z",
   "overview": {
     "open_count": 0,
     "open_count_unique": 0,
@@ -7,9 +7,9 @@
     "link_click_count": 0,
     "link_click_count_unique": 0,
     "link_click_count_unique_by_step": 0,
-    "reply_count": 7,
-    "reply_count_unique": 5,
-    "reply_count_unique_by_step": 5,
+    "reply_count": 10,
+    "reply_count_unique": 8,
+    "reply_count_unique_by_step": 8,
     "reply_count_automatic": 6,
     "reply_count_automatic_unique": 5,
     "reply_count_automatic_unique_by_step": 5,
