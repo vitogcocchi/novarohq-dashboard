@@ -1,23 +1,23 @@
 {
-  "last_checked": "2026-04-19T17:10:15Z",
+  "last_checked": "2026-04-19T18:09:15Z",
   "overall_status": "alert",
   "alerts": [
     {
       "taskId": "fb-comment-replies",
       "severity": "HIGH",
-      "reason": "ONGOING (DAY 2): 22+ hours since last run. Last ran Apr 18 3:09 PM ET. Should fire every 30 min during 9am-10pm ET window. Missed all runs Apr 19: 9:00, 9:30, 10:00, 10:30, 11:00, 11:30, 12:00, 12:30, 1:00 PM ET.",
+      "reason": "ONGOING (DAY 2): 23+ hours since last run. Last ran Apr 18 3:09 PM ET. Should fire every 30 min during 9am-10pm ET window. Missed all runs Apr 19: 9:00, 9:30, 10:00, 10:30, 11:00, 11:30, 12:00, 12:30, 1:00, 1:30, 2:00 PM ET (11 missed slots).",
       "lastRunAt": "2026-04-18T19:09:43.128Z"
     },
     {
       "taskId": "instantly-dashboard-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~89h. Last ran 2026-04-17T00:11:32Z (Apr 16 8:11 PM ET). Review if intentional.",
+      "reason": "ONGOING: Disabled ~90h. Last ran 2026-04-17T00:11:32Z (Apr 16 8:11 PM ET). Review if intentional.",
       "lastRunAt": "2026-04-17T00:11:32.198Z"
     },
     {
       "taskId": "replies-leads-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~88h. Last ran 2026-04-17T01:14:32Z (Apr 16 9:14 PM ET). Review if intentional.",
+      "reason": "ONGOING: Disabled ~89h. Last ran 2026-04-17T01:14:32Z (Apr 16 9:14 PM ET). Review if intentional.",
       "lastRunAt": "2026-04-17T01:14:32.528Z"
     }
   ],
@@ -25,23 +25,23 @@
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
-      "last_run": "2026-04-19T16:07:49.521Z",
-      "note": "Ran 12:07 PM ET. Every 2h during 8am-10pm ET. Next: 2pm ET. Healthy."
+      "last_run": "2026-04-19T18:07:49.732Z",
+      "note": "Ran 2:07 PM ET today. Every 2h during 8am-10pm ET. Next: 4pm ET. Healthy."
     },
     "fb-comment-replies": {
       "status": "alert",
       "last_run": "2026-04-18T19:09:43.128Z",
-      "note": "ALERT (HIGH, ONGOING DAY 2) — 22h+ since last run. Window open 9am-10pm ET. Missed every 30-min slot Apr 19 through 1pm ET."
+      "note": "ALERT (HIGH, ONGOING DAY 2) — 23h+ since last run. Window open 9am-10pm ET. Missed 11 slots on Apr 19 through 2pm ET."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-19T17:05:39.732Z",
-      "note": "Ran 1:05 PM ET (5 min ago). Next: 2pm ET. Healthy."
+      "last_run": "2026-04-19T18:05:39.889Z",
+      "note": "Ran 2:05 PM ET (4 min ago). Next: 3pm ET. Healthy."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "last_run": "2026-04-19T17:08:01.857Z",
-      "note": "Ran 1:08 PM ET (2 min ago). Next: 3pm ET. Healthy."
+      "note": "Ran 1:08 PM ET. Next: 3pm ET (odd-hour schedule). Within 2h window. Healthy."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -55,8 +55,8 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-19T17:10:15Z",
-      "note": "Current run 1:10 PM ET Apr 19. Healthy by definition."
+      "last_run": "2026-04-19T18:09:15Z",
+      "note": "Current run 2:09 PM ET Apr 19. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -66,7 +66,7 @@
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "last_run": "2026-04-18T19:15:00.521Z",
-      "note": "Ran Apr 18 3:15 PM ET. Due today at 3:02 PM ET — not yet time. Healthy."
+      "note": "Ran Apr 18 3:15 PM ET. Due today at 3pm ET — not yet time (current: 2:09 PM ET). Healthy."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -76,7 +76,7 @@
     "instantly-account-monitor": {
       "status": "healthy",
       "last_run": "2026-04-19T12:14:01.163Z",
-      "note": "Ran today 8:14 AM ET. Next: 2pm ET. Has own SMS alerting. Healthy."
+      "note": "Ran today 8:14 AM ET. Next: 2pm ET (within jitter window). Has own SMS alerting. Healthy."
     },
     "novaro-campaign-filler": {
       "status": "healthy",
@@ -91,12 +91,12 @@
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~89h. Last ran Apr 16 8:11 PM ET. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~90h. Last ran Apr 16 8:11 PM ET. Review if intentional."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~88h. Last ran Apr 16 9:14 PM ET. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~89h. Last ran Apr 16 9:14 PM ET. Review if intentional."
     },
     "linkedin-outreach": {
       "status": "disabled",
