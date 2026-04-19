@@ -1,34 +1,46 @@
 {
-  "last_checked": "2026-04-18T23:13:00Z",
+  "last_checked": "2026-04-19T00:15:50Z",
   "overall_status": "alert",
   "alerts": [
     {
       "taskId": "fb-comment-replies",
       "severity": "HIGH",
-      "reason": "ONGOING: Last ran at 3:09 PM ET (19:09 UTC). Now 7:13 PM ET — 4hr 4min gap. Alert threshold is >1hr during 9am–10pm window. 8+ consecutive 30-min slots missed. Task is enabled but appears stalled.",
+      "reason": "ONGOING: Last ran at 3:09 PM ET (19:09 UTC). Now 8:15 PM ET — 5hr 6min gap. Alert threshold is >1hr during 9am–10pm window. 10+ consecutive 30-min slots missed. Task is enabled but stalled. NextRunAt: 8:38 PM ET.",
       "lastRunAt": "2026-04-18T19:09:43.128Z"
+    },
+    {
+      "taskId": "instantly-account-monitor",
+      "severity": "MEDIUM",
+      "reason": "NEW: 8pm ET run (00:00 UTC) skipped. Last ran at 2:14 PM ET. NextRunAt jumped to tomorrow 8am ET — the 3rd daily slot was missed entirely. Gap now 6+ hours.",
+      "lastRunAt": "2026-04-18T18:14:59.482Z"
+    },
+    {
+      "taskId": "instantly-dashboard-sync",
+      "severity": "MEDIUM",
+      "reason": "NEW: Disabled task crossed 48-hour threshold. Last ran 2026-04-17T00:11:32Z (~48h 4min ago as of this check). Intentional disable but warrants review.",
+      "lastRunAt": "2026-04-17T00:11:32.198Z"
     }
   ],
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
-      "last_run": "2026-04-18T22:08:47.795Z",
-      "note": "Ran at 6:08 PM ET (~1h 5min ago). Next at 8pm ET. Well within 3h threshold."
+      "last_run": "2026-04-19T00:08:48.012Z",
+      "note": "Ran at 8:08 PM ET (7min ago). Next at 10pm ET. Well within 3h threshold."
     },
     "fb-comment-replies": {
       "status": "alert",
       "last_run": "2026-04-18T19:09:43.128Z",
-      "note": "ALERT (HIGH, ONGOING) — Last run 3:09 PM ET, now 7:13 PM ET = 4hr 4min gap. Should run every 30 min during 9am–10pm window. 8+ missed slots. Enabled but stalled."
+      "note": "ALERT (HIGH, ONGOING) — Last run 3:09 PM ET, now 8:15 PM ET = 5hr 6min gap. Should run every 30 min during 9am–10pm window. 10+ missed slots. Enabled but stalled. NextRunAt 8:38 PM ET."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-18T23:06:37.875Z",
-      "note": "Ran at 7:06 PM ET (~7min ago). Next at 8pm ET. Within 2h threshold."
+      "last_run": "2026-04-19T00:06:38.022Z",
+      "note": "Ran at 8:06 PM ET (9min ago). Within 2h threshold."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "last_run": "2026-04-18T23:10:59.796Z",
-      "note": "Ran at 7:10 PM ET (~3min ago). Odd-hours schedule — next at 9pm ET (01:08 UTC). Within 2h threshold."
+      "note": "Ran at 7:10 PM ET (~1h 5min ago). Next at 9pm ET (01:08 UTC). Within 2h threshold."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -42,8 +54,8 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-18T23:13:00Z",
-      "note": "Current run at 7:13 PM ET. Healthy by definition."
+      "last_run": "2026-04-19T00:15:50Z",
+      "note": "Current run at 8:15 PM ET. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -61,9 +73,9 @@
       "note": "Ran today at 9:15 AM ET. Daily task complete."
     },
     "instantly-account-monitor": {
-      "status": "healthy",
+      "status": "alert",
       "last_run": "2026-04-18T18:14:59.482Z",
-      "note": "Ran at 2:14 PM ET. Runs 8am/2pm/8pm ET. Next at 8pm ET (00:07 UTC). 5h gap by design."
+      "note": "ALERT (MEDIUM, NEW) — Runs at 8am/2pm/8pm ET. 8pm ET (00:00 UTC) slot missed. NextRunAt jumped to tomorrow 8am. Last run was 2:14 PM ET — 6h gap."
     },
     "novaro-campaign-filler": {
       "status": "healthy",
@@ -78,12 +90,12 @@
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "Disabled ~47h. Crosses 48h threshold at ~8:11 PM ET tonight (00:11 UTC 4/19)."
+      "note": "ALERT (MEDIUM, NEW) — Crossed 48h disabled threshold as of ~8:11 PM ET tonight. Last ran Apr 16 8:11 PM ET. Review if intentional."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "Disabled ~46h. Crosses 48h threshold at ~9:14 PM ET tonight (01:14 UTC 4/19)."
+      "note": "Disabled ~47h. Crosses 48h threshold at ~9:14 PM ET tonight (01:14 UTC 4/19). Monitor."
     },
     "linkedin-outreach": {
       "status": "disabled",
