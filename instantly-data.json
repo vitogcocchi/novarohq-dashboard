@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-19T01:13:07Z",
+  "lastUpdated": "2026-04-19T13:14:12Z",
   "overview": {
     "open_count": 0,
     "open_count_unique": 0,
@@ -15,7 +15,7 @@
     "reply_count_automatic_unique_by_step": 5,
     "bounced_count": 9,
     "unsubscribed_count": 0,
-    "emails_sent_count": 1102,
+    "emails_sent_count": 1122,
     "contacted_count": 1009,
     "new_leads_contacted_count": 692,
     "total_opportunities": 2,
@@ -255,6 +255,20 @@
       "sent": 152,
       "contacted": 152,
       "new_leads_contacted": 59,
+      "opened": 0,
+      "unique_opened": 0,
+      "replies": 0,
+      "unique_replies": 0,
+      "replies_automatic": 0,
+      "unique_replies_automatic": 0,
+      "clicks": 0,
+      "unique_clicks": 0
+    },
+    {
+      "date": "2026-04-19",
+      "sent": 20,
+      "contacted": 20,
+      "new_leads_contacted": 0,
       "opened": 0,
       "unique_opened": 0,
       "replies": 0,
