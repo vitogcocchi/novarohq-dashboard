@@ -1,9 +1,9 @@
 {
-  "weekOf": "2026-04-14",
+  "weekOf": "2026-04-19",
   "approved": true,
   "approvedAt": "2026-04-14T00:00:00Z",
   "approvedBy": "Vito",
-  "note": "All 20 scripts live this week. Approval cadence starts next Sunday (April 19) — 5 new scripts drafted for review, 5 oldest retired.",
+  "note": "20 scripts active. 5 new drafts (S21–S25) added Apr 19 for Vito review — focused on ads pain points and AI/automation curiosity. S01–S05 flagged as retirement candidates (oldest in rotation). Activate S21–S25 and retire S01–S05 only after Vito approves.",
   "strategy": "Peer-to-peer conversational posts. No pitch, no case study numbers, no CTA in the post. Show up as a fellow business owner, ask questions that get real operators talking. Service the conversation in comments naturally.",
   "scripts": [
     {
@@ -127,6 +127,40 @@
       "content": "Real question — if you had to start your business over from zero tomorrow, what would you do completely differently?"
     }
   ],
+  "drafts_pending_approval": [
+    {
+      "id": "S21",
+      "status": "draft",
+      "focus": "ads pain — missed call / lead leakage",
+      "content": "How much of your ad spend is going to calls you never answered? Not bad leads — I mean someone called, you were on a job, they moved on. Most service businesses have no idea what that number is because there's no record of what you didn't pick up. Anyone actually tracking that gap?"
+    },
+    {
+      "id": "S22",
+      "status": "draft",
+      "focus": "AI/automation curiosity",
+      "content": "Anyone actually using AI in their business right now — not reading about it, actually using it day to day? Not looking for a pitch. Genuinely curious what's stuck around and what turned out to be a waste of time."
+    },
+    {
+      "id": "S23",
+      "status": "draft",
+      "focus": "ads pain — cost per booked job vs cost per lead",
+      "content": "What's your actual cost per booked job right now? Not cost per lead. Most guys I talk to only track the first number — which means they don't really know if their ads are working or just generating activity."
+    },
+    {
+      "id": "S24",
+      "status": "draft",
+      "focus": "ads pain — lead follow-up / speed to response",
+      "content": "How fast do you typically respond to a new inbound lead? Asking because most of the guys I talk to think they respond fast, but when you actually look at the timestamps it's hours — sometimes the next morning. Curious if that's just the reality of running a field service business."
+    },
+    {
+      "id": "S25",
+      "status": "draft",
+      "focus": "AI/automation curiosity — follow-up systems",
+      "content": "Do you have any system for leads who ghost you after a quote, or do you just let them go cold? Most of the time those people are still shopping and just got distracted. Wondering if anyone's actually solved this or if it's still manual."
+    }
+  ],
+  "retirement_candidates": ["S01", "S02", "S03", "S04", "S05"],
+  "retirement_note": "S01–S05 are the oldest scripts in the rotation (active since Apr 14). Flagged for Vito review Sunday Apr 19. Retire after S21–S25 are approved.",
   "archive": [],
   "rotationRules": {
     "postsPerDay": 5,
