@@ -1,11 +1,11 @@
 {
-  "last_checked": "2026-04-20T12:14:33Z",
+  "last_checked": "2026-04-20T13:12:08Z",
   "overall_status": "alert",
   "alerts": [
     {
       "taskId": "fb-comment-replies",
       "severity": "HIGH",
-      "reason": "ONGOING (DAY 3+): ~41h since last run. Last ran Apr 18 3:09 PM ET. Missed ALL Apr 19 window slots (9am–10pm ET). Outside window now (before 9am ET). Will re-alert immediately when window opens if still not running.",
+      "reason": "ONGOING (DAY 3+): ~42h since last run. Last ran Apr 18 3:09 PM ET. Missed ALL Apr 19 window slots (9am–10pm ET) and Apr 20 morning. Now in window — 9:09 AM ET run dispatched but lastRunAt unchanged, likely failing. NextRunAt: 9:38 AM ET.",
       "lastRunAt": "2026-04-18T19:09:43.128Z"
     },
     {
@@ -29,14 +29,9 @@
   ],
   "resolved_since_last_check": [
     {
-      "taskId": "novaro-daily-lead-pipeline",
-      "resolvedAt": "2026-04-20T11:16:03.341Z",
-      "note": "Ran at 7:16 AM ET Apr 20. Previous WATCH alert cleared."
-    },
-    {
-      "taskId": "morning-debrief-sync",
-      "resolvedAt": "2026-04-20T11:26:03.611Z",
-      "note": "Ran at 7:26 AM ET Apr 20. Previous NEW alert cleared — Monday slot did fire."
+      "taskId": "novaro-campaign-filler",
+      "resolvedAt": "2026-04-20T12:18:03.548Z",
+      "note": "RESOLVED — Was WATCH (skipped Apr 19 run). Ran 8:18 AM ET Apr 20 as expected."
     }
   ],
   "tasks": {
@@ -48,7 +43,7 @@
     "fb-comment-replies": {
       "status": "alert",
       "last_run": "2026-04-18T19:09:43.128Z",
-      "note": "ALERT (HIGH, ONGOING DAY 3+) — ~41h since last run. Missed all Apr 19 slots. Outside 9am–10pm ET window now. Watching for 9am run."
+      "note": "ALERT (HIGH, ONGOING DAY 3+) — ~42h since last run. Missed all Apr 19 window + Apr 20 morning slots. 9:09 AM ET run dispatched — lastRunAt unchanged, likely failing. NextRunAt: 9:38 AM ET."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -63,22 +58,22 @@
     "novaro-data-sync": {
       "status": "healthy",
       "last_run": "2026-04-20T01:13:02.517Z",
-      "note": "Ran 9:13 PM ET Apr 19. In window but first scheduled run not until 9am ET. NextRunAt: 9:08 AM ET Apr 20."
+      "note": "9am ET run dispatched at ~13:08 UTC (nextRunAt jumped to 11am ET). Likely running now. Previous run 9:13 PM ET Apr 19."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-20T11:16:03.341Z",
-      "note": "RESOLVED — Ran 7:16 AM ET Apr 20. Previous WATCH alert cleared."
+      "note": "Ran 7:16 AM ET Apr 20. Healthy."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-20T12:14:33Z",
-      "note": "Current run 8:14 AM ET Apr 20. Healthy by definition."
+      "last_run": "2026-04-20T13:12:08Z",
+      "note": "Current run 9:12 AM ET Apr 20. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
       "last_run": "2026-04-20T11:26:03.611Z",
-      "note": "RESOLVED — Ran 7:26 AM ET Apr 20 (Monday). Previous NEW alert cleared."
+      "note": "Ran 7:26 AM ET Apr 20. Healthy."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -91,19 +86,19 @@
       "note": "Ran 3:12 PM ET Apr 19. Daily at 3pm ET. NextRunAt: Apr 20 3:02 PM ET."
     },
     "fb-lead-outreach-daily": {
-      "status": "healthy",
+      "status": "monitor",
       "last_run": "2026-04-19T13:13:01.402Z",
-      "note": "Ran 9:13 AM ET Apr 19. Daily at 9am ET. NextRunAt: Apr 20 9:08 AM ET. Not yet due."
+      "note": "MONITOR: Today's 9am ET run dispatched (nextRunAt jumped to tomorrow). lastRunAt still Apr 19 — likely in progress. Will confirm next cycle."
     },
     "instantly-account-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-20T00:15:02.343Z",
-      "note": "Ran 8:15 PM ET Apr 19. NextRunAt shows 2:07 PM ET Apr 20 (8am slot may have been processed already)."
+      "last_run": "2026-04-20T12:17:03.461Z",
+      "note": "Ran 8:17 AM ET Apr 20. Healthy. NextRunAt: 2:07 PM ET."
     },
     "novaro-campaign-filler": {
-      "status": "watch",
-      "last_run": "2026-04-19T12:15:01.143Z",
-      "note": "WATCH: Ran 8:15 AM ET Apr 19. NextRunAt shows Apr 21 8:06 AM ET — may have skipped today's 8am slot. Not in monitoring matrix."
+      "status": "healthy",
+      "last_run": "2026-04-20T12:18:03.548Z",
+      "note": "RESOLVED — Was WATCH last cycle. Ran 8:18 AM ET Apr 20. Healthy."
     },
     "instantly-dashboard-sync": {
       "status": "disabled",
