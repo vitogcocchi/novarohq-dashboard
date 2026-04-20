@@ -1,11 +1,11 @@
 {
-  "last_checked": "2026-04-20T05:10:19Z",
+  "last_checked": "2026-04-20T06:10:55Z",
   "overall_status": "alert",
   "alerts": [
     {
       "taskId": "fb-comment-replies",
       "severity": "HIGH",
-      "reason": "ONGOING (DAY 3+): 34+ hours since last run. Last ran Apr 18 3:09 PM ET. Should fire every 30 min during 9am-10pm ET window. All Apr 19 window slots missed — task appears broken or stalled.",
+      "reason": "ONGOING (DAY 3+): 35+ hours since last run. Last ran Apr 18 3:09 PM ET. Missed all Apr 19 window slots (9am–10pm ET). Task appears stalled or broken.",
       "lastRunAt": "2026-04-18T19:09:43.128Z"
     },
     {
@@ -17,13 +17,13 @@
     {
       "taskId": "instantly-dashboard-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~128h. Last ran 2026-04-17T00:11:32Z (Apr 16 8:11 PM ET). Review if intentional.",
+      "reason": "ONGOING: Disabled ~152h. Last ran 2026-04-17T00:11:32Z (Apr 16 8:11 PM ET). Review if intentional.",
       "lastRunAt": "2026-04-17T00:11:32.198Z"
     },
     {
       "taskId": "replies-leads-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~128h. Last ran 2026-04-17T01:14:32Z (Apr 16 9:14 PM ET). Review if intentional.",
+      "reason": "ONGOING: Disabled ~152h. Last ran 2026-04-17T01:14:32Z (Apr 16 9:14 PM ET). Review if intentional.",
       "lastRunAt": "2026-04-17T01:14:32.528Z"
     }
   ],
@@ -31,12 +31,12 @@
     "instantly-manager": {
       "status": "healthy",
       "last_run": "2026-04-20T02:07:50.603Z",
-      "note": "Ran 10:07 PM ET Apr 19. Every 2h during 8am-10pm ET window. Outside window now — healthy."
+      "note": "Ran 10:07 PM ET Apr 19. Every 2h during 8am–10pm ET window. Outside window now — healthy."
     },
     "fb-comment-replies": {
       "status": "alert",
       "last_run": "2026-04-18T19:09:43.128Z",
-      "note": "ALERT (HIGH, ONGOING DAY 3+) — 34h+ since last run. All Apr 19 window slots (9am-10pm ET) missed. Currently outside window. Task appears stalled."
+      "note": "ALERT (HIGH, ONGOING DAY 3+) — 35h+ since last run. All Apr 19 window slots (9am–10pm ET) missed. Currently outside window. Task appears stalled."
     },
     "facebook-scrape": {
       "status": "alert",
@@ -51,17 +51,17 @@
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-19T11:01:02.071Z",
-      "note": "Ran 7:01 AM ET Apr 19 (~18h ago). Within 26h threshold. Runs again 7am ET Apr 20."
+      "note": "Ran 7:01 AM ET Apr 19 (~19h ago). Within 26h threshold. Runs again 7am ET Apr 20."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-19T11:03:01.092Z",
-      "note": "Ran 7:03 AM ET Apr 19 (~18h ago). Within 26h threshold. Runs again 7am ET Apr 20."
+      "note": "Ran 7:03 AM ET Apr 19 (~19h ago). Within 26h threshold. Runs again 7am ET Apr 20."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-20T05:10:19Z",
-      "note": "Current run 1:10 AM ET Apr 20. Healthy by definition."
+      "last_run": "2026-04-20T06:10:55Z",
+      "note": "Current run 2:10 AM ET Apr 20. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -76,7 +76,7 @@
     "morning-debrief-sync": {
       "status": "healthy",
       "last_run": "2026-04-17T11:12:34.092Z",
-      "note": "Mon-Fri only. Last ran Fri Apr 17 7:12 AM ET. Today is Mon Apr 20 — runs at 7am ET this morning."
+      "note": "Mon–Fri only. Last ran Fri Apr 17 7:12 AM ET. Today Mon Apr 20 — runs at 7am ET this morning."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -96,12 +96,12 @@
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~128h. Last ran Apr 16 8:11 PM ET. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~152h. Last ran Apr 16 8:11 PM ET. Review if intentional."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~128h. Last ran Apr 16 9:14 PM ET. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~152h. Last ran Apr 16 9:14 PM ET. Review if intentional."
     },
     "linkedin-outreach": {
       "status": "disabled",
