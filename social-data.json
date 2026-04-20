@@ -1,6 +1,6 @@
 {
     "facebook": {
-        "lastUpdated": "2026-04-20T21:32:34.000Z",
+        "lastUpdated": "2026-04-20T21:37:41.000Z",
         "groups": 101,
         "postsLive": 44,
         "comments": 122,
@@ -262,7 +262,7 @@
                 "dms": 0,
                 "interest": 0,
                 "lastUpdated": "2026-04-20T19:10:00.000Z",
-                "note": "~12:47 PM ET run: Facebook presented a human verification CAPTCHA checkpoint ('Confirm you're human \u2014 Enter the text from the image') on navigation to facebook.com/notifications. Cannot bypass bot detection per security policy. Scan skipped for this run. Counts carried forward from last successful scan (Apr 19). GitHub push still executed to keep dashboard live. 0 Hot/Qualified leads. No Notion entries created. | ~1:08 PM ET run: Facebook presented a human verification CAPTCHA checkpoint ('Confirm you're human \u2014 Enter the text from the image') on navigation to facebook.com/notifications. Cannot bypass bot detection per security policy. Scan skipped for this run. Counts carried forward. GitHub push still executed to keep dashboard live. 0 Hot/Qualified leads. No Notion entries created. | ~1:30 PM ET run: Facebook account (Elliott Marsh) is suspended \u2014 appeal submitted on April 20, 2026, pending Meta review. Account not visible to others and cannot be used. Scan skipped. Counts carried forward from last successful scan. GitHub push still executed to keep dashboard live. 0 Hot/Qualified leads. No Notion entries created. | ~3:10 PM ET run: Facebook account (Elliott Marsh) PERMANENTLY DISABLED by Meta \u2014 'We reviewed your account and found that it still doesn't follow our Community Standards on account integrity. You cannot request another review of this decision.' Account is gone. No further scans possible with this account. Scan skipped. Counts carried forward. GitHub push executed. iMessage alert sent to Vito. 0 Hot/Qualified leads. No Notion entries created."
+                "note": "account_disabled"
             }
         ]
     }
