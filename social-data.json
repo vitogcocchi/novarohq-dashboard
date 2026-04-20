@@ -1,6 +1,6 @@
 {
     "facebook": {
-        "lastUpdated": "2026-04-20T17:08:00.000Z",
+        "lastUpdated": "2026-04-20T18:07:47.000Z",
         "groups": 101,
         "postsLive": 44,
         "comments": 122,
@@ -261,8 +261,8 @@
                 "positive": 0,
                 "dms": 0,
                 "interest": 0,
-                "lastUpdated": "2026-04-20T17:08:00.000Z",
-                "note": "~12:47 PM ET run: Facebook presented a human verification CAPTCHA checkpoint ('Confirm you're human \u2014 Enter the text from the image') on navigation to facebook.com/notifications. Cannot bypass bot detection per security policy. Scan skipped for this run. Counts carried forward from last successful scan (Apr 19). GitHub push still executed to keep dashboard live. 0 Hot/Qualified leads. No Notion entries created. | ~1:08 PM ET run: Facebook presented a human verification CAPTCHA checkpoint ('Confirm you're human \u2014 Enter the text from the image') on navigation to facebook.com/notifications. Cannot bypass bot detection per security policy. Scan skipped for this run. Counts carried forward. GitHub push still executed to keep dashboard live. 0 Hot/Qualified leads. No Notion entries created."
+                "lastUpdated": "2026-04-20T18:07:47.000Z",
+                "note": "~12:47 PM ET run: Facebook presented a human verification CAPTCHA checkpoint ('Confirm you're human \u2014 Enter the text from the image') on navigation to facebook.com/notifications. Cannot bypass bot detection per security policy. Scan skipped for this run. Counts carried forward from last successful scan (Apr 19). GitHub push still executed to keep dashboard live. 0 Hot/Qualified leads. No Notion entries created. | ~1:08 PM ET run: Facebook presented a human verification CAPTCHA checkpoint ('Confirm you're human \u2014 Enter the text from the image') on navigation to facebook.com/notifications. Cannot bypass bot detection per security policy. Scan skipped for this run. Counts carried forward. GitHub push still executed to keep dashboard live. 0 Hot/Qualified leads. No Notion entries created. | ~1:30 PM ET run: Facebook account (Elliott Marsh) is suspended \u2014 appeal submitted on April 20, 2026, pending Meta review. Account not visible to others and cannot be used. Scan skipped. Counts carried forward from last successful scan. GitHub push still executed to keep dashboard live. 0 Hot/Qualified leads. No Notion entries created."
             }
         ]
     }
