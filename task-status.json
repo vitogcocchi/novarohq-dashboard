@@ -1,29 +1,17 @@
 {
-  "last_checked": "2026-04-20T16:14:56Z",
+  "last_checked": "2026-04-20T17:10:19Z",
   "overall_status": "alert",
   "alerts": [
     {
-      "taskId": "fb-comment-replies",
-      "severity": "HIGH",
-      "reason": "ONGOING (DAY 3+): ~45h since last run. Last ran Apr 18 3:09 PM ET. Missed all of Apr 19 window + all of Apr 20 window so far (9am–12pm ET). Task appears stuck or consistently failing.",
-      "lastRunAt": "2026-04-18T19:09:43.128Z"
-    },
-    {
-      "taskId": "facebook-scrape",
-      "severity": "HIGH",
-      "reason": "ESCALATED from MEDIUM: Window opened at 10am ET (14:00 UTC). Now 12:14 PM ET — 2h14m into window with zero runs. Exceeded 2-hour alert threshold. Last ran Apr 19 7:05 PM ET.",
-      "lastRunAt": "2026-04-19T23:05:40.212Z"
-    },
-    {
       "taskId": "instantly-dashboard-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~3 days. Last ran Apr 17 12:11 AM UTC. Review if intentional.",
+      "reason": "ONGOING: Disabled ~3+ days. Last ran Apr 17 12:11 AM UTC. Review if intentional.",
       "lastRunAt": "2026-04-17T00:11:32.198Z"
     },
     {
       "taskId": "replies-leads-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~3 days. Last ran Apr 17 1:14 AM UTC. Review if intentional.",
+      "reason": "ONGOING: Disabled ~3+ days. Last ran Apr 17 1:14 AM UTC. Review if intentional.",
       "lastRunAt": "2026-04-17T01:14:32.498Z"
     }
   ],
@@ -31,52 +19,52 @@
     "instantly-manager": {
       "status": "healthy",
       "last_run": "2026-04-20T16:07:51.863Z",
-      "note": "Ran 12:07 PM ET Apr 20. NextRunAt: 2:07 PM ET. Healthy."
+      "note": "Ran 12:07 PM ET Apr 20. NextRunAt: 2:07 PM ET. ~1h since last run, within 3h threshold."
     },
     "fb-comment-replies": {
-      "status": "alert",
-      "last_run": "2026-04-18T19:09:43.128Z",
-      "note": "ALERT (HIGH, ONGOING DAY 3+) — ~45h since last run. Missed entire Apr 19 + Apr 20 morning window. Task appears stuck or failing consistently."
+      "status": "healthy",
+      "last_run": "2026-04-20T17:08:46.198Z",
+      "note": "RESOLVED — Ran 1:08 PM ET Apr 20. Was HIGH alert (45h gap) last cycle. Now healthy. NextRunAt: 1:38 PM ET."
     },
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-20T11:08:45.375Z",
-      "note": "Ran 7:08 AM ET Apr 20. Healthy."
+      "note": "Ran 7:08 AM ET Apr 20. Within 26h threshold. Healthy."
     },
     "facebook-scrape": {
-      "status": "alert",
-      "last_run": "2026-04-19T23:05:40.212Z",
-      "note": "ALERT (HIGH, ESCALATED) — Window opened 10am ET. 12:14 PM ET = 2h14m in, zero runs today. Crossed 2-hour threshold."
+      "status": "healthy",
+      "last_run": "2026-04-20T17:05:41.296Z",
+      "note": "RESOLVED — Ran 1:05 PM ET Apr 20. Was HIGH alert (missed morning window) last cycle. Now healthy. NextRunAt: 2:05 PM ET."
     },
     "novaro-data-sync": {
       "status": "healthy",
-      "last_run": "2026-04-20T15:14:03.746Z",
-      "note": "Ran 11:14 AM ET Apr 20 (resolved from watch). NextRunAt: 1:08 PM ET. Healthy."
+      "last_run": "2026-04-20T17:09:03.111Z",
+      "note": "Ran 1:09 PM ET Apr 20. NextRunAt: 3:08 PM ET. Healthy."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-20T11:16:03.341Z",
-      "note": "Ran 7:16 AM ET Apr 20. Healthy."
+      "note": "Ran 7:16 AM ET Apr 20. Within 26h threshold. Healthy."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-20T16:14:56Z",
-      "note": "Current run 12:14 PM ET Apr 20. Healthy by definition."
+      "last_run": "2026-04-20T17:10:19Z",
+      "note": "Current run 1:10 PM ET Apr 20. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
       "last_run": "2026-04-20T11:26:03.611Z",
-      "note": "Ran 7:26 AM ET Apr 20. Healthy."
+      "note": "Ran 7:26 AM ET Apr 20 (M-F only). Healthy."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "last_run": "2026-04-20T15:19:04.018Z",
-      "note": "RESOLVED — Ran 11:19 AM ET Apr 20 (was alert last cycle). NextRunAt: Apr 21 11:03 AM ET. Healthy."
+      "note": "Ran 11:19 AM ET Apr 20. NextRunAt: Apr 21 11:03 AM ET. Healthy."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "last_run": "2026-04-19T19:12:01.891Z",
-      "note": "Ran 3:12 PM ET Apr 19. Daily at 3pm ET. NextRunAt: Apr 20 3:02 PM ET. Healthy — not yet time."
+      "note": "Ran 3:12 PM ET Apr 19. NextRunAt: Apr 20 3:02 PM ET (not yet time). Healthy."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -86,7 +74,7 @@
     "instantly-account-monitor": {
       "status": "watch",
       "last_run": "2026-04-20T12:17:03.461Z",
-      "note": "WATCH — Last ran 8:17 AM ET. Schedule is 8am/10am/4pm ET, but 10am ET slot (14:00 UTC) was skipped — nextRunAt jumped to 2:07 PM ET. Monitor next cycle."
+      "note": "WATCH — Ran 8:17 AM ET. Schedule: 8am/10am/4pm ET. 10am ET slot (14:00 UTC) again skipped — nextRunAt jumped to 2:07 PM ET. Second cycle on watch. No defined threshold but pattern is notable."
     },
     "novaro-campaign-filler": {
       "status": "healthy",
@@ -96,12 +84,12 @@
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~3 days. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~3+ days. Review if intentional."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.498Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~3 days. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~3+ days. Review if intentional."
     },
     "linkedin-outreach": {
       "status": "disabled",
