@@ -1,11 +1,11 @@
 {
-  "last_checked": "2026-04-20T07:10:30Z",
+  "last_checked": "2026-04-20T08:10:53Z",
   "overall_status": "alert",
   "alerts": [
     {
       "taskId": "fb-comment-replies",
       "severity": "HIGH",
-      "reason": "ONGOING (DAY 3+): 36+ hours since last run. Last ran Apr 18 3:09 PM ET. Missed all Apr 19 window slots (9am–10pm ET) and has not run today. Task appears stalled or broken.",
+      "reason": "ONGOING (DAY 3+): 41+ hours since last run. Last ran Apr 18 3:09 PM ET. Missed ALL Apr 19 window slots (9am–10pm ET) and has not run today. Task appears stalled or broken.",
       "lastRunAt": "2026-04-18T19:09:43.128Z"
     },
     {
@@ -17,13 +17,13 @@
     {
       "taskId": "instantly-dashboard-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~159h. Last ran 2026-04-17T00:11:32Z (Apr 16 8:11 PM ET). Review if intentional.",
+      "reason": "ONGOING: Disabled ~183h. Last ran 2026-04-17T00:11:32Z (Apr 16 8:11 PM ET). Review if intentional.",
       "lastRunAt": "2026-04-17T00:11:32.198Z"
     },
     {
       "taskId": "replies-leads-sync",
       "severity": "MEDIUM",
-      "reason": "ONGOING: Disabled ~159h. Last ran 2026-04-17T01:14:32Z (Apr 16 9:14 PM ET). Review if intentional.",
+      "reason": "ONGOING: Disabled ~183h. Last ran 2026-04-17T01:14:32Z (Apr 16 9:14 PM ET). Review if intentional.",
       "lastRunAt": "2026-04-17T01:14:32.528Z"
     }
   ],
@@ -36,7 +36,7 @@
     "fb-comment-replies": {
       "status": "alert",
       "last_run": "2026-04-18T19:09:43.128Z",
-      "note": "ALERT (HIGH, ONGOING DAY 3+) — 36h+ since last run. All Apr 19 window slots (9am–10pm ET) missed. Currently outside window. Task appears stalled."
+      "note": "ALERT (HIGH, ONGOING DAY 3+) — 41h+ since last run. All Apr 19 window slots (9am–10pm ET) missed. Currently outside window. Task appears stalled."
     },
     "facebook-scrape": {
       "status": "alert",
@@ -51,17 +51,17 @@
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-19T11:01:02.071Z",
-      "note": "Ran 7:01 AM ET Apr 19 (~20h ago). Within 26h threshold. Runs again 7am ET Apr 20."
+      "note": "Ran 7:01 AM ET Apr 19 (~21h ago). Within 26h threshold. Runs again 7am ET Apr 20."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-19T11:03:01.092Z",
-      "note": "Ran 7:03 AM ET Apr 19 (~20h ago). Within 26h threshold. Runs again 7am ET Apr 20."
+      "note": "Ran 7:03 AM ET Apr 19 (~21h ago). Within 26h threshold. Runs again 7am ET Apr 20."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-20T07:10:30Z",
-      "note": "Current run 3:10 AM ET Apr 20. Healthy by definition."
+      "last_run": "2026-04-20T08:10:53Z",
+      "note": "Current run 4:10 AM ET Apr 20. Healthy by definition."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
@@ -76,7 +76,7 @@
     "morning-debrief-sync": {
       "status": "healthy",
       "last_run": "2026-04-17T11:12:34.092Z",
-      "note": "Mon–Fri only. Last ran Fri Apr 17 7:12 AM ET. Today Mon Apr 20 — runs at 7am ET this morning."
+      "note": "Mon–Fri only. Last ran Fri Apr 17 7:12 AM ET. Today Mon Apr 20 — scheduled for 7am ET this morning (not yet run)."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -96,12 +96,12 @@
     "instantly-dashboard-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T00:11:32.198Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~159h. Last ran Apr 16 8:11 PM ET. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~183h. Last ran Apr 16 8:11 PM ET. Review if intentional."
     },
     "replies-leads-sync": {
       "status": "disabled",
       "last_run": "2026-04-17T01:14:32.528Z",
-      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~159h. Last ran Apr 16 9:14 PM ET. Review if intentional."
+      "note": "ALERT (MEDIUM, ONGOING) — Disabled ~183h. Last ran Apr 16 9:14 PM ET. Review if intentional."
     },
     "linkedin-outreach": {
       "status": "disabled",
