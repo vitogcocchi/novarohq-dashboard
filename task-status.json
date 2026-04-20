@@ -1,7 +1,13 @@
 {
-  "last_checked": "2026-04-20T18:11:23Z",
+  "last_checked": "2026-04-20T19:11:04Z",
   "overall_status": "alert",
   "alerts": [
+    {
+      "taskId": "novaro-data-sync",
+      "severity": "MEDIUM",
+      "reason": "NEW: Missed 19:00 UTC (3 PM ET) run window. Last ran 17:09 UTC (1:09 PM ET), 2h02m ago. Jitter window closed at 19:08 UTC.",
+      "lastRunAt": "2026-04-20T17:09:03.111Z"
+    },
     {
       "taskId": "instantly-dashboard-sync",
       "severity": "MEDIUM",
@@ -19,12 +25,12 @@
     "instantly-manager": {
       "status": "healthy",
       "last_run": "2026-04-20T18:07:51.230Z",
-      "note": "Ran 2:07 PM ET Apr 20. 2 PM ET slot on time. NextRunAt: 4:07 PM ET."
+      "note": "Ran 2:07 PM ET Apr 20. Gap to next run (4:07 PM ET) = 2h. Within 3h threshold. Healthy."
     },
     "fb-comment-replies": {
       "status": "healthy",
-      "last_run": "2026-04-20T18:08:46.277Z",
-      "note": "Ran 2:08 PM ET Apr 20. Running every 30 min as expected. NextRunAt: 2:38 PM ET."
+      "last_run": "2026-04-20T19:08:46.237Z",
+      "note": "Ran 3:08 PM ET Apr 20. ~2 min ago. NextRunAt: 3:38 PM ET. Healthy."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -33,13 +39,13 @@
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-20T18:05:41.307Z",
-      "note": "Ran 2:05 PM ET Apr 20. 2 PM ET slot on time. NextRunAt: 3:05 PM ET."
+      "last_run": "2026-04-20T19:05:41.246Z",
+      "note": "Ran 3:05 PM ET Apr 20. ~5 min ago. NextRunAt: 4:05 PM ET. Healthy."
     },
     "novaro-data-sync": {
-      "status": "healthy",
+      "status": "alert",
       "last_run": "2026-04-20T17:09:03.111Z",
-      "note": "Ran 1:09 PM ET Apr 20 (odd-hour cadence). NextRunAt: 3:08 PM ET. Within 2h threshold."
+      "note": "ALERT (MEDIUM, NEW) — Missed 19:00 UTC (3 PM ET) window. Last ran 1:09 PM ET. Gap = 2h02m, exceeds 2h threshold. Expected next run was 3:08 PM ET with jitter."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
@@ -48,8 +54,8 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-20T18:11:23Z",
-      "note": "Current run 2:11 PM ET Apr 20. Healthy by definition."
+      "last_run": "2026-04-20T19:11:04Z",
+      "note": "Current run 3:11 PM ET Apr 20. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
@@ -59,12 +65,12 @@
     "fb-group-growth-elliott": {
       "status": "healthy",
       "last_run": "2026-04-20T15:19:04.018Z",
-      "note": "Ran 11:19 AM ET Apr 20. NextRunAt: Apr 21 11:03 AM ET. Healthy. (Note: SKILL.md expected disabled — now enabled.)"
+      "note": "Ran 11:19 AM ET Apr 20. NextRunAt: Apr 21 11:03 AM ET. Healthy. (Note: SKILL.md expected disabled — remains enabled.)"
     },
     "fb-friend-builder-elliott": {
-      "status": "healthy",
+      "status": "watch",
       "last_run": "2026-04-19T19:12:01.891Z",
-      "note": "Ran 3:12 PM ET Apr 19. NextRunAt: Apr 20 3:02 PM ET — not yet time at check. Healthy."
+      "note": "WATCH — Ran 3:12 PM ET Apr 19. NextRunAt jumped to Apr 21 3:02 PM ET — today's 3 PM ET slot (19:00 UTC) appears to have been silently skipped. Not in defined monitoring table but pattern warrants attention."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -72,9 +78,9 @@
       "note": "Ran 9:21 AM ET Apr 20. Healthy."
     },
     "instantly-account-monitor": {
-      "status": "watch",
-      "last_run": "2026-04-20T12:17:03.461Z",
-      "note": "WATCH — Ran 8:17 AM ET. Schedule: 8am/2pm/8pm ET. 2pm ET slot (18:00 UTC) appears missed again — nextRunAt jumped to 8 PM ET. Third consecutive cycle on watch. Not in defined monitoring list but pattern warrants attention."
+      "status": "healthy",
+      "last_run": "2026-04-20T18:11:03.210Z",
+      "note": "Ran 2:11 PM ET Apr 20. 8am/2pm/8pm ET schedule. 2 PM slot ran on time. NextRunAt: 8 PM ET. Healthy."
     },
     "novaro-campaign-filler": {
       "status": "healthy",
