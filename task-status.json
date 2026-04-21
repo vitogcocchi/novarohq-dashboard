@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-21T11:10:38Z",
+  "last_checked": "2026-04-21T12:11:32Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -18,23 +18,23 @@
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
-      "last_run": "2026-04-21T02:08:06.562Z",
-      "note": "Ran 10:08 PM ET Apr 20 (last slot of day). Outside window now (7:10 AM ET). Window opens 8am ET. Healthy."
+      "last_run": "2026-04-21T12:08:07.504Z",
+      "note": "Ran 8:08 AM ET today (Apr 21). On schedule. Healthy."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "last_run": "2026-04-21T02:39:01.562Z",
-      "note": "Ran 10:39 PM ET Apr 20. Outside window now (7:10 AM ET). Window opens 9am ET. Healthy."
+      "note": "Ran 10:39 PM ET Apr 20. Outside window now (8:11 AM ET). Window opens 9am ET. Healthy."
     },
     "facebook-scrape": {
       "status": "healthy",
       "last_run": "2026-04-21T02:05:56.447Z",
-      "note": "Ran 10:05 PM ET Apr 20. Outside window now (7:10 AM ET). Window opens 10am ET. Healthy."
+      "note": "Ran 10:05 PM ET Apr 20. Outside window now (8:11 AM ET). Window opens 10am ET. Healthy."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "last_run": "2026-04-21T01:11:18.138Z",
-      "note": "Ran 9:11 PM ET Apr 20. Outside window now (7:10 AM ET). Window opens 8am ET. First in-window run 9am ET. Healthy."
+      "note": "Ran 9:11 PM ET Apr 20. First in-window run 9am ET (13:00 UTC). Not yet due. Healthy."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -48,28 +48,28 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T11:10:38Z",
-      "note": "Current run 7:10 AM ET Apr 21. Healthy by definition."
+      "last_run": "2026-04-21T12:11:32Z",
+      "note": "Current run 8:11 AM ET Apr 21. Healthy by definition."
     },
     "morning-debrief-sync": {
-      "status": "watch",
-      "last_run": "2026-04-20T11:26:03.611Z",
-      "note": "Last ran 7:26 AM ET Apr 20 (Mon). nextRunAt shows Apr 22 — may have skipped today's 7am ET run. Not in threshold table, monitoring."
+      "status": "healthy",
+      "last_run": "2026-04-21T11:11:19.308Z",
+      "note": "Ran 7:11 AM ET today (Apr 21). Previously flagged as watch — now resolved. Healthy."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
       "last_run": "2026-04-20T15:19:04.018Z",
-      "note": "Ran 11:19 AM ET Apr 20. Daily 11am ET. Next: Apr 21 ~11:03 AM ET. Healthy."
+      "note": "Ran 11:19 AM ET Apr 20. Daily 11am ET. Next: Apr 21 ~11:03 AM ET. Not yet due. Healthy."
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "last_run": "2026-04-20T19:13:03.463Z",
-      "note": "Ran 3:13 PM ET Apr 20. Daily 3pm ET. Next: Apr 21 ~3:02 PM ET. Healthy."
+      "note": "Ran 3:13 PM ET Apr 20. Daily 3pm ET. Next: Apr 21 ~3:02 PM ET. Not yet due. Healthy."
     },
     "instantly-account-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T00:12:18.059Z",
-      "note": "Ran 8:12 PM ET Apr 20 (8pm slot). Next run: 8am ET Apr 21. Not yet due. Healthy."
+      "last_run": "2026-04-21T12:07:26.608Z",
+      "note": "Ran 8:07 AM ET today (Apr 21). On schedule. Healthy."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
@@ -78,8 +78,8 @@
     },
     "novaro-campaign-filler": {
       "status": "healthy",
-      "last_run": "2026-04-20T12:18:03.548Z",
-      "note": "Ran 8:18 AM ET Apr 20. Daily 8am ET. Next: Apr 21 ~8:06 AM ET. Not yet due. Healthy."
+      "last_run": "2026-04-21T12:10:19.499Z",
+      "note": "Ran 8:10 AM ET today (Apr 21). On schedule. Healthy."
     },
     "instantly-dashboard-sync": {
       "status": "missing",
