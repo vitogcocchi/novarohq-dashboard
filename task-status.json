@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-21T17:11:38Z",
+  "last_checked": "2026-04-21T18:12:28Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -18,23 +18,23 @@
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
-      "last_run": "2026-04-21T16:08:08.153Z",
-      "note": "Ran 12:08 PM ET today. Next 2:07 PM ET. On schedule."
+      "last_run": "2026-04-21T18:08:08.863Z",
+      "note": "Ran 2:08 PM ET today. Next 4:07 PM ET. On schedule."
     },
     "fb-comment-replies": {
       "status": "healthy",
-      "last_run": "2026-04-21T17:09:03.511Z",
-      "note": "Ran 1:09 PM ET today. 2 min ago. On schedule."
+      "last_run": "2026-04-21T18:09:03.912Z",
+      "note": "Ran 2:09 PM ET today. 3 min ago. Next run ~2:38 PM ET. On schedule."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-21T17:05:58.560Z",
-      "note": "Ran 1:05 PM ET today. 6 min ago. On schedule."
+      "last_run": "2026-04-21T18:05:58.704Z",
+      "note": "Ran 2:05 PM ET today. Next 3:05 PM ET. On schedule."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "last_run": "2026-04-21T17:09:20.358Z",
-      "note": "Ran 1:09 PM ET today. 2 min ago. Next 3:08 PM ET. On schedule."
+      "note": "Ran 1:09 PM ET today. ~1h3m ago. Next 3:08 PM ET. Under 2h threshold."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -48,8 +48,8 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T17:11:38Z",
-      "note": "Current run 1:11 PM ET Apr 21. Healthy by definition."
+      "last_run": "2026-04-21T18:12:28Z",
+      "note": "Current run 2:12 PM ET Apr 21. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
@@ -64,12 +64,12 @@
     "fb-friend-builder-elliott": {
       "status": "healthy",
       "last_run": "2026-04-20T19:13:03.463Z",
-      "note": "Daily 3pm ET — not yet due today. Next ~3:02 PM ET. Healthy."
+      "note": "Daily 3pm ET — not yet due today (next ~3:02 PM ET). Healthy."
     },
     "instantly-account-monitor": {
       "status": "healthy",
       "last_run": "2026-04-21T12:07:26.608Z",
-      "note": "Runs 8am/2pm/8pm ET. Last run 8:07 AM ET. Next 2:07 PM ET. On schedule."
+      "note": "Runs 8am/2pm/8pm ET. Last run 8:07 AM ET. 2pm run pending. On schedule."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
