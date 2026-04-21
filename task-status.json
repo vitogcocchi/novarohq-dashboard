@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-21T01:11:15Z",
+  "last_checked": "2026-04-21T02:11:32Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -18,23 +18,23 @@
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
-      "last_run": "2026-04-21T00:08:06.033Z",
-      "note": "Ran 8:08 PM ET Apr 20. ~1h ago. Within 3h threshold. Healthy."
+      "last_run": "2026-04-21T02:08:06.562Z",
+      "note": "Ran 10:08 PM ET Apr 20. Window closes 10pm. Last run of day. Healthy."
     },
     "fb-comment-replies": {
       "status": "healthy",
-      "last_run": "2026-04-21T01:09:01.242Z",
-      "note": "Ran 9:09 PM ET Apr 20. ~2 min ago. Within 1h threshold. Healthy."
+      "last_run": "2026-04-21T02:09:01.363Z",
+      "note": "Ran 10:09 PM ET Apr 20. Last run of day. Within 1h threshold. Healthy."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-21T01:05:56.405Z",
-      "note": "Ran 9:05 PM ET Apr 20. ~6 min ago. Within 2h threshold. Healthy."
+      "last_run": "2026-04-21T02:05:56.447Z",
+      "note": "Ran 10:05 PM ET Apr 20. Last run of day. Within 2h threshold. Healthy."
     },
     "novaro-data-sync": {
       "status": "healthy",
-      "last_run": "2026-04-20T23:12:17.792Z",
-      "note": "Ran 7:12 PM ET Apr 20. Last slot of day was 5pm ET (21 UTC). No more runs until 5am ET tomorrow. Healthy."
+      "last_run": "2026-04-21T01:11:18.138Z",
+      "note": "Ran 9:11 PM ET Apr 20 (last slot of day). No more runs until 5am ET tomorrow. Healthy."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -48,8 +48,8 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T01:11:15Z",
-      "note": "Current run 9:11 PM ET Apr 20. Healthy by definition."
+      "last_run": "2026-04-21T02:11:32Z",
+      "note": "Current run 10:11 PM ET Apr 20. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
