@@ -1,6 +1,6 @@
 {
     "facebook": {
-        "lastUpdated": "2026-04-21T02:09:07.000Z",
+        "lastUpdated": "2026-04-21T09:00:00.000Z",
         "groups": 101,
         "postsLive": 44,
         "comments": 122,
@@ -263,6 +263,17 @@
                 "interest": 0,
                 "lastUpdated": "2026-04-21T02:09:07.000Z",
                 "note": "account_disabled | Hourly scan (~5:37 PM ET): Account accessible. Notifications (All + Unread): All security alerts (multiple login approvals/attempts) and friend suggestions \u2014 0 comment/reaction/DM leads on Elliott posts. Activity log: Last outbound comment activity March 29, 2026 (3 weeks ago, no new inbound comment responses). Messenger unread (2): Robert Cocchi \u2014 sent 2015 Ford Transit Connect cargo van photo (message request, generic, not a lead); Ann Giroux \u2014 empty E2E thread, no content. Message requests: 0. Spam: 1 unavailable group message (Room Full of Love 4813, generic). 0 Hot/Qualified leads. No Notion entries created. GitHub push executed. | Hourly scan (Apr 20 ~6:45 PM ET): ACCOUNT PERMANENTLY DISABLED. Facebook login shows checkpoint/disabled page: \"We disabled your account\" / \"You cannot request another review of this decision.\" Elliott Marsh account (ID 61572018536470) is fully banned with no appeal path. 0 sources scanned this run. 0 leads. GitHub push executed. URGENT: Vito needs to create a new Facebook account for outreach. | Hourly scan (Apr 20 ~8:09 PM ET): ACCOUNT PERMANENTLY DISABLED (confirmed again). Facebook checkpoint/disabled page persists \u2014 no scan possible. 0 leads. GitHub push executed. | Hourly scan (Apr 20 ~9:10 PM ET): ACCOUNT PERMANENTLY DISABLED (confirmed 3rd time this run cycle). Login attempt via \"Use another profile\" flow leads directly to checkpoint/disabled page \u2014 no appeal option. 0 sources scanned. 0 leads. GitHub push executed. | Hourly scan (Apr 20 ~10:09 PM ET): ACCOUNT PERMANENTLY DISABLED (confirmed this run). Login checkpoint persists \u2014 no scan possible. 0 leads. GitHub push executed."
+            },
+            {
+                "date": "2026-04-21",
+                "groups": 0,
+                "posts": 0,
+                "comments": 0,
+                "positive": 0,
+                "dms": 0,
+                "interest": 0,
+                "lastUpdated": "2026-04-21T09:00:00.000Z",
+                "note": "ACCOUNT PERMANENTLY DISABLED. All hourly runs on Apr 21 confirm: Elliott Marsh account (ID 61572018536470) banned by Facebook with no appeal path. Login via phone 4138476142 redirects immediately to checkpoint/disabled page. 0 sources scanned. 0 leads. GitHub push executed each run. Action required: Vito must create a new Facebook persona to resume outreach."
             }
         ]
     }
