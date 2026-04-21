@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-21T03:11:08Z",
+  "last_checked": "2026-04-21T04:11:04Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -39,17 +39,17 @@
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-20T11:08:45.375Z",
-      "note": "Ran 7:08 AM ET Apr 20. ~16h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
+      "note": "Ran 7:08 AM ET Apr 20. ~17h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-20T11:16:03.341Z",
-      "note": "Ran 7:16 AM ET Apr 20. ~16h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
+      "note": "Ran 7:16 AM ET Apr 20. ~17h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T03:11:08Z",
-      "note": "Current run 11:11 PM ET Apr 20. Healthy by definition."
+      "last_run": "2026-04-21T04:11:04Z",
+      "note": "Current run 12:11 AM ET Apr 21. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
@@ -94,7 +94,7 @@
     "daily-fb-posts": {
       "status": "disabled",
       "last_run": "2026-04-11T20:09:44.520Z",
-      "note": "Disabled ~9 days. Replaced by fb-group-growth-elliott. Intentional."
+      "note": "Disabled ~10 days. Replaced by fb-group-growth-elliott. Intentional."
     }
   }
 }
