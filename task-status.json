@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-21T16:11:38Z",
+  "last_checked": "2026-04-21T17:11:38Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -19,22 +19,22 @@
     "instantly-manager": {
       "status": "healthy",
       "last_run": "2026-04-21T16:08:08.153Z",
-      "note": "Ran 12:08 PM ET today. 3 min ago. On schedule."
+      "note": "Ran 12:08 PM ET today. Next 2:07 PM ET. On schedule."
     },
     "fb-comment-replies": {
       "status": "healthy",
-      "last_run": "2026-04-21T16:09:03.228Z",
-      "note": "Ran 12:09 PM ET today. 2 min ago. On schedule."
+      "last_run": "2026-04-21T17:09:03.511Z",
+      "note": "Ran 1:09 PM ET today. 2 min ago. On schedule."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-21T16:05:58.252Z",
-      "note": "Ran 12:05 PM ET today. 6 min ago. On schedule."
+      "last_run": "2026-04-21T17:05:58.560Z",
+      "note": "Ran 1:05 PM ET today. 6 min ago. On schedule."
     },
     "novaro-data-sync": {
       "status": "healthy",
-      "last_run": "2026-04-21T15:12:20.454Z",
-      "note": "Ran 11:12 AM ET. Next run 1:08 PM ET (odd-hour schedule). ~59 min gap is expected. On schedule."
+      "last_run": "2026-04-21T17:09:20.358Z",
+      "note": "Ran 1:09 PM ET today. 2 min ago. Next 3:08 PM ET. On schedule."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -48,8 +48,8 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T16:11:38Z",
-      "note": "Current run 12:11 PM ET Apr 21. Healthy by definition."
+      "last_run": "2026-04-21T17:11:38Z",
+      "note": "Current run 1:11 PM ET Apr 21. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
@@ -59,7 +59,7 @@
     "fb-group-growth-elliott": {
       "status": "healthy",
       "last_run": "2026-04-21T15:14:20.072Z",
-      "note": "Ran 11:14 AM ET today. Daily run complete."
+      "note": "Ran 11:14 AM ET today. Daily run complete. (Note: task file expects disabled — currently enabled.)"
     },
     "fb-friend-builder-elliott": {
       "status": "healthy",
