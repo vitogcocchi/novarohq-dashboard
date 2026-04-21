@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-21T09:11:42Z",
+  "last_checked": "2026-04-21T10:11:23Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -19,42 +19,42 @@
     "instantly-manager": {
       "status": "healthy",
       "last_run": "2026-04-21T02:08:06.562Z",
-      "note": "Ran 10:08 PM ET Apr 20 (last slot of day). Outside window now (5:11 AM ET). Next run 8:07 AM ET. Healthy."
+      "note": "Ran 10:08 PM ET Apr 20 (last slot of day). Outside window now (6:11 AM ET). Next run 8:07 AM ET. Healthy."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "last_run": "2026-04-21T02:39:01.562Z",
-      "note": "Ran 10:39 PM ET Apr 20. Outside window now (5:11 AM ET). Next run 9:08 AM ET. Healthy."
+      "note": "Ran 10:39 PM ET Apr 20. Outside window now (6:11 AM ET). Next run 9:08 AM ET. Healthy."
     },
     "facebook-scrape": {
       "status": "healthy",
       "last_run": "2026-04-21T02:05:56.447Z",
-      "note": "Ran 10:05 PM ET Apr 20. Outside window now (5:11 AM ET). Next run 10:05 AM ET. Healthy."
+      "note": "Ran 10:05 PM ET Apr 20. Outside window now (6:11 AM ET). Next run 10:05 AM ET. Healthy."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "last_run": "2026-04-21T01:11:18.138Z",
-      "note": "Ran 9:11 PM ET Apr 20 (last slot). Outside window now (5:11 AM ET). Next run 9:08 AM ET. Healthy."
+      "note": "Ran 9:11 PM ET Apr 20 (last slot). Outside window (6:11 AM ET). Next: 9:08 AM ET. Healthy."
     },
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-20T11:08:45.375Z",
-      "note": "Ran 7:08 AM ET Apr 20. ~22h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
+      "note": "Ran 7:08 AM ET Apr 20. ~23h ago. Within 26h threshold. Fires at 7:09 AM ET today. Healthy."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-20T11:16:03.341Z",
-      "note": "Ran 7:16 AM ET Apr 20. ~22h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
+      "note": "Ran 7:16 AM ET Apr 20. ~23h ago. Within 26h threshold. Fires at 7:02 AM ET today. Healthy."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T09:11:42Z",
-      "note": "Current run 5:11 AM ET Apr 21. Healthy by definition."
+      "last_run": "2026-04-21T10:11:23Z",
+      "note": "Current run 6:11 AM ET Apr 21. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
       "last_run": "2026-04-20T11:26:03.611Z",
-      "note": "Ran 7:26 AM ET Apr 20 (M-F only). Next run Tue Apr 21 ~7am ET. Healthy."
+      "note": "Ran 7:26 AM ET Apr 20 (M-F only). Next run Tue Apr 21 ~7:04 AM ET. Healthy."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
