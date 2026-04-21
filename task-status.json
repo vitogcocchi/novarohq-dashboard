@@ -1,7 +1,13 @@
 {
-  "last_checked": "2026-04-21T22:14:06Z",
+  "last_checked": "2026-04-21T23:12:39Z",
   "overall_status": "alert",
   "alerts": [
+    {
+      "taskId": "novaro-data-sync",
+      "severity": "MEDIUM",
+      "reason": "NEW: 2h 1m since last run (21:11 UTC / 5:11 PM ET). Expected 7pm ET slot appears missed. Threshold: >2h during window.",
+      "lastRunAt": "2026-04-21T21:11:21.148Z"
+    },
     {
       "taskId": "instantly-dashboard-sync",
       "severity": "MEDIUM",
@@ -19,37 +25,37 @@
     "instantly-manager": {
       "status": "healthy",
       "last_run": "2026-04-21T22:08:10.355Z",
-      "note": "Ran 6:08 PM ET today. ~6 min ago. Next 8:07 PM ET. Under 3h threshold."
+      "note": "Ran 6:08 PM ET today. 1h 4m ago. Next 8:07 PM ET. Under 3h threshold."
     },
     "fb-comment-replies": {
       "status": "healthy",
-      "last_run": "2026-04-21T22:09:04.965Z",
-      "note": "Ran 6:09 PM ET today. ~5 min ago. Next ~6:38 PM ET. On schedule."
+      "last_run": "2026-04-21T23:09:06.093Z",
+      "note": "Ran 7:09 PM ET today. ~3 min ago. Next ~7:38 PM ET. On schedule."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-21T22:05:59.631Z",
-      "note": "Ran 6:05 PM ET today. ~9 min ago. Next 7:05 PM ET. On schedule."
+      "last_run": "2026-04-21T23:06:00.305Z",
+      "note": "Ran 7:06 PM ET today. ~6 min ago. Next 8:05 PM ET. On schedule."
     },
     "novaro-data-sync": {
-      "status": "healthy",
+      "status": "alert",
       "last_run": "2026-04-21T21:11:21.148Z",
-      "note": "Ran 5:11 PM ET today. ~63 min ago. Next 7:00 PM ET (23:00 UTC). Under 2h threshold."
+      "note": "ALERT (MEDIUM, NEW) — 2h 1m since last run (5:11 PM ET). 7pm ET slot appears missed. Next scheduled: 9:08 PM ET (01:08 UTC). Exceeded >2h threshold."
     },
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-21T11:09:01.401Z",
-      "note": "Ran 7:09 AM ET today. Daily run complete. ~11h ago, under 26h threshold."
+      "note": "Ran 7:09 AM ET today. Daily run complete. ~12h ago, under 26h threshold."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-21T11:02:40.557Z",
-      "note": "Ran 7:02 AM ET today. Daily run complete. ~11h ago, under 26h threshold."
+      "note": "Ran 7:02 AM ET today. Daily run complete. ~12h ago, under 26h threshold."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T22:14:06Z",
-      "note": "Current run 6:14 PM ET Apr 21. Healthy by definition."
+      "last_run": "2026-04-21T23:12:39Z",
+      "note": "Current run 7:12 PM ET Apr 21. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
@@ -67,9 +73,9 @@
       "note": "Ran 3:14 PM ET today. Daily run complete."
     },
     "instantly-account-monitor": {
-      "status": "note",
+      "status": "healthy",
       "last_run": "2026-04-21T18:13:20.753Z",
-      "note": "Last confirmed run 2:13 PM ET (14:00 UTC slot). 8 PM ET (20:00 UTC) slot appears missed — lastRunAt unchanged. Not in core monitoring table, flagged for awareness only."
+      "note": "Last confirmed run 2:13 PM ET. Next: 8pm ET (00:07 UTC) is 55 min away. Not missed."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
