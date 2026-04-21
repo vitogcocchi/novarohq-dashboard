@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-21T01:12:55Z",
+  "lastUpdated": "2026-04-21T13:12:26Z",
   "overview": {
     "open_count": 0,
     "open_count_unique": 0,
@@ -15,7 +15,7 @@
     "reply_count_automatic_unique_by_step": 6,
     "bounced_count": 10,
     "unsubscribed_count": 0,
-    "emails_sent_count": 1682,
+    "emails_sent_count": 1702,
     "contacted_count": 1129,
     "new_leads_contacted_count": 811,
     "total_opportunities": 2,
@@ -25,6 +25,13 @@
     "total_meeting_completed": 0,
     "total_closed": 0
   },
+  "campaigns": [
+    {
+      "id": "e24260e9-fbb0-4ccb-a6cb-8ec73782495b",
+      "name": "Novaro LSA \u2014 A/B Test [Service Owners]",
+      "status": "Active"
+    }
+  ],
   "daily": [
     {
       "date": "2026-03-15",
@@ -139,6 +146,20 @@
       "unique_clicks": 0
     },
     {
+      "date": "2026-03-23",
+      "sent": 0,
+      "contacted": 0,
+      "new_leads_contacted": 0,
+      "opened": 0,
+      "unique_opened": 0,
+      "replies": 0,
+      "unique_replies": 0,
+      "replies_automatic": 0,
+      "unique_replies_automatic": 0,
+      "clicks": 0,
+      "unique_clicks": 0
+    },
+    {
       "date": "2026-04-07",
       "sent": 50,
       "contacted": 50,
@@ -205,6 +226,20 @@
       "unique_replies": 0,
       "replies_automatic": 1,
       "unique_replies_automatic": 1,
+      "clicks": 0,
+      "unique_clicks": 0
+    },
+    {
+      "date": "2026-04-13",
+      "sent": 0,
+      "contacted": 0,
+      "new_leads_contacted": 0,
+      "opened": 0,
+      "unique_opened": 0,
+      "replies": 0,
+      "unique_replies": 0,
+      "replies_automatic": 0,
+      "unique_replies_automatic": 0,
       "clicks": 0,
       "unique_clicks": 0
     },
@@ -291,13 +326,20 @@
       "unique_replies_automatic": 1,
       "clicks": 0,
       "unique_clicks": 0
-    }
-  ],
-  "campaigns": [
+    },
     {
-      "id": "e24260e9-fbb0-4ccb-a6cb-8ec73782495b",
-      "name": "Novaro LSA \u2014 A/B Test [Service Owners]",
-      "status": "Active"
+      "date": "2026-04-21",
+      "sent": 20,
+      "contacted": 20,
+      "new_leads_contacted": 0,
+      "opened": 0,
+      "unique_opened": 0,
+      "replies": 0,
+      "unique_replies": 0,
+      "replies_automatic": 0,
+      "unique_replies_automatic": 0,
+      "clicks": 0,
+      "unique_clicks": 0
     }
   ]
 }
