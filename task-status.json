@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-21T13:12:04Z",
+  "last_checked": "2026-04-21T14:11:40Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -18,23 +18,23 @@
   "tasks": {
     "instantly-manager": {
       "status": "healthy",
-      "last_run": "2026-04-21T12:08:07.504Z",
-      "note": "Ran 8:08 AM ET today (Apr 21). Next run 10am ET. On schedule. Healthy."
+      "last_run": "2026-04-21T14:08:07.836Z",
+      "note": "Ran 10:08 AM ET today (Apr 21). Next run 12pm ET. On schedule. Healthy."
     },
     "fb-comment-replies": {
       "status": "healthy",
-      "last_run": "2026-04-21T13:09:02.617Z",
-      "note": "Ran 9:09 AM ET today (Apr 21). Next run ~9:38 AM ET. Fresh. Healthy."
+      "last_run": "2026-04-21T14:09:02.794Z",
+      "note": "Ran 10:09 AM ET today (Apr 21). 2 min ago. Next ~10:38 AM ET. Healthy."
     },
     "facebook-scrape": {
       "status": "healthy",
-      "last_run": "2026-04-21T02:05:56.447Z",
-      "note": "Ran 10:05 PM ET Apr 20 (end of yesterday's window). Window opens 10am ET (14:00 UTC). Next run ~10:05 AM ET. Not yet due. Healthy."
+      "last_run": "2026-04-21T14:05:58.020Z",
+      "note": "Ran 10:05 AM ET today (Apr 21). Next ~11:05 AM ET. On schedule. Healthy."
     },
     "novaro-data-sync": {
       "status": "healthy",
       "last_run": "2026-04-21T13:08:34.843Z",
-      "note": "Ran 9:08 AM ET today (Apr 21). Next run 11am ET. On schedule. Healthy."
+      "note": "Ran 9:08 AM ET today (Apr 21). Next run 11:08 AM ET. 1hr since last. Healthy."
     },
     "morning-debrief": {
       "status": "healthy",
@@ -48,8 +48,8 @@
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T13:12:04Z",
-      "note": "Current run 9:12 AM ET Apr 21. Healthy by definition."
+      "last_run": "2026-04-21T14:11:40Z",
+      "note": "Current run 10:11 AM ET Apr 21. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
@@ -69,12 +69,12 @@
     "instantly-account-monitor": {
       "status": "healthy",
       "last_run": "2026-04-21T12:07:26.608Z",
-      "note": "Ran 8:07 AM ET today (Apr 21). Runs 3x/day. On schedule. Healthy."
+      "note": "Ran 8:07 AM ET today (Apr 21). Next run 2pm ET. On schedule. Healthy."
     },
     "fb-lead-outreach-daily": {
       "status": "healthy",
-      "last_run": "2026-04-20T13:21:03.694Z",
-      "note": "Daily 9am ET. Run due at 9:08 AM ET — nextRunAt shows tomorrow, likely just fired (API lag). Monitoring. Healthy."
+      "last_run": "2026-04-21T13:15:19.690Z",
+      "note": "Ran 9:15 AM ET today (Apr 21). Daily run complete. Healthy."
     },
     "novaro-campaign-filler": {
       "status": "healthy",
