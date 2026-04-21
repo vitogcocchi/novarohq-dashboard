@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-04-21T05:11:04Z",
+  "last_checked": "2026-04-21T06:11:07Z",
   "overall_status": "alert",
   "alerts": [
     {
@@ -19,12 +19,12 @@
     "instantly-manager": {
       "status": "healthy",
       "last_run": "2026-04-21T02:08:06.562Z",
-      "note": "Ran 10:08 PM ET Apr 20. Last slot of day (10pm). Outside window now. Healthy."
+      "note": "Ran 10:08 PM ET Apr 20. Last slot of day (10pm). Outside window now (2am ET). Healthy."
     },
     "fb-comment-replies": {
       "status": "healthy",
       "last_run": "2026-04-21T02:39:01.562Z",
-      "note": "Ran 10:39 PM ET Apr 20. Window 9am-10:59pm ET. Last slot of day. Healthy."
+      "note": "Ran 10:39 PM ET Apr 20. Window 9am-10:59pm ET. Last slot of day. Outside window now. Healthy."
     },
     "facebook-scrape": {
       "status": "healthy",
@@ -39,22 +39,22 @@
     "morning-debrief": {
       "status": "healthy",
       "last_run": "2026-04-20T11:08:45.375Z",
-      "note": "Ran 7:08 AM ET Apr 20. ~18h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
+      "note": "Ran 7:08 AM ET Apr 20. ~19h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
     },
     "novaro-daily-lead-pipeline": {
       "status": "healthy",
       "last_run": "2026-04-20T11:16:03.341Z",
-      "note": "Ran 7:16 AM ET Apr 20. ~18h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
+      "note": "Ran 7:16 AM ET Apr 20. ~19h ago. Within 26h threshold. Next run ~7am ET Apr 21. Healthy."
     },
     "task-health-monitor": {
       "status": "healthy",
-      "last_run": "2026-04-21T05:11:04Z",
-      "note": "Current run 1:11 AM ET Apr 21. Healthy by definition."
+      "last_run": "2026-04-21T06:11:07Z",
+      "note": "Current run 2:11 AM ET Apr 21. Healthy by definition."
     },
     "morning-debrief-sync": {
       "status": "healthy",
       "last_run": "2026-04-20T11:26:03.611Z",
-      "note": "Ran 7:26 AM ET Apr 20 (M-F only). Next run Tue Apr 21. Healthy."
+      "note": "Ran 7:26 AM ET Apr 20 (M-F only). Next run Tue Apr 21 ~7am ET. Healthy."
     },
     "fb-group-growth-elliott": {
       "status": "healthy",
