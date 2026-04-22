@@ -1,6 +1,6 @@
 {
     "facebook": {
-        "lastUpdated": "2026-04-21T23:10:10.000Z",
+        "lastUpdated": "2026-04-22T00:10:33.000Z",
         "groups": 101,
         "postsLive": 44,
         "comments": 122,
@@ -274,6 +274,17 @@
                 "interest": 0,
                 "lastUpdated": "2026-04-21T23:10:15.000Z",
                 "note": "ACCOUNT PERMANENTLY DISABLED. All hourly runs on Apr 21 confirm: Elliott Marsh account (ID 61572018536470) banned by Facebook with no appeal path. Login via phone 4138476142 redirects immediately to checkpoint/disabled page. 0 sources scanned. 0 leads. GitHub push executed each run. Action required: Vito must create a new Facebook persona to resume outreach. | Hourly scan (~3:09 PM ET): ACCOUNT PERMANENTLY DISABLED (confirmed). checkpoint/disabled page persists \u2014 no scan possible. 0 leads. GitHub push executed. | Hourly scan (~4:09 PM ET): ACCOUNT PERMANENTLY DISABLED (confirmed). Login attempt leads to checkpoint/disabled page \u2014 no scan possible. 0 leads. GitHub push executed. | Hourly scan (~5:09 PM ET): ACCOUNT PERMANENTLY DISABLED (confirmed). Login checkpoint/disabled persists \u2014 no scan possible. 0 leads. GitHub push executed. | Hourly scan (~6:12 PM ET): ACCOUNT PERMANENTLY DISABLED (confirmed). Login via phone 4138476142 + password leads to checkpoint/disabled page: \"We reviewed your account and found that it still doesn\u2019t follow our Community Standards on account integrity. You cannot request another review of this decision.\" 0 sources scanned. 0 leads. GitHub push executed. | Hourly scan (~7:10 PM ET): ACCOUNT PERMANENTLY DISABLED (confirmed). checkpoint/disabled page persists \u2014 no scan possible. 0 leads. GitHub push executed."
+            },
+            {
+                "date": "2026-04-22",
+                "groups": 0,
+                "posts": 0,
+                "comments": 0,
+                "positive": 0,
+                "dms": 0,
+                "interest": 0,
+                "lastUpdated": "2026-04-22T00:10:33.000Z",
+                "note": "Hourly scan (~12:10 AM UTC / ET): ACCOUNT PERMANENTLY DISABLED (confirmed). Elliott Marsh account (ID 61572018536470) banned by Facebook \u2014 checkpoint/disabled page: 'We reviewed your account and found that it still doesn't follow our Community Standards on account integrity. You cannot request another review of this decision.' 0 sources scanned. 0 leads. GitHub push executed."
             }
         ]
     }
