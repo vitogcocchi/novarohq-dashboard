@@ -409,6 +409,27 @@ tbody tr:hover td{background:rgba(0,212,255,.04);color:var(--t1)}
   font-family:'Share Tech Mono',monospace;font-size:12px;
 }
 
+/* ── PIPELINE ── */
+.pipeline-wrap{display:flex;align-items:center;justify-content:space-around;padding:30px 20px;gap:10px;flex-wrap:wrap}
+.pipe-stage{text-align:center;flex:1;min-width:110px}
+.pipe-num{font-family:'Orbitron',monospace;font-size:48px;font-weight:900;color:var(--t1);line-height:1;margin-bottom:8px;text-shadow:0 0 20px currentColor}
+.pipe-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--t3)}
+.pipe-arrow{font-size:28px;color:var(--t3);flex-shrink:0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.two-col{grid-template-columns:1fr}}
+.reply-item{display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid rgba(0,212,255,.06)}
+.reply-item:last-child{border-bottom:none}
+.reply-badge{padding:3px 8px;border-radius:3px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.rb-opted_out{background:rgba(255,100,100,.15);color:#ff6464;border:1px solid rgba(255,100,100,.3)}
+.rb-auto_reply{background:rgba(150,150,150,.12);color:#888;border:1px solid rgba(150,150,150,.25)}
+.rb-warm{background:rgba(0,255,128,.15);color:#00ff80;border:1px solid rgba(0,255,128,.3)}
+.rb-email_update{background:rgba(255,170,0,.12);color:#ffaa00;border:1px solid rgba(255,170,0,.3)}
+.rb-other{background:rgba(0,212,255,.08);color:var(--t3);border:1px solid rgba(0,212,255,.2)}
+.reply-info{flex:1;min-width:0}
+.reply-email{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reply-preview{font-size:11px;color:var(--t3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reply-date{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--t3);white-space:nowrap;flex-shrink:0}
+
 /* ── MORNING BRIEF ── */
 .brief-wrap{padding:20px 24px}
 .brief-item{
@@ -638,7 +659,7 @@ tbody tr:hover td{background:rgba(0,212,255,.04);color:var(--t1)}
       <div class="ph">
         <div class="ph-left">
           <div class="pt">INSTANTLY</div>
-          <div class="ps">COLD EMAIL // CAMPAIGN INTELLIGENCE</div>
+          <div class="ps">LEAD PIPELINE // WHERE EVERYONE IS AT</div>
         </div>
         <div class="ph-right">
           <div class="ph-clock" id="clock-3"></div>
@@ -646,72 +667,71 @@ tbody tr:hover td{background:rgba(0,212,255,.04);color:var(--t1)}
         </div>
       </div>
 
-      <!-- Stat grid -->
+      <!-- Pipeline -->
       <div class="hud-card">
         <div class="hud-head">
-          <div class="hud-title"><div class="hud-title-icon"></div>CAMPAIGN OVERVIEW</div>
-          <div class="hud-badge" id="ins-updated">REAL-TIME</div>
+          <div class="hud-title"><div class="hud-title-icon"></div>PIPELINE</div>
+          <div class="hud-badge" id="ins-updated">LOADING...</div>
         </div>
-        <div class="stat-grid">
-          <div class="stat-cell">
-            <div class="stat-label">EMAILS SENT</div>
-            <div class="stat-val cy" id="ins-sent">--</div>
-            <div class="stat-sub" id="ins-contacted">-- contacted</div>
+        <div class="pipeline-wrap">
+          <div class="pipe-stage">
+            <div class="pipe-num cy" id="pl-sent">--</div>
+            <div class="pipe-label">SENT</div>
           </div>
-          <div class="stat-cell">
-            <div class="stat-label">UNIQUE OPENS</div>
-            <div class="stat-val ok" id="ins-opens">--</div>
-            <div class="stat-sub" id="ins-open-rate">-- open rate</div>
+          <div class="pipe-arrow">›</div>
+          <div class="pipe-stage">
+            <div class="pipe-num" id="pl-replied">--</div>
+            <div class="pipe-label">REPLIED</div>
           </div>
-          <div class="stat-cell">
-            <div class="stat-label">REPLIES</div>
-            <div class="stat-val cy" id="ins-replies">--</div>
-            <div class="stat-sub" id="ins-reply-rate">-- reply rate</div>
+          <div class="pipe-arrow">›</div>
+          <div class="pipe-stage">
+            <div class="pipe-num ok" id="pl-interested">--</div>
+            <div class="pipe-label">INTERESTED</div>
           </div>
-          <div class="stat-cell">
-            <div class="stat-label">INTERESTED</div>
-            <div class="stat-val ok" id="ins-interested">--</div>
-            <div class="stat-sub">Positive signals</div>
+          <div class="pipe-arrow">›</div>
+          <div class="pipe-stage">
+            <div class="pipe-num ok" id="pl-meeting">--</div>
+            <div class="pipe-label">MEETING BOOKED</div>
           </div>
-          <div class="stat-cell">
-            <div class="stat-label">BOUNCES</div>
-            <div class="stat-val wn" id="ins-bounces">--</div>
-            <div class="stat-sub" id="ins-bounce-rate">-- bounce rate</div>
-          </div>
-          <div class="stat-cell">
-            <div class="stat-label">MEETINGS BOOKED</div>
-            <div class="stat-val ok" id="ins-meetings">--</div>
-            <div class="stat-sub">All campaigns</div>
+          <div class="pipe-arrow">›</div>
+          <div class="pipe-stage">
+            <div class="pipe-num ok" id="pl-won">--</div>
+            <div class="pipe-label">WON</div>
           </div>
         </div>
       </div>
 
-      <!-- Daily table -->
-      <div class="hud-card">
-        <div class="hud-head">
-          <div class="hud-title"><div class="hud-title-icon"></div>DAILY BREAKDOWN</div>
-          <div class="hud-badge">LAST 14 DAYS</div>
+      <!-- Daily sends + Recent replies -->
+      <div class="two-col">
+        <div class="hud-card">
+          <div class="hud-head">
+            <div class="hud-title"><div class="hud-title-icon"></div>DAILY SENDS</div>
+          </div>
+          <div class="tbl-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>DATE</th>
+                  <th>SENT</th>
+                  <th>REPLIES</th>
+                  <th>BOUNCES</th>
+                </tr>
+              </thead>
+              <tbody id="ins-tbody">
+                <tr><td colspan="4" style="text-align:center;padding:30px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px">AWAITING DATA...</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="tbl-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>DATE</th>
-                <th>SENT</th>
-                <th>OPENS</th>
-                <th>REPLIES</th>
-                <th>INTERESTED</th>
-                <th>BOUNCES</th>
-              </tr>
-            </thead>
-            <tbody id="ins-tbody">
-              <tr>
-                <td colspan="6" style="text-align:center;padding:40px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px">
-                  AWAITING DATA SYNC...
-                </td>
-              </tr>
-            </tbody>
-          </table>
+
+        <div class="hud-card">
+          <div class="hud-head">
+            <div class="hud-title"><div class="hud-title-icon"></div>RECENT REPLIES</div>
+            <a href="https://app.instantly.ai/app/unibox" target="_blank" class="hud-badge" style="text-decoration:none;cursor:pointer">OPEN UNIBOX ↗</a>
+          </div>
+          <div id="ins-replies-list">
+            <div style="text-align:center;padding:30px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px">LOADING...</div>
+          </div>
         </div>
       </div>
     </section>
@@ -821,26 +841,14 @@ async function loadLiveData(){
 
 function populateInstantly(d){
   const ov = d.overview || {};
-  const sent       = ov.emails_sent_count  || 0;
-  const opens      = ov.open_count_unique  || 0;
-  const replies    = ov.reply_count_unique || 0;
-  const interested = ov.total_interested   || 0;
-  const bounces    = ov.bounced_count      || 0;
-  const meetings   = ov.total_meeting_booked || 0;
-  const contacted  = ov.contacted_count    || 0;
+  const pl = d.pipeline || {};
 
-  const pct = (n,d) => d>0 ? ((n/d)*100).toFixed(1)+'%' : '--';
-
-  s('ins-sent',       sent.toLocaleString());
-  s('ins-contacted',  contacted.toLocaleString()+' contacted');
-  s('ins-opens',      opens);
-  s('ins-open-rate',  pct(opens,sent)+' open rate');
-  s('ins-replies',    replies);
-  s('ins-reply-rate', pct(replies,sent)+' reply rate');
-  s('ins-interested', interested);
-  s('ins-bounces',    bounces);
-  s('ins-bounce-rate',pct(bounces,sent)+' bounce rate');
-  s('ins-meetings',   meetings);
+  // Pipeline numbers
+  s('pl-sent',      (pl.sent || ov.emails_sent_count || 0).toLocaleString());
+  s('pl-replied',   (pl.replied || ov.reply_count_unique || 0).toLocaleString());
+  s('pl-interested',(pl.interested || ov.total_interested || 0).toLocaleString());
+  s('pl-meeting',   (pl.meeting_booked || ov.total_meeting_booked || 0).toLocaleString());
+  s('pl-won',       (pl.won || ov.total_closed || 0).toLocaleString());
 
   if(d.lastUpdated){
     const el = document.getElementById('ins-updated');
@@ -849,21 +857,31 @@ function populateInstantly(d){
     });
   }
 
+  // Daily table
   const tbody = document.getElementById('ins-tbody');
   if(tbody && d.daily && d.daily.length > 0){
-    tbody.innerHTML = [...d.daily].reverse().slice(0,14).map(row => {
-      const active = (row.sent||0) > 0;
-      return `<tr${active?' style="color:var(--t1)"':''}>
-        <td class="td-h">${fmtDate(row.date)}</td>
-        <td>${(row.sent||0).toLocaleString()}</td>
-        <td>${row.unique_opened||0}</td>
-        <td${(row.unique_replies||0)>0?' style="color:var(--cyan);font-weight:700"':''}>${row.unique_replies||0}</td>
-        <td${(row.unique_opportunities||0)>0?' style="color:var(--ok)"':''}>${row.unique_opportunities||row.opportunities||0}</td>
-        <td${(row.bounced||0)>0?' style="color:var(--warn)"':''}>${row.bounced||0}</td>
-      </tr>`;
-    }).join('');
-  } else if(tbody && (!d.daily || d.daily.length===0)){
-    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px">NO DATA — CAMPAIGN STATS APPEAR HERE ONCE EMAILS ARE SENT</td></tr>`;
+    tbody.innerHTML = [...d.daily].reverse().slice(0,14).map(row => `<tr>
+      <td class="td-h">${fmtDate(row.date)}</td>
+      <td>${(row.sent||0).toLocaleString()}</td>
+      <td${(row.replies||0)>0?' style="color:var(--cyan);font-weight:700"':''}>${row.replies||0}</td>
+      <td${(row.bounced||0)>0?' style="color:var(--warn)"':''}>${row.bounced||0}</td>
+    </tr>`).join('');
+  }
+
+  // Recent replies list
+  const rl = document.getElementById('ins-replies-list');
+  if(rl && d.recent_replies && d.recent_replies.length > 0){
+    const labelMap = {opted_out:'OPTED OUT',auto_reply:'AUTO-REPLY',warm:'WARM LEAD',email_update:'EMAIL UPDATE',other:'OTHER'};
+    rl.innerHTML = d.recent_replies.map(r => `<div class="reply-item">
+      <div class="reply-badge rb-${r.status}">${labelMap[r.status]||r.label||r.status}</div>
+      <div class="reply-info">
+        <div class="reply-email">${r.email}</div>
+        <div class="reply-preview">${r.preview}</div>
+      </div>
+      <div class="reply-date">${fmtDate(r.date)}</div>
+    </div>`).join('');
+  } else if(rl){
+    rl.innerHTML = '<div style="text-align:center;padding:30px;color:var(--t3);font-family:\'Share Tech Mono\',monospace;font-size:11px;letter-spacing:2px">NO REPLIES YET</div>';
   }
 }
 
