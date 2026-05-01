@@ -1,79 +1,114 @@
 {
-  "lastUpdated": "2026-04-30T23:50:00Z",
+  "lastUpdated": "2026-05-01T12:00:00Z",
   "overview": {
     "open_count": 0,
     "open_count_unique": 0,
-    "open_count_unique_by_step": 0,
-    "link_click_count": 0,
-    "link_click_count_unique": 0,
     "reply_count": 4,
     "reply_count_unique": 4,
-    "reply_count_unique_by_step": 4,
-    "reply_count_automatic": 0,
-    "reply_count_automatic_unique": 0,
     "bounced_count": 5,
     "unsubscribed_count": 0,
     "emails_sent_count": 1290,
     "contacted_count": 1261,
     "new_leads_contacted_count": 1261,
     "total_opportunities": 0,
-    "total_opportunity_value": 0,
     "total_interested": 0,
     "total_meeting_booked": 0,
     "total_meeting_completed": 0,
     "total_closed": 0
   },
+  "pipeline": {
+    "sent": 1290,
+    "contacted": 1261,
+    "replied": 10,
+    "opted_out": 3,
+    "auto_replies": 2,
+    "interested": 0,
+    "meeting_booked": 0,
+    "won": 0
+  },
+  "recent_replies": [
+    {
+      "email": "manish@coffeeinthecloset.com",
+      "date": "2026-04-30",
+      "status": "opted_out",
+      "label": "Opted Out",
+      "preview": "No worries, best of luck with Coffee in the Closet"
+    },
+    {
+      "email": "brad@acadiatx.com",
+      "date": "2026-04-30",
+      "status": "auto_reply",
+      "label": "Auto-Reply",
+      "preview": "Auto-reply: someone just hired your competitor"
+    },
+    {
+      "email": "m.cochran@apexroofingcompanies.com",
+      "date": "2026-04-29",
+      "status": "opted_out",
+      "label": "Opted Out",
+      "preview": "No worries, best of luck with Apex Roofing"
+    },
+    {
+      "email": "amanda.luipasco@onehourair.com",
+      "date": "2026-04-28",
+      "status": "email_update",
+      "label": "Email Update",
+      "preview": "My email has been updated"
+    },
+    {
+      "email": "tim@hcaconstructionandroofing.com",
+      "date": "2026-04-26",
+      "status": "other",
+      "label": "Other",
+      "preview": "Re: $652 in. $12,595 out."
+    },
+    {
+      "email": "nick@optimaconstructiongroup.com",
+      "date": "2026-04-25",
+      "status": "opted_out",
+      "label": "Opted Out",
+      "preview": "No worries, best of luck with Optima Construction"
+    },
+    {
+      "email": "briank@affluentexteriors.com",
+      "date": "2026-04-24",
+      "status": "email_update",
+      "label": "Email Update",
+      "preview": "We've rebranded - please update my email"
+    },
+    {
+      "email": "sslosson@circle-e.com",
+      "date": "2026-04-19",
+      "status": "warm",
+      "label": "Warm",
+      "preview": "Thank you"
+    },
+    {
+      "email": "odari.head@headsplumbing.com",
+      "date": "2026-04-17",
+      "status": "auto_reply",
+      "label": "Auto-Reply",
+      "preview": "Email verification reply"
+    }
+  ],
   "daily": [
     {
       "date": "2026-04-28",
       "sent": 420,
-      "contacted": 420,
-      "new_leads_contacted": 420,
-      "opened": 0,
-      "unique_opened": 0,
       "replies": 2,
-      "unique_replies": 2,
-      "replies_automatic": 0,
-      "unique_replies_automatic": 0,
-      "clicks": 0,
-      "unique_clicks": 0,
-      "bounced": 2,
-      "opportunities": 0,
-      "unique_opportunities": 0
+      "bounced": 2
     },
     {
       "date": "2026-04-29",
       "sent": 420,
-      "contacted": 420,
-      "new_leads_contacted": 420,
-      "opened": 0,
-      "unique_opened": 0,
       "replies": 1,
-      "unique_replies": 1,
-      "replies_automatic": 0,
-      "unique_replies_automatic": 0,
-      "clicks": 0,
-      "unique_clicks": 0,
-      "bounced": 2,
-      "opportunities": 0,
-      "unique_opportunities": 0
+      "bounced": 2
     },
     {
       "date": "2026-04-30",
       "sent": 450,
-      "contacted": 421,
-      "new_leads_contacted": 421,
-      "opened": 0,
-      "unique_opened": 0,
       "replies": 1,
-      "unique_replies": 1,
-      "replies_automatic": 0,
-      "unique_replies_automatic": 0,
-      "clicks": 0,
-      "unique_clicks": 0,
-      "bounced": 1,
-      "opportunities": 0,
-      "unique_opportunities": 0
+      "bounced": 1
     }
   ]
 }
