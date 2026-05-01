@@ -1,1726 +1,969 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novaro HQ - Operations Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        :root{
-            --bg:#0a0e17;--bg2:#0d1321;--card:rgba(13,25,50,0.7);
-            --cyan:#00d4ff;--cyan-d:rgba(0,212,255,0.15);--cyan-g:rgba(0,212,255,0.4);
-            --blue:#1e90ff;--blue-d:rgba(30,144,255,0.15);
-            --t1:#e0f0ff;--t2:#7a9bb5;--t3:#4a6a80;
-            --bdr:rgba(0,212,255,0.12);--bdr-a:rgba(0,212,255,0.4);
-            --ok:#00ff88;--warn:#ffaa00;--err:#ff4466;--sw:260px;
-        }
-        body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--t1);min-height:100vh;overflow-x:hidden}
-        body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(0,212,255,.03)0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(30,144,255,.03)0%,transparent 50%);pointer-events:none;z-index:0}
-        body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,.03)1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.03)1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOVARO HQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#020812;
+  --bg2:#040d1a;
+  --bg3:#061220;
+  --card:#071528;
+  --border:rgba(0,212,255,.18);
+  --border2:rgba(0,212,255,.06);
+  --cyan:#00d4ff;
+  --cyan2:#00a8cc;
+  --ok:#00ff88;
+  --warn:#ffb800;
+  --err:#ff4466;
+  --t1:#ddeeff;
+  --t2:#6688aa;
+  --t3:#2a4060;
+  --glow:0 0 20px rgba(0,212,255,.25),0 0 60px rgba(0,212,255,.08);
+  --glow-ok:0 0 16px rgba(0,255,136,.3);
+}
 
-        /* SIDEBAR */
-        .sb{position:fixed;left:0;top:0;width:var(--sw);height:100vh;background:linear-gradient(180deg,rgba(10,14,23,.98),rgba(13,19,33,.98));border-right:1px solid var(--bdr);display:flex;flex-direction:column;z-index:100;backdrop-filter:blur(20px)}
-        .sb-hd{padding:24px 20px;border-bottom:1px solid var(--bdr)}
-        .logo{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:700;color:var(--cyan);letter-spacing:3px;display:flex;align-items:center;gap:10px}
-        .logo-i{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--cyan-d),var(--blue-d));border:1px solid var(--bdr-a);display:flex;align-items:center;justify-content:center;font-size:18px}
-        .logo-s{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:2px;margin-top:4px}
-        .sb-nav{flex:1;padding:16px 12px;display:flex;flex-direction:column;gap:4px;overflow-y:auto}
-        .nav-sec{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:2px;text-transform:uppercase;padding:16px 12px 8px}
-        .nav-i{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;cursor:pointer;transition:all .3s;position:relative;border:1px solid transparent;color:var(--t2);text-decoration:none}
-        .nav-i:hover{background:var(--cyan-d);color:var(--t1);border-color:var(--bdr)}
-        .nav-i.on{background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(30,144,255,.08));color:var(--cyan);border-color:var(--bdr-a);box-shadow:0 0 20px rgba(0,212,255,.05),inset 0 0 20px rgba(0,212,255,.03)}
-        .nav-i.on::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:3px;height:60%;background:var(--cyan);border-radius:0 3px 3px 0;box-shadow:0 0 10px var(--cyan-g)}
-        .nav-ic{font-size:18px;width:24px;text-align:center}
-        .nav-l{font-size:14px;font-weight:500;letter-spacing:.5px}
-        .nav-b{margin-left:auto;font-family:'Share Tech Mono',monospace;font-size:10px;padding:2px 8px;border-radius:6px;background:var(--cyan-d);color:var(--cyan);border:1px solid var(--bdr)}
-        .sb-ft{padding:16px 20px;border-top:1px solid var(--bdr)}
-        .st-ind{display:flex;align-items:center;gap:8px;font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3)}
-        .st-dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 8px rgba(0,255,136,.5);animation:pls 2s ease-in-out infinite}
-        @keyframes pls{0%,100%{opacity:1}50%{opacity:.4}}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--bg);color:var(--t1);font-family:'Rajdhani',sans-serif;overflow-x:hidden}
 
-        /* MAIN */
-        .mc{margin-left:var(--sw);padding:24px 32px;position:relative;z-index:1;min-height:100vh}
-        .ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--bdr)}
-        .pt{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:600;letter-spacing:2px}
-        .ps{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--t3);margin-top:4px}
-        .ht{font-family:'Share Tech Mono',monospace;font-size:13px;color:var(--t3);text-align:right}
-        .ht .tv{font-size:18px;color:var(--cyan);display:block}
+/* ── SCANLINE OVERLAY ── */
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px);
+}
 
-        /* STAT BUBBLES */
-        .sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:28px}
-        .sb-c{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:20px;position:relative;overflow:hidden;transition:all .3s;backdrop-filter:blur(10px)}
-        .sb-c:hover{border-color:var(--bdr-a);box-shadow:0 0 30px rgba(0,212,255,.08),0 8px 32px rgba(0,0,0,.3);transform:translateY(-2px)}
-        .sb-c::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:opacity .3s}
-        .sb-c:hover::before{opacity:1}
-        .sl{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
-        .sv{font-family:'Orbitron',sans-serif;font-size:28px;font-weight:700;line-height:1}
-        .sv.cy{color:var(--cyan)}.sv.ok{color:var(--ok)}.sv.wn{color:var(--warn)}.sv.bl{color:var(--blue)}
-        .sc{font-family:'Share Tech Mono',monospace;font-size:11px;margin-top:8px;color:var(--t3)}
+/* ── GRID BG ── */
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(0,212,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,212,255,.03) 1px,transparent 1px);
+  background-size:60px 60px;
+}
 
-        /* DATA SECTION */
-        .ds{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:24px;margin-bottom:24px;backdrop-filter:blur(10px)}
-        .dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-        .dt{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:500;letter-spacing:1.5px;display:flex;align-items:center;gap:10px}
-        .dt .ic{color:var(--cyan)}
-        .db{font-family:'Share Tech Mono',monospace;font-size:10px;padding:4px 12px;border-radius:8px;background:var(--cyan-d);color:var(--cyan);border:1px solid var(--bdr)}
+/* ── KEYFRAMES ── */
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+@keyframes flicker{0%,19%,21%,23%,25%,54%,56%,100%{opacity:1}20%,24%,55%{opacity:.5}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes glow-pulse{0%,100%{box-shadow:0 0 10px rgba(0,212,255,.2)}50%{box-shadow:0 0 30px rgba(0,212,255,.5),0 0 60px rgba(0,212,255,.2)}}
+@keyframes slide-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hud-scan{0%{background-position:0% 0%}100%{background-position:0% 100%}}
+@keyframes corner-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 
-        /* TABLE */
-        table{width:100%;border-collapse:separate;border-spacing:0 4px}
-        th{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;text-align:left;padding:8px 16px;border-bottom:1px solid var(--bdr)}
-        td{font-size:14px;padding:12px 16px;color:var(--t2);border-bottom:1px solid rgba(0,212,255,.04)}
-        tr.clickable{cursor:pointer;transition:all .2s}
-        tr.clickable:hover td{color:var(--t1);background:rgba(0,212,255,.05)}
-        td:first-child{border-radius:8px 0 0 8px}td:last-child{border-radius:0 8px 8px 0}
-        .td-h{color:var(--cyan);font-weight:600}
-        .pill{display:inline-block;padding:3px 10px;border-radius:6px;font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:.5px}
-        .pill.active{background:rgba(0,255,136,.1);color:var(--ok);border:1px solid rgba(0,255,136,.2)}
-        .pill.paused{background:rgba(255,170,0,.1);color:var(--warn);border:1px solid rgba(255,170,0,.2)}
-        .pill.hot{background:rgba(255,68,102,.1);color:var(--err);border:1px solid rgba(255,68,102,.2)}
-        .pill.new{background:rgba(0,212,255,.1);color:var(--cyan);border:1px solid rgba(0,212,255,.2)}
+/* ── MOVING SCAN LINE ── */
+.scan-beam{
+  position:fixed;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(0,212,255,.6),transparent);
+  animation:scanline 4s linear infinite;
+  pointer-events:none;z-index:1000;
+}
 
-        /* PAGE SECTIONS */
-        .pg{display:none}.pg.on{display:block;animation:fi .4s ease}
-        @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* ══════════════════════════════════
+   AUTH GATE
+══════════════════════════════════ */
+#auth-gate{
+  position:fixed;inset:0;background:var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  z-index:1000;
+}
 
-        /* OVERVIEW CARDS */
-        .og{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:28px}
-        .oc{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:24px;cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);overflow:hidden}
-        .oc:hover{border-color:var(--bdr-a);box-shadow:0 0 40px rgba(0,212,255,.1),0 8px 32px rgba(0,0,0,.3);transform:translateY(-3px)}
-        .oc .ci{font-size:32px;margin-bottom:16px}
-        .oc .ct{font-family:'Orbitron',sans-serif;font-size:16px;font-weight:600;margin-bottom:6px;letter-spacing:1px}
-        .oc .cd{font-size:13px;color:var(--t3);line-height:1.5}
-        .oc .cs{margin-top:20px;padding-top:16px;border-top:1px solid var(--bdr);display:flex;justify-content:space-between}
-        .oc .csv{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:600;color:var(--cyan)}
-        .oc .csl{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:1px;margin-top:2px}
+.auth-outer{
+  position:relative;padding:3px;
+  background:linear-gradient(135deg,var(--cyan),transparent,var(--cyan2),transparent,var(--cyan));
+  border-radius:4px;
+  animation:glow-pulse 3s ease-in-out infinite;
+}
+.auth-box{
+  background:var(--bg2);
+  padding:48px 52px;text-align:center;
+  border-radius:2px;position:relative;
+  min-width:360px;
+}
 
-        /* DETAIL PANEL (slide-in) */
-        .dp-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s}
-        .dp-overlay.open{opacity:1;pointer-events:all}
-        .dp{position:fixed;right:-520px;top:0;width:500px;height:100vh;background:linear-gradient(180deg,#0d1321,#0a0e17);border-left:1px solid var(--bdr-a);z-index:201;transition:right .4s cubic-bezier(.16,1,.3,1);overflow-y:auto;padding:32px}
-        .dp.open{right:0}
-        .dp-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:8px;background:rgba(255,68,102,.1);border:1px solid rgba(255,68,102,.2);color:var(--err);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
-        .dp-close:hover{background:rgba(255,68,102,.2)}
-        .dp-title{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:600;margin-bottom:4px;padding-right:50px}
-        .dp-sub{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3);margin-bottom:24px;letter-spacing:1px}
-        .dp-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--bdr)}
-        .dp-label{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:1px;text-transform:uppercase}
-        .dp-val{font-size:14px;font-weight:500;color:var(--t1);text-align:right;max-width:60%}
-        .dp-section{font-family:'Orbitron',sans-serif;font-size:12px;color:var(--cyan);letter-spacing:1.5px;margin-top:24px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr-a)}
-        .dp-notes{font-size:14px;color:var(--t2);line-height:1.7;margin-top:8px;padding:16px;background:rgba(0,212,255,.03);border-radius:10px;border:1px solid var(--bdr)}
-        .dp-btn{display:inline-block;margin-top:20px;padding:10px 24px;border-radius:10px;background:linear-gradient(135deg,var(--cyan-d),var(--blue-d));border:1px solid var(--bdr-a);color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:1px;cursor:pointer;transition:all .2s;text-decoration:none}
-        .dp-btn:hover{background:rgba(0,212,255,.2);box-shadow:0 0 20px rgba(0,212,255,.15)}
+/* Corner brackets */
+.auth-box::before,.auth-box::after,
+.auth-corners::before,.auth-corners::after{
+  content:'';position:absolute;width:16px;height:16px;
+  border-color:var(--cyan);border-style:solid;opacity:.6;
+}
+.auth-box::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.auth-box::after{top:-1px;right:-1px;border-width:2px 2px 0 0}
+.auth-corners::before{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
+.auth-corners::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
 
-        /* MORNING DEBRIEF */
-        .brief-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:24px;margin-bottom:16px;backdrop-filter:blur(10px);transition:all .3s}
-        .brief-card:hover{border-color:var(--bdr-a)}
-        .brief-icon{font-size:20px;margin-bottom:8px}
-        .brief-title{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:500;color:var(--cyan);letter-spacing:1px;margin-bottom:12px}
-        .brief-content{font-size:14px;color:var(--t2);line-height:1.8}
-        .brief-content strong{color:var(--t1);font-weight:600}
-        .brief-content ol{padding-left:20px;margin-top:8px}
-        .brief-content ol li{margin-bottom:10px}
-        .brief-content blockquote{border-left:3px solid var(--cyan);padding:12px 16px;margin:12px 0;background:rgba(0,212,255,.03);border-radius:0 8px 8px 0;font-style:italic;color:var(--t1)}
-        .brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-        .brief-urgent{background:rgba(255,68,102,.05);border-color:rgba(255,68,102,.2)}
-        .brief-urgent .brief-title{color:var(--err)}
-        .urgent-item{padding:10px 0;border-bottom:1px solid rgba(255,68,102,.1);font-size:13px;color:var(--t2);line-height:1.6}
-        .urgent-item:last-child{border-bottom:none}
-        .urgent-tag{display:inline-block;padding:2px 8px;border-radius:4px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.5px;margin-right:6px}
-        .urgent-tag.block{background:rgba(255,68,102,.15);color:var(--err)}
-        .urgent-tag.follow{background:rgba(255,170,0,.15);color:var(--warn)}
-        .urgent-tag.offline{background:rgba(255,170,0,.15);color:var(--warn)}
+.auth-hex{
+  width:60px;height:60px;margin:0 auto 20px;position:relative;
+}
+.auth-hex svg{width:100%;height:100%;animation:corner-spin 8s linear infinite}
 
-        /* CAMPAIGN TABLE in debrief */
-        .camp-table{width:100%;margin-top:12px}
-        .camp-table td,.camp-table th{padding:8px 12px;font-size:13px}
+.auth-logo{
+  font-family:'Orbitron',monospace;
+  font-size:20px;font-weight:900;letter-spacing:6px;
+  color:var(--cyan);margin-bottom:4px;
+  text-shadow:0 0 20px rgba(0,212,255,.6);
+  animation:flicker 8s infinite;
+}
+.auth-sub{
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;color:var(--t3);letter-spacing:3px;margin-bottom:32px;
+}
+.auth-sys{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:rgba(0,212,255,.3);margin-bottom:24px;
+  line-height:1.8;
+}
+.auth-box input{
+  width:100%;padding:14px 20px;
+  background:rgba(0,212,255,.04);
+  border:1px solid rgba(0,212,255,.25);
+  border-top:1px solid rgba(0,212,255,.5);
+  color:var(--cyan);
+  font-family:'Share Tech Mono',monospace;
+  font-size:18px;text-align:center;letter-spacing:8px;
+  outline:none;margin-bottom:16px;
+  transition:all .2s;
+}
+.auth-box input:focus{
+  border-color:var(--cyan);
+  box-shadow:0 0 20px rgba(0,212,255,.2),inset 0 0 10px rgba(0,212,255,.05);
+}
+.auth-box button{
+  width:100%;padding:14px;
+  background:transparent;
+  border:1px solid var(--cyan);
+  color:var(--cyan);
+  font-family:'Orbitron',monospace;font-size:13px;
+  font-weight:700;letter-spacing:4px;cursor:pointer;
+  position:relative;overflow:hidden;
+  transition:all .2s;
+}
+.auth-box button::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,212,255,.15),transparent);
+  transform:translateX(-100%);transition:transform .3s;
+}
+.auth-box button:hover{
+  box-shadow:0 0 20px rgba(0,212,255,.4);
+  color:#fff;
+}
+.auth-box button:hover::before{transform:translateX(0)}
+#auth-err{
+  color:var(--err);
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;margin-top:12px;
+  display:none;letter-spacing:2px;
+}
+.auth-status{
+  margin-top:20px;
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:rgba(0,255,136,.4);
+  letter-spacing:2px;
+}
+.cursor{animation:blink 1s infinite}
 
-        /* EMPTY */
-        .empty{text-align:center;padding:60px 20px;color:var(--t3)}
-        .empty .ei{font-size:48px;margin-bottom:16px;opacity:.3}
-        .empty .et{font-family:'Share Tech Mono',monospace;font-size:13px;letter-spacing:1px}
+/* ══════════════════════════════════
+   INTRO VIDEO — FULLSCREEN
+══════════════════════════════════ */
+#intro-modal{
+  display:none;position:fixed;inset:0;
+  background:#000;z-index:998;
+}
+#intro-modal.show{display:block}
 
-        /* SCROLLBAR */
-        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:transparent}
-        ::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:3px}::-webkit-scrollbar-thumb:hover{background:var(--bdr-a)}
+#intro-video{
+  width:100%;height:100%;
+  object-fit:cover;
+}
 
-        /* CONVERSION FUNNEL */
-        .fn-num{font-family:'Orbitron',sans-serif;font-size:26px;font-weight:700;color:var(--cyan);line-height:1}
-        .fn-label{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--t3);margin-top:4px}
-        .fn-rate{font-family:'Share Tech Mono',monospace;font-size:10px;margin-top:6px}
-        .fn-ch{background:rgba(0,212,255,0.03);border:1px solid var(--bdr);border-radius:12px;padding:16px}
-        .fn-ch-title{font-family:'Orbitron',sans-serif;font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)}
-        .fn-ch-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;color:var(--t2)}
-        .fn-ch-row span:last-child{font-family:'Share Tech Mono',monospace;color:var(--t1)}
-        .fn-ch-win span:last-child{color:var(--ok);font-weight:600}
-        .fn-ch-row:last-child{border-bottom:none}
+#intro-skip{
+  position:absolute;bottom:32px;right:32px;
+  background:rgba(0,0,0,.7);
+  border:1px solid rgba(0,212,255,.4);
+  color:rgba(0,212,255,.8);
+  padding:10px 24px;
+  font-family:'Orbitron',monospace;
+  font-size:11px;font-weight:700;
+  letter-spacing:3px;cursor:pointer;
+  transition:all .2s;
+  z-index:999;
+}
+#intro-skip:hover{
+  border-color:var(--cyan);color:#fff;
+  box-shadow:0 0 16px rgba(0,212,255,.3);
+}
 
-        /* AGENTS PAGE */
-        .ag-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
-        .ag-live-card{background:linear-gradient(135deg,rgba(0,255,136,.05),rgba(0,212,255,.05));border:1px solid rgba(0,255,136,.25);border-radius:16px;padding:24px;margin-bottom:16px;position:relative;overflow:hidden;cursor:pointer;transition:all .3s}
-        .ag-live-card:hover{border-color:rgba(0,255,136,.5);box-shadow:0 0 30px rgba(0,255,136,.08);transform:translateY(-2px)}
-        .ag-live-pulse{position:absolute;top:20px;right:20px;width:10px;height:10px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px rgba(0,255,136,.6);animation:pls 1.5s ease-in-out infinite}
-        .ag-live-badge{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--ok);letter-spacing:2px;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-        .ag-live-dot{width:6px;height:6px;border-radius:50%;background:var(--ok);animation:pls 1.5s ease-in-out infinite}
-        .ag-live-title{font-family:'Orbitron',sans-serif;font-size:15px;font-weight:600;color:var(--t1);margin-bottom:4px}
-        .ag-live-type{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:1px;margin-bottom:12px}
-        .ag-live-summary{font-size:13px;color:var(--t2);line-height:1.7}
-        .ag-task-row{cursor:pointer;transition:all .2s}
-        .ag-task-row:hover td{background:rgba(0,212,255,.04);color:var(--t1)}
-        .ag-task-row td.ag-task-name{color:var(--cyan);font-weight:600}
-        .ag-empty{text-align:center;padding:40px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px}
-        .pill.running{background:rgba(0,255,136,.1);color:var(--ok);border:1px solid rgba(0,255,136,.3)}
-        .pill.completed-ok{background:rgba(0,255,136,.08);color:var(--ok);border:1px solid rgba(0,255,136,.15)}
-        .pill.sched{background:rgba(30,144,255,.1);color:var(--blue);border:1px solid rgba(30,144,255,.2)}
+/* ══════════════════════════════════
+   SHELL
+══════════════════════════════════ */
+#shell{display:none;height:100vh;flex-direction:column;position:relative;z-index:1}
+#shell.on{display:flex}
 
-        /* Replies & Leads */
-        .rep-summary{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-bottom:28px}
-        .rep-sum-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:20px;text-align:center;backdrop-filter:blur(10px)}
-        .rep-sum-num{font-family:'Orbitron',sans-serif;font-size:28px;font-weight:700;margin-bottom:4px}
-        .rep-sum-lbl{font-size:10px;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase}
-        .rep-sum-num.pos{color:var(--ok)}
-        .rep-sum-num.neg{color:var(--err)}
-        .rep-sum-num.auto{color:var(--t3)}
-        .rep-sum-num.pend{color:var(--warn)}
-        .rep-filters{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
-        .rep-filter{background:var(--card);border:1px solid var(--bdr);border-radius:8px;padding:6px 14px;font-size:10px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;cursor:pointer;transition:all .2s;color:var(--t2)}
-        .rep-filter.on,.rep-filter:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,212,255,.05)}
-        .rep-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px;margin-bottom:12px;display:flex;align-items:flex-start;gap:18px;transition:all .3s;backdrop-filter:blur(10px)}
-        .rep-card:hover{border-color:var(--bdr-a);transform:translateX(4px)}
-        .rep-card.positive{border-left:3px solid var(--ok)}
-        .rep-card.negative{border-left:3px solid var(--err)}
-        .rep-card.auto{border-left:3px solid var(--t3)}
-        .rep-card.pending{border-left:3px solid var(--warn)}
-        .rep-ch-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-        .rep-ch-icon.Email{background:rgba(0,212,255,.1)}
+/* ── TOP BAR ── */
+#topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;height:58px;
+  background:linear-gradient(180deg,rgba(0,20,50,.95),rgba(4,13,26,.98));
+  border-bottom:1px solid var(--border);
+  flex-shrink:0;position:relative;overflow:hidden;
+}
+#topbar::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  animation:pulse 3s ease-in-out infinite;
+}
+.tb-left{display:flex;align-items:center;gap:16px}
+.tb-logo{
+  font-family:'Orbitron',monospace;
+  font-size:16px;font-weight:900;letter-spacing:5px;
+  color:var(--cyan);
+  text-shadow:0 0 16px rgba(0,212,255,.5);
+}
+.tb-sep{width:1px;height:24px;background:var(--border)}
+.tb-sys{
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;color:var(--t3);letter-spacing:2px;
+}
+.tb-sys span{color:var(--ok);animation:pulse 2s infinite}
+.tb-right{display:flex;align-items:center;gap:20px}
+.tb-clock{
+  font-family:'Share Tech Mono',monospace;
+  font-size:13px;color:var(--cyan);
+  text-shadow:0 0 8px rgba(0,212,255,.4);
+}
+.tb-date{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3)}
+#global-last-updated{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:rgba(0,212,255,.35);letter-spacing:1px;
+}
 
-        .rep-ch-icon.Facebook{background:rgba(24,119,242,.1)}
-        .rep-body{flex:1;min-width:0}
-        .rep-meta{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}
-        .rep-date{font-size:11px;color:var(--t3);font-family:'Share Tech Mono',monospace}
-        .rep-ch-tag{font-size:9px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;padding:2px 8px;border-radius:4px;background:rgba(0,212,255,.08);color:var(--cyan);border:1px solid rgba(0,212,255,.2)}
-        .rep-badge{font-size:9px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;padding:2px 8px;border-radius:4px;font-weight:700;border:1px solid}
-        .rep-badge.positive{background:rgba(0,255,136,.1);color:var(--ok);border-color:rgba(0,255,136,.3)}
-        .rep-badge.negative{background:rgba(255,68,102,.1);color:var(--err);border-color:rgba(255,68,102,.3)}
-        .rep-badge.auto{background:rgba(120,120,120,.1);color:var(--t3);border-color:rgba(120,120,120,.2)}
-        .rep-badge.pending{background:rgba(255,170,0,.1);color:var(--warn);border-color:rgba(255,170,0,.3)}
-        .rep-preview{font-size:13px;color:var(--t1);margin-bottom:6px;line-height:1.5}
-        .rep-campaign{font-size:11px;color:var(--t3);font-family:'Share Tech Mono',monospace}
-        .rep-action{flex-shrink:0;align-self:center}
-        .rep-btn{font-size:9px;font-family:'Orbitron',sans-serif;letter-spacing:1px;padding:6px 12px;border-radius:6px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);color:var(--cyan);text-decoration:none;display:block;transition:all .2s}
-        .rep-btn:hover{background:rgba(0,212,255,.2);border-color:var(--cyan)}
-        .rep-empty{text-align:center;padding:60px 20px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px}
+/* ── NAV ── */
+#nav{
+  display:flex;align-items:center;gap:0;
+  padding:0 28px;
+  background:rgba(4,13,26,.98);
+  border-bottom:1px solid var(--border2);
+  flex-shrink:0;overflow-x:auto;
+}
+.nav-i{
+  display:flex;align-items:center;gap:8px;
+  padding:15px 24px;
+  font-family:'Orbitron',monospace;
+  font-size:11px;font-weight:500;letter-spacing:2px;
+  color:var(--t3);cursor:pointer;
+  border-bottom:2px solid transparent;
+  white-space:nowrap;transition:all .2s;
+  position:relative;
+}
+.nav-i:hover{color:var(--t2)}
+.nav-i.on{
+  color:var(--cyan);
+  border-bottom-color:var(--cyan);
+  text-shadow:0 0 10px rgba(0,212,255,.4);
+}
+.nav-i.on::before{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;
+  background:var(--cyan);
+  box-shadow:0 0 8px var(--cyan);
+}
+.nav-dot{
+  width:5px;height:5px;border-radius:50%;
+  background:var(--t3);transition:all .2s;
+}
+.nav-i.on .nav-dot{background:var(--cyan);box-shadow:0 0 6px var(--cyan)}
 
-        /* TASK ALERT BANNER */
-        #global-alert-bar{display:none;position:fixed;top:0;left:var(--sw);right:0;z-index:500;background:rgba(255,68,102,.13);border-bottom:2px solid rgba(255,68,102,.5);padding:11px 28px;align-items:center;gap:12px;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--err);letter-spacing:.5px;animation:alertPls 3s ease-in-out infinite;backdrop-filter:blur(10px)}
-        #global-alert-bar.show{display:flex}
-        @keyframes alertPls{0%,100%{background:rgba(255,68,102,.13)}50%{background:rgba(255,68,102,.2)}}
-        .alert-bar-icon{font-size:16px;flex-shrink:0}
-        .alert-bar-tasks{flex:1;font-size:11px;color:rgba(255,100,130,.9)}
-        .alert-bar-time{font-size:10px;color:rgba(255,68,102,.6);flex-shrink:0}
-        .ag-alert-card{background:rgba(255,68,102,.06);border:1px solid rgba(255,68,102,.2);border-radius:12px;padding:18px 20px;margin-bottom:10px;display:flex;align-items:center;gap:16px}
-        .ag-alert-icon{font-size:22px;flex-shrink:0}
-        .ag-alert-body{flex:1}
-        .ag-alert-name{font-family:'Orbitron',sans-serif;font-size:13px;color:var(--err);font-weight:600;margin-bottom:4px}
-        .ag-alert-detail{font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(255,100,130,.8);letter-spacing:.5px}
-        .ag-alert-badge{font-family:'Share Tech Mono',monospace;font-size:10px;padding:4px 12px;border-radius:6px;background:rgba(255,68,102,.12);color:var(--err);border:1px solid rgba(255,68,102,.25)}
+/* ── MAIN ── */
+#main{flex:1;overflow-y:auto;padding:28px;animation:slide-in .3s ease}
+#main::-webkit-scrollbar{width:4px}
+#main::-webkit-scrollbar-track{background:transparent}
+#main::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 
-        @media(max-width:1024px){#global-alert-bar{left:60px}.og{grid-template-columns:1fr}.sg{grid-template-columns:repeat(2,1fr)}.brief-grid{grid-template-columns:1fr}.ag-stat-grid{grid-template-columns:1fr}.rep-summary{grid-template-columns:repeat(3,1fr)}}
-        @media(max-width:768px){
-            .sb{width:60px}.sb .nav-l,.sb .nav-b,.sb .logo span,.sb .logo-s,.sb .nav-sec,.sb .st-ind span{display:none}
-            .sb .nav-i{justify-content:center;padding:12px}.mc{margin-left:60px;padding:16px}
-            .dp{width:100%}
-        }
+/* ── PAGE ── */
+.pg{display:none}
+.pg.on{display:block}
 
-        /* FB SCRIPTS PAGE */
-        .fbs-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding:20px 24px;background:var(--card);border:1px solid var(--bdr);border-radius:16px;backdrop-filter:blur(10px)}
-        .fbs-status-approved{display:flex;align-items:center;gap:10px;padding:8px 20px;border-radius:10px;background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.25);color:var(--ok);font-family:'Share Tech Mono',monospace;font-size:12px;letter-spacing:1px}
-        .fbs-status-pending{display:flex;align-items:center;gap:10px;padding:8px 20px;border-radius:10px;background:rgba(255,170,0,.1);border:1px solid rgba(255,170,0,.25);color:var(--warn);font-family:'Share Tech Mono',monospace;font-size:12px;letter-spacing:1px}
-        .fbs-week{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;color:var(--cyan)}
-        .fbs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(480px,1fr));gap:20px;margin-bottom:28px}
-        .fbs-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:24px;transition:all .3s;backdrop-filter:blur(10px);position:relative;overflow:hidden}
-        .fbs-card:hover{border-color:var(--bdr-a);box-shadow:0 0 30px rgba(0,212,255,.06)}
-        .fbs-card.posted{border-color:rgba(0,255,136,.2);background:rgba(0,255,136,.03)}
-        .fbs-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;gap:12px}
-        .fbs-num{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;white-space:nowrap;padding-top:2px}
-        .fbs-group{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;color:var(--cyan);letter-spacing:.5px;line-height:1.3}
-        .fbs-pill-pending{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:6px;font-family:'Share Tech Mono',monospace;font-size:10px;background:rgba(255,170,0,.1);color:var(--warn);border:1px solid rgba(255,170,0,.2);white-space:nowrap}
-        .fbs-pill-posted{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:6px;font-family:'Share Tech Mono',monospace;font-size:10px;background:rgba(0,255,136,.1);color:var(--ok);border:1px solid rgba(0,255,136,.2);white-space:nowrap}
-        .fbs-content{font-family:'Rajdhani',sans-serif;font-size:13px;color:var(--t2);line-height:1.7;white-space:pre-line;margin-top:12px;padding-top:14px;border-top:1px solid var(--bdr);max-height:180px;overflow:hidden;position:relative;transition:max-height .3s ease}
-        .fbs-content.expanded{max-height:1000px}
-        .fbs-content::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(transparent,rgba(13,19,33,.9));pointer-events:none;transition:opacity .3s}
-        .fbs-content.expanded::after{opacity:0}
-        .fbs-actions{display:flex;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--bdr)}
-        .fbs-btn{font-family:'Share Tech Mono',monospace;font-size:10px;padding:6px 14px;border-radius:8px;border:1px solid var(--bdr);background:transparent;color:var(--t2);cursor:pointer;transition:all .2s;letter-spacing:.5px}
-        .fbs-btn:hover{border-color:var(--bdr-a);color:var(--t1);background:var(--cyan-d)}
-        .fbs-btn.copy-btn:hover{color:var(--cyan)}
-        .fbs-btn.expand-btn{color:var(--t3)}
-        .fbs-approve-banner{padding:16px 24px;border-radius:12px;background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.2);display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
-        .fbs-approve-text{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--ok);letter-spacing:.5px}
-        .fbs-approve-note{font-size:13px;color:var(--t2);margin-top:4px}
-        .fbs-pending-banner{padding:16px 24px;border-radius:12px;background:rgba(255,170,0,.08);border:1px solid rgba(255,170,0,.2);display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
-        .fbs-pending-text{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--warn);letter-spacing:.5px}
-        .fbs-stats-row{display:flex;gap:16px;margin-bottom:24px}
-        .fbs-stat{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:16px 20px;text-align:center;flex:1}
-        .fbs-stat-v{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:700;color:var(--cyan)}
-        .fbs-stat-l{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:1.5px;margin-top:4px}
+/* ── PAGE HEADER ── */
+.ph{
+  display:flex;align-items:flex-start;justify-content:space-between;
+  margin-bottom:28px;flex-wrap:wrap;gap:12px;
+}
+.ph-left{position:relative;padding-left:16px}
+.ph-left::before{
+  content:'';position:absolute;left:0;top:4px;bottom:4px;
+  width:3px;background:var(--cyan);
+  box-shadow:0 0 8px var(--cyan);
+}
+.pt{
+  font-family:'Orbitron',monospace;
+  font-size:18px;font-weight:700;letter-spacing:4px;
+  color:var(--cyan);text-shadow:0 0 20px rgba(0,212,255,.3);
+}
+.ps{font-size:11px;color:var(--t3);letter-spacing:3px;margin-top:6px;font-family:'Share Tech Mono',monospace}
+.ph-right{text-align:right}
+.ph-clock{
+  font-family:'Share Tech Mono',monospace;
+  font-size:13px;color:var(--cyan);
+}
+.ph-date{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);margin-top:3px}
 
-        /* INTRO VIDEO MODAL */
-        #intro-modal{position:fixed;inset:0;z-index:99998;background:#000;display:none;align-items:center;justify-content:center}
-        #intro-modal.show{display:flex}
-        #intro-video{width:100%;height:100%;object-fit:cover}
-        #intro-skip{position:fixed;bottom:24px;right:24px;z-index:99999;padding:7px 16px;background:rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.2);border-radius:6px;color:rgba(255,255,255,0.6);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px;cursor:pointer;transition:all .2s;backdrop-filter:blur(6px)}
-        #intro-skip:hover{background:rgba(0,0,0,0.7);color:#fff;border-color:rgba(255,255,255,0.4)}
-    </style>
+/* ── HUD CARD ── */
+.hud-card{
+  background:var(--card);
+  border:1px solid var(--border2);
+  border-top:1px solid var(--border);
+  border-radius:2px;
+  margin-bottom:20px;
+  position:relative;overflow:hidden;
+}
+.hud-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  opacity:.4;
+}
+
+/* Corner bracket decoration */
+.hud-card::after{
+  content:'';position:absolute;
+  top:8px;right:8px;width:12px;height:12px;
+  border-top:1px solid rgba(0,212,255,.4);
+  border-right:1px solid rgba(0,212,255,.4);
+}
+
+.hud-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;
+  border-bottom:1px solid var(--border2);
+  background:rgba(0,212,255,.03);
+}
+.hud-title{
+  font-family:'Orbitron',monospace;
+  font-size:11px;font-weight:700;letter-spacing:3px;
+  color:var(--cyan);display:flex;align-items:center;gap:10px;
+}
+.hud-title-icon{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 8px var(--cyan);
+  animation:pulse 2s infinite;
+}
+.hud-badge{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:var(--t3);
+  background:rgba(0,212,255,.05);
+  border:1px solid var(--border2);
+  padding:3px 10px;letter-spacing:2px;
+}
+
+/* ── STAT GRID ── */
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1px;background:var(--border2);
+}
+.stat-cell{
+  background:var(--card);
+  padding:20px;position:relative;overflow:hidden;
+}
+.stat-cell::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:transparent;transition:background .3s;
+}
+.stat-cell:hover::after{background:var(--cyan)}
+.stat-label{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:var(--t3);letter-spacing:2px;margin-bottom:10px;
+}
+.stat-val{
+  font-family:'Orbitron',monospace;
+  font-size:26px;font-weight:700;margin-bottom:4px;
+  line-height:1;
+}
+.stat-val.cy{color:var(--cyan);text-shadow:0 0 12px rgba(0,212,255,.4)}
+.stat-val.ok{color:var(--ok);text-shadow:var(--glow-ok)}
+.stat-val.wn{color:var(--warn)}
+.stat-val.er{color:var(--err)}
+.stat-sub{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3)}
+
+/* ── TABLE ── */
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:rgba(0,0,0,.3)}
+th{
+  padding:10px 18px;text-align:left;
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;letter-spacing:2px;color:var(--t3);
+  border-bottom:1px solid var(--border2);
+}
+td{
+  padding:13px 18px;
+  border-bottom:1px solid rgba(0,212,255,.04);
+  color:var(--t2);font-size:13px;
+}
+tr:last-child td{border-bottom:none}
+tbody tr{transition:background .15s}
+tbody tr:hover td{background:rgba(0,212,255,.04);color:var(--t1)}
+.td-h{
+  color:var(--t1);font-weight:600;
+  font-family:'Share Tech Mono',monospace;font-size:12px;
+}
+
+/* ── MORNING BRIEF ── */
+.brief-wrap{padding:20px 24px}
+.brief-item{
+  padding:14px 18px;
+  border-left:2px solid var(--border);
+  background:rgba(0,212,255,.02);
+  margin-bottom:8px;
+  font-size:14px;color:var(--t2);
+  line-height:1.7;
+  transition:border-color .2s;
+}
+.brief-item:hover{border-left-color:var(--cyan)}
+.brief-item ol{padding-left:18px}
+.brief-item li{margin-bottom:6px}
+
+.urgent-item{
+  padding:14px 18px;
+  border-left:2px solid var(--warn);
+  background:rgba(255,184,0,.04);
+  margin-bottom:8px;
+  font-size:13px;color:var(--t1);
+}
+.urgent-tag{
+  font-family:'Orbitron',monospace;
+  font-size:8px;letter-spacing:2px;font-weight:700;
+  padding:3px 10px;margin-right:12px;
+  border-radius:1px;
+}
+.urgent-tag.block{background:rgba(255,68,102,.15);color:var(--err);border:1px solid rgba(255,68,102,.3)}
+.urgent-tag.offline{background:rgba(255,184,0,.12);color:var(--warn);border:1px solid rgba(255,184,0,.3)}
+.urgent-tag.follow{background:rgba(0,212,255,.1);color:var(--cyan);border:1px solid rgba(0,212,255,.25)}
+
+/* ── WQ GRID ── */
+.wq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border2)}
+@media(max-width:560px){.wq-grid{grid-template-columns:1fr}}
+.wq-cell{background:var(--card);padding:20px 24px}
+.wq-label{
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:var(--t3);letter-spacing:2px;margin-bottom:10px;
+}
+.wq-val{
+  font-family:'Orbitron',monospace;
+  font-size:24px;font-weight:700;
+  color:var(--cyan);text-shadow:0 0 12px rgba(0,212,255,.3);
+}
+.wq-sub{font-size:12px;color:var(--t2);margin-top:4px}
+#quote-text{
+  font-size:14px;color:var(--t1);line-height:1.7;
+  border-left:2px solid var(--cyan);padding-left:12px;
+  font-style:italic;
+}
+#quote-author{
+  font-family:'Share Tech Mono',monospace;
+  font-size:10px;color:var(--cyan);margin-top:8px;letter-spacing:1px;
+}
+
+/* ── PILL ── */
+.pill{
+  display:inline-block;
+  font-family:'Share Tech Mono',monospace;
+  font-size:9px;letter-spacing:1.5px;
+  padding:3px 10px;border-radius:1px;
+}
+.pill.active{background:rgba(0,255,136,.08);color:var(--ok);border:1px solid rgba(0,255,136,.2)}
+.pill.paused{background:rgba(255,184,0,.08);color:var(--warn);border:1px solid rgba(255,184,0,.2)}
+.pill.hot{background:rgba(255,68,102,.08);color:var(--err);border:1px solid rgba(255,68,102,.2)}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  #main{padding:16px}
+  .stat-val{font-size:20px}
+  .tb-logo{font-size:13px;letter-spacing:3px}
+  th,td{padding:10px 12px}
+}
+</style>
 </head>
 <body>
 
-<!-- GLOBAL TASK ALERT BANNER (visible on all pages when tasks miss) -->
-<div id="global-alert-bar">
-    <span class="alert-bar-icon">🚨</span>
-    <div class="alert-bar-tasks" id="alert-bar-text">TASK ALERT — checking...</div>
-    <div class="alert-bar-time" id="alert-bar-time"></div>
-</div>
+<!-- SCAN BEAM -->
+<div class="scan-beam"></div>
 
-<!-- PASSWORD GATE -->
-<div id="auth-gate" style="position:fixed;inset:0;z-index:99999;background:#0a0e17;display:flex;align-items:center;justify-content:center;flex-direction:column;">
-    <div style="background:rgba(13,25,50,0.85);border:1px solid rgba(0,212,255,0.25);border-radius:16px;padding:48px 40px;text-align:center;max-width:400px;width:90%;backdrop-filter:blur(20px);box-shadow:0 0 60px rgba(0,212,255,0.08);">
-        <div style="font-family:'Orbitron',sans-serif;font-size:22px;font-weight:700;color:#00d4ff;letter-spacing:3px;margin-bottom:8px;">NOVARO HQ</div>
-        <div style="font-family:'Share Tech Mono',monospace;font-size:11px;color:#4a6a80;letter-spacing:2px;margin-bottom:32px;">AUTHORIZATION REQUIRED</div>
-        <input id="auth-pw" type="password" placeholder="Enter access code" autofocus
-            style="width:100%;padding:14px 18px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.2);border-radius:8px;color:#e0f0ff;font-family:'Rajdhani',sans-serif;font-size:16px;outline:none;transition:border .3s;"
-            onfocus="this.style.borderColor='rgba(0,212,255,0.5)'" onblur="this.style.borderColor='rgba(0,212,255,0.2)'"
-            onkeydown="if(event.key==='Enter')authCheck()">
-        <button onclick="authCheck()"
-            style="width:100%;margin-top:16px;padding:14px;background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(30,144,255,0.15));border:1px solid rgba(0,212,255,0.3);border-radius:8px;color:#00d4ff;font-family:'Orbitron',sans-serif;font-size:13px;font-weight:600;letter-spacing:2px;cursor:pointer;transition:all .3s;"
-            onmouseover="this.style.background='linear-gradient(135deg,rgba(0,212,255,0.25),rgba(30,144,255,0.25))';this.style.borderColor='rgba(0,212,255,0.5)'"
-            onmouseout="this.style.background='linear-gradient(135deg,rgba(0,212,255,0.15),rgba(30,144,255,0.15))';this.style.borderColor='rgba(0,212,255,0.3)'">
-            AUTHENTICATE
-        </button>
-        <div id="auth-err" style="color:#ff4466;font-family:'Rajdhani',sans-serif;font-size:14px;margin-top:16px;display:none;">Access denied. Invalid credentials.</div>
+<!-- AUTH GATE -->
+<div id="auth-gate">
+  <div class="auth-outer">
+    <div class="auth-box">
+      <div class="auth-corners"></div>
+
+      <div class="auth-hex">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="30,2 56,17 56,43 30,58 4,43 4,17" stroke="rgba(0,212,255,0.6)" stroke-width="1" fill="none"/>
+          <polygon points="30,10 50,21 50,39 30,50 10,39 10,21" stroke="rgba(0,212,255,0.3)" stroke-width="1" fill="none"/>
+          <circle cx="30" cy="30" r="4" fill="rgba(0,212,255,0.8)"/>
+        </svg>
+      </div>
+
+      <div class="auth-logo">NOVARO HQ</div>
+      <div class="auth-sub">SECURE SYSTEM ACCESS</div>
+      <div class="auth-sys">
+        SYS-ID: NVR-001 // CLASSIFICATION: RESTRICTED<br>
+        PROTOCOL: SHA-256 // STATUS: AWAITING AUTH<span class="cursor">_</span>
+      </div>
+
+      <input type="password" id="auth-pw" placeholder="ENTER ACCESS CODE" onkeydown="if(event.key==='Enter')authCheck()">
+      <button onclick="authCheck()">AUTHORIZE ACCESS</button>
+      <div id="auth-err">⚠ ACCESS DENIED — INVALID CREDENTIALS</div>
+      <div class="auth-status">ALL SYSTEMS NOMINAL <span>●</span></div>
     </div>
+  </div>
 </div>
-<script>
-// Check if already authenticated this session
-if(sessionStorage.getItem('novaro_auth')==='1'){
-    document.getElementById('auth-gate').style.display='none';
-}
-async function authCheck(){
-    const pw=document.getElementById('auth-pw').value;
-    const enc=new TextEncoder();
-    const hash=await crypto.subtle.digest('SHA-256',enc.encode(pw));
-    const hex=Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
-    if(hex==='de72749cf0e0a644e639424d93068c6e6eda51bcbf3d2f9f11cb50ae5002fade'){
-        document.getElementById('auth-gate').style.display='none';
-        sessionStorage.setItem('novaro_auth','1');
-        loadLiveData();
-        const modal=document.getElementById('intro-modal');
-        modal.classList.add('show');
-        document.getElementById('intro-video').play();
-    }else{
-        const e=document.getElementById('auth-err');e.style.display='block';
-        document.getElementById('auth-pw').value='';
-        document.getElementById('auth-pw').focus();
-        setTimeout(()=>e.style.display='none',3000);
-    }
-}
-function closeIntro(){
-    const modal=document.getElementById('intro-modal');
-    const vid=document.getElementById('intro-video');
-    vid.pause();
-    modal.style.opacity='0';
-    modal.style.transition='opacity .5s';
-    setTimeout(()=>{modal.classList.remove('show');modal.style.opacity='';modal.style.transition=''},500);
-}
-</script>
 
-<!-- INTRO VIDEO MODAL -->
+<!-- INTRO VIDEO — FULLSCREEN -->
 <div id="intro-modal">
-    <video id="intro-video" autoplay playsinline onended="closeIntro()">
-        <source src="https://github.com/vitogcocchi/novarohq-dashboard/releases/download/v1.0-assets/intro.mp4" type="video/mp4">
-    </video>
-    <button id="intro-skip" onclick="closeIntro()">SKIP ›</button>
+  <video id="intro-video"
+    src="https://github.com/vitogcocchi/novarohq-dashboard/releases/download/v1.0-assets/intro.mp4"
+    playsinline></video>
+  <button id="intro-skip" onclick="closeIntro()">SKIP ›</button>
 </div>
 
-<!-- DETAIL PANEL OVERLAY -->
-<div class="dp-overlay" id="dp-overlay" onclick="closeDetail()"></div>
-<div class="dp" id="dp">
-    <button class="dp-close" onclick="closeDetail()">&times;</button>
-    <div id="dp-content"></div>
-</div>
+<!-- MAIN SHELL -->
+<div id="shell">
 
-<!-- SIDEBAR -->
-<nav class="sb">
-    <div class="sb-hd">
-        <div class="logo">
-            <div class="logo-i">N</div>
-            <div><span>NOVARO</span><div class="logo-s">OPERATIONS HQ</div></div>
-        </div>
+  <!-- TOP BAR -->
+  <div id="topbar">
+    <div class="tb-left">
+      <div class="tb-logo">NOVARO HQ</div>
+      <div class="tb-sep"></div>
+      <div class="tb-sys">SYS ONLINE <span>●</span></div>
+      <div class="tb-sep"></div>
+      <div id="global-last-updated">SYNCING DATA...</div>
     </div>
-    <div class="sb-nav">
-        <div class="nav-sec">Dashboard</div>
-        <a class="nav-i on" data-page="overview" onclick="showPage('overview')">
-            <span class="nav-ic">&#9673;</span><span class="nav-l">Overview</span>
-        </a>
-        <a class="nav-i" data-page="debrief" onclick="showPage('debrief')">
-            <span class="nav-ic">&#9788;</span><span class="nav-l">Morning Debrief</span>
-            <span class="nav-b">DAILY</span>
-        </a>
-        <div class="nav-sec">Channels</div>
-        <a class="nav-i" data-page="instantly" onclick="showPage('instantly')">
-            <span class="nav-ic">&#9993;</span><span class="nav-l">Instantly</span>
-            <span class="nav-b">EMAIL</span>
-        </a>
-        <a class="nav-i" data-page="facebook" onclick="showPage('facebook')">
-            <span class="nav-ic">&#128218;</span><span class="nav-l">Facebook</span>
-            <span class="nav-b">SOCIAL</span>
-        </a>
-        <a class="nav-i" data-page="fb-scripts" onclick="showPage('fb-scripts')">
-            <span class="nav-ic">&#9998;</span><span class="nav-l">FB Scripts</span>
-            <span class="nav-b" id="nav-scripts-badge" style="background:rgba(255,170,0,.2);color:#ffaa00;border-color:rgba(255,170,0,.3)">REVIEW</span>
-        </a>
-        <a class="nav-i" data-page="replies" onclick="showPage('replies')">
-            <span class="nav-ic">&#128172;</span><span class="nav-l">Replies &amp; Leads</span>
-            <span class="nav-b" id="nav-replies-badge" style="background:rgba(0,255,136,.2);color:#00ff88;border-radius:4px;padding:2px 6px;font-size:9px;font-weight:700">0</span>
-        </a>
-        <div class="nav-sec">System</div>
-        <a class="nav-i" data-page="pipeline" onclick="showPage('pipeline')">
-            <span class="nav-ic">&#128200;</span><span class="nav-l">Lead Pipeline</span>
-        </a>
-        <a class="nav-i" data-page="progress" onclick="showPage('progress')">
-            <span class="nav-ic">&#9881;</span><span class="nav-l">Progress</span>
-            <span class="nav-b">LIVE</span>
-        </a>
-        <a class="nav-i" data-page="agents" onclick="showPage('agents')">
-            <span class="nav-ic">&#129302;</span><span class="nav-l">Agents</span>
-            <span class="nav-b">LIVE</span>
-        </a>
+    <div class="tb-right">
+      <div>
+        <div class="tb-clock" id="clock-1"></div>
+        <div class="tb-date" id="tb-date"></div>
+      </div>
     </div>
-    <div class="sb-ft">
-        <div class="st-ind"><div class="st-dot"></div><span>SYSTEMS ONLINE</span></div>
-        <div id="global-last-updated" style="font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase;padding:6px 12px 0;opacity:0.7;">DATA: --</div>
-    </div>
-</nav>
+  </div>
 
-<!-- MAIN -->
-<main class="mc">
+  <!-- NAV -->
+  <div id="nav">
+    <div class="nav-i on" data-page="brief" onclick="showPage('brief')">
+      <div class="nav-dot"></div>MORNING DEBRIEF
+    </div>
+    <div class="nav-i" data-page="instantly" onclick="showPage('instantly')">
+      <div class="nav-dot"></div>INSTANTLY
+    </div>
+  </div>
 
-<!-- OVERVIEW -->
-<section class="pg on" id="page-overview">
-    <div class="ph">
-        <div><div class="pt">COMMAND CENTER</div><div class="ps">NOVARO AI // OUTREACH OPERATIONS</div></div>
-        <div class="ht"><span class="tv" id="clock-1"></span><span id="date-1"></span></div>
-    </div>
-    <div class="og">
-        <div class="oc" onclick="showPage('instantly')">
-            <div class="ci">&#9993;</div>
-            <div class="ct">INSTANTLY</div>
-            <div class="cd">Cold email campaigns, replies, and engagement</div>
-            <div class="cs">
-                <div style="text-align:center"><div class="csv" id="ov-sent">--</div><div class="csl">SENT</div></div>
-                <div style="text-align:center"><div class="csv" id="ov-rep">--</div><div class="csl">REPLIES</div></div>
-                <div style="text-align:center"><div class="csv" id="ov-mtg">--</div><div class="csl">MEETINGS</div></div>
-            </div>
-        </div>
-        <div class="oc" onclick="showPage('facebook')">
-            <div class="ci">&#128218;</div>
-            <div class="ct">FACEBOOK</div>
-            <div class="cd">Group outreach, comments, and interest signals</div>
-            <div class="cs">
-                <div style="text-align:center"><div class="csv" id="ov-grp">--</div><div class="csl">GROUPS</div></div>
-                <div style="text-align:center"><div class="csv" id="ov-cmt">--</div><div class="csl">COMMENTS</div></div>
-                <div style="text-align:center"><div class="csv" id="ov-fbi">--</div><div class="csl">INTEREST</div></div>
-            </div>
-        </div>
-    </div>
-    <!-- Daily Activity Log -->
-    <div class="ds" style="margin-bottom:24px">
-        <div class="dh">
-            <div class="dt"><span class="ic">&#128197;</span> DAILY ACTIVITY LOG</div>
-            <span class="db">ALL CHANNELS // LAST 10 DAYS</span>
-        </div>
-        <div style="margin-bottom:20px">
-            <div>
-                <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#128218; FACEBOOK GROUPS</div>
-                <table>
-                    <thead><tr><th>Date</th><th>Posts</th><th>Comments</th><th>Positive</th><th>DMs</th><th>Signals</th></tr></thead>
-                    <tbody id="ov-fb-daily"><tr><td colspan="6" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
-                </table>
-            </div>
-        </div>
-        <div>
-            <div style="font-family:'Orbitron',sans-serif;font-size:11px;font-weight:600;color:var(--cyan);letter-spacing:1.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)">&#9993; INSTANTLY EMAIL</div>
-            <table>
-                <thead><tr><th>Date</th><th>Sent</th><th>Opens</th><th>Replies</th><th>Positive</th></tr></thead>
-                <tbody id="ov-ins-daily"><tr><td colspan="5" style="text-align:center;color:var(--t3);padding:20px;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px">AWAITING DATA</td></tr></tbody>
-            </table>
-        </div>
-    </div>
+  <!-- PAGES -->
+  <div id="main">
 
-    <!-- Conversion Funnel -->
-    <div class="ds" style="margin-bottom:24px">
-        <div class="dh">
-            <div class="dt"><span class="ic">&#127875;</span> CONVERSION FUNNEL</div>
-            <span class="db" id="funnel-updated">ALL CHANNELS</span>
+    <!-- ═══ MORNING DEBRIEF ═══ -->
+    <section class="pg on" id="page-brief">
+      <div class="ph">
+        <div class="ph-left">
+          <div class="pt">MORNING DEBRIEF</div>
+          <div class="ps">DAILY INTEL // <span id="brief-date">--</span></div>
         </div>
-        <!-- Funnel stages -->
-        <div style="display:flex;align-items:stretch;gap:0;margin-bottom:24px;overflow:hidden;border-radius:12px;border:1px solid var(--bdr)">
-            <div class="fn-stage" id="fn-new" style="flex:1;text-align:center;padding:20px 12px;background:rgba(0,212,255,0.07);border-right:1px solid var(--bdr)">
-                <div style="font-size:22px;margin-bottom:4px">&#128278;</div>
-                <div class="fn-num" id="fn-num-new">0</div>
-                <div class="fn-label">NEW LEADS</div>
-                <div class="fn-rate" id="fn-rate-new" style="color:var(--t3)">—</div>
-            </div>
-            <div style="display:flex;align-items:center;padding:0 4px;color:var(--t3);font-size:18px">&#8250;</div>
-            <div class="fn-stage" style="flex:1;text-align:center;padding:20px 12px;background:rgba(255,170,0,0.05);border-right:1px solid var(--bdr)">
-                <div style="font-size:22px;margin-bottom:4px">&#128172;</div>
-                <div class="fn-num" id="fn-num-dm">0</div>
-                <div class="fn-label">DM SENT</div>
-                <div class="fn-rate" id="fn-rate-dm" style="color:var(--t3)">—</div>
-            </div>
-            <div style="display:flex;align-items:center;padding:0 4px;color:var(--t3);font-size:18px">&#8250;</div>
-            <div class="fn-stage" style="flex:1;text-align:center;padding:20px 12px;background:rgba(255,170,0,0.07);border-right:1px solid var(--bdr)">
-                <div style="font-size:22px;margin-bottom:4px">&#128226;</div>
-                <div class="fn-num" id="fn-num-replied">0</div>
-                <div class="fn-label">REPLIED</div>
-                <div class="fn-rate" id="fn-rate-replied" style="color:var(--t3)">—</div>
-            </div>
-            <div style="display:flex;align-items:center;padding:0 4px;color:var(--t3);font-size:18px">&#8250;</div>
-            <div class="fn-stage" style="flex:1;text-align:center;padding:20px 12px;background:rgba(147,51,234,0.07);border-right:1px solid var(--bdr)">
-                <div style="font-size:22px;margin-bottom:4px">&#128222;</div>
-                <div class="fn-num" id="fn-num-booked">0</div>
-                <div class="fn-label">CALL BOOKED</div>
-                <div class="fn-rate" id="fn-rate-booked" style="color:var(--t3)">—</div>
-            </div>
-            <div style="display:flex;align-items:center;padding:0 4px;color:var(--t3);font-size:18px">&#8250;</div>
-            <div class="fn-stage" style="flex:1;text-align:center;padding:20px 12px;background:rgba(0,255,136,0.06)">
-                <div style="font-size:22px;margin-bottom:4px">&#127942;</div>
-                <div class="fn-num" id="fn-num-closed" style="color:var(--ok)">0</div>
-                <div class="fn-label">CLOSED</div>
-                <div class="fn-rate" id="fn-rate-closed" style="color:var(--t3)">—</div>
-            </div>
+        <div class="ph-right">
+          <div class="ph-clock" id="clock-2"></div>
+          <div class="ph-date" id="date-2"></div>
         </div>
-        <!-- Per-channel breakdown -->
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-            <div class="fn-ch" id="fn-ch-facebook">
-                <div class="fn-ch-title">&#128218; FACEBOOK</div>
-                <div class="fn-ch-row"><span>New</span><span id="fn-fb-new">0</span></div>
-                <div class="fn-ch-row"><span>DM Sent</span><span id="fn-fb-dm">0</span></div>
-                <div class="fn-ch-row"><span>Replied</span><span id="fn-fb-replied">0</span></div>
-                <div class="fn-ch-row"><span>Booked</span><span id="fn-fb-booked">0</span></div>
-                <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-fb-closed">0</span></div>
-            </div>
-            <div class="fn-ch" id="fn-ch-instantly">
-                <div class="fn-ch-title">&#9993; INSTANTLY</div>
-                <div class="fn-ch-row"><span>New</span><span id="fn-ins-new">0</span></div>
-                <div class="fn-ch-row"><span>DM Sent</span><span id="fn-ins-dm">0</span></div>
-                <div class="fn-ch-row"><span>Replied</span><span id="fn-ins-replied">0</span></div>
-                <div class="fn-ch-row"><span>Booked</span><span id="fn-ins-booked">0</span></div>
-                <div class="fn-ch-row fn-ch-win"><span>Closed</span><span id="fn-ins-closed">0</span></div>
-            </div>
-        </div>
-    </div>
+      </div>
 
-    <!-- Quick pipeline preview -->
-    <div class="ds">
-        <div class="dh">
-            <div class="dt"><span class="ic">&#128200;</span> LEAD PIPELINE</div>
-            <span class="db" style="cursor:pointer" onclick="showPage('pipeline')">VIEW ALL</span>
+      <!-- Conditions row -->
+      <div class="hud-card">
+        <div class="hud-head">
+          <div class="hud-title"><div class="hud-title-icon"></div>CONDITIONS</div>
+          <div class="hud-badge" id="brief-updated">--</div>
         </div>
-        <table>
-            <thead><tr><th>Company</th><th>Contact</th><th>Source</th><th>Status</th><th>Industry</th><th>State</th></tr></thead>
-            <tbody id="pipeline-preview">
-                <tr><td colspan="6" class="empty" style="padding:30px"><div class="et">PIPELINE DATA POPULATES AS LEADS FLOW IN</div></td></tr>
+        <div class="wq-grid">
+          <div class="wq-cell">
+            <div class="wq-label">WEATHER // YOUR AREA</div>
+            <div class="wq-val" id="weather-temp">--°F</div>
+            <div class="wq-sub" id="weather-desc">Loading...</div>
+          </div>
+          <div class="wq-cell">
+            <div class="wq-label">DAILY SIGNAL</div>
+            <div id="quote-text">Loading...</div>
+            <div id="quote-author"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Urgent -->
+      <div class="hud-card">
+        <div class="hud-head">
+          <div class="hud-title"><div class="hud-title-icon" style="background:var(--err);box-shadow:0 0 8px var(--err)"></div>URGENT INBOX</div>
+          <div class="hud-badge">ACTION NEEDED</div>
+        </div>
+        <div class="brief-wrap">
+          <div id="brief-urgent">
+            <span style="color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px">LOADING...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Focus -->
+      <div class="hud-card">
+        <div class="hud-head">
+          <div class="hud-title"><div class="hud-title-icon" style="background:var(--ok);box-shadow:var(--glow-ok)"></div>TODAY'S FOCUS</div>
+          <div class="hud-badge">TOP PRIORITIES</div>
+        </div>
+        <div class="brief-wrap">
+          <div id="brief-focus" class="brief-item">
+            <span style="color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px">LOADING...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reminders -->
+      <div class="hud-card">
+        <div class="hud-head">
+          <div class="hud-title"><div class="hud-title-icon" style="background:var(--warn);box-shadow:0 0 8px rgba(255,184,0,.5)"></div>REMINDERS</div>
+          <div class="hud-badge">DON'T FORGET</div>
+        </div>
+        <div class="brief-wrap">
+          <div id="brief-reminders">
+            <span style="color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px">LOADING...</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ INSTANTLY ═══ -->
+    <section class="pg" id="page-instantly">
+      <div class="ph">
+        <div class="ph-left">
+          <div class="pt">INSTANTLY</div>
+          <div class="ps">COLD EMAIL // CAMPAIGN INTELLIGENCE</div>
+        </div>
+        <div class="ph-right">
+          <div class="ph-clock" id="clock-3"></div>
+          <div class="ph-date" id="date-3"></div>
+        </div>
+      </div>
+
+      <!-- Stat grid -->
+      <div class="hud-card">
+        <div class="hud-head">
+          <div class="hud-title"><div class="hud-title-icon"></div>CAMPAIGN OVERVIEW</div>
+          <div class="hud-badge" id="ins-updated">REAL-TIME</div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-cell">
+            <div class="stat-label">EMAILS SENT</div>
+            <div class="stat-val cy" id="ins-sent">--</div>
+            <div class="stat-sub" id="ins-contacted">-- contacted</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">UNIQUE OPENS</div>
+            <div class="stat-val ok" id="ins-opens">--</div>
+            <div class="stat-sub" id="ins-open-rate">-- open rate</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">REPLIES</div>
+            <div class="stat-val cy" id="ins-replies">--</div>
+            <div class="stat-sub" id="ins-reply-rate">-- reply rate</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">INTERESTED</div>
+            <div class="stat-val ok" id="ins-interested">--</div>
+            <div class="stat-sub">Positive signals</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">BOUNCES</div>
+            <div class="stat-val wn" id="ins-bounces">--</div>
+            <div class="stat-sub" id="ins-bounce-rate">-- bounce rate</div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-label">MEETINGS BOOKED</div>
+            <div class="stat-val ok" id="ins-meetings">--</div>
+            <div class="stat-sub">All campaigns</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily table -->
+      <div class="hud-card">
+        <div class="hud-head">
+          <div class="hud-title"><div class="hud-title-icon"></div>DAILY BREAKDOWN</div>
+          <div class="hud-badge">LAST 14 DAYS</div>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>DATE</th>
+                <th>SENT</th>
+                <th>OPENS</th>
+                <th>REPLIES</th>
+                <th>INTERESTED</th>
+                <th>BOUNCES</th>
+              </tr>
+            </thead>
+            <tbody id="ins-tbody">
+              <tr>
+                <td colspan="6" style="text-align:center;padding:40px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px">
+                  AWAITING DATA SYNC...
+                </td>
+              </tr>
             </tbody>
-        </table>
-    </div>
-</section>
-
-<!-- MORNING DEBRIEF -->
-<section class="pg" id="page-debrief">
-    <div class="ph">
-        <div><div class="pt">MORNING DEBRIEF</div><div class="ps">DAILY OPERATIONS BRIEFING // <span id="brief-date">LOADING...</span></div></div>
-        <div class="ht"><span class="tv" id="clock-2"></span><span id="date-2"></span></div>
-    </div>
-
-    <div class="brief-grid" style="margin-bottom:16px">
-        <div class="brief-card">
-            <div class="brief-icon">&#127780;</div>
-            <div class="brief-title">WEATHER</div>
-            <div class="brief-content" id="brief-weather"><span style="color:var(--t3)">Loading...</span></div>
+          </table>
         </div>
-        <div class="brief-card">
-            <div class="brief-icon">&#128172;</div>
-            <div class="brief-title">QUOTE OF THE DAY</div>
-            <div class="brief-content" id="brief-quote"><span style="color:var(--t3)">Loading...</span></div>
-        </div>
-    </div>
+      </div>
+    </section>
 
-    <div class="brief-card brief-urgent">
-        <div class="brief-icon">&#128680;</div>
-        <div class="brief-title">URGENT INBOX -- UNRESOLVED ITEMS</div>
-        <div id="brief-urgent"><span style="color:var(--t3)">Loading...</span></div>
-    </div>
-
-    <div class="brief-card" style="margin-top:16px">
-        <div class="brief-icon">&#9889;</div>
-        <div class="brief-title">TODAY'S FOCUS</div>
-        <div class="brief-content" id="brief-focus"><span style="color:var(--t3)">Loading...</span></div>
-    </div>
-
-</section>
-
-<!-- INSTANTLY -->
-<section class="pg" id="page-instantly">
-    <div class="ph">
-        <div><div class="pt">INSTANTLY // COLD EMAIL</div><div class="ps">CAMPAIGN PERFORMANCE METRICS</div></div>
-        <div class="ht"><span class="tv" id="clock-3"></span><span id="date-3"></span></div>
-    </div>
-    <div class="sg">
-        <div class="sb-c"><div class="sl">EMAILS SENT</div><div class="sv cy">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">OPENS</div><div class="sv bl">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">REPLIES</div><div class="sv">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">POSITIVE REPLIES</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">BOUNCES</div><div class="sv wn">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">MEETINGS BOOKED</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
-    </div>
-    <div class="ds">
-        <div class="dh"><div class="dt"><span class="ic">&#9993;</span> DAILY CAMPAIGN LOG</div><span class="db">INSTANTLY</span></div>
-        <table>
-            <thead><tr><th>Date</th><th>Campaign</th><th>Sent</th><th>Opens</th><th>Replies</th><th>Positive</th><th>Bounces</th><th>Meetings</th></tr></thead>
-            <tbody id="ins-tbody"><tr><td colspan="8" style="text-align:center;color:var(--t3);padding:40px">Awaiting data from Instantly automations...</td></tr></tbody>
-        </table>
-    </div>
-</section>
-
-<!-- FACEBOOK -->
-<section class="pg" id="page-facebook">
-    <div class="ph">
-        <div><div class="pt">FACEBOOK // GROUP OUTREACH</div><div class="ps">POST ENGAGEMENT & LEAD SIGNALS</div></div>
-        <div class="ht"><span class="tv" id="clock-4"></span><span id="date-4"></span></div>
-    </div>
-    <div class="sg">
-        <div class="sb-c"><div class="sl">GROUPS POSTED IN</div><div class="sv cy">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">POSTS LIVE</div><div class="sv bl">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">COMMENTS</div><div class="sv">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">POSITIVE COMMENTS</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">DMs RECEIVED</div><div class="sv cy">--</div><div class="sc">Awaiting data</div></div>
-        <div class="sb-c"><div class="sl">INTEREST SIGNALS</div><div class="sv ok">--</div><div class="sc">Awaiting data</div></div>
-    </div>
-    <div class="ds">
-        <div class="dh"><div class="dt"><span class="ic">&#128218;</span> DAILY OUTREACH LOG</div><span class="db">FACEBOOK</span></div>
-        <table>
-            <thead><tr><th>Date</th><th>Groups</th><th>Pending</th><th>Posts Live</th><th>Comments</th><th>Positive</th><th>DMs</th><th>Interest</th></tr></thead>
-            <tbody id="fb-tbody"><tr><td colspan="8" style="text-align:center;color:var(--t3);padding:40px">Awaiting data from Facebook automations...</td></tr></tbody>
-        </table>
-    </div>
-</section>
-
-<!-- FB SCRIPTS -->
-<section class="pg" id="page-fb-scripts">
-    <div class="ph">
-        <div><div class="pt">FB SCRIPTS // WEEKLY REVIEW</div><div class="ps">REVIEW &amp; APPROVE BEFORE POSTING</div></div>
-        <div class="ht"><span class="tv" id="clock-fbscripts"></span><span id="date-fbscripts"></span></div>
-    </div>
-
-    <!-- Approval Banner -->
-    <div id="fbs-approval-banner" class="fbs-approve-banner" style="display:none">
-        <div>
-            <div class="fbs-approve-text">&#10003; WEEK APPROVED — READY TO POST</div>
-            <div class="fbs-approve-note" id="fbs-approved-detail">All scripts cleared for this week.</div>
-        </div>
-        <span class="pill active">APPROVED</span>
-    </div>
-    <div id="fbs-pending-banner" class="fbs-pending-banner" style="display:none">
-        <div>
-            <div class="fbs-pending-text">&#9888; AWAITING YOUR REVIEW</div>
-            <div class="fbs-approve-note">Review scripts below, then tell Elliott "scripts approved for this week" in chat.</div>
-        </div>
-        <span class="pill paused">PENDING</span>
-    </div>
-
-    <!-- Stats Row -->
-    <div class="fbs-stats-row" id="fbs-stats-row">
-        <div class="fbs-stat"><div class="fbs-stat-v" id="fbs-total">--</div><div class="fbs-stat-l">TOTAL SCRIPTS</div></div>
-        <div class="fbs-stat"><div class="fbs-stat-v" id="fbs-posted" style="color:var(--ok)">--</div><div class="fbs-stat-l">POSTED</div></div>
-        <div class="fbs-stat"><div class="fbs-stat-v" id="fbs-pending-ct" style="color:var(--warn)">--</div><div class="fbs-stat-l">QUEUED</div></div>
-        <div class="fbs-stat"><div class="fbs-stat-v" id="fbs-week-label" style="color:var(--cyan);font-size:14px">--</div><div class="fbs-stat-l">WEEK OF</div></div>
-    </div>
-
-    <!-- Script Cards -->
-    <div class="fbs-grid" id="fbs-grid">
-        <div style="color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:12px;padding:40px;text-align:center;grid-column:1/-1">Loading scripts...</div>
-    </div>
-</section>
-
-<!-- PIPELINE -->
-<section class="pg" id="page-pipeline">
-    <div class="ph">
-        <div><div class="pt">LEAD PIPELINE</div><div class="ps">ALL CHANNELS // CONSOLIDATED VIEW</div></div>
-        <div class="ht"><span class="tv" id="clock-6"></span><span id="date-6"></span></div>
-    </div>
-    <div class="sg">
-        <div class="sb-c"><div class="sl">TOTAL LEADS</div><div class="sv cy">--</div></div>
-        <div class="sb-c"><div class="sl">CONTACTED</div><div class="sv bl">--</div></div>
-        <div class="sb-c"><div class="sl">INTERESTED</div><div class="sv ok">--</div></div>
-        <div class="sb-c"><div class="sl">DISCOVERY CALLS</div><div class="sv wn">--</div></div>
-        <div class="sb-c"><div class="sl">PROPOSALS SENT</div><div class="sv bl">--</div></div>
-        <div class="sb-c"><div class="sl">CLOSED WON</div><div class="sv ok">--</div></div>
-    </div>
-    <div class="ds">
-        <div class="dh"><div class="dt"><span class="ic">&#128200;</span> ALL LEADS</div><span class="db">PIPELINE</span></div>
-        <table>
-            <thead><tr><th>Company</th><th>Contact</th><th>Source</th><th>Status</th><th>Industry</th><th>State</th><th>Revenue Pot.</th></tr></thead>
-            <tbody id="pipe-tbody"><tr><td colspan="7" style="text-align:center;color:var(--t3);padding:40px">Pipeline populates as leads flow in from all channels</td></tr></tbody>
-        </table>
-    </div>
-</section>
-
-<!-- REPLIES & LEADS -->
-<section class="pg" id="page-replies">
-    <div class="ph">
-        <div><div class="pt">REPLIES &amp; LEADS // INBOX TRACKER</div><div class="ps">ALL CHANNELS // CLASSIFIED BY QUALITY</div></div>
-        <div class="ht"><span class="tv" id="clock-replies"></span><span id="date-replies"></span></div>
-    </div>
-
-    <!-- Summary Cards -->
-    <div class="rep-summary">
-        <div class="rep-sum-card"><div class="rep-sum-num" id="rep-total" style="color:var(--cyan)">0</div><div class="rep-sum-lbl">Total Replies</div></div>
-        <div class="rep-sum-card"><div class="rep-sum-num pos" id="rep-positive">0</div><div class="rep-sum-lbl">&#x2705; Interested</div></div>
-        <div class="rep-sum-card"><div class="rep-sum-num neg" id="rep-negative">0</div><div class="rep-sum-lbl">&#x274C; Not Interested</div></div>
-        <div class="rep-sum-card"><div class="rep-sum-num pend" id="rep-pending">0</div><div class="rep-sum-lbl">&#x23F3; Needs Review</div></div>
-        <div class="rep-sum-card"><div class="rep-sum-num auto" id="rep-auto">0</div><div class="rep-sum-lbl">&#x2699;&#xFE0F; Auto Reply</div></div>
-    </div>
-
-    <!-- Filters -->
-    <div class="rep-filters">
-        <div class="rep-filter on" onclick="filterReplies('all', this)">ALL</div>
-        <div class="rep-filter" onclick="filterReplies('positive', this)">&#x2705; INTERESTED</div>
-        <div class="rep-filter" onclick="filterReplies('pending', this)">&#x23F3; NEEDS REVIEW</div>
-        <div class="rep-filter" onclick="filterReplies('negative', this)">&#x274C; NOT INTERESTED</div>
-        <div class="rep-filter" onclick="filterReplies('auto', this)">&#x2699;&#xFE0F; AUTO</div>
-        <div class="rep-filter" onclick="filterReplies('Email', this)">EMAIL</div>
-        <div class="rep-filter" onclick="filterReplies('Facebook', this)">FACEBOOK</div>
-    </div>
-
-    <!-- Reply List -->
-    <div id="rep-list"><div class="rep-empty">Loading replies...</div></div>
-</section>
-
-<!-- PROGRESS -->
-<section class="pg" id="page-progress">
-    <div class="ph">
-        <div><div class="pt">PROGRESS // TASK MONITOR</div><div class="ps">ELLIOTT AI // ACTIVE OPERATIONS</div></div>
-        <div class="ht"><span class="tv" id="clock-7"></span><span id="date-7"></span></div>
-    </div>
-
-    <div class="ds" style="margin-bottom:24px">
-        <div class="dh"><div class="dt"><span class="ic">&#9881;</span> ACTIVE TASKS</div><span class="db" style="background:rgba(0,255,136,.12);color:var(--ok);border-color:rgba(0,255,136,.25)">MONITORING</span></div>
-        <table>
-            <thead><tr><th>Task</th><th>Type</th><th>Schedule</th><th>Status</th><th>Last Run</th><th>Summary</th></tr></thead>
-            <tbody id="tasks-tbody">
-                <tr><td colspan="6" style="text-align:center;color:var(--t3);padding:40px">Loading task status...</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="ds" style="margin-bottom:24px">
-        <div class="dh"><div class="dt"><span class="ic">&#128260;</span> DATA PIPELINES</div><span class="db">SOURCES</span></div>
-        <div class="sg" style="margin-bottom:0">
-            <div class="sb-c"><div class="sl">INSTANTLY</div><div class="sv ok" id="pipe-instantly">LIVE</div><div class="sc">Real-time API</div></div>
-            <div class="sb-c"><div class="sl">FACEBOOK</div><div class="sv wn" id="pipe-facebook">HOURLY</div><div class="sc" id="pipe-fb-last">Awaiting first scrape</div></div>
-        </div>
-    </div>
-
-    <div class="ds">
-        <div class="dh"><div class="dt"><span class="ic">&#128221;</span> SYSTEM LOG</div><span class="db">RECENT</span></div>
-        <div id="system-log" style="padding:20px;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--t2);line-height:2">
-            <div style="color:var(--t3)">[Waiting for task data...]</div>
-        </div>
-    </div>
-</section>
-
-<!-- AGENTS -->
-<section class="pg" id="page-agents">
-    <div class="ph">
-        <div><div class="pt">AGENT OPS CENTER</div><div class="ps">ELLIOTT AI // LIVE TASK INTELLIGENCE</div></div>
-        <div class="ht"><span class="tv" id="clock-8"></span><span id="date-8"></span></div>
-    </div>
-
-    <!-- TASK ALERTS (shown when any automation missed its window) -->
-    <div id="ag-alert-section" style="display:none;margin-bottom:24px">
-        <div class="ds" style="border-color:rgba(255,68,102,.3);background:rgba(255,68,102,.04)">
-            <div class="dh">
-                <div class="dt" style="color:var(--err)"><span>🚨</span>&nbsp; TASK ALERTS</div>
-                <span class="db" style="background:rgba(255,68,102,.1);color:var(--err);border-color:rgba(255,68,102,.25)">ACTION NEEDED</span>
-            </div>
-            <div id="ag-alert-cards"></div>
-        </div>
-    </div>
-
-    <!-- STATS BAR -->
-    <div class="ag-stat-grid">
-        <div class="sb-c"><div class="sl">COMPLETED TODAY</div><div class="sv ok" id="ag-stat-completed">--</div><div class="sc">Session tasks done</div></div>
-        <div class="sb-c"><div class="sl">IN PROGRESS</div><div class="sv cy" id="ag-stat-running">0</div><div class="sc">Active right now</div></div>
-        <div class="sb-c"><div class="sl">AUTOMATIONS ACTIVE</div><div class="sv bl" id="ag-stat-scheduled">--</div><div class="sc">Running today</div></div>
-    </div>
-
-    <!-- LIVE NOW -->
-    <div id="ag-live-section" style="display:none">
-        <div class="ds" style="margin-bottom:24px">
-            <div class="dh">
-                <div class="dt"><span class="ic">&#9679;</span> LIVE NOW</div>
-                <span class="db" style="background:rgba(0,255,136,.12);color:var(--ok);border-color:rgba(0,255,136,.25);animation:pls 2s ease-in-out infinite">ACTIVE</span>
-            </div>
-            <div id="ag-live-cards"></div>
-        </div>
-    </div>
-
-    <!-- COMPLETED TODAY -->
-    <div class="ds" style="margin-bottom:24px">
-        <div class="dh">
-            <div class="dt"><span class="ic">&#10003;</span> COMPLETED TODAY</div>
-            <span class="db">SESSION TASKS</span>
-        </div>
-        <table>
-            <thead><tr><th>Task</th><th>Type</th><th>Triggered By</th><th>Started (ET)</th><th>Duration</th><th>Outcome</th></tr></thead>
-            <tbody id="ag-completed-tbody">
-                <tr><td colspan="6" class="ag-empty">No completed tasks yet — session tasks appear here as they finish</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- SCHEDULED AUTOMATIONS -->
-    <div class="ds">
-        <div class="dh">
-            <div class="dt"><span class="ic">&#128336;</span> SCHEDULED AUTOMATIONS</div>
-            <span class="db">REST OF DAY</span>
-        </div>
-        <table>
-            <thead><tr><th>Task</th><th>Type</th><th>Schedule</th><th>Last Run (ET)</th><th>Status</th><th>Next Run (ET)</th></tr></thead>
-            <tbody id="ag-scheduled-tbody">
-                <tr><td colspan="6" class="ag-empty">Loading automation schedule...</td></tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-</main>
+  </div><!-- /main -->
+</div><!-- /shell -->
 
 <script>
-// Navigation
+// ── AUTH ──
+async function authCheck(){
+  const pw = document.getElementById('auth-pw').value;
+  if(!pw) return;
+  const enc = new TextEncoder();
+  const hash = await crypto.subtle.digest('SHA-256', enc.encode(pw));
+  const hex = Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
+  if(hex === 'de72749cf0e0a644e639424d93068c6e6eda51bcbf3d2f9f11cb50ae5002fade'){
+    document.getElementById('auth-gate').style.display = 'none';
+    sessionStorage.setItem('novaro_auth','1');
+    document.getElementById('shell').classList.add('on');
+    // Show video fullscreen
+    const modal = document.getElementById('intro-modal');
+    modal.classList.add('show');
+    const v = document.getElementById('intro-video');
+    v.play().catch(()=>{});
+  } else {
+    const err = document.getElementById('auth-err');
+    err.style.display = 'block';
+    document.getElementById('auth-pw').value = '';
+    document.getElementById('auth-pw').focus();
+    setTimeout(()=>{ err.style.display='none'; }, 3000);
+  }
+}
+
+// Resume session
+(function(){
+  if(sessionStorage.getItem('novaro_auth') === '1'){
+    document.getElementById('auth-gate').style.display = 'none';
+    document.getElementById('shell').classList.add('on');
+    loadLiveData();
+    fetchWeather();
+    fetchQuote();
+  }
+})();
+
+function closeIntro(){
+  document.getElementById('intro-modal').classList.remove('show');
+  const v = document.getElementById('intro-video');
+  v.pause();
+  loadLiveData();
+  fetchWeather();
+  fetchQuote();
+}
+document.getElementById('intro-video').addEventListener('ended', closeIntro);
+
+// ── NAV ──
 function showPage(p){
-    document.querySelectorAll('.pg').forEach(e=>e.classList.remove('on'));
-    document.querySelectorAll('.nav-i').forEach(e=>e.classList.remove('on'));
-    document.getElementById('page-'+p).classList.add('on');
-    const n=document.querySelector('[data-page="'+p+'"]');
-    if(n)n.classList.add('on');
-    // Clear the replies badge when the user visits the replies page
-    if(p === 'replies'){
-        const badge = document.getElementById('nav-replies-badge');
-        if(badge){
-            badge.textContent = '0';
-            // Store how many we've seen so new ones still show up
-            const currentCount = parseInt(badge.getAttribute('data-total') || badge.textContent) || 0;
-            try { localStorage.setItem('novaro_replies_seen', currentCount.toString()); } catch(e){}
-        }
-    }
+  document.querySelectorAll('.pg').forEach(e=>e.classList.remove('on'));
+  document.querySelectorAll('.nav-i').forEach(e=>e.classList.remove('on'));
+  document.getElementById('page-'+p).classList.add('on');
+  const n = document.querySelector('[data-page="'+p+'"]');
+  if(n) n.classList.add('on');
 }
 
-// Detail panel
-function openDetail(data){
-    const dp=document.getElementById('dp');
-    const ov=document.getElementById('dp-overlay');
-    const ct=document.getElementById('dp-content');
-    let html='';
-
-    if(data.type==='campaign'){
-        html=`
-            <div class="dp-title">${data.name}</div>
-            <div class="dp-sub">INSTANTLY CAMPAIGN</div>
-            <div class="dp-section">STATUS</div>
-            <div class="dp-row"><div class="dp-label">Current Status</div><div class="dp-val"><span class="pill ${data.status==='Active'?'active':'paused'}">${data.status.toUpperCase()}</span></div></div>
-            <div class="dp-row"><div class="dp-label">Notes</div><div class="dp-val">${data.notes}</div></div>
-            <div class="dp-section">ACTIONS</div>
-            <a class="dp-btn" href="https://app.instantly.ai" target="_blank">OPEN IN INSTANTLY &rarr;</a>
-        `;
-    } else if(data.type==='lead'){
-        html=`
-            <div class="dp-title">${data.company||'Unknown Company'}</div>
-            <div class="dp-sub">LEAD #${data.id||'--'} // ${data.source||'--'}</div>
-            <div class="dp-section">CONTACT INFO</div>
-            <div class="dp-row"><div class="dp-label">Contact Name</div><div class="dp-val">${data.contact||'--'}</div></div>
-            <div class="dp-row"><div class="dp-label">Email</div><div class="dp-val">${data.email||'--'}</div></div>
-            <div class="dp-row"><div class="dp-label">Phone</div><div class="dp-val">${data.phone||'--'}</div></div>
-            <div class="dp-section">DETAILS</div>
-            <div class="dp-row"><div class="dp-label">Industry</div><div class="dp-val">${data.industry||'--'}</div></div>
-            <div class="dp-row"><div class="dp-label">State</div><div class="dp-val">${data.state||'--'}</div></div>
-            <div class="dp-row"><div class="dp-label">Source</div><div class="dp-val">${data.source||'--'}</div></div>
-            <div class="dp-row"><div class="dp-label">Status</div><div class="dp-val"><span class="pill ${getStatusClass(data.status)}">${(data.status||'--').toUpperCase()}</span></div></div>
-            <div class="dp-row"><div class="dp-label">Revenue Potential</div><div class="dp-val" style="color:var(--ok)">${data.revenue?'$'+Number(data.revenue).toLocaleString():'--'}</div></div>
-            <div class="dp-row"><div class="dp-label">First Contact</div><div class="dp-val">${data.firstContact||'--'}</div></div>
-            <div class="dp-row"><div class="dp-label">Last Activity</div><div class="dp-val">${data.lastActivity||'--'}</div></div>
-            ${data.notes?`<div class="dp-section">NOTES</div><div class="dp-notes">${data.notes}</div>`:''}
-            <div class="dp-section">ACTIONS</div>
-            ${data.notionUrl?`<a class="dp-btn" href="${data.notionUrl}" target="_blank">OPEN IN NOTION &rarr;</a>`:''}
-        `;
-    } else if(data.type==='metric'){
-        html=`
-            <div class="dp-title">${data.date||'--'}</div>
-            <div class="dp-sub">${(data.channel||'METRIC').toUpperCase()} // DAILY REPORT</div>
-            <div class="dp-section">METRICS</div>
-        `;
-        if(data.fields){
-            data.fields.forEach(f=>{
-                html+=`<div class="dp-row"><div class="dp-label">${f.label}</div><div class="dp-val">${f.value}</div></div>`;
-            });
-        }
-        if(data.notes){
-            html+=`<div class="dp-section">NOTES</div><div class="dp-notes">${data.notes}</div>`;
-        }
-    }
-
-    ct.innerHTML=html;
-    dp.classList.add('open');
-    ov.classList.add('open');
-}
-
-function closeDetail(){
-    document.getElementById('dp').classList.remove('open');
-    document.getElementById('dp-overlay').classList.remove('open');
-}
-
-function getStatusClass(s){
-    if(!s)return'new';
-    s=s.toLowerCase();
-    if(s.includes('interested')||s.includes('discovery')||s.includes('won'))return'active';
-    if(s.includes('replied')||s.includes('contacted'))return'paused';
-    if(s.includes('lost')||s.includes('not interested'))return'hot';
-    return'new';
-}
-
-// Keyboard shortcut to close panel
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetail()});
-
-// Live clock
+// ── CLOCK ──
 function tick(){
-    const now=new Date();
-    const estParts=new Intl.DateTimeFormat('en-US',{hour:'numeric',minute:'2-digit',second:'2-digit',hour12:true,timeZone:'America/New_York'}).formatToParts(now);
-    const ep=Object.fromEntries(estParts.map(p=>[p.type,p.value]));
-    const t=(ep.hour||'12')+':'+(ep.minute||'00')+':'+(ep.second||'00')+' '+(ep.dayperiod||ep.dayPeriod||'AM');
-    const d=now.toLocaleDateString('en-US',{weekday:'short',year:'numeric',month:'short',day:'numeric',timeZone:'America/New_York'})+' ET';
-    for(let i=1;i<=8;i++){
-        const ce=document.getElementById('clock-'+i);
-        const de=document.getElementById('date-'+i);
-        if(ce)ce.textContent=t;
-        if(de)de.textContent=d;
-    }
-    const cfbs=document.getElementById('clock-fbscripts');
-    const dfbs=document.getElementById('date-fbscripts');
-    if(cfbs)cfbs.textContent=t;
-    if(dfbs)dfbs.textContent=d;
+  const now = new Date();
+  const parts = new Intl.DateTimeFormat('en-US',{
+    hour:'numeric',minute:'2-digit',second:'2-digit',
+    hour12:true,timeZone:'America/New_York'
+  }).formatToParts(now);
+  const p = Object.fromEntries(parts.map(x=>[x.type,x.value]));
+  const t = (p.hour||'12')+':'+(p.minute||'00')+':'+(p.second||'00')+' '+(p.dayperiod||p.dayPeriod||'AM');
+  const d = now.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric',year:'numeric',timeZone:'America/New_York'});
+  const ids = ['clock-1','clock-2','clock-3'];
+  ids.forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=t; });
+  ['tb-date','date-2','date-3'].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=d+' ET'; });
 }
-tick();setInterval(tick,1000);
+tick(); setInterval(tick,1000);
 
-// ===== LIVE DATA FETCH =====
-const GH_RAW = 'https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/';
+// ── DATA ──
+const GH = 'https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/';
+
 async function loadLiveData(){
-    const t = Date.now();
-    const timestamps = [];
-    // Instantly
-    try {
-        const res = await fetch(GH_RAW+'instantly-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateInstantly(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
-    } catch(e){ console.warn('Instantly data load failed:', e.message); }
-    // Social (Facebook)
-    try {
-        const res = await fetch(GH_RAW+'social-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateSocial(d);
-            if(d.facebook && d.facebook.lastUpdated) timestamps.push(new Date(d.facebook.lastUpdated));
+  const ts = [];
 
-        }
-    } catch(e){ console.warn('Social data load failed:', e.message); }
-    // Task status
-    try {
-        const res = await fetch(GH_RAW+'task-status.json?t='+t);
-        if(res.ok){ const d = await res.json(); window._taskStatus = d; populateTasks(d); populateAgents(window._agentsData, d); populateTaskAlerts(d); }
-    } catch(e){ console.warn('Task status load failed:', e.message); }
-    // Agents log
-    try {
-        const res = await fetch(GH_RAW+'agents-log.json?t='+t);
-        if(res.ok){ const d = await res.json(); window._agentsData = d; populateAgents(d, window._taskStatus); }
-    } catch(e){ console.warn('Agents data load failed:', e.message); }
-    // Funnel data
-    try {
-        const res = await fetch(GH_RAW+'funnel-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateFunnel(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
-    } catch(e){ console.warn('Funnel data load failed:', e.message); }
-    // Morning Debrief
-    try {
-        const res = await fetch(GH_RAW+'morning-debrief-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateBrief(d); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
-    } catch(e){ console.warn('Morning debrief data load failed:', e.message); }
-    // Replies & Leads
-    try {
-        const res = await fetch(GH_RAW+'replies-data.json?t='+t);
-        if(res.ok){ const d = await res.json(); window._repliesData = d; populateReplies(d, 'all'); if(d.lastUpdated) timestamps.push(new Date(d.lastUpdated)); }
-    } catch(e){ console.warn('Replies data load failed:', e.message); }
-    // FB Scripts
-    try {
-        const res = await fetch(GH_RAW+'facebook-scripts.json?t='+t);
-        if(res.ok){ const d = await res.json(); populateFbScripts(d); }
-    } catch(e){ console.warn('FB Scripts load failed:', e.message); }
-    // Update global last updated badge
-    if(timestamps.length > 0){
-        const latest = new Date(Math.max(...timestamps));
-        const el = document.getElementById('global-last-updated');
-        if(el) el.textContent = 'DATA: ' + latest.toLocaleString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}) + ' ET';
-    }
-}
+  try {
+    const r = await fetch(GH+'instantly-data.json?t='+Date.now());
+    if(r.ok){ const d=await r.json(); populateInstantly(d); if(d.lastUpdated) ts.push(new Date(d.lastUpdated)); }
+  } catch(e){}
 
-function fmtDate(dateStr){
-    const d = new Date(dateStr + 'T12:00:00');
-    return d.toLocaleDateString('en-US',{month:'long',day:'numeric'});
+  try {
+    const r = await fetch(GH+'morning-debrief-data.json?t='+Date.now());
+    if(r.ok){ const d=await r.json(); populateBrief(d); if(d.lastUpdated) ts.push(new Date(d.lastUpdated)); }
+  } catch(e){}
+
+  const el = document.getElementById('global-last-updated');
+  if(ts.length > 0){
+    const latest = new Date(Math.max(...ts));
+    if(el) el.textContent = 'DATA SYNC: ' + latest.toLocaleString('en-US',{
+      timeZone:'America/New_York',month:'short',day:'numeric',
+      hour:'numeric',minute:'2-digit'
+    }) + ' ET';
+  } else {
+    if(el) el.textContent = 'DATA: LIVE';
+  }
 }
 
 function populateInstantly(d){
-    const ov = d.overview || {};
-    const sent = ov.emails_sent_count || 0;
-    const opens = ov.open_count_unique || 0;
-    const replies = ov.reply_count_unique || 0;
-    const posReplies = (ov.total_interested || 0);
-    const bounces = ov.bounced_count || 0;
-    const meetings = ov.total_meeting_booked || 0;
-    const contacted = ov.contacted_count || 0;
-    const openRate = sent > 0 ? ((opens/sent)*100).toFixed(1)+'%' : '--';
-    const replyRate = sent > 0 ? ((replies/sent)*100).toFixed(1)+'%' : '--';
-    const bounceRate = sent > 0 ? ((bounces/sent)*100).toFixed(1)+'%' : '--';
+  const ov = d.overview || {};
+  const sent       = ov.emails_sent_count  || 0;
+  const opens      = ov.open_count_unique  || 0;
+  const replies    = ov.reply_count_unique || 0;
+  const interested = ov.total_interested   || 0;
+  const bounces    = ov.bounced_count      || 0;
+  const meetings   = ov.total_meeting_booked || 0;
+  const contacted  = ov.contacted_count    || 0;
 
-    // Overview cards
-    const oSent = document.getElementById('ov-sent');
-    const oRep = document.getElementById('ov-rep');
-    const oMtg = document.getElementById('ov-mtg');
-    if(oSent) oSent.textContent = sent.toLocaleString();
-    if(oRep) oRep.textContent = replies;
-    if(oMtg) oMtg.textContent = meetings;
+  const pct = (n,d) => d>0 ? ((n/d)*100).toFixed(1)+'%' : '--';
 
-    // Instantly page stat bubbles
-    const statBubbles = document.querySelectorAll('#page-instantly .sb-c');
-    if(statBubbles.length >= 6){
-        setBubble(statBubbles[0], sent.toLocaleString(), contacted+' contacted');
-        setBubble(statBubbles[1], opens, openRate+' open rate');
-        setBubble(statBubbles[2], replies, replyRate+' reply rate');
-        setBubble(statBubbles[3], posReplies, 'Interested leads');
-        setBubble(statBubbles[4], bounces, bounceRate+' bounce rate');
-        setBubble(statBubbles[5], meetings, 'From all campaigns');
-    }
+  s('ins-sent',       sent.toLocaleString());
+  s('ins-contacted',  contacted.toLocaleString()+' contacted');
+  s('ins-opens',      opens);
+  s('ins-open-rate',  pct(opens,sent)+' open rate');
+  s('ins-replies',    replies);
+  s('ins-reply-rate', pct(replies,sent)+' reply rate');
+  s('ins-interested', interested);
+  s('ins-bounces',    bounces);
+  s('ins-bounce-rate',pct(bounces,sent)+' bounce rate');
+  s('ins-meetings',   meetings);
 
-    // Daily table
-    const tbody = document.getElementById('ins-tbody');
-    if(tbody && d.daily && d.daily.length > 0){
-        tbody.innerHTML = [...d.daily].reverse().map(row => {
-            const rRate = row.sent > 0 ? ((row.unique_replies/row.sent)*100).toFixed(1)+'%' : '0%';
-            return `<tr class="clickable" onclick="openDetail({type:'metric',date:'${row.date}',channel:'Instantly',fields:[
-                {label:'Emails Sent',value:'${row.sent}'},{label:'Contacted',value:'${row.contacted}'},
-                {label:'Unique Opens',value:'${row.unique_opened}'},{label:'Replies',value:'${row.unique_replies}'},
-                {label:'Clicks',value:'${row.unique_clicks}'},{label:'Opportunities',value:'${row.unique_opportunities}'}
-            ]})">
-                <td class="td-h">${fmtDate(row.date)}</td><td>--</td><td>${row.sent}</td><td>${row.unique_opened}</td>
-                <td>${row.unique_replies}</td><td>${row.opportunities || 0}</td><td>${row.sent - row.contacted}</td><td>${row.unique_opportunities || 0}</td>
-            </tr>`;
-        }).join('');
-    }
+  if(d.lastUpdated){
+    const el = document.getElementById('ins-updated');
+    if(el) el.textContent = 'UPDATED ' + new Date(d.lastUpdated).toLocaleString('en-US',{
+      timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'
+    });
+  }
 
-    // Homepage daily breakdown - Instantly
-    const ovIns = document.getElementById('ov-ins-daily');
-    if(ovIns && d.daily && d.daily.length > 0){
-        const rows = [...d.daily].reverse().slice(0,10);
-        ovIns.innerHTML = rows.map(r => {
-            const active = r.sent>0||r.unique_replies>0;
-            return `<tr${active?' style="color:var(--t1)"':''}>
-                <td class="td-h">${fmtDate(r.date)}</td>
-                <td>${r.sent||0}</td>
-                <td>${r.unique_opened||0}</td>
-                <td${r.unique_replies>0?' style="color:var(--cyan);font-weight:600"':''}>${r.unique_replies||0}</td>
-                <td>${r.unique_opportunities||0}</td>
-            </tr>`;
-        }).join('');
-    }
-
-}
-
-function populateSocial(sd){
-    // Facebook
-    if(sd.facebook && sd.facebook.lastUpdated){
-        const fb = sd.facebook;
-        const oGrp = document.getElementById('ov-grp');
-        const oCmt = document.getElementById('ov-cmt');
-        const oFbi = document.getElementById('ov-fbi');
-        if(oGrp) oGrp.textContent = fb.groups || 0;
-        if(oCmt) oCmt.textContent = fb.comments || 0;
-        if(oFbi) oFbi.textContent = fb.interestSignals || 0;
-
-        // Facebook page stat bubbles
-        const fbBubbles = document.querySelectorAll('#page-facebook .sb-c');
-        if(fbBubbles.length >= 6){
-            setBubble(fbBubbles[0], fb.groups || 0, 'Active groups');
-            setBubble(fbBubbles[1], fb.postsLive || 0, 'In last 7 days');
-            setBubble(fbBubbles[2], fb.comments || 0, 'Total engagement');
-            setBubble(fbBubbles[3], fb.positiveComments || 0, 'Positive signals');
-            setBubble(fbBubbles[4], fb.dmsReceived || 0, 'Direct messages');
-            setBubble(fbBubbles[5], fb.interestSignals || 0, 'Warm leads');
-        }
-
-        // Facebook daily table
-        const fbTbody = document.getElementById('fb-tbody');
-        if(fbTbody && fb.daily && fb.daily.length > 0){
-            fbTbody.innerHTML = [...fb.daily].reverse().map(row =>
-                `<tr><td class="td-h">${fmtDate(row.date)}</td><td>${row.groups||0}</td><td>--</td><td>${row.posts||0}</td><td>${row.comments||0}</td><td>${row.positive||0}</td><td>${row.dms||0}</td><td>${row.interest||0}</td></tr>`
-            ).join('');
-        }
-
-        // Progress page
-        const pipeFbLast = document.getElementById('pipe-fb-last');
-        if(pipeFbLast) pipeFbLast.textContent = 'Last: ' + new Date(fb.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
-    }
-
-    // ── Homepage Daily Breakdown ──────────────────────────────
-    // Facebook
-    const ovFb = document.getElementById('ov-fb-daily');
-    if(ovFb && sd.facebook && sd.facebook.daily){
-        const rows = [...sd.facebook.daily].reverse().slice(0,10);
-        ovFb.innerHTML = rows.map(r => {
-            const active = r.posts>0||r.comments>0||r.dms>0||r.interest>0;
-            return `<tr${active?' style="color:var(--t1)"':''}>
-                <td class="td-h">${fmtDate(r.date)}</td>
-                <td>${r.posts||0}</td>
-                <td>${r.comments||0}</td>
-                <td>${r.positive||0}</td>
-                <td>${r.dms||0}</td>
-                <td${r.interest>0?' style="color:var(--cyan);font-weight:600"':''}>${r.interest||0}</td>
-            </tr>`;
-        }).join('');
-    }
-}
-
-function populateFunnel(d){
-    if(!d) return;
-    const c = d.combined || {};
-    const set = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = val; };
-    const pct = (num, den) => den > 0 ? (num/den*100).toFixed(0)+'%' : '—';
-
-    // Top funnel bar
-    set('fn-num-new',    c.newLead    || 0);
-    set('fn-num-dm',     c.dmSent     || 0);
-    set('fn-num-replied',c.replied    || 0);
-    set('fn-num-booked', c.callBooked || 0);
-    set('fn-num-closed', c.closed     || 0);
-
-    // Conversion rates between stages
-    const nl = c.newLead || 0;
-    const dm = c.dmSent  || 0;
-    const rp = c.replied || 0;
-    const bk = c.callBooked || 0;
-    const cl = c.closed  || 0;
-    set('fn-rate-new',    nl > 0 ? nl + ' total' : '—');
-    set('fn-rate-dm',     pct(dm, nl) + ' of leads');
-    set('fn-rate-replied',pct(rp, dm) + ' of contacted');
-    set('fn-rate-booked', pct(bk, rp) + ' of replies');
-    set('fn-rate-closed', pct(cl, bk) + ' of booked');
-
-    // Per-channel breakdown
-    const channels = {fb: d.facebook||{}, ins: d.instantly||{}};
-    const map = {fb:'fb', ins:'ins'};
-    for(const [key, data] of Object.entries(channels)){
-        const p = map[key];
-        set(`fn-${p}-new`,    data.newLead    || 0);
-        set(`fn-${p}-dm`,     data.dmSent     || 0);
-        set(`fn-${p}-replied`,data.replied    || 0);
-        set(`fn-${p}-booked`, data.callBooked || 0);
-        set(`fn-${p}-closed`, data.closed     || 0);
-    }
-
-    // Update timestamp badge
-    if(d.lastUpdated){
-        const el = document.getElementById('funnel-updated');
-        if(el) el.textContent = 'UPDATED ' + new Date(d.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
-    }
+  const tbody = document.getElementById('ins-tbody');
+  if(tbody && d.daily && d.daily.length > 0){
+    tbody.innerHTML = [...d.daily].reverse().slice(0,14).map(row => {
+      const active = (row.sent||0) > 0;
+      return `<tr${active?' style="color:var(--t1)"':''}>
+        <td class="td-h">${fmtDate(row.date)}</td>
+        <td>${(row.sent||0).toLocaleString()}</td>
+        <td>${row.unique_opened||0}</td>
+        <td${(row.unique_replies||0)>0?' style="color:var(--cyan);font-weight:700"':''}>${row.unique_replies||0}</td>
+        <td${(row.unique_opportunities||0)>0?' style="color:var(--ok)"':''}>${row.unique_opportunities||row.opportunities||0}</td>
+        <td${(row.bounced||0)>0?' style="color:var(--warn)"':''}>${row.bounced||0}</td>
+      </tr>`;
+    }).join('');
+  } else if(tbody && (!d.daily || d.daily.length===0)){
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px">NO DATA — CAMPAIGN STATS APPEAR HERE ONCE EMAILS ARE SENT</td></tr>`;
+  }
 }
 
 function populateBrief(d){
-    // Weather and Quote are now handled by live APIs — skip stale JSON values
-
-    // Urgent inbox (pulled from Notion Urgent Inbox via task)
-    const uEl = document.getElementById('brief-urgent');
-    if(uEl){
-        if(d.urgent && d.urgent.length > 0){
-            uEl.innerHTML = d.urgent.map(item => {
-                const tagClass = item.tag === 'BLOCKED' ? 'block' : item.tag === 'OFFLINE' ? 'offline' : 'follow';
-                return `<div class="urgent-item"><span class="urgent-tag ${tagClass}">${item.tag}</span><strong>${item.title}</strong> -- ${item.note}</div>`;
-            }).join('');
-        } else {
-            uEl.innerHTML = '<span style="color:var(--ok)">&#10003; No unresolved items</span>';
-        }
-    }
-
-    // Focus items
-    const fEl = document.getElementById('brief-focus');
-    if(fEl && d.focus && d.focus.length > 0){
-        fEl.innerHTML = '<ol>' + d.focus.map(item => `<li>${item}</li>`).join('') + '</ol>';
-    }
-
-    // Reminders
-    const rEl = document.getElementById('brief-reminders');
-    if(rEl && d.reminders && d.reminders.length > 0){
-        rEl.innerHTML = d.reminders.map(r => `<strong>${r}</strong>`).join('<br><br>');
-    }
-
-    // Date label
-    const dateEl = document.getElementById('brief-date');
-    if(dateEl && d.date) dateEl.textContent = d.date;
-
-    // Last updated badge
-    if(d.lastUpdated){
-        const luEl = document.getElementById('brief-updated');
-        if(luEl) luEl.textContent = 'UPDATED ' + new Date(d.lastUpdated).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
-    }
-}
-
-function populateTasks(ts){
-    const tbody = document.getElementById('tasks-tbody');
-    if(!tbody) return;
-    const rows = Object.entries(ts).map(([name, t]) => {
-        const statusColor = t.status === 'active' ? 'ok' : t.status === 'success' ? 'ok' : t.status === 'error' ? 'err' : 'wn';
-        const statusLabel = (t.status || 'pending').toUpperCase();
-        const lastRun = t.lastRun ? new Date(t.lastRun).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : 'Never';
-        return `<tr>
-            <td class="td-h">${name}</td>
-            <td>${t.type || '--'}</td>
-            <td>${t.schedule || '--'}</td>
-            <td><span class="pill ${statusColor === 'ok' ? 'active' : statusColor === 'err' ? 'hot' : 'new'}">${statusLabel}</span></td>
-            <td>${lastRun}</td>
-            <td>${t.summary || '--'}</td>
-        </tr>`;
-    });
-    tbody.innerHTML = rows.join('');
-
-    // System log
-    const log = document.getElementById('system-log');
-    if(log){
-        const entries = Object.entries(ts).filter(([,t]) => t.lastRun).sort((a,b) => (b[1].lastRun||'').localeCompare(a[1].lastRun||''));
-        if(entries.length > 0){
-            log.innerHTML = entries.map(([name, t]) => {
-                const color = t.status === 'success' || t.status === 'active' ? 'var(--ok)' : t.status === 'error' ? 'var(--err)' : 'var(--warn)';
-                const time = new Date(t.lastRun).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',second:'2-digit',month:'short',day:'numeric'});
-                return `<div><span style="color:var(--t3)">[${time}]</span> <span style="color:${color}">${name}</span> - ${t.summary||'No details'}</div>`;
-            }).join('');
-        } else {
-            log.innerHTML = '<div style="color:var(--ok)">[System initialized] All tasks registered. Awaiting first scheduled runs.</div>' +
-                '<div style="color:var(--t3)">[Info] Facebook scrape: hourly at :06 past</div>' +
-
-                '<div style="color:var(--ok)">[Info] Instantly: real-time on every page load</div>';
-        }
-    }
-}
-
-function setBubble(el, value, sub){
-    const sv = el.querySelector('.sv');
-    const sc = el.querySelector('.sc');
-    if(sv) sv.textContent = value;
-    if(sc) sc.textContent = sub;
-}
-
-// ===== AGENTS PAGE =====
-window._agentTasks = {};
-window._taskStatus = null;
-window._agentsData = null;
-
-// Tasks permanently excluded from alerts (disabled channels)
-const ALERT_IGNORE = ['linkedin'];
-
-function populateTaskAlerts(taskStatus) {
-    if (!taskStatus) return;
-    // Strip out any disabled or ignored-channel tasks before evaluating alerts
-    const alerts = (taskStatus.alerts || []).filter(a => {
-        // Support both 'task' and 'taskId' keys (health monitor uses taskId)
-        const name = (a.taskId || a.task || '');
-        return a.status !== 'disabled' &&
-            !ALERT_IGNORE.some(x => name.toLowerCase().includes(x));
-    });
-    const overallStatus = alerts.length > 0 ? 'alert' : 'ok';
-    const lastCheck = taskStatus.last_health_check ? new Date(taskStatus.last_health_check) : null;
-
-    const bar = document.getElementById('global-alert-bar');
-    const barText = document.getElementById('alert-bar-text');
-    const barTime = document.getElementById('alert-bar-time');
-    const agSection = document.getElementById('ag-alert-section');
-    const agCards = document.getElementById('ag-alert-cards');
-
-    if (overallStatus === 'alert' && alerts.length > 0) {
-        // Show global banner
-        if (bar) bar.classList.add('show');
-        const names = alerts.map(a => (a.taskId || a.task || 'unknown')).join(', ');
-        if (barText) barText.textContent = 'MISSED TASK' + (alerts.length > 1 ? 'S' : '') + ': ' + names.toUpperCase();
-        if (barTime && lastCheck) barTime.textContent = 'Last check: ' + lastCheck.toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'});
-
-        // Show agents page alert section
-        if (agSection) agSection.style.display = 'block';
-        if (agCards) {
-            agCards.innerHTML = alerts.map(a => {
-                const name = (a.taskId || a.task || 'unknown');
-                const lastRun = (a.lastRunAt || a.last_run) ? new Date(a.lastRunAt || a.last_run).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : 'Never';
-                const detail = a.reason || ('Last run: ' + lastRun);
-                return `<div class="ag-alert-card">
-                    <span class="ag-alert-icon">⚠️</span>
-                    <div class="ag-alert-body">
-                        <div class="ag-alert-name">${name.replace(/-/g,' ').toUpperCase()}</div>
-                        <div class="ag-alert-detail">${detail}</div>
-                    </div>
-                    <span class="ag-alert-badge">MISSED</span>
-                </div>`;
-            }).join('');
-        }
-    } else {
-        if (bar) bar.classList.remove('show');
-        if (agSection) agSection.style.display = 'none';
-    }
-}
-
-function populateAgents(agData, taskStatus) {
-    window._agentTasks = {};
-    const tasks = (agData && agData.sessionTasks) ? agData.sessionTasks : [];
-
-    // Register all tasks by id for detail panel
-    tasks.forEach(t => { window._agentTasks[t.id] = t; });
-    if(taskStatus) {
-        Object.entries(taskStatus).forEach(([name, t]) => {
-            const key = 'auto-'+name;
-            window._agentTasks[key] = Object.assign({}, t, {id: key, title: name, isAuto: true});
-        });
-    }
-
-    const setEl = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
-    const completed = tasks.filter(t => t.status === 'completed').length;
-    const running = tasks.filter(t => t.status === 'running').length;
-    const automations = taskStatus ? Object.keys(taskStatus).length : 0;
-    setEl('ag-stat-completed', completed);
-    setEl('ag-stat-running', running);
-    setEl('ag-stat-scheduled', automations);
-
-    // Live now
-    const liveTasks = tasks.filter(t => t.status === 'running');
-    const liveSection = document.getElementById('ag-live-section');
-    const liveCards = document.getElementById('ag-live-cards');
-    if(liveSection) liveSection.style.display = liveTasks.length > 0 ? 'block' : 'none';
-    if(liveCards && liveTasks.length > 0) {
-        liveCards.innerHTML = liveTasks.map(t => {
-            const sStr = t.startedAt ? new Date(t.startedAt).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : '--';
-            return `<div class="ag-live-card" onclick="openAgentDetail('${t.id}')">
-                <div class="ag-live-pulse"></div>
-                <div class="ag-live-badge"><span class="ag-live-dot"></span> RUNNING NOW</div>
-                <div class="ag-live-title">${t.title}</div>
-                <div class="ag-live-type">${t.type||'--'} // TRIGGERED BY ${(t.triggeredBy||'--').toUpperCase()}</div>
-                <div class="ag-live-summary">${t.summary||''}</div>
-                <div style="margin-top:12px;font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3)">Started ${sStr} &mdash; Click for full details</div>
-            </div>`;
-        }).join('');
-    }
-
-    // Completed today
-    const tbody = document.getElementById('ag-completed-tbody');
-    if(tbody) {
-        const done = tasks.filter(t => t.status === 'completed');
-        if(done.length > 0) {
-            tbody.innerHTML = done.map(t => {
-                const s = t.startedAt ? new Date(t.startedAt) : null;
-                const c = t.completedAt ? new Date(t.completedAt) : null;
-                const dur = (s && c) ? Math.round((c - s)/60000) + ' min' : '--';
-                const sStr = s ? s.toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : '--';
-                const oClass = t.outcome === 'success' ? 'completed-ok' : t.outcome === 'failed' ? 'hot' : 'new';
-                const oLabel = (t.outcome||'done').toUpperCase();
-                return `<tr class="ag-task-row" onclick="openAgentDetail('${t.id}')">
-                    <td class="ag-task-name">${t.title}</td>
-                    <td>${t.type||'--'}</td>
-                    <td>${t.triggeredBy||'--'}</td>
-                    <td>${sStr}</td>
-                    <td>${dur}</td>
-                    <td><span class="pill ${oClass}">${oLabel}</span></td>
-                </tr>`;
-            }).join('');
-        } else {
-            tbody.innerHTML = '<tr><td colspan="6" class="ag-empty">No completed tasks yet</td></tr>';
-        }
-    }
-
-    // Scheduled automations
-    const stbody = document.getElementById('ag-scheduled-tbody');
-    if(stbody && taskStatus) {
-        stbody.innerHTML = Object.entries(taskStatus).map(([name, t]) => {
-            const key = 'auto-'+name;
-            const lastRun = t.lastRun ? new Date(t.lastRun).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : 'Never';
-            const nextRun = computeNextRun(t.schedule);
-            const sClass = t.status === 'active' ? 'active' : t.status === 'partial' ? 'paused' : t.status === 'error' ? 'hot' : 'sched';
-            return `<tr class="ag-task-row" onclick="openAgentDetail('${key}')">
-                <td class="ag-task-name">${name}</td>
-                <td>${t.type||'--'}</td>
-                <td style="font-family:'Share Tech Mono',monospace;font-size:11px">${t.schedule||'--'}</td>
-                <td style="font-family:'Share Tech Mono',monospace;font-size:11px">${lastRun}</td>
-                <td><span class="pill ${sClass}">${(t.status||'--').toUpperCase()}</span></td>
-                <td style="font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--cyan)">${nextRun}</td>
-            </tr>`;
-        }).join('');
-    }
-}
-
-function computeNextRun(schedule) {
-    if(!schedule) return '--';
-    if(schedule.includes('Hourly at :')) {
-        const min = parseInt(schedule.replace('Hourly at :', '').trim());
-        const now = new Date();
-        const etStr = now.toLocaleString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',hour12:false});
-        const parts = etStr.split(':');
-        const h = parseInt(parts[0]), m = parseInt(parts[1]);
-        let nextH = h;
-        if(m >= min) nextH = h + 1;
-        if(nextH >= 24) return 'Tomorrow';
-        const ampm = nextH >= 12 ? 'PM' : 'AM';
-        const h12 = nextH > 12 ? nextH-12 : (nextH === 0 ? 12 : nextH);
-        return h12+':'+String(min).padStart(2,'0')+' '+ampm+' ET';
-    }
-    if(schedule === 'Every page load') return 'On next load';
-    if(schedule === 'On scraper run') return 'On next scrape';
-    return schedule;
-}
-
-function openAgentDetail(id) {
-    const task = window._agentTasks[id];
-    if(!task) return;
-    const dp = document.getElementById('dp');
-    const ov = document.getElementById('dp-overlay');
-    const ct = document.getElementById('dp-content');
-    const sClass = task.status === 'completed' ? 'completed-ok' : task.status === 'running' ? 'running' : task.status === 'partial' ? 'paused' : task.status === 'active' ? 'active' : 'new';
-    const fmtTime = iso => iso ? new Date(iso).toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',month:'short',day:'numeric'}) : '--';
-    const sStr = fmtTime(task.startedAt);
-    const cStr = task.completedAt ? fmtTime(task.completedAt) : (task.status==='running' ? '— In progress...' : '--');
-    const lrStr = fmtTime(task.lastRun);
-
-    let html = `
-        <div class="dp-title">${task.title||'Agent Task'}</div>
-        <div class="dp-sub">${(task.type||'AGENT TASK').toUpperCase()} // NOVARO AI</div>
-        <div class="dp-section">STATUS</div>
-        <div class="dp-row"><div class="dp-label">Status</div><div class="dp-val"><span class="pill ${sClass}">${(task.status||'--').toUpperCase()}</span></div></div>
-        ${task.triggeredBy ? `<div class="dp-row"><div class="dp-label">Triggered By</div><div class="dp-val">${task.triggeredBy}</div></div>` : ''}
-        ${task.schedule ? `<div class="dp-row"><div class="dp-label">Schedule</div><div class="dp-val">${task.schedule}</div></div>` : ''}
-        ${task.startedAt ? `<div class="dp-row"><div class="dp-label">Started</div><div class="dp-val">${sStr}</div></div>` : ''}
-        ${(task.completedAt||task.status==='running') ? `<div class="dp-row"><div class="dp-label">Completed</div><div class="dp-val">${cStr}</div></div>` : ''}
-        ${task.lastRun ? `<div class="dp-row"><div class="dp-label">Last Run</div><div class="dp-val">${lrStr}</div></div>` : ''}
-        ${task.outcome ? `<div class="dp-row"><div class="dp-label">Outcome</div><div class="dp-val" style="color:${task.outcome==='success'?'var(--ok)':task.outcome==='failed'?'var(--err)':'var(--warn)'}">${task.outcome.toUpperCase()}</div></div>` : ''}
-        <div class="dp-section">SUMMARY</div>
-        <div class="dp-notes">${task.summary||'No summary available'}</div>
-        ${task.details ? `<div class="dp-section">FULL DETAILS</div><div class="dp-notes" style="max-height:280px;overflow-y:auto;font-size:13px;line-height:1.8">${task.details}</div>` : ''}
-        ${task.linkedPage ? `<div class="dp-section">ACTIONS</div><a class="dp-btn" onclick="closeDetail();showPage('${task.linkedPage}')">VIEW RELATED PAGE &rarr;</a>` : ''}
-    `;
-    ct.innerHTML = html;
-    dp.classList.add('open');
-    ov.classList.add('open');
-}
-
-// ===== REPLIES & LEADS =====
-const CH_ICONS = { Email: '✉️', Facebook: '📘' };
-let _activeRepFilter = 'all';
-
-function populateReplies(d, filter){
-    if(!d || !d.replies) return;
-    _activeRepFilter = filter || 'all';
-    const s = d.summary || {};
-    const set = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
-    set('rep-total',    s.total    || 0);
-    set('rep-positive', s.positive || 0);
-    set('rep-negative', s.negative || 0);
-    set('rep-pending',  s.pending  || 0);
-    set('rep-auto',     s.auto     || 0);
-
-    // Update nav badge — shows new leads since last visit, clears to 0 once seen
-    const navBadge = document.getElementById('nav-replies-badge');
-    if(navBadge){
-        const totalActionable = (s.pending || 0) + (s.positive || 0);
-        navBadge.setAttribute('data-total', totalActionable);
-        let seen = 0;
-        try { seen = parseInt(localStorage.getItem('novaro_replies_seen') || '0'); } catch(e){}
-        const unseen = Math.max(0, totalActionable - seen);
-        navBadge.textContent = unseen;
-        navBadge.style.display = unseen > 0 ? '' : 'none';
-    }
-
-    // Always sort by date descending (newest first), regardless of JSON order
-    let items = [...d.replies].sort((a, b) => {
-        const da = new Date(a.date).getTime() || 0;
-        const db = new Date(b.date).getTime() || 0;
-        return db - da;
-    });
-    if(filter !== 'all'){
-        items = items.filter(r =>
-            r.type === filter || r.channel === filter
-        );
-    }
-
-    const list = document.getElementById('rep-list');
-    if(!list) return;
-    if(items.length === 0){
-        list.innerHTML = '<div class="rep-empty">No replies match this filter</div>';
-        return;
-    }
-
-    list.innerHTML = items.map(r => {
-        const icon = CH_ICONS[r.channel] || '💬';
-        const statusLabel = r.status || r.label || 'Unknown';
-        const openLink = r.actionUrl ? `<a class="rep-btn" href="${r.actionUrl}" target="_blank">OPEN ${r.channel.toUpperCase()} →</a>` : '';
-        return `
-        <div class="rep-card ${r.type}">
-            <div class="rep-ch-icon ${r.channel}">${icon}</div>
-            <div class="rep-body">
-                <div class="rep-meta">
-                    <span class="rep-date">${r.date}</span>
-                    <span class="rep-ch-tag">${r.channel.toUpperCase()}</span>
-                    <span class="rep-badge ${r.type}">${r.label}</span>
-                    ${r.contact ? `<span style="font-size:11px;color:var(--t2)">${r.contact}${r.company ? ' · ' + r.company : ''}</span>` : ''}
-                </div>
-                <div class="rep-preview">${r.preview}</div>
-                <div class="rep-campaign">${r.campaign}</div>
-            </div>
-            <div class="rep-action">${openLink}</div>
+  const uEl = document.getElementById('brief-urgent');
+  if(uEl){
+    if(d.urgent && d.urgent.length > 0){
+      uEl.innerHTML = d.urgent.map(item => {
+        const tag = item.tag==='BLOCKED'?'block':item.tag==='OFFLINE'?'offline':'follow';
+        return `<div class="urgent-item">
+          <span class="urgent-tag ${tag}">${item.tag}</span>
+          <strong>${item.title}</strong> — ${item.note}
         </div>`;
-    }).join('');
-}
-
-function filterReplies(filter, el){
-    document.querySelectorAll('.rep-filter').forEach(f => f.classList.remove('on'));
-    if(el) el.classList.add('on');
-    if(window._repliesData) populateReplies(window._repliesData, filter);
-}
-
-// ===== FB SCRIPTS =====
-function populateFbScripts(d){
-    if(!d || !d.scripts) return;
-    const scripts = d.scripts;
-    const approved = d.approved === true;
-    const total = scripts.length;
-    const posted = scripts.filter(s => s.status === 'posted').length;
-    const queued = total - posted;
-
-    // Stats
-    const setEl = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
-    setEl('fbs-total', total);
-    setEl('fbs-posted', posted);
-    setEl('fbs-pending-ct', queued);
-
-    // Week label
-    if(d.weekOf){
-        const wDate = new Date(d.weekOf + 'T12:00:00');
-        setEl('fbs-week-label', wDate.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}));
-    }
-
-    // Approval banners
-    const appBanner = document.getElementById('fbs-approval-banner');
-    const pendBanner = document.getElementById('fbs-pending-banner');
-    const badge = document.getElementById('nav-scripts-badge');
-    if(approved){
-        if(appBanner) appBanner.style.display = 'flex';
-        if(pendBanner) pendBanner.style.display = 'none';
-        if(d.approvedAt){
-            const aDate = new Date(d.approvedAt);
-            const aStr = aDate.toLocaleDateString('en-US',{month:'short',day:'numeric'}) + ' by ' + (d.approvedBy || 'Vito');
-            setEl('fbs-approved-detail', 'Approved ' + aStr + ' — ' + queued + ' scripts queued to post, ' + posted + ' already posted.');
-        }
-        if(badge){ badge.textContent = 'LIVE'; badge.style.background = 'rgba(0,255,136,.2)'; badge.style.color = '#00ff88'; badge.style.borderColor = 'rgba(0,255,136,.3)'; }
+      }).join('');
     } else {
-        if(appBanner) appBanner.style.display = 'none';
-        if(pendBanner) pendBanner.style.display = 'flex';
-        if(badge){ badge.textContent = 'REVIEW'; badge.style.background = 'rgba(255,170,0,.2)'; badge.style.color = '#ffaa00'; badge.style.borderColor = 'rgba(255,170,0,.3)'; }
+      uEl.innerHTML = '<span style="color:var(--ok);font-family:\'Share Tech Mono\',monospace;font-size:12px;letter-spacing:2px">✓ ALL CLEAR — NO UNRESOLVED ITEMS</span>';
     }
+  }
 
-    // Render script cards
-    const grid = document.getElementById('fbs-grid');
-    if(!grid) return;
-    grid.innerHTML = scripts.map((s, i) => {
-        const isPosted = s.status === 'posted';
-        const postedStr = s.postedAt ? ' · Posted ' + new Date(s.postedAt).toLocaleDateString('en-US',{month:'short',day:'numeric'}) : '';
-        const contentEsc = s.content.replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        return `
-        <div class="fbs-card${isPosted ? ' posted' : ''}" id="fbs-card-${s.id}">
-            <div class="fbs-card-top">
-                <div>
-                    <div class="fbs-num">SCRIPT ${String(i+1).padStart(2,'0')} / ${total}</div>
-                    <div class="fbs-group">${s.group}</div>
-                </div>
-                ${isPosted
-                    ? `<span class="fbs-pill-posted">&#10003; POSTED${postedStr}</span>`
-                    : `<span class="fbs-pill-pending">&#9679; QUEUED</span>`}
-            </div>
-            <div class="fbs-content" id="fbs-content-${s.id}">${contentEsc}</div>
-            <div class="fbs-actions">
-                <button class="fbs-btn copy-btn" onclick="fbsCopy(${s.id})">&#128203; COPY</button>
-                <button class="fbs-btn expand-btn" onclick="fbsExpand(${s.id}, this)">&#8595; EXPAND</button>
-            </div>
-        </div>`;
-    }).join('');
-}
+  const fEl = document.getElementById('brief-focus');
+  if(fEl){
+    if(d.focus && d.focus.length > 0){
+      fEl.innerHTML = '<ol>'+d.focus.map(item=>`<li>${item}</li>`).join('')+'</ol>';
+      fEl.className = 'brief-item';
+    } else {
+      fEl.innerHTML = '<span style="color:var(--t3);font-family:\'Share Tech Mono\',monospace;font-size:11px">NO FOCUS ITEMS SET</span>';
+    }
+  }
 
-function fbsCopy(id){
-    const el = document.getElementById('fbs-content-'+id);
-    if(!el) return;
-    const text = el.textContent;
-    navigator.clipboard.writeText(text).then(() => {
-        const btn = el.closest('.fbs-card').querySelector('.copy-btn');
-        const orig = btn.innerHTML;
-        btn.innerHTML = '&#10003; COPIED';
-        btn.style.color = 'var(--ok)';
-        setTimeout(() => { btn.innerHTML = orig; btn.style.color = ''; }, 1800);
-    }).catch(() => {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
+  const rEl = document.getElementById('brief-reminders');
+  if(rEl){
+    if(d.reminders && d.reminders.length > 0){
+      rEl.innerHTML = d.reminders.map(r =>
+        `<div class="brief-item">• ${r}</div>`
+      ).join('');
+    } else {
+      rEl.innerHTML = '<span style="color:var(--t3);font-family:\'Share Tech Mono\',monospace;font-size:11px">NO REMINDERS</span>';
+    }
+  }
+
+  const dEl = document.getElementById('brief-date');
+  if(dEl && d.date) dEl.textContent = d.date;
+
+  if(d.lastUpdated){
+    const el = document.getElementById('brief-updated');
+    if(el) el.textContent = 'UPDATED '+new Date(d.lastUpdated).toLocaleString('en-US',{
+      timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'
     });
+  }
 }
 
-function fbsExpand(id, btn){
-    const el = document.getElementById('fbs-content-'+id);
-    if(!el) return;
-    const expanded = el.classList.toggle('expanded');
-    btn.innerHTML = expanded ? '&#8593; COLLAPSE' : '&#8595; EXPAND';
-}
-
-// Load data on page ready
-if(sessionStorage.getItem('novaro_auth')==='1'){
-    loadLiveData();
-} else {
-    // Load after auth succeeds
-    const origAuth = window.authCheck;
-}
-// ─── LIVE WEATHER (Open-Meteo, no API key) ───────────────────────────────────
-async function loadLiveWeather(){
-    const wEl = document.getElementById('brief-weather');
-    if(!wEl) return;
-    try {
-        // Longmeadow, MA: 42.05°N, -72.52°W
-        const url = 'https://api.open-meteo.com/v1/forecast?latitude=42.05&longitude=-72.52&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,precipitation_probability&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York';
-        const res = await fetch(url);
-        if(!res.ok) throw new Error('weather fetch failed');
-        const data = await res.json();
-        const c = data.current;
-        const temp = Math.round(c.temperature_2m);
-        const feels = Math.round(c.apparent_temperature);
-        const wind = Math.round(c.wind_speed_10m);
-        const precip = c.precipitation_probability;
-        const wCode = c.weather_code;
-
-        // Map WMO weather codes to descriptions
-        const wxMap = {
-            0:'Clear sky', 1:'Mainly clear', 2:'Partly cloudy', 3:'Overcast',
-            45:'Foggy', 48:'Icy fog', 51:'Light drizzle', 53:'Drizzle', 55:'Heavy drizzle',
-            61:'Light rain', 63:'Rain', 65:'Heavy rain', 71:'Light snow', 73:'Snow', 75:'Heavy snow',
-            80:'Rain showers', 81:'Rain showers', 82:'Violent showers',
-            95:'Thunderstorm', 96:'Thunderstorm w/ hail', 99:'Thunderstorm w/ hail'
-        };
-        const desc = wxMap[wCode] || 'Variable conditions';
-        const now = new Date().toLocaleString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit',hour12:true});
-        wEl.textContent = `${desc} in Longmeadow — ${temp}°F (feels ${feels}°F), wind ${wind} mph, ${precip}% chance of precip. As of ${now} ET.`;
-    } catch(e){
-        // Silently fall back to whatever populateBrief wrote (stale is better than broken)
-        console.warn('Live weather failed:', e.message);
+// ── WEATHER ──
+async function fetchWeather(){
+  try {
+    const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=27.9506&longitude=-82.4572&current_weather=true&temperature_unit=fahrenheit');
+    if(r.ok){
+      const d = await r.json();
+      const cw = d.current_weather;
+      s('weather-temp', Math.round(cw.temperature)+'°F');
+      s('weather-desc', weatherCode(cw.weathercode));
     }
+  } catch(e){}
+}
+function weatherCode(c){
+  if(c===0) return 'CLEAR SKIES';
+  if(c<=2)  return 'PARTLY CLOUDY';
+  if(c===3) return 'OVERCAST';
+  if(c<=48) return 'FOGGY CONDITIONS';
+  if(c<=57) return 'DRIZZLE';
+  if(c<=67) return 'RAIN';
+  if(c<=77) return 'SNOW';
+  if(c<=82) return 'RAIN SHOWERS';
+  return 'THUNDERSTORMS';
 }
 
-// ─── DAILY QUOTE (date-seeded, no API dependency) ────────────────────────────
-function loadDailyQuote(){
-    const qEl = document.getElementById('brief-quote');
-    if(!qEl) return;
-    const quotes = [
-        {text:"Real artists ship.", author:"Steve Jobs"},
-        {text:"If you're not embarrassed by the first version of your product, you've launched too late.", author:"Reid Hoffman"},
-        {text:"The way to get started is to quit talking and begin doing.", author:"Walt Disney"},
-        {text:"It does not matter how slowly you go as long as you do not stop.", author:"Confucius"},
-        {text:"Chase the vision, not the money. The money will end up following you.", author:"Tony Hsieh"},
-        {text:"An entrepreneur is someone who jumps off a cliff and builds a plane on the way down.", author:"Reid Hoffman"},
-        {text:"The best time to plant a tree was 20 years ago. The second best time is now.", author:"Chinese Proverb"},
-        {text:"I never dreamed about success. I worked for it.", author:"Estée Lauder"},
-        {text:"Don't find customers for your products, find products for your customers.", author:"Seth Godin"},
-        {text:"Success is not final; failure is not fatal: it is the courage to continue that counts.", author:"Winston Churchill"},
-        {text:"Opportunities don't happen. You create them.", author:"Chris Grosser"},
-        {text:"It's not about ideas. It's about making ideas happen.", author:"Scott Belsky"},
-        {text:"The secret of getting ahead is getting started.", author:"Mark Twain"},
-        {text:"Your most unhappy customers are your greatest source of learning.", author:"Bill Gates"},
-        {text:"The harder I work, the luckier I get.", author:"Samuel Goldwyn"},
-        {text:"Don't be afraid to give up the good to go for the great.", author:"John D. Rockefeller"},
-        {text:"When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.", author:"Henry Ford"},
-        {text:"The only way to do great work is to love what you do.", author:"Steve Jobs"},
-        {text:"Success usually comes to those who are too busy to be looking for it.", author:"Henry David Thoreau"},
-        {text:"If you are not willing to risk the usual, you will have to settle for the ordinary.", author:"Jim Rohn"},
-        {text:"The first rule of any technology used in a business is that automation applied to an efficient operation will magnify the efficiency.", author:"Bill Gates"},
-        {text:"Your time is limited, so don't waste it living someone else's life.", author:"Steve Jobs"},
-        {text:"Price is what you pay. Value is what you get.", author:"Warren Buffett"},
-        {text:"If you can't explain it simply, you don't understand it well enough.", author:"Albert Einstein"},
-        {text:"Done is better than perfect.", author:"Sheryl Sandberg"},
-        {text:"A brand is no longer what we tell the consumer it is — it is what consumers tell each other it is.", author:"Scott Cook"},
-        {text:"Move fast and break things. Unless you are breaking stuff, you are not moving fast enough.", author:"Mark Zuckerberg"},
-        {text:"The best marketing doesn't feel like marketing.", author:"Tom Fishburne"},
-        {text:"Content is fire, social media is gasoline.", author:"Jay Baer"},
-        {text:"The biggest risk is not taking any risk.", author:"Mark Zuckerberg"},
-        {text:"Make every detail perfect and limit the number of details to perfect.", author:"Jack Dorsey"},
-        {text:"You miss 100% of the shots you don't take.", author:"Wayne Gretzky"},
-        {text:"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.", author:"Thomas Edison"},
-        {text:"Timing, perseverance, and ten years of trying will eventually make you look like an overnight success.", author:"Biz Stone"},
-        {text:"Without continual growth and progress, such words as improvement, achievement, and success have no meaning.", author:"Benjamin Franklin"},
-        {text:"The entrepreneur always searches for change, responds to it, and exploits it as an opportunity.", author:"Peter Drucker"},
-        {text:"Stop chasing the money and start chasing the passion.", author:"Tony Hsieh"},
-        {text:"Vision without execution is just hallucination.", author:"Henry Ford"},
-        {text:"Build something 100 people love, not something 1 million people kind of like.", author:"Brian Chesky"},
-        {text:"Ideas are easy. Implementation is hard.", author:"Guy Kawasaki"},
-        {text:"In the middle of every difficulty lies opportunity.", author:"Albert Einstein"},
-        {text:"If you really want to do something, you'll find a way. If you don't, you'll find an excuse.", author:"Jim Rohn"},
-        {text:"The best investment you can make is in yourself.", author:"Warren Buffett"},
-        {text:"You don't learn to walk by following rules. You learn by doing and by falling over.", author:"Richard Branson"},
-        {text:"Be undeniably good. No marketing effort or social media buzzword can be a substitute for that.", author:"Anthony Volodkin"},
-        {text:"Solve a real problem. Build a real product. Everything else is noise.", author:"Eric Ries"},
-        {text:"Sales cure all.", author:"Mark Cuban"},
-        {text:"Business has only two functions — marketing and innovation.", author:"Milan Kundera"},
-        {text:"People don't buy what you do; they buy why you do it.", author:"Simon Sinek"},
-        {text:"The goal of a startup is to figure out the right thing to build — the thing customers want.", author:"Eric Ries"},
-        {text:"Execution eats strategy for breakfast.", author:"Gary Vaynerchuk"},
-        {text:"Work like there is someone working 24 hours a day to take it all away from you.", author:"Mark Cuban"},
-        {text:"Revenue solves all known problems.", author:"Mark Cuban"},
-        {text:"Customers don't care about your solution. They care about their problems.", author:"Dave McClure"},
-        {text:"In God we trust. All others must bring data.", author:"W. Edwards Deming"},
-        {text:"What gets measured gets managed.", author:"Peter Drucker"},
-        {text:"Speed is the ultimate competitive advantage.", author:"Marc Andreessen"},
-        {text:"The riskiest thing you can do is play it safe.", author:"Seth Godin"},
-        {text:"You can't build a reputation on what you are going to do.", author:"Henry Ford"},
-        {text:"Entrepreneurship is living a few years of your life like most people won't, so that you can spend the rest of your life like most people can't.", author:"Unknown"},
-        {text:"An investment in knowledge pays the best interest.", author:"Benjamin Franklin"},
-        {text:"Whether you think you can or think you can't, you're right.", author:"Henry Ford"},
-        {text:"Champions keep playing until they get it right.", author:"Billie Jean King"},
-    ];
-    // Seed by today's date so it's consistent all day, changes each morning
-    const today = new Date();
-    const seed = today.getFullYear() * 10000 + (today.getMonth()+1) * 100 + today.getDate();
-    const idx = seed % quotes.length;
-    const q = quotes[idx];
-    qEl.innerHTML = `<blockquote>\u201c${q.text}\u201d<br><span style="color:var(--t3)">— ${q.author}</span></blockquote>`;
+// ── QUOTE ──
+function fetchQuote(){
+  const quotes = [
+    {text:"The man on top of the mountain didn't fall there.",author:"Vince Lombardi"},
+    {text:"Don't count the days, make the days count.",author:"Muhammad Ali"},
+    {text:"A year from now you will wish you had started today.",author:"Karen Lamb"},
+    {text:"The secret of getting ahead is getting started.",author:"Mark Twain"},
+    {text:"You don't have to be great to start, but you have to start to be great.",author:"Zig Ziglar"},
+    {text:"Do something today that your future self will thank you for.",author:"Sean Patrick Flanery"},
+    {text:"Hard work beats talent when talent doesn't work hard.",author:"Tim Notke"},
+    {text:"Success is not final, failure is not fatal — it is the courage to continue that counts.",author:"Winston Churchill"},
+    {text:"It always seems impossible until it's done.",author:"Nelson Mandela"},
+    {text:"The only way to do great work is to love what you do.",author:"Steve Jobs"},
+  ];
+  const q = quotes[new Date().getDate() % quotes.length];
+  s('quote-text', '"'+q.text+'"');
+  s('quote-author', '— '+q.author);
 }
 
-// Patch authCheck to load data after login
-const _origAuthCheck = authCheck;
-authCheck = async function(){
-    await _origAuthCheck();
-    if(sessionStorage.getItem('novaro_auth')==='1'){
-        loadLiveData();
-        loadLiveWeather();
-        loadDailyQuote();
-    }
-};
+// ── UTIL ──
+function s(id,val){ const el=document.getElementById(id); if(el) el.textContent=val; }
+function fmtDate(ds){
+  if(!ds) return '--';
+  return new Date(ds+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'});
+}
 </script>
 </body>
 </html>
