@@ -4,733 +4,666 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NOVARO HQ</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#020812;
-  --bg2:#040d1a;
-  --bg3:#061220;
-  --card:#071528;
-  --border:rgba(0,212,255,.18);
-  --border2:rgba(0,212,255,.06);
+  --bg:#080c14;
+  --card:#0d1424;
+  --card2:#111b2e;
+  --border:rgba(0,212,255,.15);
   --cyan:#00d4ff;
-  --cyan2:#00a8cc;
-  --ok:#00ff88;
-  --warn:#ffb800;
-  --err:#ff4466;
-  --t1:#ddeeff;
-  --t2:#6688aa;
+  --ok:#00e676;
+  --warn:#ffb300;
+  --err:#ff1744;
+  --t1:#e8f4ff;
+  --t2:#7aa0c0;
   --t3:#2a4060;
-  --glow:0 0 20px rgba(0,212,255,.25),0 0 60px rgba(0,212,255,.08);
-  --glow-ok:0 0 16px rgba(0,255,136,.3);
+  --fb:#1877f2;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;background:var(--bg);color:var(--t1);font-family:'Rajdhani',sans-serif;overflow-x:hidden}
+html,body{height:100%;background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.04) 3px,rgba(0,0,0,.04) 4px)}
 
-/* ── SCANLINE OVERLAY ── */
-body::before{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
-  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px);
-}
+/* ══ AUTH ══ */
+#auth-gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:2000}
+.auth-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:52px 48px;text-align:center;width:380px;box-shadow:0 0 60px rgba(0,212,255,.12)}
+.auth-logo{font-family:'Orbitron',monospace;font-size:22px;font-weight:900;color:var(--cyan);letter-spacing:6px;margin-bottom:6px}
+.auth-sub{color:var(--t2);font-size:13px;letter-spacing:3px;margin-bottom:36px}
+.auth-box input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--t1);font-size:16px;font-family:'Share Tech Mono',monospace;letter-spacing:4px;outline:none;margin-bottom:14px;text-align:center}
+.auth-box input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(0,212,255,.15)}
+.auth-box button{width:100%;background:var(--cyan);border:none;border-radius:8px;padding:14px;color:#000;font-size:14px;font-weight:700;font-family:'Orbitron',monospace;letter-spacing:3px;cursor:pointer;transition:opacity .2s}
+.auth-box button:hover{opacity:.85}
+.auth-err{color:var(--err);font-size:12px;margin-top:10px;letter-spacing:2px;display:none}
 
-/* ── GRID BG ── */
-body::after{
-  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
-  background-image:
-    linear-gradient(rgba(0,212,255,.03) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,212,255,.03) 1px,transparent 1px);
-  background-size:60px 60px;
-}
+/* ══ SHELL ══ */
+#shell{display:none}
+#shell.on{display:flex;height:100vh}
 
-/* ── KEYFRAMES ── */
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-@keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
-@keyframes flicker{0%,19%,21%,23%,25%,54%,56%,100%{opacity:1}20%,24%,55%{opacity:.5}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-@keyframes glow-pulse{0%,100%{box-shadow:0 0 10px rgba(0,212,255,.2)}50%{box-shadow:0 0 30px rgba(0,212,255,.5),0 0 60px rgba(0,212,255,.2)}}
-@keyframes slide-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes hud-scan{0%{background-position:0% 0%}100%{background-position:0% 100%}}
-@keyframes corner-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+/* ══ SIDEBAR ══ */
+#sidebar{width:72px;background:var(--card);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:20px 0;gap:6px;flex-shrink:0;z-index:100}
+.nav-logo{font-family:'Orbitron',monospace;font-size:10px;font-weight:900;color:var(--cyan);letter-spacing:2px;margin-bottom:20px;text-align:center;line-height:1.4}
+.nav-i{width:52px;height:52px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;transition:background .2s,color .2s;color:var(--t3);border:1px solid transparent}
+.nav-i:hover{background:rgba(0,212,255,.08);color:var(--t2)}
+.nav-i.on{background:rgba(0,212,255,.12);color:var(--cyan);border-color:rgba(0,212,255,.2)}
+.nav-i svg{width:22px;height:22px;fill:currentColor}
+.nav-i span{font-size:8px;font-weight:700;letter-spacing:1px;font-family:'Share Tech Mono',monospace}
+.nav-dot{width:6px;height:6px;border-radius:50%;margin-top:auto;margin-bottom:8px}
 
-/* ── MOVING SCAN LINE ── */
-.scan-beam{
-  position:fixed;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,rgba(0,212,255,.6),transparent);
-  animation:scanline 4s linear infinite;
-  pointer-events:none;z-index:1000;
-}
-
-/* ══════════════════════════════════
-   AUTH GATE
-══════════════════════════════════ */
-#auth-gate{
-  position:fixed;inset:0;background:var(--bg);
-  display:flex;align-items:center;justify-content:center;
-  z-index:1000;
-}
-
-.auth-outer{
-  position:relative;padding:3px;
-  background:linear-gradient(135deg,var(--cyan),transparent,var(--cyan2),transparent,var(--cyan));
-  border-radius:4px;
-  animation:glow-pulse 3s ease-in-out infinite;
-}
-.auth-box{
-  background:var(--bg2);
-  padding:48px 52px;text-align:center;
-  border-radius:2px;position:relative;
-  min-width:360px;
-}
-
-/* Corner brackets */
-.auth-box::before,.auth-box::after,
-.auth-corners::before,.auth-corners::after{
-  content:'';position:absolute;width:16px;height:16px;
-  border-color:var(--cyan);border-style:solid;opacity:.6;
-}
-.auth-box::before{top:-1px;left:-1px;border-width:2px 0 0 2px}
-.auth-box::after{top:-1px;right:-1px;border-width:2px 2px 0 0}
-.auth-corners::before{bottom:-1px;left:-1px;border-width:0 0 2px 2px}
-.auth-corners::after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
-
-.auth-hex{
-  width:60px;height:60px;margin:0 auto 20px;position:relative;
-}
-.auth-hex svg{width:100%;height:100%;animation:corner-spin 8s linear infinite}
-
-.auth-logo{
-  font-family:'Orbitron',monospace;
-  font-size:20px;font-weight:900;letter-spacing:6px;
-  color:var(--cyan);margin-bottom:4px;
-  text-shadow:0 0 20px rgba(0,212,255,.6);
-  animation:flicker 8s infinite;
-}
-.auth-sub{
-  font-family:'Share Tech Mono',monospace;
-  font-size:10px;color:var(--t3);letter-spacing:3px;margin-bottom:32px;
-}
-.auth-sys{
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;color:rgba(0,212,255,.3);margin-bottom:24px;
-  line-height:1.8;
-}
-.auth-box input{
-  width:100%;padding:14px 20px;
-  background:rgba(0,212,255,.04);
-  border:1px solid rgba(0,212,255,.25);
-  border-top:1px solid rgba(0,212,255,.5);
-  color:var(--cyan);
-  font-family:'Share Tech Mono',monospace;
-  font-size:18px;text-align:center;letter-spacing:8px;
-  outline:none;margin-bottom:16px;
-  transition:all .2s;
-}
-.auth-box input:focus{
-  border-color:var(--cyan);
-  box-shadow:0 0 20px rgba(0,212,255,.2),inset 0 0 10px rgba(0,212,255,.05);
-}
-.auth-box button{
-  width:100%;padding:14px;
-  background:transparent;
-  border:1px solid var(--cyan);
-  color:var(--cyan);
-  font-family:'Orbitron',monospace;font-size:13px;
-  font-weight:700;letter-spacing:4px;cursor:pointer;
-  position:relative;overflow:hidden;
-  transition:all .2s;
-}
-.auth-box button::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(0,212,255,.15),transparent);
-  transform:translateX(-100%);transition:transform .3s;
-}
-.auth-box button:hover{
-  box-shadow:0 0 20px rgba(0,212,255,.4);
-  color:#fff;
-}
-.auth-box button:hover::before{transform:translateX(0)}
-#auth-err{
-  color:var(--err);
-  font-family:'Share Tech Mono',monospace;
-  font-size:10px;margin-top:12px;
-  display:none;letter-spacing:2px;
-}
-.auth-status{
-  margin-top:20px;
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;color:rgba(0,255,136,.4);
-  letter-spacing:2px;
-}
-.cursor{animation:blink 1s infinite}
-
-/* ══════════════════════════════════
-   INTRO VIDEO — FULLSCREEN
-══════════════════════════════════ */
-#intro-modal{
-  display:none;position:fixed;inset:0;
-  background:#000;z-index:998;
-}
-#intro-modal.show{display:block}
-
-#intro-video{
-  width:100%;height:100%;
-  object-fit:cover;
-}
-
-#intro-skip{
-  position:absolute;bottom:32px;right:32px;
-  background:rgba(0,0,0,.7);
-  border:1px solid rgba(0,212,255,.4);
-  color:rgba(0,212,255,.8);
-  padding:10px 24px;
-  font-family:'Orbitron',monospace;
-  font-size:11px;font-weight:700;
-  letter-spacing:3px;cursor:pointer;
-  transition:all .2s;
-  z-index:999;
-}
-#intro-skip:hover{
-  border-color:var(--cyan);color:#fff;
-  box-shadow:0 0 16px rgba(0,212,255,.3);
-}
-
-/* ══════════════════════════════════
-   SHELL
-══════════════════════════════════ */
-#shell{display:none;height:100vh;flex-direction:column;position:relative;z-index:1}
-#shell.on{display:flex}
-
-/* ── TOP BAR ── */
-#topbar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 28px;height:58px;
-  background:linear-gradient(180deg,rgba(0,20,50,.95),rgba(4,13,26,.98));
-  border-bottom:1px solid var(--border);
-  flex-shrink:0;position:relative;overflow:hidden;
-}
-#topbar::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-  animation:pulse 3s ease-in-out infinite;
-}
-.tb-left{display:flex;align-items:center;gap:16px}
-.tb-logo{
-  font-family:'Orbitron',monospace;
-  font-size:16px;font-weight:900;letter-spacing:5px;
-  color:var(--cyan);
-  text-shadow:0 0 16px rgba(0,212,255,.5);
-}
-.tb-sep{width:1px;height:24px;background:var(--border)}
-.tb-sys{
-  font-family:'Share Tech Mono',monospace;
-  font-size:10px;color:var(--t3);letter-spacing:2px;
-}
-.tb-sys span{color:var(--ok);animation:pulse 2s infinite}
-.tb-right{display:flex;align-items:center;gap:20px}
-.tb-clock{
-  font-family:'Share Tech Mono',monospace;
-  font-size:13px;color:var(--cyan);
-  text-shadow:0 0 8px rgba(0,212,255,.4);
-}
-.tb-date{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3)}
-#global-last-updated{
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;color:rgba(0,212,255,.35);letter-spacing:1px;
-}
-
-/* ── NAV ── */
-#nav{
-  display:flex;align-items:center;gap:0;
-  padding:0 28px;
-  background:rgba(4,13,26,.98);
-  border-bottom:1px solid var(--border2);
-  flex-shrink:0;overflow-x:auto;
-}
-.nav-i{
-  display:flex;align-items:center;gap:8px;
-  padding:15px 24px;
-  font-family:'Orbitron',monospace;
-  font-size:11px;font-weight:500;letter-spacing:2px;
-  color:var(--t3);cursor:pointer;
-  border-bottom:2px solid transparent;
-  white-space:nowrap;transition:all .2s;
-  position:relative;
-}
-.nav-i:hover{color:var(--t2)}
-.nav-i.on{
-  color:var(--cyan);
-  border-bottom-color:var(--cyan);
-  text-shadow:0 0 10px rgba(0,212,255,.4);
-}
-.nav-i.on::before{
-  content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;
-  background:var(--cyan);
-  box-shadow:0 0 8px var(--cyan);
-}
-.nav-dot{
-  width:5px;height:5px;border-radius:50%;
-  background:var(--t3);transition:all .2s;
-}
-.nav-i.on .nav-dot{background:var(--cyan);box-shadow:0 0 6px var(--cyan)}
-
-/* ── MAIN ── */
-#main{flex:1;overflow-y:auto;padding:28px;animation:slide-in .3s ease}
-#main::-webkit-scrollbar{width:4px}
-#main::-webkit-scrollbar-track{background:transparent}
-#main::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-
-/* ── PAGE ── */
-.pg{display:none}
+/* ══ MAIN ══ */
+#main{flex:1;overflow-y:auto;overflow-x:hidden}
+.pg{display:none;padding:24px;animation:fadein .3s ease}
 .pg.on{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* ── PAGE HEADER ── */
-.ph{
-  display:flex;align-items:flex-start;justify-content:space-between;
-  margin-bottom:28px;flex-wrap:wrap;gap:12px;
-}
-.ph-left{position:relative;padding-left:16px}
-.ph-left::before{
-  content:'';position:absolute;left:0;top:4px;bottom:4px;
-  width:3px;background:var(--cyan);
-  box-shadow:0 0 8px var(--cyan);
-}
-.pt{
-  font-family:'Orbitron',monospace;
-  font-size:18px;font-weight:700;letter-spacing:4px;
-  color:var(--cyan);text-shadow:0 0 20px rgba(0,212,255,.3);
-}
-.ps{font-size:11px;color:var(--t3);letter-spacing:3px;margin-top:6px;font-family:'Share Tech Mono',monospace}
+/* ══ PAGE HEADER ══ */
+.ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.ph-title{font-family:'Orbitron',monospace;font-size:20px;font-weight:900;color:var(--cyan);letter-spacing:3px}
+.ph-sub{font-size:12px;color:var(--t2);letter-spacing:2px;margin-top:3px}
 .ph-right{text-align:right}
-.ph-clock{
-  font-family:'Share Tech Mono',monospace;
-  font-size:13px;color:var(--cyan);
-}
-.ph-date{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3);margin-top:3px}
+.ph-clock{font-family:'Share Tech Mono',monospace;font-size:14px;color:var(--cyan)}
+.ph-date{font-size:11px;color:var(--t2);margin-top:2px}
 
-/* ── HUD CARD ── */
-.hud-card{
-  background:var(--card);
-  border:1px solid var(--border2);
-  border-top:1px solid var(--border);
-  border-radius:2px;
-  margin-bottom:20px;
-  position:relative;overflow:hidden;
-}
-.hud-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-  opacity:.4;
-}
+/* ══ CARDS ══ */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.card-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.card-title{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.card-badge{font-size:10px;font-family:'Share Tech Mono',monospace;color:var(--t2);letter-spacing:1px}
+.card-body{padding:20px}
 
-/* Corner bracket decoration */
-.hud-card::after{
-  content:'';position:absolute;
-  top:8px;right:8px;width:12px;height:12px;
-  border-top:1px solid rgba(0,212,255,.4);
-  border-right:1px solid rgba(0,212,255,.4);
-}
+/* ══ BIG STAT GRID ══ */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.stat-card.c-cyan::before{background:var(--cyan)}
+.stat-card.c-ok::before{background:var(--ok)}
+.stat-card.c-warn::before{background:var(--warn)}
+.stat-card.c-err::before{background:var(--err)}
+.stat-card.c-fb::before{background:var(--fb)}
+.stat-label{font-size:11px;font-weight:600;letter-spacing:2px;color:var(--t2);text-transform:uppercase;margin-bottom:10px}
+.stat-num{font-family:'Orbitron',monospace;font-size:42px;font-weight:900;line-height:1;color:var(--t1)}
+.stat-num.c-cyan{color:var(--cyan)}
+.stat-num.c-ok{color:var(--ok)}
+.stat-num.c-warn{color:var(--warn)}
+.stat-num.c-err{color:var(--err)}
+.stat-num.c-fb{color:#5b9cf6}
+.stat-sub{font-size:12px;color:var(--t2);margin-top:8px}
 
-.hud-head{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 20px;
-  border-bottom:1px solid var(--border2);
-  background:rgba(0,212,255,.03);
-}
-.hud-title{
-  font-family:'Orbitron',monospace;
-  font-size:11px;font-weight:700;letter-spacing:3px;
-  color:var(--cyan);display:flex;align-items:center;gap:10px;
-}
-.hud-title-icon{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--cyan);
-  box-shadow:0 0 8px var(--cyan);
-  animation:pulse 2s infinite;
-}
-.hud-badge{
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;color:var(--t3);
-  background:rgba(0,212,255,.05);
-  border:1px solid var(--border2);
-  padding:3px 10px;letter-spacing:2px;
-}
+/* ══ STATUS DOT ══ */
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block}
+.dot.ok{background:var(--ok);box-shadow:0 0 6px var(--ok)}
+.dot.warn{background:var(--warn);box-shadow:0 0 6px var(--warn)}
+.dot.err{background:var(--err);box-shadow:0 0 6px var(--err);animation:pulse .8s infinite}
+.dot.off{background:var(--t3)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ── STAT GRID ── */
-.stat-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:1px;background:var(--border2);
-}
-.stat-cell{
-  background:var(--card);
-  padding:20px;position:relative;overflow:hidden;
-}
-.stat-cell::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
-  background:transparent;transition:background .3s;
-}
-.stat-cell:hover::after{background:var(--cyan)}
-.stat-label{
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;color:var(--t3);letter-spacing:2px;margin-bottom:10px;
-}
-.stat-val{
-  font-family:'Orbitron',monospace;
-  font-size:26px;font-weight:700;margin-bottom:4px;
-  line-height:1;
-}
-.stat-val.cy{color:var(--cyan);text-shadow:0 0 12px rgba(0,212,255,.4)}
-.stat-val.ok{color:var(--ok);text-shadow:var(--glow-ok)}
-.stat-val.wn{color:var(--warn)}
-.stat-val.er{color:var(--err)}
-.stat-sub{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--t3)}
+/* ══ PIPELINE ══ */
+.pipeline{display:flex;align-items:center;padding:28px 20px;gap:8px;flex-wrap:wrap;justify-content:space-around}
+.pipe-stage{text-align:center;flex:1;min-width:120px}
+.pipe-num{font-family:'Orbitron',monospace;font-size:52px;font-weight:900;line-height:1;margin-bottom:10px}
+.pipe-num.c-cyan{color:var(--cyan);text-shadow:0 0 20px rgba(0,212,255,.4)}
+.pipe-num.c-ok{color:var(--ok);text-shadow:0 0 20px rgba(0,230,118,.4)}
+.pipe-num.c-warn{color:var(--warn)}
+.pipe-label{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase}
+.pipe-pct{font-size:12px;color:var(--t3);margin-top:4px}
+.pipe-arrow{font-size:24px;color:var(--t3);flex-shrink:0;margin:0 4px}
 
-/* ── TABLE ── */
+/* ══ TABLE ══ */
 .tbl-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:13px}
-thead{background:rgba(0,0,0,.3)}
-th{
-  padding:10px 18px;text-align:left;
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;letter-spacing:2px;color:var(--t3);
-  border-bottom:1px solid var(--border2);
-}
-td{
-  padding:13px 18px;
-  border-bottom:1px solid rgba(0,212,255,.04);
-  color:var(--t2);font-size:13px;
-}
+table{width:100%;border-collapse:collapse}
+th{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--t2);text-transform:uppercase;padding:10px 16px;text-align:left;border-bottom:1px solid var(--border)}
+td{padding:12px 16px;font-size:14px;border-bottom:1px solid rgba(0,212,255,.04)}
 tr:last-child td{border-bottom:none}
-tbody tr{transition:background .15s}
-tbody tr:hover td{background:rgba(0,212,255,.04);color:var(--t1)}
-.td-h{
-  color:var(--t1);font-weight:600;
-  font-family:'Share Tech Mono',monospace;font-size:12px;
-}
+tr:hover td{background:rgba(0,212,255,.03)}
+td.hi{color:var(--cyan);font-weight:600}
+td.ok{color:var(--ok);font-weight:600}
+td.warn{color:var(--warn);font-weight:600}
 
-/* ── PIPELINE ── */
-.pipeline-wrap{display:flex;align-items:center;justify-content:space-around;padding:30px 20px;gap:10px;flex-wrap:wrap}
-.pipe-stage{text-align:center;flex:1;min-width:110px}
-.pipe-num{font-family:'Orbitron',monospace;font-size:48px;font-weight:900;color:var(--t1);line-height:1;margin-bottom:8px;text-shadow:0 0 20px currentColor}
-.pipe-label{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:3px;color:var(--t3)}
-.pipe-arrow{font-size:28px;color:var(--t3);flex-shrink:0}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:800px){.two-col{grid-template-columns:1fr}}
-.reply-item{display:flex;align-items:flex-start;gap:12px;padding:12px 18px;border-bottom:1px solid rgba(0,212,255,.06)}
+/* ══ REPLY ITEMS ══ */
+.reply-item{display:flex;align-items:flex-start;gap:12px;padding:14px 20px;border-bottom:1px solid rgba(0,212,255,.05)}
 .reply-item:last-child{border-bottom:none}
-.reply-badge{padding:3px 8px;border-radius:3px;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;white-space:nowrap;flex-shrink:0;margin-top:2px}
-.rb-opted_out{background:rgba(255,100,100,.15);color:#ff6464;border:1px solid rgba(255,100,100,.3)}
-.rb-auto_reply{background:rgba(150,150,150,.12);color:#888;border:1px solid rgba(150,150,150,.25)}
-.rb-warm{background:rgba(0,255,128,.15);color:#00ff80;border:1px solid rgba(0,255,128,.3)}
-.rb-email_update{background:rgba(255,170,0,.12);color:#ffaa00;border:1px solid rgba(255,170,0,.3)}
-.rb-other{background:rgba(0,212,255,.08);color:var(--t3);border:1px solid rgba(0,212,255,.2)}
+.rbadge{font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.rb-warm{background:rgba(0,230,118,.15);color:var(--ok);border:1px solid rgba(0,230,118,.3)}
+.rb-opted_out{background:rgba(255,23,68,.12);color:#ff6680;border:1px solid rgba(255,23,68,.3)}
+.rb-auto_reply{background:rgba(120,120,120,.12);color:#888;border:1px solid rgba(120,120,120,.25)}
+.rb-email_update{background:rgba(255,179,0,.12);color:var(--warn);border:1px solid rgba(255,179,0,.3)}
+.rb-other{background:rgba(0,212,255,.08);color:var(--t2);border:1px solid rgba(0,212,255,.2)}
 .reply-info{flex:1;min-width:0}
-.reply-email{font-family:'Share Tech Mono',monospace;font-size:11px;color:var(--t2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.reply-preview{font-size:11px;color:var(--t3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.reply-date{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--t3);white-space:nowrap;flex-shrink:0}
+.reply-email{font-size:13px;font-weight:600;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reply-preview{font-size:12px;color:var(--t2);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.reply-date{font-size:11px;color:var(--t3);flex-shrink:0}
 
-/* ── MORNING BRIEF ── */
-.brief-wrap{padding:20px 24px}
-.brief-item{
-  padding:14px 18px;
-  border-left:2px solid var(--border);
-  background:rgba(0,212,255,.02);
-  margin-bottom:8px;
-  font-size:14px;color:var(--t2);
-  line-height:1.7;
-  transition:border-color .2s;
-}
-.brief-item:hover{border-left-color:var(--cyan)}
-.brief-item ol{padding-left:18px}
-.brief-item li{margin-bottom:6px}
+/* ══ TASK ROWS ══ */
+.task-row{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid rgba(0,212,255,.05)}
+.task-row:last-child{border-bottom:none}
+.task-name{font-size:14px;font-weight:600;flex:1}
+.task-time{font-size:11px;color:var(--t2);font-family:'Share Tech Mono',monospace}
+.task-status-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px}
+.ts-ok{background:rgba(0,230,118,.15);color:var(--ok)}
+.ts-warn{background:rgba(255,179,0,.12);color:var(--warn)}
+.ts-err{background:rgba(255,23,68,.12);color:var(--err)}
+.ts-off{background:rgba(100,120,140,.1);color:var(--t2)}
 
-.urgent-item{
-  padding:14px 18px;
-  border-left:2px solid var(--warn);
-  background:rgba(255,184,0,.04);
-  margin-bottom:8px;
-  font-size:13px;color:var(--t1);
-}
-.urgent-tag{
-  font-family:'Orbitron',monospace;
-  font-size:8px;letter-spacing:2px;font-weight:700;
-  padding:3px 10px;margin-right:12px;
-  border-radius:1px;
-}
-.urgent-tag.block{background:rgba(255,68,102,.15);color:var(--err);border:1px solid rgba(255,68,102,.3)}
-.urgent-tag.offline{background:rgba(255,184,0,.12);color:var(--warn);border:1px solid rgba(255,184,0,.3)}
-.urgent-tag.follow{background:rgba(0,212,255,.1);color:var(--cyan);border:1px solid rgba(0,212,255,.25)}
+/* ══ BRIEF ITEMS ══ */
+.brief-item{padding:12px 0;border-bottom:1px solid rgba(0,212,255,.05);font-size:14px;color:var(--t1);line-height:1.6}
+.brief-item:last-child{border-bottom:none}
+.brief-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;padding:2px 8px;border-radius:3px;margin-right:8px;vertical-align:middle}
+.bt-urgent{background:rgba(255,23,68,.15);color:var(--err)}
+.bt-focus{background:rgba(0,230,118,.12);color:var(--ok)}
+.bt-remind{background:rgba(255,179,0,.12);color:var(--warn)}
 
-/* ── WQ GRID ── */
-.wq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border2)}
-@media(max-width:560px){.wq-grid{grid-template-columns:1fr}}
-.wq-cell{background:var(--card);padding:20px 24px}
-.wq-label{
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;color:var(--t3);letter-spacing:2px;margin-bottom:10px;
-}
-.wq-val{
-  font-family:'Orbitron',monospace;
-  font-size:24px;font-weight:700;
-  color:var(--cyan);text-shadow:0 0 12px rgba(0,212,255,.3);
-}
-.wq-sub{font-size:12px;color:var(--t2);margin-top:4px}
-#quote-text{
-  font-size:14px;color:var(--t1);line-height:1.7;
-  border-left:2px solid var(--cyan);padding-left:12px;
-  font-style:italic;
-}
-#quote-author{
-  font-family:'Share Tech Mono',monospace;
-  font-size:10px;color:var(--cyan);margin-top:8px;letter-spacing:1px;
-}
+/* ══ TWO / THREE COL ══ */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media(max-width:900px){.two-col,.three-col{grid-template-columns:1fr}}
+.mb16{margin-bottom:16px}
+.mb20{margin-bottom:20px}
 
-/* ── PILL ── */
-.pill{
-  display:inline-block;
-  font-family:'Share Tech Mono',monospace;
-  font-size:9px;letter-spacing:1.5px;
-  padding:3px 10px;border-radius:1px;
-}
-.pill.active{background:rgba(0,255,136,.08);color:var(--ok);border:1px solid rgba(0,255,136,.2)}
-.pill.paused{background:rgba(255,184,0,.08);color:var(--warn);border:1px solid rgba(255,184,0,.2)}
-.pill.hot{background:rgba(255,68,102,.08);color:var(--err);border:1px solid rgba(255,68,102,.2)}
+/* ══ ALERT BANNER ══ */
+.alert-banner{background:rgba(255,23,68,.08);border:1px solid rgba(255,23,68,.25);border-radius:10px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:flex-start;gap:12px}
+.alert-banner .dot{margin-top:4px}
+.alert-text{font-size:13px;color:var(--t1);line-height:1.5}
+.alert-label{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--err);margin-bottom:3px}
 
-/* ── MOBILE ── */
-@media(max-width:640px){
-  #main{padding:16px}
-  .stat-val{font-size:20px}
-  .tb-logo{font-size:13px;letter-spacing:3px}
-  th,td{padding:10px 12px}
-}
+/* ══ FB STATS ══ */
+.fb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.fb-card{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:18px;text-align:center}
+.fb-num{font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:#5b9cf6;line-height:1}
+.fb-label{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--t2);margin-top:8px;text-transform:uppercase}
+
+/* ══ LINK ══ */
+.ext-link{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--cyan);text-decoration:none;font-family:'Share Tech Mono',monospace;letter-spacing:1px;border:1px solid rgba(0,212,255,.2);padding:4px 10px;border-radius:4px;transition:background .2s}
+.ext-link:hover{background:rgba(0,212,255,.08)}
+
+/* ══ WQ GRID ══ */
+.wq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px}
+@media(max-width:700px){.wq-grid{grid-template-columns:1fr}}
+.wq-cell{background:var(--card2);border-radius:10px;padding:18px}
+.wq-label{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase;margin-bottom:10px}
+.wq-val{font-family:'Orbitron',monospace;font-size:38px;font-weight:900;color:var(--cyan)}
+.wq-sub{font-size:13px;color:var(--t2);margin-top:6px}
+#quote-text{font-size:15px;color:var(--t1);font-style:italic;line-height:1.6}
+#quote-author{font-size:12px;color:var(--t2);margin-top:8px}
+
+/* ══ HOME STATUS BAR ══ */
+.status-bar{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 20px;margin-bottom:20px;flex-wrap:wrap}
+.status-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:1px}
+
+/* ══ PROGRESS BAR ══ */
+.prog-wrap{background:rgba(0,0,0,.3);border-radius:4px;height:6px;overflow:hidden;margin-top:10px}
+.prog-bar{height:100%;border-radius:4px;transition:width .6s ease;background:var(--cyan)}
+.prog-bar.ok{background:var(--ok)}
 </style>
 </head>
 <body>
 
-<!-- SCAN BEAM -->
-<div class="scan-beam"></div>
-
 <!-- AUTH GATE -->
 <div id="auth-gate">
-  <div class="auth-outer">
-    <div class="auth-box">
-      <div class="auth-corners"></div>
-
-      <div class="auth-hex">
-        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="30,2 56,17 56,43 30,58 4,43 4,17" stroke="rgba(0,212,255,0.6)" stroke-width="1" fill="none"/>
-          <polygon points="30,10 50,21 50,39 30,50 10,39 10,21" stroke="rgba(0,212,255,0.3)" stroke-width="1" fill="none"/>
-          <circle cx="30" cy="30" r="4" fill="rgba(0,212,255,0.8)"/>
-        </svg>
-      </div>
-
-      <div class="auth-logo">NOVARO HQ</div>
-      <div class="auth-sub">SECURE SYSTEM ACCESS</div>
-      <div class="auth-sys">
-        SYS-ID: NVR-001 // CLASSIFICATION: RESTRICTED<br>
-        PROTOCOL: SHA-256 // STATUS: AWAITING AUTH<span class="cursor">_</span>
-      </div>
-
-      <input type="password" id="auth-pw" placeholder="ENTER ACCESS CODE" onkeydown="if(event.key==='Enter')authCheck()">
-      <button onclick="authCheck()">AUTHORIZE ACCESS</button>
-      <div id="auth-err">⚠ ACCESS DENIED — INVALID CREDENTIALS</div>
-      <div class="auth-status">ALL SYSTEMS NOMINAL <span>●</span></div>
-    </div>
+  <div class="auth-box">
+    <div class="auth-logo">NOVARO HQ</div>
+    <div class="auth-sub">COMMAND CENTER</div>
+    <input type="password" id="auth-pw" placeholder="ACCESS CODE" onkeydown="if(event.key==='Enter')authCheck()">
+    <button onclick="authCheck()">ENTER</button>
+    <div class="auth-err" id="auth-err">⛔ INVALID CODE</div>
   </div>
-</div>
-
-<!-- INTRO VIDEO — FULLSCREEN -->
-<div id="intro-modal">
-  <video id="intro-video"
-    src="https://github.com/vitogcocchi/novarohq-dashboard/releases/download/v1.0-assets/intro.mp4"
-    playsinline></video>
-  <button id="intro-skip" onclick="closeIntro()">SKIP ›</button>
 </div>
 
 <!-- MAIN SHELL -->
 <div id="shell">
 
-  <!-- TOP BAR -->
-  <div id="topbar">
-    <div class="tb-left">
-      <div class="tb-logo">NOVARO HQ</div>
-      <div class="tb-sep"></div>
-      <div class="tb-sys">SYS ONLINE <span>●</span></div>
-      <div class="tb-sep"></div>
-      <div id="global-last-updated">SYNCING DATA...</div>
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <div class="nav-logo">NVR<br>HQ</div>
+
+    <div class="nav-i on" data-page="home" onclick="showPage('home')">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      <span>HOME</span>
     </div>
-    <div class="tb-right">
-      <div>
-        <div class="tb-clock" id="clock-1"></div>
-        <div class="tb-date" id="tb-date"></div>
-      </div>
+
+    <div class="nav-i" data-page="emails" onclick="showPage('emails')">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      <span>EMAIL</span>
     </div>
+
+    <div class="nav-i" data-page="facebook" onclick="showPage('facebook')">
+      <svg viewBox="0 0 24 24"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/></svg>
+      <span>FB</span>
+    </div>
+
+    <div class="nav-i" data-page="agents" onclick="showPage('agents')">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+      <span>TASKS</span>
+    </div>
+
+    <div class="nav-i" data-page="brief" onclick="showPage('brief')">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      <span>BRIEF</span>
+    </div>
+
+    <div class="nav-dot dot" id="sys-dot" style="background:var(--t3)"></div>
   </div>
 
-  <!-- NAV -->
-  <div id="nav">
-    <div class="nav-i on" data-page="brief" onclick="showPage('brief')">
-      <div class="nav-dot"></div>MORNING DEBRIEF
-    </div>
-    <div class="nav-i" data-page="instantly" onclick="showPage('instantly')">
-      <div class="nav-dot"></div>INSTANTLY
-    </div>
-  </div>
-
-  <!-- PAGES -->
+  <!-- MAIN CONTENT -->
   <div id="main">
 
-    <!-- ═══ MORNING DEBRIEF ═══ -->
-    <section class="pg on" id="page-brief">
+    <!-- ═══════════════════════════════════
+         HOME
+    ════════════════════════════════════ -->
+    <section class="pg on" id="page-home">
       <div class="ph">
-        <div class="ph-left">
-          <div class="pt">MORNING DEBRIEF</div>
-          <div class="ps">DAILY INTEL // <span id="brief-date">--</span></div>
+        <div>
+          <div class="ph-title">NOVARO COMMAND CENTER</div>
+          <div class="ph-sub">Everything happening right now — at a glance</div>
         </div>
         <div class="ph-right">
-          <div class="ph-clock" id="clock-2"></div>
-          <div class="ph-date" id="date-2"></div>
+          <div class="ph-clock" id="clock-1">--:--:-- --</div>
+          <div class="ph-date" id="date-1">-- ET</div>
         </div>
       </div>
 
-      <!-- Conditions row -->
-      <div class="hud-card">
-        <div class="hud-head">
-          <div class="hud-title"><div class="hud-title-icon"></div>CONDITIONS</div>
-          <div class="hud-badge" id="brief-updated">--</div>
+      <!-- Status bar -->
+      <div class="status-bar" id="status-bar">
+        <div class="status-item"><span class="dot off" id="dot-emails"></span><span id="status-emails">Email Campaign</span></div>
+        <div class="status-item"><span class="dot off" id="dot-fb"></span><span id="status-fb">Facebook</span></div>
+        <div class="status-item"><span class="dot off" id="dot-tasks"></span><span id="status-tasks">Automations</span></div>
+        <div style="margin-left:auto;font-size:11px;color:var(--t2);font-family:'Share Tech Mono',monospace" id="global-updated">Loading data...</div>
+      </div>
+
+      <!-- BIG KPIs -->
+      <div class="stat-grid mb20">
+        <div class="stat-card c-cyan">
+          <div class="stat-label">📧 Emails Sent</div>
+          <div class="stat-num c-cyan" id="h-sent">--</div>
+          <div class="stat-sub">total leads contacted</div>
+        </div>
+        <div class="stat-card c-ok">
+          <div class="stat-label">💬 People Replied</div>
+          <div class="stat-num c-ok" id="h-replied">--</div>
+          <div class="stat-sub">out of all emails sent</div>
+        </div>
+        <div class="stat-card c-fb">
+          <div class="stat-label">👥 FB Groups Active</div>
+          <div class="stat-num c-fb" id="h-groups">--</div>
+          <div class="stat-sub">Elliott Marsh is a member of</div>
+        </div>
+        <div class="stat-card c-warn">
+          <div class="stat-label">🔥 Interest Signals</div>
+          <div class="stat-num c-warn" id="h-interest">--</div>
+          <div class="stat-sub">people engaged on Facebook</div>
+        </div>
+        <div class="stat-card c-ok">
+          <div class="stat-label">🤖 FB Posts Live</div>
+          <div class="stat-num c-ok" id="h-posts">--</div>
+          <div class="stat-sub">active posts in groups</div>
+        </div>
+      </div>
+
+      <!-- Email pipeline mini + FB summary -->
+      <div class="two-col mb16">
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--cyan)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Email Pipeline
+            </div>
+            <a href="#" onclick="showPage('emails');return false" class="ext-link">Details →</a>
+          </div>
+          <div style="padding:20px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
+              <div style="text-align:center">
+                <div style="font-family:'Orbitron',monospace;font-size:28px;font-weight:900;color:var(--cyan)" id="hp-sent">--</div>
+                <div style="font-size:10px;color:var(--t2);letter-spacing:2px;margin-top:4px">SENT</div>
+              </div>
+              <div style="color:var(--t3);font-size:20px;align-self:center">›</div>
+              <div style="text-align:center">
+                <div style="font-family:'Orbitron',monospace;font-size:28px;font-weight:900;color:var(--t1)" id="hp-replied">--</div>
+                <div style="font-size:10px;color:var(--t2);letter-spacing:2px;margin-top:4px">REPLIED</div>
+              </div>
+              <div style="color:var(--t3);font-size:20px;align-self:center">›</div>
+              <div style="text-align:center">
+                <div style="font-family:'Orbitron',monospace;font-size:28px;font-weight:900;color:var(--ok)" id="hp-interested">--</div>
+                <div style="font-size:10px;color:var(--t2);letter-spacing:2px;margin-top:4px">INTERESTED</div>
+              </div>
+              <div style="color:var(--t3);font-size:20px;align-self:center">›</div>
+              <div style="text-align:center">
+                <div style="font-family:'Orbitron',monospace;font-size:28px;font-weight:900;color:var(--ok)" id="hp-won">--</div>
+                <div style="font-size:10px;color:var(--t2);letter-spacing:2px;margin-top:4px">CLOSED</div>
+              </div>
+            </div>
+            <div style="font-size:12px;color:var(--t2)" id="hp-reply-rate">Reply rate: calculating...</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#5b9cf6"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/></svg>
+              Facebook (Elliott Marsh)
+            </div>
+            <a href="#" onclick="showPage('facebook');return false" class="ext-link">Details →</a>
+          </div>
+          <div class="fb-grid" style="padding:16px;gap:10px">
+            <div class="fb-card">
+              <div class="fb-num" id="hfb-groups">--</div>
+              <div class="fb-label">Groups</div>
+            </div>
+            <div class="fb-card">
+              <div class="fb-num" id="hfb-posts">--</div>
+              <div class="fb-label">Posts Live</div>
+            </div>
+            <div class="fb-card">
+              <div class="fb-num" id="hfb-comments">--</div>
+              <div class="fb-label">Comments</div>
+            </div>
+            <div class="fb-card">
+              <div class="fb-num" id="hfb-signals">--</div>
+              <div class="fb-label">Interest</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent activity -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--ok)"><circle cx="12" cy="12" r="10"/></svg>
+            What's Been Happening — Recent Agent Activity
+          </div>
+          <a href="#" onclick="showPage('agents');return false" class="ext-link">All Tasks →</a>
+        </div>
+        <div id="home-activity">
+          <div style="padding:30px;text-align:center;color:var(--t3);font-size:13px">Loading activity...</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         EMAILS / INSTANTLY
+    ════════════════════════════════════ -->
+    <section class="pg" id="page-emails">
+      <div class="ph">
+        <div>
+          <div class="ph-title">EMAIL OUTREACH</div>
+          <div class="ph-sub">Cold email campaign — where every lead stands right now</div>
+        </div>
+        <div class="ph-right">
+          <div class="ph-clock" id="clock-2">--:--:-- --</div>
+          <div class="ph-date" id="date-2">-- ET</div>
+        </div>
+      </div>
+
+      <!-- Pipeline funnel -->
+      <div class="card mb16">
+        <div class="card-head">
+          <div class="card-title">Lead Pipeline — Every Lead's Status</div>
+          <div class="card-badge" id="ins-updated">--</div>
+        </div>
+        <div class="pipeline">
+          <div class="pipe-stage">
+            <div class="pipe-num c-cyan" id="pl-sent">--</div>
+            <div class="pipe-label">📧 Sent</div>
+            <div class="pipe-pct">Total emails sent</div>
+          </div>
+          <div class="pipe-arrow">›</div>
+          <div class="pipe-stage">
+            <div class="pipe-num" style="color:var(--t1)" id="pl-replied">--</div>
+            <div class="pipe-label">💬 Replied</div>
+            <div class="pipe-pct" id="pl-replied-pct">-- % reply rate</div>
+          </div>
+          <div class="pipe-arrow">›</div>
+          <div class="pipe-stage">
+            <div class="pipe-num c-ok" id="pl-interested">--</div>
+            <div class="pipe-label">🔥 Interested</div>
+            <div class="pipe-pct">Want to know more</div>
+          </div>
+          <div class="pipe-arrow">›</div>
+          <div class="pipe-stage">
+            <div class="pipe-num c-ok" id="pl-meeting">--</div>
+            <div class="pipe-label">📅 Meeting Booked</div>
+            <div class="pipe-pct">Calls scheduled</div>
+          </div>
+          <div class="pipe-arrow">›</div>
+          <div class="pipe-stage">
+            <div class="pipe-num c-ok" id="pl-won">--</div>
+            <div class="pipe-label">💰 Closed</div>
+            <div class="pipe-pct">Paying clients</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily + Replies -->
+      <div class="two-col">
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">Daily Email Activity</div>
+          </div>
+          <div class="tbl-wrap">
+            <table>
+              <thead>
+                <tr><th>Date</th><th>Sent</th><th>Replies</th><th>Bounced</th></tr>
+              </thead>
+              <tbody id="ins-tbody">
+                <tr><td colspan="4" style="text-align:center;padding:24px;color:var(--t3);font-size:12px">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">Recent Replies from Leads</div>
+            <a href="https://app.instantly.ai/app/unibox" target="_blank" class="ext-link">Open Inbox ↗</a>
+          </div>
+          <div id="ins-replies-list">
+            <div style="padding:24px;text-align:center;color:var(--t3);font-size:12px">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         FACEBOOK
+    ════════════════════════════════════ -->
+    <section class="pg" id="page-facebook">
+      <div class="ph">
+        <div>
+          <div class="ph-title">FACEBOOK</div>
+          <div class="ph-sub">Elliott Marsh account — organic outreach in trade groups</div>
+        </div>
+        <div class="ph-right">
+          <div class="ph-clock" id="clock-3">--:--:-- --</div>
+          <div class="ph-date" id="date-3">-- ET</div>
+        </div>
+      </div>
+
+      <!-- Big FB numbers -->
+      <div class="fb-grid mb20">
+        <div class="fb-card">
+          <div class="fb-num" id="fb-groups">--</div>
+          <div class="fb-label">👥 Groups Joined</div>
+        </div>
+        <div class="fb-card">
+          <div class="fb-num" id="fb-posts">--</div>
+          <div class="fb-label">📝 Posts Live</div>
+        </div>
+        <div class="fb-card">
+          <div class="fb-num" id="fb-comments">--</div>
+          <div class="fb-label">💬 Comments</div>
+        </div>
+        <div class="fb-card">
+          <div class="fb-num" id="fb-dms">--</div>
+          <div class="fb-label">✉️ DMs Received</div>
+        </div>
+        <div class="fb-card" style="border-top:3px solid var(--warn)">
+          <div class="fb-num" style="color:var(--warn)" id="fb-signals">--</div>
+          <div class="fb-label">🔥 Interest Signals</div>
+        </div>
+        <div class="fb-card">
+          <div class="fb-num" id="fb-positive">--</div>
+          <div class="fb-label">👍 Positive Replies</div>
+        </div>
+      </div>
+
+      <!-- What these numbers mean -->
+      <div class="card mb16">
+        <div class="card-head">
+          <div class="card-title">What This Means in Plain English</div>
+          <div class="card-badge" id="fb-updated">--</div>
+        </div>
+        <div style="padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px" id="fb-summary">
+          <div style="background:var(--card2);border-radius:10px;padding:18px">
+            <div style="font-size:12px;font-weight:700;color:var(--t2);letter-spacing:2px;margin-bottom:8px">REACH</div>
+            <div style="font-size:14px;color:var(--t1);line-height:1.7" id="fb-reach-text">Elliott Marsh is active in <strong id="fbs-groups">--</strong> Facebook groups and has <strong id="fbs-posts">--</strong> posts currently live where contractors can see them.</div>
+          </div>
+          <div style="background:var(--card2);border-radius:10px;padding:18px">
+            <div style="font-size:12px;font-weight:700;color:var(--t2);letter-spacing:2px;margin-bottom:8px">ENGAGEMENT</div>
+            <div style="font-size:14px;color:var(--t1);line-height:1.7" id="fb-engage-text">Posts have received <strong id="fbs-comments">--</strong> comments, <strong id="fbs-signals">--</strong> people have shown interest, and <strong id="fbs-dms">--</strong> people sent a DM.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily FB activity -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Daily Facebook Activity</div>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Posts Made</th><th>Comments</th><th>DMs</th><th>Interest Signals</th></tr>
+            </thead>
+            <tbody id="fb-tbody">
+              <tr><td colspan="5" style="text-align:center;padding:24px;color:var(--t3);font-size:12px">Loading...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         AGENTS / TASKS
+    ════════════════════════════════════ -->
+    <section class="pg" id="page-agents">
+      <div class="ph">
+        <div>
+          <div class="ph-title">AGENTS & TASKS</div>
+          <div class="ph-sub">What your automations are doing — and if they're working</div>
+        </div>
+        <div class="ph-right">
+          <div class="ph-clock" id="clock-4">--:--:-- --</div>
+          <div class="ph-date" id="date-4">-- ET</div>
+        </div>
+      </div>
+
+      <!-- Alerts -->
+      <div id="task-alerts-wrap"></div>
+
+      <!-- Overall health -->
+      <div class="stat-grid mb20">
+        <div class="stat-card c-ok">
+          <div class="stat-label">System Status</div>
+          <div class="stat-num" style="font-size:28px" id="task-overall">--</div>
+          <div class="stat-sub">overall automation health</div>
+        </div>
+        <div class="stat-card c-cyan">
+          <div class="stat-label">Tasks Logged</div>
+          <div class="stat-num c-cyan" id="task-count">--</div>
+          <div class="stat-sub">completed this session</div>
+        </div>
+        <div class="stat-card c-warn">
+          <div class="stat-label">Alerts</div>
+          <div class="stat-num c-warn" id="task-alert-count">--</div>
+          <div class="stat-sub">issues needing attention</div>
+        </div>
+      </div>
+
+      <!-- Scheduled tasks -->
+      <div class="card mb16">
+        <div class="card-head">
+          <div class="card-title">Scheduled Automations — What Runs Automatically</div>
+          <div class="card-badge" id="tasks-checked">--</div>
+        </div>
+        <div id="tasks-list">
+          <div style="padding:24px;text-align:center;color:var(--t3);font-size:12px">Loading tasks...</div>
+        </div>
+      </div>
+
+      <!-- Session activity -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Recent Agent Activity Log</div>
+        </div>
+        <div id="agents-activity">
+          <div style="padding:24px;text-align:center;color:var(--t3);font-size:12px">Loading...</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════
+         MORNING BRIEF
+    ════════════════════════════════════ -->
+    <section class="pg" id="page-brief">
+      <div class="ph">
+        <div>
+          <div class="ph-title">MORNING BRIEF</div>
+          <div class="ph-sub">What you need to know before starting your day</div>
+        </div>
+        <div class="ph-right">
+          <div class="ph-clock" id="clock-5">--:--:-- --</div>
+          <div class="ph-date" id="date-5">-- ET</div>
+        </div>
+      </div>
+
+      <!-- Weather + Quote -->
+      <div class="card mb16">
+        <div class="card-head">
+          <div class="card-title">Conditions</div>
+          <div class="card-badge" id="brief-updated">--</div>
         </div>
         <div class="wq-grid">
           <div class="wq-cell">
-            <div class="wq-label">WEATHER // YOUR AREA</div>
+            <div class="wq-label">🌤 Weather — Tampa, FL</div>
             <div class="wq-val" id="weather-temp">--°F</div>
             <div class="wq-sub" id="weather-desc">Loading...</div>
           </div>
           <div class="wq-cell">
-            <div class="wq-label">DAILY SIGNAL</div>
+            <div class="wq-label">💡 Daily Signal</div>
             <div id="quote-text">Loading...</div>
             <div id="quote-author"></div>
           </div>
         </div>
       </div>
 
-      <!-- Urgent -->
-      <div class="hud-card">
-        <div class="hud-head">
-          <div class="hud-title"><div class="hud-title-icon" style="background:var(--err);box-shadow:0 0 8px var(--err)"></div>URGENT INBOX</div>
-          <div class="hud-badge">ACTION NEEDED</div>
-        </div>
-        <div class="brief-wrap">
-          <div id="brief-urgent">
-            <span style="color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px">LOADING...</span>
+      <!-- Urgent + Focus + Reminders -->
+      <div class="three-col">
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title"><span class="dot err"></span>Urgent — Action Needed Now</div>
           </div>
-        </div>
-      </div>
-
-      <!-- Focus -->
-      <div class="hud-card">
-        <div class="hud-head">
-          <div class="hud-title"><div class="hud-title-icon" style="background:var(--ok);box-shadow:var(--glow-ok)"></div>TODAY'S FOCUS</div>
-          <div class="hud-badge">TOP PRIORITIES</div>
-        </div>
-        <div class="brief-wrap">
-          <div id="brief-focus" class="brief-item">
-            <span style="color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px">LOADING...</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Reminders -->
-      <div class="hud-card">
-        <div class="hud-head">
-          <div class="hud-title"><div class="hud-title-icon" style="background:var(--warn);box-shadow:0 0 8px rgba(255,184,0,.5)"></div>REMINDERS</div>
-          <div class="hud-badge">DON'T FORGET</div>
-        </div>
-        <div class="brief-wrap">
-          <div id="brief-reminders">
-            <span style="color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px">LOADING...</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ INSTANTLY ═══ -->
-    <section class="pg" id="page-instantly">
-      <div class="ph">
-        <div class="ph-left">
-          <div class="pt">INSTANTLY</div>
-          <div class="ps">LEAD PIPELINE // WHERE EVERYONE IS AT</div>
-        </div>
-        <div class="ph-right">
-          <div class="ph-clock" id="clock-3"></div>
-          <div class="ph-date" id="date-3"></div>
-        </div>
-      </div>
-
-      <!-- Pipeline -->
-      <div class="hud-card">
-        <div class="hud-head">
-          <div class="hud-title"><div class="hud-title-icon"></div>PIPELINE</div>
-          <div class="hud-badge" id="ins-updated">LOADING...</div>
-        </div>
-        <div class="pipeline-wrap">
-          <div class="pipe-stage">
-            <div class="pipe-num cy" id="pl-sent">--</div>
-            <div class="pipe-label">SENT</div>
-          </div>
-          <div class="pipe-arrow">›</div>
-          <div class="pipe-stage">
-            <div class="pipe-num" id="pl-replied">--</div>
-            <div class="pipe-label">REPLIED</div>
-          </div>
-          <div class="pipe-arrow">›</div>
-          <div class="pipe-stage">
-            <div class="pipe-num ok" id="pl-interested">--</div>
-            <div class="pipe-label">INTERESTED</div>
-          </div>
-          <div class="pipe-arrow">›</div>
-          <div class="pipe-stage">
-            <div class="pipe-num ok" id="pl-meeting">--</div>
-            <div class="pipe-label">MEETING BOOKED</div>
-          </div>
-          <div class="pipe-arrow">›</div>
-          <div class="pipe-stage">
-            <div class="pipe-num ok" id="pl-won">--</div>
-            <div class="pipe-label">WON</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Daily sends + Recent replies -->
-      <div class="two-col">
-        <div class="hud-card">
-          <div class="hud-head">
-            <div class="hud-title"><div class="hud-title-icon"></div>DAILY SENDS</div>
-          </div>
-          <div class="tbl-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>DATE</th>
-                  <th>SENT</th>
-                  <th>REPLIES</th>
-                  <th>BOUNCES</th>
-                </tr>
-              </thead>
-              <tbody id="ins-tbody">
-                <tr><td colspan="4" style="text-align:center;padding:30px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px">AWAITING DATA...</td></tr>
-              </tbody>
-            </table>
+          <div class="card-body" id="brief-urgent">
+            <div style="color:var(--t3);font-size:13px">Loading...</div>
           </div>
         </div>
 
-        <div class="hud-card">
-          <div class="hud-head">
-            <div class="hud-title"><div class="hud-title-icon"></div>RECENT REPLIES</div>
-            <a href="https://app.instantly.ai/app/unibox" target="_blank" class="hud-badge" style="text-decoration:none;cursor:pointer">OPEN UNIBOX ↗</a>
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title"><span class="dot ok"></span>Today's Focus</div>
           </div>
-          <div id="ins-replies-list">
-            <div style="text-align:center;padding:30px;color:var(--t3);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px">LOADING...</div>
+          <div class="card-body" id="brief-focus">
+            <div style="color:var(--t3);font-size:13px">Loading...</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title"><span class="dot warn"></span>Reminders</div>
+          </div>
+          <div class="card-body" id="brief-reminders">
+            <div style="color:var(--t3);font-size:13px">Loading...</div>
           </div>
         </div>
       </div>
@@ -740,7 +673,9 @@ tbody tr:hover td{background:rgba(0,212,255,.04);color:var(--t1)}
 </div><!-- /shell -->
 
 <script>
-// ── AUTH ──
+// ══════════════════════════════════
+// AUTH
+// ══════════════════════════════════
 async function authCheck(){
   const pw = document.getElementById('auth-pw').value;
   if(!pw) return;
@@ -751,11 +686,7 @@ async function authCheck(){
     document.getElementById('auth-gate').style.display = 'none';
     sessionStorage.setItem('novaro_auth','1');
     document.getElementById('shell').classList.add('on');
-    // Show video fullscreen
-    const modal = document.getElementById('intro-modal');
-    modal.classList.add('show');
-    const v = document.getElementById('intro-video');
-    v.play().catch(()=>{});
+    init();
   } else {
     const err = document.getElementById('auth-err');
     err.style.display = 'block';
@@ -770,23 +701,24 @@ async function authCheck(){
   if(sessionStorage.getItem('novaro_auth') === '1'){
     document.getElementById('auth-gate').style.display = 'none';
     document.getElementById('shell').classList.add('on');
-    loadLiveData();
-    fetchWeather();
-    fetchQuote();
+    init();
   }
 })();
 
-function closeIntro(){
-  document.getElementById('intro-modal').classList.remove('show');
-  const v = document.getElementById('intro-video');
-  v.pause();
-  loadLiveData();
+// ══════════════════════════════════
+// INIT
+// ══════════════════════════════════
+function init(){
+  tick();
+  setInterval(tick, 1000);
+  loadAllData();
   fetchWeather();
   fetchQuote();
 }
-document.getElementById('intro-video').addEventListener('ended', closeIntro);
 
-// ── NAV ──
+// ══════════════════════════════════
+// NAV
+// ══════════════════════════════════
 function showPage(p){
   document.querySelectorAll('.pg').forEach(e=>e.classList.remove('on'));
   document.querySelectorAll('.nav-i').forEach(e=>e.classList.remove('on'));
@@ -795,7 +727,9 @@ function showPage(p){
   if(n) n.classList.add('on');
 }
 
-// ── CLOCK ──
+// ══════════════════════════════════
+// CLOCK
+// ══════════════════════════════════
 function tick(){
   const now = new Date();
   const parts = new Intl.DateTimeFormat('en-US',{
@@ -803,184 +737,390 @@ function tick(){
     hour12:true,timeZone:'America/New_York'
   }).formatToParts(now);
   const p = Object.fromEntries(parts.map(x=>[x.type,x.value]));
-  const t = (p.hour||'12')+':'+(p.minute||'00')+':'+(p.second||'00')+' '+(p.dayperiod||p.dayPeriod||'AM');
-  const d = now.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric',year:'numeric',timeZone:'America/New_York'});
-  const ids = ['clock-1','clock-2','clock-3'];
-  ids.forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=t; });
-  ['tb-date','date-2','date-3'].forEach(id=>{ const el=document.getElementById(id); if(el) el.textContent=d+' ET'; });
+  const t = p.hour+':'+p.minute+':'+p.second+' '+(p.dayperiod||p.dayPeriod||'');
+  const d = now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'});
+  ['clock-1','clock-2','clock-3','clock-4','clock-5'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t;});
+  ['date-1','date-2','date-3','date-4','date-5'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=d+' ET';});
 }
-tick(); setInterval(tick,1000);
 
-// ── DATA ──
+// ══════════════════════════════════
+// DATA LOADING
+// ══════════════════════════════════
 const GH = 'https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/';
 
-async function loadLiveData(){
+async function loadAllData(){
   const ts = [];
 
-  try {
-    const r = await fetch(GH+'instantly-data.json?t='+Date.now());
-    if(r.ok){ const d=await r.json(); populateInstantly(d); if(d.lastUpdated) ts.push(new Date(d.lastUpdated)); }
-  } catch(e){}
+  const files = [
+    ['instantly-data.json', populateInstantly],
+    ['social-data.json',    populateFacebook],
+    ['agents-log.json',     populateAgents],
+    ['task-status.json',    populateTasks],
+    ['morning-debrief-data.json', populateBrief],
+  ];
 
-  try {
-    const r = await fetch(GH+'morning-debrief-data.json?t='+Date.now());
-    if(r.ok){ const d=await r.json(); populateBrief(d); if(d.lastUpdated) ts.push(new Date(d.lastUpdated)); }
-  } catch(e){}
+  let loaded = 0;
+  for(const [file, fn] of files){
+    try{
+      const r = await fetch(GH+file+'?t='+Date.now());
+      if(r.ok){
+        const d = await r.json();
+        fn(d);
+        if(d.lastUpdated||d.last_checked) ts.push(new Date(d.lastUpdated||d.last_checked));
+        loaded++;
+      }
+    }catch(e){ console.warn('Failed to load', file, e); }
+  }
 
-  const el = document.getElementById('global-last-updated');
+  // Update global timestamp
   if(ts.length > 0){
-    const latest = new Date(Math.max(...ts));
-    if(el) el.textContent = 'DATA SYNC: ' + latest.toLocaleString('en-US',{
+    const latest = new Date(Math.max(...ts.map(t=>t.getTime())));
+    set('global-updated', 'Last synced: '+latest.toLocaleString('en-US',{
       timeZone:'America/New_York',month:'short',day:'numeric',
       hour:'numeric',minute:'2-digit'
-    }) + ' ET';
-  } else {
-    if(el) el.textContent = 'DATA: LIVE';
+    })+' ET');
   }
+
+  // Update system dot
+  const sysDot = document.getElementById('sys-dot');
+  if(sysDot){ sysDot.className = 'nav-dot dot ok'; }
 }
 
+// ══════════════════════════════════
+// INSTANTLY / EMAIL
+// ══════════════════════════════════
 function populateInstantly(d){
   const ov = d.overview || {};
   const pl = d.pipeline || {};
 
-  // Pipeline numbers
-  s('pl-sent',      (pl.sent || ov.emails_sent_count || 0).toLocaleString());
-  s('pl-replied',   (pl.replied || ov.reply_count_unique || 0).toLocaleString());
-  s('pl-interested',(pl.interested || ov.total_interested || 0).toLocaleString());
-  s('pl-meeting',   (pl.meeting_booked || ov.total_meeting_booked || 0).toLocaleString());
-  s('pl-won',       (pl.won || ov.total_closed || 0).toLocaleString());
+  const sent      = pl.sent || ov.emails_sent_count || 0;
+  const replied   = pl.replied || ov.reply_count_unique || 0;
+  const interested= pl.interested || ov.total_interested || 0;
+  const meeting   = pl.meeting_booked || ov.total_meeting_booked || 0;
+  const won       = pl.won || ov.total_closed || 0;
+  const replyPct  = sent > 0 ? ((replied/sent)*100).toFixed(1) : '0.0';
+
+  // Home page
+  set('h-sent', sent.toLocaleString());
+  set('h-replied', replied.toLocaleString());
+  set('hp-sent', sent.toLocaleString());
+  set('hp-replied', replied.toLocaleString());
+  set('hp-interested', interested.toLocaleString());
+  set('hp-won', won.toLocaleString());
+  set('hp-reply-rate', 'Reply rate: '+replyPct+'%  •  '+(sent-replied).toLocaleString()+' not yet replied');
+
+  // Update status bar
+  const dotEl = document.getElementById('dot-emails');
+  if(dotEl) dotEl.className = 'dot '+(sent > 0 ? 'ok' : 'off');
+  set('status-emails', 'Email: '+sent.toLocaleString()+' sent, '+replied+' replied');
+
+  // Email page
+  set('pl-sent', sent.toLocaleString());
+  set('pl-replied', replied.toLocaleString());
+  set('pl-interested', interested.toLocaleString());
+  set('pl-meeting', meeting.toLocaleString());
+  set('pl-won', won.toLocaleString());
+  set('pl-replied-pct', replyPct+'% reply rate');
 
   if(d.lastUpdated){
-    const el = document.getElementById('ins-updated');
-    if(el) el.textContent = 'UPDATED ' + new Date(d.lastUpdated).toLocaleString('en-US',{
-      timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'
-    });
+    set('ins-updated', 'Data from '+fmtDate(d.lastUpdated));
   }
 
   // Daily table
   const tbody = document.getElementById('ins-tbody');
   if(tbody && d.daily && d.daily.length > 0){
-    tbody.innerHTML = [...d.daily].reverse().slice(0,14).map(row => `<tr>
-      <td class="td-h">${fmtDate(row.date)}</td>
-      <td>${(row.sent||0).toLocaleString()}</td>
-      <td${(row.replies||0)>0?' style="color:var(--cyan);font-weight:700"':''}>${row.replies||0}</td>
-      <td${(row.bounced||0)>0?' style="color:var(--warn)"':''}>${row.bounced||0}</td>
+    tbody.innerHTML = [...d.daily].reverse().slice(0,14).map(row=>`<tr>
+      <td style="color:var(--t2)">${fmtDate(row.date)}</td>
+      <td class="hi">${(row.sent||0).toLocaleString()}</td>
+      <td class="${(row.replies||0)>0?'ok':''}">${row.replies||0}</td>
+      <td class="${(row.bounced||0)>0?'warn':''}">${row.bounced||0}</td>
     </tr>`).join('');
   }
 
-  // Recent replies list
+  // Recent replies
   const rl = document.getElementById('ins-replies-list');
-  if(rl && d.recent_replies && d.recent_replies.length > 0){
-    const labelMap = {opted_out:'OPTED OUT',auto_reply:'AUTO-REPLY',warm:'WARM LEAD',email_update:'EMAIL UPDATE',other:'OTHER'};
-    rl.innerHTML = d.recent_replies.map(r => `<div class="reply-item">
-      <div class="reply-badge rb-${r.status}">${labelMap[r.status]||r.label||r.status}</div>
-      <div class="reply-info">
-        <div class="reply-email">${r.email}</div>
-        <div class="reply-preview">${r.preview}</div>
-      </div>
-      <div class="reply-date">${fmtDate(r.date)}</div>
-    </div>`).join('');
-  } else if(rl){
-    rl.innerHTML = '<div style="text-align:center;padding:30px;color:var(--t3);font-family:\'Share Tech Mono\',monospace;font-size:11px;letter-spacing:2px">NO REPLIES YET</div>';
+  if(rl){
+    if(d.recent_replies && d.recent_replies.length > 0){
+      const labelMap = {opted_out:'OPTED OUT',auto_reply:'AUTO-REPLY',warm:'WARM LEAD',email_update:'EMAIL UPDATE',other:'OTHER'};
+      rl.innerHTML = d.recent_replies.map(r=>`<div class="reply-item">
+        <div class="rbadge rb-${r.status}">${labelMap[r.status]||r.label||r.status}</div>
+        <div class="reply-info">
+          <div class="reply-email">${r.email}</div>
+          <div class="reply-preview">${r.preview||''}</div>
+        </div>
+        <div class="reply-date">${fmtDate(r.date)}</div>
+      </div>`).join('');
+    } else {
+      rl.innerHTML = '<div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">No replies yet</div>';
+    }
   }
 }
 
+// ══════════════════════════════════
+// FACEBOOK
+// ══════════════════════════════════
+function populateFacebook(d){
+  const fb = d.facebook || d;
+  const groups   = fb.groups || 0;
+  const posts    = fb.postsLive || 0;
+  const comments = fb.comments || 0;
+  const dms      = fb.dmsReceived || 0;
+  const signals  = fb.interestSignals || 0;
+  const positive = fb.positiveComments || 0;
+
+  // Home
+  set('h-groups', groups.toLocaleString());
+  set('h-interest', signals.toLocaleString());
+  set('h-posts', posts.toLocaleString());
+  set('hfb-groups', groups.toLocaleString());
+  set('hfb-posts', posts.toLocaleString());
+  set('hfb-comments', comments.toLocaleString());
+  set('hfb-signals', signals.toLocaleString());
+
+  // Status bar
+  const dotEl = document.getElementById('dot-fb');
+  if(dotEl) dotEl.className = 'dot '+(groups > 0 ? 'ok' : 'off');
+  set('status-fb', 'Facebook: '+groups+' groups, '+signals+' interest signals');
+
+  // FB page big numbers
+  set('fb-groups', groups.toLocaleString());
+  set('fb-posts', posts.toLocaleString());
+  set('fb-comments', comments.toLocaleString());
+  set('fb-dms', dms.toLocaleString());
+  set('fb-signals', signals.toLocaleString());
+  set('fb-positive', positive.toLocaleString());
+
+  // Summary text
+  set('fbs-groups', groups.toLocaleString());
+  set('fbs-posts', posts.toLocaleString());
+  set('fbs-comments', comments.toLocaleString());
+  set('fbs-signals', signals.toLocaleString());
+  set('fbs-dms', dms.toLocaleString());
+
+  if(fb.lastUpdated) set('fb-updated', 'Data from '+fmtDate(fb.lastUpdated));
+
+  // Daily FB table
+  const tbody = document.getElementById('fb-tbody');
+  if(tbody && fb.daily && fb.daily.length > 0){
+    tbody.innerHTML = [...fb.daily].reverse().slice(0,14).map(row=>`<tr>
+      <td style="color:var(--t2)">${fmtDate(row.date||row.timestamp)}</td>
+      <td class="${(row.posts||row.postsToday||0)>0?'hi':''}">${row.posts||row.postsToday||0}</td>
+      <td class="${(row.comments||0)>0?'ok':''}">${row.comments||0}</td>
+      <td class="${(row.dms||0)>0?'ok':''}">${row.dms||0}</td>
+      <td class="${(row.interestSignals||row.signals||0)>0?'warn':''}">${row.interestSignals||row.signals||0}</td>
+    </tr>`).join('');
+  } else if(tbody){
+    tbody.innerHTML = '<tr><td colspan="5" style="padding:20px;text-align:center;color:var(--t3);font-size:12px">No daily data yet</td></tr>';
+  }
+}
+
+// ══════════════════════════════════
+// AGENTS LOG
+// ══════════════════════════════════
+function populateAgents(d){
+  const tasks = d.sessionTasks || [];
+  set('task-count', tasks.length.toLocaleString());
+
+  const wrap = document.getElementById('agents-activity');
+  const homeWrap = document.getElementById('home-activity');
+  if(!wrap) return;
+
+  if(tasks.length === 0){
+    const msg = '<div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">No agent activity logged yet</div>';
+    wrap.innerHTML = msg;
+    if(homeWrap) homeWrap.innerHTML = msg;
+    return;
+  }
+
+  const statusColor = {completed:'ok',failed:'err',in_progress:'warn',running:'warn'};
+  const statusLabel = {completed:'✓ Done',failed:'✗ Failed',in_progress:'⟳ Running',running:'⟳ Running'};
+
+  const rows = [...tasks].reverse().map(t=>`<div class="task-row">
+    <div>
+      <div style="font-size:12px;font-weight:700;letter-spacing:1px;color:var(--t2);margin-bottom:2px">${t.type||'TASK'}</div>
+      <div class="task-name">${t.title||'Untitled Task'}</div>
+      <div style="font-size:12px;color:var(--t2);margin-top:4px">${(t.summary||'').substring(0,120)}</div>
+    </div>
+    <div style="text-align:right;flex-shrink:0">
+      <div class="task-status-badge ts-${statusColor[t.status]||'off'}">${statusLabel[t.status]||t.status||'--'}</div>
+      <div class="task-time" style="margin-top:6px">${fmtDateTime(t.completedAt||t.startedAt)}</div>
+    </div>
+  </div>`);
+
+  wrap.innerHTML = rows.join('');
+  if(homeWrap) homeWrap.innerHTML = rows.slice(0,4).join('');
+}
+
+// ══════════════════════════════════
+// TASK STATUS
+// ══════════════════════════════════
+function populateTasks(d){
+  const tasks = Array.isArray(d.tasks) ? d.tasks : [];
+  const alerts = d.alerts || [];
+  const overall = (d.overall_status||'unknown').toUpperCase();
+
+  set('task-overall', overall);
+  set('task-alert-count', alerts.length.toString());
+  if(d.last_checked) set('tasks-checked', 'Checked '+fmtDateTime(d.last_checked));
+
+  // Status bar
+  const dotEl = document.getElementById('dot-tasks');
+  if(dotEl) dotEl.className = 'dot '+(alerts.length === 0 ? 'ok' : alerts.length <= 2 ? 'warn' : 'err');
+  set('status-tasks', 'Automations: '+(alerts.length === 0 ? 'All good' : alerts.length+' need attention'));
+
+  // Overall stat card color
+  const oc = document.querySelector('#page-agents .stat-card.c-ok:first-child');
+  if(oc && alerts.length > 0) oc.className = oc.className.replace('c-ok','c-warn');
+
+  // Alerts
+  const alertWrap = document.getElementById('task-alerts-wrap');
+  if(alertWrap && alerts.length > 0){
+    alertWrap.innerHTML = alerts.map(a=>`<div class="alert-banner mb16">
+      <span class="dot err"></span>
+      <div>
+        <div class="alert-label">⚠️ ${a.severity||'ALERT'} — ${a.taskId||''}</div>
+        <div class="alert-text">${a.reason||'Issue detected'}</div>
+      </div>
+    </div>`).join('');
+  }
+
+  // Tasks list
+  const tasksList = document.getElementById('tasks-list');
+  if(tasksList){
+    if(tasks.length === 0){
+      tasksList.innerHTML = '<div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">No scheduled tasks found</div>';
+    } else {
+      const statusClass = {ok:'ts-ok',active:'ts-ok',running:'ts-ok',error:'ts-err',failed:'ts-err',disabled:'ts-off',paused:'ts-off',warning:'ts-warn'};
+      tasksList.innerHTML = tasks.map(t=>{
+        const st = (t.status||'unknown').toLowerCase();
+        const sc = statusClass[st]||'ts-off';
+        const lastRun = t.lastRun ? fmtDateTime(t.lastRun) : 'Never run';
+        return `<div class="task-row">
+          <div>
+            <div class="task-name">${t.name||t.taskId||'Unknown Task'}</div>
+            <div style="font-size:12px;color:var(--t2);margin-top:3px">${t.description||t.schedule||''}</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0">
+            <div class="task-status-badge ${sc}">${t.status||'--'}</div>
+            <div class="task-time" style="margin-top:6px">Last: ${lastRun}</div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+  }
+}
+
+// ══════════════════════════════════
+// MORNING BRIEF
+// ══════════════════════════════════
 function populateBrief(d){
+  if(d.lastUpdated) set('brief-updated', 'Briefed '+fmtDate(d.lastUpdated));
+
   const uEl = document.getElementById('brief-urgent');
   if(uEl){
     if(d.urgent && d.urgent.length > 0){
-      uEl.innerHTML = d.urgent.map(item => {
-        const tag = item.tag==='BLOCKED'?'block':item.tag==='OFFLINE'?'offline':'follow';
-        return `<div class="urgent-item">
-          <span class="urgent-tag ${tag}">${item.tag}</span>
-          <strong>${item.title}</strong> — ${item.note}
-        </div>`;
-      }).join('');
+      uEl.innerHTML = d.urgent.map(item=>`<div class="brief-item">
+        <span class="brief-tag bt-urgent">URGENT</span>
+        <strong>${item.title||''}</strong>
+        ${item.note ? ' — '+item.note : ''}
+      </div>`).join('');
     } else {
-      uEl.innerHTML = '<span style="color:var(--ok);font-family:\'Share Tech Mono\',monospace;font-size:12px;letter-spacing:2px">✓ ALL CLEAR — NO UNRESOLVED ITEMS</span>';
+      uEl.innerHTML = '<div style="color:var(--ok);font-size:13px;font-weight:600">✓ Nothing urgent — all clear</div>';
     }
   }
 
   const fEl = document.getElementById('brief-focus');
   if(fEl){
     if(d.focus && d.focus.length > 0){
-      fEl.innerHTML = '<ol>'+d.focus.map(item=>`<li>${item}</li>`).join('')+'</ol>';
-      fEl.className = 'brief-item';
+      fEl.innerHTML = d.focus.map((item,i)=>`<div class="brief-item">
+        <span class="brief-tag bt-focus">${i+1}</span>${item}
+      </div>`).join('');
     } else {
-      fEl.innerHTML = '<span style="color:var(--t3);font-family:\'Share Tech Mono\',monospace;font-size:11px">NO FOCUS ITEMS SET</span>';
+      fEl.innerHTML = '<div style="color:var(--t3);font-size:13px">No focus items set</div>';
     }
   }
 
   const rEl = document.getElementById('brief-reminders');
   if(rEl){
     if(d.reminders && d.reminders.length > 0){
-      rEl.innerHTML = d.reminders.map(r =>
-        `<div class="brief-item">• ${r}</div>`
-      ).join('');
+      rEl.innerHTML = d.reminders.map(r=>`<div class="brief-item">
+        <span class="brief-tag bt-remind">!</span>${r}
+      </div>`).join('');
     } else {
-      rEl.innerHTML = '<span style="color:var(--t3);font-family:\'Share Tech Mono\',monospace;font-size:11px">NO REMINDERS</span>';
+      rEl.innerHTML = '<div style="color:var(--t3);font-size:13px">No reminders</div>';
     }
-  }
-
-  const dEl = document.getElementById('brief-date');
-  if(dEl && d.date) dEl.textContent = d.date;
-
-  if(d.lastUpdated){
-    const el = document.getElementById('brief-updated');
-    if(el) el.textContent = 'UPDATED '+new Date(d.lastUpdated).toLocaleString('en-US',{
-      timeZone:'America/New_York',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'
-    });
   }
 }
 
-// ── WEATHER ──
+// ══════════════════════════════════
+// WEATHER
+// ══════════════════════════════════
 async function fetchWeather(){
-  try {
+  try{
     const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=27.9506&longitude=-82.4572&current_weather=true&temperature_unit=fahrenheit');
     if(r.ok){
       const d = await r.json();
       const cw = d.current_weather;
-      s('weather-temp', Math.round(cw.temperature)+'°F');
-      s('weather-desc', weatherCode(cw.weathercode));
+      set('weather-temp', Math.round(cw.temperature)+'°F');
+      set('weather-desc', weatherCode(cw.weathercode));
     }
-  } catch(e){}
+  }catch(e){}
 }
 function weatherCode(c){
-  if(c===0) return 'CLEAR SKIES';
-  if(c<=2)  return 'PARTLY CLOUDY';
-  if(c===3) return 'OVERCAST';
-  if(c<=48) return 'FOGGY CONDITIONS';
-  if(c<=57) return 'DRIZZLE';
-  if(c<=67) return 'RAIN';
-  if(c<=77) return 'SNOW';
-  if(c<=82) return 'RAIN SHOWERS';
-  return 'THUNDERSTORMS';
+  if(c===0) return '☀️ Clear skies';
+  if(c<=2)  return '⛅ Partly cloudy';
+  if(c===3) return '☁️ Overcast';
+  if(c<=48) return '🌫️ Foggy';
+  if(c<=57) return '🌦️ Drizzle';
+  if(c<=67) return '🌧️ Raining';
+  if(c<=77) return '❄️ Snow';
+  if(c<=82) return '🌦️ Rain showers';
+  return '⛈️ Thunderstorms';
 }
 
-// ── QUOTE ──
+// ══════════════════════════════════
+// QUOTE
+// ══════════════════════════════════
 function fetchQuote(){
   const quotes = [
     {text:"The man on top of the mountain didn't fall there.",author:"Vince Lombardi"},
     {text:"Don't count the days, make the days count.",author:"Muhammad Ali"},
     {text:"A year from now you will wish you had started today.",author:"Karen Lamb"},
     {text:"The secret of getting ahead is getting started.",author:"Mark Twain"},
-    {text:"You don't have to be great to start, but you have to start to be great.",author:"Zig Ziglar"},
-    {text:"Do something today that your future self will thank you for.",author:"Sean Patrick Flanery"},
     {text:"Hard work beats talent when talent doesn't work hard.",author:"Tim Notke"},
     {text:"Success is not final, failure is not fatal — it is the courage to continue that counts.",author:"Winston Churchill"},
     {text:"It always seems impossible until it's done.",author:"Nelson Mandela"},
+    {text:"Do something today that your future self will thank you for.",author:"Sean Patrick Flanery"},
+    {text:"You don't have to be great to start, but you have to start to be great.",author:"Zig Ziglar"},
     {text:"The only way to do great work is to love what you do.",author:"Steve Jobs"},
   ];
   const q = quotes[new Date().getDate() % quotes.length];
-  s('quote-text', '"'+q.text+'"');
-  s('quote-author', '— '+q.author);
+  set('quote-text', '"'+q.text+'"');
+  set('quote-author', '— '+q.author);
 }
 
-// ── UTIL ──
-function s(id,val){ const el=document.getElementById(id); if(el) el.textContent=val; }
+// ══════════════════════════════════
+// UTILS
+// ══════════════════════════════════
+function set(id, val){ const el=document.getElementById(id); if(el) el.textContent=val; }
+
 function fmtDate(ds){
   if(!ds) return '--';
-  return new Date(ds+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'America/New_York'});
+  try{
+    return new Date(ds).toLocaleDateString('en-US',{
+      month:'short',day:'numeric',timeZone:'America/New_York'
+    });
+  }catch(e){ return ds; }
+}
+
+function fmtDateTime(ds){
+  if(!ds) return '--';
+  try{
+    return new Date(ds).toLocaleString('en-US',{
+      timeZone:'America/New_York',month:'short',day:'numeric',
+      hour:'numeric',minute:'2-digit',hour12:true
+    });
+  }catch(e){ return ds; }
 }
 </script>
 </body>
