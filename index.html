@@ -747,7 +747,7 @@ async function authCheck(){
   const enc = new TextEncoder();
   const hash = await crypto.subtle.digest('SHA-256', enc.encode(pw));
   const hex = Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
-  if(hex === 'de72749cf0e0a644e639424d93068c6e6eda51bcbf3d2f9f11cb50ae5002fade'){
+  if(hex === '2553bb1642fe585053010f27624370311c067be2f1c369bcd324d680d1bec030'){
     document.getElementById('auth-gate').style.display = 'none';
     sessionStorage.setItem('novaro_auth','1');
     document.getElementById('shell').classList.add('on');
