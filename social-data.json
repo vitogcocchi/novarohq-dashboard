@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-06 08:00 ET",
+  "lastUpdated": "2026-05-06 07:05 ET",
   "today": {
     "date": "2026-05-06",
     "posted": false,
@@ -24,7 +24,7 @@
     {
       "date": "2026-05-05",
       "group": "That Pressure Washing Group",
-      "preview": "Real question — how many calls do you miss per week while you're out on jobs? And do you ever actually call them back or do they just fall through the cracks?",
+      "preview": "how many calls are you missing a week while youre out on jobs. be honest. most guys are losing 2 or 3 leads a day and dont even know it",
       "commentsReceived": 0,
       "repliesMade": 0,
       "leadsFlagged": 0,
@@ -33,12 +33,54 @@
   ],
   "leads": [],
   "daily": [
-    { "date": "2026-04-30", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
-    { "date": "2026-05-01", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
-    { "date": "2026-05-02", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
-    { "date": "2026-05-03", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
-    { "date": "2026-05-04", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
-    { "date": "2026-05-05", "posts": 1, "comments": 0, "replies": 0, "leads": 0 },
-    { "date": "2026-05-06", "posts": 0, "comments": 0, "replies": 0, "leads": 0 }
+    {
+      "date": "2026-04-30",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-01",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-02",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-03",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-04",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-05",
+      "posts": 1,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-06",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    }
   ]
 }
