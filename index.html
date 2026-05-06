@@ -219,11 +219,6 @@ td.warn{color:var(--warn);font-weight:600}
       <span>HOME</span>
     </div>
 
-    <div class="nav-i" data-page="emails" onclick="showPage('emails')">
-      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-      <span>EMAIL</span>
-    </div>
-
     <div class="nav-i" data-page="facebook" onclick="showPage('facebook')">
       <svg viewBox="0 0 24 24"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/></svg>
       <span>FB</span>
@@ -262,103 +257,51 @@ td.warn{color:var(--warn);font-weight:600}
 
       <!-- Status bar -->
       <div class="status-bar" id="status-bar">
-        <div class="status-item"><span class="dot off" id="dot-emails"></span><span id="status-emails">Email Campaign</span></div>
         <div class="status-item"><span class="dot off" id="dot-fb"></span><span id="status-fb">Facebook</span></div>
         <div class="status-item"><span class="dot off" id="dot-tasks"></span><span id="status-tasks">Automations</span></div>
         <div style="margin-left:auto;font-size:11px;color:var(--t2);font-family:'Share Tech Mono',monospace" id="global-updated">Loading data...</div>
       </div>
 
-      <!-- BIG KPIs -->
-      <div class="stat-grid mb20">
-        <div class="stat-card c-cyan">
-          <div class="stat-label">📧 Emails Sent</div>
-          <div class="stat-num c-cyan" id="h-sent">--</div>
-          <div class="stat-sub">total leads contacted</div>
+      <!-- TODAY banner -->
+      <div class="card mb20" id="home-today-banner" style="border-color:rgba(91,156,246,.3)">
+        <div class="card-head" style="background:rgba(24,119,242,.06)">
+          <div class="card-title" style="color:#5b9cf6;font-size:13px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#5b9cf6"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/></svg>
+            WHAT HAPPENED ON FACEBOOK TODAY
+          </div>
+          <a href="#" onclick="showPage('facebook');return false" class="ext-link" style="color:#5b9cf6;border-color:rgba(91,156,246,.3)">Full Detail →</a>
         </div>
-        <div class="stat-card c-ok">
-          <div class="stat-label">💬 People Replied</div>
-          <div class="stat-num c-ok" id="h-replied">--</div>
-          <div class="stat-sub">out of all emails sent</div>
-        </div>
-        <div class="stat-card c-fb">
-          <div class="stat-label">👥 FB Groups Active</div>
-          <div class="stat-num c-fb" id="h-groups">--</div>
-          <div class="stat-sub">Vito is a member of</div>
-        </div>
-        <div class="stat-card c-warn">
-          <div class="stat-label">🔥 Interest Signals</div>
-          <div class="stat-num c-warn" id="h-interest">--</div>
-          <div class="stat-sub">people engaged on Facebook</div>
-        </div>
-        <div class="stat-card c-ok">
-          <div class="stat-label">🤖 FB Posts Live</div>
-          <div class="stat-num c-ok" id="h-posts">--</div>
-          <div class="stat-sub">active posts in groups</div>
+        <div style="padding:20px" id="home-today-summary">
+          <div style="color:var(--t3);font-size:13px">Loading today's activity...</div>
         </div>
       </div>
 
-      <!-- Email pipeline mini + FB summary -->
-      <div class="two-col mb16">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--cyan)"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-              Email Pipeline
-            </div>
-            <a href="#" onclick="showPage('emails');return false" class="ext-link">Details →</a>
-          </div>
-          <div style="padding:20px">
-            <div style="display:flex;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
-              <div style="text-align:center">
-                <div style="font-family:'Orbitron',monospace;font-size:28px;font-weight:900;color:var(--cyan)" id="hp-sent">--</div>
-                <div style="font-size:10px;color:var(--t2);letter-spacing:2px;margin-top:4px">SENT</div>
-              </div>
-              <div style="color:var(--t3);font-size:20px;align-self:center">›</div>
-              <div style="text-align:center">
-                <div style="font-family:'Orbitron',monospace;font-size:28px;font-weight:900;color:var(--t1)" id="hp-replied">--</div>
-                <div style="font-size:10px;color:var(--t2);letter-spacing:2px;margin-top:4px">REPLIED</div>
-              </div>
-              <div style="color:var(--t3);font-size:20px;align-self:center">›</div>
-              <div style="text-align:center">
-                <div style="font-family:'Orbitron',monospace;font-size:28px;font-weight:900;color:var(--ok)" id="hp-interested">--</div>
-                <div style="font-size:10px;color:var(--t2);letter-spacing:2px;margin-top:4px">INTERESTED</div>
-              </div>
-              <div style="color:var(--t3);font-size:20px;align-self:center">›</div>
-              <div style="text-align:center">
-                <div style="font-family:'Orbitron',monospace;font-size:28px;font-weight:900;color:var(--ok)" id="hp-won">--</div>
-                <div style="font-size:10px;color:var(--t2);letter-spacing:2px;margin-top:4px">CLOSED</div>
-              </div>
-            </div>
-            <div style="font-size:12px;color:var(--t2)" id="hp-reply-rate">Reply rate: calculating...</div>
-          </div>
+      <!-- BIG KPIs -->
+      <div class="stat-grid mb20">
+        <div class="stat-card c-fb">
+          <div class="stat-label">📝 Posted Today</div>
+          <div class="stat-num c-fb" id="h-posted-today">--</div>
+          <div class="stat-sub" id="h-posted-group">posts in groups</div>
         </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-title">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#5b9cf6"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/></svg>
-              Facebook (Vito Cocchi)
-            </div>
-            <a href="#" onclick="showPage('facebook');return false" class="ext-link">Details →</a>
-          </div>
-          <div class="fb-grid" style="padding:16px;gap:10px">
-            <div class="fb-card">
-              <div class="fb-num" id="hfb-groups">--</div>
-              <div class="fb-label">Groups</div>
-            </div>
-            <div class="fb-card">
-              <div class="fb-num" id="hfb-posts">--</div>
-              <div class="fb-label">Posts Live</div>
-            </div>
-            <div class="fb-card">
-              <div class="fb-num" id="hfb-comments">--</div>
-              <div class="fb-label">Comments</div>
-            </div>
-            <div class="fb-card">
-              <div class="fb-num" id="hfb-signals">--</div>
-              <div class="fb-label">Interest</div>
-            </div>
-          </div>
+        <div class="stat-card c-ok">
+          <div class="stat-label">💬 Comments on Our Posts</div>
+          <div class="stat-num c-ok" id="h-comments">--</div>
+          <div class="stat-sub">people engaging today</div>
+        </div>
+        <div class="stat-card c-cyan">
+          <div class="stat-label">↩️ Times Vito Replied</div>
+          <div class="stat-num c-cyan" id="h-replies">--</div>
+          <div class="stat-sub">keeping conversations warm</div>
+        </div>
+        <div class="stat-card c-warn">
+          <div class="stat-label">🔥 Leads Spotted Today</div>
+          <div class="stat-num c-warn" id="h-leads">--</div>
+          <div class="stat-sub">flagged — waiting for your DM</div>
+        </div>
+        <div class="stat-card c-ok">
+          <div class="stat-label">👥 Groups We're In</div>
+          <div class="stat-num c-ok" id="h-groups">--</div>
+          <div class="stat-sub">trade groups on Facebook</div>
         </div>
       </div>
 
@@ -379,13 +322,13 @@ td.warn{color:var(--warn);font-weight:600}
 
 
     <!-- ═══════════════════════════════════
-         EMAILS / INSTANTLY
+         FACEBOOK
     ════════════════════════════════════ -->
-    <section class="pg" id="page-emails">
+    <section class="pg" id="page-facebook">
       <div class="ph">
         <div>
-          <div class="ph-title">EMAIL OUTREACH</div>
-          <div class="ph-sub">Cold email campaign — where every lead stands right now</div>
+          <div class="ph-title">FACEBOOK</div>
+          <div class="ph-sub">Vito Cocchi — trade group outreach — updated every few hours</div>
         </div>
         <div class="ph-right">
           <div class="ph-clock" id="clock-2">--:--:-- --</div>
@@ -393,151 +336,107 @@ td.warn{color:var(--warn);font-weight:600}
         </div>
       </div>
 
-      <!-- Pipeline funnel -->
-      <div class="card mb16">
-        <div class="card-head">
-          <div class="card-title">Lead Pipeline — Every Lead's Status</div>
-          <div class="card-badge" id="ins-updated">--</div>
-        </div>
-        <div class="pipeline">
-          <div class="pipe-stage">
-            <div class="pipe-num c-cyan" id="pl-sent">--</div>
-            <div class="pipe-label">📧 Sent</div>
-            <div class="pipe-pct">Total emails sent</div>
+      <!-- DID WE POST TODAY? Big status card -->
+      <div class="card mb16" id="fb-post-status-card">
+        <div style="padding:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+          <div style="font-size:56px;line-height:1" id="fb-posted-emoji">⏳</div>
+          <div style="flex:1;min-width:200px">
+            <div style="font-family:'Orbitron',monospace;font-size:18px;font-weight:900;color:var(--t1);margin-bottom:6px" id="fb-posted-headline">Checking today's post...</div>
+            <div style="font-size:14px;color:var(--t2);line-height:1.6" id="fb-posted-detail">Loading...</div>
           </div>
-          <div class="pipe-arrow">›</div>
-          <div class="pipe-stage">
-            <div class="pipe-num" style="color:var(--t1)" id="pl-replied">--</div>
-            <div class="pipe-label">💬 Replied</div>
-            <div class="pipe-pct" id="pl-replied-pct">-- % reply rate</div>
-          </div>
-          <div class="pipe-arrow">›</div>
-          <div class="pipe-stage">
-            <div class="pipe-num c-ok" id="pl-interested">--</div>
-            <div class="pipe-label">🔥 Interested</div>
-            <div class="pipe-pct">Want to know more</div>
-          </div>
-          <div class="pipe-arrow">›</div>
-          <div class="pipe-stage">
-            <div class="pipe-num c-ok" id="pl-meeting">--</div>
-            <div class="pipe-label">📅 Meeting Booked</div>
-            <div class="pipe-pct">Calls scheduled</div>
-          </div>
-          <div class="pipe-arrow">›</div>
-          <div class="pipe-stage">
-            <div class="pipe-num c-ok" id="pl-won">--</div>
-            <div class="pipe-label">💰 Closed</div>
-            <div class="pipe-pct">Paying clients</div>
+          <div style="text-align:right;flex-shrink:0">
+            <div style="font-size:11px;color:var(--t2);letter-spacing:2px;margin-bottom:4px">DATA AS OF</div>
+            <div style="font-family:'Share Tech Mono',monospace;font-size:13px;color:var(--cyan)" id="fb-updated">--</div>
           </div>
         </div>
       </div>
 
-      <!-- Daily + Replies -->
+      <!-- TODAY'S 4 big numbers -->
+      <div style="margin-bottom:6px;font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase">TODAY</div>
+      <div class="stat-grid mb20">
+        <div class="stat-card c-fb">
+          <div class="stat-label">📝 Posts Made</div>
+          <div class="stat-num c-fb" id="fb-today-posts">--</div>
+          <div class="stat-sub">questions posted to groups</div>
+        </div>
+        <div class="stat-card c-ok">
+          <div class="stat-label">💬 Comments Received</div>
+          <div class="stat-num c-ok" id="fb-today-comments">--</div>
+          <div class="stat-sub">people replying to our posts</div>
+        </div>
+        <div class="stat-card c-cyan">
+          <div class="stat-label">↩️ Times Vito Replied</div>
+          <div class="stat-num c-cyan" id="fb-today-replies">--</div>
+          <div class="stat-sub">keeping conversations alive</div>
+        </div>
+        <div class="stat-card c-warn">
+          <div class="stat-label">🔥 Leads Spotted</div>
+          <div class="stat-num c-warn" id="fb-today-leads">--</div>
+          <div class="stat-sub">flagged — need your DM</div>
+        </div>
+      </div>
+
+      <!-- LEADS WAITING FOR VITO -->
+      <div class="card mb16">
+        <div class="card-head">
+          <div class="card-title"><span class="dot warn" style="animation:pulse .8s infinite"></span> Leads Waiting for You to DM</div>
+          <div class="card-badge" id="fb-leads-count">--</div>
+        </div>
+        <div id="fb-leads-list">
+          <div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">Loading leads...</div>
+        </div>
+      </div>
+
+      <!-- RECENT POSTS -->
+      <div class="card mb16">
+        <div class="card-head">
+          <div class="card-title">📋 Recent Posts — What We Said and What Happened</div>
+        </div>
+        <div id="fb-posts-list">
+          <div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">Loading posts...</div>
+        </div>
+      </div>
+
+      <!-- ALL-TIME TOTALS + Daily table -->
       <div class="two-col">
         <div class="card">
           <div class="card-head">
-            <div class="card-title">Daily Email Activity</div>
+            <div class="card-title">All-Time Totals</div>
+          </div>
+          <div style="padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div style="background:var(--card2);border-radius:8px;padding:16px;text-align:center">
+              <div style="font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:#5b9cf6" id="fb-total-groups">--</div>
+              <div style="font-size:11px;color:var(--t2);margin-top:6px;letter-spacing:1px">GROUPS JOINED</div>
+            </div>
+            <div style="background:var(--card2);border-radius:8px;padding:16px;text-align:center">
+              <div style="font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:#5b9cf6" id="fb-total-posts">--</div>
+              <div style="font-size:11px;color:var(--t2);margin-top:6px;letter-spacing:1px">POSTS MADE</div>
+            </div>
+            <div style="background:var(--card2);border-radius:8px;padding:16px;text-align:center">
+              <div style="font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:var(--ok)" id="fb-total-comments">--</div>
+              <div style="font-size:11px;color:var(--t2);margin-top:6px;letter-spacing:1px">TOTAL COMMENTS</div>
+            </div>
+            <div style="background:var(--card2);border-radius:8px;padding:16px;text-align:center">
+              <div style="font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:var(--warn)" id="fb-total-leads">--</div>
+              <div style="font-size:11px;color:var(--t2);margin-top:6px;letter-spacing:1px">TOTAL LEADS</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div class="card-title">Last 7 Days — Day by Day</div>
           </div>
           <div class="tbl-wrap">
             <table>
               <thead>
-                <tr><th>Date</th><th>Sent</th><th>Replies</th><th>Bounced</th></tr>
+                <tr><th>Date</th><th>Posts</th><th>Comments</th><th>Replies</th><th>Leads</th></tr>
               </thead>
-              <tbody id="ins-tbody">
-                <tr><td colspan="4" style="text-align:center;padding:24px;color:var(--t3);font-size:12px">Loading...</td></tr>
+              <tbody id="fb-tbody">
+                <tr><td colspan="5" style="text-align:center;padding:24px;color:var(--t3);font-size:12px">Loading...</td></tr>
               </tbody>
             </table>
           </div>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-title">Recent Replies from Leads</div>
-            <a href="https://app.instantly.ai/app/unibox" target="_blank" class="ext-link">Open Inbox ↗</a>
-          </div>
-          <div id="ins-replies-list">
-            <div style="padding:24px;text-align:center;color:var(--t3);font-size:12px">Loading...</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════
-         FACEBOOK
-    ════════════════════════════════════ -->
-    <section class="pg" id="page-facebook">
-      <div class="ph">
-        <div>
-          <div class="ph-title">FACEBOOK</div>
-          <div class="ph-sub">Vito Cocchi Facebook account — trade group outreach</div>
-        </div>
-        <div class="ph-right">
-          <div class="ph-clock" id="clock-3">--:--:-- --</div>
-          <div class="ph-date" id="date-3">-- ET</div>
-        </div>
-      </div>
-
-      <!-- Big FB numbers -->
-      <div class="fb-grid mb20">
-        <div class="fb-card">
-          <div class="fb-num" id="fb-groups">--</div>
-          <div class="fb-label">👥 Groups Joined</div>
-        </div>
-        <div class="fb-card">
-          <div class="fb-num" id="fb-posts">--</div>
-          <div class="fb-label">📝 Posts Live</div>
-        </div>
-        <div class="fb-card">
-          <div class="fb-num" id="fb-comments">--</div>
-          <div class="fb-label">💬 Comments</div>
-        </div>
-        <div class="fb-card">
-          <div class="fb-num" id="fb-dms">--</div>
-          <div class="fb-label">✉️ DMs Received</div>
-        </div>
-        <div class="fb-card" style="border-top:3px solid var(--warn)">
-          <div class="fb-num" style="color:var(--warn)" id="fb-signals">--</div>
-          <div class="fb-label">🔥 Interest Signals</div>
-        </div>
-        <div class="fb-card">
-          <div class="fb-num" id="fb-positive">--</div>
-          <div class="fb-label">👍 Positive Replies</div>
-        </div>
-      </div>
-
-      <!-- What these numbers mean -->
-      <div class="card mb16">
-        <div class="card-head">
-          <div class="card-title">What This Means in Plain English</div>
-          <div class="card-badge" id="fb-updated">--</div>
-        </div>
-        <div style="padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:16px" id="fb-summary">
-          <div style="background:var(--card2);border-radius:10px;padding:18px">
-            <div style="font-size:12px;font-weight:700;color:var(--t2);letter-spacing:2px;margin-bottom:8px">REACH</div>
-            <div style="font-size:14px;color:var(--t1);line-height:1.7" id="fb-reach-text">Vito is active in <strong id="fbs-groups">--</strong> Facebook groups and has <strong id="fbs-posts">--</strong> posts currently live where contractors can see them.</div>
-          </div>
-          <div style="background:var(--card2);border-radius:10px;padding:18px">
-            <div style="font-size:12px;font-weight:700;color:var(--t2);letter-spacing:2px;margin-bottom:8px">ENGAGEMENT</div>
-            <div style="font-size:14px;color:var(--t1);line-height:1.7" id="fb-engage-text">Posts have received <strong id="fbs-comments">--</strong> comments, <strong id="fbs-signals">--</strong> people have shown interest, and <strong id="fbs-dms">--</strong> people sent a DM.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Daily FB activity -->
-      <div class="card">
-        <div class="card-head">
-          <div class="card-title">Daily Facebook Activity</div>
-        </div>
-        <div class="tbl-wrap">
-          <table>
-            <thead>
-              <tr><th>Date</th><th>Posts Made</th><th>Comments</th><th>DMs</th><th>Interest Signals</th></tr>
-            </thead>
-            <tbody id="fb-tbody">
-              <tr><td colspan="5" style="text-align:center;padding:24px;color:var(--t3);font-size:12px">Loading...</td></tr>
-            </tbody>
-          </table>
         </div>
       </div>
     </section>
@@ -739,8 +638,8 @@ function tick(){
   const p = Object.fromEntries(parts.map(x=>[x.type,x.value]));
   const t = p.hour+':'+p.minute+':'+p.second+' '+(p.dayperiod||p.dayPeriod||'');
   const d = now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'});
-  ['clock-1','clock-2','clock-3','clock-4','clock-5'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t;});
-  ['date-1','date-2','date-3','date-4','date-5'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=d+' ET';});
+  ['clock-1','clock-2','clock-3','clock-4'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t;});
+  ['date-1','date-2','date-3','date-4'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=d+' ET';});
 }
 
 // ══════════════════════════════════
@@ -752,7 +651,6 @@ async function loadAllData(){
   const ts = [];
 
   const files = [
-    ['instantly-data.json', populateInstantly],
     ['social-data.json',    populateFacebook],
     ['agents-log.json',     populateAgents],
     ['task-status.json',    populateTasks],
@@ -787,127 +685,150 @@ async function loadAllData(){
 }
 
 // ══════════════════════════════════
-// INSTANTLY / EMAIL
-// ══════════════════════════════════
-function populateInstantly(d){
-  const ov = d.overview || {};
-  const pl = d.pipeline || {};
-
-  const sent      = pl.sent || ov.emails_sent_count || 0;
-  const replied   = pl.replied || ov.reply_count_unique || 0;
-  const interested= pl.interested || ov.total_interested || 0;
-  const meeting   = pl.meeting_booked || ov.total_meeting_booked || 0;
-  const won       = pl.won || ov.total_closed || 0;
-  const replyPct  = sent > 0 ? ((replied/sent)*100).toFixed(1) : '0.0';
-
-  // Home page
-  set('h-sent', sent.toLocaleString());
-  set('h-replied', replied.toLocaleString());
-  set('hp-sent', sent.toLocaleString());
-  set('hp-replied', replied.toLocaleString());
-  set('hp-interested', interested.toLocaleString());
-  set('hp-won', won.toLocaleString());
-  set('hp-reply-rate', 'Reply rate: '+replyPct+'%  •  '+(sent-replied).toLocaleString()+' not yet replied');
-
-  // Update status bar
-  const dotEl = document.getElementById('dot-emails');
-  if(dotEl) dotEl.className = 'dot '+(sent > 0 ? 'ok' : 'off');
-  set('status-emails', 'Email: '+sent.toLocaleString()+' sent, '+replied+' replied');
-
-  // Email page
-  set('pl-sent', sent.toLocaleString());
-  set('pl-replied', replied.toLocaleString());
-  set('pl-interested', interested.toLocaleString());
-  set('pl-meeting', meeting.toLocaleString());
-  set('pl-won', won.toLocaleString());
-  set('pl-replied-pct', replyPct+'% reply rate');
-
-  if(d.lastUpdated){
-    set('ins-updated', 'Data from '+fmtDate(d.lastUpdated));
-  }
-
-  // Daily table
-  const tbody = document.getElementById('ins-tbody');
-  if(tbody && d.daily && d.daily.length > 0){
-    tbody.innerHTML = [...d.daily].reverse().slice(0,14).map(row=>`<tr>
-      <td style="color:var(--t2)">${fmtDate(row.date)}</td>
-      <td class="hi">${(row.sent||0).toLocaleString()}</td>
-      <td class="${(row.replies||0)>0?'ok':''}">${row.replies||0}</td>
-      <td class="${(row.bounced||0)>0?'warn':''}">${row.bounced||0}</td>
-    </tr>`).join('');
-  }
-
-  // Recent replies
-  const rl = document.getElementById('ins-replies-list');
-  if(rl){
-    if(d.recent_replies && d.recent_replies.length > 0){
-      const labelMap = {opted_out:'OPTED OUT',auto_reply:'AUTO-REPLY',warm:'WARM LEAD',email_update:'EMAIL UPDATE',other:'OTHER'};
-      rl.innerHTML = d.recent_replies.map(r=>`<div class="reply-item">
-        <div class="rbadge rb-${r.status}">${labelMap[r.status]||r.label||r.status}</div>
-        <div class="reply-info">
-          <div class="reply-email">${r.email}</div>
-          <div class="reply-preview">${r.preview||''}</div>
-        </div>
-        <div class="reply-date">${fmtDate(r.date)}</div>
-      </div>`).join('');
-    } else {
-      rl.innerHTML = '<div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">No replies yet</div>';
-    }
-  }
-}
-
-// ══════════════════════════════════
 // FACEBOOK
 // ══════════════════════════════════
 function populateFacebook(d){
-  const fb = d.facebook || d;
-  const groups   = fb.groups || 0;
-  const posts    = fb.postsLive || 0;
-  const comments = fb.comments || 0;
-  const dms      = fb.dmsReceived || 0;
-  const signals  = fb.interestSignals || 0;
-  const positive = fb.positiveComments || 0;
+  const today   = d.today   || {};
+  const totals  = d.totals  || {};
+  const posts   = d.recentPosts || [];
+  const leads   = d.leads   || [];
+  const daily   = d.daily   || [];
 
-  // Home
-  set('h-groups', groups.toLocaleString());
-  set('h-interest', signals.toLocaleString());
-  set('h-posts', posts.toLocaleString());
-  set('hfb-groups', groups.toLocaleString());
-  set('hfb-posts', posts.toLocaleString());
-  set('hfb-comments', comments.toLocaleString());
-  set('hfb-signals', signals.toLocaleString());
+  // ── TODAY numbers ──
+  const tPosts    = today.postsPosted    || 0;
+  const tComments = today.commentsReceived || 0;
+  const tReplies  = today.repliesMade    || 0;
+  const tLeads    = today.leadsFlagged   || 0;
+  const posted    = today.posted || tPosts > 0;
 
-  // Status bar
+  // ── HOME page ──
+  set('h-posted-today', tPosts.toString());
+  set('h-posted-group', posted ? (today.groupPostedIn || 'groups') : 'no post yet today');
+  set('h-comments',  tComments.toString());
+  set('h-replies',   tReplies.toString());
+  set('h-leads',     tLeads.toString());
+  set('h-groups',    (totals.groupsJoined || 0).toString());
+
+  // Home status bar
   const dotEl = document.getElementById('dot-fb');
-  if(dotEl) dotEl.className = 'dot '+(groups > 0 ? 'ok' : 'off');
-  set('status-fb', 'Facebook: '+groups+' groups, '+signals+' interest signals');
+  if(dotEl) dotEl.className = 'dot '+(posted ? 'ok' : 'warn');
+  set('status-fb', posted
+    ? 'Facebook: Posted ✓ — '+tComments+' comments, '+tLeads+' leads'
+    : 'Facebook: No post today yet');
 
-  // FB page big numbers
-  set('fb-groups', groups.toLocaleString());
-  set('fb-posts', posts.toLocaleString());
-  set('fb-comments', comments.toLocaleString());
-  set('fb-dms', dms.toLocaleString());
-  set('fb-signals', signals.toLocaleString());
-  set('fb-positive', positive.toLocaleString());
+  // ── HOME TODAY banner ──
+  const bannerEl = document.getElementById('home-today-summary');
+  if(bannerEl){
+    if(posted){
+      bannerEl.innerHTML = `
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+          <div style="background:rgba(24,119,242,.08);border-radius:10px;padding:16px;border:1px solid rgba(91,156,246,.2)">
+            <div style="font-size:11px;color:var(--t2);letter-spacing:2px;margin-bottom:6px">POSTED IN</div>
+            <div style="font-size:15px;font-weight:700;color:var(--t1)">${today.groupPostedIn||'a group'}</div>
+            ${today.postPreview ? `<div style="font-size:12px;color:var(--t2);margin-top:6px;font-style:italic">"${today.postPreview.substring(0,80)}${today.postPreview.length>80?'…':''}"</div>` : ''}
+          </div>
+          <div style="background:rgba(0,230,118,.06);border-radius:10px;padding:16px;border:1px solid rgba(0,230,118,.15);text-align:center">
+            <div style="font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:var(--ok)">${tComments}</div>
+            <div style="font-size:12px;color:var(--t2);margin-top:4px;letter-spacing:1px">COMMENTS BACK</div>
+          </div>
+          <div style="background:rgba(0,212,255,.06);border-radius:10px;padding:16px;border:1px solid rgba(0,212,255,.15);text-align:center">
+            <div style="font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:var(--cyan)">${tReplies}</div>
+            <div style="font-size:12px;color:var(--t2);margin-top:4px;letter-spacing:1px">REPLIES MADE</div>
+          </div>
+          <div style="background:rgba(255,179,0,.06);border-radius:10px;padding:16px;border:1px solid rgba(255,179,0,.2);text-align:center">
+            <div style="font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:var(--warn)">${tLeads}</div>
+            <div style="font-size:12px;color:var(--t2);margin-top:4px;letter-spacing:1px">LEADS FLAGGED</div>
+          </div>
+        </div>`;
+    } else {
+      bannerEl.innerHTML = `<div style="font-size:15px;color:var(--t2)">No post yet today. The automation runs at <strong style="color:var(--cyan)">11am ET</strong> — check back after that.</div>`;
+    }
+  }
 
-  // Summary text
-  set('fbs-groups', groups.toLocaleString());
-  set('fbs-posts', posts.toLocaleString());
-  set('fbs-comments', comments.toLocaleString());
-  set('fbs-signals', signals.toLocaleString());
-  set('fbs-dms', dms.toLocaleString());
+  // ── FB PAGE ──
+  // Status card
+  const statusCard = document.getElementById('fb-post-status-card');
+  if(statusCard){
+    statusCard.style.borderColor = posted ? 'rgba(0,230,118,.3)' : 'rgba(255,179,0,.3)';
+    statusCard.style.background  = posted ? 'rgba(0,230,118,.03)' : 'transparent';
+  }
+  set('fb-posted-emoji',    posted ? '✅' : '⏳');
+  set('fb-posted-headline', posted ? 'We posted today! — '+fmtDate(today.date) : 'No post yet today');
+  set('fb-posted-detail',   posted
+    ? 'Posted in '+( today.groupPostedIn||'a group')+'. '+(today.postPreview ? '"'+today.postPreview.substring(0,100)+(today.postPreview.length>100?'…':'') +'"' : '')
+    : 'The daily post runs at 11am ET. If it\'s past 11am and this is still showing, check the TASKS page for any errors.');
+  if(d.lastUpdated) set('fb-updated', fmtDateTime(d.lastUpdated));
 
-  if(fb.lastUpdated) set('fb-updated', 'Data from '+fmtDate(fb.lastUpdated));
+  // Today stats
+  set('fb-today-posts',    tPosts.toString());
+  set('fb-today-comments', tComments.toString());
+  set('fb-today-replies',  tReplies.toString());
+  set('fb-today-leads',    tLeads.toString());
 
-  // Daily FB table
+  // All-time totals
+  set('fb-total-groups',   (totals.groupsJoined   || 0).toString());
+  set('fb-total-posts',    (totals.postsAllTime   || posts.length || 0).toString());
+  set('fb-total-comments', (totals.commentsAllTime|| 0).toString());
+  set('fb-total-leads',    (totals.leadsAllTime   || leads.length || 0).toString());
+
+  // Leads waiting list
+  const leadsListEl = document.getElementById('fb-leads-list');
+  const leadsCountEl = document.getElementById('fb-leads-count');
+  const awaitingLeads = leads.filter(l => (l.status||'').includes('Awaiting') || (l.status||'').includes('awaiting') || !l.dmSent);
+  if(leadsCountEl) leadsCountEl.textContent = awaitingLeads.length > 0 ? awaitingLeads.length+' need your attention' : 'None right now';
+  if(leadsListEl){
+    if(awaitingLeads.length === 0){
+      leadsListEl.innerHTML = '<div style="padding:24px;text-align:center;color:var(--ok);font-size:14px;font-weight:600">✓ All clear — no leads waiting right now</div>';
+    } else {
+      leadsListEl.innerHTML = awaitingLeads.map(l=>`
+        <div class="reply-item">
+          <div style="font-size:28px;flex-shrink:0">🔥</div>
+          <div class="reply-info">
+            <div style="font-size:14px;font-weight:700;color:var(--t1)">${l.name||'Unknown'} <span style="font-size:11px;color:var(--t2);font-weight:400">— ${l.group||'group'}</span></div>
+            <div style="font-size:13px;color:var(--t2);margin-top:3px">${l.painSignal||l.comment||'Pain signal detected'}</div>
+            ${l.dmDraft ? `<div style="font-size:12px;color:var(--cyan);margin-top:6px;font-style:italic;border-left:2px solid rgba(0,212,255,.3);padding-left:8px">DM Draft: "${l.dmDraft.substring(0,120)}${l.dmDraft.length>120?'…':''}"</div>` : ''}
+          </div>
+          <div class="reply-date">${fmtDate(l.date||l.flaggedAt)}</div>
+        </div>`).join('');
+    }
+  }
+
+  // Recent posts list
+  const postsListEl = document.getElementById('fb-posts-list');
+  if(postsListEl){
+    if(posts.length === 0){
+      postsListEl.innerHTML = '<div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">No posts yet — first one goes out at 11am ET today</div>';
+    } else {
+      postsListEl.innerHTML = [...posts].reverse().slice(0,10).map(p=>{
+        const statusColor = p.commentsReceived > 0 ? 'var(--ok)' : 'var(--t3)';
+        return `<div style="padding:16px 20px;border-bottom:1px solid rgba(0,212,255,.05);display:flex;align-items:flex-start;gap:16px">
+          <div style="flex-shrink:0;text-align:center;min-width:50px">
+            <div style="font-size:11px;color:var(--t2);letter-spacing:1px">${fmtDate(p.date)}</div>
+            <div style="font-size:10px;color:var(--t3);margin-top:2px">${p.status||'live'}</div>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:12px;font-weight:700;color:#5b9cf6;letter-spacing:1px;margin-bottom:4px">${p.group||'Facebook Group'}</div>
+            <div style="font-size:14px;color:var(--t1);line-height:1.5">"${(p.preview||p.text||'').substring(0,140)}${(p.preview||p.text||'').length>140?'…':''}"</div>
+          </div>
+          <div style="flex-shrink:0;text-align:right;display:flex;flex-direction:column;gap:6px;min-width:80px">
+            <div style="font-size:12px;color:${statusColor};font-weight:600">${p.commentsReceived||0} comments</div>
+            <div style="font-size:11px;color:var(--t2)">${p.repliesMade||0} replied</div>
+            ${(p.leadsFlagged||0)>0 ? `<div style="font-size:11px;color:var(--warn);font-weight:600">${p.leadsFlagged} 🔥 leads</div>` : ''}
+          </div>
+        </div>`;
+      }).join('');
+    }
+  }
+
+  // Daily table
   const tbody = document.getElementById('fb-tbody');
-  if(tbody && fb.daily && fb.daily.length > 0){
-    tbody.innerHTML = [...fb.daily].reverse().slice(0,14).map(row=>`<tr>
-      <td style="color:var(--t2)">${fmtDate(row.date||row.timestamp)}</td>
-      <td class="${(row.posts||row.postsToday||0)>0?'hi':''}">${row.posts||row.postsToday||0}</td>
+  if(tbody && daily.length > 0){
+    tbody.innerHTML = [...daily].reverse().slice(0,7).map(row=>`<tr>
+      <td style="color:var(--t2)">${fmtDate(row.date)}</td>
+      <td class="${(row.posts||0)>0?'hi':''}">${row.posts||0}</td>
       <td class="${(row.comments||0)>0?'ok':''}">${row.comments||0}</td>
-      <td class="${(row.dms||0)>0?'ok':''}">${row.dms||0}</td>
-      <td class="${(row.interestSignals||row.signals||0)>0?'warn':''}">${row.interestSignals||row.signals||0}</td>
+      <td class="${(row.replies||0)>0?'ok':''}">${row.replies||0}</td>
+      <td class="${(row.leads||0)>0?'warn':''}">${row.leads||0}</td>
     </tr>`).join('');
   } else if(tbody){
     tbody.innerHTML = '<tr><td colspan="5" style="padding:20px;text-align:center;color:var(--t3);font-size:12px">No daily data yet</td></tr>';
