@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-05-07 11:06 ET",
+  "lastUpdated": "2026-05-07 11:11 ET",
   "today": {
     "date": "2026-05-07",
-    "posted": false,
-    "postsPosted": 0,
-    "groupPostedIn": "",
-    "postPreview": "",
+    "posted": true,
+    "postsPosted": 1,
+    "groupPostedIn": "That Pressure Washing Group",
+    "postPreview": "what do you do in slow season. most guys in here are sitting on a list of past customers theyve never gone back to",
     "commentsReceived": 0,
     "repliesMade": 0,
     "leadsFlagged": 0,
@@ -13,7 +13,7 @@
   },
   "totals": {
     "groupsJoined": 5,
-    "postsAllTime": 2,
+    "postsAllTime": 3,
     "commentsAllTime": 0,
     "repliesAllTime": 0,
     "leadsAllTime": 0,
@@ -22,18 +22,27 @@
   },
   "recentPosts": [
     {
-      "date": "2026-05-06",
+      "date": "2026-05-05",
       "group": "That Pressure Washing Group",
-      "preview": "how many jobs have you lost because you forgot to follow up on a quote. happened to me. what did you put in plac",
+      "preview": "how many calls are you missing a week while youre out on jobs. be honest. most guys are losing 2 or 3 leads a day",
       "commentsReceived": 0,
       "repliesMade": 0,
       "leadsFlagged": 0,
       "status": "live"
     },
     {
-      "date": "2026-05-05",
+      "date": "2026-05-06",
       "group": "That Pressure Washing Group",
-      "preview": "how many calls are you missing a week while youre out on jobs. be honest. most guys are losing 2 or 3 leads a d",
+      "preview": "how many jobs have you lost because you forgot to follow up on a quote. happened to me. what did you put in place to stop it",
+      "commentsReceived": 0,
+      "repliesMade": 0,
+      "leadsFlagged": 0,
+      "status": "live"
+    },
+    {
+      "date": "2026-05-07",
+      "group": "That Pressure Washing Group",
+      "preview": "what do you do in slow season. most guys in here are sitting on a list of past customers theyve never gone back to",
       "commentsReceived": 0,
       "repliesMade": 0,
       "leadsFlagged": 0,
@@ -86,7 +95,7 @@
     },
     {
       "date": "2026-05-07",
-      "posts": 0,
+      "posts": 1,
       "comments": 0,
       "replies": 0,
       "leads": 0
