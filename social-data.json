@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-05-06 19:05 ET",
+  "lastUpdated": "2026-05-07 07:06 ET",
   "today": {
-    "date": "2026-05-06",
-    "posted": true,
-    "postsPosted": 1,
-    "groupPostedIn": "That Pressure Washing Group",
-    "postPreview": "how many jobs have you lost because you forgot to follow up on a quote. happened to me. what did you put in place to sto",
+    "date": "2026-05-07",
+    "posted": false,
+    "postsPosted": 0,
+    "groupPostedIn": "",
+    "postPreview": "",
     "commentsReceived": 0,
     "repliesMade": 0,
     "leadsFlagged": 0,
@@ -24,7 +24,7 @@
     {
       "date": "2026-05-05",
       "group": "That Pressure Washing Group",
-      "preview": "how many calls are you missing a week while youre out on jobs. be honest. most guys are losing 2 or 3 leads a day and don",
+      "preview": "how many calls are you missing a week while youre out on jobs. be honest. most guys are losing 2 or 3 leads a day and dont even know it",
       "commentsReceived": 0,
       "repliesMade": 0,
       "leadsFlagged": 0,
@@ -33,7 +33,7 @@
     {
       "date": "2026-05-06",
       "group": "That Pressure Washing Group",
-      "preview": "how many jobs have you lost because you forgot to follow up on a quote. happened to me. what did you put in place to sto",
+      "preview": "how many jobs have you lost because you forgot to follow up on a quote. happened to me. what did you put in place to stop it",
       "commentsReceived": 0,
       "repliesMade": 0,
       "leadsFlagged": 0,
@@ -42,13 +42,6 @@
   ],
   "leads": [],
   "daily": [
-    {
-      "date": "2026-04-30",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
     {
       "date": "2026-05-01",
       "posts": 0,
@@ -87,6 +80,13 @@
     {
       "date": "2026-05-06",
       "posts": 1,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-07",
+      "posts": 0,
       "comments": 0,
       "replies": 0,
       "leads": 0
