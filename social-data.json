@@ -1,19 +1,20 @@
 {
-  "lastUpdated": "2026-05-19 07:05 ET",
+  "lastUpdated": "2026-05-19 11:04 ET",
   "today": {
     "date": "2026-05-19",
     "posted": false,
     "postsPosted": 0,
-    "groupPostedIn": "",
-    "postPreview": "",
+    "groupPostedIn": "Pressure Washing Q&A | Power Wash, Soft Wash, and Rig Builds",
+    "postPreview": "what is your close rate on quotes right now and how many follow ups are you sending before you move on",
     "commentsReceived": 0,
     "repliesMade": 0,
     "leadsFlagged": 0,
-    "dmsDrafted": 0
+    "dmsDrafted": 0,
+    "blockedReason": "Chrome extension missing facebook.com site access \u2014 fix: chrome://extensions \u2192 Claude in Chrome \u2192 Details \u2192 Site access \u2192 On all sites"
   },
   "totals": {
     "groupsJoined": 5,
-    "postsAllTime": 3,
+    "postsAllTime": 0,
     "commentsAllTime": 0,
     "repliesAllTime": 0,
     "leadsAllTime": 0,
