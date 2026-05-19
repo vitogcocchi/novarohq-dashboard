@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-05-18 19:06 ET",
+  "lastUpdated": "2026-05-19 07:05 ET",
   "today": {
-    "date": "2026-05-18",
+    "date": "2026-05-19",
     "posted": false,
     "postsPosted": 0,
     "groupPostedIn": "",
@@ -23,13 +23,6 @@
   "recentPosts": [],
   "leads": [],
   "daily": [
-    {
-      "date": "2026-05-12",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
     {
       "date": "2026-05-13",
       "posts": 0,
@@ -67,6 +60,13 @@
     },
     {
       "date": "2026-05-18",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-19",
       "posts": 0,
       "comments": 0,
       "replies": 0,
