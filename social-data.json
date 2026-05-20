@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-05-19 19:06 ET",
+  "lastUpdated": "2026-05-20 07:06 ET",
   "today": {
-    "date": "2026-05-19",
+    "date": "2026-05-20",
     "posted": false,
     "postsPosted": 0,
-    "groupPostedIn": "Pressure Washing Q&A | Power Wash, Soft Wash, and Rig Builds",
-    "postPreview": "what is your close rate on quotes right now and how many follow ups are you sending before you move on",
+    "groupPostedIn": "Pressure Washing, Soft Washing, & Window Cleaning",
+    "postPreview": "",
     "commentsReceived": 0,
     "repliesMade": 0,
     "leadsFlagged": 0,
@@ -24,13 +24,6 @@
   "recentPosts": [],
   "leads": [],
   "daily": [
-    {
-      "date": "2026-05-13",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
     {
       "date": "2026-05-14",
       "posts": 0,
@@ -68,6 +61,13 @@
     },
     {
       "date": "2026-05-19",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-20",
       "posts": 0,
       "comments": 0,
       "replies": 0,
