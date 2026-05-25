@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-25 15:06 ET",
+  "lastUpdated": "2026-05-25 19:02 ET",
   "today": {
     "date": "2026-05-25",
     "posted": false,
@@ -10,11 +10,11 @@
     "repliesMade": 0,
     "leadsFlagged": 0,
     "dmsDrafted": 0,
-    "blockerStatus": "Post 1 (That Pressure Washing Group) blocked \u2014 Chrome extension permission denied for facebook.com. Fix: Chrome \u2192 chrome://extensions \u2192 Claude in Chrome \u2192 Site access \u2192 On all sites."
+    "blockerStatus": "Post 1 (That Pressure Washing Group) not yet posted \u2014 Chrome access restored ~5:12pm but post still pending. Update Notion status to \u2705 Posted once published."
   },
   "totals": {
     "groupsJoined": 5,
-    "postsAllTime": 0,
+    "postsAllTime": 3,
     "commentsAllTime": 0,
     "repliesAllTime": 0,
     "leadsAllTime": 0,
