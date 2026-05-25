@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-05-24 19:06 ET",
+  "lastUpdated": "2026-05-25 07:06 ET",
   "today": {
-    "date": "2026-05-24",
+    "date": "2026-05-25",
     "posted": false,
     "postsPosted": 0,
     "groupPostedIn": "",
@@ -10,7 +10,7 @@
     "repliesMade": 0,
     "leadsFlagged": 0,
     "dmsDrafted": 0,
-    "blockerStatus": "Chrome extension permission denied on facebook.com \u2014 46th+ attempt (day 8). No posts have gone live this week (all 7 remain \u2705 Ready or \u23f3 Pending). Fix: chrome://extensions \u2192 Claude in Chrome \u2192 Site access \u2192 On all sites."
+    "blockerStatus": "No posts scheduled for today (May 25). New weekly schedule needed. Chrome extension permission for facebook.com still unresolved \u2014 fix: chrome://extensions \u2192 Claude in Chrome \u2192 Site access \u2192 On all sites."
   },
   "totals": {
     "groupsJoined": 5,
@@ -24,13 +24,6 @@
   "recentPosts": [],
   "leads": [],
   "daily": [
-    {
-      "date": "2026-05-18",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
     {
       "date": "2026-05-19",
       "posts": 0,
@@ -68,6 +61,13 @@
     },
     {
       "date": "2026-05-24",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-25",
       "posts": 0,
       "comments": 0,
       "replies": 0,
