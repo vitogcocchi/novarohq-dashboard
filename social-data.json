@@ -9,7 +9,8 @@
     "commentsReceived": 0,
     "repliesMade": 0,
     "leadsFlagged": 0,
-    "dmsDrafted": 0
+    "dmsDrafted": 0,
+    "blockerStatus": "Post 1 (That Pressure Washing Group) blocked \u2014 Chrome extension permission denied for facebook.com. Fix: Chrome \u2192 chrome://extensions \u2192 Claude in Chrome \u2192 Site access \u2192 On all sites."
   },
   "totals": {
     "groupsJoined": 5,
