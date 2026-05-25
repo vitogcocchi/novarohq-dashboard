@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-25 07:06 ET",
+  "lastUpdated": "2026-05-25 11:06 ET",
   "today": {
     "date": "2026-05-25",
     "posted": false,
@@ -9,8 +9,7 @@
     "commentsReceived": 0,
     "repliesMade": 0,
     "leadsFlagged": 0,
-    "dmsDrafted": 0,
-    "blockerStatus": "No posts scheduled for today (May 25). New weekly schedule needed. Chrome extension permission for facebook.com still unresolved \u2014 fix: chrome://extensions \u2192 Claude in Chrome \u2192 Site access \u2192 On all sites."
+    "dmsDrafted": 0
   },
   "totals": {
     "groupsJoined": 5,
