@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-05-26 19:06 ET",
+  "lastUpdated": "2026-05-27 07:06 ET",
   "today": {
-    "date": "2026-05-26",
+    "date": "2026-05-27",
     "posted": false,
     "postsPosted": 0,
     "groupPostedIn": "",
@@ -10,7 +10,7 @@
     "repliesMade": 0,
     "leadsFlagged": 0,
     "dmsDrafted": 0,
-    "scheduledPost": "Post 5 in Pressure Washing Q&A | Power Wash, Soft Wash, and Rig Builds \u2014 status: Ready (not yet posted)"
+    "scheduledPost": "Post 9 in Pressure Washing, Soft Washing, & Window Cleaning \u2014 status: Ready (not yet posted)"
   },
   "totals": {
     "groupsJoined": 5,
@@ -53,13 +53,6 @@
   "leads": [],
   "daily": [
     {
-      "date": "2026-05-20",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
-    {
       "date": "2026-05-21",
       "posts": 0,
       "comments": 0,
@@ -96,6 +89,13 @@
     },
     {
       "date": "2026-05-26",
+      "posts": 0,
+      "comments": 0,
+      "replies": 0,
+      "leads": 0
+    },
+    {
+      "date": "2026-05-27",
       "posts": 0,
       "comments": 0,
       "replies": 0,
