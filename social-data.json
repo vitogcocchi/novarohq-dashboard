@@ -1,16 +1,15 @@
 {
-  "lastUpdated": "2026-05-28 07:06 ET",
+  "lastUpdated": "2026-05-28 11:04 ET",
   "today": {
     "date": "2026-05-28",
     "posted": false,
     "postsPosted": 0,
     "groupPostedIn": "Pressure Washing Business Owners",
-    "postPreview": "do you ever go back to old customers to get more work. like actually have a process for it or only if they reach out fir",
+    "postPreview": "do you ever go back to old customers to get more work. like actually have a process for it or only if they reach out first",
     "commentsReceived": 0,
     "repliesMade": 0,
     "leadsFlagged": 0,
-    "dmsDrafted": 0,
-    "scheduledPost": "Post 12 in Pressure Washing Business Owners \u2014 status: Ready (not yet posted)"
+    "dmsDrafted": 0
   },
   "totals": {
     "groupsJoined": 5,
@@ -21,7 +20,35 @@
     "interestSignals": 0,
     "leadsAwaitingVito": 0
   },
-  "recentPosts": [],
+  "recentPosts": [
+    {
+      "date": "2026-05-07",
+      "group": "That Pressure Washing Group",
+      "preview": "what do you do in slow season...",
+      "commentsReceived": 0,
+      "repliesMade": 0,
+      "leadsFlagged": 0,
+      "status": "live"
+    },
+    {
+      "date": "2026-05-06",
+      "group": "That Pressure Washing Group",
+      "preview": "how many jobs have you lost because you forgot to follow up on a quote...",
+      "commentsReceived": 0,
+      "repliesMade": 0,
+      "leadsFlagged": 0,
+      "status": "live"
+    },
+    {
+      "date": "2026-05-05",
+      "group": "That Pressure Washing Group",
+      "preview": "Real question \u2014 how many calls do you miss per week...",
+      "commentsReceived": 0,
+      "repliesMade": 0,
+      "leadsFlagged": 0,
+      "status": "live"
+    }
+  ],
   "leads": [],
   "daily": [
     {
