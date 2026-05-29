@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-05-29 07:06 ET",
+  "lastUpdated": "2026-05-29 11:05 ET",
   "today": {
     "date": "2026-05-29",
     "posted": false,
     "postsPosted": 0,
     "groupPostedIn": "Auto Detailing 101",
-    "postPreview": "how often are you posting to your google business profile. most guys set it up once and never touch it again then wond",
+    "postPreview": "how often are you posting to your google business profile. most guys set it up once and never touch it again",
     "commentsReceived": 0,
     "repliesMade": 0,
     "leadsFlagged": 0,
@@ -20,7 +20,35 @@
     "interestSignals": 0,
     "leadsAwaitingVito": 0
   },
-  "recentPosts": [],
+  "recentPosts": [
+    {
+      "date": "2026-05-07",
+      "group": "That Pressure Washing Group",
+      "preview": "what do you do in slow season...",
+      "commentsReceived": 0,
+      "repliesMade": 0,
+      "leadsFlagged": 0,
+      "status": "live"
+    },
+    {
+      "date": "2026-05-06",
+      "group": "That Pressure Washing Group",
+      "preview": "how many jobs have you lost because you forgot to follow up on a quote...",
+      "commentsReceived": 0,
+      "repliesMade": 0,
+      "leadsFlagged": 0,
+      "status": "live"
+    },
+    {
+      "date": "2026-05-05",
+      "group": "That Pressure Washing Group",
+      "preview": "Real question \u2014 how many calls do you miss per week...",
+      "commentsReceived": 0,
+      "repliesMade": 0,
+      "leadsFlagged": 0,
+      "status": "live"
+    }
+  ],
   "leads": [],
   "daily": [
     {
