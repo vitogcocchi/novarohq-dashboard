@@ -146,8 +146,8 @@ canvas{max-height:170px}
       <div class="focus-card"><strong>Inbox is clear of business emails.</strong> No prospect replies, no client messages. Use today to push outbound — post manually to a few FB groups and follow up on anyone who commented on previous posts.</div>
 
       <div class="quote-wrap">
-        <div class="quote-text">"Most people overestimate what they can do in a day and underestimate what they can do in a year. Don't let urgency crowd out importance."</div>
-        <div class="quote-auth">— Gary Keller, The One Thing</div>
+        <div class="quote-text" id="qt">—</div>
+        <div class="quote-auth" id="qa">—</div>
       </div>
     </div>
 
@@ -159,17 +159,12 @@ canvas{max-height:170px}
       <div class="pulse"><div class="p-lbl">Cost Per Click</div><div class="p-val">$4.08</div><div class="p-sub">reach: 4,133 people</div></div>
 
       <div class="sec" style="margin-top:18px">Systems</div>
-      <div class="sys"><span class="sys-n">FB Ads Campaign</span><span class="b ok">● ACTIVE</span></div>
+      <div class="sys"><span class="sys-n">FB Ads</span><span class="b ok">● ACTIVE</span></div>
       <div class="sys"><span class="sys-n">GHL</span><span class="b ok">● LIVE</span></div>
-      <div class="sys"><span class="sys-n">Calendly</span><span class="b ok">● LIVE</span></div>
 
       <div class="gmail-box">
         <div class="gmail-lbl">📬 INBOX — TODAY</div>
-        <div class="gi">🔴 Stripe — Delaware LLC tax final reminder (due June 1)</div>
-        <div class="gi">🔴 Netlify — password reset + changed (2 AM ET)</div>
-        <div class="gi">🔵 Google — Meta Lead Ads CRM got Google account access</div>
-        <div class="gi">⚪ GHL — receipt $23.54</div>
-        <div class="gi">⚪ BofA — Zelle $21.25 to will cos</div>
+        <div class="gi" style="color:var(--t2)">Updated each morning at 7 AM ET</div>
       </div>
     </div>
   </div>
@@ -249,6 +244,30 @@ canvas{max-height:170px}
 function go(id,el){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.ni').forEach(n=>n.classList.remove('on'));document.getElementById('pg-'+id).classList.add('on');el.classList.add('on')}
 function tick(){const n=new Date(),et={timeZone:'America/New_York'};document.getElementById('sclock').textContent=n.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',...et});document.getElementById('sdate').textContent=n.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',...et});document.getElementById('home-date').textContent=n.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric',...et});document.getElementById('home-time').textContent=n.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit',...et})+' Eastern Time'}
 setInterval(tick,1000);tick();
+
+const QUOTES=[
+  {t:'"Revenue solves almost every problem."',a:'— Jason Fried'},
+  {t:'"Do the work. Do the reps. Consistency compounds."',a:'— Alex Hormozi'},
+  {t:'"You don\'t rise to the level of your goals, you fall to the level of your systems."',a:'— James Clear'},
+  {t:'"Speed of execution is a competitive advantage."',a:'— Unknown'},
+  {t:'"Outbound is the only channel you fully control."',a:'— Unknown'},
+  {t:'"Most people overestimate what they can do in a day and underestimate what they can do in a year."',a:'— Gary Keller'},
+  {t:'"The best marketing is a closed deal."',a:'— Unknown'},
+  {t:'"If you\'re not embarrassed by the first version of your product, you\'ve launched too late."',a:'— Reid Hoffman'},
+  {t:'"Stop waiting to be discovered. Go discover yourself."',a:'— Unknown'},
+  {t:'"Done is better than perfect."',a:'— Sheryl Sandberg'},
+  {t:'"The way to get started is to quit talking and begin doing."',a:'— Walt Disney'},
+  {t:'"Your first client won\'t come from your best pitch. It\'ll come from your most conversations."',a:'— Unknown'},
+  {t:'"What gets measured gets managed."',a:'— Peter Drucker'},
+  {t:'"Consistency is more important than intensity."',a:'— Unknown'},
+];
+(function(){
+  const n=new Date(),start=new Date(n.getFullYear(),0,0);
+  const dayOfYear=Math.floor((n-start)/86400000);
+  const q=QUOTES[dayOfYear%QUOTES.length];
+  document.getElementById('qt').textContent=q.t;
+  document.getElementById('qa').textContent=q.a;
+})();
 
 (function(){
   const daily=[
