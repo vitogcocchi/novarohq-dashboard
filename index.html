@@ -7,484 +7,402 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
 <style>
 :root{
-  --bg:#06090f;--side:#0a0e18;--card:#0d1424;--card2:#111a2e;
-  --border:rgba(0,212,255,.1);--border2:rgba(0,212,255,.06);
-  --cyan:#00d4ff;--cyan2:rgba(0,212,255,.15);
-  --ok:#00e676;--warn:#ffb300;--err:#ff1744;--purple:#a855f7;
+  --bg:#06090f;--side:#080c18;--card:#0d1424;--card2:#111a2e;
+  --border:rgba(0,212,255,.1);--borderf:rgba(0,212,255,.06);
+  --cyan:#00d4ff;--ok:#00e676;--warn:#ffb300;--err:#ff1744;
   --t1:#e8f4ff;--t2:#7aa0c0;--t3:#253650;
   --mono:'SF Mono','Cascadia Code','Consolas',monospace;
   --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --side-w:210px;
+  --sw:200px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;background:var(--bg);color:var(--t1);font-family:var(--sans);overflow:hidden}
-
-/* ── LAYOUT ── */
 #shell{display:flex;height:100vh}
 
-/* ── SIDEBAR ── */
-#sidebar{
-  width:var(--side-w);flex-shrink:0;
-  background:var(--side);
-  border-right:1px solid var(--border);
-  display:flex;flex-direction:column;
-  padding:0;overflow:hidden;
-}
-.side-logo{
-  padding:24px 20px 20px;
-  border-bottom:1px solid var(--border2);
-}
-.side-logo-main{
-  font-family:var(--mono);font-size:18px;font-weight:700;
-  color:var(--cyan);letter-spacing:4px;line-height:1;
-}
-.side-logo-sub{
-  font-size:9px;color:var(--t3);letter-spacing:3px;
-  text-transform:uppercase;margin-top:4px;font-family:var(--mono);
-}
-.side-nav{flex:1;padding:16px 0}
-.nav-item{
-  display:flex;align-items:center;gap:12px;
-  padding:13px 20px;cursor:pointer;
-  color:var(--t2);transition:all .2s;
-  border-left:2px solid transparent;
-  font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
-  position:relative;
-}
-.nav-item:hover{color:var(--t1);background:rgba(0,212,255,.04)}
-.nav-item.on{color:var(--cyan);background:rgba(0,212,255,.07);border-left-color:var(--cyan)}
-.nav-item svg{width:18px;height:18px;flex-shrink:0;opacity:.7}
-.nav-item.on svg{opacity:1}
-.side-bottom{padding:16px 20px;border-top:1px solid var(--border2)}
-.side-clock{font-family:var(--mono);font-size:13px;color:var(--cyan);letter-spacing:2px;margin-bottom:4px}
-.side-date{font-size:9px;color:var(--t3);letter-spacing:2px;margin-bottom:10px}
-.live-dot{display:flex;align-items:center;gap:6px;font-size:9px;color:var(--t2);letter-spacing:2px}
-.live-dot::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--ok);box-shadow:0 0 6px var(--ok);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+/* SIDEBAR */
+#sidebar{width:var(--sw);flex-shrink:0;background:var(--side);border-right:1px solid var(--border);display:flex;flex-direction:column}
+.s-logo{padding:22px 18px 18px;border-bottom:1px solid var(--borderf)}
+.s-logo-main{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--cyan);letter-spacing:4px}
+.s-logo-sub{font-size:9px;color:var(--t3);letter-spacing:3px;margin-top:3px;font-family:var(--mono)}
+.s-nav{flex:1;padding:12px 0}
+.ni{display:flex;align-items:center;gap:11px;padding:12px 18px;cursor:pointer;color:var(--t2);transition:all .2s;border-left:2px solid transparent;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.ni:hover{color:var(--t1);background:rgba(0,212,255,.04)}
+.ni.on{color:var(--cyan);background:rgba(0,212,255,.08);border-left-color:var(--cyan)}
+.ni svg{width:17px;height:17px;flex-shrink:0}
+.s-bot{padding:16px 18px;border-top:1px solid var(--borderf)}
+.s-time{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--cyan);letter-spacing:2px;line-height:1}
+.s-date{font-size:10px;color:var(--t2);margin-top:5px;letter-spacing:1px}
+.s-live{display:flex;align-items:center;gap:6px;margin-top:10px;font-size:9px;color:var(--t3);letter-spacing:2px}
+.s-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--ok);box-shadow:0 0 5px var(--ok);flex-shrink:0;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
-/* ── MAIN ── */
-#main{flex:1;overflow-y:auto;overflow-x:hidden;background:var(--bg)}
-.pg{display:none}
+/* MAIN */
+#main{flex:1;overflow-y:auto;overflow-x:hidden}
+.pg{display:none;animation:fi .2s ease}
 .pg.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
 
-/* ════════════════════════════════
-   HOME PAGE
-════════════════════════════════ */
-#pg-home{min-height:100vh}
-.home-header{
-  padding:32px 32px 24px;
-  border-bottom:1px solid var(--border2);
-  background:linear-gradient(180deg,rgba(0,212,255,.04) 0%,transparent 100%);
-}
-.home-greeting{font-size:11px;font-weight:700;letter-spacing:4px;color:var(--t2);text-transform:uppercase;margin-bottom:6px}
-.home-date{font-size:28px;font-weight:700;color:var(--t1);letter-spacing:-0.5px}
-.home-body{display:grid;grid-template-columns:1fr 340px;min-height:calc(100vh - 89px)}
-.home-left{padding:28px 32px;border-right:1px solid var(--border2)}
-.home-right{padding:28px 24px;background:rgba(0,0,0,.15)}
-.section-label{font-size:9px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.section-label::after{content:'';flex:1;height:1px;background:var(--border2)}
-.focus-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:10px;padding:16px 18px;margin-bottom:10px;
-  border-left:3px solid var(--cyan);
-  font-size:13px;line-height:1.7;color:var(--t1);
-}
-.gmail-note{
-  background:rgba(0,212,255,.04);border:1px solid var(--border2);
-  border-radius:10px;padding:14px 16px;margin-top:20px;
-  font-size:12px;color:var(--t2);line-height:1.5;
-}
-.pulse-stat{margin-bottom:14px}
-.ps-label{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--t3);text-transform:uppercase;margin-bottom:4px}
-.ps-val{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--cyan)}
-.ps-sub{font-size:10px;color:var(--t2);margin-top:2px}
-.sys-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border2);font-size:12px}
-.sys-row:last-child{border-bottom:none}
-.sys-name{color:var(--t2)}
-.b{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:1px}
-.b.ok{background:rgba(0,230,118,.1);color:var(--ok);border:1px solid rgba(0,230,118,.2)}
-.b.warn{background:rgba(255,179,0,.1);color:var(--warn);border:1px solid rgba(255,179,0,.2)}
-.b.info{background:rgba(0,212,255,.1);color:var(--cyan);border:1px solid rgba(0,212,255,.2)}
-.b.err{background:rgba(255,23,68,.1);color:var(--err);border:1px solid rgba(255,23,68,.2)}
-.b.off{background:rgba(255,255,255,.05);color:var(--t3);border:1px solid var(--border2)}
-.quote-block{margin-top:24px;padding:16px;border-left:2px solid var(--t3);font-size:12px;color:var(--t2);font-style:italic;line-height:1.6}
+/* BADGES */
+.b{display:inline-flex;align-items:center;padding:2px 8px;border-radius:12px;font-size:9px;font-weight:700;letter-spacing:.5px}
+.b.ok{background:rgba(0,230,118,.1);color:var(--ok);border:1px solid rgba(0,230,118,.25)}
+.b.warn{background:rgba(255,179,0,.1);color:var(--warn);border:1px solid rgba(255,179,0,.25)}
+.b.err{background:rgba(255,23,68,.1);color:var(--err);border:1px solid rgba(255,23,68,.25)}
+.b.info{background:rgba(0,212,255,.1);color:var(--cyan);border:1px solid rgba(0,212,255,.25)}
+.b.off{background:rgba(255,255,255,.04);color:var(--t3);border:1px solid var(--borderf)}
 
-/* ════════════════════════════════
-   ADS PAGE
-════════════════════════════════ */
-#pg-ads{padding:28px 32px}
-.ads-header{margin-bottom:24px}
-.ads-title{font-size:20px;font-weight:700;color:var(--t1);letter-spacing:-0.3px}
-.ads-sub{font-size:11px;color:var(--t2);margin-top:4px;letter-spacing:1px}
-.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
-.stat-box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;position:relative;overflow:hidden}
-.stat-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--cyan)}
-.stat-box.ok::before{background:var(--ok)}
-.stat-box.warn::before{background:var(--warn)}
-.sb-label{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--t2);text-transform:uppercase;margin-bottom:10px}
-.sb-val{font-family:var(--mono);font-size:24px;font-weight:700;color:var(--t1)}
-.sb-sub{font-size:10px;color:var(--t2);margin-top:4px}
-.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:20px}
-.chart-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.chart-title{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase}
-.chart-wrap{position:relative;height:180px}
-.ads-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
-.dt{width:100%;border-collapse:collapse;font-size:12px}
-.dt td{padding:9px 0;border-bottom:1px solid var(--border2);vertical-align:middle}
-.dt tr:last-child td{border-bottom:none}
-.dt td:last-child{text-align:right;font-family:var(--mono);color:var(--cyan)}
+/* ═══ HOME ═══ */
+#pg-home{min-height:100vh;display:grid;grid-template-rows:auto 1fr}
+.h-hero{padding:28px 32px 22px;background:linear-gradient(160deg,rgba(0,212,255,.05) 0%,transparent 60%);border-bottom:1px solid var(--borderf)}
+.h-eyebrow{font-size:10px;font-weight:700;letter-spacing:4px;color:var(--t2);text-transform:uppercase;margin-bottom:6px}
+.h-title{font-size:30px;font-weight:700;color:var(--t1);letter-spacing:-.5px;line-height:1.1}
+.h-sub{font-size:12px;color:var(--t2);margin-top:6px;letter-spacing:.5px}
+.h-body{display:grid;grid-template-columns:1fr 320px}
+.h-left{padding:24px 32px;border-right:1px solid var(--borderf)}
+.h-right{padding:24px 22px;background:rgba(0,0,0,.2)}
+.sec{font-size:9px;font-weight:700;letter-spacing:3px;color:var(--t3);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sec::after{content:'';flex:1;height:1px;background:var(--borderf)}
+.alert-card{background:rgba(255,23,68,.06);border:1px solid rgba(255,23,68,.2);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.alert-label{font-size:9px;font-weight:700;color:var(--err);letter-spacing:2px;margin-bottom:4px}
+.alert-text{font-size:13px;color:var(--t1);line-height:1.5}
+.focus-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--cyan);border-radius:0 10px 10px 0;padding:14px 16px;margin-bottom:10px;font-size:13px;line-height:1.6;color:var(--t1)}
+.quote-wrap{margin-top:22px;padding:16px;border-left:2px solid var(--t3);border-radius:0 8px 8px 0;background:rgba(255,255,255,.02)}
+.quote-text{font-size:13px;color:var(--t2);font-style:italic;line-height:1.6}
+.quote-auth{font-size:10px;color:var(--t3);margin-top:6px;letter-spacing:1px}
+.pulse{margin-bottom:16px}
+.p-label{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--t3);text-transform:uppercase;margin-bottom:4px}
+.p-val{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--cyan)}
+.p-sub{font-size:10px;color:var(--t2);margin-top:2px}
+.sys{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--borderf);font-size:12px}
+.sys:last-child{border-bottom:none}
+.sys-n{color:var(--t2)}
+.gmail-box{background:rgba(0,212,255,.04);border:1px solid var(--borderf);border-radius:8px;padding:12px 14px;margin-top:18px}
+.gmail-label{font-size:9px;font-weight:700;color:var(--t3);letter-spacing:2px;margin-bottom:8px}
+.gmail-item{font-size:12px;color:var(--t1);padding:4px 0;border-bottom:1px solid var(--borderf);line-height:1.5}
+.gmail-item:last-child{border-bottom:none}
+
+/* ═══ ADS ═══ */
+#pg-ads{padding:26px 30px}
+.page-title{font-size:20px;font-weight:700;color:var(--t1);margin-bottom:4px;letter-spacing:-.3px}
+.page-sub{font-size:11px;color:var(--t2);margin-bottom:20px;letter-spacing:.5px}
+.s4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.sbox{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px;position:relative;overflow:hidden}
+.sbox::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.sbox.c0::before{background:var(--cyan)}.sbox.c1::before{background:var(--ok)}.sbox.c2::before{background:var(--ok)}.sbox.c3::before{background:var(--warn)}
+.sbox-l{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--t2);text-transform:uppercase;margin-bottom:10px}
+.sbox-v{font-family:var(--mono);font-size:24px;font-weight:700;color:var(--t1)}
+.sbox-s{font-size:10px;color:var(--t2);margin-top:4px}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:18px}
+.chart-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.chart-ttl{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase}
+canvas{max-height:180px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.ch{padding:14px 18px;border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between}
+.ch{padding:13px 18px;border-bottom:1px solid var(--borderf);display:flex;align-items:center;justify-content:space-between}
 .ct{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase}
-.cb{padding:18px}
-.ad-pill{background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
-.ad-name{font-size:12px;color:var(--t1);font-weight:500}
-.pw{height:6px;background:var(--border2);border-radius:4px;overflow:hidden;margin:8px 0}
-.pb{height:100%;border-radius:4px;transition:width 1.2s ease}
-.upd{font-size:10px;color:var(--t3);font-family:var(--mono);text-align:right;margin-top:8px}
+.cb{padding:16px 18px}
+.dt{width:100%;border-collapse:collapse;font-size:12px}
+.dt td{padding:8px 0;border-bottom:1px solid var(--borderf)}
+.dt tr:last-child td{border-bottom:none}
+.dt td:first-child{color:var(--t2)}
+.dt td:last-child{text-align:right;font-family:var(--mono);color:var(--cyan)}
+.adpill{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;background:var(--card2);border:1px solid var(--borderf);border-radius:8px;margin-bottom:8px;font-size:12px}
+.pw{height:6px;background:var(--borderf);border-radius:3px;overflow:hidden;margin:8px 0}
+.pb{height:100%;border-radius:3px;transition:width 1.2s}
+.upd{font-size:10px;color:var(--t3);font-family:var(--mono);text-align:right;margin-top:6px}
 
-/* ════════════════════════════════
-   GROUPS PAGE
-════════════════════════════════ */
-#pg-groups{padding:28px 32px}
-.groups-header{margin-bottom:24px}
-.groups-title{font-size:20px;font-weight:700;color:var(--t1);letter-spacing:-0.3px}
-.groups-sub{font-size:11px;color:var(--t2);margin-top:4px}
-.groups-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
-.gs{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+/* ═══ GROUPS ═══ */
+#pg-groups{padding:26px 30px}
+.gs4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.gstat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:15px 18px}
 .gsl{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--t2);text-transform:uppercase;margin-bottom:8px}
 .gsv{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--cyan)}
 .gss{font-size:10px;color:var(--t2);margin-top:4px}
-.groups-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.group-section-head{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border2)}
-.gr{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(255,255,255,.02);border:1px solid var(--border2);border-radius:8px;margin-bottom:6px;transition:border-color .2s}
+.gcols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gcol-head{font-size:9px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase;margin-bottom:11px;padding-bottom:9px;border-bottom:1px solid var(--borderf)}
+.gr{display:flex;align-items:center;gap:9px;padding:9px 11px;background:rgba(255,255,255,.02);border:1px solid var(--borderf);border-radius:7px;margin-bottom:5px;transition:border-color .15s}
 .gr:hover{border-color:var(--border)}
-.gn{font-size:12px;color:var(--t1);flex:1;line-height:1.3}
-.gni{font-size:9px;margin-top:2px;font-family:var(--mono)}
-.niche-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
-
-/* NICHE COLORS */
-.nc-pw{color:#00d4ff}.nd-pw{background:#00d4ff}
-.nc-hvac{color:#f97316}.nd-hvac{background:#f97316}
-.nc-pl{color:#3b82f6}.nd-pl{background:#3b82f6}
-.nc-ro{color:#ef4444}.nd-ro{background:#ef4444}
-.nc-pa{color:#a855f7}.nd-pa{background:#a855f7}
-.nc-de{color:#eab308}.nd-de{background:#eab308}
-.nc-jr{color:#22c55e}.nd-jr{background:#22c55e}
-.nc-pc{color:#84cc16}.nd-pc{background:#84cc16}
-.nc-la{color:#10b981}.nd-la{background:#10b981}
-.nc-cl{color:#06b6d4}.nd-cl{background:#06b6d4}
-.nc-ep{color:#8b5cf6}.nd-ep{background:#8b5cf6}
-
-/* LOADING */
-.ld{color:var(--t3);font-size:11px;font-family:var(--mono);letter-spacing:1px}
+.gname{font-size:12px;color:var(--t1);flex:1;line-height:1.3}
+.gniche{font-size:9px;margin-top:1px;font-family:var(--mono);opacity:.7}
+.ndot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.c-pw{color:#00d4ff}.d-pw{background:#00d4ff}
+.c-hvac{color:#f97316}.d-hvac{background:#f97316}
+.c-pl{color:#3b82f6}.d-pl{background:#3b82f6}
+.c-ro{color:#ef4444}.d-ro{background:#ef4444}
+.c-pa{color:#a855f7}.d-pa{background:#a855f7}
+.c-de{color:#eab308}.d-de{background:#eab308}
+.c-jr{color:#22c55e}.d-jr{background:#22c55e}
+.c-pc{color:#84cc16}.d-pc{background:#84cc16}
+.c-la{color:#10b981}.d-la{background:#10b981}
+.c-cl{color:#06b6d4}.d-cl{background:#06b6d4}
+.c-ep{color:#8b5cf6}.d-ep{background:#8b5cf6}
 </style>
 </head>
 <body>
 <div id="shell">
 
-<!-- ── SIDEBAR ── -->
+<!-- SIDEBAR -->
 <div id="sidebar">
-  <div class="side-logo">
-    <div class="side-logo-main">NOVARO</div>
-    <div class="side-logo-sub">HQ · Operations</div>
+  <div class="s-logo">
+    <div class="s-logo-main">NOVARO</div>
+    <div class="s-logo-sub">HQ · Dashboard</div>
   </div>
-
-  <div class="side-nav">
-    <div class="nav-item on" onclick="go('home',this)">
+  <div class="s-nav">
+    <div class="ni on" onclick="go('home',this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
       Home
     </div>
-    <div class="nav-item" onclick="go('ads',this)">
+    <div class="ni" onclick="go('ads',this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="12" width="4" height="9" rx="1"/><rect x="10" y="7" width="4" height="14" rx="1"/><rect x="17" y="3" width="4" height="18" rx="1"/></svg>
       FB Ads
     </div>
-    <div class="nav-item" onclick="go('groups',this)">
+    <div class="ni" onclick="go('groups',this)">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><path d="M19 21c0-2.5-1.5-4-4-5"/></svg>
       FB Groups
     </div>
   </div>
-
-  <div class="side-bottom">
-    <div class="side-clock" id="clock">—</div>
-    <div class="side-date" id="sdate">—</div>
-    <div class="live-dot">SYSTEMS LIVE</div>
+  <div class="s-bot">
+    <div class="s-time" id="sclock">--:--</div>
+    <div class="s-date" id="sdate">---</div>
+    <div class="s-live">SYSTEMS LIVE</div>
   </div>
 </div>
 
-<!-- ── MAIN ── -->
+<!-- MAIN -->
 <div id="main">
 
-  <!-- ════ HOME ════ -->
-  <div class="pg on" id="pg-home">
-    <div class="home-header">
-      <div class="home-greeting">Good morning, Vito</div>
-      <div class="home-date" id="home-date">Saturday, May 31, 2026</div>
-    </div>
-    <div class="home-body">
-      <div class="home-left">
-        <div class="section-label">Morning Focus</div>
-        <div id="focus-items"><div class="ld">loading...</div></div>
-        <div class="gmail-note" id="gmail-note"><div class="ld">loading...</div></div>
-        <div class="quote-block" id="quote-block"></div>
+<!-- ═══ HOME ═══ -->
+<div class="pg on" id="pg-home">
+  <div class="h-hero">
+    <div class="h-eyebrow">Good morning, Vito</div>
+    <div class="h-title" id="home-date">Saturday, May 31, 2026</div>
+    <div class="h-sub" id="home-time">Loading time...</div>
+  </div>
+  <div class="h-body">
+    <div class="h-left">
+
+      <div class="sec">🚨 Urgent — Action Required Today</div>
+
+      <div class="alert-card">
+        <div class="alert-label">⚠️ DELAWARE LLC TAX — DUE JUNE 1 (TOMORROW)</div>
+        <div class="alert-text">Stripe sent a final reminder about your annual Delaware LLC tax. If you haven't filed, it's due tomorrow June 1. Log into your Delaware filing portal and handle this today or you'll get hit with late fees.</div>
       </div>
-      <div class="home-right">
-        <div class="section-label">Today's Pulse</div>
-        <div class="pulse-stat"><div class="ps-label">Ads Spend (7d)</div><div class="ps-val" id="p-spend">—</div><div class="ps-sub">$35/day budget</div></div>
-        <div class="pulse-stat"><div class="ps-label">Click-Through Rate</div><div class="ps-val" id="p-ctr">—</div><div class="ps-sub">last 7 days</div></div>
-        <div class="pulse-stat"><div class="ps-label">Cost Per Click</div><div class="ps-val" id="p-cpc">—</div></div>
-        <div style="margin-top:24px">
-          <div class="section-label">Systems Status</div>
-          <div class="sys-row"><span class="sys-name">FB Ads</span><span class="b ok">● ACTIVE</span></div>
-          <div class="sys-row"><span class="sys-name">FB Groups Post</span><span class="b ok">9 AM ET</span></div>
-          <div class="sys-row"><span class="sys-name">Groups Joined</span><span class="b info">16 ACTIVE</span></div>
-          <div class="sys-row"><span class="sys-name">Groups Pending</span><span class="b warn">5 PENDING</span></div>
-          <div class="sys-row"><span class="sys-name">GHL</span><span class="b ok">● LIVE</span></div>
+
+      <div class="alert-card">
+        <div class="alert-label">⚠️ NETLIFY PASSWORD CHANGED — VERIFY THIS WAS YOU</div>
+        <div class="alert-text">Netlify sent two emails at 1:55 AM and 2:02 AM ET — a password reset request followed by a confirmation that the password changed. If you didn't do this, contact Netlify support immediately and check who has access to novarohq.com.</div>
+      </div>
+
+      <div class="sec" style="margin-top:20px">🎯 Focus</div>
+
+      <div class="focus-card"><strong>No prospect replies in inbox — use today to push outbound.</strong> The ads are running and groups are posting, but no conversations are active. Your job today is to start one. Pick 5 people from the Facebook group posts who commented and DM them from the Vito account.</div>
+      <div class="focus-card"><strong>Check the FB groups post log.</strong> The 9 AM task should have posted to 3–5 groups this morning. Open <span style="font-family:var(--mono);font-size:11px;color:var(--cyan)">fb-posts-log.md</span> and make sure it ran. If anyone commented on recent posts, that's a warm lead — reply within the hour.</div>
+      <div class="focus-card"><strong>Ads spend dropped to $15 on May 30 vs $55 on May 24.</strong> Something is limiting delivery — check your Facebook Ads Manager for delivery issues, audience size warnings, or creative fatigue flags. A 72% drop in daily spend over 6 days is not normal.</div>
+
+      <div class="quote-wrap">
+        <div class="quote-text">"Most people overestimate what they can do in a day and underestimate what they can do in a year. Don't let urgency crowd out importance."</div>
+        <div class="quote-auth">— Gary Keller, The One Thing</div>
+      </div>
+
+    </div>
+    <div class="h-right">
+      <div class="sec">Today's Pulse</div>
+      <div class="pulse"><div class="p-label">7-Day Ad Spend</div><div class="p-val">$243.19</div><div class="p-sub">$35/day budget · May 24–30</div></div>
+      <div class="pulse"><div class="p-label">Click-Through Rate</div><div class="p-val">3.18%</div><div class="p-sub">60 clicks / 1,885 impressions</div></div>
+      <div class="pulse"><div class="p-label">Cost Per Click</div><div class="p-val">$4.05</div><div class="p-sub">2 ads running</div></div>
+      <div class="pulse"><div class="p-label">FB Groups Active</div><div class="p-val">16</div><div class="p-sub">5 pending approval · 21 total</div></div>
+
+      <div class="sec" style="margin-top:20px">Systems</div>
+      <div class="sys"><span class="sys-n">FB Ads Campaign</span><span class="b ok">● ACTIVE</span></div>
+      <div class="sys"><span class="sys-n">FB Group Posts</span><span class="b ok">9 AM ET</span></div>
+      <div class="sys"><span class="sys-n">Groups Joined</span><span class="b info">16</span></div>
+      <div class="sys"><span class="sys-n">GHL</span><span class="b ok">● LIVE</span></div>
+      <div class="sys"><span class="sys-n">Instantly</span><span class="b err">BILLING LAPSED</span></div>
+      <div class="sys"><span class="sys-n">Bland AI</span><span class="b off">NOT LAUNCHED</span></div>
+
+      <div class="gmail-box">
+        <div class="gmail-label">📬 INBOX SUMMARY</div>
+        <div class="gmail-item">🔴 Stripe — Delaware LLC tax final reminder (due June 1)</div>
+        <div class="gmail-item">🔴 Netlify — password reset + changed (2:00 AM ET)</div>
+        <div class="gmail-item">🔵 Google — Meta Lead Ads CRM got access to your Google account</div>
+        <div class="gmail-item">⚪ GHL — receipt $23.54 (May 30)</div>
+        <div class="gmail-item">⚪ BofA — Zelle $21.25 to will cos (routine)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ADS ═══ -->
+<div class="pg" id="pg-ads">
+  <div class="page-title">Facebook Ads</div>
+  <div class="page-sub">Novaro AI — Lead Gen — May 2026 · Last 7 days (May 24–30)</div>
+
+  <div class="s4">
+    <div class="sbox c0"><div class="sbox-l">Total Spend (7d)</div><div class="sbox-v">$243.19</div><div class="sbox-s">$35/day budget · 6.94 days</div></div>
+    <div class="sbox c1"><div class="sbox-l">Impressions</div><div class="sbox-v">1,885</div><div class="sbox-s">269/day avg</div></div>
+    <div class="sbox c2"><div class="sbox-l">Clicks</div><div class="sbox-v">60</div><div class="sbox-s">8.6/day avg</div></div>
+    <div class="sbox c3"><div class="sbox-l">CTR / CPC</div><div class="sbox-v">3.18%</div><div class="sbox-s">$4.05 cost per click</div></div>
+  </div>
+
+  <div class="chart-card">
+    <div class="chart-hd">
+      <span class="chart-ttl">Daily Spend &amp; Clicks — May 24–30</span>
+      <span class="b ok">● ACTIVE</span>
+    </div>
+    <canvas id="spendChart"></canvas>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="ch"><span class="ct">Campaign Detail</span><span class="b ok">● ACTIVE</span></div>
+      <div class="cb">
+        <table class="dt">
+          <tr><td>Campaign</td><td>Lead Gen — May 2026</td></tr>
+          <tr><td>Status</td><td><span class="b ok">ACTIVE</span></td></tr>
+          <tr><td>Objective</td><td>Lead Generation</td></tr>
+          <tr><td>Budget</td><td>$35/day shared</td></tr>
+          <tr><td>Spend (7d)</td><td>$243.19</td></tr>
+          <tr><td>Impressions</td><td>1,885</td></tr>
+          <tr><td>Clicks</td><td>60</td></tr>
+          <tr><td>CTR</td><td>3.18%</td></tr>
+          <tr><td>CPC</td><td>$4.05</td></tr>
+          <tr><td>Reach</td><td>1,875</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="ct">Active Ads</span></div>
+      <div class="cb">
+        <div class="adpill"><span style="color:var(--t1)">Ad 1 — Missed Call Hook</span><span class="b ok">ACTIVE</span></div>
+        <div class="adpill"><span style="color:var(--t1)">Ad 2 — Two Phones Hook</span><span class="b ok">ACTIVE</span></div>
+        <div style="margin-top:14px;font-size:11px;color:var(--t3);line-height:1.6">Both ads share the $35/day budget. Individual ad-level spend breakdown requires 7+ days of consistent delivery to populate in the API. Check Facebook Ads Manager directly for per-ad split.</div>
+
+        <div style="margin-top:16px">
+          <div class="sbox-l" style="margin-bottom:8px">⚠️ Delivery Warning</div>
+          <div style="font-size:12px;color:var(--warn);line-height:1.6">Daily spend dropped from $55.54 (May 24) to $15.68 (May 30) — a 72% decline. Check for audience saturation, creative fatigue, or delivery errors in Ads Manager.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ════ ADS ════ -->
-  <div class="pg" id="pg-ads">
-    <div class="ads-header">
-      <div class="ads-title">Facebook Ads</div>
-      <div class="ads-sub">NOVARO AI — LEAD GEN — MAY 2026 · Last 7 days</div>
-    </div>
-
-    <div class="stat-row" id="ads-stats">
-      <div class="stat-box"><div class="sb-label">Total Spend</div><div class="sb-val" id="a-spend">—</div><div class="sb-sub">$35/day budget</div></div>
-      <div class="stat-box ok"><div class="sb-label">Impressions</div><div class="sb-val" id="a-imp">—</div></div>
-      <div class="stat-box ok"><div class="sb-label">Clicks</div><div class="sb-val" id="a-clicks">—</div></div>
-      <div class="stat-box"><div class="sb-label">CTR / CPC</div><div class="sb-val" id="a-ctr">—</div><div class="sb-sub" id="a-cpc">—</div></div>
-    </div>
-
-    <div class="chart-card">
-      <div class="chart-head">
-        <span class="chart-title">Daily Spend &amp; Clicks — Last 7 Days</span>
-        <span class="b info" id="camp-badge">ACTIVE</span>
+  <div class="card">
+    <div class="ch"><span class="ct">Budget Tracker — 7 Day Window</span><span style="font-size:11px;color:var(--t2);font-family:var(--mono)">$245 target · $243.19 spent</span></div>
+    <div class="cb">
+      <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px">
+        <span style="color:var(--t2)">$243.19 of $245.00 target (7 × $35/day)</span>
+        <span style="color:var(--ok);font-family:var(--mono);font-weight:700">99.3%</span>
       </div>
-      <div class="chart-wrap"><canvas id="spendChart"></canvas></div>
-    </div>
-
-    <div class="ads-grid">
-      <div class="card">
-        <div class="ch"><span class="ct">Campaign Detail</span></div>
-        <div class="cb">
-          <table class="dt" id="camp-table"><tr><td colspan="2"><div class="ld">loading...</div></td></tr></table>
-        </div>
-      </div>
-      <div class="card">
-        <div class="ch"><span class="ct">Active Ads</span></div>
-        <div class="cb" id="ad-list"><div class="ld">loading...</div></div>
-      </div>
-    </div>
-
-    <div class="card" style="margin-bottom:20px">
-      <div class="ch">
-        <span class="ct">Budget Tracker</span>
-        <span style="font-size:11px;color:var(--t2);font-family:var(--mono)">7-day window · $35/day</span>
-      </div>
-      <div class="cb" id="budget"><div class="ld">loading...</div></div>
-    </div>
-    <div class="upd" id="ads-upd">—</div>
-  </div>
-
-  <!-- ════ GROUPS ════ -->
-  <div class="pg" id="pg-groups">
-    <div class="groups-header">
-      <div class="groups-title">Facebook Groups</div>
-      <div class="groups-sub">21 groups tracked · Daily posts at 9 AM ET via automated task</div>
-    </div>
-
-    <div class="groups-stats">
-      <div class="gs"><div class="gsl">Joined</div><div class="gsv">16</div><div class="gss">posting active</div></div>
-      <div class="gs"><div class="gsl">Pending Approval</div><div class="gsv" style="color:var(--warn)">5</div><div class="gss">questions answered</div></div>
-      <div class="gs"><div class="gsl">Est. Combined Reach</div><div class="gsv" style="font-size:18px">~2M</div><div class="gss">members across all groups</div></div>
-      <div class="gs"><div class="gsl">Post Rotation</div><div class="gsv" style="font-size:18px">20</div><div class="gss">active scripts in bank</div></div>
-    </div>
-
-    <div class="groups-cols">
-      <div>
-        <div class="group-section-head">✅ Joined &amp; Active (16)</div>
-        <div id="joined-list"></div>
-      </div>
-      <div>
-        <div class="group-section-head">⏳ Pending Approval (5)</div>
-        <div id="pending-list"></div>
-      </div>
+      <div class="pw"><div class="pb" style="width:99.3%;background:var(--ok)"></div></div>
+      <div style="margin-top:10px;font-size:11px;color:var(--t2)">2 active ads · Lead Generation campaign · Running since early May 2026</div>
     </div>
   </div>
+  <div class="upd">Data pulled: May 31, 2026 · Updates daily at 8:00 AM ET</div>
+</div>
+
+<!-- ═══ GROUPS ═══ -->
+<div class="pg" id="pg-groups">
+  <div class="page-title">FB Groups</div>
+  <div class="page-sub">21 groups tracked · Daily automated posts at 9:00 AM ET · 20 scripts in rotation</div>
+
+  <div class="gs4">
+    <div class="gstat"><div class="gsl">Joined & Posting</div><div class="gsv">16</div><div class="gss">actively getting posts</div></div>
+    <div class="gstat"><div class="gsl">Pending Approval</div><div class="gsv" style="color:var(--warn)">5</div><div class="gss">questions answered</div></div>
+    <div class="gstat"><div class="gsl">Combined Reach</div><div class="gsv" style="font-size:18px">~2M</div><div class="gss">members across all groups</div></div>
+    <div class="gstat"><div class="gsl">Script Bank</div><div class="gsv">20</div><div class="gss">active scripts · rotates daily</div></div>
+  </div>
+
+  <div class="gcols">
+    <div>
+      <div class="gcol-head">✅ Joined — Active (16)</div>
+      <div id="joined"></div>
+    </div>
+    <div>
+      <div class="gcol-head">⏳ Pending Approval (5)</div>
+      <div id="pending"></div>
+    </div>
+  </div>
+</div>
 
 </div><!-- /main -->
 </div><!-- /shell -->
 
 <script>
-// ── GROUP DATA ──────────────────────────────────────────────
-const JOINED=[
-  {n:'Pressure Washing Friends',ni:'Pressure Washing',s:'71K',nc:'pw'},
-  {n:'Pressure Washing Business Owners',ni:'Pressure Washing',s:'132K',nc:'pw'},
-  {n:'That Pressure Washing Group',ni:'Pressure Washing',s:'',nc:'pw'},
-  {n:'Pressure Washing Q&A | Power Wash, Soft Wash, Rig Builds',ni:'Pressure Washing',s:'13K',nc:'pw'},
-  {n:'Pressure Washing, Soft Washing, & Window Cleaning',ni:'Pressure Washing',s:'11K',nc:'pw'},
-  {n:'Auto Detailing 101',ni:'Car Detailing',s:'10K',nc:'de'},
-  {n:'Painting Contractors by DripJobs',ni:'Painting',s:'250K',nc:'pa'},
-  {n:'Painters Chatroom: PRO PAINTER DIGITAL',ni:'Painting',s:'184K',nc:'pa'},
-  {n:'HVAC Techs Group',ni:'HVAC',s:'90K',nc:'hvac'},
-  {n:'HVAC Business Owners & Contractors',ni:'HVAC',s:'83K',nc:'hvac'},
-  {n:'Professional Plumbers',ni:'Plumbing',s:'106K',nc:'pl'},
-  {n:'Roofing Contractors Online',ni:'Roofing',s:'30K',nc:'ro'},
-  {n:'Junk Removal Winners',ni:'Junk Removal',s:'82K',nc:'jr'},
-  {n:'Junk Removal Owners',ni:'Junk Removal',s:'50K',nc:'jr'},
-  {n:'Pest Control Experts Worldwide',ni:'Pest Control',s:'26K',nc:'pc'},
-  {n:'Landscaping for Beginners 2',ni:'Landscaping',s:'',nc:'la'},
-];
-const PENDING=[
-  {n:'All Things Pressure Washing',ni:'Pressure Washing',s:'79K',nc:'pw'},
-  {n:'Cleaning Business Owners Coaching',ni:'Cleaning',s:'55K',nc:'cl'},
-  {n:'Epoxy and Polished Concrete Professionals',ni:'Epoxy',s:'120K',nc:'ep'},
-  {n:'Lawn & Landscape Newbies & Mentors',ni:'Landscaping',s:'110K',nc:'la'},
-  {n:'Detailing for Money',ni:'Car Detailing',s:'77K',nc:'de'},
-];
-
-// ── NAV ─────────────────────────────────────────────────────
+// ── NAV ──────────────────────────────────────────────────────
 function go(id,el){
   document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('on'));
+  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('on'));
   document.getElementById('pg-'+id).classList.add('on');
   el.classList.add('on');
 }
 
-// ── CLOCK ───────────────────────────────────────────────────
+// ── CLOCK ────────────────────────────────────────────────────
 function tick(){
   const n=new Date();
-  document.getElementById('clock').textContent=n.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',timeZone:'America/New_York'});
-  document.getElementById('sdate').textContent=n.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',timeZone:'America/New_York'});
-  document.getElementById('home-date').textContent=n.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'});
+  const et={timeZone:'America/New_York'};
+  document.getElementById('sclock').textContent=n.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',...et});
+  document.getElementById('sdate').textContent=n.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',...et});
+  document.getElementById('home-date').textContent=n.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric',...et});
+  document.getElementById('home-time').textContent=n.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit',...et})+' Eastern Time';
 }
 setInterval(tick,1000);tick();
 
-// ── GROUPS ──────────────────────────────────────────────────
-function renderGroups(){
-  document.getElementById('joined-list').innerHTML=JOINED.map(g=>`
-    <div class="gr">
-      <div class="niche-dot nd-${g.nc}"></div>
-      <div style="flex:1">
-        <div class="gn">${g.n}</div>
-        <div class="gni nc-${g.nc}">${g.ni}${g.s?' · '+g.s+' members':''}</div>
-      </div>
-      <span class="b ok">JOINED</span>
-    </div>`).join('');
-  document.getElementById('pending-list').innerHTML=PENDING.map(g=>`
-    <div class="gr">
-      <div class="niche-dot nd-${g.nc}"></div>
-      <div style="flex:1">
-        <div class="gn">${g.n}</div>
-        <div class="gni nc-${g.nc}">${g.ni}${g.s?' · '+g.s+' members':''}</div>
-      </div>
-      <span class="b warn">PENDING</span>
-    </div>`).join('');
-}
-
-// ── ADS DATA ────────────────────────────────────────────────
-let chartInst=null;
-async function loadAds(){
-  try{
-    const d=await(await fetch('ads-data.json?t='+Date.now())).json();
-    const c=d.campaign;
-
-    // Home pulse
-    document.getElementById('p-spend').textContent=c.spend_7d||'—';
-    document.getElementById('p-ctr').textContent=c.ctr_7d||'—';
-    document.getElementById('p-cpc').textContent=c.cpc_7d||'—';
-
-    // Ads stats
-    document.getElementById('a-spend').textContent=c.spend_7d||'—';
-    document.getElementById('a-imp').textContent=c.impressions_7d||'—';
-    document.getElementById('a-clicks').textContent=c.clicks_7d||'—';
-    document.getElementById('a-ctr').textContent=c.ctr_7d||'—';
-    document.getElementById('a-cpc').textContent='CPC '+c.cpc_7d;
-    document.getElementById('camp-badge').textContent=c.status||'ACTIVE';
-
-    // Campaign table
-    document.getElementById('camp-table').innerHTML=`
-      <tr><td style="color:var(--t2)">Campaign</td><td>${c.name}</td></tr>
-      <tr><td style="color:var(--t2)">Status</td><td><span class="b ok">● ${c.status}</span></td></tr>
-      <tr><td style="color:var(--t2)">Spend (7d)</td><td>${c.spend_7d}</td></tr>
-      <tr><td style="color:var(--t2)">Impressions</td><td>${c.impressions_7d}</td></tr>
-      <tr><td style="color:var(--t2)">Clicks</td><td>${c.clicks_7d}</td></tr>
-      <tr><td style="color:var(--t2)">CTR</td><td>${c.ctr_7d}</td></tr>
-      <tr><td style="color:var(--t2)">CPC</td><td>${c.cpc_7d}</td></tr>
-      <tr><td style="color:var(--t2)">Reach</td><td>${c.reach_7d}</td></tr>`;
-
-    // Ad pills
-    document.getElementById('ad-list').innerHTML=(d.ads||[]).map(a=>`
-      <div class="ad-pill">
-        <span class="ad-name">${a.name}</span>
-        <span class="b ok">${a.status}</span>
-      </div>`).join('')+'<div style="margin-top:12px;font-size:10px;color:var(--t3)">Individual ad spend breakdown populates after 7+ days of continuous delivery</div>';
-
-    // Budget bar
-    const spent=parseFloat((c.spend_7d||'').replace(/[^0-9.]/g,'')||0);
-    const target=(c.budget_daily||35)*7;
-    const pct=Math.min(100,spent/target*100).toFixed(1);
-    const col=spent>target?'var(--err)':spent>target*.85?'var(--warn)':'var(--cyan)';
-    document.getElementById('budget').innerHTML=`
-      <div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px">
-        <span style="color:var(--t2)">$${spent.toFixed(2)} spent of $${target} target (7 days)</span>
-        <span style="color:${col};font-family:var(--mono);font-weight:700">${pct}%</span>
-      </div>
-      <div class="pw"><div class="pb" style="width:${pct}%;background:${col}"></div></div>
-      <div style="margin-top:10px;font-size:11px;color:var(--t2)">2 ads running · Shared $${c.budget_daily}/day · Objective: Lead Generation</div>`;
-
-    document.getElementById('ads-upd').textContent='Last updated: '+d.lastUpdated;
-
-    // Chart
-    if(d.daily&&d.daily.length){
-      const labels=d.daily.map(x=>x.date);
-      const spends=d.daily.map(x=>x.spend);
-      const clicks=d.daily.map(x=>x.clicks);
-      const ctx=document.getElementById('spendChart').getContext('2d');
-      if(chartInst)chartInst.destroy();
-      chartInst=new Chart(ctx,{
-        type:'bar',
-        data:{
-          labels,
-          datasets:[
-            {label:'Spend ($)',data:spends,backgroundColor:'rgba(0,212,255,.25)',borderColor:'rgba(0,212,255,.8)',borderWidth:1.5,borderRadius:4,yAxisID:'y'},
-            {label:'Clicks',data:clicks,backgroundColor:'rgba(0,230,118,.2)',borderColor:'rgba(0,230,118,.7)',borderWidth:1.5,borderRadius:4,type:'line',yAxisID:'y2',tension:.3,pointRadius:3,pointBackgroundColor:'var(--ok)'}
-          ]
-        },
-        options:{
-          responsive:true,maintainAspectRatio:false,
-          plugins:{legend:{labels:{color:'rgba(122,160,192,.7)',font:{size:10},boxWidth:10}}},
-          scales:{
-            x:{grid:{color:'rgba(0,212,255,.05)'},ticks:{color:'rgba(122,160,192,.6)',font:{size:10}}},
-            y:{position:'left',grid:{color:'rgba(0,212,255,.05)'},ticks:{color:'rgba(122,160,192,.6)',font:{size:10},callback:v=>'$'+v}},
-            y2:{position:'right',grid:{display:false},ticks:{color:'rgba(0,230,118,.5)',font:{size:10}}}
-          }
-        }
-      });
+// ── CHART ────────────────────────────────────────────────────
+(function(){
+  const daily=[
+    {d:'May 24',s:55.54,c:16},{d:'May 25',s:38.66,c:8},
+    {d:'May 26',s:42.30,c:12},{d:'May 27',s:39.51,c:9},
+    {d:'May 28',s:29.11,c:5},{d:'May 29',s:22.39,c:6},
+    {d:'May 30',s:15.68,c:4}
+  ];
+  const ctx=document.getElementById('spendChart').getContext('2d');
+  new Chart(ctx,{
+    data:{
+      labels:daily.map(x=>x.d),
+      datasets:[
+        {type:'bar',label:'Spend ($)',data:daily.map(x=>x.s),backgroundColor:'rgba(0,212,255,.2)',borderColor:'rgba(0,212,255,.7)',borderWidth:1.5,borderRadius:4,yAxisID:'y'},
+        {type:'line',label:'Clicks',data:daily.map(x=>x.c),borderColor:'rgba(0,230,118,.8)',backgroundColor:'rgba(0,230,118,.1)',borderWidth:2,pointRadius:4,pointBackgroundColor:'var(--ok)',tension:.3,yAxisID:'y2'}
+      ]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{color:'rgba(122,160,192,.6)',font:{size:10},boxWidth:10,padding:16}}},
+      scales:{
+        x:{grid:{color:'rgba(0,212,255,.04)'},ticks:{color:'rgba(122,160,192,.6)',font:{size:10}}},
+        y:{position:'left',grid:{color:'rgba(0,212,255,.04)'},ticks:{color:'rgba(122,160,192,.6)',font:{size:10},callback:v=>'$'+v}},
+        y2:{position:'right',grid:{display:false},ticks:{color:'rgba(0,230,118,.5)',font:{size:10}}}
+      }
     }
-  }catch(e){console.error('Ads error:',e);}
-}
+  });
+})();
 
-// ── DEBRIEF ─────────────────────────────────────────────────
-async function loadDebrief(){
-  try{
-    const d=await(await fetch('morning-debrief-data.json?t='+Date.now())).json();
-    document.getElementById('focus-items').innerHTML=(d.focus||[]).slice(0,3).map(f=>`<div class="focus-card">${f}</div>`).join('')||'<div style="color:var(--t2);font-size:13px">Updates daily at 7 AM ET.</div>';
-    document.getElementById('gmail-note').innerHTML=d.gmail_summary?`<strong style="color:var(--t2);font-size:9px;letter-spacing:2px">📬 GMAIL — TODAY</strong><div style="margin-top:6px">${d.gmail_summary}</div>`:'<span style="color:var(--t2)">Gmail check updates with morning debrief.</span>';
-    if(d.quote)document.getElementById('quote-block').innerHTML=`"${d.quote.text}" <span style="color:var(--t3)">— ${d.quote.author}</span>`;
-  }catch(e){
-    document.getElementById('focus-items').innerHTML='<div style="color:var(--t2);font-size:13px">Debrief updates daily at 7 AM ET.</div>';
-  }
-}
-
-// ── INIT ────────────────────────────────────────────────────
-renderGroups();
-loadAds();
-loadDebrief();
+// ── GROUPS ───────────────────────────────────────────────────
+const J=[
+  {n:'Pressure Washing Friends',ni:'Pressure Washing',s:'71K',c:'pw'},
+  {n:'Pressure Washing Business Owners',ni:'Pressure Washing',s:'132K',c:'pw'},
+  {n:'That Pressure Washing Group',ni:'Pressure Washing',s:'',c:'pw'},
+  {n:'Pressure Washing Q&A | Power Wash, Soft Wash, Rig Builds',ni:'Pressure Washing',s:'13K',c:'pw'},
+  {n:'Pressure Washing, Soft Washing, & Window Cleaning',ni:'Pressure Washing',s:'11K',c:'pw'},
+  {n:'Auto Detailing 101',ni:'Car Detailing',s:'10K',c:'de'},
+  {n:'Painting Contractors by DripJobs',ni:'Painting',s:'250K',c:'pa'},
+  {n:'Painters Chatroom: PRO PAINTER DIGITAL',ni:'Painting',s:'184K',c:'pa'},
+  {n:'HVAC Techs Group',ni:'HVAC',s:'90K',c:'hvac'},
+  {n:'HVAC Business Owners & Contractors',ni:'HVAC',s:'83K',c:'hvac'},
+  {n:'Professional Plumbers',ni:'Plumbing',s:'106K',c:'pl'},
+  {n:'Roofing Contractors Online',ni:'Roofing',s:'30K',c:'ro'},
+  {n:'Junk Removal Winners',ni:'Junk Removal',s:'82K',c:'jr'},
+  {n:'Junk Removal Owners',ni:'Junk Removal',s:'50K',c:'jr'},
+  {n:'Pest Control Experts Worldwide',ni:'Pest Control',s:'26K',c:'pc'},
+  {n:'Landscaping for Beginners 2',ni:'Landscaping',s:'',c:'la'},
+];
+const P=[
+  {n:'All Things Pressure Washing',ni:'Pressure Washing',s:'79K',c:'pw'},
+  {n:'Cleaning Business Owners Coaching',ni:'Cleaning',s:'55K',c:'cl'},
+  {n:'Epoxy and Polished Concrete Professionals',ni:'Epoxy',s:'120K',c:'ep'},
+  {n:'Lawn & Landscape Newbies & Mentors',ni:'Landscaping',s:'110K',c:'la'},
+  {n:'Detailing for Money',ni:'Car Detailing',s:'77K',c:'de'},
+];
+const row=(g,st,cls)=>`<div class="gr"><div class="ndot d-${g.c}"></div><div style="flex:1"><div class="gname">${g.n}</div><div class="gniche c-${g.c}">${g.ni}${g.s?' · '+g.s+' members':''}</div></div><span class="b ${cls}">${st}</span></div>`;
+document.getElementById('joined').innerHTML=J.map(g=>row(g,'JOINED','ok')).join('');
+document.getElementById('pending').innerHTML=P.map(g=>row(g,'PENDING','warn')).join('');
 </script>
 </body>
 </html>
