@@ -1,110 +1,114 @@
 {
-  "lastUpdated": "2026-05-05 23:54 ET",
-  "pipeline": {
-    "sent": 1593,
-    "replied": 7,
-    "interested": 0,
-    "meeting": 0,
-    "won": 0
-  },
+  "lastUpdated": "2026-05-01T12:00:00Z",
   "overview": {
-    "replyRate": "0.4%",
-    "openRate": "N/A",
-    "campaignCount": 2
+    "open_count": 0,
+    "open_count_unique": 0,
+    "reply_count": 4,
+    "reply_count_unique": 4,
+    "bounced_count": 5,
+    "unsubscribed_count": 0,
+    "emails_sent_count": 1290,
+    "contacted_count": 1261,
+    "new_leads_contacted_count": 1261,
+    "total_opportunities": 0,
+    "total_interested": 0,
+    "total_meeting_booked": 0,
+    "total_meeting_completed": 0,
+    "total_closed": 0
+  },
+  "pipeline": {
+    "sent": 1290,
+    "contacted": 1261,
+    "replied": 10,
+    "opted_out": 3,
+    "auto_replies": 2,
+    "interested": 0,
+    "meeting_booked": 0,
+    "won": 0
   },
   "recent_replies": [
     {
-      "name": "Smartchoice",
-      "company": "smartchoiceagents.com",
-      "status": "out_of_office",
-      "preview": "**NOTICE** this email is not monitored. Emails sent to this address will not be seen or replied to.&",
-      "time": "May 5"
+      "email": "manish@coffeeinthecloset.com",
+      "date": "2026-04-30",
+      "status": "opted_out",
+      "label": "Opted Out",
+      "preview": "No worries, best of luck with Coffee in the Closet"
     },
     {
-      "name": "Tiffany",
-      "company": "dezertgatesystems.com",
-      "status": "replied",
-      "preview": "",
-      "time": "May 4"
+      "email": "brad@acadiatx.com",
+      "date": "2026-04-30",
+      "status": "auto_reply",
+      "label": "Auto-Reply",
+      "preview": "Auto-reply: someone just hired your competitor"
     },
     {
-      "name": "Samir",
-      "company": "bartreines.com",
-      "status": "replied",
-      "preview": "Clean Clean false false false EN-US X-NONE X-NONE /* Style Definitions */ table.MsoNormalTable {mso-",
-      "time": "May 4"
+      "email": "m.cochran@apexroofingcompanies.com",
+      "date": "2026-04-29",
+      "status": "opted_out",
+      "label": "Opted Out",
+      "preview": "No worries, best of luck with Apex Roofing"
     },
     {
-      "name": "Samir",
-      "company": "bartreines.com",
-      "status": "out_of_office",
-      "preview": "Greetings, &nbsp; Please note that this email address is inactive and not in use. &nbsp; If you are ",
-      "time": "May 4"
+      "email": "amanda.luipasco@onehourair.com",
+      "date": "2026-04-28",
+      "status": "email_update",
+      "label": "Email Update",
+      "preview": "My email has been updated"
     },
     {
-      "name": "Michael Rhodes",
-      "company": "relativeheatingandair.com",
-      "status": "replied",
-      "preview": "",
-      "time": "May 4"
+      "email": "tim@hcaconstructionandroofing.com",
+      "date": "2026-04-26",
+      "status": "other",
+      "label": "Other",
+      "preview": "Re: $652 in. $12,595 out."
     },
     {
-      "name": "Hido Ozel",
-      "company": "arguijo.com",
-      "status": "replied",
-      "preview": "",
-      "time": "May 4"
+      "email": "nick@optimaconstructiongroup.com",
+      "date": "2026-04-25",
+      "status": "opted_out",
+      "label": "Opted Out",
+      "preview": "No worries, best of luck with Optima Construction"
     },
     {
-      "name": "Christina",
-      "company": "projectoneroofing.com",
-      "status": "out_of_office",
-      "preview": "Thank you for your message.Please note that this individual is no longer employed with Project One R",
-      "time": "May 2"
+      "email": "briank@affluentexteriors.com",
+      "date": "2026-04-24",
+      "status": "email_update",
+      "label": "Email Update",
+      "preview": "We've rebranded - please update my email"
+    },
+    {
+      "email": "sslosson@circle-e.com",
+      "date": "2026-04-19",
+      "status": "warm",
+      "label": "Warm",
+      "preview": "Thank you"
+    },
+    {
+      "email": "odari.head@headsplumbing.com",
+      "date": "2026-04-17",
+      "status": "auto_reply",
+      "label": "Auto-Reply",
+      "preview": "Email verification reply"
     }
   ],
   "daily": [
     {
+      "date": "2026-04-28",
+      "sent": 420,
+      "replies": 2,
+      "bounced": 2
+    },
+    {
       "date": "2026-04-29",
-      "sent": 0,
-      "replied": 0,
-      "interested": 0
+      "sent": 420,
+      "replies": 1,
+      "bounced": 2
     },
     {
       "date": "2026-04-30",
-      "sent": 0,
-      "replied": 0,
-      "interested": 0
-    },
-    {
-      "date": "2026-05-01",
-      "sent": 0,
-      "replied": 0,
-      "interested": 0
-    },
-    {
-      "date": "2026-05-02",
-      "sent": 331,
-      "replied": 1,
-      "interested": 0
-    },
-    {
-      "date": "2026-05-03",
-      "sent": 420,
-      "replied": 0,
-      "interested": 0
-    },
-    {
-      "date": "2026-05-04",
-      "sent": 422,
-      "replied": 5,
-      "interested": 0
-    },
-    {
-      "date": "2026-05-05",
-      "sent": 420,
-      "replied": 1,
-      "interested": 0
+      "sent": 450,
+      "replies": 1,
+      "bounced": 1
     }
   ]
 }
