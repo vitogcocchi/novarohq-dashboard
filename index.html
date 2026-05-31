@@ -4,1045 +4,204 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NOVARO HQ</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#080c14;
-  --card:#0d1424;
-  --card2:#111b2e;
-  --border:rgba(0,212,255,.15);
-  --cyan:#00d4ff;
-  --ok:#00e676;
-  --warn:#ffb300;
-  --err:#ff1744;
-  --t1:#e8f4ff;
-  --t2:#7aa0c0;
-  --t3:#2a4060;
-  --fb:#1877f2;
+  --bg:#080c14;--card:#0d1424;
+  --border:rgba(0,212,255,.12);
+  --cyan:#00d4ff;--ok:#00e676;--warn:#ffb300;--err:#ff1744;
+  --t1:#e8f4ff;--t2:#7aa0c0;--t3:#2a4060;
+  --mono:'SF Mono','Cascadia Code','Consolas',monospace;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.04) 3px,rgba(0,0,0,.04) 4px)}
-
-/* ══ AUTH ══ */
-#auth-gate{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:2000}
-.auth-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:52px 48px;text-align:center;width:380px;box-shadow:0 0 60px rgba(0,212,255,.12)}
-.auth-logo{font-family:'Orbitron',monospace;font-size:22px;font-weight:900;color:var(--cyan);letter-spacing:6px;margin-bottom:6px}
-.auth-sub{color:var(--t2);font-size:13px;letter-spacing:3px;margin-bottom:36px}
-.auth-box input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--t1);font-size:16px;font-family:'Share Tech Mono',monospace;letter-spacing:4px;outline:none;margin-bottom:14px;text-align:center}
-.auth-box input:focus{border-color:var(--cyan);box-shadow:0 0 0 2px rgba(0,212,255,.15)}
-.auth-box button{width:100%;background:var(--cyan);border:none;border-radius:8px;padding:14px;color:#000;font-size:14px;font-weight:700;font-family:'Orbitron',monospace;letter-spacing:3px;cursor:pointer;transition:opacity .2s}
-.auth-box button:hover{opacity:.85}
-.auth-err{color:var(--err);font-size:12px;margin-top:10px;letter-spacing:2px;display:none}
-
-/* ══ SHELL ══ */
-#shell{display:none}
-#shell.on{display:flex;height:100vh}
-
-/* ══ SIDEBAR ══ */
-#sidebar{width:72px;background:var(--card);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:20px 0;gap:6px;flex-shrink:0;z-index:100}
-.nav-logo{font-family:'Orbitron',monospace;font-size:10px;font-weight:900;color:var(--cyan);letter-spacing:2px;margin-bottom:20px;text-align:center;line-height:1.4}
-.nav-i{width:52px;height:52px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;transition:background .2s,color .2s;color:var(--t3);border:1px solid transparent}
-.nav-i:hover{background:rgba(0,212,255,.08);color:var(--t2)}
-.nav-i.on{background:rgba(0,212,255,.12);color:var(--cyan);border-color:rgba(0,212,255,.2)}
-.nav-i svg{width:22px;height:22px;fill:currentColor}
-.nav-i span{font-size:8px;font-weight:700;letter-spacing:1px;font-family:'Share Tech Mono',monospace}
-.nav-dot{width:6px;height:6px;border-radius:50%;margin-top:auto;margin-bottom:8px}
-
-/* ══ MAIN ══ */
-#main{flex:1;overflow-y:auto;overflow-x:hidden}
-.pg{display:none;padding:24px;animation:fadein .3s ease}
-.pg.on{display:block}
-@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-/* ══ PAGE HEADER ══ */
-.ph{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-.ph-title{font-family:'Orbitron',monospace;font-size:20px;font-weight:900;color:var(--cyan);letter-spacing:3px}
-.ph-sub{font-size:12px;color:var(--t2);letter-spacing:2px;margin-top:3px}
-.ph-right{text-align:right}
-.ph-clock{font-family:'Share Tech Mono',monospace;font-size:14px;color:var(--cyan)}
-.ph-date{font-size:11px;color:var(--t2);margin-top:2px}
-
-/* ══ CARDS ══ */
-.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.card-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.card-title{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase;display:flex;align-items:center;gap:8px}
-.card-badge{font-size:10px;font-family:'Share Tech Mono',monospace;color:var(--t2);letter-spacing:1px}
-.card-body{padding:20px}
-
-/* ══ BIG STAT GRID ══ */
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px}
-.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px 22px;position:relative;overflow:hidden}
-.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.stat-card.c-cyan::before{background:var(--cyan)}
-.stat-card.c-ok::before{background:var(--ok)}
-.stat-card.c-warn::before{background:var(--warn)}
-.stat-card.c-err::before{background:var(--err)}
-.stat-card.c-fb::before{background:var(--fb)}
-.stat-label{font-size:11px;font-weight:600;letter-spacing:2px;color:var(--t2);text-transform:uppercase;margin-bottom:10px}
-.stat-num{font-family:'Orbitron',monospace;font-size:42px;font-weight:900;line-height:1;color:var(--t1)}
-.stat-num.c-cyan{color:var(--cyan)}
-.stat-num.c-ok{color:var(--ok)}
-.stat-num.c-warn{color:var(--warn)}
-.stat-num.c-err{color:var(--err)}
-.stat-num.c-fb{color:#5b9cf6}
-.stat-sub{font-size:12px;color:var(--t2);margin-top:8px}
-
-/* ══ STATUS DOT ══ */
-.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;display:inline-block}
-.dot.ok{background:var(--ok);box-shadow:0 0 6px var(--ok)}
-.dot.warn{background:var(--warn);box-shadow:0 0 6px var(--warn)}
-.dot.err{background:var(--err);box-shadow:0 0 6px var(--err);animation:pulse .8s infinite}
-.dot.off{background:var(--t3)}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
-/* ══ PIPELINE ══ */
-.pipeline{display:flex;align-items:center;padding:28px 20px;gap:8px;flex-wrap:wrap;justify-content:space-around}
-.pipe-stage{text-align:center;flex:1;min-width:120px}
-.pipe-num{font-family:'Orbitron',monospace;font-size:52px;font-weight:900;line-height:1;margin-bottom:10px}
-.pipe-num.c-cyan{color:var(--cyan);text-shadow:0 0 20px rgba(0,212,255,.4)}
-.pipe-num.c-ok{color:var(--ok);text-shadow:0 0 20px rgba(0,230,118,.4)}
-.pipe-num.c-warn{color:var(--warn)}
-.pipe-label{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase}
-.pipe-pct{font-size:12px;color:var(--t3);margin-top:4px}
-.pipe-arrow{font-size:24px;color:var(--t3);flex-shrink:0;margin:0 4px}
-
-/* ══ TABLE ══ */
-.tbl-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse}
-th{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--t2);text-transform:uppercase;padding:10px 16px;text-align:left;border-bottom:1px solid var(--border)}
-td{padding:12px 16px;font-size:14px;border-bottom:1px solid rgba(0,212,255,.04)}
-tr:last-child td{border-bottom:none}
-tr:hover td{background:rgba(0,212,255,.03)}
-td.hi{color:var(--cyan);font-weight:600}
-td.ok{color:var(--ok);font-weight:600}
-td.warn{color:var(--warn);font-weight:600}
-
-/* ══ REPLY ITEMS ══ */
-.reply-item{display:flex;align-items:flex-start;gap:12px;padding:14px 20px;border-bottom:1px solid rgba(0,212,255,.05)}
-.reply-item:last-child{border-bottom:none}
-.rbadge{font-size:10px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0;margin-top:2px}
-.rb-warm{background:rgba(0,230,118,.15);color:var(--ok);border:1px solid rgba(0,230,118,.3)}
-.rb-opted_out{background:rgba(255,23,68,.12);color:#ff6680;border:1px solid rgba(255,23,68,.3)}
-.rb-auto_reply{background:rgba(120,120,120,.12);color:#888;border:1px solid rgba(120,120,120,.25)}
-.rb-email_update{background:rgba(255,179,0,.12);color:var(--warn);border:1px solid rgba(255,179,0,.3)}
-.rb-other{background:rgba(0,212,255,.08);color:var(--t2);border:1px solid rgba(0,212,255,.2)}
-.reply-info{flex:1;min-width:0}
-.reply-email{font-size:13px;font-weight:600;color:var(--t1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.reply-preview{font-size:12px;color:var(--t2);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.reply-date{font-size:11px;color:var(--t3);flex-shrink:0}
-
-/* ══ TASK ROWS ══ */
-.task-row{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid rgba(0,212,255,.05)}
-.task-row:last-child{border-bottom:none}
-.task-name{font-size:14px;font-weight:600;flex:1}
-.task-time{font-size:11px;color:var(--t2);font-family:'Share Tech Mono',monospace}
-.task-status-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px}
-.ts-ok{background:rgba(0,230,118,.15);color:var(--ok)}
-.ts-warn{background:rgba(255,179,0,.12);color:var(--warn)}
-.ts-err{background:rgba(255,23,68,.12);color:var(--err)}
-.ts-off{background:rgba(100,120,140,.1);color:var(--t2)}
-
-/* ══ BRIEF ITEMS ══ */
-.brief-item{padding:12px 0;border-bottom:1px solid rgba(0,212,255,.05);font-size:14px;color:var(--t1);line-height:1.6}
-.brief-item:last-child{border-bottom:none}
-.brief-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;padding:2px 8px;border-radius:3px;margin-right:8px;vertical-align:middle}
-.bt-urgent{background:rgba(255,23,68,.15);color:var(--err)}
-.bt-focus{background:rgba(0,230,118,.12);color:var(--ok)}
-.bt-remind{background:rgba(255,179,0,.12);color:var(--warn)}
-
-/* ══ TWO / THREE COL ══ */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-@media(max-width:900px){.two-col,.three-col{grid-template-columns:1fr}}
-.mb16{margin-bottom:16px}
-.mb20{margin-bottom:20px}
-
-/* ══ ALERT BANNER ══ */
-.alert-banner{background:rgba(255,23,68,.08);border:1px solid rgba(255,23,68,.25);border-radius:10px;padding:14px 18px;margin-bottom:16px;display:flex;align-items:flex-start;gap:12px}
-.alert-banner .dot{margin-top:4px}
-.alert-text{font-size:13px;color:var(--t1);line-height:1.5}
-.alert-label{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--err);margin-bottom:3px}
-
-/* ══ FB STATS ══ */
-.fb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
-.fb-card{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:18px;text-align:center}
-.fb-num{font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:#5b9cf6;line-height:1}
-.fb-label{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--t2);margin-top:8px;text-transform:uppercase}
-
-/* ══ LINK ══ */
-.ext-link{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--cyan);text-decoration:none;font-family:'Share Tech Mono',monospace;letter-spacing:1px;border:1px solid rgba(0,212,255,.2);padding:4px 10px;border-radius:4px;transition:background .2s}
-.ext-link:hover{background:rgba(0,212,255,.08)}
-
-/* ══ WQ GRID ══ */
-.wq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px}
-@media(max-width:700px){.wq-grid{grid-template-columns:1fr}}
-.wq-cell{background:var(--card2);border-radius:10px;padding:18px}
-.wq-label{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase;margin-bottom:10px}
-.wq-val{font-family:'Orbitron',monospace;font-size:38px;font-weight:900;color:var(--cyan)}
-.wq-sub{font-size:13px;color:var(--t2);margin-top:6px}
-#quote-text{font-size:15px;color:var(--t1);font-style:italic;line-height:1.6}
-#quote-author{font-size:12px;color:var(--t2);margin-top:8px}
-
-/* ══ HOME STATUS BAR ══ */
-.status-bar{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 20px;margin-bottom:20px;flex-wrap:wrap}
-.status-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:1px}
-
-/* ══ PROGRESS BAR ══ */
-.prog-wrap{background:rgba(0,0,0,.3);border-radius:4px;height:6px;overflow:hidden;margin-top:10px}
-.prog-bar{height:100%;border-radius:4px;transition:width .6s ease;background:var(--cyan)}
-.prog-bar.ok{background:var(--ok)}
+html,body{height:100%;background:var(--bg);color:var(--t1);font-family:var(--sans)}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.03) 3px,rgba(0,0,0,.03) 4px)}
+.nav{display:flex;align-items:center;padding:0 20px;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-logo{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:5px;padding:16px 20px 16px 0;border-right:1px solid var(--border);margin-right:16px}
+.nav-tab{padding:16px 16px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--t2);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+.nav-tab:hover{color:var(--t1)}.nav-tab.on{color:var(--cyan);border-bottom-color:var(--cyan)}
+.nav-right{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--t2)}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block;margin-right:6px;box-shadow:0 0 6px var(--ok)}
+.pg{display:none;padding:20px;animation:fi .25s ease}.pg.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:700px){.g2,.g4,.g3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.ch{padding:13px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.ct{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase}
+.cb{padding:18px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.sl{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--t2);text-transform:uppercase;margin-bottom:8px}
+.sv{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--cyan);line-height:1}
+.ss{font-size:10px;color:var(--t2);margin-top:5px}
+.b{display:inline-flex;align-items:center;padding:2px 9px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:1px}
+.b.ok{background:rgba(0,230,118,.1);color:var(--ok);border:1px solid rgba(0,230,118,.2)}
+.b.warn{background:rgba(255,179,0,.1);color:var(--warn);border:1px solid rgba(255,179,0,.2)}
+.dt{width:100%;border-collapse:collapse;font-size:12px}
+.dt td{padding:9px 0;border-bottom:1px solid rgba(0,212,255,.06);vertical-align:middle}
+.dt tr:last-child td{border-bottom:none}.dt td:last-child{text-align:right;font-family:var(--mono)}
+.gr{display:flex;align-items:center;gap:10px;padding:9px 12px;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;margin-bottom:5px}
+.gn{font-size:12px;color:var(--t1);flex:1;line-height:1.4}.gni{font-size:9px;color:var(--t2);letter-spacing:1px;margin-top:2px}
+.fi{padding:12px 14px;background:rgba(0,212,255,.04);border-left:2px solid var(--cyan);border-radius:0 8px 8px 0;margin-bottom:8px;font-size:13px;line-height:1.6;color:var(--t1)}
+.pw{height:6px;background:var(--border);border-radius:4px;overflow:hidden;margin:8px 0}
+.pb{height:100%;border-radius:4px;transition:width 1s ease}
+.upd{font-size:10px;color:var(--t3);font-family:var(--mono);letter-spacing:1px}
+.ld{color:var(--t3);font-size:11px;font-family:var(--mono)}
 </style>
 </head>
 <body>
+<nav class="nav">
+  <div class="nav-logo">NOVARO HQ</div>
+  <div class="nav-tab on" onclick="go('home',this)">HOME</div>
+  <div class="nav-tab" onclick="go('ads',this)">FB ADS</div>
+  <div class="nav-tab" onclick="go('groups',this)">FB GROUPS</div>
+  <div class="nav-right"><span class="nav-dot"></span><span id="clock">—</span></div>
+</nav>
 
-<!-- AUTH GATE -->
-<div id="auth-gate">
-  <div class="auth-box">
-    <div class="auth-logo">NOVARO HQ</div>
-    <div class="auth-sub">COMMAND CENTER</div>
-    <input type="password" id="auth-pw" placeholder="ACCESS CODE" onkeydown="if(event.key==='Enter')authCheck()">
-    <button onclick="authCheck()">ENTER</button>
-    <div class="auth-err" id="auth-err">⛔ INVALID CODE</div>
+<!-- HOME -->
+<div class="pg on" id="pg-home">
+  <div class="g4" style="margin-bottom:14px">
+    <div class="stat"><div class="sl">Ads Spend (7d)</div><div class="sv" id="h-spend">—</div></div>
+    <div class="stat"><div class="sl">CTR (7d)</div><div class="sv" id="h-ctr">—</div></div>
+    <div class="stat"><div class="sl">Groups Active</div><div class="sv">16</div></div>
+    <div class="stat"><div class="sl">Groups Pending</div><div class="sv" style="color:var(--warn)">5</div></div>
+  </div>
+  <div class="g2">
+    <div>
+      <div class="card">
+        <div class="ch"><span class="ct">🎯 Morning Focus</span><span class="upd" id="deb-date">—</span></div>
+        <div class="cb" id="deb-body"><div class="ld">loading...</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="ch"><span class="ct">📊 FB Ads Snapshot</span><span class="b ok">ACTIVE</span></div>
+        <div class="cb" id="h-ads"><div class="ld">loading...</div></div>
+      </div>
+      <div class="card">
+        <div class="ch"><span class="ct">👥 FB Groups</span><span class="b ok">TASK RUNNING</span></div>
+        <div class="cb">
+          <div class="g3" style="margin-bottom:12px">
+            <div><div class="sl">Joined</div><div style="font-family:var(--mono);font-size:22px;color:var(--cyan)">16</div></div>
+            <div><div class="sl">Pending</div><div style="font-family:var(--mono);font-size:22px;color:var(--warn)">5</div></div>
+            <div><div class="sl">Posts/Day</div><div style="font-family:var(--mono);font-size:22px">3–5</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--t2)">Daily post task runs at <span style="color:var(--cyan);font-family:var(--mono)">9:00 AM ET</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- MAIN SHELL -->
-<div id="shell">
-
-  <!-- SIDEBAR -->
-  <div id="sidebar">
-    <div class="nav-logo">NVR<br>HQ</div>
-
-    <div class="nav-i on" data-page="home" onclick="showPage('home')">
-      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-      <span>HOME</span>
-    </div>
-
-    <div class="nav-i" data-page="facebook" onclick="showPage('facebook')">
-      <svg viewBox="0 0 24 24"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/></svg>
-      <span>FB</span>
-    </div>
-
-    <div class="nav-i" data-page="agents" onclick="showPage('agents')">
-      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
-      <span>TASKS</span>
-    </div>
-
-    <div class="nav-i" data-page="brief" onclick="showPage('brief')">
-      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-      <span>BRIEF</span>
-    </div>
-
-    <div class="nav-dot dot" id="sys-dot" style="background:var(--t3)"></div>
+<!-- ADS -->
+<div class="pg" id="pg-ads">
+  <div class="g4" style="margin-bottom:14px">
+    <div class="stat"><div class="sl">Total Spend (7d)</div><div class="sv" id="a-spend">—</div><div class="ss">$35/day budget</div></div>
+    <div class="stat"><div class="sl">Impressions</div><div class="sv" id="a-imp">—</div></div>
+    <div class="stat"><div class="sl">Clicks</div><div class="sv" id="a-clicks">—</div></div>
+    <div class="stat"><div class="sl">CTR</div><div class="sv" id="a-ctr">—</div></div>
   </div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch"><span class="ct">Campaign — 7 Days</span><span class="b ok">● ACTIVE</span></div>
+      <div class="cb"><table class="dt" id="camp-table"><tr><td colspan="2"><div class="ld">loading...</div></td></tr></table></div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="ct">Active Ads</span></div>
+      <div class="cb" id="ads-list"><div class="ld">loading...</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ch"><span class="ct">Budget Tracker</span><span style="font-size:11px;color:var(--t2);font-family:var(--mono)">$35/day · 2 ads</span></div>
+    <div class="cb" id="budget"><div class="ld">loading...</div></div>
+  </div>
+  <div style="text-align:right;margin-top:4px"><span class="upd" id="ads-upd">—</span></div>
+</div>
 
-  <!-- MAIN CONTENT -->
-  <div id="main">
-
-    <!-- ═══════════════════════════════════
-         HOME
-    ════════════════════════════════════ -->
-    <section class="pg on" id="page-home">
-      <div class="ph">
-        <div>
-          <div class="ph-title">NOVARO COMMAND CENTER</div>
-          <div class="ph-sub">Everything happening right now — at a glance</div>
-        </div>
-        <div class="ph-right">
-          <div class="ph-clock" id="clock-1">--:--:-- --</div>
-          <div class="ph-date" id="date-1">-- ET</div>
-        </div>
-      </div>
-
-      <!-- Status bar -->
-      <div class="status-bar" id="status-bar">
-        <div class="status-item"><span class="dot off" id="dot-fb"></span><span id="status-fb">Facebook</span></div>
-        <div class="status-item"><span class="dot off" id="dot-tasks"></span><span id="status-tasks">Automations</span></div>
-        <div style="margin-left:auto;font-size:11px;color:var(--t2);font-family:'Share Tech Mono',monospace" id="global-updated">Loading data...</div>
-      </div>
-
-      <!-- TODAY banner -->
-      <div class="card mb20" id="home-today-banner" style="border-color:rgba(91,156,246,.3)">
-        <div class="card-head" style="background:rgba(24,119,242,.06)">
-          <div class="card-title" style="color:#5b9cf6;font-size:13px">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#5b9cf6"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/></svg>
-            WHAT HAPPENED ON FACEBOOK TODAY
-          </div>
-          <a href="#" onclick="showPage('facebook');return false" class="ext-link" style="color:#5b9cf6;border-color:rgba(91,156,246,.3)">Full Detail →</a>
-        </div>
-        <div style="padding:20px" id="home-today-summary">
-          <div style="color:var(--t3);font-size:13px">Loading today's activity...</div>
-        </div>
-      </div>
-
-      <!-- BIG KPIs -->
-      <div class="stat-grid mb20">
-        <div class="stat-card c-fb">
-          <div class="stat-label">📝 Posted Today</div>
-          <div class="stat-num c-fb" id="h-posted-today">--</div>
-          <div class="stat-sub" id="h-posted-group">posts in groups</div>
-        </div>
-        <div class="stat-card c-ok">
-          <div class="stat-label">💬 Comments on Our Posts</div>
-          <div class="stat-num c-ok" id="h-comments">--</div>
-          <div class="stat-sub">people engaging today</div>
-        </div>
-        <div class="stat-card c-cyan">
-          <div class="stat-label">↩️ Times Vito Replied</div>
-          <div class="stat-num c-cyan" id="h-replies">--</div>
-          <div class="stat-sub">keeping conversations warm</div>
-        </div>
-        <div class="stat-card c-warn">
-          <div class="stat-label">🔥 Leads Spotted Today</div>
-          <div class="stat-num c-warn" id="h-leads">--</div>
-          <div class="stat-sub">flagged — waiting for your DM</div>
-        </div>
-        <div class="stat-card c-ok">
-          <div class="stat-label">👥 Groups We're In</div>
-          <div class="stat-num c-ok" id="h-groups">--</div>
-          <div class="stat-sub">trade groups on Facebook</div>
-        </div>
-      </div>
-
-      <!-- Recent activity -->
-      <div class="card">
-        <div class="card-head">
-          <div class="card-title">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--ok)"><circle cx="12" cy="12" r="10"/></svg>
-            What's Been Happening — Recent Agent Activity
-          </div>
-          <a href="#" onclick="showPage('agents');return false" class="ext-link">All Tasks →</a>
-        </div>
-        <div id="home-activity">
-          <div style="padding:30px;text-align:center;color:var(--t3);font-size:13px">Loading activity...</div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════
-         FACEBOOK
-    ════════════════════════════════════ -->
-    <section class="pg" id="page-facebook">
-      <div class="ph">
-        <div>
-          <div class="ph-title">FACEBOOK</div>
-          <div class="ph-sub">Vito Cocchi — trade group outreach — updated every few hours</div>
-        </div>
-        <div class="ph-right">
-          <div class="ph-clock" id="clock-2">--:--:-- --</div>
-          <div class="ph-date" id="date-2">-- ET</div>
-        </div>
-      </div>
-
-      <!-- DID WE POST TODAY? Big status card -->
-      <div class="card mb16" id="fb-post-status-card">
-        <div style="padding:24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap">
-          <div style="font-size:56px;line-height:1" id="fb-posted-emoji">⏳</div>
-          <div style="flex:1;min-width:200px">
-            <div style="font-family:'Orbitron',monospace;font-size:18px;font-weight:900;color:var(--t1);margin-bottom:6px" id="fb-posted-headline">Checking today's post...</div>
-            <div style="font-size:14px;color:var(--t2);line-height:1.6" id="fb-posted-detail">Loading...</div>
-          </div>
-          <div style="text-align:right;flex-shrink:0">
-            <div style="font-size:11px;color:var(--t2);letter-spacing:2px;margin-bottom:4px">DATA AS OF</div>
-            <div style="font-family:'Share Tech Mono',monospace;font-size:13px;color:var(--cyan)" id="fb-updated">--</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TODAY'S 4 big numbers -->
-      <div style="margin-bottom:6px;font-size:10px;font-weight:700;letter-spacing:3px;color:var(--t2);text-transform:uppercase">TODAY</div>
-      <div class="stat-grid mb20">
-        <div class="stat-card c-fb">
-          <div class="stat-label">📝 Posts Made</div>
-          <div class="stat-num c-fb" id="fb-today-posts">--</div>
-          <div class="stat-sub">questions posted to groups</div>
-        </div>
-        <div class="stat-card c-ok">
-          <div class="stat-label">💬 Comments Received</div>
-          <div class="stat-num c-ok" id="fb-today-comments">--</div>
-          <div class="stat-sub">people replying to our posts</div>
-        </div>
-        <div class="stat-card c-cyan">
-          <div class="stat-label">↩️ Times Vito Replied</div>
-          <div class="stat-num c-cyan" id="fb-today-replies">--</div>
-          <div class="stat-sub">keeping conversations alive</div>
-        </div>
-        <div class="stat-card c-warn">
-          <div class="stat-label">🔥 Leads Spotted</div>
-          <div class="stat-num c-warn" id="fb-today-leads">--</div>
-          <div class="stat-sub">flagged — need your DM</div>
-        </div>
-      </div>
-
-      <!-- LEADS WAITING FOR VITO -->
-      <div class="card mb16">
-        <div class="card-head">
-          <div class="card-title"><span class="dot warn" style="animation:pulse .8s infinite"></span> Leads Waiting for You to DM</div>
-          <div class="card-badge" id="fb-leads-count">--</div>
-        </div>
-        <div id="fb-leads-list">
-          <div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">Loading leads...</div>
-        </div>
-      </div>
-
-      <!-- RECENT POSTS -->
-      <div class="card mb16">
-        <div class="card-head">
-          <div class="card-title">📋 Recent Posts — What We Said and What Happened</div>
-        </div>
-        <div id="fb-posts-list">
-          <div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">Loading posts...</div>
-        </div>
-      </div>
-
-      <!-- ALL-TIME TOTALS + Daily table -->
-      <div class="two-col">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-title">All-Time Totals</div>
-          </div>
-          <div style="padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <div style="background:var(--card2);border-radius:8px;padding:16px;text-align:center">
-              <div style="font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:#5b9cf6" id="fb-total-groups">--</div>
-              <div style="font-size:11px;color:var(--t2);margin-top:6px;letter-spacing:1px">GROUPS JOINED</div>
-            </div>
-            <div style="background:var(--card2);border-radius:8px;padding:16px;text-align:center">
-              <div style="font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:#5b9cf6" id="fb-total-posts">--</div>
-              <div style="font-size:11px;color:var(--t2);margin-top:6px;letter-spacing:1px">POSTS MADE</div>
-            </div>
-            <div style="background:var(--card2);border-radius:8px;padding:16px;text-align:center">
-              <div style="font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:var(--ok)" id="fb-total-comments">--</div>
-              <div style="font-size:11px;color:var(--t2);margin-top:6px;letter-spacing:1px">TOTAL COMMENTS</div>
-            </div>
-            <div style="background:var(--card2);border-radius:8px;padding:16px;text-align:center">
-              <div style="font-family:'Orbitron',monospace;font-size:32px;font-weight:900;color:var(--warn)" id="fb-total-leads">--</div>
-              <div style="font-size:11px;color:var(--t2);margin-top:6px;letter-spacing:1px">TOTAL LEADS</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-title">Last 7 Days — Day by Day</div>
-          </div>
-          <div class="tbl-wrap">
-            <table>
-              <thead>
-                <tr><th>Date</th><th>Posts</th><th>Comments</th><th>Replies</th><th>Leads</th></tr>
-              </thead>
-              <tbody id="fb-tbody">
-                <tr><td colspan="5" style="text-align:center;padding:24px;color:var(--t3);font-size:12px">Loading...</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════
-         AGENTS / TASKS
-    ════════════════════════════════════ -->
-    <section class="pg" id="page-agents">
-      <div class="ph">
-        <div>
-          <div class="ph-title">AGENTS & TASKS</div>
-          <div class="ph-sub">What your automations are doing — and if they're working</div>
-        </div>
-        <div class="ph-right">
-          <div class="ph-clock" id="clock-4">--:--:-- --</div>
-          <div class="ph-date" id="date-4">-- ET</div>
-        </div>
-      </div>
-
-      <!-- Alerts -->
-      <div id="task-alerts-wrap"></div>
-
-      <!-- Overall health -->
-      <div class="stat-grid mb20">
-        <div class="stat-card c-ok">
-          <div class="stat-label">System Status</div>
-          <div class="stat-num" style="font-size:28px" id="task-overall">--</div>
-          <div class="stat-sub">overall automation health</div>
-        </div>
-        <div class="stat-card c-cyan">
-          <div class="stat-label">Tasks Logged</div>
-          <div class="stat-num c-cyan" id="task-count">--</div>
-          <div class="stat-sub">completed this session</div>
-        </div>
-        <div class="stat-card c-warn">
-          <div class="stat-label">Alerts</div>
-          <div class="stat-num c-warn" id="task-alert-count">--</div>
-          <div class="stat-sub">issues needing attention</div>
-        </div>
-      </div>
-
-      <!-- Scheduled tasks -->
-      <div class="card mb16">
-        <div class="card-head">
-          <div class="card-title">Scheduled Automations — What Runs Automatically</div>
-          <div class="card-badge" id="tasks-checked">--</div>
-        </div>
-        <div id="tasks-list">
-          <div style="padding:24px;text-align:center;color:var(--t3);font-size:12px">Loading tasks...</div>
-        </div>
-      </div>
-
-      <!-- Session activity -->
-      <div class="card">
-        <div class="card-head">
-          <div class="card-title">Recent Agent Activity Log</div>
-        </div>
-        <div id="agents-activity">
-          <div style="padding:24px;text-align:center;color:var(--t3);font-size:12px">Loading...</div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ═══════════════════════════════════
-         MORNING BRIEF
-    ════════════════════════════════════ -->
-    <section class="pg" id="page-brief">
-      <div class="ph">
-        <div>
-          <div class="ph-title">MORNING BRIEF</div>
-          <div class="ph-sub">What you need to know before starting your day</div>
-        </div>
-        <div class="ph-right">
-          <div class="ph-clock" id="clock-5">--:--:-- --</div>
-          <div class="ph-date" id="date-5">-- ET</div>
-        </div>
-      </div>
-
-      <!-- Weather + Quote -->
-      <div class="card mb16">
-        <div class="card-head">
-          <div class="card-title">Conditions</div>
-          <div class="card-badge" id="brief-updated">--</div>
-        </div>
-        <div class="wq-grid">
-          <div class="wq-cell">
-            <div class="wq-label">🌤 Weather — Tampa, FL</div>
-            <div class="wq-val" id="weather-temp">--°F</div>
-            <div class="wq-sub" id="weather-desc">Loading...</div>
-          </div>
-          <div class="wq-cell">
-            <div class="wq-label">💡 Daily Signal</div>
-            <div id="quote-text">Loading...</div>
-            <div id="quote-author"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Urgent + Focus + Reminders -->
-      <div class="three-col">
-        <div class="card">
-          <div class="card-head">
-            <div class="card-title"><span class="dot err"></span>Urgent — Action Needed Now</div>
-          </div>
-          <div class="card-body" id="brief-urgent">
-            <div style="color:var(--t3);font-size:13px">Loading...</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-title"><span class="dot ok"></span>Today's Focus</div>
-          </div>
-          <div class="card-body" id="brief-focus">
-            <div style="color:var(--t3);font-size:13px">Loading...</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-head">
-            <div class="card-title"><span class="dot warn"></span>Reminders</div>
-          </div>
-          <div class="card-body" id="brief-reminders">
-            <div style="color:var(--t3);font-size:13px">Loading...</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div><!-- /main -->
-</div><!-- /shell -->
+<!-- GROUPS -->
+<div class="pg" id="pg-groups">
+  <div class="g4" style="margin-bottom:14px">
+    <div class="stat"><div class="sl">Joined</div><div class="sv">16</div></div>
+    <div class="stat"><div class="sl">Pending Approval</div><div class="sv" style="color:var(--warn)">5</div></div>
+    <div class="stat"><div class="sl">Est. Combined Reach</div><div class="sv" style="font-size:18px">~2M</div><div class="ss">members across all groups</div></div>
+    <div class="stat"><div class="sl">Daily Post Time</div><div class="sv" style="font-size:18px">9 AM ET</div><div class="ss">3–5 groups/day automated</div></div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="ch"><span class="ct">✅ Joined (16)</span></div>
+      <div class="cb" id="joined-list"></div>
+    </div>
+    <div class="card">
+      <div class="ch"><span class="ct">⏳ Pending Approval (5)</span></div>
+      <div class="cb" id="pending-list"></div>
+    </div>
+  </div>
+</div>
 
 <script>
-// ══════════════════════════════════
-// AUTH
-// ══════════════════════════════════
-async function authCheck(){
-  const pw = document.getElementById('auth-pw').value;
-  if(!pw) return;
-  const enc = new TextEncoder();
-  const hash = await crypto.subtle.digest('SHA-256', enc.encode(pw));
-  const hex = Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('');
-  if(hex === 'de72749cf0e0a644e639424d93068c6e6eda51bcbf3d2f9f11cb50ae5002fade'){
-    document.getElementById('auth-gate').style.display = 'none';
-    sessionStorage.setItem('novaro_auth','1');
-    document.getElementById('shell').classList.add('on');
-    init();
-  } else {
-    const err = document.getElementById('auth-err');
-    err.style.display = 'block';
-    document.getElementById('auth-pw').value = '';
-    document.getElementById('auth-pw').focus();
-    setTimeout(()=>{ err.style.display='none'; }, 3000);
-  }
-}
+const JOINED=[
+  {n:'Pressure Washing Friends',ni:'Pressure Washing',s:'71K'},
+  {n:'Pressure Washing Business Owners',ni:'Pressure Washing',s:'132K'},
+  {n:'That Pressure Washing Group',ni:'Pressure Washing',s:''},
+  {n:'Pressure Washing Q&A | Power Wash, Soft Wash, Rig Builds',ni:'Pressure Washing',s:'13K'},
+  {n:'Pressure Washing, Soft Washing, & Window Cleaning',ni:'Pressure Washing',s:'11K'},
+  {n:'Auto Detailing 101',ni:'Car Detailing',s:'10K'},
+  {n:'Painting Contractors by DripJobs',ni:'Painting',s:'250K'},
+  {n:'Painters Chatroom: PRO PAINTER DIGITAL',ni:'Painting',s:'184K'},
+  {n:'HVAC Techs Group',ni:'HVAC',s:'90K'},
+  {n:'HVAC Business Owners & Contractors',ni:'HVAC',s:'83K'},
+  {n:'Professional Plumbers',ni:'Plumbing',s:'106K'},
+  {n:'Roofing Contractors Online',ni:'Roofing',s:'30K'},
+  {n:'Junk Removal Winners',ni:'Junk Removal',s:'82K'},
+  {n:'Junk Removal Owners',ni:'Junk Removal',s:'50K'},
+  {n:'Pest Control Experts Worldwide',ni:'Pest Control',s:'26K'},
+  {n:'Landscaping for Beginners 2',ni:'Landscaping',s:''},
+];
+const PENDING=[
+  {n:'All Things Pressure Washing',ni:'Pressure Washing',s:'79K'},
+  {n:'Cleaning Business Owners Coaching',ni:'Cleaning',s:'55K'},
+  {n:'Epoxy and Polished Concrete Professionals',ni:'Epoxy',s:'120K'},
+  {n:'Lawn & Landscape Newbies & Mentors',ni:'Landscaping',s:'110K'},
+  {n:'Detailing for Money',ni:'Car Detailing',s:'77K'},
+];
 
-// Resume session
-(function(){
-  if(sessionStorage.getItem('novaro_auth') === '1'){
-    document.getElementById('auth-gate').style.display = 'none';
-    document.getElementById('shell').classList.add('on');
-    init();
-  }
-})();
+function go(id,el){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('on'));document.getElementById('pg-'+id).classList.add('on');el.classList.add('on');}
+function tick(){const n=new Date();document.getElementById('clock').textContent=n.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',timeZone:'America/New_York'})+' ET · '+n.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',timeZone:'America/New_York'});}
+setInterval(tick,1000);tick();
 
-// ══════════════════════════════════
-// INIT
-// ══════════════════════════════════
-function init(){
-  tick();
-  setInterval(tick, 1000);
-  loadAllData();
-  fetchWeather();
-  fetchQuote();
-}
+document.getElementById('joined-list').innerHTML=JOINED.map(g=>`<div class="gr"><div style="flex:1"><div class="gn">${g.n}</div><div class="gni">${g.ni}${g.s?' · '+g.s+' members':''}</div></div><span class="b ok">JOINED</span></div>`).join('');
+document.getElementById('pending-list').innerHTML=PENDING.map(g=>`<div class="gr"><div style="flex:1"><div class="gn">${g.n}</div><div class="gni">${g.ni}${g.s?' · '+g.s+' members':''}</div></div><span class="b warn">PENDING</span></div>`).join('');
 
-// ══════════════════════════════════
-// NAV
-// ══════════════════════════════════
-function showPage(p){
-  document.querySelectorAll('.pg').forEach(e=>e.classList.remove('on'));
-  document.querySelectorAll('.nav-i').forEach(e=>e.classList.remove('on'));
-  document.getElementById('page-'+p).classList.add('on');
-  const n = document.querySelector('[data-page="'+p+'"]');
-  if(n) n.classList.add('on');
-}
-
-// ══════════════════════════════════
-// CLOCK
-// ══════════════════════════════════
-function tick(){
-  const now = new Date();
-  const parts = new Intl.DateTimeFormat('en-US',{
-    hour:'numeric',minute:'2-digit',second:'2-digit',
-    hour12:true,timeZone:'America/New_York'
-  }).formatToParts(now);
-  const p = Object.fromEntries(parts.map(x=>[x.type,x.value]));
-  const t = p.hour+':'+p.minute+':'+p.second+' '+(p.dayperiod||p.dayPeriod||'');
-  const d = now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'});
-  ['clock-1','clock-2','clock-3','clock-4'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=t;});
-  ['date-1','date-2','date-3','date-4'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=d+' ET';});
-}
-
-// ══════════════════════════════════
-// DATA LOADING
-// ══════════════════════════════════
-const GH = 'https://raw.githubusercontent.com/vitogcocchi/novarohq-dashboard/main/';
-
-async function loadAllData(){
-  const ts = [];
-
-  const files = [
-    ['social-data.json',    populateFacebook],
-    ['agents-log.json',     populateAgents],
-    ['task-status.json',    populateTasks],
-    ['morning-debrief-data.json', populateBrief],
-  ];
-
-  let loaded = 0;
-  for(const [file, fn] of files){
-    try{
-      const r = await fetch(GH+file+'?t='+Date.now());
-      if(r.ok){
-        const d = await r.json();
-        fn(d);
-        if(d.lastUpdated||d.last_checked) ts.push(new Date(d.lastUpdated||d.last_checked));
-        loaded++;
-      }
-    }catch(e){ console.warn('Failed to load', file, e); }
-  }
-
-  // Update global timestamp
-  if(ts.length > 0){
-    const latest = new Date(Math.max(...ts.map(t=>t.getTime())));
-    set('global-updated', 'Last synced: '+latest.toLocaleString('en-US',{
-      timeZone:'America/New_York',month:'short',day:'numeric',
-      hour:'numeric',minute:'2-digit'
-    })+' ET');
-  }
-
-  // Update system dot
-  const sysDot = document.getElementById('sys-dot');
-  if(sysDot){ sysDot.className = 'nav-dot dot ok'; }
-}
-
-// ══════════════════════════════════
-// FACEBOOK
-// ══════════════════════════════════
-function populateFacebook(d){
-  const today   = d.today   || {};
-  const totals  = d.totals  || {};
-  const posts   = d.recentPosts || [];
-  const leads   = d.leads   || [];
-  const daily   = d.daily   || [];
-
-  // ── TODAY numbers ──
-  const tPosts    = today.postsPosted    || 0;
-  const tComments = today.commentsReceived || 0;
-  const tReplies  = today.repliesMade    || 0;
-  const tLeads    = today.leadsFlagged   || 0;
-  const posted    = today.posted || tPosts > 0;
-
-  // ── HOME page ──
-  set('h-posted-today', tPosts.toString());
-  set('h-posted-group', posted ? (today.groupPostedIn || 'groups') : 'no post yet today');
-  set('h-comments',  tComments.toString());
-  set('h-replies',   tReplies.toString());
-  set('h-leads',     tLeads.toString());
-  set('h-groups',    (totals.groupsJoined || 0).toString());
-
-  // Home status bar
-  const dotEl = document.getElementById('dot-fb');
-  if(dotEl) dotEl.className = 'dot '+(posted ? 'ok' : 'warn');
-  set('status-fb', posted
-    ? 'Facebook: Posted ✓ — '+tComments+' comments, '+tLeads+' leads'
-    : 'Facebook: No post today yet');
-
-  // ── HOME TODAY banner ──
-  const bannerEl = document.getElementById('home-today-summary');
-  if(bannerEl){
-    if(posted){
-      bannerEl.innerHTML = `
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
-          <div style="background:rgba(24,119,242,.08);border-radius:10px;padding:16px;border:1px solid rgba(91,156,246,.2)">
-            <div style="font-size:11px;color:var(--t2);letter-spacing:2px;margin-bottom:6px">POSTED IN</div>
-            <div style="font-size:15px;font-weight:700;color:var(--t1)">${today.groupPostedIn||'a group'}</div>
-            ${today.postPreview ? `<div style="font-size:12px;color:var(--t2);margin-top:6px;font-style:italic">"${today.postPreview.substring(0,80)}${today.postPreview.length>80?'…':''}"</div>` : ''}
-          </div>
-          <div style="background:rgba(0,230,118,.06);border-radius:10px;padding:16px;border:1px solid rgba(0,230,118,.15);text-align:center">
-            <div style="font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:var(--ok)">${tComments}</div>
-            <div style="font-size:12px;color:var(--t2);margin-top:4px;letter-spacing:1px">COMMENTS BACK</div>
-          </div>
-          <div style="background:rgba(0,212,255,.06);border-radius:10px;padding:16px;border:1px solid rgba(0,212,255,.15);text-align:center">
-            <div style="font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:var(--cyan)">${tReplies}</div>
-            <div style="font-size:12px;color:var(--t2);margin-top:4px;letter-spacing:1px">REPLIES MADE</div>
-          </div>
-          <div style="background:rgba(255,179,0,.06);border-radius:10px;padding:16px;border:1px solid rgba(255,179,0,.2);text-align:center">
-            <div style="font-family:'Orbitron',monospace;font-size:36px;font-weight:900;color:var(--warn)">${tLeads}</div>
-            <div style="font-size:12px;color:var(--t2);margin-top:4px;letter-spacing:1px">LEADS FLAGGED</div>
-          </div>
-        </div>`;
-    } else {
-      bannerEl.innerHTML = `<div style="font-size:15px;color:var(--t2)">No post yet today. The automation runs at <strong style="color:var(--cyan)">11am ET</strong> — check back after that.</div>`;
-    }
-  }
-
-  // ── FB PAGE ──
-  // Status card
-  const statusCard = document.getElementById('fb-post-status-card');
-  if(statusCard){
-    statusCard.style.borderColor = posted ? 'rgba(0,230,118,.3)' : 'rgba(255,179,0,.3)';
-    statusCard.style.background  = posted ? 'rgba(0,230,118,.03)' : 'transparent';
-  }
-  set('fb-posted-emoji',    posted ? '✅' : '⏳');
-  set('fb-posted-headline', posted ? 'We posted today! — '+fmtDate(today.date) : 'No post yet today');
-  set('fb-posted-detail',   posted
-    ? 'Posted in '+( today.groupPostedIn||'a group')+'. '+(today.postPreview ? '"'+today.postPreview.substring(0,100)+(today.postPreview.length>100?'…':'') +'"' : '')
-    : 'The daily post runs at 11am ET. If it\'s past 11am and this is still showing, check the TASKS page for any errors.');
-  if(d.lastUpdated) set('fb-updated', fmtDateTime(d.lastUpdated));
-
-  // Today stats
-  set('fb-today-posts',    tPosts.toString());
-  set('fb-today-comments', tComments.toString());
-  set('fb-today-replies',  tReplies.toString());
-  set('fb-today-leads',    tLeads.toString());
-
-  // All-time totals
-  set('fb-total-groups',   (totals.groupsJoined   || 0).toString());
-  set('fb-total-posts',    (totals.postsAllTime   || posts.length || 0).toString());
-  set('fb-total-comments', (totals.commentsAllTime|| 0).toString());
-  set('fb-total-leads',    (totals.leadsAllTime   || leads.length || 0).toString());
-
-  // Leads waiting list
-  const leadsListEl = document.getElementById('fb-leads-list');
-  const leadsCountEl = document.getElementById('fb-leads-count');
-  const awaitingLeads = leads.filter(l => (l.status||'').includes('Awaiting') || (l.status||'').includes('awaiting') || !l.dmSent);
-  if(leadsCountEl) leadsCountEl.textContent = awaitingLeads.length > 0 ? awaitingLeads.length+' need your attention' : 'None right now';
-  if(leadsListEl){
-    if(awaitingLeads.length === 0){
-      leadsListEl.innerHTML = '<div style="padding:24px;text-align:center;color:var(--ok);font-size:14px;font-weight:600">✓ All clear — no leads waiting right now</div>';
-    } else {
-      leadsListEl.innerHTML = awaitingLeads.map(l=>`
-        <div class="reply-item">
-          <div style="font-size:28px;flex-shrink:0">🔥</div>
-          <div class="reply-info">
-            <div style="font-size:14px;font-weight:700;color:var(--t1)">${l.name||'Unknown'} <span style="font-size:11px;color:var(--t2);font-weight:400">— ${l.group||'group'}</span></div>
-            <div style="font-size:13px;color:var(--t2);margin-top:3px">${l.painSignal||l.comment||'Pain signal detected'}</div>
-            ${l.dmDraft ? `<div style="font-size:12px;color:var(--cyan);margin-top:6px;font-style:italic;border-left:2px solid rgba(0,212,255,.3);padding-left:8px">DM Draft: "${l.dmDraft.substring(0,120)}${l.dmDraft.length>120?'…':''}"</div>` : ''}
-          </div>
-          <div class="reply-date">${fmtDate(l.date||l.flaggedAt)}</div>
-        </div>`).join('');
-    }
-  }
-
-  // Recent posts list
-  const postsListEl = document.getElementById('fb-posts-list');
-  if(postsListEl){
-    if(posts.length === 0){
-      postsListEl.innerHTML = '<div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">No posts yet — first one goes out at 11am ET today</div>';
-    } else {
-      postsListEl.innerHTML = [...posts].reverse().slice(0,10).map(p=>{
-        const statusColor = p.commentsReceived > 0 ? 'var(--ok)' : 'var(--t3)';
-        return `<div style="padding:16px 20px;border-bottom:1px solid rgba(0,212,255,.05);display:flex;align-items:flex-start;gap:16px">
-          <div style="flex-shrink:0;text-align:center;min-width:50px">
-            <div style="font-size:11px;color:var(--t2);letter-spacing:1px">${fmtDate(p.date)}</div>
-            <div style="font-size:10px;color:var(--t3);margin-top:2px">${p.status||'live'}</div>
-          </div>
-          <div style="flex:1;min-width:0">
-            <div style="font-size:12px;font-weight:700;color:#5b9cf6;letter-spacing:1px;margin-bottom:4px">${p.group||'Facebook Group'}</div>
-            <div style="font-size:14px;color:var(--t1);line-height:1.5">"${(p.preview||p.text||'').substring(0,140)}${(p.preview||p.text||'').length>140?'…':''}"</div>
-          </div>
-          <div style="flex-shrink:0;text-align:right;display:flex;flex-direction:column;gap:6px;min-width:80px">
-            <div style="font-size:12px;color:${statusColor};font-weight:600">${p.commentsReceived||0} comments</div>
-            <div style="font-size:11px;color:var(--t2)">${p.repliesMade||0} replied</div>
-            ${(p.leadsFlagged||0)>0 ? `<div style="font-size:11px;color:var(--warn);font-weight:600">${p.leadsFlagged} 🔥 leads</div>` : ''}
-          </div>
-        </div>`;
-      }).join('');
-    }
-  }
-
-  // Daily table
-  const tbody = document.getElementById('fb-tbody');
-  if(tbody && daily.length > 0){
-    tbody.innerHTML = [...daily].reverse().slice(0,7).map(row=>`<tr>
-      <td style="color:var(--t2)">${fmtDate(row.date)}</td>
-      <td class="${(row.posts||0)>0?'hi':''}">${row.posts||0}</td>
-      <td class="${(row.comments||0)>0?'ok':''}">${row.comments||0}</td>
-      <td class="${(row.replies||0)>0?'ok':''}">${row.replies||0}</td>
-      <td class="${(row.leads||0)>0?'warn':''}">${row.leads||0}</td>
-    </tr>`).join('');
-  } else if(tbody){
-    tbody.innerHTML = '<tr><td colspan="5" style="padding:20px;text-align:center;color:var(--t3);font-size:12px">No daily data yet</td></tr>';
-  }
-}
-
-// ══════════════════════════════════
-// AGENTS LOG
-// ══════════════════════════════════
-function populateAgents(d){
-  const tasks = d.sessionTasks || [];
-  set('task-count', tasks.length.toLocaleString());
-
-  const wrap = document.getElementById('agents-activity');
-  const homeWrap = document.getElementById('home-activity');
-  if(!wrap) return;
-
-  if(tasks.length === 0){
-    const msg = '<div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">No agent activity logged yet</div>';
-    wrap.innerHTML = msg;
-    if(homeWrap) homeWrap.innerHTML = msg;
-    return;
-  }
-
-  const statusColor = {completed:'ok',failed:'err',in_progress:'warn',running:'warn'};
-  const statusLabel = {completed:'✓ Done',failed:'✗ Failed',in_progress:'⟳ Running',running:'⟳ Running'};
-
-  const rows = [...tasks].reverse().map(t=>`<div class="task-row">
-    <div>
-      <div style="font-size:12px;font-weight:700;letter-spacing:1px;color:var(--t2);margin-bottom:2px">${t.type||'TASK'}</div>
-      <div class="task-name">${t.title||'Untitled Task'}</div>
-      <div style="font-size:12px;color:var(--t2);margin-top:4px">${(t.summary||'').substring(0,120)}</div>
-    </div>
-    <div style="text-align:right;flex-shrink:0">
-      <div class="task-status-badge ts-${statusColor[t.status]||'off'}">${statusLabel[t.status]||t.status||'--'}</div>
-      <div class="task-time" style="margin-top:6px">${fmtDateTime(t.completedAt||t.startedAt)}</div>
-    </div>
-  </div>`);
-
-  wrap.innerHTML = rows.join('');
-  if(homeWrap) homeWrap.innerHTML = rows.slice(0,4).join('');
-}
-
-// ══════════════════════════════════
-// TASK STATUS
-// ══════════════════════════════════
-function populateTasks(d){
-  const tasks = Array.isArray(d.tasks) ? d.tasks : [];
-  const alerts = d.alerts || [];
-  const overall = (d.overall_status||'unknown').toUpperCase();
-
-  set('task-overall', overall);
-  set('task-alert-count', alerts.length.toString());
-  if(d.last_checked) set('tasks-checked', 'Checked '+fmtDateTime(d.last_checked));
-
-  // Status bar
-  const dotEl = document.getElementById('dot-tasks');
-  if(dotEl) dotEl.className = 'dot '+(alerts.length === 0 ? 'ok' : alerts.length <= 2 ? 'warn' : 'err');
-  set('status-tasks', 'Automations: '+(alerts.length === 0 ? 'All good' : alerts.length+' need attention'));
-
-  // Overall stat card color
-  const oc = document.querySelector('#page-agents .stat-card.c-ok:first-child');
-  if(oc && alerts.length > 0) oc.className = oc.className.replace('c-ok','c-warn');
-
-  // Alerts
-  const alertWrap = document.getElementById('task-alerts-wrap');
-  if(alertWrap && alerts.length > 0){
-    alertWrap.innerHTML = alerts.map(a=>`<div class="alert-banner mb16">
-      <span class="dot err"></span>
-      <div>
-        <div class="alert-label">⚠️ ${a.severity||'ALERT'} — ${a.taskId||''}</div>
-        <div class="alert-text">${a.reason||'Issue detected'}</div>
-      </div>
-    </div>`).join('');
-  }
-
-  // Tasks list
-  const tasksList = document.getElementById('tasks-list');
-  if(tasksList){
-    if(tasks.length === 0){
-      tasksList.innerHTML = '<div style="padding:24px;text-align:center;color:var(--t3);font-size:13px">No scheduled tasks found</div>';
-    } else {
-      const statusClass = {ok:'ts-ok',active:'ts-ok',running:'ts-ok',error:'ts-err',failed:'ts-err',disabled:'ts-off',paused:'ts-off',warning:'ts-warn'};
-      tasksList.innerHTML = tasks.map(t=>{
-        const st = (t.status||'unknown').toLowerCase();
-        const sc = statusClass[st]||'ts-off';
-        const lastRun = t.lastRun ? fmtDateTime(t.lastRun) : 'Never run';
-        return `<div class="task-row">
-          <div>
-            <div class="task-name">${t.name||t.taskId||'Unknown Task'}</div>
-            <div style="font-size:12px;color:var(--t2);margin-top:3px">${t.description||t.schedule||''}</div>
-          </div>
-          <div style="text-align:right;flex-shrink:0">
-            <div class="task-status-badge ${sc}">${t.status||'--'}</div>
-            <div class="task-time" style="margin-top:6px">Last: ${lastRun}</div>
-          </div>
-        </div>`;
-      }).join('');
-    }
-  }
-}
-
-// ══════════════════════════════════
-// MORNING BRIEF
-// ══════════════════════════════════
-function populateBrief(d){
-  if(d.lastUpdated) set('brief-updated', 'Briefed '+fmtDate(d.lastUpdated));
-
-  const uEl = document.getElementById('brief-urgent');
-  if(uEl){
-    if(d.urgent && d.urgent.length > 0){
-      uEl.innerHTML = d.urgent.map(item=>`<div class="brief-item">
-        <span class="brief-tag bt-urgent">URGENT</span>
-        <strong>${item.title||''}</strong>
-        ${item.note ? ' — '+item.note : ''}
-      </div>`).join('');
-    } else {
-      uEl.innerHTML = '<div style="color:var(--ok);font-size:13px;font-weight:600">✓ Nothing urgent — all clear</div>';
-    }
-  }
-
-  const fEl = document.getElementById('brief-focus');
-  if(fEl){
-    if(d.focus && d.focus.length > 0){
-      fEl.innerHTML = d.focus.map((item,i)=>`<div class="brief-item">
-        <span class="brief-tag bt-focus">${i+1}</span>${item}
-      </div>`).join('');
-    } else {
-      fEl.innerHTML = '<div style="color:var(--t3);font-size:13px">No focus items set</div>';
-    }
-  }
-
-  const rEl = document.getElementById('brief-reminders');
-  if(rEl){
-    if(d.reminders && d.reminders.length > 0){
-      rEl.innerHTML = d.reminders.map(r=>`<div class="brief-item">
-        <span class="brief-tag bt-remind">!</span>${r}
-      </div>`).join('');
-    } else {
-      rEl.innerHTML = '<div style="color:var(--t3);font-size:13px">No reminders</div>';
-    }
-  }
-}
-
-// ══════════════════════════════════
-// WEATHER
-// ══════════════════════════════════
-async function fetchWeather(){
+async function loadAds(){
   try{
-    const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude=27.9506&longitude=-82.4572&current_weather=true&temperature_unit=fahrenheit');
-    if(r.ok){
-      const d = await r.json();
-      const cw = d.current_weather;
-      set('weather-temp', Math.round(cw.temperature)+'°F');
-      set('weather-desc', weatherCode(cw.weathercode));
-    }
-  }catch(e){}
-}
-function weatherCode(c){
-  if(c===0) return '☀️ Clear skies';
-  if(c<=2)  return '⛅ Partly cloudy';
-  if(c===3) return '☁️ Overcast';
-  if(c<=48) return '🌫️ Foggy';
-  if(c<=57) return '🌦️ Drizzle';
-  if(c<=67) return '🌧️ Raining';
-  if(c<=77) return '❄️ Snow';
-  if(c<=82) return '🌦️ Rain showers';
-  return '⛈️ Thunderstorms';
+    const d=await(await fetch('ads-data.json?t='+Date.now())).json();
+    const c=d.campaign;
+    document.getElementById('h-spend').textContent=c.spend_7d||'—';
+    document.getElementById('h-ctr').textContent=c.ctr_7d||'—';
+    document.getElementById('h-ads').innerHTML=`<table class="dt"><tr><td style="color:var(--t2)">Campaign</td><td>${c.name}</td></tr><tr><td style="color:var(--t2)">Spend (7d)</td><td style="color:var(--cyan)">${c.spend_7d}</td></tr><tr><td style="color:var(--t2)">Impressions</td><td>${c.impressions_7d}</td></tr><tr><td style="color:var(--t2)">Clicks</td><td>${c.clicks_7d}</td></tr><tr><td style="color:var(--t2)">CTR</td><td>${c.ctr_7d}</td></tr><tr><td style="color:var(--t2)">CPC</td><td>${c.cpc_7d}</td></tr></table>`;
+    document.getElementById('a-spend').textContent=c.spend_7d;
+    document.getElementById('a-imp').textContent=c.impressions_7d;
+    document.getElementById('a-clicks').textContent=c.clicks_7d;
+    document.getElementById('a-ctr').textContent=c.ctr_7d;
+    document.getElementById('camp-table').innerHTML=`<tr><td style="color:var(--t2)">Campaign</td><td>${c.name}</td></tr><tr><td style="color:var(--t2)">Status</td><td><span class="b ok">● ${c.status}</span></td></tr><tr><td style="color:var(--t2)">Spend (7d)</td><td style="color:var(--cyan)">${c.spend_7d}</td></tr><tr><td style="color:var(--t2)">Impressions</td><td>${c.impressions_7d}</td></tr><tr><td style="color:var(--t2)">Clicks</td><td>${c.clicks_7d}</td></tr><tr><td style="color:var(--t2)">CTR</td><td>${c.ctr_7d}</td></tr><tr><td style="color:var(--t2)">CPC</td><td>${c.cpc_7d}</td></tr><tr><td style="color:var(--t2)">Reach</td><td>${c.reach_7d}</td></tr>`;
+    document.getElementById('ads-list').innerHTML=(d.ads||[]).map(a=>`<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border)"><span style="font-size:13px;color:var(--t1)">${a.name}</span><span class="b ok">${a.status}</span></div>`).join('')+'<div style="padding-top:10px;font-size:10px;color:var(--t3)">Individual ad metrics populate after 7+ days of delivery</div>';
+    const spent=parseFloat((c.spend_7d||'').replace(/[^0-9.]/g,'')||0),target=(c.budget_daily||35)*7,pct=Math.min(100,spent/target*100).toFixed(1),col=spent>target?'var(--err)':spent>target*.8?'var(--warn)':'var(--cyan)';
+    document.getElementById('budget').innerHTML=`<div style="display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px"><span style="color:var(--t2)">$${spent.toFixed(2)} of $${target} target (7 days)</span><span style="color:${col};font-family:var(--mono)">${pct}%</span></div><div class="pw"><div class="pb" style="width:${pct}%;background:${col}"></div></div><div style="margin-top:10px;font-size:11px;color:var(--t2)">${(d.ads||[]).length} active ads · Shared $${c.budget_daily||35}/day budget · Objective: Lead Generation</div>`;
+    document.getElementById('ads-upd').textContent='Data as of '+d.lastUpdated;
+  }catch(e){console.error(e);}
 }
 
-// ══════════════════════════════════
-// QUOTE
-// ══════════════════════════════════
-function fetchQuote(){
-  const quotes = [
-    {text:"The man on top of the mountain didn't fall there.",author:"Vince Lombardi"},
-    {text:"Don't count the days, make the days count.",author:"Muhammad Ali"},
-    {text:"A year from now you will wish you had started today.",author:"Karen Lamb"},
-    {text:"The secret of getting ahead is getting started.",author:"Mark Twain"},
-    {text:"Hard work beats talent when talent doesn't work hard.",author:"Tim Notke"},
-    {text:"Success is not final, failure is not fatal — it is the courage to continue that counts.",author:"Winston Churchill"},
-    {text:"It always seems impossible until it's done.",author:"Nelson Mandela"},
-    {text:"Do something today that your future self will thank you for.",author:"Sean Patrick Flanery"},
-    {text:"You don't have to be great to start, but you have to start to be great.",author:"Zig Ziglar"},
-    {text:"The only way to do great work is to love what you do.",author:"Steve Jobs"},
-  ];
-  const q = quotes[new Date().getDate() % quotes.length];
-  set('quote-text', '"'+q.text+'"');
-  set('quote-author', '— '+q.author);
-}
-
-// ══════════════════════════════════
-// UTILS
-// ══════════════════════════════════
-function set(id, val){ const el=document.getElementById(id); if(el) el.textContent=val; }
-
-function fmtDate(ds){
-  if(!ds) return '--';
+async function loadDebrief(){
   try{
-    return new Date(ds).toLocaleDateString('en-US',{
-      month:'short',day:'numeric',timeZone:'America/New_York'
-    });
-  }catch(e){ return ds; }
+    const d=await(await fetch('morning-debrief-data.json?t='+Date.now())).json();
+    document.getElementById('deb-date').textContent=d.date||'';
+    document.getElementById('deb-body').innerHTML=(d.focus||[]).slice(0,3).map(f=>`<div class="fi">${f}</div>`).join('')||'<div style="color:var(--t2);font-size:13px">No debrief yet — updates daily at 7 AM ET.</div>';
+  }catch(e){document.getElementById('deb-body').innerHTML='<div style="color:var(--t2);font-size:13px">Debrief updates daily at 7 AM ET.</div>';}
 }
 
-function fmtDateTime(ds){
-  if(!ds) return '--';
-  try{
-    return new Date(ds).toLocaleString('en-US',{
-      timeZone:'America/New_York',month:'short',day:'numeric',
-      hour:'numeric',minute:'2-digit',hour12:true
-    });
-  }catch(e){ return ds; }
-}
+loadAds();loadDebrief();
 </script>
 </body>
 </html>
