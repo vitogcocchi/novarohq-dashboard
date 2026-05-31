@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-05-30 19:06 ET",
+  "lastUpdated": "2026-05-06 08:00 ET",
   "today": {
-    "date": "2026-05-30",
+    "date": "2026-05-06",
     "posted": false,
     "postsPosted": 0,
     "groupPostedIn": "",
@@ -13,7 +13,7 @@
   },
   "totals": {
     "groupsJoined": 5,
-    "postsAllTime": 3,
+    "postsAllTime": 1,
     "commentsAllTime": 0,
     "repliesAllTime": 0,
     "leadsAllTime": 0,
@@ -22,27 +22,9 @@
   },
   "recentPosts": [
     {
-      "date": "2026-05-07",
-      "group": "That Pressure Washing Group",
-      "preview": "what do you do in slow season. most guys in here are sitting on a list of past customers th",
-      "commentsReceived": 0,
-      "repliesMade": 0,
-      "leadsFlagged": 0,
-      "status": "live"
-    },
-    {
-      "date": "2026-05-06",
-      "group": "That Pressure Washing Group",
-      "preview": "how many jobs have you lost because you forgot to follow up on a quote. happened to me. what",
-      "commentsReceived": 0,
-      "repliesMade": 0,
-      "leadsFlagged": 0,
-      "status": "live"
-    },
-    {
       "date": "2026-05-05",
       "group": "That Pressure Washing Group",
-      "preview": "Real question \u2014 how many calls do you miss per week while you're out on jobs. most guys are",
+      "preview": "Real question — how many calls do you miss per week while you're out on jobs? And do you ever actually call them back or do they just fall through the cracks?",
       "commentsReceived": 0,
       "repliesMade": 0,
       "leadsFlagged": 0,
@@ -51,54 +33,12 @@
   ],
   "leads": [],
   "daily": [
-    {
-      "date": "2026-05-24",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
-    {
-      "date": "2026-05-25",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
-    {
-      "date": "2026-05-26",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
-    {
-      "date": "2026-05-27",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
-    {
-      "date": "2026-05-28",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
-    {
-      "date": "2026-05-29",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    },
-    {
-      "date": "2026-05-30",
-      "posts": 0,
-      "comments": 0,
-      "replies": 0,
-      "leads": 0
-    }
+    { "date": "2026-04-30", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
+    { "date": "2026-05-01", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
+    { "date": "2026-05-02", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
+    { "date": "2026-05-03", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
+    { "date": "2026-05-04", "posts": 0, "comments": 0, "replies": 0, "leads": 0 },
+    { "date": "2026-05-05", "posts": 1, "comments": 0, "replies": 0, "leads": 0 },
+    { "date": "2026-05-06", "posts": 0, "comments": 0, "replies": 0, "leads": 0 }
   ]
 }
