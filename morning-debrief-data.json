@@ -1,15 +1,18 @@
 {
-  "date": "Sunday, May 31, 2026",
+  "date": "Monday, June 1, 2026",
   "quote": {
-    "text": "Amateurs sit and wait for inspiration, the rest of us just get up and go to work.",
-    "author": "Stephen King"
+    "text": "Revenue solves almost every problem.",
+    "author": "Jason Fried"
   },
   "schedule": "No calls scheduled — check Calendly for any new bookings.",
   "focus": [
-    "<strong>Outbound is the whole game today.</strong> An empty inbox means an empty pipeline — send 20 cold DMs or emails before noon instead of waiting for the ads to do the selling.",
-    "<strong>Renew Instantly before another day burns.</strong> Lapsed billing means your cold email engine is sitting idle, so get it back online and reload the sequences today.",
-    "<strong>Work the 16 FB groups you already posted in.</strong> Open every thread, reply to comments, and DM anyone who engaged — warm group activity converts faster than a $35/day cold ad."
+    "<strong>Work all 27 FB leads in GHL by hand today.</strong> You've spent ~$453 to generate them at a $17 CPL and closed zero, so the bottleneck is follow-up, not lead volume. Personally message every unbooked lead before lunch.",
+    "<strong>Audit FB Ads delivery and CPL when the 8 AM refresh lands.</strong> Spend already slid from $55/day (May 24) to ~$16/day (May 30) on a fatiguing creative — check delivery insights and refresh Ad 1 and Ad 2 or expand the audience instead of just raising budget.",
+    "<strong>Reopen one outbound channel today.</strong> Instantly billing lapsed and LinkedIn is paused, leaving FB group posts as your only outbound. Renew Instantly or manually send 20 cold DMs so the pipeline doesn't go dry."
   ],
-  "gmail_summary": "2 unread — an NYT newsletter and a HighLevel receipt ($23.54); no leads or client messages, nothing urgent.",
-  "lastUpdated": "2026-05-31T11:05:02Z"
+  "gmail_summary": "Inbox clear of business email — no prospect replies or client messages. NYT, Best Buy, Capital One purchase-confirmation, PayPal statement and a Skool notification are all routine/personal.",
+  "gmail_items": [
+    "✓ Inbox clear — no prospect emails."
+  ],
+  "lastUpdated": "2026-06-01T11:05:19Z"
 }
