@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novaro AI — Stop Losing Jobs to Missed Calls</title>
+<link rel="preconnect" href="https://assets.calendly.com">
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<style>
+  :root{
+    --bg:#0a0e1a; --panel:#111726; --line:#1f2940;
+    --ink:#eaf0ff; --mut:#9fb0d0; --brand:#3b82f6; --brand2:#22d3ee;
+    --good:#22c55e; --warn:#f59e0b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .btn{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--brand2));
+    color:#031022;font-weight:800;text-decoration:none;border:0;cursor:pointer;
+    padding:16px 28px;border-radius:12px;font-size:17px;transition:transform .12s ease,box-shadow .12s ease;
+    box-shadow:0 10px 30px rgba(34,211,238,.18)}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(34,211,238,.28)}
+  .btn.block{display:block;width:100%;text-align:center}
+  .eyebrow{color:var(--brand2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+
+  /* HERO */
+  header{padding:64px 0 48px;background:
+    radial-gradient(900px 380px at 80% -10%,rgba(59,130,246,.20),transparent),
+    radial-gradient(700px 320px at 0% 0%,rgba(34,211,238,.12),transparent)}
+  .nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:54px}
+  .logo{font-weight:900;font-size:20px;letter-spacing:.02em}
+  .logo span{color:var(--brand2)}
+  .nav a{color:var(--mut);text-decoration:none;font-weight:600;font-size:14px}
+  h1{font-size:clamp(32px,5.4vw,58px);line-height:1.04;font-weight:900;letter-spacing:-.02em;max-width:14ch}
+  h1 em{font-style:normal;background:linear-gradient(135deg,var(--brand2),var(--brand));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--mut);font-size:clamp(17px,2.2vw,21px);margin:22px 0 30px;max-width:56ch}
+  .cta-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .cta-note{color:var(--mut);font-size:14px}
+
+  /* STAT BAR */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 16px}
+  .stat b{display:block;font-size:clamp(20px,3vw,28px);font-weight:900;color:#fff}
+  .stat small{color:var(--mut);font-size:13px}
+
+  section{padding:58px 0}
+  h2{font-size:clamp(26px,3.6vw,38px);font-weight:900;letter-spacing:-.01em;margin-bottom:14px}
+  .lead{color:var(--mut);font-size:18px;max-width:62ch}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+  .card .ic{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;
+    background:rgba(59,130,246,.14);font-size:22px;margin-bottom:14px}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{color:var(--mut);font-size:15px}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;counter-reset:s}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px;position:relative}
+  .step::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:22px;
+    width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+    color:#03142a;font-weight:900;display:grid;place-items:center}
+  .step h3{margin:10px 0 8px;font-size:18px}
+  .step p{color:var(--mut);font-size:15px}
+
+  /* FORM / CTA */
+  .convert{background:linear-gradient(180deg,#0c1322,#0a0e1a)}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px;max-width:560px;margin:0 auto}
+  .panel h2{text-align:center}
+  .panel .lead{text-align:center;margin:0 auto 22px}
+  .field{margin-bottom:14px}
+  label{display:block;font-size:14px;font-weight:600;color:var(--mut);margin-bottom:6px}
+  input,select{width:100%;background:#0b1120;border:1px solid var(--line);color:var(--ink);
+    border-radius:11px;padding:13px 14px;font-size:16px;outline:none;transition:border .12s}
+  input:focus,select:focus{border-color:var(--brand)}
+  .err{border-color:#ef4444!important}
+  .formnote{color:var(--mut);font-size:13px;text-align:center;margin-top:12px}
+  #booking{display:none}
+  #booking.show{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .booked-head{text-align:center;margin-bottom:18px}
+  .booked-head .tick{width:54px;height:54px;border-radius:50%;background:rgba(34,197,94,.16);
+    color:var(--good);display:grid;place-items:center;font-size:28px;margin:0 auto 12px}
+  .calwrap{min-width:320px;height:680px}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:14px;text-align:center}
+
+  @media(max-width:820px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .grid3,.steps{grid-template-columns:1fr}
+    .nav a.navlink{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <div class="logo">Novaro<span>AI</span></div>
+      <a class="navlink" href="#apply">Book a Call →</a>
+    </div>
+    <p class="eyebrow">For service businesses</p>
+    <h1>Every missed call is a <em>job your competitor books</em>.</h1>
+    <p class="sub">Novaro AI answers your calls and texts the second you can't, qualifies the lead, and books them on your calendar. While you're on a job, on a ladder, or asleep. You stop leaking revenue you already paid to generate.</p>
+    <div class="cta-row">
+      <a href="#apply" class="btn">See if it fits your business →</a>
+      <span class="cta-note">20-minute call. No pitch until you've seen how it works.</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>62%</b><small>of calls to small businesses go unanswered</small></div>
+      <div class="stat"><b>&lt;60s</b><small>AI text-back response time</small></div>
+      <div class="stat"><b>24/7</b><small>never misses nights or weekends</small></div>
+      <div class="stat"><b>5 min</b><small>to go live, no new software to learn</small></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The leak</p>
+    <h2>You're not losing leads. You're losing the ones you already won.</h2>
+    <p class="lead">You spend money to make the phone ring. Then a call comes in while you're elbow-deep in a job, it goes to voicemail, and that person calls the next name on Google. They don't leave a message. They don't call back. You never even knew they existed. That's not a marketing problem. That's a response problem, and it's the quiet reason most service businesses stop growing.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">What Novaro does</p>
+    <h2>An AI front desk that never clocks out.</h2>
+    <div class="grid3">
+      <div class="card"><div class="ic">📞</div><h3>Catches every missed call</h3><p>The instant a call goes unanswered, Novaro fires a text back so the lead never goes cold or calls a competitor.</p></div>
+      <div class="card"><div class="ic">💬</div><h3>Qualifies the lead</h3><p>It asks the right questions, captures the job details, and weeds out tire-kickers before they hit your calendar.</p></div>
+      <div class="card"><div class="ic">📅</div><h3>Books the appointment</h3><p>Ready-to-buy leads get booked straight onto your calendar automatically. You just show up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Live in an afternoon, not a quarter.</h2>
+    <div class="steps">
+      <div class="step"><h3>We map your flow</h3><p>On a short call we look at how calls and leads come in today and where they're slipping through.</p></div>
+      <div class="step"><h3>We build and connect it</h3><p>We set up the AI on your number and calendar, trained on your services, pricing, and how you talk. No new app for you to learn.</p></div>
+      <div class="step"><h3>It runs itself</h3><p>Leads get answered, qualified, and booked automatically. You get a clean log of every conversation and booking.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM + BOOKING -->
+<section class="convert" id="apply">
+  <div class="wrap">
+    <div class="panel">
+      <!-- STEP 1: FORM -->
+      <div id="formStep">
+        <h2>See if it fits your business</h2>
+        <p class="lead">Tell us where to reach you and we'll show you exactly how this would work for your shop. Takes 30 seconds, then you'll pick a time.</p>
+        <form id="leadForm" novalidate>
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Jordan Reyes">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@business.com">
+          </div>
+          <div class="field">
+            <label for="phone">Mobile phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567">
+          </div>
+          <div class="field">
+            <label for="business">Business name</label>
+            <input id="business" name="business" type="text" placeholder="Reyes Plumbing">
+          </div>
+          <div class="field">
+            <label for="trade">What do you do?</label>
+            <select id="trade" name="trade">
+              <option value="">Select your trade…</option>
+              <option>Plumbing</option><option>HVAC</option><option>Electrical</option>
+              <option>Roofing</option><option>Landscaping / Lawn</option>
+              <option>Pressure / Window cleaning</option><option>Detailing</option>
+              <option>Pest control</option><option>General contractor</option>
+              <option>Other home service</option>
+            </select>
+          </div>
+          <!-- honeypot -->
+          <input type="text" name="company_url" id="company_url" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="btn block">Show me my times →</button>
+          <p class="formnote">No spam. We only use this to reach you about your call.</p>
+        </form>
+      </div>
+
+      <!-- STEP 2: BOOKING -->
+      <div id="booking">
+        <div class="booked-head">
+          <div class="tick">✓</div>
+          <h2>You're in. Last step: pick your time.</h2>
+          <p class="lead">Grab a 20-minute slot below. Bring your typical week of missed calls and we'll show you what Novaro would have caught.</p>
+        </div>
+        <div id="calEmbed" class="calwrap"></div>
+        <p class="formnote">Booking not loading? <a id="calFallback" href="https://calendly.com/vito_linkedup/new-meeting" target="_blank" rel="noopener" style="color:var(--brand2)">Open the calendar in a new tab →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Novaro AI · Built for service businesses that are tired of losing jobs to voicemail.</div>
+</footer>
+
+<script>
+/* ───────────────────────────────────────────────
+   CONFIG — when GHL is unblocked, paste your inbound
+   webhook URL here and leads will POST to it on submit.
+   Leave as "" to skip (booking still works regardless).
+─────────────────────────────────────────────── */
+var WEBHOOK_URL = "";
+var CALENDLY_URL = "https://calendly.com/vito_linkedup/new-meeting";
+
+(function(){
+  var form = document.getElementById('leadForm');
+  var formStep = document.getElementById('formStep');
+  var booking = document.getElementById('booking');
+
+  function invalid(el){ el.classList.add('err'); el.addEventListener('input',function(){el.classList.remove('err')},{once:true}); }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(document.getElementById('company_url').value){ return; } // bot trap
+
+    var name=document.getElementById('name'), email=document.getElementById('email'),
+        phone=document.getElementById('phone'), business=document.getElementById('business'),
+        trade=document.getElementById('trade');
+    var ok=true;
+    if(!name.value.trim()){invalid(name);ok=false;}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value)){invalid(email);ok=false;}
+    if(phone.value.replace(/\D/g,'').length<10){invalid(phone);ok=false;}
+    if(!business.value.trim()){invalid(business);ok=false;}
+    if(!ok) return;
+
+    var lead={name:name.value.trim(),email:email.value.trim(),phone:phone.value.trim(),
+              business:business.value.trim(),trade:trade.value,source:'novaro-landing',ts:new Date().toISOString()};
+
+    // fire to webhook if configured (non-blocking)
+    if(WEBHOOK_URL){
+      try{ fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(lead),keepalive:true}); }catch(err){}
+    }
+
+    // reveal booking + load Calendly prefilled
+    formStep.style.display='none';
+    booking.classList.add('show');
+    booking.scrollIntoView({behavior:'smooth',block:'start'});
+
+    var fallback=document.getElementById('calFallback');
+    fallback.href=CALENDLY_URL+'?name='+encodeURIComponent(lead.name)+'&email='+encodeURIComponent(lead.email);
+
+    function mount(){
+      if(window.Calendly && Calendly.initInlineWidget){
+        Calendly.initInlineWidget({
+          url:CALENDLY_URL+'?hide_gdpr_banner=1&primary_color=3b82f6',
+          parentElement:document.getElementById('calEmbed'),
+          prefill:{name:lead.name,email:lead.email,customAnswers:{}}
+        });
+      } else { setTimeout(mount,250); }
+    }
+    mount();
+  });
+})();
+</script>
+</body>
+</html>
