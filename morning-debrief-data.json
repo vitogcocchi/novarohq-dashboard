@@ -1,20 +1,18 @@
 {
-  "date": "Tuesday, June 2, 2026",
+  "date": "Wednesday, June 3, 2026",
   "quote": {
-    "text": "Revenue solves almost every problem.",
-    "author": "Jason Fried"
+    "text": "The money is in the follow-up.",
+    "author": "Alex Hormozi"
   },
   "schedule": "No calls scheduled — check Calendly for any new bookings.",
   "focus": [
-    "<strong>Move money into the account funding FB Ads today.</strong> Bank of America flagged the balance on the card ending 3001 dropped below $100 while ads charge ~$35/day — if that card declines, your only live lead channel goes dark mid-flight.",
-    "<strong>Push the A2P 10DLC campaign to approval (ticket #GHL-5582496).</strong> Your brand is approved but the campaign is still stuck 'In Progress' — until it clears, GHL cannot text a single one of your 27 leads, so reply to the open ticket and ask for an expedite.",
-    "<strong>Work the 5 freshest FB leads by hand before noon.</strong> 27 leads in at a $17 CPL and zero booked means the bottleneck is follow-up, not volume — and with SMS blocked by the A2P holdup, manual calls and DMs are the only path today."
+    "Inbox is dry on prospects again, so the bottleneck is follow-up, not lead volume. <strong>Pull the 5 freshest of your 27+ FB leads in GHL and send a direct booking-link message before noon</strong> — zero have closed, and unworked leads decay fast.",
+    "FB Ads are spending ~$35/day at a $17 CPL and still converting zero. <strong>Check ad delivery and the booking funnel for the drop-off point</strong> — if forms fill but nobody books, the problem is the offer or follow-up cadence, not the ad.",
+    "Outbound is mostly dark: Instantly billing lapsed, LinkedIn paused, Bland never launched. FB group posts auto-fire at 9 AM, so <strong>reactivate one outbound channel today</strong> — restore Instantly billing or send 10 manual DMs — to stop leaning on a single source."
   ],
-  "gmail_summary": "Three business-relevant threads: GoHighLevel support on the stuck A2P 10DLC campaign (brand approved, campaign pending), a Bank of America low-balance alert on the ads-funding card, and a Vercel notice about 2 misconfigured domains. No prospect replies or warm conversations.",
+  "gmail_summary": "No prospect replies or warm conversations. Inbox is routine: a HighLevel receipt ($22.62), an Anthropic receipt, a ClearView billing statement, and newsletters. Nothing urgent.",
   "gmail_items": [
-    "🔴 GoHighLevel Support — A2P 10DLC campaign stuck 'In Progress' (brand approved, campaign pending final review)",
-    "🔴 Bank of America — Low balance alert: card ending 3001 dropped below $100",
-    "⚪ Vercel — 2 domains need configuration on your projects"
+    "✓ Inbox clear — no prospect emails"
   ],
-  "lastUpdated": "2026-06-02T11:05:00Z"
+  "lastUpdated": "2026-06-03T11:05:17Z"
 }
