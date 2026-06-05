@@ -1,18 +1,22 @@
 {
-  "date": "Thursday, June 4, 2026",
+  "date": "Friday, June 5, 2026",
   "quote": {
     "text": "The money is in the follow-up.",
     "author": "Alex Hormozi"
   },
   "schedule": "No calls scheduled — check Calendly for any new bookings.",
   "focus": [
-    "Inbox is dry on prospects for a third straight day, so volume isn't the problem — follow-up is. <strong>Open GHL, pull the 5 freshest of your 27+ FB leads, and send each a direct booking-link text before noon.</strong> Zero of 27 have closed; unworked leads decay fast.",
-    "FB Ads are still spending ~$35/day at a $17 CPL with zero closes. <strong>Open Ads Manager and trace the funnel: are forms filling but nobody booking?</strong> If lead volume is fine but bookings are zero, the leak is the offer or the follow-up cadence, not the ad.",
-    "Outbound is running on one leg — Instantly billing lapsed, LinkedIn paused, Bland never launched, only FB group posts auto-fire at 9 AM. <strong>Reactivate one channel today: restore Instantly billing or send 10 manual DMs.</strong> A single source is fragile when it's already producing zero closes."
+    "BofA account ending 3001 dropped below $100 last night and FB Ads burn ~$35/day from that same account. <strong>Top up the ad funding source today before the card declines.</strong> A stalled ad set kills your only live lead flow (27+ leads) and Meta penalizes delivery on re-spend.",
+    "Inbox is dry on prospects for a fourth straight day, so the bottleneck is follow-up, not volume. <strong>Pull the 5 warmest of your 27+ FB leads in GHL and send each a direct booking-link text before noon.</strong> Zero of 27 have closed; unworked leads decay fast.",
+    "Outbound is running on one leg — Instantly billing lapsed, LinkedIn paused, Bland never launched, only FB group posts auto-fire at 9 AM. <strong>Reactivate one channel today: restore Instantly billing or fire 10 manual DMs.</strong> One fragile source producing zero closes is the whole risk right now."
   ],
-  "gmail_summary": "No prospect replies or warm conversations. Inbox is entirely routine: a BofA mobile check deposit ($355), Capital One statement-credit and statement-ready alerts, an Apple receipt, plus retail and crypto newsletters. Nothing business-critical or urgent.",
+  "gmail_summary": "No prospect replies or warm conversations. Inbox is entirely routine, but one flag: BofA alerted that the account ending 3001 dropped below $100 and a $21.25 Zelle went out — relevant because FB Ads draw from this account. Rest is noise: Robinhood Gold Card and SPCX IPO promos, DraftKings deposit, LinkedIn job alert, and Balise Honda service emails.",
   "gmail_items": [
-    "✓ Inbox clear — no prospect emails"
+    "🔴 Bank of America — Account balance is low (ending 3001, below $100)",
+    "⚪ Bank of America — Zelle payment of $21.25 sent",
+    "⚪ LinkedIn — Paid Media Specialist (Freelance) job alert",
+    "⚪ Robinhood — Gold Card invite (3% cash back)",
+    "⚪ Balise Honda — Service financing / inspection emails"
   ],
-  "lastUpdated": "2026-06-04T11:05:00Z"
+  "lastUpdated": "2026-06-05T11:05:00Z"
 }
