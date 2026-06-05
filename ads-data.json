@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-06-04",
+  "lastUpdated": "2026-06-05",
   "campaign": {
     "name": "Novaro AI — Lead Gen — May 2026",
     "status": "ACTIVE",
-    "spend_7d": "$622.08",
-    "impressions_7d": "6,674",
-    "clicks_7d": "155",
-    "ctr_7d": "2.32%",
-    "cpc_7d": "$4.01",
-    "reach_7d": "5,878",
+    "spend_7d": "$666.98",
+    "impressions_7d": "7,326",
+    "clicks_7d": "174",
+    "ctr_7d": "2.38%",
+    "cpc_7d": "$3.83",
+    "reach_7d": "6,274",
     "budget_daily": 35,
     "objective": "OUTCOME_LEADS"
   },
@@ -33,7 +33,8 @@
     {"date": "May 31", "spend": 52.37, "clicks": 15, "impressions": 440},
     {"date": "Jun 1", "spend": 32.34, "clicks": 7, "impressions": 441},
     {"date": "Jun 2", "spend": 40.52, "clicks": 6, "impressions": 565},
-    {"date": "Jun 3", "spend": 36.18, "clicks": 10, "impressions": 486},
-    {"date": "Jun 4", "spend": 7.80, "clicks": 6, "impressions": 134}
+    {"date": "Jun 3", "spend": 36.64, "clicks": 10, "impressions": 493},
+    {"date": "Jun 4", "spend": 44.29, "clicks": 24, "impressions": 590},
+    {"date": "Jun 5", "spend": 7.95, "clicks": 1, "impressions": 189}
   ]
 }
