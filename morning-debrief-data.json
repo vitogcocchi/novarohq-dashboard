@@ -1,20 +1,20 @@
 {
-  "date": "Saturday, June 6, 2026",
+  "date": "Sunday, June 7, 2026",
   "quote": {
-    "text": "The money is in the follow-up.",
+    "text": "You don't get paid for the leads you generate. You get paid for the ones you close.",
     "author": "Alex Hormozi"
   },
   "schedule": "No calls scheduled — check Calendly for any new bookings.",
   "focus": [
-    "Your GoHighLevel trial ends June 12 — six days out — and your entire CRM, pipeline, and all 27+ leads live inside it. <strong>Add a payment method to GHL today</strong> so the pipeline doesn't lock right when a lead is ready to talk. Losing GHL means losing every lead record you've paid $17 CPL to collect.",
-    "Still 0 closed from 27+ leads while FB Ads burns ~$35/day — the bottleneck is follow-up, not lead flow. <strong>Text the 5 warmest unbooked leads in GHL a direct booking link before noon.</strong> Every day they sit cold, you're spending another $35 chasing new leads instead of closing ones you already bought.",
-    "An email from rudy92642@gmail.com titled \"Novaro AI Verification Qualification Confirmed\" is pushing a Google Drive link — this is phishing using your brand name, not a real prospect or partner. <strong>Don't click the link — delete it.</strong> No legitimate verification ever comes from a random Gmail with a Drive link."
+    "Zero prospect replies in the last 48 hours and still 0 closed from 27+ leads. <strong>Run a follow-up blitz today: call or text every unbooked lead in GHL with a direct booking link.</strong> Sunday afternoon is prime time to catch home service owners off the job — and every cold day costs you another $35 in ad spend chasing new leads instead of closing bought ones.",
+    "Good news: your GHL trial extension was granted — you now have until June 26, 19 days. Your extension request said you're 'currently having trouble' with it. <strong>Write down exactly what's broken in GHL and fix it this week</strong> — the pipeline and all 27+ leads live there, and the deadline only moved, it didn't disappear.",
+    "The phishing pressure isn't letting up: rudy92642@gmail.com is still pushing a fake 'Novaro AI verification portal' Drive link, and now 'SALVAGE' from bensautosales50@gmail.com arrived with an empty body and a .zip attachment. <strong>Delete both, report as phishing, and never open that .zip.</strong>"
   ],
-  "gmail_summary": "No prospect replies or warm conversations. Two flags worth acting on: GoHighLevel emailed that your trial ends June 12 — your CRM and pipeline live there — and a phishing email from rudy92642@gmail.com is impersonating Novaro AI with a Google Drive \"verification\" link (don't click). Everything else is personal noise: Binance terms update, theScore deposit and new-login alerts, BofA Zelle payments, student-aid autopay reminder, and poker/Skool newsletters.",
+  "gmail_summary": "No prospect replies or warm conversations. Two security flags: the rudy92642@gmail.com phishing email impersonating Novaro AI (Drive link, don't click) and a suspicious empty 'SALVAGE' email with a .zip attachment. One business item: HighLevel confirmed your 14-day trial extension — trial now ends June 26. Everything else is personal noise: Zelle payments, DraftKings/theScore deposits, Binance terms, LinkedIn notifications.",
   "gmail_items": [
-    "🔴 GoHighLevel — Trial ends June 12 (your CRM + pipeline live here)",
-    "🔴 rudy92642@gmail.com — \"Novaro AI Verification\" — likely phishing, Drive link, don't click",
-    "⚪ acct-mgmt.com — 14-day trial extension granted (verify which service this is)"
+    "🔴 rudy92642@gmail.com — \"Novaro AI Verification\" — phishing, Drive link, don't click",
+    "🔴 bensautosales50@gmail.com — \"SALVAGE\" — empty body, .zip attachment, treat as malware",
+    "⚪ HighLevel — 14-day trial extension granted, trial now ends June 26"
   ],
-  "lastUpdated": "2026-06-06T11:00:00Z"
+  "lastUpdated": "2026-06-07T11:00:00-04:00"
 }
