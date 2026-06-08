@@ -1,20 +1,20 @@
 {
-  "date": "Sunday, June 7, 2026",
+  "date": "Monday, June 8, 2026",
   "quote": {
-    "text": "You don't get paid for the leads you generate. You get paid for the ones you close.",
+    "text": "Volume negates luck. The more shots you take, the less each one has to be perfect.",
     "author": "Alex Hormozi"
   },
-  "schedule": "No calls scheduled — check Calendly for any new bookings.",
+  "schedule": "No calls scheduled — check GHL/Calendly for new bookings before noon.",
   "focus": [
-    "Zero prospect replies in the last 48 hours and still 0 closed from 27+ leads. <strong>Run a follow-up blitz today: call or text every unbooked lead in GHL with a direct booking link.</strong> Sunday afternoon is prime time to catch home service owners off the job — and every cold day costs you another $35 in ad spend chasing new leads instead of closing bought ones.",
-    "Good news: your GHL trial extension was granted — you now have until June 26, 19 days. Your extension request said you're 'currently having trouble' with it. <strong>Write down exactly what's broken in GHL and fix it this week</strong> — the pipeline and all 27+ leads live there, and the deadline only moved, it didn't disappear.",
-    "The phishing pressure isn't letting up: rudy92642@gmail.com is still pushing a fake 'Novaro AI verification portal' Drive link, and now 'SALVAGE' from bensautosales50@gmail.com arrived with an empty body and a .zip attachment. <strong>Delete both, report as phishing, and never open that .zip.</strong>"
+    "Capital One fired two <strong>\"Card declined: Not enough credit\"</strong> alerts (Jun 7 and Jun 8) and Bank of America flagged your balance under $100. <strong>Confirm which card funds the Meta ad account today</strong> — if it's the declined Capital One, your $35/day delivery stops and your only live lead source goes dark.",
+    "Still 0 closed from 27+ leads at $17 CPL — that's roughly $460 already spent on contacts who never booked. <strong>Run a call-and-text blitz through every unbooked GHL lead with a direct booking link.</strong> Monday morning catches home-service owners before they're out on a job.",
+    "<strong>Open the ads-data-refresh output and confirm spend is still posting and CPL hasn't drifted past $17.</strong> If the Capital One card is the funding source, verify delivery didn't pause overnight before you spend another dollar acquiring leads you aren't closing."
   ],
-  "gmail_summary": "No prospect replies or warm conversations. Two security flags: the rudy92642@gmail.com phishing email impersonating Novaro AI (Drive link, don't click) and a suspicious empty 'SALVAGE' email with a .zip attachment. One business item: HighLevel confirmed your 14-day trial extension — trial now ends June 26. Everything else is personal noise: Zelle payments, DraftKings/theScore deposits, Binance terms, LinkedIn notifications.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. The only urgent items are billing: Capital One sent two 'Card declined: Not enough credit' alerts (Jun 7 and Jun 8) and Bank of America flagged the account ending 3001 below $100 — both matter because a declined card can halt FB Ads delivery. Everything else is personal noise: Zelle payments, NYT Gameplay newsletters, Robinhood and Ignition promos, an Amazon return label, and a $60 Respondent.io study invite.",
   "gmail_items": [
-    "🔴 rudy92642@gmail.com — \"Novaro AI Verification\" — phishing, Drive link, don't click",
-    "🔴 bensautosales50@gmail.com — \"SALVAGE\" — empty body, .zip attachment, treat as malware",
-    "⚪ HighLevel — 14-day trial extension granted, trial now ends June 26"
+    "🔴 Capital One — \"Card declined: Not enough credit\" (x2, Jun 7–8) — could halt ad funding",
+    "🔴 Bank of America — Account balance low, funds ending 3001 under $100",
+    "⚪ Respondent.io — $60 paid study invite (50-min strength-trainer interview)"
   ],
-  "lastUpdated": "2026-06-07T11:00:00-04:00"
+  "lastUpdated": "2026-06-08T07:00:00-04:00"
 }
