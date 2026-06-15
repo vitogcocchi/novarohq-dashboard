@@ -1,18 +1,22 @@
 {
-  "date": "Wednesday, June 10, 2026",
+  "date": "Monday, June 15, 2026",
   "quote": {
     "text": "You don't get paid for activity. You get paid for the close. Everything before the close is just cost.",
     "author": "Alex Hormozi"
   },
   "schedule": "No calls scheduled — check GHL/Calendly for new bookings before noon.",
   "focus": [
-    "Still 0 closed from 27+ leads at a $17 CPL — that's roughly $460 spent on people who never booked. The problem is follow-up, not traffic. <strong>Run a personal call-and-text blitz through every unbooked GHL lead today with a direct booking link</strong>, instead of waiting on automation to warm them.",
-    "FB Ads delivery is fading fast: spend dropped to $8.48 on Jun 7 against a $35/day budget, after $20.93 on Jun 5 and $16.45 on Jun 6. The algorithm is pulling back — likely creative fatigue or a narrow audience. <strong>Refresh the Missed Call / Two Phones hooks or widen targeting in Ads Manager today</strong> before your only live lead source dries up.",
-    "FB Ads is your only active channel (Instantly billing lapsed, LinkedIn paused) and it has produced zero clients in 27 leads. <strong>Send 20 manual outbound DMs or emails to local home-service businesses today</strong> to open a second path to your first close."
+    "Capital One flagged a payment held for a security check until June 17. <strong>Confirm this isn't the card funding your FB Ads ($35/day)</strong> — a declined charge stops delivery on your only live lead channel and you won't get a second warning.",
+    "Still 0 closed from 27+ leads at a $17 CPL — about $460 spent on people who never booked. The gap is follow-up, not traffic. <strong>Run a personal call-and-text blitz through every unbooked GHL lead today with a direct booking link</strong> instead of waiting on automation.",
+    "FB Ads delivery was collapsing before the feed went stale on Jun 7: $8.48 spent that day against a $35 budget, down from $20.93 on Jun 5. <strong>Open Ads Manager, confirm it's still delivering, and refresh the Missed Call / Two Phones creative</strong> before your only active channel dries up."
   ],
-  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours, and no billing or security issues that need action. Everything in the inbox is routine: a GGPoker privacy-policy update, a Bank of America Zelle confirmation, a DraftKings deposit receipt, a GoDaddy June account summary, TikTok Shop seller notices (for the separate soccer2college store), and newsletters (NYT, Claude, Kraken). Nothing requires a reply.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. One item to watch: Capital One says a payment is held for a security check until June 17 — verify it's not tied to ad billing. Everything else is routine: Bank of America Zelle confirmations, Capital One payment-received notices, FanDuel/DraftKings deposit receipts, a Shopify order confirmation, a ClearView patient-portal form reminder, and newsletters (NYT, Polymarket, Robinhood). Nothing else needs a reply.",
   "gmail_items": [
-    "✓ Inbox clear — no prospect emails and no billing alerts. Routine only: GGPoker privacy update, BoA Zelle confirmation, DraftKings receipt, GoDaddy account summary, TikTok Shop seller notices, newsletters."
+    "🔴 Capital One — Payment held for security check until June 17 (confirm it's not ad billing)",
+    "⚪ ClearView (admin@clearviewma.com) — Patient portal forms reminder (personal, not business)",
+    "⚪ Bank of America — Zelle payment confirmations ($10–$20, routine)",
+    "⚪ FanDuel / DraftKings — Deposit receipts (routine)",
+    "⚪ Newsletters — NYT, Polymarket, Robinhood (no action)"
   ],
-  "lastUpdated": "2026-06-10T07:00:00-04:00"
+  "lastUpdated": "2026-06-15T07:00:00-04:00"
 }
