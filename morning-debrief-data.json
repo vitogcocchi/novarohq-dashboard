@@ -1,22 +1,22 @@
 {
-  "date": "Monday, June 15, 2026",
+  "date": "Tuesday, June 16, 2026",
   "quote": {
     "text": "You don't get paid for activity. You get paid for the close. Everything before the close is just cost.",
     "author": "Alex Hormozi"
   },
-  "schedule": "No calls scheduled — check GHL/Calendly for new bookings before noon.",
+  "schedule": "No calls on the books — check GHL/Calendly for new bookings before noon.",
   "focus": [
-    "Capital One flagged a payment held for a security check until June 17. <strong>Confirm this isn't the card funding your FB Ads ($35/day)</strong> — a declined charge kills delivery on your only live lead channel and you won't get a second warning.",
-    "Still 0 closed from 27+ leads at a $17 CPL — roughly $460 spent on people who never booked. The gap is follow-up, not traffic. <strong>Run a personal call-and-text blitz through every unbooked GHL lead today with a direct booking link</strong> instead of waiting on automation that's still stuck in A2P review.",
-    "FB Ads spend was already collapsing before the data feed went stale on Jun 7: $8.48 that day against a $35 budget, down from $20.93 on Jun 5 and $44.44 on Jun 4. <strong>Open Ads Manager, confirm it's still delivering, and refresh the Missed Call / Two Phones creative</strong> before your only active channel dries up."
+    "Capital One sent a fresh alert this morning: <strong>\"Card declined: Not enough credit.\" Open Ads Manager now and confirm this isn't the card funding your $35/day FB Ads</strong> — a declined charge silently kills delivery on your only live lead channel, and you won't get a second warning. If it's the ad card, swap the payment method before today's spend tries to run.",
+    "Still 0 closed from 27+ leads at a $17 CPL — roughly $460 spent on people who never booked. The gap is follow-up, not traffic. <strong>Run a personal call-and-text blitz through every unbooked GHL lead today with a direct booking link</strong> instead of waiting on the A2P automation that's still stuck in carrier review.",
+    "FB outbound is your only motion while sales is cold. <strong>Confirm the 9 AM auto-post hit all 16 groups and that ads are still pacing at $35/day</strong> — if delivery stalled or the group post failed, no new leads enter the pipeline today. Refresh the Missed Call / Two Phones creative if spend keeps fading."
   ],
-  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. One item to watch: Capital One says a payment is held for a security check until June 17 — verify it's not tied to ad billing. Everything else is routine: Bank of America Zelle confirmations, Capital One payment-received notices, FanDuel/DraftKings deposit receipts, a Shopify order confirmation, a ClearView patient-portal form reminder, and newsletters (NYT, Polymarket, Robinhood). Nothing else needs a reply.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. One item to act on: Capital One sent a \"Card declined — not enough credit\" alert this morning — verify it isn't tied to FB ad billing before delivery stalls. Everything else is routine: a Chase Freedom payment-received notice, a Bank of America Zelle confirmation ($10.75), two TikTok Shop seller notices, a ClearView patient-portal form reminder (personal), and newsletters (NYT, Polymarket, Alpha Futures, FIFA). Nothing else needs a reply.",
   "gmail_items": [
-    "🔴 Capital One — Payment held for security check until June 17 (confirm it's not ad billing)",
+    "🔴 Capital One — Card declined: Not enough credit (confirm it's not ad billing)",
     "⚪ ClearView (admin@clearviewma.com) — Patient portal forms reminder (personal, not business)",
-    "⚪ Bank of America — Zelle payment confirmations ($10–$20, routine)",
-    "⚪ FanDuel / DraftKings — Deposit receipts (routine)",
-    "⚪ Newsletters — NYT, Polymarket, Robinhood, Shopify order (no action)"
+    "⚪ Chase — Freedom Unlimited payment received (routine)",
+    "⚪ Bank of America — Zelle payment $10.75 sent (routine)",
+    "⚪ TikTok Shop — Connected accounts notice + June newsletter (routine)"
   ],
-  "lastUpdated": "2026-06-15T07:06:00-04:00"
+  "lastUpdated": "2026-06-16T07:06:00-04:00"
 }
