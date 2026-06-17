@@ -1,22 +1,19 @@
 {
-  "date": "Tuesday, June 16, 2026",
+  "date": "Wednesday, June 17, 2026",
   "quote": {
-    "text": "You don't get paid for activity. You get paid for the close. Everything before the close is just cost.",
+    "text": "Leads don't close themselves. When the product is the same, speed to follow-up is the whole game.",
     "author": "Alex Hormozi"
   },
-  "schedule": "No calls on the books — check GHL/Calendly for new bookings before noon.",
+  "schedule": "No calls on the books — check GHL/Calendly for new bookings before noon, and book the HighLevel onboarding call.",
   "focus": [
-    "Capital One sent a fresh alert this morning: <strong>\"Card declined: Not enough credit.\" Open Ads Manager now and confirm this isn't the card funding your $35/day FB Ads</strong> — a declined charge silently kills delivery on your only live lead channel, and you won't get a second warning. If it's the ad card, swap the payment method before today's spend tries to run.",
-    "Still 0 closed from 27+ leads at a $17 CPL — roughly $460 spent on people who never booked. The gap is follow-up, not traffic. <strong>Run a personal call-and-text blitz through every unbooked GHL lead today with a direct booking link</strong> instead of waiting on the A2P automation that's still stuck in carrier review.",
-    "FB outbound is your only motion while sales is cold. <strong>Confirm the 9 AM auto-post hit all 16 groups and that ads are still pacing at $35/day</strong> — if delivery stalled or the group post failed, no new leads enter the pipeline today. Refresh the Missed Call / Two Phones creative if spend keeps fading."
+    "Capital One sent a fresh overnight alert (12:22 AM): <strong>\"Your payment wasn't completed.\" Log into Capital One and confirm the failed transaction isn't the card funding your $35/day FB Ads</strong> — a silent decline kills delivery on your only live lead channel and you won't get a second warning. If it's the ad card, swap the payment method before today's spend tries to run.",
+    "Still 0 closed from 27+ leads at a ~$17 CPL — roughly $460 spent on people who never booked. The gap is follow-up, not traffic. <strong>Run a personal call-and-text blitz through every unbooked GHL lead today with a direct booking link</strong> instead of waiting on the A2P automation that's still stuck in carrier review.",
+    "Meghana, your HighLevel Trial Experience Specialist, emailed offering a free setup call to map your first steps. <strong>Reply and book that call</strong> — getting the 3 follow-up workflows live is what turns the next batch of $17 leads into booked calls instead of dead contacts. Also confirm the 9 AM auto-post hit all 16 groups and ads are still pacing at $35/day."
   ],
-  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. One item to act on: Capital One sent a \"Card declined — not enough credit\" alert this morning — verify it isn't tied to FB ad billing before delivery stalls. Everything else is routine: a Chase Freedom payment-received notice, a Bank of America Zelle confirmation ($10.75), two TikTok Shop seller notices, a ClearView patient-portal form reminder (personal), and newsletters (NYT, Polymarket, Alpha Futures, FIFA). Nothing else needs a reply.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. Two items to act on: Capital One sent a \"Your payment wasn't completed\" alert overnight — verify it isn't tied to FB ad billing before delivery stalls; and Meghana from HighLevel offered a free trial-setup call worth booking to get your follow-up workflows live. Everything else is routine personal noise: Bank of America Zelle confirmations ($26.50, $10.00), a Fanatics $140 withdrawal, a DraftKings deposit confirmation, a PayPal May statement, and newsletters/surveys (NYT, respondent.io). Nothing else needs a reply.",
   "gmail_items": [
-    "🔴 Capital One — Card declined: Not enough credit (confirm it's not ad billing)",
-    "⚪ ClearView (admin@clearviewma.com) — Patient portal forms reminder (personal, not business)",
-    "⚪ Chase — Freedom Unlimited payment received (routine)",
-    "⚪ Bank of America — Zelle payment $10.75 sent (routine)",
-    "⚪ TikTok Shop — Connected accounts notice + June newsletter (routine)"
+    "🔴 Capital One — Your payment wasn't completed (confirm it's not FB ad billing)",
+    "⚪ HighLevel (Meghana) — Welcome to HighLevel, offering a free setup call (book it)"
   ],
-  "lastUpdated": "2026-06-16T07:06:00-04:00"
+  "lastUpdated": "2026-06-17T07:06:46-04:00"
 }
