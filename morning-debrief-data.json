@@ -1,20 +1,20 @@
 {
-  "date": "Thursday, June 18, 2026",
+  "date": "Friday, June 19, 2026",
   "quote": {
     "text": "The money is in the follow-up. Same leads, same offer — the only variable left is how fast and how many times you reach out.",
     "author": "Alex Hormozi"
   },
-  "schedule": "No calls on the books. Book the HighLevel onboarding call before noon and check GHL/Calendly for any overnight bookings.",
+  "schedule": "No calls on the books. Check GHL/Calendly for overnight bookings, then get the HighLevel onboarding call booked before noon.",
   "focus": [
-    "Still 0 closed from 27+ leads at a ~$17 CPL — that's roughly $460+ spent on people who never booked, and not one prospect reply came in over the last 48 hours. <strong>Run a personal text-and-call blitz through every unbooked GHL lead today with a direct booking link.</strong> The traffic is fine; speed and volume of follow-up is the only lever left.",
-    "Yesterday's Capital One alerts were normal scheduled payments ($200 + $700), not a failed charge — but your Chase card statement just posted at $8,566.15. <strong>Confirm the card funding your $35/day FB Ads has room and ads are still pacing</strong> so a maxed card doesn't silently kill delivery on your only live lead channel.",
-    "The HighLevel onboarding call is still unbooked and your 3 follow-up workflows aren't live. <strong>Book the HighLevel setup call and get the speed-to-lead automations running today.</strong> Confirm the 9 AM auto-post hit all 16 FB groups while you're in there."
+    "Chase just posted a notice that a credit card payment was <strong>returned</strong> and they're retrying the charge — a step worse than Tuesday's statement alert. <strong>Confirm whether that card funds your $35/day FB Ads and clear it today</strong>, because a declined card pauses Meta delivery and kills your only live lead channel.",
+    "Still 0 closed from 27+ leads at a ~$17 CPL — roughly $460+ spent on people who never booked, and zero prospect replies in the last 48 hours. <strong>Run a personal text-and-call blitz through every unbooked GHL lead today with a direct booking link.</strong> The traffic is fine; speed and volume of follow-up is the only lever left.",
+    "<strong>Verify today's FB ad is delivering and the 9 AM auto-post hit all 16 groups.</strong> At $35/day with no closes you can't afford a silent delivery failure burning budget, and the group posts are your only free top-of-funnel."
   ],
-  "gmail_summary": "Inbox clear — no prospect replies or warm conversations in the last 48 hours. Everything is routine personal noise: a Chase credit card statement ($8,566.15, due 7/14), Capital One scheduled-payment confirmations ($200 and $700 — normal, not failed), a Bank of America Zelle send ($21.25), DraftKings deposit confirmations, plus promos and newsletters (Kraken, PayPal, LinkedIn jobs, Framer, Upswing poker). Nothing needs a reply.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. The one item that matters: Chase posted a notice that a credit card payment was returned and they're retrying it — flag this against the card funding FB Ads before delivery is affected. Everything else is routine: a vague '14-day trial extension granted' from acct-mgmt.com, a Hulu new-device sign-in (iPhone, Springfield MA), a Shopify order link, Capital One payment-received confirmations, plus DraftKings, Ignition, Michaels and Bank of America promos. Nothing needs a reply.",
   "gmail_items": [
-    "✓ Inbox clear — no prospect emails",
-    "⚪ Chase — Credit card statement posted ($8,566.15, due 7/14)",
-    "⚪ Capital One — Payments scheduled ($200 + $700, routine)"
+    "🔴 Chase — Credit card payment returned, Chase retrying the charge",
+    "⚪ acct-mgmt.com — 14-day trial extension granted (Relationship #0-825-606)",
+    "✓ No prospect emails — the rest is routine personal noise"
   ],
-  "lastUpdated": "2026-06-18T07:00:00-04:00"
+  "lastUpdated": "2026-06-19T07:00:00-04:00"
 }
