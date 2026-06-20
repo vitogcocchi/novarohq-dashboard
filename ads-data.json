@@ -1,20 +1,20 @@
 {
-  "lastUpdated": "2026-06-07",
+  "lastUpdated": "2026-06-20",
   "campaign": {
     "name": "Novaro AI — Lead Gen — May 2026",
-    "status": "ACTIVE",
-    "spend_7d": "$705.04",
-    "impressions_7d": "8,604",
-    "clicks_7d": "190",
-    "ctr_7d": "2.21%",
+    "status": "PAUSED",
+    "spend_7d": "$719.05",
+    "impressions_7d": "8,838",
+    "clicks_7d": "194",
+    "ctr_7d": "2.20%",
     "cpc_7d": "$3.71",
-    "reach_7d": "7,167",
+    "reach_7d": "7,353",
     "budget_daily": 35,
     "objective": "OUTCOME_LEADS"
   },
   "ads": [
-    {"name": "Ad 1 — Missed Call Hook", "status": "ACTIVE"},
-    {"name": "Ad 2 — Two Phones Hook", "status": "ACTIVE"}
+    {"name": "Ad 1 — Missed Call Hook", "status": "PAUSED"},
+    {"name": "Ad 2 — Two Phones Hook", "status": "PAUSED"}
   ],
   "daily": [
     {"date": "May 18", "spend": 52.23, "clicks": 16, "impressions": 724},
@@ -36,7 +36,7 @@
     {"date": "Jun 3", "spend": 36.64, "clicks": 10, "impressions": 493},
     {"date": "Jun 4", "spend": 44.44, "clicks": 24, "impressions": 598},
     {"date": "Jun 5", "spend": 20.93, "clicks": 5, "impressions": 593},
-    {"date": "Jun 6", "spend": 16.45, "clicks": 8, "impressions": 594},
-    {"date": "Jun 7", "spend": 8.48, "clicks": 4, "impressions": 272}
+    {"date": "Jun 6", "spend": 16.46, "clicks": 8, "impressions": 596},
+    {"date": "Jun 7", "spend": 22.48, "clicks": 8, "impressions": 504}
   ]
 }
