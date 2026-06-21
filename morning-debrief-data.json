@@ -1,20 +1,20 @@
 {
-  "date": "Saturday, June 20, 2026",
+  "date": "Sunday, June 21, 2026",
   "quote": {
-    "text": "The money is in the follow-up. Same leads, same offer — the only variable left is how fast and how many times you reach out.",
+    "text": "You don't get paid for activity. You get paid for closed deals. 27 leads and zero closes means the gap is the conversation you haven't had yet.",
     "author": "Alex Hormozi"
   },
-  "schedule": "No calls booked. Check GHL/Calendly for overnight bookings first thing, then run the follow-up blitz on every unbooked lead before noon.",
+  "schedule": "No calls booked. Check GHL/Calendly for any weekend bookings, then run a personal follow-up pass on every unbooked lead. Sunday is a slow inbound day — make it an outbound day.",
   "focus": [
-    "Capital One sent two 'Action required: Your payments returned' notices yesterday afternoon — a returned payment, not just a statement reminder. <strong>Confirm whether that card funds your $35/day FB Ads and clear it today</strong>, because a declined card pauses Meta delivery and kills your only live lead channel.",
-    "Still 0 closed from 27+ leads at a ~$17 CPL — about $460+ spent on people who never booked, and zero prospect replies in the last 48 hours. <strong>Run a personal text-and-call blitz through every unbooked GHL lead today with a direct booking link.</strong> Traffic is fine; follow-up speed and volume is the only lever left.",
-    "<strong>Verify today's FB ad is delivering and the 9 AM auto-post hit all 16 groups.</strong> At $35/day with no closes you can't afford a silent delivery failure burning budget, and the group posts are your only free top-of-funnel."
+    "Capital One's 'payments returned' notice from Friday is still the only real fire in the inbox, and it's now 2 days old. <strong>Log into Capital One today and confirm whether that card funds your $35/day Meta spend, then clear the returned payment.</strong> A declined card silently pauses delivery and kills your only live lead channel — don't let it ride into a third day.",
+    "Still 0 closed from 27+ leads at ~$17 CPL — that's roughly $460+ spent on people who never booked, and zero prospect replies in the last 48 hours. <strong>Run a personal text-and-call blitz through every unbooked GHL lead today with a direct booking link.</strong> Lead volume is fine; the only lever left is follow-up speed and reps.",
+    "<strong>Confirm today's FB ad is delivering at ~$35/day and that the 9 AM auto-post hit all 16 groups.</strong> With no closes yet you can't afford a silent delivery failure burning budget, and the group posts are your only free top-of-funnel while outbound is paused."
   ],
-  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. The one item that matters: Capital One sent two 'payments returned' notices yesterday — flag this against the card funding FB Ads before delivery is affected. Everything else is routine: a vague '14-day trial extension granted' from acct-mgmt.com, a Shopify order link, plus Michaels, LinkedIn, Upswing Poker, and Bank of America/Merrill promos. Nothing needs a reply.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. The one item that still matters: Capital One's 'Action required: payments returned' from Friday (sent twice) — resolve it against the card funding FB Ads before delivery is affected. Minor: a new Google review came in for Clear View Exterior Cleaning (worth a quick reply). Everything else is routine personal noise — NYT crossword, a telehealth-portal forms reminder, jewelry support, a $5 Zelle, FIFA tickets, Skool, LinkedIn jobs, and Upswing poker. Nothing needs a business reply.",
   "gmail_items": [
-    "🔴 Capital One — Action required: Your payments returned (sent twice)",
-    "⚪ acct-mgmt.com — 14-day trial extension granted (Relationship #0-825-606)",
+    "🔴 Capital One — Action required: Your payments returned (Fri, sent twice, still unresolved)",
+    "⚪ Google Business — Thom left a review for Clear View Exterior Cleaning (respond)",
     "✓ No prospect emails — the rest is routine personal noise"
   ],
-  "lastUpdated": "2026-06-20T07:00:00-04:00"
+  "lastUpdated": "2026-06-21T07:00:00-04:00"
 }
