@@ -1,21 +1,21 @@
 {
-  "date": "Wednesday, June 24, 2026",
+  "date": "Thursday, June 25, 2026",
   "quote": {
-    "text": "The leads are the asset. A paused campaign and an unworked list are the same thing — money sitting on the table because nobody followed up.",
+    "text": "Volume negates luck. You don't need a better idea today, you need more reps against the leads you already paid for.",
     "author": "Alex Hormozi"
   },
-  "schedule": "No calls booked and zero prospect replies in 48 hours. The FB campaign is still showing PAUSED after $719 spent, so paid is dark. First move: confirm the Capital One payment flag isn't the card funding ads, then either relaunch at $35/day or run a full outbound day against every unbooked lead.",
+  "schedule": "Third straight morning with the FB campaign PAUSED after $719 spent, zero closes, and no prospect replies in 48 hours. New wrinkle: Bank of America flagged the account ending 3001 dropped under $100 overnight — confirm that isn't the card funding ads before you relaunch, or the unpause won't spend. Then make today an outbound day against every unbooked GHL lead.",
   "focus": [
-    "Campaign still reads PAUSED after ~$719 spent over the run and still zero closes. <strong>Relaunch the FB campaign at $35/day this morning, or consciously move that budget to outbound — but don't leave the only paid channel dark a third day.</strong>",
-    "Capital One flagged a payment that 'wasn't completed' overnight plus a separate transaction notice, with AutoPay scheduled for Jun 27. <strong>Verify it's not the card funding the FB Ads account</strong> — a silent decline keeps the campaign from spending even after you unpause it. Two-minute check.",
-    "27+ leads at ~$17 CPL, 0 closed, and the inbox is empty of prospects, so today is an outbound day. <strong>Run a personal text-and-call pass on every unbooked GHL lead with a direct booking link, then confirm the 9 AM auto-post hit all 16 FB groups.</strong>"
+    "FB campaign still reads PAUSED after ~$719 total spend and still 0 closed. <strong>Relaunch at $35/day this morning or deliberately reallocate that budget to outbound — but don't leave the only paid channel dark for a third day.</strong>",
+    "Bank of America flagged the account ending 3001 dropped below $100 overnight. <strong>Confirm that's not the card funding the FB Ads account before you relaunch</strong> — an unpause means nothing if the card declines. Two-minute check that protects the whole channel.",
+    "27+ leads at ~$17 CPL, 0 closed, inbox empty of prospects — today is an outbound day. <strong>Run a personal text-and-call pass on every unbooked GHL lead with a direct booking link, then confirm the 9 AM auto-post hit all 16 FB groups.</strong>"
   ],
-  "gmail_summary": "Inbox clear — no prospect replies or warm conversations in the last 48 hours. Nothing business-relevant to Novaro hit the inbox. The one item worth a glance is a Capital One alert that a payment 'wasn't completed' plus a recent-transaction notice — confirm it isn't the card billing the FB Ads account. Everything else is personal or routine: a telehealth-portal forms reminder, a Google Business Profile prompt for Clear View, plus FanDuel/DraftKings/Robinhood and newsletter noise. No prospect action needed on email — today's work is outbound, not inbox.",
+  "gmail_summary": "Inbox clear of prospects — no replies or warm conversations in the last 48 hours. Nothing business-relevant to Novaro landed. The one item worth a glance is a Bank of America low-balance alert: the account ending 3001 dropped below $100 overnight. Confirm it isn't the card billing the FB Ads account before relaunching. Everything else is personal or routine: a Clear View portal forms reminder, a Signaturely e-sign promo, plus FanDuel/DraftKings/PayPal/Old Navy and newsletter noise. No email action needed on prospects — today's work is outbound, not inbox.",
   "gmail_items": [
     "✓ Inbox clear — no prospect emails in the last 48 hours",
-    "🔴 Capital One — payment 'wasn't completed' + recent transaction notice (verify it's not the FB Ads card)",
-    "⚪ Google Business Profile — 'Are you open 4th of July?' (Clear View listing prompt, routine)",
-    "⚪ ClearView portal — forms reminder (personal/telehealth, not Novaro)"
+    "🔴 Bank of America — low balance alert: account ending 3001 dropped under $100 (verify it's not the FB Ads card)",
+    "⚪ Signaturely — 'easiest way to send PDFs for signature' (could be useful for contracts, routine promo)",
+    "⚪ ClearView portal — forms reminder (personal, not Novaro)"
   ],
-  "lastUpdated": "2026-06-24T07:00:00-04:00"
+  "lastUpdated": "2026-06-25T07:00:00-04:00"
 }
