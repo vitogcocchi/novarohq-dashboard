@@ -1,21 +1,21 @@
 {
-  "date": "Thursday, June 25, 2026",
+  "date": "Friday, June 26, 2026",
   "quote": {
-    "text": "Volume negates luck. You don't need a better idea today, you need more reps against the leads you already paid for.",
+    "text": "The leads aren't the problem. The follow-up is. You already paid for 27 conversations you haven't fully had yet.",
     "author": "Alex Hormozi"
   },
-  "schedule": "Third straight morning with the FB campaign PAUSED after $719 spent, zero closes, and no prospect replies in 48 hours. New wrinkle: Bank of America flagged the account ending 3001 dropped under $100 overnight — confirm that isn't the card funding ads before you relaunch, or the unpause won't spend. Then make today an outbound day against every unbooked GHL lead.",
+  "schedule": "No prospect replies again overnight, but two money flags landed: Chase posted a letter asking you to 'send a replacement payment,' and Bank of America says account 3001 dropped under $100 again. Clear those first because 3001 may be the card funding the $35/day FB Ads. Then make today a pure follow-up day against every unbooked GHL lead before you spend another dollar on new leads.",
   "focus": [
-    "FB campaign still reads PAUSED after ~$719 total spend and still 0 closed. <strong>Relaunch at $35/day this morning or deliberately reallocate that budget to outbound — but don't leave the only paid channel dark for a third day.</strong>",
-    "Bank of America flagged the account ending 3001 dropped below $100 overnight. <strong>Confirm that's not the card funding the FB Ads account before you relaunch</strong> — an unpause means nothing if the card declines. Two-minute check that protects the whole channel.",
-    "27+ leads at ~$17 CPL, 0 closed, inbox empty of prospects — today is an outbound day. <strong>Run a personal text-and-call pass on every unbooked GHL lead with a direct booking link, then confirm the 9 AM auto-post hit all 16 FB groups.</strong>"
+    "Chase posted a letter telling you to <strong>send a replacement payment</strong>, and BofA flagged account 3001 under $100 again overnight. <strong>Log into Chase and confirm what that notice is this morning</strong> — and verify 3001 isn't the card billing the $35/day FB Ads, or the next charge declines and the only paid channel stalls.",
+    "27+ leads at ~$17 CPL and still 0 closed means the bottleneck is follow-up, not lead flow. <strong>Run a personal call-and-text pass on every unbooked GHL lead today with a direct booking link</strong>, starting with anyone who opted in during the last 72 hours.",
+    "Inbox is empty of prospects, so today is an outbound day. <strong>Confirm the 9 AM auto-post hit all 16 FB groups and that FB Ads is still delivering at ~$35/day</strong>, then manually DM 10 home-service businesses to build pipeline beyond paid."
   ],
-  "gmail_summary": "Inbox clear of prospects — no replies or warm conversations in the last 48 hours. Nothing business-relevant to Novaro landed. The one item worth a glance is a Bank of America low-balance alert: the account ending 3001 dropped below $100 overnight. Confirm it isn't the card billing the FB Ads account before relaunching. Everything else is personal or routine: a Clear View portal forms reminder, a Signaturely e-sign promo, plus FanDuel/DraftKings/PayPal/Old Navy and newsletter noise. No email action needed on prospects — today's work is outbound, not inbox.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. The two items worth acting on are both financial: a Chase letter asking you to send a replacement payment, and a repeat Bank of America low-balance alert on account 3001 (under $100). Confirm neither blocks the card funding the FB Ads account before anything else. Everything else is personal or routine noise — FanDuel/DraftKings/theScore deposit receipts, BofA Zelle confirmations, a ClearView telehealth forms reminder, plus Kraken and Calendly newsletters. No prospect email action needed; today's work is follow-up and outbound.",
   "gmail_items": [
-    "✓ Inbox clear — no prospect emails in the last 48 hours",
-    "🔴 Bank of America — low balance alert: account ending 3001 dropped under $100 (verify it's not the FB Ads card)",
-    "⚪ Signaturely — 'easiest way to send PDFs for signature' (could be useful for contracts, routine promo)",
-    "⚪ ClearView portal — forms reminder (personal, not Novaro)"
+    "🔴 Chase — New letter: 'Please send a replacement payment' (log in and verify what it's for)",
+    "🔴 Bank of America — Low balance alert: account ending 3001 under $100 (confirm it's not the FB Ads card)",
+    "⚪ No prospect emails — inbox clear of leads and warm conversations in the last 48h",
+    "⚪ ClearView portal — telehealth forms reminder (personal, not Novaro)"
   ],
-  "lastUpdated": "2026-06-25T07:00:00-04:00"
+  "lastUpdated": "2026-06-26T07:00:00-04:00"
 }
