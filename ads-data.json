@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-06-26",
+  "lastUpdated": "2026-06-27",
   "campaign": {
-    "name": "Novaro AI — Lead Gen — May 2026",
+    "name": "Novaro AI \u2014 Lead Gen \u2014 May 2026",
     "status": "PAUSED",
     "spend_7d": "$719.05",
     "impressions_7d": "8,838",
@@ -13,30 +13,141 @@
     "objective": "OUTCOME_LEADS"
   },
   "ads": [
-    {"name": "Ad 1 — Missed Call Hook", "status": "ACTIVE"},
-    {"name": "Ad 2 — Two Phones Hook", "status": "ACTIVE"}
+    {
+      "name": "Ad 1 \u2014 Missed Call Hook",
+      "status": "ACTIVE"
+    },
+    {
+      "name": "Ad 2 \u2014 Two Phones Hook",
+      "status": "ACTIVE"
+    }
   ],
   "daily": [
-    {"date": "May 18", "spend": 52.23, "clicks": 16, "impressions": 724},
-    {"date": "May 19", "spend": 34.22, "clicks": 5, "impressions": 637},
-    {"date": "May 20", "spend": 41.09, "clicks": 14, "impressions": 746},
-    {"date": "May 21", "spend": 44.60, "clicks": 8, "impressions": 325},
-    {"date": "May 22", "spend": 29.65, "clicks": 8, "impressions": 220},
-    {"date": "May 23", "spend": 7.89, "clicks": 0, "impressions": 71},
-    {"date": "May 24", "spend": 55.54, "clicks": 16, "impressions": 383},
-    {"date": "May 25", "spend": 38.66, "clicks": 8, "impressions": 282},
-    {"date": "May 26", "spend": 42.30, "clicks": 12, "impressions": 294},
-    {"date": "May 27", "spend": 39.51, "clicks": 9, "impressions": 322},
-    {"date": "May 28", "spend": 29.11, "clicks": 5, "impressions": 200},
-    {"date": "May 29", "spend": 22.39, "clicks": 6, "impressions": 203},
-    {"date": "May 30", "spend": 15.68, "clicks": 4, "impressions": 201},
-    {"date": "May 31", "spend": 52.37, "clicks": 15, "impressions": 440},
-    {"date": "Jun 1", "spend": 32.34, "clicks": 7, "impressions": 441},
-    {"date": "Jun 2", "spend": 40.52, "clicks": 6, "impressions": 565},
-    {"date": "Jun 3", "spend": 36.64, "clicks": 10, "impressions": 493},
-    {"date": "Jun 4", "spend": 44.44, "clicks": 24, "impressions": 598},
-    {"date": "Jun 5", "spend": 20.93, "clicks": 5, "impressions": 593},
-    {"date": "Jun 6", "spend": 16.46, "clicks": 8, "impressions": 596},
-    {"date": "Jun 7", "spend": 22.48, "clicks": 8, "impressions": 504}
+    {
+      "date": "May 18",
+      "spend": 52.23,
+      "clicks": 16,
+      "impressions": 724
+    },
+    {
+      "date": "May 19",
+      "spend": 34.22,
+      "clicks": 5,
+      "impressions": 637
+    },
+    {
+      "date": "May 20",
+      "spend": 41.09,
+      "clicks": 14,
+      "impressions": 746
+    },
+    {
+      "date": "May 21",
+      "spend": 44.6,
+      "clicks": 8,
+      "impressions": 325
+    },
+    {
+      "date": "May 22",
+      "spend": 29.65,
+      "clicks": 8,
+      "impressions": 220
+    },
+    {
+      "date": "May 23",
+      "spend": 7.89,
+      "clicks": 0,
+      "impressions": 71
+    },
+    {
+      "date": "May 24",
+      "spend": 55.54,
+      "clicks": 16,
+      "impressions": 383
+    },
+    {
+      "date": "May 25",
+      "spend": 38.66,
+      "clicks": 8,
+      "impressions": 282
+    },
+    {
+      "date": "May 26",
+      "spend": 42.3,
+      "clicks": 12,
+      "impressions": 294
+    },
+    {
+      "date": "May 27",
+      "spend": 39.51,
+      "clicks": 9,
+      "impressions": 322
+    },
+    {
+      "date": "May 28",
+      "spend": 29.11,
+      "clicks": 5,
+      "impressions": 200
+    },
+    {
+      "date": "May 29",
+      "spend": 22.39,
+      "clicks": 6,
+      "impressions": 203
+    },
+    {
+      "date": "May 30",
+      "spend": 15.68,
+      "clicks": 4,
+      "impressions": 201
+    },
+    {
+      "date": "May 31",
+      "spend": 52.37,
+      "clicks": 15,
+      "impressions": 440
+    },
+    {
+      "date": "June 1",
+      "spend": 32.34,
+      "clicks": 7,
+      "impressions": 441
+    },
+    {
+      "date": "June 2",
+      "spend": 40.52,
+      "clicks": 6,
+      "impressions": 565
+    },
+    {
+      "date": "June 3",
+      "spend": 36.64,
+      "clicks": 10,
+      "impressions": 493
+    },
+    {
+      "date": "June 4",
+      "spend": 44.44,
+      "clicks": 24,
+      "impressions": 598
+    },
+    {
+      "date": "June 5",
+      "spend": 20.93,
+      "clicks": 5,
+      "impressions": 593
+    },
+    {
+      "date": "June 6",
+      "spend": 16.46,
+      "clicks": 8,
+      "impressions": 596
+    },
+    {
+      "date": "June 7",
+      "spend": 22.48,
+      "clicks": 8,
+      "impressions": 504
+    }
   ]
 }
