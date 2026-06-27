@@ -1,21 +1,20 @@
 {
-  "date": "Friday, June 26, 2026",
+  "date": "Saturday, June 27, 2026",
   "quote": {
-    "text": "The leads aren't the problem. The follow-up is. You already paid for 27 conversations you haven't fully had yet.",
+    "text": "You don't have a lead problem. You have a follow-up problem. Twenty-seven people already raised their hand and you haven't closed one.",
     "author": "Alex Hormozi"
   },
-  "schedule": "No prospect replies again overnight, but two money flags landed: Chase posted a letter asking you to 'send a replacement payment,' and Bank of America says account 3001 dropped under $100 again. Clear those first because 3001 may be the card funding the $35/day FB Ads. Then make today a pure follow-up day against every unbooked GHL lead before you spend another dollar on new leads.",
+  "schedule": "No prospect replies overnight and no money flags in the inbox, so this is a pure execution day. The one thing to verify before anything else: the last Facebook Ads pull shows the Lead Gen campaign as PAUSED, not delivering at $35/day. Confirm it's actually live, then spend the rest of the day running personal follow-up against every unbooked GHL lead before buying a single new one.",
   "focus": [
-    "Chase posted a letter telling you to <strong>send a replacement payment</strong>, and BofA flagged account 3001 under $100 again overnight. <strong>Log into Chase and confirm what that notice is this morning</strong> — and verify 3001 isn't the card billing the $35/day FB Ads, or the next charge declines and the only paid channel stalls.",
-    "27+ leads at ~$17 CPL and still 0 closed means the bottleneck is follow-up, not lead flow. <strong>Run a personal call-and-text pass on every unbooked GHL lead today with a direct booking link</strong>, starting with anyone who opted in during the last 72 hours.",
-    "Inbox is empty of prospects, so today is an outbound day. <strong>Confirm the 9 AM auto-post hit all 16 FB groups and that FB Ads is still delivering at ~$35/day</strong>, then manually DM 10 home-service businesses to build pipeline beyond paid."
+    "Last ads pull shows the Lead Gen campaign as <strong>PAUSED</strong>, not delivering at $35/day. <strong>Open Ads Manager and confirm the campaign is actually live before the 8 AM refresh</strong> — if it's off, your only paid lead source is dead and the funnel goes dry today.",
+    "27+ leads at ~$17 CPL and still zero closed means the bottleneck is follow-up, not lead flow. <strong>Run a personal call-and-text pass on every unbooked GHL lead today with a direct booking link</strong>, starting with anyone who opted in this week.",
+    "Inbox is clear of prospects, so today is an outbound day. <strong>Confirm the 9 AM auto-post hit all 16 FB groups, then manually DM 10 home-service businesses</strong> to build pipeline that doesn't depend on ad spend."
   ],
-  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. The two items worth acting on are both financial: a Chase letter asking you to send a replacement payment, and a repeat Bank of America low-balance alert on account 3001 (under $100). Confirm neither blocks the card funding the FB Ads account before anything else. Everything else is personal or routine noise — FanDuel/DraftKings/theScore deposit receipts, BofA Zelle confirmations, a ClearView telehealth forms reminder, plus Kraken and Calendly newsletters. No prospect email action needed; today's work is follow-up and outbound.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours, and nothing financial that needs action — the only money-related items are routine deposit receipts and a Bank of America fraud-prevention promo (not an alert). Everything else is noise: an Anthropic API rate-limit notice (no action), LinkedIn post/job updates, an Upswing poker newsletter, a Skool event reminder, and a ClearView telehealth forms reminder (personal, not Novaro). No prospect email action needed; today's work is verifying ad delivery, follow-up, and outbound.",
   "gmail_items": [
-    "🔴 Chase — New letter: 'Please send a replacement payment' (log in and verify what it's for)",
-    "🔴 Bank of America — Low balance alert: account ending 3001 under $100 (confirm it's not the FB Ads card)",
-    "⚪ No prospect emails — inbox clear of leads and warm conversations in the last 48h",
+    "✓ Inbox clear — no prospect emails or warm conversations in the last 48h",
+    "⚪ Anthropic — Claude API rate limits increasing (no action required)",
     "⚪ ClearView portal — telehealth forms reminder (personal, not Novaro)"
   ],
-  "lastUpdated": "2026-06-26T07:00:00-04:00"
+  "lastUpdated": "2026-06-27T07:05:41-04:00"
 }
