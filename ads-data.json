@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-06-27",
+  "lastUpdated": "2026-06-28",
   "campaign": {
-    "name": "Novaro AI \u2014 Lead Gen \u2014 May 2026",
+    "name": "Novaro AI — Lead Gen — May 2026",
     "status": "PAUSED",
     "spend_7d": "$719.05",
     "impressions_7d": "8,838",
@@ -14,12 +14,12 @@
   },
   "ads": [
     {
-      "name": "Ad 1 \u2014 Missed Call Hook",
-      "status": "ACTIVE"
+      "name": "Ad 1 — Missed Call Hook - Copy",
+      "status": "CAMPAIGN_PAUSED"
     },
     {
-      "name": "Ad 2 \u2014 Two Phones Hook",
-      "status": "ACTIVE"
+      "name": "Ad 2 — Two Phones Hook",
+      "status": "CAMPAIGN_PAUSED"
     }
   ],
   "daily": [
