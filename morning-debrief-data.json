@@ -1,22 +1,21 @@
 {
-  "date": "Sunday, June 28, 2026",
+  "date": "Monday, June 29, 2026",
   "quote": {
-    "text": "Outbound is the only channel you fully control. When the ads stall and the inbox is quiet, that's your edge.",
+    "text": "A paused ad account and an uncontacted lead list aren't bad luck. They're a to-do list you've been avoiding.",
     "author": "Alex Hormozi"
   },
-  "schedule": "No prospect replies and no money or security flags in the inbox over the last 48 hours, so this is a pure execution day. The blocker to clear first: the last Facebook Ads pull still shows the Lead Gen campaign as PAUSED at a $35/day budget. Confirm it's actually delivering before anything else, then spend the day on personal follow-up to the 27+ unbooked GHL leads and manual outbound. Don't buy new leads while old ones sit uncontacted.",
+  "schedule": "No prospect replies and no money or security flags in the inbox over the last 48 hours, so this is a pure execution day. Clear the blocker first: the latest Facebook Ads pull (Jun 28) still shows the Lead Gen campaign PAUSED with both ads at CAMPAIGN_PAUSED, which means your only paid lead source has been dark. Unpause and confirm delivery before the 8 AM refresh, then spend the day on personal follow-up to the 27+ unbooked GHL leads and manual outbound. Do not buy new leads while old ones sit uncontacted.",
   "focus": [
-    "Last ads pull still shows the Lead Gen campaign as <strong>PAUSED</strong> at $35/day. <strong>Open Ads Manager and confirm it's actually delivering before the 8 AM refresh</strong> — if it's off, your only paid lead source is dead and the funnel runs dry today.",
-    "27+ leads at ~$17 CPL and still zero closed means the problem is follow-up, not lead flow. <strong>Run a personal call-and-text pass on every unbooked GHL lead today with a direct booking link</strong>, starting with anyone who opted in this week.",
-    "Inbox is clear of prospects, so today is an outbound day. <strong>Confirm the 9 AM auto-post hit all 16 FB groups, then manually DM 10 home-service businesses</strong> to build pipeline that doesn't depend on ad spend.",
-    "Heads up: A2P campaign is still in carrier review, so GHL workflows can't text leads yet. <strong>If it clears today, link the 413 number and flip the three workflows live</strong> so new leads get auto-texted instead of waiting on you."
+    "The latest ads pull (Jun 28) still shows the Lead Gen campaign <strong>PAUSED</strong> with both ads at CAMPAIGN_PAUSED at a $35/day budget. <strong>Open Ads Manager and confirm it's live before the 8 AM refresh</strong> — while it's dark your only paid lead source produces nothing and the funnel runs dry today.",
+    "27+ leads at ~$17 CPL and still zero closed means the gap is follow-up, not lead flow. <strong>Run a personal call-and-text pass on every unbooked GHL lead today with a direct booking link</strong>, starting with anyone who opted in this week.",
+    "Inbox has zero prospects, so today is an outbound day. <strong>Confirm the 9 AM auto-post hit all 16 FB groups, then manually DM 10 home-service businesses</strong> to build pipeline that doesn't depend on the paused ad account."
   ],
-  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours, and nothing financial or security-related that needs action — the only money items are routine sportsbook deposit receipts (DraftKings, FanDuel, Fanatics), two Zelle payment confirmations, and a Bank of America fraud-prevention promo (not an alert). Everything else is noise: an Anthropic API rate-limit notice (no action), a NYT crossword email, a LinkedIn post update, and a ClearViewMA telehealth forms reminder (personal, not Novaro). No prospect email action needed; today's work is verifying ad delivery, lead follow-up, and outbound.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours, and nothing financial or security-related that needs action. The inbox is all noise: NYT crossword newsletters, routine Bank of America Zelle and statement alerts, Poshmark order and offer notifications, a Capital One scheduled-payment notice, and a ClearViewMA telehealth forms reminder (personal, not Novaro). No prospect email action needed; today's work is unpausing the ad campaign, lead follow-up, and outbound.",
   "gmail_items": [
     "✓ Inbox clear — no prospect emails or warm conversations in the last 48h",
-    "⚪ Anthropic — higher Claude API rate limits (no action required)",
-    "⚪ Bank of America — Zelle payments + fraud-prevention promo (routine, no alert)",
+    "⚪ Bank of America — Zelle payments + statement available (routine, no alert)",
+    "⚪ Poshmark — order confirmation + new offers (personal, no action)",
     "⚪ ClearViewMA — telehealth forms reminder (personal, not Novaro)"
   ],
-  "lastUpdated": "2026-06-28T07:06:57-04:00"
+  "lastUpdated": "2026-06-29T07:07:00-04:00"
 }
