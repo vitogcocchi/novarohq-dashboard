@@ -1,21 +1,22 @@
 {
-  "date": "Monday, June 29, 2026",
+  "date": "Tuesday, June 30, 2026",
   "quote": {
-    "text": "A paused ad account and an uncontacted lead list aren't bad luck. They're a to-do list you've been avoiding.",
+    "text": "Cash in the account beats clever in the funnel. Fund the engine, then floor it.",
     "author": "Alex Hormozi"
   },
-  "schedule": "No prospect replies and no money or security flags in the inbox over the last 48 hours, so this is a pure execution day. Clear the blocker first: the latest Facebook Ads pull (Jun 28) still shows the Lead Gen campaign PAUSED with both ads at CAMPAIGN_PAUSED, which means your only paid lead source has been dark. Unpause and confirm delivery before the 8 AM refresh, then spend the day on personal follow-up to the 27+ unbooked GHL leads and manual outbound. Do not buy new leads while old ones sit uncontacted.",
+  "schedule": "One money flag changes the order today. Bank of America fired a low-balance alert at 5:24 AM — the account ending 3001 dropped below $100. Your FB Ads budget is $35/day, so even one day of live spend will overdraw that card and auto-kill delivery. Fund the account first. The Jun 29 ads pull still shows the Lead Gen campaign PAUSED (both ads CAMPAIGN_PAUSED) after $719 of 7-day spend for 194 clicks and zero closes, so do not unpause until cash is in. Then spend the day on the real bottleneck: personal follow-up to the 27+ unbooked GHL leads and manual outbound. No new lead buys while old ones sit uncontacted.",
   "focus": [
-    "The latest ads pull (Jun 28) still shows the Lead Gen campaign <strong>PAUSED</strong> with both ads at CAMPAIGN_PAUSED at a $35/day budget. <strong>Open Ads Manager and confirm it's live before the 8 AM refresh</strong> — while it's dark your only paid lead source produces nothing and the funnel runs dry today.",
-    "27+ leads at ~$17 CPL and still zero closed means the gap is follow-up, not lead flow. <strong>Run a personal call-and-text pass on every unbooked GHL lead today with a direct booking link</strong>, starting with anyone who opted in this week.",
-    "Inbox has zero prospects, so today is an outbound day. <strong>Confirm the 9 AM auto-post hit all 16 FB groups, then manually DM 10 home-service businesses</strong> to build pipeline that doesn't depend on the paused ad account."
+    "Bank of America flagged the account ending 3001 below $100 at 5:24 AM. At a $35/day budget the card declines within ~2 days and auto-kills ad delivery. <strong>Fund the account before you touch the ad campaign</strong> — everything else is downstream of cash being there.",
+    "The Jun 29 pull still shows the Lead Gen campaign <strong>PAUSED</strong> with both ads at CAMPAIGN_PAUSED, after $719 in 7-day spend bought 194 clicks and zero closes. <strong>Once the account is funded, unpause and confirm delivery</strong> before the 8 AM refresh — but not a second before the money lands.",
+    "27+ leads at ~$17 CPL and still zero closed means the gap is follow-up, not lead flow. <strong>Run a personal call-and-text pass on every unbooked GHL lead today with a direct booking link</strong>, starting with anyone who opted in this week."
   ],
-  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours, and nothing financial or security-related that needs action. The inbox is all noise: NYT crossword newsletters, routine Bank of America Zelle and statement alerts, Poshmark order and offer notifications, a Capital One scheduled-payment notice, and a ClearViewMA telehealth forms reminder (personal, not Novaro). No prospect email action needed; today's work is unpausing the ad campaign, lead follow-up, and outbound.",
+  "gmail_summary": "No prospect replies or warm conversations in the last 48 hours. One item needs action: a Bank of America low-balance alert on the account ending 3001 (dropped below $100) — fund it before the ad spend declines the card. Everything else is noise: routine BofA Zelle/statement alerts, Old Navy and Poshmark shipping updates, a Google Terms of Service notice (effective July 30), a LinkedIn reaction, and a ClearViewMA telehealth forms reminder (personal, not Novaro).",
   "gmail_items": [
-    "✓ Inbox clear — no prospect emails or warm conversations in the last 48h",
-    "⚪ Bank of America — Zelle payments + statement available (routine, no alert)",
-    "⚪ Poshmark — order confirmation + new offers (personal, no action)",
-    "⚪ ClearViewMA — telehealth forms reminder (personal, not Novaro)"
+    "🔴 Bank of America — \"Your available account balance is low\" (acct 3001 under $100; fund before ad spend declines the card)",
+    "⚪ ClearViewMA — telehealth forms reminder (personal, not Novaro)",
+    "⚪ Old Navy / Poshmark — order shipping updates (personal, no action)",
+    "⚪ Google — Terms of Service update effective Jul 30 (no action)",
+    "✓ No prospect emails or warm conversations in the last 48h"
   ],
-  "lastUpdated": "2026-06-29T07:07:00-04:00"
+  "lastUpdated": "2026-06-30T07:00:00-04:00"
 }
