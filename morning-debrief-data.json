@@ -1,22 +1,21 @@
 {
-  "date": "Friday, July 3, 2026",
+  "date": "Saturday, July 4, 2026",
   "quote": {
-    "text": "You don't get paid for the leads you generate. You get paid for the ones you follow up with. Work what you already bought.",
-    "author": "Alex Hormozi"
+    "text": "The fastest way to lose the game is to let the infrastructure you already paid for expire while you wait for a perfect moment.",
+    "author": "Unknown"
   },
-  "schedule": "No prospect replies landed in the last 48 hours, so nothing inbound is waiting — the bottleneck is follow-up, not lead flow. 27+ leads at ~$17 CPL and still zero closed means the money is already spent; the job today is working it. One flag worth 60 seconds: the local ads cache shows the Lead-Gen campaign marked PAUSED as of Jul 2, so before you count on any new leads this weekend, open Ads Manager and confirm the $35/day campaign is actually delivering. It's also the July 4 weekend — most home-service owners are offline, so lead with text over calls and don't expect fast booking replies. Only FB groups are live for outbound right now (Instantly lapsed, Bland never launched, LinkedIn paused), so verify the 9 AM auto-post hit all 16 groups and DM this week's commenters yourself.",
+  "schedule": "Two things dominate today. First, GoHighLevel emailed that your trial ends July 10 — six days out. Everything runs through GHL: the pipeline, the 27+ imported leads, the A2P registration, and all three workflows. Add billing today so a lapse can't torch two months of setup. Second, the local ads cache still shows the Lead-Gen campaign PAUSED as of Jul 3 — if that's real, no new leads are flowing and the $17 CPL machine is off. Confirm in Ads Manager whether the pause is intentional. Inbox has zero prospect replies for the second straight day, so follow-up on existing leads is the only revenue motion available. It's July 4 — home-service owners are off, so text beats calls and the 9 AM FB group auto-post should still fire.",
   "focus": [
-    "No prospect replies landed in the last 48h, so the bottleneck is follow-up, not lead flow — 27+ leads at ~$17 CPL and still zero closed. <strong>Run a personal text pass on every unbooked GHL lead today</strong> with a direct booking link; lead with text over calls since it's the July 4 weekend and most home-service owners are offline.",
-    "Your local ads cache flags the Lead-Gen campaign as PAUSED as of Jul 2 — if that's real, your $17 leads have stopped flowing entirely. <strong>Open Ads Manager and confirm the $35/day campaign is actually delivering</strong> before you bank on new leads over the holiday weekend.",
-    "FB groups are your only live outbound channel right now (Instantly lapsed, Bland never launched, LinkedIn paused). <strong>Verify the 9 AM auto-post fired across all 16 groups, then manually DM 5–10 of this week's commenters</strong> yourself — nothing else is filling the pipe."
+    "GoHighLevel says your trial ends July 10 — six days. Your CRM, 27+ leads, A2P registration, and all three workflows live there. <strong>Add a payment method to GHL this morning</strong> so a billing lapse can't wipe two months of setup.",
+    "The ads cache still shows the Lead-Gen campaign PAUSED as of Jul 3 — paused campaign means zero new $17 leads. <strong>Open Ads Manager and either resume the $35/day campaign or confirm the pause is intentional</strong> before the holiday weekend goes to waste.",
+    "Second straight day with zero prospect replies in the inbox — follow-up is the only revenue motion running. <strong>Text every unbooked GHL lead with a direct booking link today</strong> (text over calls on July 4), and verify the 9 AM auto-post hit all 16 groups."
   ],
-  "gmail_summary": "Inbox is clear of anything Novaro-relevant — no prospect replies or warm conversations in the last 48 hours. Everything landing is noise: an Anthropic receipt, TikTok/impact.com and Kraken newsletters, DraftKings/FanDuel deposit confirmations, Poshmark and Upswing Poker promos, plus a ClearViewMA forms reminder (personal, not Novaro). Nothing needs a reply.",
+  "gmail_summary": "One item matters: GoHighLevel's trial-ending notice (ends July 10) — that's your CRM and pipeline, handle billing now. Everything else is noise: Anthropic receipt, Capital One statements, DraftKings withdrawal confirmations, a ClearViewMA forms reminder (personal), LinkedIn and Robinhood notifications. Zero prospect emails.",
   "gmail_items": [
-    "✓ Inbox clear — no prospect or Novaro-relevant emails in the last 48h",
+    "🔴 GoHighLevel — Trial ends July 10: add payment method or CRM + pipeline + A2P shut off",
     "⚪ Anthropic — receipt #2483-3723-1235 (routine billing)",
-    "⚪ Kraken / impact.com — newsletters & contract-terms notices (no action)",
-    "⚪ DraftKings / FanDuel — deposit confirmations (personal)",
-    "⚪ ClearViewMA — forms reminder (personal, not Novaro)"
+    "⚪ Capital One — Savor + Spark statements ready (routine)",
+    "⚪ impact.com — TikTok affiliate contract terms changed (no action)"
   ],
-  "lastUpdated": "2026-07-03T07:00:00-04:00"
+  "lastUpdated": "2026-07-04T07:00:00-04:00"
 }
