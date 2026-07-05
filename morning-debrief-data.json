@@ -1,21 +1,18 @@
 {
-  "date": "Saturday, July 4, 2026",
+  "date": "Sunday, July 5, 2026",
   "quote": {
-    "text": "The fastest way to lose the game is to let the infrastructure you already paid for expire while you wait for a perfect moment.",
+    "text": "You don't have a lead problem. You have a follow-up problem. Volume of quality conversations fixes both.",
     "author": "Unknown"
   },
-  "schedule": "Two things dominate today. First, GoHighLevel emailed that your trial ends July 10 — six days out. Everything runs through GHL: the pipeline, the 27+ imported leads, the A2P registration, and all three workflows. Add billing today so a lapse can't torch two months of setup. Second, the local ads cache still shows the Lead-Gen campaign PAUSED as of Jul 3 — if that's real, no new leads are flowing and the $17 CPL machine is off. Confirm in Ads Manager whether the pause is intentional. Inbox has zero prospect replies for the second straight day, so follow-up on existing leads is the only revenue motion available. It's July 4 — home-service owners are off, so text beats calls and the 9 AM FB group auto-post should still fire.",
+  "schedule": "Two carryovers still decide the week. GHL's trial ends July 10 — five days out — and everything runs through it: the pipeline, 27+ leads, A2P, and all three workflows. If billing didn't get added yesterday, that's job one. Second, the Lead-Gen campaign showed PAUSED as of Jul 3; if it's still off, zero new $17 leads are flowing while the daily budget sits idle. Inbox is clean today — no prospect replies — so working existing leads is the only revenue motion. It's Sunday after a holiday: homeowners are back on their phones tonight, so texts sent this afternoon land well.",
   "focus": [
-    "GoHighLevel says your trial ends July 10 — six days. Your CRM, 27+ leads, A2P registration, and all three workflows live there. <strong>Add a payment method to GHL this morning</strong> so a billing lapse can't wipe two months of setup.",
-    "The ads cache still shows the Lead-Gen campaign PAUSED as of Jul 3 — paused campaign means zero new $17 leads. <strong>Open Ads Manager and either resume the $35/day campaign or confirm the pause is intentional</strong> before the holiday weekend goes to waste.",
-    "Second straight day with zero prospect replies in the inbox — follow-up is the only revenue motion running. <strong>Text every unbooked GHL lead with a direct booking link today</strong> (text over calls on July 4), and verify the 9 AM auto-post hit all 16 groups."
+    "GHL trial ends July 10 — five days. If you didn't add billing yesterday, <strong>add a payment method to GHL right now</strong>. A lapse wipes the pipeline, 27+ leads, A2P registration, and all three workflows in one shot.",
+    "The Lead-Gen campaign showed PAUSED as of Jul 3. <strong>Open Ads Manager and confirm it's running again</strong> — every paused day is ~$35 of budget doing nothing and zero new $17 leads entering the pipeline.",
+    "Inbox has zero prospect replies for the third straight day, so outbound is the only motion. <strong>Text every unbooked GHL lead a direct booking link this afternoon</strong> (post-holiday Sunday evening is prime phone time), and reply to every FB group comment within the hour after the 9 AM post."
   ],
-  "gmail_summary": "One item matters: GoHighLevel's trial-ending notice (ends July 10) — that's your CRM and pipeline, handle billing now. Everything else is noise: Anthropic receipt, Capital One statements, DraftKings withdrawal confirmations, a ClearViewMA forms reminder (personal), LinkedIn and Robinhood notifications. Zero prospect emails.",
+  "gmail_summary": "Nothing business-relevant in the last 48 hours — no prospect emails, no GHL or Meta notices. Everything else is personal finance noise (bank alerts, card payment confirmations) and newsletters. Zero action needed in the inbox today.",
   "gmail_items": [
-    "🔴 GoHighLevel — Trial ends July 10: add payment method or CRM + pipeline + A2P shut off",
-    "⚪ Anthropic — receipt #2483-3723-1235 (routine billing)",
-    "⚪ Capital One — Savor + Spark statements ready (routine)",
-    "⚪ impact.com — TikTok affiliate contract terms changed (no action)"
+    "✓ Inbox clear — no prospect emails."
   ],
-  "lastUpdated": "2026-07-04T07:00:00-04:00"
+  "lastUpdated": "2026-07-05T11:05:00-04:00"
 }
